@@ -32,273 +32,215 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-
-{% block beforeContent %}
-
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Projects</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">A404 Dewsbury</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Documents</a>
-      </li>
-    </ol>
-  </div>
 {% endblock %}
-{% block content %}
 
+<!-- This is a custom block added in the template.njk file.
+  This can be found under:
+  node_modules > govuk-frontend > govuk > template.njk
+
+  Without it we cannot put HTML outside of the main area.
+-->
+{% set containerClasses = "pins-sidebar--container" %}
+{% set hasContentsAside = true %}
+
+{% block contentsAside %}
+  <aside class="pins-aside-page-contents">
+    <h2 class="govuk-heading-s">Contents</h2>
+    <ul class="govuk-list">
+      <li><a href="#">Dewsbury A404 project information</a></li>
+      <li><a href="#">Detailed information and documents</a></li>
+      <li><a href="#">Examination of the project</a></li>
+      <li class="pins-contents-current-page">All examination information
+        <ul>
+          <li class="pins-contents-current-page">Topics and replies
+            <ul>
+              <li><a href="#">Deadlines</a></li>
+              <li><a href="#">Hearing and meeting agendas</a></li>
+              <li><a href="#">Recordings of hearings</a></li>
+              <li><a href="#">Procedural decisions</a></li>
+              <li><a href="#">Site inspections</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">Recommendation and decision</a></li>
+  </aside>
+{% endblock %}
+
+{% block content %}
   <h1 class="govuk-heading-l">A404 Dewsbury</h1>
   <h2 class="govuk-heading-m">Project information and documents</h2>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-  <div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on [name of service]">
-    <div class="govuk-cookie-banner__message govuk-width-container">
-
-<h2 class="govuk-heading-m">Contents</h2>
-
-  <ul class="govuk-list">
-  <li>
-    <a class="govuk-link" href="#">Dewsbury A404 Project information</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Detailed information and documents</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="#">Examination of the project</a>
-  </li>
-  <li>
-    <p class="govuk-body">All examination information</p>
-    <ul class="govuk-list">
-      <ul>
-    <li>Topics and replies</li>
-    <li>
-      <a class="govuk-link" href="#">Deadlines</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="#">Hearing and meeting agenda</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="#">Recordings of hearings</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="#">Procedural decisions</a>
-    </li>
-    <li>
-      <a class="govuk-link" href="#">Site inspections</a>
-
-  </ul>
-    </li>
-    <li>
-    </ul>
-    <li>
-      <a class="govuk-link" href="#">Recommendation and decision</a>
-    </li>
-    </div>
-    </div>
-  </div>
-  </div>
-    <br>
-    <br>
-
-    <h3 class="govuk-heading-s">Filter documents</h3>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter">
-  <section class="sidebar">
-    <input type="text" name="search" id="search_documents">
-    <button type="submit">Search</button>
-    <br>
-    <br>
-
-    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-content-heading-theme">
-              Theme
-            </span>
-          </h2>
+    <section class="pins-document-library-search govuk-grid-column-one-quarter">
+      <label class="pins-label-small" for="search_documents">Search</label>
+      <div class="pins-document-library-search-wrapper">
+        <input class="search-documents-input" type="text" name="search" id="search_documents">
+        <button class="search-documents-submit" type="submit" value="Search">Search</button>
+      </div>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <h3 class="govuk-heading-s">Filter documents</h3>
+        <div class="govuk-accordion__section govuk-checkboxes--small pins-filter-checkboxes">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-content-heading-theme">
+                Theme
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-content-theme-noise-traffic-air" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-content-heading-theme">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-noise-traffic-air">
+            <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">Noise, traffic and air quality</label>
+          </div>
+          <div id="accordion-content-landscape-and-visual" class="govuk-accordion__section-content  govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-content-heading-theme">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
+            <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Landscape and visual</label>
+          </div>
+          <div id="accordion-content-heritage" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-content-heading-theme">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="heritage">
+            <label class="govuk-label govuk-checkboxes__label" for="heritage">Heritage</label>
+          </div>
+          <div id="accordion-content-theme-wildlife-habitats" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-content-heading-theme">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
+            <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Local wildlife and habitats</label>
+          </div>
         </div>
-        <div id="accordion-content-theme-noise-traffic-air" class="govuk-accordion__section-content" aria-labelledby="accordion-content-heading-theme">
-          <input type="checkbox" name="theme" id="theme-noise-traffic-air">
-          <label for="theme-noise-traffic-air">Noise, traffic and air quality</label>
+        <div class="govuk-accordion__section govuk-checkboxes--small pins-filter-checkboxes">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-who-submitted">
+                Who submitted
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-content-examining-panel" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-examining-panel">
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-examining-panel">Examining panel</label>
+          </div>
+          <div id="accordion-content-developer" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-developer">
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-developer">Developer</label>
+          </div>
+          <div id="accordion-content-individual-interested-party" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-individual-interested-party">
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-individual-interested-party">Individual interested party</label>
+          </div>
+          <div id="accordion-content-organisation-interested-party" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-organisation-interested-party">
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-organisation-interested-party">Organisation interested party</label>
+          </div>
+          <div id="accordion-content-official-body-and-local-authority" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-official-body-and-local-authority">
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-official-body-and-local-authority">Official body and local authority</label>
+          </div>
         </div>
-        <div id="accordion-content-landscape-and-visual" class="govuk-accordion__section-content" aria-labelledby="accordion-content-heading-theme">
-          <input type="checkbox" name="theme" id="theme-landscape-visual">
-          <label for="theme-landscape-visual">Landscape and visual</label>
-        </div>
-        <div id="accordion-content-heritage" class="govuk-accordion__section-content" aria-labelledby="accordion-content-heading-theme">
-          <input type="checkbox" name="theme" id="heritage">
-          <label for="heritage">Heritage</label>
-        </div>
-        <div id="accordion-content-theme-wildlife-habitats" class="govuk-accordion__section-content" aria-labelledby="accordion-content-heading-theme">
-          <input type="checkbox" name="theme" id="theme-wildlife-habitats">
-          <label for="theme-wildlife-habitats">Local wildlife and habitats</label>
+        <div class="govuk-accordion__section govuk-checkboxes--small pins-filter-checkboxes">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-type-of-information">
+                Who submitted
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-content-plans-and-drawings" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-plans-and-drawings">
+            <label class="govuk-label govuk-checkboxes__label" for="type-plans-and-drawings">Plans and drawings</label>
+          </div>
+          <div id="accordion-content-environmental" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-environmental">
+            <label class="govuk-label govuk-checkboxes__label" for="type-environmental">Environmental</label>
+          </div>
+          <div id="accordion-content-procedure" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-procedure">
+            <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Procedure</label>
+          </div>
+          <div id="accordion-content-consultation-reports" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-consultation-reports">
+            <label class="govuk-label govuk-checkboxes__label" for="type-consultation-reports">Consultation reports</label>
+          </div>
         </div>
       </div>
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-who-submitted">
-              Who submitted
-            </span>
-          </h2>
+    </section>
+    <section class="documents-results govuk-grid-column-three-quarters">
+      <p class="results"><strong><span id="results-number">18</span> results<strong></p>
+        <hr />
+        <div class="document-results-sort">
+          <label class="govuk-label" for="document-results-sort">Sort by</span>
+          <select id="document-results-sort" class="govuk-select">
+            <option selected>Recently updated</option>
+          </select>
         </div>
-        <div id="accordion-content-examining-panel" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-who-submitted">
-          <input type="checkbox" name="theme" id="who-submitted-examining-panel">
-          <label for="who-submitted-examining-panel">Examining panel</label>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Traffic - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Answer to panel's questions - Traffic and transport 1</a></li>
+              <li><a href="#">Deadline 4 - Summary of input into hearing - Traffic and transport</a></li>
+              <li><a href="#">Deadline 6 - Answer to panel's questions - Traffic and transport 2</a></li>
+              <li><a href="#">Deadline 8 - Summary of input into hearing - Traffic and transport 22 august 2019</a></li>
+            </ul>
+          </div>
         </div>
-        <div id="accordion-content-developer" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-who-submitted">
-          <input type="checkbox" name="theme" id="who-submitted-developer">
-          <label for="who-submitted-developer">Developer</label>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Traffic - organisation interested parties</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Traffic action group - Deadline 2 - Traffic analysis report (late submission)</a></li>
+              <li><a href="#">Traffic action group - Deadline 2 - Written representation</a></li>
+              <li><a href="#">Traffic action group - Deadline 3 - Summary of input into hearings - 22 and 23 May 2019</a></li>
+              <li><a href="#">Traffic action group - Additional information - Traffic analysis</a></li>
+            </ul>
+          </div>
         </div>
-        <div id="accordion-content-individual-interested-party" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-who-submitted">
-          <input type="checkbox" name="theme" id="who-submitted-individual-interested-party">
-          <label for="who-submitted-individual-interested-party">Individual interested party</label>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Traffic - examining panel meeting agendas</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Agenda for traffic and transportation hearing (8) - 13 June 2019</a></li>
+              <li><a href="#">Agenda for traffic and transportation hearing (9) - 22 August 2019</a></li>
+            </ul>
+          </div>
         </div>
-        <div id="accordion-content-organisation-interested-party" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-who-submitted">
-          <input type="checkbox" name="theme" id="who-submitted-organisation-interested-party">
-          <label for="who-submitted-organisation-interested-party">Organisation interested party</label>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Answer to panel's questions - Noise and vibration effects (1)</a></li>
+              <li><a href="#">Deadline 8 - Summary of input into hearing - Noise and vibration</a></li>
+              <li><a href="#">Deadline 6 - Answer to panel's questions - Noise and vibration effects (2)</a></li>
+            </ul>
+          </div>
         </div>
-        <div id="accordion-content-official-body-and-local-authority" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-who-submitted">
-          <input type="checkbox" name="theme" id="who-submitted-official-body-and-local-authority">
-          <label for="who-submitted-official-body-and-local-authority">Official body and local authority</label>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - organisation interested parties</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Dewsbury Alliance - Deadline 2 - Written representation - Noise and vibration</a></li>
+              <li><a href="#">Dewsbury Alliance - Deadline 4 - Summary of input into hearings - Water, geology - Noise, vibration</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="govuk-accordion__section">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-type-of-information">
-              Type of information
-            </span>
-          </h2>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - examining panel meeting agendas</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Agenda for noise, vibration, health and wellbeing hearing (5) - 12 June 2019</a></li>
+            </ul>
+          </div>
         </div>
-        <div id="accordion-content-plans-and-drawings" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-type-of-information">
-          <input type="checkbox" name="theme" id="type-plans-and-drawings">
-          <label for="type-plans-and-drawings">Plans and drawings</label>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Air quality - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Answer to panel's questions - Air quality and emissions (1)</a></li>
+              <li><a href="#">Deadline 6 - Answer to panel's questions - Air quality and emissions (2)</a></li>
+            </ul>
+          </div>
         </div>
-        <div id="accordion-content-environmental" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-type-of-information">
-          <input type="checkbox" name="theme" id="type-environmental">
-          <label for="type-environmental">Environmental</label>
+        <div class="pins-search-results-pagination" id="pins-search-results-pagination">
+          <a href="#" class="govuk-link govuk-link--no-underline">1</a>
+          <a href="#" class="govuk-link">2</a>
+          <a href="#" class="govuk-link">Next</a>
         </div>
-        <div id="accordion-content-procedure" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-type-of-information">
-          <input type="checkbox" name="theme" id="type-procedure">
-          <label for="type-procedure">Procedure</label>
-        </div>
-        <div id="accordion-content-consultation-reports" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-type-of-information">
-          <input type="checkbox" name="theme" id="type-consultation-reports">
-          <label for="type-consultation-reports">Consultation reports</label>
-        </div>
-      </div>
-    </div>
-  </section>
-  </div>
-
-  <div class="govuk-grid-column-three-quarters">
-  <section class="documents-results">
-    <p class="results"><strong><span id="results-number">18</span> results<strong></p>
-      <hr />
-      <div class="document-results-sort">
-        <span>Sort by</span>
-        <select>
-          <option selected>Recently updated</option>
-        </select>
-      </div>
-      <br>
-      <br>
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Traffic - developer</h3>
-          <ul class="govuk-list">
-
-            <li><a href="#">Deadline 2 - Answer to panel's questions - Traffic and transport 1</a></li>
-            <li><a href="#">Deadline 4 - Summary of input into hearing - Traffic and transport</a></li>
-            <li><a href="#">Deadline 6 - Answer to panel's questions - Traffic and transport 2</a></li>
-            <li><a href="#">Deadline 8 - Summary of input into hearing - Traffic and transport 22 august 2019</a></li>
-          </ul>
-        </div>
-      <br>
-      <br>
-
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Traffic - organisation interested parties</h3>
-          <ul class="govuk-list">
-            <li><a href="#">Traffic action group - Deadline 2 - Traffic analysis report (late submission)</a></li>
-            <li><a href="#">Traffic action group - Deadline 2 - Written representation</a></li>
-            <li><a href="#">Traffic action group - Deadline 3 - Summary of input into hearings - 22 and 23 May 2019</a></li>
-            <li><a href="#">Traffic action group - Additional information - Traffic analysis</a></li>
-          </ul>
-        </div>
-        <br>
-        <br>
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Traffic - examining panel meeting agendas</h3>
-          <ul class="govuk-list">
-            <li><a href="#">Agenda for traffic and transportation hearing (8) - 13 June 2019</a></li>
-            <li><a href="#">Agenda for traffic and transportation hearing (9) - 22 August 2019</a></li>
-          </ul>
-        </div>
-        <br>
-        <br>
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Noise - developer</h3>
-          <ul class="govuk-list">
-            <li><a href="#">Deadline 2 - Answer to panel's questions - Noise and vibration effects (1)</a></li>
-            <li><a href="#">Deadline 8 - Summary of input into hearing - Noise and vibration</a></li>
-            <li><a href="#">Deadline 6 - Answer to panel's questions - Noise and vibration effects (2)</a></li>
-          </ul>
-        </div>
-        <br>
-        <br>
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Noise - organisation interested parties</h3>
-          <ul class="govuk-list">
-            <li><a href="#">Dewsbury Alliance - Deadline 2 - Written representation - Noise and vibration</a></li>
-            <li><a href="#">Dewsbury Alliance - Deadline 4 - Summary of input into hearings - Water, geology - Noise, vibration</a></li>
-          </ul>
-        </div>
-        <br>
-        <br>
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Noise - examining panel meeting agendas</h3>
-          <ul class="govuk-list">
-            <li><a href="#">Agenda for noise, vibration, health and wellbeing hearing (5) - 12 June 2019</a></li>
-          </ul>
-        </div>
-        <br>
-        <br>
-      <div class="pins-search-results-group">
-        <h3 class="govuk-heading-s">Air quality - developer</h3>
-          <ul class="govuk-list">
-            <li><a href="#">Deadline 2 - Answer to panel's questions - Air quality and emissions (1)</a></li>
-            <li><a href="#">Deadline 6 - Answer to panel's questions - Air quality and emissions (2)</a></li>
-          </ul>
-        </div>
-
-
-            <br>
-            <br>
-
-
-
-              <a href="#"class="govuk-link govuk-link--no-underline">1</a>
-              <a href="#">2</a>
-              <a href="#">Next</a>
-
-
-      </div>
       </div>
   </section>
 {% endblock %}
@@ -306,31 +248,3 @@
 {% block footer %}
   {{ pinsFooter() }}
 {% endblock %}
-<!-- {% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  meta: {
-    items: [
-      {
-        href: "#1",
-        text: "Sitemap"
-      },
-      {
-        href: "#2",
-        text: "Terms and conditions"
-      },
-      {
-        href: "#3",
-        text: "Accessibility"
-      },
-      {
-        href: "#4",
-        text: "Privacy Notice (on GOV.UK)"
-      },
-      {
-        href: "#5",
-        text: "Cookies"
-      }
-    ]
-  }
-}) }} -->

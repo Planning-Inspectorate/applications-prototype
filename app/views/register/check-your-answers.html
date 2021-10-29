@@ -17,7 +17,7 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="comment">Back</a>
+  <a class="govuk-back-link" href="topic">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -147,22 +147,14 @@
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
+     
 
-      <p class="govuk-body">By submitting this form you are registering as an interested party. This means you can take part in the examination of the project and comment on the project details. The examining panel must consider your views when they recommend if the project should go ahead.</p>
-      <p class="govuk-body">By registering as an interested party, you are agreeing that we will use your details to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>contact you about the project or if we need more information</li>
-        <li>let you know when you can submit further comments as part of examination</li>
-      </ul>
-      <p class="govuk-body">You are also agreeing that all comments you submit, along with your name, will be published on the website. No contact details will be made public.</p>
-
-      <form action="confirmation" method="post" novalidate>
+      <form action="declaration" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
+          Accept and continue
         </button>
 
       </form>

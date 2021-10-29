@@ -1,0 +1,504 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+VAT registration prototype versions
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <h1 class="govuk-heading-xl">
+      VAT registration prototypes
+    </h1>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Version</th>
+          <th scope="col" class="govuk-table__header">Changes from previous version</th>
+          <th scope="col" class="govuk-table__header">Links</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-19-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-8059">SAR-8059</a> - UK established exporter
+                flow added to the prototype. Sits on the VAT reason page and when selected, misses out the threshold
+                questions and goes straight to the zero rated goods turnover questions. </li>
+              <li>Content updates for attachements - Visa was capitalised, this is now not capitalised on the flow</li>
+              <li>Content updates for the non uk company flow - UTR page and check answers page</li>
+              <li>Content updates for the postal cover sheet, confirmation page to change 20 days to 30 days and
+                description of the NETP on the business entity page.</li>
+              <li>VAT registration reason content update for the UK established overseas exporter.</li>
+              <li>CIO content updated on the GRS service</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-19-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-19-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-19-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-18-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6949">SAR-6949</a> - Updates to the NI
+                Protocol pages</li>
+              <li>Updates to the email supporting documents</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-18-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-18-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-18-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-17-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Fixes to the transactor details sections</li>
+              <li>Added the email option back for the attachments section</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-8047">SAR-8047</a> - Content updated for the
+                postal cover sheet based on feedback from crits</li>
+              <li>Added the attachment routes back into the prototype alongside the post and email versions</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-8127">SAR-8127</a> - Updated the manual
+                address input to match our needs for the service. This is only for the TRN solution and PPOB address.
+              </li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6949">SAR-6949</a> - First stab of the
+                Northern Ireland Protocol pages</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-17-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-17-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-17-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-16-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>NETP flow updates</li>
+              <li>Business involvements fixes</li>
+              <li>First stab of the attachment cover sheet</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-16-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-16-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-16-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-15-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6020">SAR-6020</a> - updated the flow for
+                the other business involvements. Included CRN, UTR, business name, actively trading and VRN.</li>
+              <li>Updated the business entity page for overseas so there is a description of what a NETP is.</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-8048">SAR-8048</a> - Added reference number
+                to confirmation page</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7402">SAR-7402</a> Content updates to the
+                eori page</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-15-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-15-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-15-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-14-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7728">SAR-7728</a> - Content updates to the
+                flat rate start date page</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7652">SAR-7652</a> - Added features of the
+                NETP journey. </li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-14-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-14-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-14-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-13-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Skip link added to the UTR page on the CIO journey and Reg soceity journey</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7534">SAR-7534</a> - MTD voluntary page
+                updated to try and get users to sign up before April 2022.</li>
+              <li>Moved the zero rated value to the eligibility section</li>
+              <li>Removed value of supplies from the task list and moved the refunds question after the EORI and trade
+                outside the UK questions.</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7576">SAR-7576</a> - Send partners details
+                via post or email added</li>
+              <li>Trading name update to include what you cannot put in the input field</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-13-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-13-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-13-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-12-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6998">SAR-6998</a>- Attachments, updated to
+                include email and post options. Removed the upload functionality until we get
+                to a stage when we need to design this.</li>
+              <li>Agent services dashboard added - means we can remove the personal information if they have came
+                through this dashboard.</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6502">SAR-6502</a> - Annual accounting
+                updates for the payment method screen to provide clearer guidance on how to set up a Direct Debit.</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-12-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-12-0/mvp/guidance/vat-registration">MVP</a> <br><br>
+            <a href="/0-12-0/classic_services/home">Agent services view</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-11-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Removed the check if your can register online page based on discussions with end to end review</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6502">SAR-6502</a> - Annual accounting
+                scheme
+                flow updates</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7428">SAR-7428<a> - Prevent users from
+                    progressing with the new journey if requesting exception/exemption</li>
+              <li>Direct debit removed from the payment method page for Annual accounting scheme. Due to ETMP not having
+                it at the moment. </li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-11-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-11-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-10-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Moved the schemes section before staggers</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-6502">SAR-6502</a> - Updates to the content
+                for annual accounting scheme</li>
+              <li><a href="https://jira.tools.tax.service.gov.uk/browse/SAR-7297">SAR-7297</a> - Brexit checker added to
+                the business activities page</li>
+              <li>Updated the SIC code search buttons. When updating the components in live, the button changes and
+                isn't inline with the input field - Need to research this to see if this causes issues with users
+                otherwise, need to revert back to previous verison.</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-10-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-10-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-9-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Task list updated to allow 3rd party and parterships</li>
+              <li>Partnership flow added back into the journey</li>
+              <li>3rd party and agent flow updated to work again</li>
+              <li>Fixed partners details by adding it into the task list</li>
+              <li>Removed the service eligibility question for the annual accounting scheme</li>
+              <li>Added the annual accounting flow into the schemes section. <span
+                  class="govuk-!-font-weight-bold">(Needs content design)</span></li>
+              <li>Updated check your answers to remove the annual accounting scheme page in eligibility and move it into
+                the VAT registration section</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-9-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-9-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-8-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li> Other entities flows </li>
+              <li>Updated the check your answers so it show dynamic content and has the updated flow included</li>
+              <li>Fixed establishment page added back into flow</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-8-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-8-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-7-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Task list updated - updated so there isn't alot of sections on and based on research, users found the
+                previous version too long</li>
+              <li>Updated the business telephone number so it doesn't just ask for a mobile number. The business might
+                not have a mobile number so keeping it open for any business number.
+              </li>
+              <li>Updated the VAT registration date so it explains how we got the date displayed.</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-7-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-7-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-6-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>CID sole trader check error page added</li>
+              <li>Changed H1 to ‘Will the business do any import or export activities in the next 12 months?’</li>
+              <li> Changed H1 to ‘Have you been involved in another business or taken over a VAT-registered business?’
+              </li>
+              <li>Changed H1 to ‘Will the business be dealing with land, property or racehorses?’</li>
+              <li>Annual accounting - Inserted a ‘details’ element to hide some of the content</li>
+              <li>Updated the H1 to ‘Whose business do you want to register?’ and updated the radio button content.</li>
+              <li>VAT reg reason page - Updated h1 to ‘Why do you want to register the business for VAT?’ and Updated
+                radio button content.</li>
+              <li>eligibility introduction page - Inserted contraction - changed from ‘we will’ to ‘we’ll’</li>
+              <li>Attachments flow added</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-6-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-6-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-5-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Updated the UK company flow to match the journey map for the applicant section. Also removed the h1
+                agent bits until we get around to looking at this.</li>
+              <li>Fixes to the agent flow</li>
+              <li>Updated the h1 on the kick out exeception page to include 'Only' </li>
+              <li>Fixed the partnership flow</li>
+              <li>Updated the reference page to only show when they say they're an agent</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-5-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-5-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-4-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Updated the elgibility back what we had for MVP and removed the 'use a different service' otrs screens
+                to redirect the user straight there <a target="_blank"
+                  href="https://jira.tools.tax.service.gov.uk/browse/SAR-6816">SAR-6816</a>
+              </li>
+              <li>
+                Added save for later stuff
+              </li>
+              <li>
+                Updated the eligibility flow to match the MVP
+              </li>
+              <li>
+                Updated the MTD mandatory page's H1 so it doesn't suggest that the user has to sign up to MTD themselves
+              </li>
+              <li>
+                Client reference content updated
+              </li>
+              <li>
+                Removed the save and return button on the sic code service pages
+              </li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-4-0/guidance/vat-registration">non MVP</a> <br><br>
+            <a href="/0-4-0/mvp/guidance/vat-registration">MVP</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-3-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Other business involvements page updated content</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-3-0/guidance/vat-registration">non MVP prototype</a> <br><br>
+            <a href="/0-3-0/mvp/guidance/vat-registration">MVP prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-2-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>EU exit content updates</li>
+              <li>Updates to the agent flow</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-2-0/guidance/vat-registration">non MVP prototype</a> <br><br>
+            <a href="/0-2-0/mvp/guidance/vat-registration">MVP prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-1-0</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Updated guidance page to the latest version</li>
+              <li>updated banners in include beta rather than alpha</li>
+              <li>Content change on taxable turnover - Define what taxable turnover is</li>
+              <li>Content design added onto the vat reg reason page</li>
+              <li>Content changes on the other business involvements page</li>
+              <li>Content changes to zero rated goods/services page defined</li>
+              <li>Content changes to the selling assests page defined</li>
+              <li>Business entity pages updated</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-1-0/guidance/vat-registration">non MVP prototype</a> <br><br>
+            <a href="/0-1-0/mvp/guidance/vat-registration">MVP prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-8</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li> (MVP) Reason fornot having bank details updated to remove sort code and account number not accepted.
+                This
+                will just be validation when they enter them into the account details page. </li>
+              <li>(MVP) Compliance questions for labour questions created - use sic code <span
+                  class="govuk-!-font-weight-bold">(42110) </span>on the search page to go
+                through them</li>
+              <li>(MVP) Removed contractions from trading name and voluntary vat page</li>
+              <li>(MVP) Added the confirm and review sic code page into the journey flow</li>
+              <li>Added more partnership stuff in</li>
+              <li>(MVP) Earlier date of registration features added</li>
+              <li>Task list updated to latest standard</li>
+              <li>Confirmation page updated on non mvp and mvp flows</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-8/guidance/overview">View non MVP prototype</a> <br><br>
+            <a href="/0-0-8/mvp/guidance/overview">View MVP prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-7</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>(MVP) Removed the questions around buying or selling to another EU member state</li>
+              <li>(MVP) Combined the business contact details onto one page to match SCRS</li>
+              <li>(MVP) Moved the do you have a nino and whos the application for page before the traffic management
+                section
+              </li>
+              <li>
+                Fixed some of the routing issues for user research
+              </li>
+              <li>
+                More non-mvp partnership flow work completed
+              </li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-7/guidance/overview">View non MVP prototype</a> <br><br>
+            <a href="/0-0-7/mvp/guidance/overview">View MVP prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-6</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Added confirmation page</li>
+              <li>Updated business entity to say UK company rather than Limited company</li>
+              <li>Revised MVP flow added</li>
+              <li>More pages added to the partnership flow</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-6/guidance/overview">View non MVP prototype</a> <br><br>
+            <a href="/0-0-6/mvp/guidance/overview">View MVP prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-5</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Updates to the final check your answers</li>
+              <li>Updates to the eligibility flow</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-5/guidance/overview">View prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-4</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <span class="govuk-!-font-weight-bold"> First stab of full end to end MVP flow</span>
+              <li>Part of sic codes but not fully completed</li>
+              <li>flat rate scheme added</li>
+              <li>VAT staggers</li>
+              <li>VAT registration date</li>
+              <li>Business address added</li>
+              <li>Business contact details added</li>
+              <li>Value of supplies added</li>
+              <li>Bank account details added</li>
+              <li>Check answers and confirmation routes added but no pages currently designed</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-4/guidance/overview">View prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-3</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Fixes to the partnership known fact flows</li>
+              <li>Added previous name date field into the flow</li>
+              <li>Content updates to save and return page also the error pages for MOSS</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-3/guidance/overview">View prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-2</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Updated the flow to avoid duplicated screens for transactor and applicant</li>
+              <li>Added applicant part into the flow</li>
+              <li>Added IV known facts - this is part of the SI work (use SAUTR - 1234567899)</li>
+              <li>Removed the tasklist so we can understand the logic before testing</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-2/guidance/overview">View prototype</a> <br>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">0-0-1</th>
+          <td class="govuk-table__cell">First inital prototype</td>
+          <td class="govuk-table__cell">
+            <a href="/0-0-1/guidance/overview">View prototype</a> <br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
