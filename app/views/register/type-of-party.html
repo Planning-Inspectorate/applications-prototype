@@ -23,10 +23,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <p>Register to have your say about a national infrastructure project</p>      
-
+    <div class="govuk-grid-column-two-thirds"> 
       <form class="form" action="full-name" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -36,23 +33,23 @@
             name: "type-of-interested-party",
             fieldset: {
               legend: {
-                text: "What type of interested party are you?",
+                text: "Who are you registering for?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
               {
-                value: "An person interested in having my say",
-                text: "An person interested in having my say"
+                value: "Myself",
+                text: "Myself"
               },
               {
-                value: "Someone registering for an organisation I work or volunteer for",
-                text: "Someone registering for an organisation I work or volunteer for"
+                value: "An organisation I work or volunteer for",
+                text: "An organisation I work or volunteer for"
               },
               {
-                value: "Someone registering on behalf of another person or organisation",
-                text: "Someone registering on behalf of another person or organisation"
+                value: "On behalf of another person or organisation",
+                text: "On behalf of another person or organisation"
               }
             ]
           }) }}

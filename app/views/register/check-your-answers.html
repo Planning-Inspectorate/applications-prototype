@@ -24,14 +24,14 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-xl">Check your answers before registering</h1>
 
       <h2 class="govuk-heading-m">Personal details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Type of interested party
+            Who are you registering for?
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['type-of-interested-party']}}
@@ -39,7 +39,7 @@
           <dd class="govuk-summary-list__actions">
             <a href="type-of-party">
               Change
-              <span class="govuk-visually-hidden"> type of interested party</span>
+              <span class="govuk-visually-hidden"> who you are registering for</span>
             </a>
           </dd>
         </div>
@@ -73,14 +73,14 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            address
+            Address
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['address-line-1'] }}
             <br>{{ data['address-line-2'] }}
-            <br>{{ data['address-town'] }}
-            <br>{{ data['address-county'] }}
+            <br>{{ data['address-line-3'] }}
             <br>{{ data['address-postcode'] }}
+            <br>{{ data['address-country'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="address">
@@ -119,6 +119,20 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Your comments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['comment'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="comment">
+              Change
+              <span class="govuk-visually-hidden"> your comments</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Topics commenting about
           </dt>
           <dd class="govuk-summary-list__value">
@@ -128,20 +142,6 @@
             <a href="topic">
               Change
               <span class="govuk-visually-hidden"> topics of comment</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your comment
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['comment'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="comment">
-              Change
-              <span class="govuk-visually-hidden"> your comment</span>
             </a>
           </dd>
         </div>
