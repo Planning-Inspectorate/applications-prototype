@@ -291,8 +291,10 @@ $pins-timeline-circle-size: 50px;
                 }
 
                 &.completed {
-                    font-size: .6em;
-                    font-weight: normal;
+                    .pins-timeline-badge {
+                        font-size: 1.6em;
+                        font-weight: normal;
+                    }
                 }
 
                 &.current {
