@@ -28,7 +28,7 @@
   {{ pinsHeader() }}
 {% endblock %}
 
-{% block beforeContent %} 
+{% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -36,14 +36,27 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 {% endblock %}
+{% set containerClasses = "pins-sidebar--container" %}
+{% set hasContentsAside = true %}
 
+{% block contentsAside %}
+  <aside class="pins-aside-page-contents">
+    <h2 class="govuk-heading-s">Contents</h2>
+    <ul class="govuk-list">
+      <li><a href="#">Dewsbury A404 project information</a></li>
+      <li><a href="#">About the application</a></li>
+      <li><a href="#">Topics for Examination</a></li>
+      <li><a href="#">All Examination documents</a></li>
+      <li><a href="#">Recommendation and decision</a></li>
+  </aside>
+{% endblock %}
 {% block content %}
   <h1 class="govuk-heading-l">A404 Dewsbury project information</h1>
   <p>The potential A404 Dewsbury to Berwick Down scheme proposes to construct a new section of dual carriageway to address problems associated with the single carriageway section of the A404 between Amesbury’s Countess roundabout and the dual carriageway section to the west of Winterbourne Stoke. </p>
   <p><a href="#">Sign-up for updates via email, letter or text</a>.</p>
 
   <div class="pins-timeline">
-    <p>This project is at: <strong>Review of the application stage</strong></p>
+    <p>This project is at: <strong>Review of the application stage (28 days remaining)</strong></p>
     <ol>
       <li class="completed">Pre-application<div class="pins-timeline-badge">&#10003;</div></li>
       <li class="current">Review of the application
@@ -57,10 +70,10 @@
       <li>Examination of the application<div class="pins-timeline-badge"></div></li>
       <li>Recommendation and decision<div class="pins-timeline-badge"></div></li>
     </ol>
-    <p>This means you cannot register to have your say yet. You will be able to register at the start of the gathering and reviewing information stage.</p>
-    <p><a href="dco-process-guide/index.html">Find out more about the process for Development Consent Orders</a>.</p>
+    <p>We are reviewing the application. You can <a href="#">Sign up for email updates </a> and we will let you know when we have decided if we can accept the application for Examination.</p>
+    <p><a href="../interested-party-guide/registering-to-have-your-say">Find out what you can do if we accept the application for Examination</a>.</p>
   </div>
-  <h2 class="govuk-heading-m">About the project</h2>
+
   <!-- Again, this stage won't have the columns as we don't have the information/docs yet. -->
   <!-- <ul class="pins-list-columns">
     <li><h3 class="govuk-heading-s"><a href="#">Application introduction</a></h3><p>Information about the project and what the developer is proposing</p></li>
@@ -69,11 +82,18 @@
   </ul> -->
 
   <h2 class="govuk-heading-m">Register to have your say</h2>
-  <p>If you want to have your say about this project, you can register and tell us what you think.</p>
-  <p><a href="register/start.html">Register to have your say about a national infrastructure project</a>.</p>
+  <p>Once we have decided if we can accept the proposed project application for Examination, we will update this page.</p>
 
-  <h2 class="govuk-heading-m">More detailed project information</h2>
-  <p>If you are looking for more detailed information about this project, you can <a href="#">view all project information</a>.</p>
+  <p>If it is accepted, we will publish detailed project information. You will then be able to register to have your say about this project.
+
+<a href="#">Sign up for email updates to find out when the page is updated.</a></p>
+<p><a href="../dco-process-guide/review-of-the-application">Find out more about the review of the application process for national infrastructure projects</a></p>
+
+
+<h2 class="govuk-heading-m">About the Developer</h2>
+<p>The Developer proposing this project is Acme Group Ltd.
+
+Visit <a href="#">the project website by Acme Group Ltd</a> for more information.</p>
 {% endblock %}
 
 {% block footer %}
