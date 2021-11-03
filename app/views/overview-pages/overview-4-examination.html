@@ -28,7 +28,7 @@
   {{ pinsHeader() }}
 {% endblock %}
 
-{% block beforeContent %} 
+{% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -36,11 +36,24 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 {% endblock %}
+{% set containerClasses = "pins-sidebar--container" %}
+{% set hasContentsAside = true %}
 
+{% block contentsAside %}
+  <aside class="pins-aside-page-contents">
+    <h2 class="govuk-heading-s">Contents</h2>
+    <ul class="govuk-list">
+      <li><a href="#">Dewsbury A404 project information</a></li>
+      <li><a href="#">About the application</a></li>
+      <li><a href="#">Topics for Examination</a></li>
+      <li><a href="#">All Examination documents</a></li>
+      <li><a href="#">Recommendation and decision</a></li>
+  </aside>
+{% endblock %}
 {% block content %}
   <h1 class="govuk-heading-l">A404 Dewsbury project information</h1>
   <p>The potential A404 Dewsbury to Berwick Down scheme proposes to construct a new section of dual carriageway to address problems associated with the single carriageway section of the A404 between Amesbury’s Countess roundabout and the dual carriageway section to the west of Winterbourne Stoke. </p>
-  <p><a href="#">Sign-up for updates via email, letter or text</a>.</p>
+<p><a href="#">Sign-up for updates about this project</a>.</p>
 
   <div class="pins-timeline">
     <p>This project is at: <strong>Examination of the application stage</strong></p>
@@ -57,8 +70,9 @@
       </li>
       <li>Recommendation and decision<div class="pins-timeline-badge"></div></li>
     </ol>
-    <p>This means you cannot register to have your say yet. You will be able to register at the start of the gathering and reviewing information stage.</p>
-    <p><a href="dco-process-guide/index.html">Find out more about the process for Development Consent Orders</a>.</p>
+    <p>The registration to have your say about this project has ended.</p>
+    <p>You can still  <a href="#"> submit a comment,</a> but will need to complete a form to ask to be registered.</p>
+    <p><a href="../interested-party-guide/having-your-say-examination">Find out more about what you can do during the Examination of the project</a>.</p>
   </div>
   <h2 class="govuk-heading-m">Affected area</h2>
 <div class="pins-map-enclosure">
@@ -87,7 +101,7 @@
   <ul class="govuk-list govuk-list--bullet">
     <li>the impact this project will have for an area in England or Wales</li>
   </ul>
-  <a href="check-for-impact/postcode.html" class="govuk-button">Start now</a>
+  <a href="../check-for-impact/postcode.html" class="govuk-button">Start now</a>
   <h2 class="govuk-heading-m">About the project</h2>
   <ul class="pins-list-columns">
     <li><h3 class="govuk-heading-s"><a href="#">Application introduction</a></h3><p>Information about the project and what the developer is proposing</p></li>
@@ -95,12 +109,18 @@
     <li><h3 class="govuk-heading-s"><a href="#">Drawings</a></h3><p>How the propsed project will look and the area it will impact.</p></li>
   </ul>
 
-  <h2 class="govuk-heading-m">Register to have your say</h2>
-  <p>If you want to have your say about this project, you can register and tell us what you think.</p>
-  <p><a href="register/start.html">Register to have your say about a national infrastructure project</a>.</p>
+  <h2 class="govuk-heading-m">What you can do at this stage</h2>
+  <p>You cannot register to have your say about this project as the deadline has passed. If you are registered to have your say, you can submit comments at each deadline. <br><br>
+
+If you are not registered, you can still submit comments, but will need to fill in a form to ask to be registered and given an interested party reference.</p>
+
 
   <h2 class="govuk-heading-m">More detailed project information</h2>
   <p>If you are looking for more detailed information about this project, you can <a href="#">view all project information</a>.</p>
+  <h2 class="govuk-heading-m">About the Developer</h2>
+  <p>The Developer proposing this project is Acme Group Ltd.
+
+  Visit <a href="#">the project website by Acme Group Ltd</a> for more information.</p>
 {% endblock %}
 
 {% block footer %}
