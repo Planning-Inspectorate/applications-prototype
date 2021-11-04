@@ -60,22 +60,6 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          What is your job title or volunteer role?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['organisation-role'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="over-18">
-            Change
-            <span class="govuk-visually-hidden">
-              job title or volunteer role</span
-            >
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
           What is the name of your organisation or charity?
         </dt>
         <dd class="govuk-summary-list__value">
@@ -86,6 +70,22 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             Change
             <span class="govuk-visually-hidden">
               name of your organisation or charity</span
+            >
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What is your job title or volunteer role?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['organisation-role'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="over-18">
+            Change
+            <span class="govuk-visually-hidden">
+              job title or volunteer role</span
             >
           </a>
         </dd>
