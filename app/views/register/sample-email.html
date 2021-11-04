@@ -1,8 +1,41 @@
 {% extends "layout.html" %} {% block pageTitle %} Example email {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third"></div>
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
+    <h3 class="govuk-heading-m">Inbox</h3>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Planning Inspectorate</span>
+      <p class="govuk-body govuk-!-margin-bottom-1">
+        <strong>You are registered&hellip;</strong>
+      </p>
+      <p class="govuk-body">Dear John Doe,</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Todd Smith</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Jessica Ward</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Timothy Jenkins</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+  </div>
+  <div class="govuk-grid-column-three-quarters">
     <ul class="govuk-list">
       <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
       <li>To: &lt;example@email.com&gt;</li>
@@ -17,6 +50,9 @@
     <p class="govuk-body">Dear John Doe,</p>
     <p class="govuk-body">
       You are now registered to have your say about the A404 Dewsbury project
+    </p>
+    <p class="govuk-body">
+      Your Interested Party reference number is: <strong>1234567890</strong>
     </p>
     <p class="govuk-body">
       We will contact you if we need more information about the comments you
