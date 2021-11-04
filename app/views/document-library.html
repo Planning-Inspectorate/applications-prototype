@@ -47,29 +47,16 @@
   <aside class="pins-aside-page-contents">
     <h2 class="govuk-heading-s">Contents</h2>
     <ul class="govuk-list">
-      <li><a href="#">Dewsbury A404 project information</a></li>
-      <li><a href="#">Detailed information and documents</a></li>
-      <li><a href="#">Examination of the project</a></li>
-      <li class="pins-contents-current-page">All examination information
-        <ul>
-          <li class="pins-contents-current-page">Topics and replies
-            <ul>
-              <li><a href="#">Deadlines</a></li>
-              <li><a href="#">Hearing and meeting agendas</a></li>
-              <li><a href="#">Recordings of hearings</a></li>
-              <li><a href="#">Procedural decisions</a></li>
-              <li><a href="#">Site inspections</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li><a href="#">A404 Dewsbury project information</a></li>
+      <li><a href="#">About the application</a></li>
+      <li><a href="#">All Examination documents</a></li>
       <li><a href="#">Recommendation and decision</a></li>
   </aside>
 {% endblock %}
 
 {% block content %}
   <h1 class="govuk-heading-l">A404 Dewsbury</h1>
-  <h2 class="govuk-heading-m">Project information and documents</h2>
+  <h2 class="govuk-heading-m">All examination information</h2>
   <div class="govuk-grid-row">
     <section class="pins-document-library-search govuk-grid-column-one-quarter">
       <label class="pins-label-small" for="search_documents">Search</label>
@@ -114,7 +101,7 @@
           </div>
           <div id="accordion-content-examining-panel" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
             <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-examining-panel">
-            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-examining-panel">Examining panel</label>
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-examining-panel">Examining authority</label>
           </div>
           <div id="accordion-content-developer" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
             <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-developer">
@@ -130,7 +117,7 @@
           </div>
           <div id="accordion-content-official-body-and-local-authority" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-who-submitted">
             <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-official-body-and-local-authority">
-            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-official-body-and-local-authority">Official body and local authority</label>
+            <label class="govuk-label govuk-checkboxes__label" for="who-submitted-official-body-and-local-authority">Official bodies and local authorities</label>
           </div>
         </div>
         <div class="govuk-accordion__section govuk-checkboxes--small pins-filter-checkboxes">
@@ -142,23 +129,32 @@
             </h2>
           </div>
           <div id="accordion-content-plans-and-drawings" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
-            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-plans-and-drawings">
-            <label class="govuk-label govuk-checkboxes__label" for="type-plans-and-drawings">Plans and drawings</label>
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Topics-and-replies">
+            <label class="govuk-label govuk-checkboxes__label" for="type-plans-and-drawings">Topics and replies</label>
           </div>
           <div id="accordion-content-environmental" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
-            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-environmental">
-            <label class="govuk-label govuk-checkboxes__label" for="type-environmental">Environmental</label>
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Deadlines">
+            <label class="govuk-label govuk-checkboxes__label" for="type-environmental">Deadlines</label>
           </div>
           <div id="accordion-content-procedure" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
-            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-procedure">
-            <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Procedure</label>
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Hearing-agendas">
+            <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Hearing agendas</label>
+          </div>
+          <div id="accordion-content-procedure" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Recordings-of-hearings">
+            <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Recordings of hearings</label>
+          </div>
+          <div id="accordion-content-procedure" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Procedural-decisions">
+            <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Procedural decisions</label>
           </div>
           <div id="accordion-content-consultation-reports" class="govuk-accordion__section-content govuk-checkboxes__item govuk-checkboxes__item" aria-labelledby="accordion-default-heading-type-of-information">
-            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="type-consultation-reports">
-            <label class="govuk-label govuk-checkboxes__label" for="type-consultation-reports">Consultation reports</label>
+            <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Site-inspections">
+            <label class="govuk-label govuk-checkboxes__label" for="type-consultation-reports">Site inspections</label>
           </div>
         </div>
-      </div>
+      </div> <br>
+      <a href="#" class="govuk-button">Apply filters</a>
     </section>
     <section class="documents-results govuk-grid-column-three-quarters">
       <p class="results"><strong><span id="results-number">18</span> results<strong></p>
