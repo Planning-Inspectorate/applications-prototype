@@ -23,8 +23,8 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"> 
-      <form class="form" action="full-name" method="post">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -62,7 +62,7 @@
   </div>
 
 {% endblock %}
-  
+
 {% block footer %}
   {{ pinsFooter() }}
 {% endblock %}
