@@ -1,33 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example email</title>
-
-    <style>
-        .btn {
-            display: inline-block;
-            background-color: #005a30;
-            padding: 8px 10px 7px;
-            color: white;
-            font-family: 'Helvetica', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 24px;
-            margin: 40px;
-            text-decoration: none;
-        }
-
-        img {
-            width: 100%;
-            max-width: 1920px;
-            display: block;
-            margin: 10px auto;
-        }
-    </style>
-</head>
-<body>
-    <a href="confirmation.html" class="btn">Return to confirmation page</a>
-    <img src="../public/images/Email.png" alt="A screenshot of an example email" />
-</body>
-</html>
+{% extends "layout.html" %} {% block pageTitle %} Example email {% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third"></div>
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
+      <li>To: &lt;example@email.com&gt;</li>
+      <li>
+        Subject:
+        <strong>You are registered to have your say about A404 Dewsbury</strong>
+      </li>
+    </ul>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <p class="govuk-body">Dear John Doe,</p>
+    <p class="govuk-body">
+      You are now registered to have your say about the A404 Dewsbury project
+    </p>
+    <p class="govuk-body">
+      We will contact you if we need more information about the comments you
+      provided in the registration form. We have attached a copy of your
+      registration form to this email
+    </p>
+    <h4 class="govuk-heading-s">How and when to submit further comments</h4>
+    <p class="govuk-body">
+      You can submit further comments at each deadline during the Examination
+      stage. You must submit your comments by completeing the form on the
+      project page, which will appear once the Examination of the application
+      starts.
+    </p>
+    <p class="govuk-body">
+      You will need your Interested Party reference number to make sure your
+      comments are included in the Examination of the application.
+    </p>
+    <p class="govuk-body">
+      We will email you to let you know when the Examination for this project
+      starts. You can
+      <a class="govuk-link" rel="noreferrer noopener" href="#"
+        >get involved in the Preliminary Meeting</a
+      >
+      where we plan how we are going to examine the application.
+    </p>
+    <p class="govuk-body">
+      You can check our guide to
+      <a class="govuk-link" rel="noreferrer noopener" href="#"
+        >find out more about having your say during the Examination of the
+        application, (opens in a new tab)</a
+      >
+    </p>
+    <p class="govuk-body">Yours Sincerely</p>
+    <p class="govuk-body">The Planning Inspectorate</p>
+  </div>
+</div>
+{% endblock %}
