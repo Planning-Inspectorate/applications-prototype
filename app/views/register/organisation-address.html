@@ -27,7 +27,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="organisation-email" method="post">
+      <form autocomplete="off" class="form" action="organisation-email" method="post">
         {% call govukFieldset({
           legend: {
             text: "UK address details",
@@ -41,8 +41,7 @@
               text: 'Address line 1'
             },
             id: "organisation-address-line-1",
-            name: "organisation-address-line-1",
-            autocomplete: "address-line1"
+            name: "organisation-address-line-1"
           }) }}
 
           {{ govukInput({
@@ -50,8 +49,7 @@
               text: 'Address line 2'
             },
             id: "organisation-address-line-2",
-            name: "organisation-address-line-2",
-            autocomplete: "address-line2"
+            name: "organisation-address-line-2"
           }) }}
 
           {{ govukInput({
@@ -60,8 +58,7 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "organisation-address-line-3",
-            name: "organisation-address-line-3",
-            autocomplete: "address-level3"
+            name: "organisation-address-line-3"
           }) }}
 
 
@@ -71,8 +68,7 @@
             },
             classes: "govuk-input--width-10",
             id: "organisation-address-postcode",
-            name: "organisation-address-postcode",
-            autocomplete: "postal-code"
+            name: "organisation-address-postcode"
           }) }}
 
           {{ govukInput({
