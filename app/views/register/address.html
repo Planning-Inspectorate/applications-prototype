@@ -27,7 +27,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="email" method="post">
+      <form autocomplete="off" class="form" action="email" method="post">
         {% call govukFieldset({
           legend: {
             text: "UK address details",
@@ -64,7 +64,7 @@
             autocomplete: "address-level3"
           }) }}
 
-          
+
           {{ govukInput({
             label: {
               text: "Postcode"
@@ -74,7 +74,7 @@
             name: "address-postcode",
             autocomplete: "postal-code"
           }) }}
-          
+
           {{ govukInput({
             label: {
               text: "Country"
@@ -94,7 +94,7 @@
   </div>
 
 {% endblock %}
-  
+
 {% block footer %}
   {{ pinsFooter() }}
 {% endblock %}
