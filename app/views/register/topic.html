@@ -24,7 +24,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="check-your-answers" method="post">
+      <form autocomplete="off" class="form" action="check-your-answers" method="post">
         <!-- Nunjucks object for the Other textbox -->
         {% set otherHtml %}
         {{ govukInput({
@@ -85,7 +85,7 @@
             }
           ]
         }) }}
-        
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
@@ -95,7 +95,7 @@
   </div>
 
 {% endblock %}
-  
+
 {% block footer %}
   {{ pinsFooter() }}
 {% endblock %}
