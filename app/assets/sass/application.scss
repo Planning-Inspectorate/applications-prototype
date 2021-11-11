@@ -1,15 +1,11 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
-
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: "/govuk/assets/";
-
-
 // PINS styles start here
 // PINS specific colours
 $pins-blue: #1d70b8;
-
 $pins-banner-background-color: #074745; // Dark green for main part of banner
 $pins-banner-background-secondary-color: #13a19b;
 $pins-banner-nav-background-color: #0a625f;
@@ -23,23 +19,18 @@ $pins-grey-background-colour: #f3f2f1;
 $pins-footer-background-colour: $pins-grey-background-colour;
 $pins-aside-background-colour: $pins-grey-background-colour;
 $pins-aside-border-colour: #707070;
-
 $pins-map-key-background: #f0f0f0;
 $pins-map-key-border: #707070;
 $pins-map-red: #d4351c;
-
 $pins-step-by-step-main-border-colour: #d8d9da;
 $pins-step-by-step-sidebar-border-colour: $pins-blue;
-
 $pins-timeline-circle-size: 50px;
-
 @mixin pins-step-by-step-primary-topper {
   border-top: 1px solid $pins-timeline-progress-colour;
   padding-top: 20px;
 }
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
-
 // Patterns that aren't in Frontend
 @import "patterns/step-by-step-header";
 @import "patterns/step-by-step-nav";
@@ -48,10 +39,7 @@ $pins-timeline-circle-size: 50px;
 @import "patterns/related-items";
 @import "patterns/breadcrumb";
 @import "patterns/dwp-timeline";
-
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
-
 // For use on pages with a contents bar on the side
 // // Don't forget to add .pins-sidebar--container as a variable!
 /*
@@ -59,6 +47,7 @@ $pins-timeline-circle-size: 50px;
 */
 .pins-sidebar--container {
   max-width: 1100px;
+
   &.govuk-main-wrapper {
     padding-top: 0;
   }
@@ -69,7 +58,6 @@ $pins-timeline-circle-size: 50px;
     gap: 20px;
     margin-top: 20px;
   }
-
   // .pins-aside-page-contents {
   //     flex: 0 0 260px;
   // }
@@ -85,14 +73,17 @@ $pins-timeline-circle-size: 50px;
   padding: 20px;
   background-color: $pins-aside-background-colour;
   border-bottom: 1px solid $pins-aside-border-colour;
+
   ul ul {
     list-style-type: disc;
     padding-left: 20px;
     margin-top: 15px;
+
     ul {
       padding-left: 15px;
     }
   }
+
   li {
     margin-bottom: 15px;
   }
@@ -111,13 +102,13 @@ $pins-timeline-circle-size: 50px;
     padding-bottom: 13px;
     border-bottom: none;
   }
-
   @media (min-width: 48.0625em) {
     .govuk-header__content {
       float: right;
       width: auto;
       margin-top: 17px;
     }
+
     .govuk-header__navigation {
       background-color: $pins-banner-nav-background-color;
       border-radius: 25px;
@@ -126,8 +117,8 @@ $pins-timeline-circle-size: 50px;
     }
   }
 
-  .govuk-header__navigation-item--active a:link,
   .govuk-header__navigation-item--active a:hover,
+  .govuk-header__navigation-item--active a:link,
   .govuk-header__navigation-item--active a:visited {
     color: #ffffff;
     text-decoration: underline;
@@ -144,7 +135,6 @@ $pins-timeline-circle-size: 50px;
     }
   }
 }
-
 // Contents list
 .pins-contents-list-title {
   margin-bottom: 0;
@@ -153,6 +143,7 @@ $pins-timeline-circle-size: 50px;
 .pins-contents-list li {
   padding: 7.5px 25px 0;
   position: relative;
+
   &:before {
     content: "—";
     position: absolute;
@@ -162,7 +153,6 @@ $pins-timeline-circle-size: 50px;
   }
 }
 // End contents list
-
 // Step by step
 .pins-step-by-step-section-main {
   @include pins-step-by-step-primary-topper();
@@ -172,12 +162,15 @@ $pins-timeline-circle-size: 50px;
   @include pins-step-by-step-primary-topper();
   padding-left: 2em;
   position: relative;
+
   a {
     text-decoration: none;
+
     strong {
       display: block;
       margin-bottom: 0.5em;
     }
+
     span {
       text-decoration: underline;
     }
@@ -197,6 +190,7 @@ svg.pins-step-by-step-navigation-icon {
   text-align: right;
   font-family: $govuk-font-family;
   color: $pins-step-by-step-sidebar-border-colour;
+
   &:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -207,20 +201,20 @@ svg.pins-step-by-step-navigation-icon {
   border-top: 1px solid $pins-step-by-step-sidebar-border-colour;
 }
 // End step-by-step
-
 // Note/notice
 .pins-info-notice {
   border-left: 10px solid #b1b4b6;
   padding: 0.5em 0 0.5em 1em;
   margin: 1em 0;
+
   p:last-child {
     margin-bottom: 0;
   }
 }
 // End note/notice
-
 // Overview page //
 //  // Overview page timeline
+
 .pins-timeline {
   display: block;
   background-color: $pins-timeline-background;
@@ -230,6 +224,7 @@ svg.pins-step-by-step-navigation-icon {
   .fa-hourglass-half {
     height: 50%;
   }
+
   ol {
     display: none;
   }
@@ -239,10 +234,8 @@ svg.pins-step-by-step-navigation-icon {
       display: flex;
       justify-content: space-between;
       flex-wrap: nowrap;
-
       padding-left: 0;
       font-family: $govuk-font-family;
-
       // Timeline connecting line
       &::before {
         content: "";
@@ -259,7 +252,6 @@ svg.pins-step-by-step-navigation-icon {
         font-size: 0.8em;
         list-style: none;
         text-align: center;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -270,24 +262,18 @@ svg.pins-step-by-step-navigation-icon {
           display: flex;
           justify-content: center;
           align-items: center;
-
           /* Alternative method for laying out
                     display: block;
                     line-height: 150%;
                     vertical-align: middle;
                     */
-
           color: $pins-timeline-badge-icon-colour;
-          box-shadow: inset 0 0 0 2px $pins-timeline-badge-background-solid,
-            inset 0 0 0 3px white;
+          box-shadow: inset 0 0 0 2px $pins-timeline-badge-background-solid, inset 0 0 0 3px white;
           background-color: $pins-timeline-badge-background-solid;
-
           height: $pins-timeline-circle-size;
           width: $pins-timeline-circle-size;
-
           border-radius: 50%;
           margin: 10px auto 0;
-
           font-size: 2em;
         }
 
@@ -308,12 +294,12 @@ svg.pins-step-by-step-navigation-icon {
   }
 }
 //  // End overview page timeline
-
 // styling the vertical nav
 ul.sidenav {
   li {
     margin-bottom: 20px;
   }
+
   .active {
     background: $pins-timeline-background;
     padding: 0.7em;
@@ -321,7 +307,6 @@ ul.sidenav {
     border-left: 6px solid $pins-banner-background-secondary-color;
   }
 }
-
 //  //  Map styling
 .pins-map-enclosure {
   position: relative;
@@ -338,6 +323,7 @@ ul.sidenav {
     width: 200px;
     padding: 10px 15px 5px;
     font-family: $govuk-font-family;
+
     h3 {
       margin-top: 0;
       margin-bottom: 0;
@@ -346,6 +332,7 @@ ul.sidenav {
     ul.pins-map-key-list {
       margin-bottom: 0;
       padding-left: 0;
+
       li {
         list-style: none;
       }
@@ -354,12 +341,15 @@ ul.sidenav {
     ul.pins-map-menu {
       border-bottom: 1px solid $pins-map-key-border;
       padding-bottom: 10px;
+
       li {
         margin-bottom: 10px;
       }
+
       input[type="radio"] {
         display: none;
       }
+
       input[type="radio"] + ::before {
         content: "";
         display: inline-block;
@@ -374,42 +364,32 @@ ul.sidenav {
       }
 
       input[type="radio"]:checked + ::before {
-        background: radial-gradient(
-          black 0%,
-          black 40%,
-          transparent 50%,
-          transparent
-        );
+        background: radial-gradient(black 0%, black 40%, transparent 50%, transparent);
       }
     }
 
     ul.pins-map-key-items {
       li {
         margin-bottom: 15px;
+
         span {
           position: relative;
           overflow: hidden;
           display: inline-block;
-
           width: 30px;
           height: 4px;
           border-radius: 5px;
           margin-bottom: 3px;
           margin-right: 5px;
-
           transform: rotate(-45deg);
         }
+
         .pins-map-key-icon--development_area {
           background-color: $pins-map-red;
         }
+
         .pins-map-key-icon--red_line_boundary {
-          background: repeating-linear-gradient(
-            90deg,
-            $pins-map-red,
-            $pins-map-red 5px,
-            $pins-map-key-background,
-            $pins-map-key-background 10px
-          );
+          background: repeating-linear-gradient(90deg, $pins-map-red, $pins-map-red 5px, $pins-map-key-background, $pins-map-key-background 10px);
         }
       }
     }
@@ -423,28 +403,27 @@ ul.sidenav {
   }
 }
 //  //  End map styling
-
 // PINS column layout
 .pins-list-columns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-left: 0;
+
   li {
     flex-basis: 30%;
     list-style: none;
   }
 }
 // End PINS column layout
-
 // Side filtering
 .govuk-accordion label {
   font-family: $govuk-font-family;
 }
 
-h2.govuk-accordion__section-heading,
 .govuk-accordion__section-heading .govuk-accordion__section-button,
-.pins-filter-checkboxes .govuk-label {
+.pins-filter-checkboxes .govuk-label,
+h2.govuk-accordion__section-heading {
   font-size: 16px;
 }
 
@@ -454,11 +433,14 @@ h2.govuk-accordion__section-heading,
   .govuk-accordion__section-content {
     padding-top: 10px;
   }
+
   &.govuk-checkboxes--small .govuk-checkboxes__label {
     padding: 0;
+
     &:before {
       height: 20px;
       width: 20px;
+
       &:hover {
         box-shadow: 0 0 0 6px #b1b4b6;
       }
@@ -471,14 +453,15 @@ h2.govuk-accordion__section-heading,
   }
 }
 // End side filtering
-
 // Document library
 .document-results-sort {
   margin: 20px 0;
+
   label,
   select {
     font-size: 16px;
   }
+
   select {
     margin-left: 10px;
     height: auto;
@@ -486,24 +469,28 @@ h2.govuk-accordion__section-heading,
 }
 
 .pins-document-library-search {
-  .pins-document-library-search-wrapper,
-  .govuk-accordion__open-all {
+  .govuk-accordion__open-all,
+  .pins-document-library-search-wrapper {
     margin-bottom: 15px;
   }
+
   .pins-document-library-search-wrapper {
     display: flex;
     width: 100%;
   }
+
   .search-documents-input,
   .search-documents-submit {
     box-sizing: border-box;
   }
+
   .pins-label-small {
     font-size: 16px;
     font-family: $govuk-font-family;
     display: block;
     margin-bottom: 3px;
   }
+
   .search-documents-input {
     margin: 0;
     height: 30px;
@@ -511,6 +498,7 @@ h2.govuk-accordion__section-heading,
     border: 1px solid #0b0c0c;
     border-right: none;
   }
+
   .search-documents-submit {
     flex-basis: auto;
     position: relative;
@@ -533,10 +521,12 @@ h2.govuk-accordion__section-heading,
   gap: 20px;
   border-bottom: 1px solid #bfc1c3;
   margin-bottom: 40px;
+
   .pins-search-results-group-heading,
   .pins-search-results-group-items li {
     font-size: 16px;
   }
+
   .pins-search-results-group-heading {
     font-weight: 400;
     font-family: $govuk-font-family;
@@ -548,6 +538,7 @@ h2.govuk-accordion__section-heading,
     flex-grow: 1;
     max-width: 65%;
     margin-bottom: 10px;
+
     li {
       margin-bottom: 30px;
     }
@@ -557,12 +548,14 @@ h2.govuk-accordion__section-heading,
 
 .pins-search-results-pagination {
   text-align: right;
+
   a {
     display: inline-block;
     margin-left: 10px;
   }
 }
 // hidden by default
+
 .hidden {
   display: none;
 }
@@ -570,6 +563,7 @@ h2.govuk-accordion__section-heading,
 .expandingFilterSection {
   padding: 1em;
   background-color: #f0f0f0;
+
   .expandingFilterSection:focus {
     background-color: #ffdd00;
     box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
@@ -577,9 +571,8 @@ h2.govuk-accordion__section-heading,
   }
 }
 
-.tag-wrapper{
-  margin-left:5px;
-
+.tag-wrapper {
+  margin-left: 5px;
   display: block;
   @include govuk-media-query($from: tablet) {
     display: inline;
