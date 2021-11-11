@@ -1,0 +1,52 @@
+// timeline code taken from https://github.com/dwp/gysp-agent-ui/blob/94a05e7a0a99eb63172aebde9bc326906a3c60c5/app/assets/sass/elements/_timeline.scss
+
+.dwp-timeline {
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid $govuk-brand-colour;
+  list-style-type: none;
+}
+
+.dwp-timeline__entry {
+  position: relative;
+  margin: 2em 0;
+  padding-left: 1em;
+
+  // added to remove the margin-top on the first child
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 10px;
+    height: 3px;
+    background-color: $govuk-brand-colour;
+    content: ' ';
+  }
+
+  .dwp-timeline__title {
+    display: block;
+    font-weight: 700;
+
+    &--muted {
+      color: $govuk-secondary-text-colour;
+    }
+  }
+
+  .dwp-timeline__author,
+  .dwp-timeline__date {
+    display: block;
+    color: $govuk-secondary-text-colour;
+  }
+
+  .dwp-timeline__info {
+    margin-top: 0;
+  }
+
+  .dwp-timeline__body {
+    display: block;
+  }
+}

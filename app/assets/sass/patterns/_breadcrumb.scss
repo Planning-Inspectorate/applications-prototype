@@ -1,0 +1,23 @@
+// css taken from https://www.gov.uk/vehicles-can-drive?step-by-step-nav=e01e924b-9c7c-4c71-8241-66a575c2f61f
+
+.pins-breadcrumb {
+  background: #f3f2f1;
+  border-bottom: solid 1px $pins-banner-background-secondary-color;
+  color: #0b0c0c;
+  padding: 25px;
+  width: 100%;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  .pins-breadcrumb__part-of {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    display: block;
+  }
+
+  .pins-breadcrumb__title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+}
