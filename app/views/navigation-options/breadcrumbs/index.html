@@ -79,22 +79,22 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <h2 class="govuk-heading-m">Project timeline</h2>
         </div>
         <div class="govuk-grid-column-two-thirds">
-          <ol class="dwp-timeline">
-               <li class="dwp-timeline__entry">
-                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="#">Pre-application and application received</a> <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--green">Completed</strong></span></h2>
+          <ol class="govuk-list govuk-list--number project-timeline-list" >
+               <li>
+                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="#">Pre-application</a> <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--green">Completed</strong></span></h2>
                </li>
 
-               <li class="dwp-timeline__entry">
-                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pre-examination <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--blue">In progress</strong></span></h2>
+               <li>
+                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Review of application <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--blue">In progress</strong></span></h2>
                </li>
-               <li class="dwp-timeline__entry">
+               <li>
                    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Examination of the project <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--grey">Not started</strong></span></h2>
                </li>
-               <li class="dwp-timeline__entry">
-                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Recommendation and decision <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--grey">Not started</strong></span></h2>
+               <li>
+                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Pre-examination<span class="tag-wrapper"><strong class="govuk-tag govuk-tag--grey">Not started</strong></span></h2>
                </li>
-               <li class="dwp-timeline__entry">
-                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Outcome of the project <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--grey">Not started</strong></span></h2>
+               <li>
+                   <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Recommendation and decision <span class="tag-wrapper"><strong class="govuk-tag govuk-tag--grey">Not started</strong></span></h2>
                </li>
 
            </ol>
@@ -108,7 +108,36 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <h2 class="govuk-heading-m">About the project</h2>
         </div>
         <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-s"></h3>
+
           <ul class="govuk-list">
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="./document-library">Application introduction</a>
+            </p>
+            <p class="govuk-body">
+              Information about the project and what the developer is proposing
+            </p>
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="#">Environmental information</a>
+            </p>
+            <p class="govuk-body">
+              Information about how the project might impact the environment and what the developer is proposing to make the impact less serious.
+            </p>
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="#">Drawings</a>
+            </p>
+            <p class="govuk-body">
+              How the propsed project will look and the area it will impact.
+            </p>
+          </ul>
+
+          <h3 class="govuk-heading-s govuk-!-margin-top-7">Documents</h3>
+
+          <ul class="govuk-list">
+
+
+
             <p class="govuk-heading-s govuk-!-margin-bottom-1">
               <a href="./document-library">About the application</a>
             </p>
@@ -130,26 +159,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               View documents about the recommendation and decision stages
             </p>
 
-            <p class="govuk-heading-s govuk-!-margin-bottom-1">
-              <a href="./document-library">Application introduction</a>
-            </p>
-            <p class="govuk-body">
-              Information about the project and what the developer is proposing
-            </p>
 
-            <p class="govuk-heading-s govuk-!-margin-bottom-1">
-              <a href="#">Environmental information</a>
-            </p>
-            <p class="govuk-body">
-              Information about how the project might impact the environment and what the developer is proposing to make the impact less serious.
-            </p>
-
-            <p class="govuk-heading-s govuk-!-margin-bottom-1">
-              <a href="#">Drawings</a>
-            </p>
-            <p class="govuk-body">
-              How the propsed project will look and the area it will impact.
-            </p>
           </ul>
         </div>
       </div>
