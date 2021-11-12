@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Email address
+  Your full name - Register to have your say
 {% endblock %}
 
 {% block header %}
@@ -10,6 +10,8 @@
 {% endblock %}
 
 {% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
   {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -17,25 +19,24 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="address">Back</a>
+  <a class="govuk-back-link" href="type-of-party">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="organisation-telephone" method="post">
+      <form autocomplete="off" class="form" action="address" method="post">
         {{ govukInput({
           label: {
-            text: "What is your email address?",
+            text: "What is your job title or volunteer role?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          hint: {
-            text: "We will use your email address to send you information about this project."
-          },
-          id: "organisation-email",
-          name: "organisation-email"
+          id: "organisation-role",
+          name: "organisation-role",
+
+          spellcheck: false
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

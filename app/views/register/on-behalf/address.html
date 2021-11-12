@@ -27,7 +27,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="organisation-email" method="post">
+      <form autocomplete="off" class="form" action="email" method="post">
         {% call govukFieldset({
           legend: {
             text: "UK address details",
@@ -40,16 +40,16 @@
             label: {
               text: 'Address line 1'
             },
-            id: "organisation-address-line-1",
-            name: "organisation-address-line-1"
+            id: "behalf-address-line-1",
+            name: "behalf-address-line-1"
           }) }}
 
           {{ govukInput({
             label: {
               text: 'Address line 2'
             },
-            id: "organisation-address-line-2",
-            name: "organisation-address-line-2"
+            id: "behalf-address-line-2",
+            name: "behalf-address-line-2"
           }) }}
 
           {{ govukInput({
@@ -57,8 +57,8 @@
               text: "Address line 3"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "organisation-address-line-3",
-            name: "organisation-address-line-3"
+            id: "behalf-address-line-3",
+            name: "behalf-address-line-3"
           }) }}
 
 
@@ -67,8 +67,8 @@
               text: "Postcode"
             },
             classes: "govuk-input--width-10",
-            id: "organisation-address-postcode",
-            name: "organisation-address-postcode"
+            id: "behalf-address-postcode",
+            name: "behalf-address-postcode"
           }) }}
 
           {{ govukInput({
@@ -76,8 +76,8 @@
               text: "Country"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "organisation-address-country",
-            name: "organisation-address-country"
+            id: "behalf-address-country",
+            name: "behalf-address-country"
           }) }}
 
         {% endcall %}
