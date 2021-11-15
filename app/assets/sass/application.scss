@@ -575,10 +575,20 @@ h2.govuk-accordion__section-heading {
   }
 }
 
-.tag-wrapper {
-  margin-left: 5px;
-  display: block;
-  @include govuk-media-query($from: tablet) {
-    display: inline;
+.project-timeline-list {
+  li{
+    margin-bottom: govuk-spacing(6);
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  .tag-wrapper {
+    margin-left: 5px;
+    display: block;
+    @include govuk-media-query($from: tablet) {
+      display: inline;
+    }
   }
 }
