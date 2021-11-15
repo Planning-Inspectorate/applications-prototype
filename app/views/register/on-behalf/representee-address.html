@@ -20,17 +20,17 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="over-18">Back</a>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="organisation-email" method="post">
+      <form autocomplete="off" class="form" action="representee-email" method="post">
         {% call govukFieldset({
           legend: {
-            text: "UK address details",
+            text: "What is their address?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -40,16 +40,16 @@
             label: {
               text: 'Address line 1'
             },
-            id: "organisation-address-line-1",
-            name: "organisation-address-line-1"
+            id: "representee-address-line-1",
+            name: "representee-address-line-1"
           }) }}
 
           {{ govukInput({
             label: {
               text: 'Address line 2'
             },
-            id: "organisation-address-line-2",
-            name: "organisation-address-line-2"
+            id: "representee-address-line-2",
+            name: "representee-address-line-2"
           }) }}
 
           {{ govukInput({
@@ -57,8 +57,8 @@
               text: "Address line 3"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "organisation-address-line-3",
-            name: "organisation-address-line-3"
+            id: "representee-address-line-3",
+            name: "representee-address-line-3"
           }) }}
 
 
@@ -67,8 +67,8 @@
               text: "Postcode"
             },
             classes: "govuk-input--width-10",
-            id: "organisation-address-postcode",
-            name: "organisation-address-postcode"
+            id: "representee-address-postcode",
+            name: "representee-address-postcode"
           }) }}
 
           {{ govukInput({
@@ -76,8 +76,8 @@
               text: "Country"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "organisation-address-country",
-            name: "organisation-address-country"
+            id: "representee-address-country",
+            name: "representee-address-country"
           }) }}
 
         {% endcall %}
