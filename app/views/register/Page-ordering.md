@@ -1,31 +1,38 @@
 1. start
 2. type-of-party:
+
   - /myself
-    3. full-name
-    4. address
-    5. email
-    6. telephone
-    7. topic
-    8. comment
-    9. check-your-answers
+    - full-name
+    - address
+    - email
+    - telephone
+    - comment
+    - topic
+    - check-your-answers
 
   - /organisation
-    3. full-name
-    4. address
-    5. email
-    6. telephone
-    7. topic
-    8. comment
-    9. check-your-answers
+    - full-name
+    - organisation-full-name
+    - role
+    - address
+    - email
+    - telephone
+    - comment
+    - topic
+    - check-your-answers
 
   - /on-behalf
-    3. full-name
-    4. address
-    5. email
-    6. telephone
-    7. topic
-    8. comment
-    9. check-your-answers
+    - representee-full-name
+    - representee-address
+    - representee-email
+    - representee-telephone
+    - full-name
+    - address
+    - email
+    - telephone
+    - topic
+    - comment
+    - check-your-answers
 
 10. declaration
 11. confirmation
