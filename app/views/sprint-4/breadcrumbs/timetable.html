@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+A404 Dewsbury project overview
+{% endblock %}
+
+{% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="pins-breadcrumb govuk-!-padding-5 govuk-!-margin-bottom-6">
+      <strong class="pins-breadcrumb__part-of ">Part of</strong>
+      <a class="pins-breadcrumb__title govuk-link" href="./examination">A404 Dewsbury</a>
+    </div>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-9"> Examination Timetable</h1>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <ul class="govuk-list">
+      <li><a href="#august">August 2021</a></li>
+      <li><a href="#september">September 2021</a></li>
+      <li><a href="#october">October 2021</a></li>
+      <li><a href="#november">November 2021</a></li>
+      <li><a href="#december">December 2021</a></li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m" id="august">August 2021</h2>
+    <h2 class="govuk-heading-s">Procedural Deadline A &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETE</strong></h2>
+    <p class="govuk-body">03 August 2021 9:45am</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Attend Preliminary Meeting Part 1</li>
+      <li>Attend Issue Specific Hearing</li>
+      <li>Attend Open Floor Hearing (am)</li>
+      <li>Attend Open Floor Hearing (pm)</li>
+      <li>Request Compulsory Acquisition Hearing</li>
+      <li>Nomination of sites for Accompanied Site Inspection</li>
+    </ul>
+    <hr>
+    <h2 class="govuk-heading-s">Procedural Deadline B &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETE</strong></h2>
+    <p class="govuk-body">16 August 2021 3:45pm</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Attend Preliminary Meeting Part 2</li>
+      <li>Written Submissions</li>
+    </ul>
+    <hr>
+    <h2 class="govuk-heading-m" id="september">September 2021</h2>
+    <h2 class="govuk-heading-s">Examination begins&nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETE</strong></h2>
+    <p class="govuk-body">12 September 2021 9:45am</p>
+    <hr>
+
+    <h2 class="govuk-heading-s">Issue Specific Hearing (ISH1) &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETE</strong></h2>
+    <p class="govuk-body">28 September 2021 4:00pm</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ISH1 into Early Clarification on Strategic Matters</li>
+    </ul>
+    <hr>
+    <h2 class="govuk-heading-m" id="october">October 2021</h2>
+    <h2 class="govuk-heading-s">Procedural Deadline C &nbsp; &nbsp; &nbsp;<strong class="govuk-tag govuk-tag--green"> COMPLETE</strong></h2>
+    <p class="govuk-body">24 October 2021 9:45am</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Attend Preliminary Meeting Part 2</li>
+      <li>Attend Issue Specific Hearing</li>
+      <li>Attend Open Floor Hearing (am)</li>
+      <li>Attend Open Floor Hearing (pm)</li>
+      <li>Request Compulsory Acquisition Hearing</li>
+      <li>Nomination of sites for Accompanied Site Inspection</li>
+    </ul>
+    <hr>
+    <h2 class="govuk-heading-m" id="november">November 2021</h2>
+    <h2 class="govuk-heading-s">Publication by the ExA 1 &nbsp; &nbsp; &nbsp;<strong class="govuk-tag govuk-tag--grey"> NOT STARTED</strong></h2>
+    <p class="govuk-body">25 November 2021 9:45am</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Attend Preliminary Meeting Part 3</li>
+      <li>Written Submissions</li>
+    </ul>
+    <hr>
+    <h2 class="govuk-heading-s">Accompanied Site Inspection (ASI1) &nbsp; &nbsp; &nbsp;<strong class="govuk-tag govuk-tag--grey"> NOT STARTED</strong></h2>
+    <p class="govuk-body">30 November 2021 2:30pm</p>
+    <hr>
+    <h2 class="govuk-heading-m" id="december">December 2021</h2>
+    <h2 class="govuk-heading-s">Compulsory Acquisition Hearing (CAH1) &nbsp; &nbsp; &nbsp;<strong class="govuk-tag govuk-tag--grey"> NOT STARTED</strong></h2>
+    <p class="govuk-body">18 December 2021 3:00pm</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ISH1 into Early Clarification on Strategic Matters</li>
+    </ul>
+    <hr>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{{ pinsFooter() }}
+
+{% endblock %}
