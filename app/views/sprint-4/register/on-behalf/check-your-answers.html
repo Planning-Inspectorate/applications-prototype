@@ -1,0 +1,231 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers - Register to have your say
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">Check your answers before registering</h1>
+
+    <h2 class="govuk-heading-m">Your details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who are you registering for?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['sprint-4-type-of-interested-party']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="type-of-party">
+            Change
+            <span class="govuk-visually-hidden"> who you are registering for</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['behalf-full-name'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="full-name">
+            Change
+            <span class="govuk-visually-hidden"> full name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you 18 or over?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['behalf-over-18'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="over-18">
+            Change
+            <span class="govuk-visually-hidden"> 18 or over</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['behalf-address-line-1'] }}
+          <br>{{ data['behalf-address-line-2'] }}
+          <br>{{ data['behalf-address-line-3'] }}
+          <br>{{ data['behalf-address-postcode'] }}
+          <br>{{ data['behalf-address-country'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="address">
+            Change
+            <span class="govuk-visually-hidden"> address</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>{{ data['behalf-email'] }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="email">
+            Change
+            <span class="govuk-visually-hidden"> email address</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>{{ data['behalf-telephone-number'] }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="telephone">
+            Change
+            <span class="govuk-visually-hidden"> telephone number</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+        <h2 class="govuk-heading-m">Details for the person that you are representing</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Their full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['representee-full-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="type-of-party">
+                Change
+                <span class="govuk-visually-hidden"> who you are registering for</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Thier address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['representee-address-line-1'] }}
+              <br>{{ data['representee-address-line-2'] }}
+              <br>{{ data['representee-address-line-3'] }}
+              <br>{{ data['representee-address-postcode'] }}
+              <br>{{ data['representee-address-country'] }}            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="full-name">
+                Change
+                <span class="govuk-visually-hidden"> full name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Their email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['representee-email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="full-name">
+                Change
+                <span class="govuk-visually-hidden"> full name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Their telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['representee-telephone-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="full-name">
+                Change
+                <span class="govuk-visually-hidden"> full name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Their comments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>{{ data['behalf-comment'] }}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="comment">
+                Change
+                <span class="govuk-visually-hidden"> your comments</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Topics commenting about
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>{{ data['behalf-topics'] }} {{data['behalf-other-text']}}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="topic">
+                Change
+                <span class="govuk-visually-hidden"> topics of comment</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+    <form autocomplete="off" action="../declaration" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-mbehalf-odule="govuk-button">
+        Accept and continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ pinsFooter() }}
+{% endblock %}
