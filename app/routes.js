@@ -10,16 +10,18 @@ router.post("/register/type-of-party", function (req, res) {
 
   // if an individual, show individual flow
   if (typeOfParty == "Myself") {
-    res.redirect("/register/full-name");
+    res.redirect("/register/myself/full-name");
 
     // if an organisation, show organisation flow
   } else if (typeOfParty == "An organisation I work or volunteer for") {
-    res.redirect("/register/organisation-full-name");
+    res.redirect("/register/organisation/full-name");
 
-    // otherwise, show individual flow
+    // otherwise, show on behalf flow
   } else {
-    res.redirect("/register/full-name");
+    res.redirect("/register/on-behalf/representee-full-name");
   }
+
+
 });
 
 require("./routes/0-1-0/routing.js")(router);

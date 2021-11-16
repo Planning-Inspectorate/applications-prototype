@@ -17,19 +17,19 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="comment">Back</a>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="organisation-check-your-answers" method="post">
+      <form autocomplete="off" class="form" action="check-your-answers" method="post">
         <!-- Nunjucks object for the Other textbox -->
         {% set otherHtml %}
         {{ govukInput({
-          id: "organisation-other-text",
-          name: "organisation-other-text",
+          id: "behalf-other-text",
+          name: "behalf-other-text",
           type: "text",
           classes: "govuk-!-width-one-third",
           label: {
@@ -39,8 +39,8 @@
         {% endset -%}
 
         {{ govukCheckboxes({
-          idPrefix: "organisation-topics",
-          name: "organisation-topics",
+          idPrefix: "behalf-topics",
+          name: "behalf-topics",
           fieldset: {
             legend: {
               text: "What topics are you commenting about?",

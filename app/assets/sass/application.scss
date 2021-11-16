@@ -35,7 +35,10 @@ $pins-timeline-circle-size: 50px;
 @import "patterns/task-list";
 @import "patterns/related-items";
 @import "patterns/breadcrumb";
-@import "patterns/dwp-timeline"; // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "patterns/dwp-timeline";
+@import "patterns/pagination";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 // For use on pages with a contents bar on the side
 // // Don't forget to add .pins-sidebar--container as a variable!
 /*

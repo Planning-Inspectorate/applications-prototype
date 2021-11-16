@@ -20,7 +20,7 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="over-18">Back</a>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -40,16 +40,16 @@
             label: {
               text: 'Address line 1'
             },
-            id: "address-line-1",
-            name: "address-line-1"
+            id: "behalf-address-line-1",
+            name: "behalf-address-line-1"
           }) }}
 
           {{ govukInput({
             label: {
               text: 'Address line 2'
             },
-            id: "address-line-2",
-            name: "address-line-2"
+            id: "behalf-address-line-2",
+            name: "behalf-address-line-2"
           }) }}
 
           {{ govukInput({
@@ -57,8 +57,8 @@
               text: "Address line 3"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-line-3",
-            name: "address-line-3"
+            id: "behalf-address-line-3",
+            name: "behalf-address-line-3"
           }) }}
 
 
@@ -67,8 +67,8 @@
               text: "Postcode"
             },
             classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "address-postcode"
+            id: "behalf-address-postcode",
+            name: "behalf-address-postcode"
           }) }}
 
           {{ govukInput({
@@ -76,8 +76,8 @@
               text: "Country"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-country",
-            name: "address-country"
+            id: "behalf-address-country",
+            name: "behalf-address-country"
           }) }}
 
         {% endcall %}
