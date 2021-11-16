@@ -101,21 +101,21 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             Examination stage of this project.
           </p>
           <p class="govuk-heading-s govuk-!-margin-bottom-1">
-            <a href="./document-library">Application introduction</a>
+            <a href="../../wrong-turn">Application introduction</a>
           </p>
           <p class="govuk-body">
             Information about the project and what the developer is proposing
           </p>
 
           <p class="govuk-heading-s govuk-!-margin-bottom-1">
-            <a href="#">Environmental information</a>
+            <a href="../../wrong-turn">Environmental information</a>
           </p>
           <p class="govuk-body">
             Information about how the project might impact the environment and
             what the developer is proposing to make the impact less serious.
           </p>
           <p class="govuk-heading-s govuk-!-margin-bottom-1">
-            <a href="#">Drawings</a>
+            <a href="../../wrong-turn">Drawings</a>
           </p>
           <p class="govuk-body">
             How the proposed project will look and the area it will impact.
@@ -243,13 +243,14 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         <p>
           This proposed road will be a linear route between Amesbury and Berwick
           Down, Wiltshire.
-          <a href="#">View a map of the area of the proposed project.</a>
         </p>
         <ul class="govuk-list">
+          <li><a href="../../wrong-turn">View a map of the area of the proposed project.</a></li>
           <li>
-            <a href="#">Check if your postcode is within the project area. </a>
+            <a href="./check-for-impact/postcode">Check if your postcode is within the project area. </a>
           </li>
         </ul>
+
       </div>
     </div>
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -280,19 +281,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         </p>
       </div>
     </div>
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <h2 class="govuk-heading-m">More detailed project information</h2>
-      </div>
-      <div class="govuk-grid-column-two-thirds">
-        <p>
-          If you are looking for more detailed information about this project,
-          you can
-          <a href="/document-library">view all project information</a>.
-        </p>
-      </div>
-    </div>
+
   </main>
 </div>
 {% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
