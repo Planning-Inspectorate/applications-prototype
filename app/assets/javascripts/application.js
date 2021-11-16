@@ -18,4 +18,14 @@ $(document).ready(function () {
     $("#expandingFilterSection").toggle();
   })
 
+  // show/hide filters when user clicks apply
+  $("#closeFilters").click(function() {
+    // change the show/hide text on the button
+    $("#toggleFilters").text(function(i, text){
+      return text === "Show filters" ? "Hide filters" : "Show filters";
+    })
+    // toggle the filter section
+    $("#expandingFilterSection").toggle();
+  })
+
 })

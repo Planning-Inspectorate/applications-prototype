@@ -1,9 +1,7 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
-$govuk-new-link-styles: true;
-// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
-$govuk-assets-path: "/govuk/assets/";
-// PINS styles start here
+$govuk-new-link-styles: true; // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: "/govuk/assets/"; // PINS styles start here
 // PINS specific colours
 $pins-blue: #1d70b8;
 $pins-banner-background-color: #074745; // Dark green for main part of banner
@@ -30,8 +28,7 @@ $pins-timeline-circle-size: 50px;
   padding-top: 20px;
 }
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
-@import "lib/extensions/extensions";
-// Patterns that aren't in Frontend
+@import "lib/extensions/extensions"; // Patterns that aren't in Frontend
 @import "patterns/step-by-step-header";
 @import "patterns/step-by-step-nav";
 @import "patterns/step-by-step-related";
@@ -138,6 +135,7 @@ $pins-timeline-circle-size: 50px;
   }
 }
 // Contents list
+
 .pins-contents-list-title {
   margin-bottom: 0;
 }
@@ -156,6 +154,7 @@ $pins-timeline-circle-size: 50px;
 }
 // End contents list
 // Step by step
+
 .pins-step-by-step-section-main {
   @include pins-step-by-step-primary-topper();
 }
@@ -204,6 +203,7 @@ svg.pins-step-by-step-navigation-icon {
 }
 // End step-by-step
 // Note/notice
+
 .pins-info-notice {
   border-left: 10px solid #b1b4b6;
   padding: 0.5em 0 0.5em 1em;
@@ -297,6 +297,7 @@ svg.pins-step-by-step-navigation-icon {
 }
 //  // End overview page timeline
 // styling the vertical nav
+
 ul.sidenav {
   li {
     margin-bottom: 20px;
@@ -310,6 +311,7 @@ ul.sidenav {
   }
 }
 //  //  Map styling
+
 .pins-map-enclosure {
   position: relative;
   height: 443px;
@@ -406,6 +408,7 @@ ul.sidenav {
 }
 //  //  End map styling
 // PINS column layout
+
 .pins-list-columns {
   display: flex;
   flex-direction: row;
@@ -419,6 +422,7 @@ ul.sidenav {
 }
 // End PINS column layout
 // Side filtering
+
 .govuk-accordion label {
   font-family: $govuk-font-family;
 }
@@ -456,6 +460,7 @@ h2.govuk-accordion__section-heading {
 }
 // End side filtering
 // Document library
+
 .document-results-sort {
   margin: 20px 0;
 
@@ -573,10 +578,20 @@ h2.govuk-accordion__section-heading {
   }
 }
 
-.tag-wrapper {
-  margin-left: 5px;
-  display: block;
-  @include govuk-media-query($from: tablet) {
-    display: inline;
+.project-timeline-list {
+  li{
+    margin-bottom: govuk-spacing(6);
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  .tag-wrapper {
+    margin-left: 5px;
+    display: block;
+    @include govuk-media-query($from: tablet) {
+      display: inline;
+    }
   }
 }
