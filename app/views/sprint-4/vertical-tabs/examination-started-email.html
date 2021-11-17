@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block pageTitle %} Example email {% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h3 class="govuk-heading-l">Inbox</h3>
+  </div>
+  <!-- list of emails -->
+  <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Planning Inspectorate</span>
+      <p class="govuk-body govuk-!-margin-bottom-1">
+        <strong>You are registered&hellip;</strong>
+      </p>
+      <p class="govuk-body">Dear John Doe,</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Todd Smith</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Jessica Ward</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Timothy Jenkins</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+  </div>
+  <!-- email content starts here -->
+  <div class="govuk-grid-column-three-quarters">
+    <ul class="govuk-list">
+      <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
+      <li>To: &lt;example@email.com&gt;</li>
+      <li>
+        Subject:
+        <strong>Subject</strong>
+      </li>
+    </ul>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <p class="govuk-body">Dear John Doe,</p>
+    <p class="govuk-body">
+      <a class="govuk-link" href="./examination/">Visit the project page</a> to view the examination timetable.
+    </p>
+    <p class="govuk-body">Yours Sincerely</p>
+    <p class="govuk-body">The Planning Inspectorate</p>
+  </div>
+</div>
+{% endblock %}
