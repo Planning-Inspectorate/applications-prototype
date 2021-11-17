@@ -1,0 +1,192 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <a href="#" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <nav>
+          <ul class="govuk-list sidenav">
+            <li class="active">
+              <strong>A404 Dewsbury project information</strong>
+            </li>
+            <li>
+              <a href="about-the-application">Project application documents</a>
+            </li>
+            <li><a href="./timetable">Examination timetable</a></li>
+            <li><a href="./all-examination-documents">All Examination documents</a></li>
+            <li><a href="../../../wrong-turn">Recommendation and decision</a></li>
+          </ul>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+          <h3 class="govuk-heading-s">Related guides</h3>
+          <ul class="govuk-list sidenav">
+            <li>
+              <a href="../../../dco-process-guide/">The process for national infrastructure projects</a>
+            </li>
+            <li>
+              <a href="../../../interested-party-guide/">Having your say about a national infrastructure project</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-l">Project information</h2>
+        <p class="govuk-body">
+          The potential A404 Dewsbury to Berwick Down scheme proposes to
+          construct a new section of dual carriageway to address problems
+          associated with the single carriageway section of the A404 between
+          Amesbury’s Countess roundabout and the dual carriageway section to the
+          west of Winterbourne Stoke.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-7""><a href=" ../../../wrong-turn">Get updates via email, letter or text</a>. </p> <div class="pins-timeline">
+          <p>
+            This project is at:
+            <strong>Examination of the application</strong>
+          </p>
+          <ol>
+            <li class="completed">
+              Pre-application
+              <div class="pins-timeline-badge">&#10003;</div>
+            </li>
+            <li class="completed">
+              Review of application
+              <div class="pins-timeline-badge">&#10003;</div>
+            </li>
+            <li class="completed">
+              Pre-examination
+              <div class="pins-timeline-badge">&#10003;</div>
+            </li>
+            <li class="current">
+              Examination of the application
+              <div class="pins-timeline-badge">
+                <svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                  data-fa-i2svg="">
+                  <path fill="currentColor" d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z"></path>
+                </svg>
+              </div>
+            </li>
+            <li>
+              Recommendation and Decision
+              <div class="pins-timeline-badge"></div>
+            </li>
+          </ol>
+          <p>
+            The registration to have your say about this project has ended.
+          </p>
+
+          <p>
+            You can still <a href="../../wrong-turn">submit a comment</a>, but will need to complete a form to ask to be registered.
+          </p>
+
+          <p>
+            <a href="../../dco-process-guide/examination">Find out more about what you can do during the Examination of the project.</a>
+
+          </p>
+
+
+
+      </div>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-6">Affected area</h2>
+          <!-- add the map include -->
+          <!-- <p><a href="#">View an interactive map of the areas that will be affected by this project.</a></p> -->
+          <p>
+            This proposed road will be a linear route between Amesbury and Berwick
+            Down, Wiltshire.
+          </p>
+          <ul class="govuk-list">
+            <li><a href="../../wrong-turn">View a map of the area of the proposed project.</a></li>
+            <li>
+              <a href="./examination-check-for-impact/postcode">Check if your postcode is within the project area. </a>
+            </li>
+          </ul>
+
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-m">About the project</h2>
+      <ul class="pins-list-columns">
+        <li>
+          <h3 class="govuk-heading-s"><a href="#">Application introduction</a></h3>
+          <p>Information about the project and what the developer is proposing</p>
+        </li>
+        <li>
+          <h3 class="govuk-heading-s"><a href="#">Environmental information</a></h3>
+          <p>Information about how the project might impact the environment and what the developer is proposing to make the impact less serious.</p>
+        </li>
+        <li>
+          <h3 class="govuk-heading-s"><a href="#">Drawings</a></h3>
+          <p>How the propsed project will look and the area it will impact.</p>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-m">What you can do at this stage</h2>
+      <p>You cannot register to have your say about this project as the deadline has passed. If you are registered to have your say, you can submit comments at each deadline. <br><br>
+
+        If you are not registered, you can still submit comments, but will need to fill in a form to ask to be registered and given an interested party reference.</p>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-m">More detailed project information</h2>
+      <p>If you are looking for more detailed information about this project, you can <a href="../overview-pages/document-library-examination"> view all project information</a>.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-m">About the developer</h2>
+
+      <p>The Developer proposing this project is Acme Group Ltd.</p>
+
+      <img src="/public/images/logos/acme-group-ltd-logo.png" alt="Acme Group Ltd's logo" />
+
+      <p class="govuk-body govuk-!-margin-top-6">
+        At this stage of the project, the developer must run a consultation
+        with people and organisations.
+      </p>
+
+      <p>
+        If you want to have your say at this stage, you can contact the
+        developer directly.
+      </p>
+
+      <p><a href="../../../wrong-turn">Visit the project website by Acme Group Ltd</a> for more information.</p>
+    </div>
+</div>
+</main>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
