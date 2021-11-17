@@ -7,7 +7,7 @@ module.exports = function(router) {
 
     // if an individual, show individual flow
     if (sprintFourTypeOfParty == "Myself") {
-      res.redirect("sprint-4/register/myself/full-name");
+      res.redirect("myself/full-name");
 
       // if an organisation, show organisation flow
     } else if (sprintFourTypeOfParty == "An organisation I work or volunteer for") {
