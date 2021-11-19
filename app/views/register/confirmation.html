@@ -6,7 +6,9 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
+  {{ pinsHeader({
+  serviceName: "Register to have your say about a national infrastructure project"
+}) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +31,8 @@
           Your interested party reference number<br><strong>1234 5678 90</strong>
         </div>
       </div>
-
+serviceName: "Register to have your say about a national infrastructure project",
+serviceUrl: "../register/start"
       <p>
         We have sent a confirmation email to: {{ data['email'] }}
       </p>

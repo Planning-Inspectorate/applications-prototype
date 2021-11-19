@@ -110,80 +110,58 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </div>
           </fieldset>
         </div>
-        <div class="govuk-form-group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-              Filter by type of information
-            </h2>
-          </legend>
+          <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+          <select id="document-results-sort" class="govuk-select">
+            <option selected>Recently updated</option>
+          </select>
 
-          <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
-            <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Topics-and-replies">
-                <label class="govuk-label govuk-checkboxes__label" for="type-plans-and-drawings">Topics and replies</label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Deadlines">
-                <label class="govuk-label govuk-checkboxes__label" for="type-environmental">Deadlines</label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Hearing-agendas">
-                <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Hearing agendas</label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Recordings-of-hearings">
-                <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Recordings of hearings</label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Procedural-decisions">
-                <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Procedural decisions</label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Site-inspections">
-                <label class="govuk-label govuk-checkboxes__label" for="type-consultation-reports">Site inspections</label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <a href="#" class="govuk-button">Apply filters</a>
+        <a href="#" class="govuk-button govuk-!-margin-top-6">Apply</a>
       </div>
+
       <div class="govuk-grid-column-three-quarters">
-
-
         <div class="govuk-grid-row ">
-
           <div class="govuk-grid-column-one-half">
-            <p class="results"><strong><span id="results-number">{{ representations.length}}</span> results<strong></p>
+            <p class="results">Showing <strong>{{ representations.length}}</strong> of {{ representations.length}} results</p>
           </div>
 
-          <div style="display:flex; flex-direction: row;" class="govuk-grid-column-one-half">
-            <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
-            <select id="document-results-sort" class="govuk-select">
-              <option selected>Recently updated</option>
-            </select>
-          </div>
+
         </div>
-        <hr />
+        <hr class="govuk-section-break govuk-!-margin-bottom-6 govuk-section-break--visible">
 
+        <!-- loop across the representations in data/representations -->
         {% for representation in representations %}
-          <p>{{ representation.date }}</p>
           <p>
-            <strong>{{ representation.by }}</strong>
-            {% if representation.onBehalf %}
-             on behalf of <strong>{{ representation.onBehalf }}</strong>
+            <!-- show the comment -->
+            {{ representation.comment | truncate(250) }}
+            <!-- show read more link if the content has been truncated -->
+            {% if representation.comment.length >= 250 %}
+              <a href="#">read more</a>
             {% endif %}
           </p>
+          {% if representation.attachment %}
+           <p>There is <a href="#">{{loop.index}}one document attached</a> to this comment.</p>
+          {% endif %}
+
+          <ul class="govuk-list">
+            <li >
+              <a href="./representation">
+
+              <strong>{{ representation.by }}</strong>
+              {% if representation.onBehalf %}
+               on behalf of <strong>{{ representation.onBehalf }}</strong>
+              {% endif %}
+            </a>
+
+            </li>
+            <li class="govuk-body-s">
+              {{ representation.date }}
+            </li>
+          </ul>
 
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         {% endfor %}
 
-        <div class="pins-search-results-pagination" id="pins-search-results-pagination">
-          <a href="#" class="govuk-link govuk-link--no-underline">1</a>
-          <a href="#" class="govuk-link">2</a>
-          <a href="#" class="govuk-link">Next</a>
-        </div>
+
       </div>
     </div>
   </main>
