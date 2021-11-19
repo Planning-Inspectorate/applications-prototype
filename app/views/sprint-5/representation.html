@@ -1,6 +1,10 @@
 {% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
 {% endblock %} {% block headIcons %}
-<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+<link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
 {% endblock %} {% block head %}
 <!--[if lte IE 8
   ]><link
@@ -9,7 +13,12 @@
     type="text/css"
 /><![endif]-->
 <!--[if gt IE 8]><!-->
-<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
 <!--<![endif]-->
 
 {% for stylesheetUrl in extensionConfig.stylesheets %}
@@ -18,51 +27,93 @@
 
 <!-- Mapbox resources -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
 <!-- end Mapbox -->
 {% endblock %} {% block header %}
 <!-- Blank header with no service name for the start page -->
 {{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 <a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
-{% endblock %} {% block content %}
+{% endblock %} {% block content %} {% set currentIndex = data['representation']
+| int %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
         <div class="pins-breadcrumb govuk-!-padding-5 govuk-!-margin-bottom-6">
-
-          <strong class="pins-breadcrumb__part-of ">Part of</strong>
-          <a class="pins-breadcrumb__title govuk-link" href="javascript:history.back()">A404 Dewsbury</a>
+          <strong class="pins-breadcrumb__part-of">Part of</strong>
+          <a
+            class="pins-breadcrumb__title govuk-link"
+            href="javascript:history.back()"
+            >A404 Dewsbury</a
+          >
         </div>
         <h1 class="govuk-heading-l">All examination information</h1>
       </div>
     </div>
     <div class="govuk-grid-row">
-
       <div class="govuk-grid-column-three-quarters">
-        <div class="govuk-grid-row ">
-
-
-        </div>
-        <hr class="govuk-section-break govuk-!-margin-bottom-6 govuk-section-break--visible">
-
+        <div class="govuk-grid-row"></div>
+        <hr
+          class="govuk-section-break govuk-!-margin-bottom-6 govuk-section-break--visible"
+        />
         <!-- loop across the representations in data/representations -->
-        <p class="govuk-body-l">{{ representations[0].comment }}</p>
+        <p class="govuk-body">{{ representations[currentIndex].comment }}</p>
         <ul class="govuk-list">
-          <li>{{ representations[0].date }}</li>
-          <li><strong>{{ representations[0].by }}</strong>
-          {% if representations[0].onBehalf %}
-           on behalf of <strong>{{ representations[0].onBehalf }}</strong>
-          {% endif %}</li>
+          <li>{{ representations[currentIndex].date }}</li>
+          <li>
+            <strong>{{ representations[currentIndex].by }}</strong> {% if
+            representations[currentIndex].onBehalf %} on behalf of
+            <strong>{{ representations[currentIndex].onBehalf }}</strong> {%
+            endif %}
+          </li>
         </ul>
 
-
-
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-
+        {% if currentIndex > 0 %}
+        <form id="previousRep" method="post" action="representation">
+          <label class="hidden" for="representation"> I have a bike</label
+          ><br />
+          <input
+            class="hidden"
+            value="{{ currentIndex - 1  }}"
+            type="number"
+            name="representation"
+            id="representation"
+          />
+          <a
+            href="javascript:{}"
+            onclick="document.getElementById('previousRep').submit(); "
+          >
+            Previous
+          </a>
+        </form>
+        {% endif %}
+        {% if currentIndex < representations.length -1 %}
+        <form id="nextRep" method="post" action="representation">
+          <label class="hidden" for="representation"> I have a bike</label
+          ><br />
+          <input
+            class="hidden"
+            value="{{ currentIndex + 1 }}"
+            type="number"
+            name="representation"
+            id="representation"
+          />
+          <a
+            href="javascript:{}"
+            onclick="document.getElementById('nextRep').submit(); "
+          >
+            Next
+          </a>
+        </form>
+        {% endif %}
+        <hr
+          class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+        />
       </div>
     </div>
   </main>

@@ -110,10 +110,10 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </div>
           </fieldset>
         </div>
-          <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
-          <select id="document-results-sort" class="govuk-select">
-            <option selected>Recently updated</option>
-          </select>
+        <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+        <select id="document-results-sort" class="govuk-select">
+          <option selected>Recently updated</option>
+        </select>
 
         <a href="#" class="govuk-button govuk-!-margin-top-6">Apply</a>
       </div>
@@ -130,40 +130,45 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
         <!-- loop across the representations in data/representations -->
         {% for representation in representations %}
-          <p>
-            <!-- show the comment -->
-            {{ representation.comment | truncate(250) }}
-            <!-- show read more link if the content has been truncated -->
-            {% if representation.comment.length >= 250 %}
-              <a href="#">read more</a>
-            {% endif %}
-          </p>
-          {% if representation.attachment %}
-           <p>There is <a href="#">{{loop.index}}one document attached</a> to this comment.</p>
+        <p>
+          <!-- show the comment -->
+          {{ representation.comment | truncate(250) }}
+          <!-- show read more link if the content has been truncated -->
+          {% if representation.comment.length >= 250 %}
+          <a href="#">read more</a>
           {% endif %}
+        </p>
+        {% if representation.attachment %}
+        <p>There is <a href="#"> one document attached</a> to this comment.</p>
+        {% endif %}
 
-          <ul class="govuk-list">
-            <li >
-              <a href="./representation">
+        <ul class="govuk-list">
+          <li>
+            <form id="representationsForm{{ loop.index0 }}" method="post" action="representation">
 
-              <strong>{{ representation.by }}</strong>
-              {% if representation.onBehalf %}
-               on behalf of <strong>{{ representation.onBehalf }}</strong>
-              {% endif %}
-            </a>
+              <label class="hidden" for="representation"> I have a bike</label><br>
+              <input class="hidden" value="{{ loop.index0 }}" type="number" name="representation" id="representation" />
 
-            </li>
-            <li class="govuk-body-s">
-              {{ representation.date }}
-            </li>
-          </ul>
+              <a href="javascript:{}" onclick="document.getElementById('representationsForm{{ loop.index0 }}').submit(); ">
+                <strong>{{ representation.by }}</strong>
+                {% if representation.onBehalf %}
+                on behalf of <strong>{{ representation.onBehalf }}</strong>
+                {% endif %}
+              </a>
+            </form>
+          </li>
+          <li class="govuk-body-s">
+            {{ representation.date }}
+          </li>
+        </ul>
 
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         {% endfor %}
-
 
       </div>
     </div>
   </main>
 </div>
+
+
 {% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
