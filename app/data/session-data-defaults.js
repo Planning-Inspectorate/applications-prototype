@@ -20,5 +20,5 @@ Example usage:
 module.exports = {
 
   // Insert values here
-
+  representation: 0
 }
