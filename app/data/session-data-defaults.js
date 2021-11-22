@@ -20,5 +20,22 @@ Example usage:
 module.exports = {
 
   // Insert values here
-  representation: 0
+  "representation": 0,
+
+  // myself default values
+  "type-of-interested-party": "myself",
+  "full-name": "Joe Blogs",
+  "over-18": true,
+  "address-line-1": "13 Anker Lane",
+  "address-line-2": "Coventry",
+  "address-line-3": "",
+  "address-postcode": "CO12 5NK",
+  "address-country": "United Kingdom",
+  "email": "joe@blogs.com",
+  "telephone-number": "01234567890",
+  "comment": "I'm concerned that the traffic will be affected",
+  "topics": "Traffic, Air quality "
+
+  // organisation default values
+
 }
