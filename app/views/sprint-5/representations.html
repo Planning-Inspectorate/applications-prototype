@@ -251,7 +251,6 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             on behalf of {{ representation.onBehalf }} {% endif %}
         </a>
           </h3>
-        <p class="govuk-body-s">{{ representation.date }}</p>
         <p>
           <!-- show the comment -->
           {{ representation.comment | truncate(250) }}
@@ -268,6 +267,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         {% if representation.attachment %}
         <p>There is <a href="#"> one document attached</a> to this comment.</p>
         {% endif %}
+                <p class="govuk-body-s">Submitted on {{ representation.date }}</p>
+
         <hr
           class="
             govuk-section-break
