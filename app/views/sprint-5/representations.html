@@ -1,6 +1,10 @@
 {% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
 {% endblock %} {% block headIcons %}
-<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+<link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
 {% endblock %} {% block head %}
 <!--[if lte IE 8
   ]><link
@@ -9,7 +13,12 @@
     type="text/css"
 /><![endif]-->
 <!--[if gt IE 8]><!-->
-<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
 <!--<![endif]-->
 
 {% for stylesheetUrl in extensionConfig.stylesheets %}
@@ -18,7 +27,10 @@
 
 <!-- Mapbox resources -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
 <!-- end Mapbox -->
 {% endblock %} {% block header %}
 <!-- Blank header with no service name for the start page -->
@@ -32,20 +44,30 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
         <div class="pins-breadcrumb govuk-!-padding-5 govuk-!-margin-bottom-6">
-
-          <strong class="pins-breadcrumb__part-of ">Part of</strong>
-          <a class="pins-breadcrumb__title govuk-link" href="javascript:history.back()">A404 Dewsbury</a>
+          <strong class="pins-breadcrumb__part-of">Part of</strong>
+          <a
+            class="pins-breadcrumb__title govuk-link"
+            href="javascript:history.back()"
+            >A404 Dewsbury</a
+          >
         </div>
-        <h1 class="govuk-heading-l">All examination information</h1>
+        <h1 class="govuk-heading-l">All representations</h1>
       </div>
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group">
-          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-              Keywords </label>
+          <h3 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="event-name">
+              Keywords
+            </label>
           </h3>
-          <input class="govuk-input" id="event-name" name="event-name" type="text">
+          <input
+            class="govuk-input"
+            id="event-name"
+            name="event-name"
+            type="text"
+          />
         </div>
 
         <div class="govuk-form-group">
@@ -57,21 +79,57 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
             <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-noise-traffic-air">
-                <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">Noise, traffic and air quality</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="theme-noise-traffic-air"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="theme-noise-traffic-air"
+                  >Noise, traffic and air quality</label
+                >
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
-                <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Landscape and visual</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="theme-landscape-visual"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="theme-landscape-visual"
+                  >Landscape and visual</label
+                >
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="heritage">
-                <label class="govuk-label govuk-checkboxes__label" for="heritage">Heritage</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="heritage"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="heritage"
+                  >Heritage</label
+                >
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
-                <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Local wildlife and habitats</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="theme-wildlife-habitats"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="theme-wildlife-habitats"
+                  >Local wildlife and habitats</label
+                >
               </div>
             </div>
           </fieldset>
@@ -87,30 +145,78 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
             <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-examining-panel">
-                <label class="govuk-label govuk-checkboxes__label" for="who-submitted-examining-panel">Examining authority</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-examining-panel"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-examining-panel"
+                  >Examining authority</label
+                >
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-developer">
-                <label class="govuk-label govuk-checkboxes__label" for="who-submitted-developer">Developer</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-developer"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-developer"
+                  >Developer</label
+                >
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-individual-interested-party">
-                <label class="govuk-label govuk-checkboxes__label" for="who-submitted-individual-interested-party">Individual interested party</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-individual-interested-party"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-individual-interested-party"
+                  >Individual interested party</label
+                >
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-organisation-interested-party">
-                <label class="govuk-label govuk-checkboxes__label" for="who-submitted-organisation-interested-party">Organisation interested party</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-organisation-interested-party"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-organisation-interested-party"
+                  >Organisation interested party</label
+                >
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-official-body-and-local-authority">
-                <label class="govuk-label govuk-checkboxes__label" for="who-submitted-official-body-and-local-authority">Official bodies and local authorities</label>
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-official-body-and-local-authority"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-official-body-and-local-authority"
+                  >Official bodies and local authorities</label
+                >
               </div>
             </div>
           </fieldset>
         </div>
-        <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+        <label
+          class="govuk-label govuk-!-margin-right-2"
+          for="document-results-sort"
+          >Sort by:
+        </label>
         <select id="document-results-sort" class="govuk-select">
           <option selected>Recently updated</option>
         </select>
@@ -119,56 +225,78 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       </div>
 
       <div class="govuk-grid-column-three-quarters">
-        <div class="govuk-grid-row ">
+        <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
-            <p class="results">Showing <strong>{{ representations.length}}</strong> of {{ representations.length}} results</p>
+            <p class="results">
+              Showing <strong>{{ representations.length}}</strong> of {{
+              representations.length}} results
+            </p>
           </div>
-
-
         </div>
-        <hr class="govuk-section-break govuk-!-margin-bottom-6 govuk-section-break--visible">
+        <hr
+          class="
+            govuk-section-break govuk-!-margin-bottom-6
+            govuk-section-break--visible
+          "
+        />
 
         <!-- loop across the representations in data/representations -->
         {% for representation in representations %}
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+        <a
+          href="javascript:{}"
+          onclick="document.getElementById('representationsForm{{ loop.index0 }}').submit(); "
+        >
+            Comment by {{ representation.by }} {% if representation.onBehalf %}
+            on behalf of {{ representation.onBehalf }} {% endif %}
+        </a>
+          </h3>
+        <p class="govuk-body-s">{{ representation.date }}</p>
         <p>
           <!-- show the comment -->
           {{ representation.comment | truncate(250) }}
           <!-- show read more link if the content has been truncated -->
           {% if representation.comment.length >= 250 %}
-          <a href="#">read more</a>
+          <a
+            href="javascript:{}"
+            onclick="document.getElementById('representationsForm{{ loop.index0 }}').submit(); "
+          >
+            read more
+          </a>
           {% endif %}
         </p>
         {% if representation.attachment %}
         <p>There is <a href="#"> one document attached</a> to this comment.</p>
         {% endif %}
-
-        <ul class="govuk-list">
-          <li>
-            <form id="representationsForm{{ loop.index0 }}" method="post" action="representation">
-
-              <label class="hidden" for="representation"> I have a bike</label><br>
-              <input class="hidden" value="{{ loop.index0 }}" type="number" name="representation" id="representation" />
-
-              <a href="javascript:{}" onclick="document.getElementById('representationsForm{{ loop.index0 }}').submit(); ">
-                <strong>{{ representation.by }}</strong>
-                {% if representation.onBehalf %}
-                on behalf of <strong>{{ representation.onBehalf }}</strong>
-                {% endif %}
-              </a>
-            </form>
-          </li>
-          <li class="govuk-body-s">
-            {{ representation.date }}
-          </li>
-        </ul>
-
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <hr
+          class="
+            govuk-section-break
+            govuk-section-break--l
+            govuk-section-break--visible
+          "
+        />
+        {# this form submits to send the server the index of the item that was
+        just clicked #}
+        <form
+          id="representationsForm{{ loop.index0 }}"
+          method="post"
+          action="representation"
+        >
+          {# hidden label #}
+          <label class="hidden" for="representation"> I have a bike</label>
+          {# hidden input, updating the value with the index of the loop #}
+          <input
+            class="hidden"
+            value="{{ loop.index0 }}"
+            type="number"
+            name="representation"
+            id="representation"
+          />
+        </form>
         {% endfor %}
-
       </div>
     </div>
   </main>
 </div>
-
 
 {% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
