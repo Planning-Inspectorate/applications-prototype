@@ -1,0 +1,228 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  A404 Dewsbury project overview
+{% endblock %}
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8 ]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+  {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="../../wrong-turn">feedback</a> will help us to improve it.' }) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+          <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">Project information</h2>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            The potential A404 Dewsbury to Berwick Down scheme proposes to construct a new section of dual carriageway to address problems associated with the single carriageway section of the A404 between Amesbury’s Countess roundabout and the dual carriageway
+            section to the west of Winterbourne Stoke.
+          </p>
+          <p>
+            <strong>
+              <a href="../../wrong-turn">Get updates via email, letter or text</a>.
+            </strong >
+          </p>
+          <p>
+            <strong>
+           <a class="govuk-link" href="../0-1-0/contact-us"> Help with using this service</a> 
+            </strong >  </p>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">Project stage</h2>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <p>
+            This project is in the
+            <strong>Pre-application</strong>
+            stage
+          </p>
+          <p>
+            You can get involved by contacting the developer at this stage.
+          </p>
+          <p class="govuk-!-margin-top-7"><strong>Being part of the developer's consultation</strong></p>
+          <p>
+            Getting involved in the developer's consultation during the Pre-application stage is very important. This is your opportunity to put forward any questions and concerns, and also find out more about the development and how it might impact the area.
+
+          </p>
+          <p>
+
+            <a href="../../dco-process-guide/pre-application">Find out more about the pre-application stage</a>.
+          </p>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">About the project</h2>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <ul class="govuk-list">
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="../../wrong-turn">Application introduction</a>
+            </p>
+            <p class="govuk-body">
+              Information about the project and what the developer is proposing
+            </p>
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="../../wrong-turn">Environmental information</a>
+            </p>
+            <p class="govuk-body">
+              Information about how the project might impact the environment and what the developer is proposing to make the impact less serious.
+            </p>
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="../../wrong-turn">Drawings</a>
+            </p>
+            <p class="govuk-body">
+              How the proposed project will look and the area it will impact.
+            </p>
+          </ul>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-m">Project documents</h3>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <ul class="govuk-list">
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="./about-the-application">Project application documents</a>
+            </p>
+            <p class="govuk-body">
+              Information about the application the developer has submitted. This includes all documents published at the pre-application, review of the application and pre-examination stages
+            </p>
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="./all-examination-documents">All examination documents</a>
+            </p>
+            <p class="govuk-body">
+              All documents, comments and questions submitted during the Examination stage.
+            </p>
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="../../wrong-turn">Recommendation and decision</a>
+            </p>
+            <p class="govuk-body">
+              Any documents submitted during the recommendation stage, and the decision made by the relevant Secretary of State.
+            </p>
+          </ul>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">Project timeline</h2>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <ol class="govuk-list govuk-list--number project-timeline-list">
+            <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a href="../../dco-process-guide/pre-application">Pre-application</a>
+                <span class="tag-wrapper">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong >
+                </span >
+              </h2>
+              <p>This is where the developer must run a consultation with people and organisations. You can get involved at this stage by finding the developer's website.
+              </p>
+            </li>
+
+            <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a href="../../dco-process-guide/review-of-the-application">Review of application</a>
+                <span class="tag-wrapper">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong >
+                </span >
+              </h2>
+              <p>This is called the Acceptance stage. This is when the developer sends us their application, including the consultation they have carried out. We have 28 days to make this decision.</p>
+            </li>
+            <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a href="../../dco-process-guide/pre-examination">Pre-examination</a>
+                <span class="tag-wrapper">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong >
+                </span >
+              </h2>
+              <p>We identify an inspector or a panel of inspectors called the Examining Authority and make a plan for the Examination stage. Anyone who wants to have their say will be able to register at this stage. Registration is open for 30 days.</p>
+            </li>
+            <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a href="../../dco-process-guide/examination">Examination of the project</a>
+                <span class="tag-wrapper">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong >
+                </span >
+              </h2>
+              <p>The examination stage is where the Examining Authority, the developer and anyone who has registered to have their say will get involved and comment on the proposed development at a number of set deadlines. This stage takes six months.</p>
+            </li>
+            <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+                <a href="../../dco-process-guide/recommendation-and-decision">Recommendation and decision</a>
+                <span class="tag-wrapper">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong >
+                </span >
+              </h2>
+              <p>Recommendation and decision is where the Examining Authority writes its recommendation report. This must be completed and sent to the Secretary of State within three months of the end of Examination. The relevant Secretary of State then makes the
+                final decision.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"/>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">About the developer</h2>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+
+          <p>The Developer proposing this project is Acme Group Ltd.</p>
+
+          <img src="/public/images/logos/acme-group-ltd-logo.png" alt="Acme Group Ltd's logo"/>
+
+          <p class="govuk-body govuk-!-margin-top-6">
+            <a href="../../wrong-turn">Visit the project website by Acme Group Ltd</a>
+            for more information.</p>
+        </div>
+      </>
+
+    </div>
+  </main>
+</div>
+{% endblock %}
+{% block footer %}
+{{ pinsFooter() }}
+{% endblock %}
