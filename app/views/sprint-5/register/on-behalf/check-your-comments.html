@@ -25,26 +25,30 @@ Check your answers - Register to have your say
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">You have added three comments</h1>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ data['comment-topic'] }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['behalf-comment'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="comment">
-                Change
-                <span class="govuk-visually-hidden"> this comment</span>
-            </a>
-            <a href="remove-comment">
-                Remove
-                <span class="govuk-visually-hidden"> this comment</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+
+       {% for comment in comments  %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{comment.topic}}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>{{comment.rep}}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="comment">
+                  Change
+                  <span class="govuk-visually-hidden"> this comment</span>
+              </a>
+              <a href="remove-comment">
+                  Remove
+                  <span class="govuk-visually-hidden"> this comment</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% endfor %}
+
       <form autocomplete="off" method="post" novalidate>
 
       {{ govukRadios({
