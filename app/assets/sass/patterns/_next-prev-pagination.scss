@@ -1,0 +1,175 @@
+// borrowed from lines 8635 - 8807 from https://github.com/digital-land/digital-land-archived/blob/fde1382e0b5db95ae7505717262ae8955de3dad5/static/stylesheets/dl-frontend.css
+
+.dlf-pagination {
+    display: block;
+    margin: 45px 0 30px;
+  }
+  
+  .dlf-pagination--flush {
+    margin-top: 0;
+  }
+  
+  .dlf-pagination__list {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dlf-pagination__list--no-border .dlf-pagination__item:first-of-type .dlf-pagination__link-title {
+    border-top: 0;
+  }
+  
+  .dlf-pagination__item {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    list-style: none;
+  }
+  
+  @media print {
+    .dlf-pagination__item {
+      font-family: sans-serif;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .dlf-pagination__item {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+  }
+  
+  @media print {
+    .dlf-pagination__item {
+      font-size: 14pt;
+      line-height: 1.25;
+    }
+  }
+  
+  .dlf-pagination__link {
+    display: block;
+    padding: 0 0 20px;
+    text-decoration: none;
+  }
+  
+  .dlf-pagination__link:hover, .dlf-pagination__link:active, .dlf-pagination__link:visited, .dlf-pagination__link:focus {
+    color: #1d70b8;
+  }
+  
+  .dlf-pagination__link:hover {
+    background-color: #f3f2f1;
+  }
+  
+  .dlf-pagination__link:focus, .dlf-pagination__link:active {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+  
+  .dlf-pagination__link-title {
+    display: block;
+    padding-top: 15px;
+    border-top: 1px solid #b1b4b6;
+  }
+  
+  .dlf-pagination__link-divider {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+  
+  .dlf-pagination__link-text {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-left: 10px;
+  }
+  
+  @media print {
+    .dlf-pagination__link-text {
+      font-family: sans-serif;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .dlf-pagination__link-text {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+    }
+  }
+  
+  @media print {
+    .dlf-pagination__link-text {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+  
+  .dlf-pagination__link-icon {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.25;
+    display: inline-block;
+    width: .63em;
+    height: .482em;
+    margin-bottom: 1px;
+    fill: #b1b4b6;
+  }
+  
+  @media print {
+    .dlf-pagination__link-icon {
+      font-family: sans-serif;
+    }
+  }
+  
+  @media (min-width: 40.0625em) {
+    .dlf-pagination__link-icon {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+  }
+  
+  @media print {
+    .dlf-pagination__link-icon {
+      font-size: 18pt;
+      line-height: 1.25;
+    }
+  }
+  
+  .dlf-pagination__link-label {
+    display: inline-block;
+    margin-top: .1em;
+    margin-left: 30px;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 40.0525em) {
+    .dlf-pagination__link-label {
+      margin-left: 24px;
+    }
+  }

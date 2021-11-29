@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Type of interested party - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "sprint-5-representing-for",
+            name: "sprint-5-representing-for",
+            fieldset: {
+              legend: {
+                text: "Who are you representing?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "A person",
+                text: "A person"
+              },
+              {
+                value: "An organisation or charity",
+                text: "An organisation or charity"
+              },
+              {
+                value: "A family group, or couple",
+                text: "A family group, or couple"
+              }
+            ]
+          }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

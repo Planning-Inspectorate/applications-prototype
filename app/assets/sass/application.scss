@@ -37,6 +37,7 @@ $pins-timeline-circle-size: 50px;
 @import "patterns/breadcrumb";
 @import "patterns/dwp-timeline";
 @import "patterns/pagination";
+@import "patterns/next-prev-pagination";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 // For use on pages with a contents bar on the side
@@ -308,6 +309,7 @@ ul.sidenav {
     padding: 0.7em;
     margin-left: calc(-0.7em - 6px);
     border-left: 6px solid $pins-banner-background-secondary-color;
+    font-weight: 700;
   }
 }
 //  //  Map styling
