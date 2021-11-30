@@ -142,6 +142,71 @@ module.exports = function (router) {
     }
   );
 
+  // ORGANISATION FLOW
+  // 
+  // 
+  // 
+  // when check comments page loads
+
+  // when the comments are submitted, add them to an array
+  router.post(
+    "/sprint-5/register/organisation/comment",
+    function (req, res, next) {
+      // get the data submitted
+      var sprintFiveComment = req.session.data["organisation-comment"] || "A test comment";
+      var sprintFiveTopic = req.session.data["organisation-topic"] || "A test topic";
+
+      // create an empty array, and add the data from the form
+      const comment = {};
+      comment.topic = sprintFiveTopic;
+      comment.rep = sprintFiveComment;
+      comments.push(comment);
+      // redirect to the check your comments page
+      return res.redirect("check-your-comments");
+    }
+  );
+
+  router.get(
+    "/sprint-5/register/organisation/check-your-comments",
+    function (req, res) {
+      // if there are no comments, load the comments page
+      if (comments <= 0) {
+        res.redirect("comment");
+      } else {
+        // pass in the comments variable
+        res.render("sprint-5/register/organisation/check-your-comments", {
+          comments,
+        });
+      }
+    }
+  );
+
+  // when a user chooses to add another comment or not
+  router.post(
+    "/sprint-5/register/organisation/check-your-comments",
+    function (req, res) {
+      // capture their response
+      var sprintFiveComment = req.session.data["another-organisation-comment"];
+      // choose which page to display
+      if (sprintFiveComment == "true") {
+        return res.redirect("comment");
+      } else {
+        return res.redirect("check-your-answers");
+      }
+    }
+  );
+
+   // when check answers page loads
+   router.get(
+    "/sprint-5/register/organisation/check-your-answers",
+    function (req, res) {
+      // pass in the comments variable
+      res.render("sprint-5/register/organisation/check-your-answers", {
+        comments,
+      });
+    }
+  );
+
 
 
   // ON BEHALF FLOW

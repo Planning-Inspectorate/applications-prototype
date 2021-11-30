@@ -24,7 +24,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="topic" method="post">
+      <form autocomplete="off" class="form"  method="post">
         <h1 class="govuk-heading-l">What do you want to tell us about this proposed project?</h1>
 
        <!-- {{ govukWarningText({
@@ -33,7 +33,7 @@
         }) }} -->
 
         {{ govukDetails({
-          summaryText: "Do not include any personal details.",
+          summaryText: "Do not include any personal details or sensitive information.",
           html: '
             <h2 class="govuk-heading-m">Use of language and sensitive information</h2>
             <p class="govuk-body">You should not use racist, inflammatory or abusive language, or include sensitive information (also called special category information) about yourself or others in your comments.</p>
@@ -69,9 +69,9 @@
           html: html
         }) }} -->
         <!-- <p>Do not include any personal details.</p> -->
-        <p class="govuk-body">  Your registration comments (also known as a relevant representation) should relate to the application. You must include a summary of points which you agree and/or disagree with about the application, highlighting what you consider to be the main issues and impacts.
+      <p class="govuk-body">  Your registration comments (also known as a relevant representation) should relate to the application. You must include a summary of points which you agree and/or disagree with about the application, highlighting what you consider to be the main issues and impacts.
 
-          <p class="govuk-body">  Information about how you think a project may affect your day-to-day life may also be of interest to the Examining Authority.</p>
+        <p class="govuk-body">  Information about how you think a project may affect your day-to-day life may also be of interest to the Examining Authority.</p>
 
         <p class="govuk-body">You can talk about anything you think is important to tell us about the propsed project in as much detail as possible.</p>
         <p class="govuk-body">This information will be:</p>
@@ -81,12 +81,28 @@
         </ul>
 
 
+
+        {{ govukInput({
+          label: {
+            text: "What topic does your comment relate to?",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          id: "organisation-topic",
+          name: "organisation-topic"
+        }) 
+        }}
+
         {{ govukTextarea({
+           label: {
+              text: "Your registration comment?",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
           maxwords: 200,
           id: "organisation-comment",
           name: "organisation-comment"
         }) }}
-
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>

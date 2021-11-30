@@ -71,122 +71,126 @@
             </a>
           </dd>
         </div>
-         <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
               How would you like to be contacted about this project?
             </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['myselfContactPref']}}  
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="over-18">
+          <dd class="govuk-summary-list__value">
+            {{data['myselfContactPref']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="over-18">
               Change
               <span class="govuk-visually-hidden"> contact-preference</span>
-              </a>
-            </dd>
-          </div>        
+            </a>
+          </dd>
+        </div>
 
-
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['email'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="email">
+              Change
+              <span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['telephone-number'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="telephone">
+              Change
+              <span class="govuk-visually-hidden"> telephone number</span>
+            </a>
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Address
           </dt>
           <dd class="govuk-summary-list__value">
             {%if not data['myself-selectAnAddress'] %}
-              {{ data['address-line-1'] }}</br>
-              {{ data['address-line-2'] }}</br>
-              {{ data['address-line-3'] }}</br>
-              {{ data['address-postcode'] }}</br>
+              {{ data['address-line-1'] }}
+              <br>
+              {{ data['address-line-2'] }}
+              <br>
+              {{ data['address-line-3'] }}
+              <br>
+              {{ data['address-postcode'] }}
+              <br>
               {{ data['address-country'] }}
             {% else %}
               {{ data['myself-selectAnAddress'] | striptags(true) | escape | nl2br }}
-            </br>
-            {%if not data['myself-postcode'] %}
-               BS1 6PN
-              {% endif %}
-            {{data['myself-postcode']}}
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="postcode">
+              <br>
+              {%if not data['myself-postcode'] %}
+      BS1 6PN
+    {% endif %}
+              {{data['myself-postcode']}}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="postcode">
               Change
               <span class="govuk-visually-hidden"> address</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Email address
-          </dt>
-        <dd class="govuk-summary-list__value">
-          <p>{{ data['email'] }}</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="email">
-              Change
-              <span class="govuk-visually-hidden"> email address</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Telephone number
-          </dt>
-        <dd class="govuk-summary-list__value">
-          <p>{{ data['telephone-number'] }}</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="telephone">
-              Change
-              <span class="govuk-visually-hidden"> telephone number</span>
-          </a>
-        </dd>
-      </div>
-    </dl>
-    </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters-from-desktop">
-        <h2 class="govuk-heading-m">Your registration comments</h2>
+            </a>
+          </dd>
+        </div>
 
-        {% for comment in comments %}
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                {{comment.topic}}
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p>{{comment.rep}}</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="comment">
+      </dl>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <h2 class="govuk-heading-m">Your registration comments</h2>
+
+      {% for comment in comments %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{comment.topic}}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>{{comment.rep}}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="comment">
                   Change
                   <span class="govuk-visually-hidden"> this comment</span>
-                </a>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="remove-comment">
+              </a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="remove-comment">
                   Remove
                   <span class="govuk-visually-hidden"> this comment</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-        {% endfor %}
-    <form autocomplete="off" action="../declaration" method="post" novalidate>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% endfor %}
+      <form autocomplete="off" action="../declaration" method="post" novalidate>
 
-      <input type="hidden" name="answers-checked" value="true">
+        <input type="hidden" name="answers-checked" value="true">
 
-      <button type="submit" class="govuk-button" data-module="govuk-button">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
           Accept and continue
         </button>
 
-    </form>
+      </form>
 
+    </div>
   </div>
-</div>
 {% endblock %}
 
 {% block footer %}
-{{ pinsFooter() }}
+  {{ pinsFooter() }}
 {% endblock %}
