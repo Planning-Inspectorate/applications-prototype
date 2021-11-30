@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UK Address details - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="check-your-answers" method="post">
+        {% call govukFieldset({
+          legend: {
+            text: "What is your address?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+        {% endcall %}
+        {% call govukFieldset({
+          legend: {
+            text: "Postcode",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+        {% endcall %}
+        <p>
+          {%if not data['postcode'] %}BS1 6PN{% endif %}
+          {{data['behalf-postcode']}}&emsp;<a href="./postcode">Change</a>
+        </p>
+
+        {{ govukSelect({
+            id: "behalf-selectAnAddress",
+            name: "behalf-selectAnAddress",
+            label: {
+              text: "Select an address",
+              classes: "govuk-label--m"
+            },
+            items: [
+              {
+                value: "11 Your Street,\nYour Town,\nYour County",
+                text: "11 Your Street, Your Town, Your County"
+              },
+              {
+                value: "12 Your Street,\nYour Town,\nYour County",
+                text: "12 Your Street, Your Town, Your County"
+              },
+              {
+                value: "13 Your Street,\nYour Town,\nYour County",
+                text: "13 Your Street, Your Town, Your County"
+              },
+              {
+                value: "14 Your Street,\nYour Town,\nYour County",
+                text: "14 Your Street, Your Town, Your County"
+              }
+            ]
+          }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

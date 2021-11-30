@@ -34,7 +34,7 @@ Check your answers - Register to have your say
           Who are you registering for?
         </dt>
           <dd class="govuk-summary-list__value">
-            {{data['sprint-4-type-of-interested-party']}}
+            {{data['sprint-5-type-of-interested-party']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -76,11 +76,20 @@ Check your answers - Register to have your say
           Address
         </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['behalf-address-line-1'] }}
-            <br>{{ data['behalf-address-line-2'] }}
-            <br>{{ data['behalf-address-line-3'] }}
-            <br>{{ data['behalf-address-postcode'] }}
-            <br>{{ data['behalf-address-country'] }}
+            {%if not data['behalf-selectAnAddress'] %}
+              {{ data['behalf-address-line-1'] }}
+              {{ data['behalf-address-line-2'] }}
+              {{ data['behalf-address-line-3'] }}
+              {{ data['behalf-address-postcode'] }}
+              {{ data['behalf-address-country'] }}
+            {% else %}
+              {{ data['behalf-selectAnAddress'] | striptags(true) | escape | nl2br }} </br>
+              {%if not data['behalf-postcode'] %}
+               BS1 6PN
+              {% endif %}
+              {{data['behalf-postcode']}}
+            {% endif %}
+            
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="address">

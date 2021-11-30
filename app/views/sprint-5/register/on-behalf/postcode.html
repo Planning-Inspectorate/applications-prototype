@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode lookup
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="pick-address">
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                <h1 class="govuk-fieldset__heading">
+                  What is your postcode?                            
+                </h1>
+              </legend>
+
+              <p class="govuk-hint">
+                          We will use this to get in touch with you about the project
+                        </p>
+              <p class="govuk-hint">
+                            For example, AB1 2YZ
+                        </p>
+
+              <div class="govuk-form-group">
+                <input class="govuk-input govuk-input--width-10" id="postcode" name="behalf-postcode" type="text">
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+      </form>
+      <a href="./address">I live outside of the UK</a>
+    </div>
+  </div>
+  <br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
