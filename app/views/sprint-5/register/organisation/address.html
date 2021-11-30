@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UK Address details - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="comment" method="post">
+        {% call govukFieldset({
+          legend: {
+            text: "What is your address?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              text: 'Address line 1'
+            },
+            id: "organisation-address-line-1",
+            name: "organisation-address-line-1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: 'Address line 2'
+            },
+            id: "organisation-address-line-2",
+            name: "organisation-address-line-2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Address line 3"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "organisation-address-line-3",
+            name: "organisation-address-line-3"
+          }) }}
+
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "organisation-address-postcode",
+            name: "organisation-address-postcode"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "organisation-address-country",
+            name: "organisation-address-country"
+          }) }}
+
+        {% endcall %}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

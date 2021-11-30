@@ -14,7 +14,7 @@ module.exports = function(router) {
       res.redirect("organisation/full-name");
 
       // if behalf, show behalf flow
-    } else if (sprintFourTypeOfParty == "On behalf of another person or organisation") {
+    } else if (sprintFourTypeOfParty == "On behalf of another person or organisation, or as a family group") {
 
       res.redirect("on-behalf/representee-full-name");
 

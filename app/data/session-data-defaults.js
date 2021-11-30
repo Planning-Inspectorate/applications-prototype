@@ -34,8 +34,8 @@ module.exports = {
   "email": "joe@blogs.com",
   "telephone-number": "01234567890",
   "comment": "I'm concerned that the traffic will be affected",
-  "topics": "Traffic, Air quality "
-
+  "topics": "Traffic, Air quality",
+  "postcode": "BS1 6PN"
   // organisation default values
 
 }
