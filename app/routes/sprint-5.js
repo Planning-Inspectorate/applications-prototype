@@ -78,7 +78,6 @@ module.exports = function (router) {
       var sprintFiveComment = req.session.data["behalf-comment"] || "A test comment";
       var sprintFiveTopic = req.session.data["behalf-topic"] || "A test topic";
 
-      
       // create an empty array, and add the data from the form
       const comment = {};
       comment.topic = sprintFiveTopic;
@@ -108,14 +107,28 @@ module.exports = function (router) {
   // when a user chooses to add another comment or not
   router.post(
     "/sprint-5/register/on-behalf/check-your-comments",
-    function (req, res, next) {
+    function (req, res) {
       // capture their response
       var sprintFiveComment = req.session.data["another-comment"];
       // chose which page to display
       if (sprintFiveComment == "true") {
         return res.redirect("comment");
       } else {
-        return res.redirect("check-your-answers");
+        return res.redirect("full-name");
+      }
+    }
+  );
+
+  // when a user chooses to add another comment or not
+  router.post(
+    "/sprint-5/register/on-behalf/over-18",
+    function (req, res) {
+      // data.type
+      // chose which page to display
+      if (req.session.data["sprint5RepresentingFor"] == "An organisation or charity") {
+        return res.redirect("organisation-name");
+      } else {
+        return res.redirect("contact-preference");
       }
     }
   );

@@ -28,6 +28,7 @@ module.exports = {
   // Enable or disable Browser Sync
   useBrowserSync: 'true',
 
+  // Shows user submitted data in the terminal
   useLogging: 'false'
 
 }
