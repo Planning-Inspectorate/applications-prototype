@@ -1,0 +1,161 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <a href="#" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <nav>
+          <ul class="govuk-list sidenav">
+            <li class="active">
+              <strong>A404 Dewsbury project information</strong>
+            </li>
+            <li>
+              <a href="about-the-application">Project application documents</a>
+            </li>
+            <li><a href="./timetable">Examination timetable</a></li>
+            <li><a href="./all-examination-documents">All Examination documents</a></li>
+            <li><a href="../../wrong-turn">Recommendation and decision</a></li>
+          </ul>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+          <h3 class="govuk-heading-s">Related guides</h3>
+          <ul class="govuk-list sidenav">
+            <li>
+              <a href="../../dco-process-guide/">The process for national infrastructure projects</a>
+            </li>
+            <li>
+              <a href="../../interested-party-guide/">Having your say about a national infrastructure project</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="../0-1-0/contact-us"> Help with using this service</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-l">Project information</h2>
+        <p class="govuk-body">
+          The potential A404 Dewsbury to Berwick Down scheme proposes to
+          construct a new section of dual carriageway to address problems
+          associated with the single carriageway section of the A404 between
+          Amesbury’s Countess roundabout and the dual carriageway section to the
+          west of Winterbourne Stoke.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-7""><a href="../../wrong-turn">Get updates via email, letter or text</a></p>
+        
+        <div class="pins-timeline">
+          <p>
+            This project is at:
+            <strong>Pre-application stage</strong>
+          </p>
+          <ol>
+            <li class="current">
+              Pre-application
+              <div class="pins-timeline-badge">
+                <svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                  data-fa-i2svg="">
+                  <path fill="currentColor" d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z"></path>
+                </svg>
+              </div>
+            </li>
+            <li>
+              Review of application
+              <div class="pins-timeline-badge"></div>
+            </li>
+            <li>
+              Pre-examination
+              <div class="pins-timeline-badge"></div>
+            </li>
+            <li>
+              Examination of the application
+              <div class="pins-timeline-badge"></div>
+            </li>
+            <li>
+              Recommendation and Decision
+              <div class="pins-timeline-badge"></div>
+            </li>
+          </ol>
+          <p>
+            You can get involved by contacting the developer at this stage.
+          </p>
+        </div>
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+          Being part of the developer's consultation
+        </h2>
+        <p>
+          Getting involved in the developer's consultation during the
+          Pre-application stage is very important. This is your opportunity to
+          put forward any questions and concerns, and also find out more about
+          the development and how it might impact the area.
+        </p>
+        <p>
+          <a href="../../interested-party-guide/having-your-say-pre-application">Find out more about getting involved at the the Pre-application
+            stage</a>.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>
+          Once the developer has sent their application for the proposed
+          project, we will make a decision about if we can accept the project
+          for Examination. This takes 28 days.
+        </p>
+        <p>
+          <a href="../../dco-process-guide/pre-application">Find out more about the Pre-application process</a>
+          for national infrastructure projects.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">About the developer</h2>
+
+        <p>The Developer proposing this project is Acme Group Ltd.</p>
+
+        <img src="/public/images/logos/acme-group-ltd-logo.png" alt="Acme Group Ltd's logo" />
+
+        <p class="govuk-body govuk-!-margin-top-6">
+          At this stage of the project, the developer must run a consultation
+          with people and organisations.
+        </p>
+
+        <p>
+          If you want to have your say at this stage, you can contact the
+          developer directly.
+        </p>
+
+        <p><a href="../../wrong-turn">Visit the project website by Acme Group Ltd</a> for more information.</p>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

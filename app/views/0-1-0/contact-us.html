@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Digital assisted user contact
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Speak to an adviser</h1>
+
+        <ul class="govuk-list">
+        <li>  If you need to access information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:</ul>
+          <br>
+          <ul class="govuk-list">
+        <li> Email: <a href="mailto:A404Dewsbury@planninginspectorate.gov.uk"> A404Dewsbury@planninginspectorate.gov.uk</a> </li>
+      <li>  Call: 0303 444 5000</li></ul>
+      <br>
+      <ul class="govuk-list">
+    <li>   <strong>Developer:</strong> Highways England</li>
+  <li> Email: <a href="mailto:<A404Dewsbury@highwaysengland.co.uk>"> A404Dewsbury@highwaysengland.co.uk</a> </li>
+  <li>   Call: 0300 123 5000 </li></ul>
+
+      </div>
+    </div>
+  </main>
+</div>
+</div> <br> <br><br> <br><br> <br><br> <br>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
