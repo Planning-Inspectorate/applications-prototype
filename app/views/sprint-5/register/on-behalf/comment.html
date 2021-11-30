@@ -17,7 +17,7 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -27,7 +27,7 @@
       <form autocomplete="off" class="form"   method="post">
         <h1 class="govuk-heading-l">What do you want to tell us about this proposed project?</h1>
 
-       <!-- {{ govukWarningText({
+        <!-- {{ govukWarningText({
           text: "This information will be published on our website for the public. You should not include any personal details or sensistive information with your comment.",
           iconFallbackText: "Warning"
         }) }} -->
@@ -77,7 +77,6 @@
           <li>published on our website</li>
         </ul>
         <p class="govuk-body">These are your registration comments. You will be able to tell us more during the Examination of the project.</p>
-
 
         {{ govukInput({
           label: {
