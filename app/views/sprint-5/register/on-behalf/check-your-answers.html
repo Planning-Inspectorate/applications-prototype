@@ -34,7 +34,7 @@ Check your answers - Register to have your say
           Who are you registering for?
         </dt>
           <dd class="govuk-summary-list__value">
-            {{data['sprint-5-type-of-interested-party']}}
+            {{data['sprint5RepresentingFor']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -89,6 +89,20 @@ Check your answers - Register to have your say
           </div>        
         {% endif %}
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How would you like to be contacted about this project?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['behalfContactPref']}}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="over-18">
+              Change
+              <span class="govuk-visually-hidden"> contact-preference</span>
+              </a>
+            </dd>
+          </div>        
 
 
         <div class="govuk-summary-list__row">
@@ -216,7 +230,7 @@ Check your answers - Register to have your say
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters-from-desktop">
-        <h2 class="govuk-heading-m">Your comments</h2>
+        <h2 class="govuk-heading-m">Your registration comments</h2>
 
         {% for comment in comments %}
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
