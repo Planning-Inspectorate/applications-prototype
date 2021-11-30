@@ -26,7 +26,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="check-your-answers" method="post">
+      <form autocomplete="off" class="form" action="comment" method="post">
         {% call govukFieldset({
           legend: {
             text: "What is your address?",
@@ -44,13 +44,13 @@
         }) %}
         {% endcall %}
         <p>
-          {%if not data['behalf-postcode'] %}BS1 6PN{% endif %}
-          {{data['behalf-postcode']}}&emsp;<a href="./postcode">Change</a>
+          {%if not data['myself-postcode'] %}BS1 6PN{% endif %}
+          {{data['myself-postcode']}}&emsp;<a href="./postcode">Change</a>
         </p>
 
         {{ govukSelect({
-            id: "behalf-selectAnAddress",
-            name: "behalf-selectAnAddress",
+            id: "myself-selectAnAddress",
+            name: "myself-selectAnAddress",
             label: {
               text: "Select an address",
               classes: "govuk-label--s"

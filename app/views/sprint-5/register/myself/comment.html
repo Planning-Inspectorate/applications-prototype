@@ -24,7 +24,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="topic" method="post">
+      <form autocomplete="off" class="form"  method="post">
         <h1 class="govuk-heading-l">What do you want to tell us about this proposed project?</h1>
 
        <!-- {{ govukWarningText({
@@ -81,12 +81,28 @@
         </ul>
 
 
-        {{ govukTextarea({
-          maxwords: 200,
-          id: "comment",
-          name: "comment"
-        }) }}
 
+        {{ govukInput({
+          label: {
+            text: "What topic does your comment relate to?",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          id: "myself-topic",
+          name: "myself-topic"
+        }) 
+        }}
+
+        {{ govukTextarea({
+           label: {
+              text: "Your registration comment?",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+          maxwords: 200,
+          id: "myself-comment",
+          name: "myself-comment"
+        }) }}
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>

@@ -2,6 +2,12 @@ const representations = require("../data/representations.json");
 
 // sprint 4 routes
 module.exports = function (router) {
+
+  // create an empty array
+  let comments = [];
+
+
+
   // routes for the representations
   router.get("/sprint-5/representations", function (req, res) {
     res.render("sprint-5/representations", representations);
@@ -67,8 +73,82 @@ module.exports = function (router) {
     }
   );
 
-  // create an empty array
-  let comments = [];
+
+
+  
+
+  // MYSELF FLOW
+  // 
+  // 
+  // 
+  // when check comments page loads
+
+  // when the comments are submitted, add them to an array
+  router.post(
+    "/sprint-5/register/myself/comment",
+    function (req, res, next) {
+      // get the data submitted
+      var sprintFiveComment = req.session.data["myself-comment"] || "A test comment";
+      var sprintFiveTopic = req.session.data["myself-topic"] || "A test topic";
+
+      // create an empty array, and add the data from the form
+      const comment = {};
+      comment.topic = sprintFiveTopic;
+      comment.rep = sprintFiveComment;
+      comments.push(comment);
+      // redirect to the check your comments page
+      return res.redirect("check-your-comments");
+    }
+  );
+
+  router.get(
+    "/sprint-5/register/myself/check-your-comments",
+    function (req, res) {
+      // if there are no comments, load the comments page
+      if (comments <= 0) {
+        res.redirect("comment");
+      } else {
+        // pass in the comments variable
+        res.render("sprint-5/register/myself/check-your-comments", {
+          comments,
+        });
+      }
+    }
+  );
+
+  // when a user chooses to add another comment or not
+  router.post(
+    "/sprint-5/register/myself/check-your-comments",
+    function (req, res) {
+      // capture their response
+      var sprintFiveComment = req.session.data["another-myself-comment"];
+      // choose which page to display
+      if (sprintFiveComment == "true") {
+        return res.redirect("comment");
+      } else {
+        return res.redirect("check-your-answers");
+      }
+    }
+  );
+
+   // when check answers page loads
+   router.get(
+    "/sprint-5/register/myself/check-your-answers",
+    function (req, res) {
+      // pass in the comments variable
+      res.render("sprint-5/register/myself/check-your-answers", {
+        comments,
+      });
+    }
+  );
+
+
+
+  // ON BEHALF FLOW
+  // 
+  // 
+  // 
+  // when check comments page loads
 
   // when the comments are submitted, add them to an array
   router.post(
@@ -88,7 +168,6 @@ module.exports = function (router) {
     }
   );
 
-  // when check comments page loads
   router.get(
     "/sprint-5/register/on-behalf/check-your-comments",
     function (req, res) {
@@ -109,8 +188,8 @@ module.exports = function (router) {
     "/sprint-5/register/on-behalf/check-your-comments",
     function (req, res) {
       // capture their response
-      var sprintFiveComment = req.session.data["another-comment"];
-      // chose which page to display
+      var sprintFiveComment = req.session.data["another-behalf-comment"];
+      // choose which page to display
       if (sprintFiveComment == "true") {
         return res.redirect("comment");
       } else {
@@ -118,6 +197,7 @@ module.exports = function (router) {
       }
     }
   );
+
 
   // when a user chooses to add another comment or not
   router.post(

@@ -24,13 +24,13 @@ Type of interested party - Register to have your say
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form autocomplete="off" class="form" method="post">
+    <form autocomplete="off" class="form" action="email" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-      {{ govukRadios({
-            idPrefix: "type-of-interested-party",
-            name: "type-of-interested-party",
+      {{ govukCheckboxes({
+            idPrefix: "myselfContactPref",
+            name: "myselfContactPref",
             fieldset: {
               legend: {
                 text: "How would you like to be contacted about this project?",
@@ -39,7 +39,7 @@ Type of interested party - Register to have your say
               }
             },
             hint: {
-              text: "We will use this to send you messages about the project."
+              text: "You can select as many as you like"
             },
             items: [
               {
@@ -47,11 +47,7 @@ Type of interested party - Register to have your say
                 text: "by email"
               },
               {
-                value: "sms",
-                text: "by text message (SMS)"
-              },
-              {
-                value: "letter",
+                value: "post",
                 text: "by post"
               },
               {
