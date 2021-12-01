@@ -52,7 +52,7 @@ module.exports = function (router) {
     function (req, res) {
       // get the type of interested party
       var sprintFiveRepresentingFor =
-        req.session.data["sprint-5-representing-for"];
+        req.session.data["sprint5RepresentingFor"];
 
       // if an individual, show individual flow
       if (sprintFiveRepresentingFor == "A person") {
@@ -263,7 +263,6 @@ module.exports = function (router) {
     }
   );
 
-
   // when a user chooses to add another comment or not
   router.post(
     "/sprint-5/register/on-behalf/over-18",
@@ -288,4 +287,5 @@ module.exports = function (router) {
       });
     }
   );
+
 };
