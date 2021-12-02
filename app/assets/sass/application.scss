@@ -271,7 +271,8 @@ svg.pins-step-by-step-navigation-icon {
                     vertical-align: middle;
                     */
           color: $pins-timeline-badge-icon-colour;
-          box-shadow: inset 0 0 0 2px $pins-timeline-badge-background-solid, inset 0 0 0 3px white;
+          box-shadow: inset 0 0 0 2px $pins-timeline-badge-background-solid,
+            inset 0 0 0 3px white;
           background-color: $pins-timeline-badge-background-solid;
           height: $pins-timeline-circle-size;
           width: $pins-timeline-circle-size;
@@ -370,7 +371,12 @@ ul.sidenav {
       }
 
       input[type="radio"]:checked + ::before {
-        background: radial-gradient(black 0%, black 40%, transparent 50%, transparent);
+        background: radial-gradient(
+          black 0%,
+          black 40%,
+          transparent 50%,
+          transparent
+        );
       }
     }
 
@@ -395,7 +401,13 @@ ul.sidenav {
         }
 
         .pins-map-key-icon--red_line_boundary {
-          background: repeating-linear-gradient(90deg, $pins-map-red, $pins-map-red 5px, $pins-map-key-background, $pins-map-key-background 10px);
+          background: repeating-linear-gradient(
+            90deg,
+            $pins-map-red,
+            $pins-map-red 5px,
+            $pins-map-key-background,
+            $pins-map-key-background 10px
+          );
         }
       }
     }
@@ -581,10 +593,10 @@ h2.govuk-accordion__section-heading {
 }
 
 .project-timeline-list {
-  li{
+  li {
     margin-bottom: govuk-spacing(6);
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -594,6 +606,53 @@ h2.govuk-accordion__section-heading {
     display: block;
     @include govuk-media-query($from: tablet) {
       display: inline;
+    }
+  }
+}
+
+.govuk-header__content {
+  a.ons-btn {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    vertical-align: top;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: none;
+    } 
+
+    .ons-btn__inner {
+      background: transparent;
+      border: 2px solid hsla(0, 0%, 100%, 0.6);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #fff;
+      border-radius: 3px;
+      display: inherit;
+      padding: 0.7em 1em 0.7em;
+      pointer-events: none;
+      position: relative;
+    }
+
+    .ons-svg-icon {
+      height: 18px;
+      margin-top: -3px;
+      vertical-align: middle;
+      width: 18px;
+      margin-left: 0.5rem!important;
     }
   }
 }
