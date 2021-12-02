@@ -6,7 +6,10 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-5/register/start"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +28,8 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">Declaration</h1>
-      <p class="govuk-body">By submitting this form, you are registering to have your say. You will be given an Interested Party reference number.
+      <p class="govuk-body">
+        By submitting this form, you are registering to have your say and telling us your initial registration comments. You will be given an Interested Party reference number.
       </p>
       <p class="govuk-body">This means you can take part in the Examination of the application and submit Examination comments about any of the application information. The Examining Authority must consider your views when they recommend if the project should go ahead.</p>
       <p class="govuk-body">By registering to have your say, you are agreeing that we will use your details to:

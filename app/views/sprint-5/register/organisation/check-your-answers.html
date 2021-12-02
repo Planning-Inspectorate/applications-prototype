@@ -3,7 +3,10 @@
 to have your say {% endblock %}
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-5/register/start"
+  }) }}
 {% endblock %}
 {% block beforeContent %}
   {{
@@ -72,7 +75,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             {{ data['organisation-name'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="over-18">
+            <a href="organisation-name">
             Change
             <span class="govuk-visually-hidden">
               name of your organisation or charity</span
@@ -88,7 +91,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             {{ data['organisation-role'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="over-18">
+            <a href="role">
             Change
             <span class="govuk-visually-hidden">
               job title or volunteer role</span
@@ -105,9 +108,9 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             {{data['organisationContactPref']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="over-18">
+            <a href="contact-preference">
               Change
-              <span class="govuk-visually-hidden"> contact-preference</span>
+              <span class="govuk-visually-hidden"> how you'd like to be contacted</span>
             </a>
           </dd>
         </div>
@@ -164,7 +167,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="address">
+            <a href="postcode">
             Change
             <span class="govuk-visually-hidden"> address</span>
             </a>
@@ -188,13 +191,13 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               <p>{{comment.rep}}</p>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="comment">
+              <a href="#">
                   Change
                   <span class="govuk-visually-hidden"> this comment</span>
               </a>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="remove-comment">
+              <a href="#">
                   Remove
                   <span class="govuk-visually-hidden"> this comment</span>
               </a>

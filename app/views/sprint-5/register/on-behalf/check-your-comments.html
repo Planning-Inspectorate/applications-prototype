@@ -6,7 +6,10 @@ Check your answers - Register to have your say
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-5/register/start"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -36,13 +39,13 @@ Check your answers - Register to have your say
               <p>{{comment.rep}}</p>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="comment">
+              <a href="#">
                   Change
                   <span class="govuk-visually-hidden"> this comment</span>
               </a>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="remove-comment">
+              <a href="#">
                   Remove
                   <span class="govuk-visually-hidden"> this comment</span>
               </a>

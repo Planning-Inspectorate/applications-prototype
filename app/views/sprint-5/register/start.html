@@ -6,7 +6,10 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-5/register/start"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -77,7 +80,7 @@
               <li>address</li>
               <li>email address and telephone number</li>
               <li>the details of the person or organisation you are representing</li>
-              <li>comments about the project</li>
+              <li>their comments about the project</li>
             </ul>
 
 
