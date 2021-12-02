@@ -288,4 +288,15 @@ module.exports = function (router) {
     }
   );
 
+  // when check answers page loads
+  router.get(
+    "/",
+    function (req, res) {
+      // pass in the comments variable
+      comments = [];
+      res.render("index");
+
+    }
+  );
+
 };
