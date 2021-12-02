@@ -63,7 +63,7 @@ module.exports = function (router) {
         res.redirect("representee-org-name");
 
         // if behalf, show behalf flow
-      } else if (sprintFiveRepresentingFor == "A family group, or couple") {
+      } else if (sprintFiveRepresentingFor == "A family group") {
         res.redirect("representee-family-name");
 
         // otherwise, show myself flow

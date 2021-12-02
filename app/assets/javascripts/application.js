@@ -12,7 +12,7 @@ $(document).ready(function () {
   $("#toggleFilters").click(function() {
     // change the show/hide text on the button
     $(this).text(function(i, text){
-      return text === "Show filters" ? "Hide filters" : "Show filters";
+      return text === "Show search and filters" ? "Hide search and filters" : "Show search and filters";
     })
     // toggle the filter section
     $("#expandingFilterSection").toggle();
@@ -22,7 +22,7 @@ $(document).ready(function () {
   $("#closeFilters").click(function() {
     // change the show/hide text on the button
     $("#toggleFilters").text(function(i, text){
-      return text === "Show filters" ? "Hide filters" : "Show filters";
+      return text === "Show search and filters" ? "Hide search and filters" : "Show search and filters";
     })
     // toggle the filter section
     $("#expandingFilterSection").toggle();

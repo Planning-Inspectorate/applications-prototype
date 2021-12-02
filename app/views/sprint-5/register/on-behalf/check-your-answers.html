@@ -94,7 +94,7 @@ Check your answers - Register to have your say
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              How would you like to be contacted about this project?
+              Which of these contact details can you provide?
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['behalfContactPref']}}  
@@ -107,7 +107,20 @@ Check your answers - Register to have your say
             </dd>
           </div>        
 
-
+  <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['behalf-email'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="email">
+            Change
+            <span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Address
@@ -135,20 +148,7 @@ Check your answers - Register to have your say
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Email address
-        </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['behalf-email'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="email">
-            Change
-            <span class="govuk-visually-hidden"> email address</span>
-            </a>
-          </dd>
-        </div>
+     
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Telephone number
@@ -163,10 +163,10 @@ Check your answers - Register to have your say
             </a>
           </dd>
         </div>
-
+ 
       </dl>
 
-      <h2 class="govuk-heading-m">Details for the person that you are representing</h2>
+      <h2 class="govuk-heading-m">Who you are representing</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -233,7 +233,7 @@ Check your answers - Register to have your say
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters-from-desktop">
-        <h2 class="govuk-heading-m">Your registration comments</h2>
+        <h2 class="govuk-heading-m">Registration comments</h2>
 
         {% for comment in comments %}
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">

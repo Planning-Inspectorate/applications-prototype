@@ -209,7 +209,9 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <p>You can:
           </p>
           <ul class="govuk-list">
-            <li><a href="../../wrong-turn">View a map of the area of the proposed project.</a></li>
+            <li>
+              <a href="../../wrong-turn">View a map of the area of the proposed project.</a>
+            </li>
             <li>
               <a href="./pre-app-check-for-impact/postcode">Check if your postcode is within the project area. </a>
             </li>
@@ -232,12 +234,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             <a href="../../wrong-turn">Visit the project website by Acme Group Ltd</a>
             for more information.</p>
         </div>
-      </>
 
-    </div>
-  </main>
-</div>
+      </div>
+    </main>
+  </div>
 {% endblock %}
 {% block footer %}
-{{ pinsFooter() }}
+  {{ pinsFooter() }}
 {% endblock %}
