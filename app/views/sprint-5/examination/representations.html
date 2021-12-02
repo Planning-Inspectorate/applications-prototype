@@ -43,25 +43,22 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-        <div class="pins-breadcrumb govuk-!-padding-5 govuk-!-margin-bottom-6">
-          <strong class="pins-breadcrumb__part-of">Part of</strong>
-          <a
-            class="pins-breadcrumb__title govuk-link"
-            href="javascript:history.back()"
-            >A404 Dewsbury</a
-          >
-        </div>
-        <h1 class="govuk-heading-l">All representations</h1>
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
       </div>
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
 
        {% set current = 'comments' %}
-       {% include "../includes/vertical_tabs.html" %}
+        {% include "./vertical_tabs.html" %}
 
       </div>
-      <div class="govuk-grid-column-one-quarter">
+       
+
+      <div class="govuk-grid-column-three-quarters">
+      <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
+        <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
+
         <div class="govuk-form-group">
           <h3 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="event-name">
@@ -218,27 +215,23 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </div>
           </fieldset>
         </div>
-        <label
-          class="govuk-label govuk-!-margin-right-2"
-          for="document-results-sort"
-          >Sort by:
-        </label>
-        <select id="document-results-sort" class="govuk-select">
-          <option selected>Recently updated</option>
-        </select>
 
         <a href="#" class="govuk-button govuk-!-margin-top-6">Apply</a>
       </div>
-
-      <div class="govuk-grid-column-one-half">
-        <div class="govuk-grid-row">
+      {# end of filters #}
+                 <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
-            <p class="results">
-              Showing <strong>{{ representations.length}}</strong> of {{
-              representations.length}} results
-            </p>
+            <p class="results"><strong><span id="results-number">18</span> results<strong></p>
+          </div>
+
+          <div style="display:flex; flex-direction: row;" class="govuk-grid-column-one-half">
+            <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+            <select id="document-results-sort" class="govuk-select">
+              <option selected>Recently updated</option>
+            </select>
           </div>
         </div>
+
         <hr
           class="
             govuk-section-break govuk-!-margin-bottom-6

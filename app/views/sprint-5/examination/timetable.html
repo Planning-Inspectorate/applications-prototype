@@ -31,18 +31,17 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-        <a href="#" class="govuk-back-link">Back</a>
         <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
       </div>
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
         {% set current = 'timetable' %}
-        {% include "../includes/vertical_tabs.html" %}
+        {% include "./vertical_tabs.html" %}
       </div>
 
       <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-l">Examination timetable</h2>
+        <h2 class="govuk-heading-m">Examination timetable</h2>
 
         <ul class="govuk-list">
           <li><a href="#august">August 2021</a></li>
@@ -66,7 +65,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <li>Any other documents, information and the update on document submissions discussed at the Preliminary Meeting that the Applicant committed to provide to Deadline 1</li>
         </ul>
         <ul class="govuk-list">
-          <li><a href="../overview-pages/document-library-examination">All documents for deadline 1</a></li>
+          <li><a href="./all-examination-documents">All documents for deadline 1</a></li>
         </ul>
 
         <h3 class="govuk-heading-s govuk-!-margin-top-7">16 August 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
@@ -97,7 +96,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <li>Any further information requested by the ExA under Rule 17 of the Exam Rules</li>
         </ul>
         <ul class="govuk-list">
-          <li><a href="../overview-pages/document-library-examination">All documents for deadline 2</a></li>
+          <li><a href="./all-examination-documents">All documents for deadline 2</a></li>
         </ul>
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -118,7 +117,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <li>Comments on any other documents provided by the Applicant to Deadline 1</li>
         </ul>
         <ul class="govuk-list">
-          <li><a href="../overview-pages/document-library-examination">All documents for deadline 2a</a></li>
+          <li><a href="./all-examination-documents">All documents for deadline 2a</a></li>
         </ul>
         <h3 class="govuk-heading-s govuk-!-margin-top-7">16 September 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
         <ul class="govuk-list">

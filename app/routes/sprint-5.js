@@ -9,12 +9,12 @@ module.exports = function (router) {
 
 
   // routes for the representations
-  router.get("/sprint-5/representations", function (req, res) {
-    res.render("sprint-5/representations", representations);
+  router.get("/sprint-5/examination/representations", function (req, res) {
+    res.render("sprint-5/examination/representations", representations);
   });
 
-  router.get("/sprint-5/representation", function (req, res) {
-    res.render("sprint-5/representation", representations);
+  router.get("/sprint-5/examination/representation", function (req, res) {
+    res.render("sprint-5/examination/representation", representations);
   });
 
   // routes for the type of party /register flow
