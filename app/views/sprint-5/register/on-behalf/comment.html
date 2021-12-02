@@ -35,7 +35,50 @@
           iconFallbackText: "Warning"
         }) }} -->
 
-        {{ govukDetails({
+      
+
+        <!-- {% set html %}
+          <p class="govuk-notification-banner__heading">
+            This information will be published on our website. Do not include any personal details.
+          </p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html
+        }) }} -->
+        <!-- <p>Do not include any personal details.</p> -->
+      <p class="govuk-body">Your registration comments (also known as a relevant representation) should relate to the application. You must include a summary of points which you agree and/or disagree with about the application, highlighting what you consider to be the main issues and impacts.
+        <p class="govuk-body">Information about how you think a project may affect your day-to-day life may also be of interest to the Examining Authority.</p>
+          <p class="govuk-body">This information will be:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>used by the Examining Authority to decide how the project should be examined</li>
+            <li>published on our website</li>
+          </ul>
+          <p class="govuk-body">These are your registration comments. You will be able to tell us more during the Examination of the project.</p>
+
+
+        {{ govukInput({
+          label: {
+            text: "What topic does the comment relate to?",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          id: "behalf-topic",
+          name: "behalf-topic"
+        }) 
+        }}
+
+        {{ govukTextarea({
+           label: {
+              text: "Registration comment",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+          maxwords: 200,
+          id: "behalf-comment",
+          name: "behalf-comment"
+        }) }}
+  {{ govukDetails({
           summaryText: "Do not include any personal details.",
           html: '
             <h2 class="govuk-heading-m">Use of language and sensitive information</h2>
@@ -61,48 +104,6 @@
               <li>sexual orientation</li>
             </ul>'
         }) }}
-
-        <!-- {% set html %}
-          <p class="govuk-notification-banner__heading">
-            This information will be published on our website. Do not include any personal details.
-          </p>
-        {% endset %}
-
-        {{ govukNotificationBanner({
-          html: html
-        }) }} -->
-        <!-- <p>Do not include any personal details.</p> -->
-
-        <p class="govuk-body">You can talk about anything you think is important to tell us about the propsed project in as much detail as possible.</p>
-        <p class="govuk-body">This information will be:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>used by the Examining Authority to decide how the project should be examined</li>
-          <li>published on our website</li>
-        </ul>
-        <p class="govuk-body">These are your registration comments. You will be able to tell us more during the Examination of the project.</p>
-
-        {{ govukInput({
-          label: {
-            text: "What topic does your comment relate to?",
-            classes: "govuk-label--s",
-            isPageHeading: true
-          },
-          id: "behalf-topic",
-          name: "behalf-topic"
-        }) 
-        }}
-
-        {{ govukTextarea({
-           label: {
-              text: "Your registration comment",
-              classes: "govuk-label--s",
-              isPageHeading: true
-            },
-          maxwords: 200,
-          id: "behalf-comment",
-          name: "behalf-comment"
-        }) }}
-
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>

@@ -57,8 +57,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'index' %}
-          {% include "../includes/vertical_tabs.html"
- %}
+          {% include "./vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <h2 class="govuk-heading-m">Project information</h2>
@@ -89,21 +88,26 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
           <p>
           This project is in the
-          <strong>Pre-examination</strong>
+          <strong>Examination of the application </strong>
           stage
         </p>
           <p>
-          If you want to comment on this proposed project, you can now register
-          to have your say. Registration will close at 23:59 on
-          <strong>Thursday 4 December 2021</strong>.
+          The registration to have your say about this project has ended.
         </p>
-          <a href="./register/start" class="govuk-button"
-          >Register to have your say</a
+          <p>
+The developer, everyone who has registered to have their say and any
+          statutory bodies can submit comments at the Examination stage. You can
+          still submit a comment, if you have not registered.
+                  </p>
+          <a href="#" class="govuk-button"
+          >Submit a comment</a
         >
           <p>
-            <a href="../../dco-process-guide/index.html"
-            >Find out more about registering to have your say</a
-          >.
+          The Examination of the project ends at 23:59 on
+          <strong>28 December 2021</strong>
+          </p>
+          <p>
+            <a href="../../dco-process-guide/examination">Find out more about the Examination of the application stage</a>.
         </p>
 
           <hr

@@ -31,45 +31,24 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-        <a href="#" class="govuk-back-link">Back</a>
         <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
       </div>
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
-        <nav>
-          <ul class="govuk-list sidenav">
-            <li>
-              <a href="./">A404 Dewsbury project information</a>
-            </li>
-            <li class="active">
-              <strong>Project application documents</strong>
-            </li>
-            <li><a href="./timetable">Examination timetable</a></li>
-            <li><a href="./all-examination-documents">All Examination documents</a></li>
-            <li><a href="/wrong-turn">Recommendation and decision</a></li>
-          </ul>
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
-          <h3 class="govuk-heading-s">Related guides</h3>
-          <ul class="govuk-list sidenav">
-            <li>
-              <a href="../../../dco-process-guide/">The process for national infrastructure projects</a>
-            </li>
-            <li>
-              <a href="../../../interested-party-guide/">Having your say about a national infrastructure project</a>
-            </li>
-          </ul>
+        {% set current = 'about-the-application' %}
+        {% include "./vertical_tabs.html" %}
       </div>
 
 
       <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-l">Project application documents</h2>
+        <h2 class="govuk-heading-m">Project application documents</h2>
 
-        <button id="toggleFilters" class="govuk-button govuk-button--secondary">Show filters</button>
+        <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
         <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
           <div class="govuk-form-group">
             <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-                Keywords </label>
+                Search </label>
             </h3>
             <input class="govuk-input" id="event-name" name="event-name" type="text">
           </div>

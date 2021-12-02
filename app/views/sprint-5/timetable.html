@@ -1,142 +1,69 @@
-{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
-{% endblock %} {% block headIcons %}
-<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
-{% endblock %} {% block head %}
-<!--[if lte IE 8
+{% extends "layout.html" %}
+{% block pageTitle %} A404 Dewsbury project overview
+{% endblock %}
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
   ]><link
     href="/public/stylesheets/unbranded-ie8.css"
     rel="stylesheet"
     type="text/css"
 /><![endif]-->
-<!--[if gt IE 8]><!-->
-<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
-<!--<![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
 
-{% for stylesheetUrl in extensionConfig.stylesheets %}
-<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-{% endfor %}
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
 
-<!-- Mapbox resources -->
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
-<!-- end Mapbox -->
-{% endblock %} {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+  {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 <a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
-{% endblock %} {% block content %}
+{% endblock %}
+{% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-        <a href="#" class="govuk-back-link">Back</a>
-        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+          <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+        </div>
       </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter">
-        {% set current = 'timetable' %}
-        {% include "../includes/vertical_tabs.html" %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% set current = 'timetable' %}
+          {% include "../includes/vertical_tabs.html" %}
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+
+          <h2 class="govuk-heading-m">Examination timetable</h2>
+          <p>Currently there are no events to display. The examination timetable will be published at the Examination stage.</p>
+          <p>If you have already signed up for project updates, we will tell you when this information is published. </p>
+          <p>
+            <a href="/wrong-turn">Get updates when the examination timetable is added<a/>
+          </p>
+          <p>
+            <a href="./">Return to the project overview</a>
+          </p>
+        </div>
       </div>
-
-      <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-l">Examination timetable</h2>
-
-        <ul class="govuk-list">
-          <li><a href="#august">August 2021</a></li>
-          <li><a href="#september">September 2021</a></li>
-        </ul>
-        <h2 class="govuk-heading-m" id="august">August 2021</h2>
-        <h3 class="govuk-heading-s">1 August 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <p class="govuk-body">Examination begins</p>
-        <h3 class="govuk-heading-s govuk-!-margin-top-7">13 August 2021 - Deadline 1 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Deadline for receipt by the ExA of:</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Notification of wish to speak at a Compulsory Acquisition Hearing</li>
-          <li>Notification by Statutory Parties of wish to be considered an Interested Party</li>
-          <li>Applicant’s draft itinerary for the Accompanied Site Inspection to be held on 21 May 2019</li>
-          <li>Suggestions from Interested Parties for sites to include in the ExA’s itinerary for the Accompanied Site Inspection to be held on 21 May 2019</li>
-          <li>Comments on Applicant’s response to the Planning Inspectorate’s s51 advice dated 20 November 2018 [AS-006 to AS-013]</li>
-          <li>Local Impact Reports from local authorities</li>
-          <li>Applicant’s other environmental information referred to orally at the Preliminary Meeting</li>
-          <li>Any other documents, information and the update on document submissions discussed at the Preliminary Meeting that the Applicant committed to provide to Deadline 1</li>
-        </ul>
-        <ul class="govuk-list">
-          <li><a href="../overview-pages/document-library-examination">All documents for deadline 1</a></li>
-        </ul>
-
-        <h3 class="govuk-heading-s govuk-!-margin-top-7">16 August 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Publication of:</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Examining Authority's itinerary for the Accompanied Site Inspection on 21 May 2019</li>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-top-7">23 August 2021 - Deadline 2 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Deadline for receipt by the ExA of:</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Comments on Relevant Representations (RRs)</li>
-          <li>Summaries of all RRs exceeding 1500 words</li>
-          <li>Written Representations (WRs)</li>
-          <li>Summaries of all WRs exceeding 1500 words</li>
-          <li> Initial Statements of Common Ground requested by the ExA</li>
-          <li>Responses to the ExA’s Written Questions</li>
-          <li>Draft Detailed Archaeological Mitigation Strategy (DAMS)</li>
-          <li>A standalone Mitigation Schedule</li>
-          <li>The various documents requested at section 4 of Annex E to the Rule 6 letter</li>
-          <li>An updated version of the Guide to the Application [AS-013]</li>
-          <li>An updated version of the Land Acquisition and Temporary Possession Negotiations Schedule [AS-011]</li>
-          <li>An updated Book of Reference [APP-025]</li>
-          <li>An updated version of the draft Development Consent Order (dDCO) [APP-020]</li>
-          <li>Any further information requested by the ExA under Rule 17 of the Exam Rules</li>
-        </ul>
-        <ul class="govuk-list">
-          <li><a href="../overview-pages/document-library-examination">All documents for deadline 2</a></li>
-        </ul>
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-        <h2 class="govuk-heading-m" id="september">September 2021</h2>
-        <h3 class="govuk-heading-s">7 September 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Issue by ExA of:</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Notification of date, time and place of Issue Specific Hearings to be held between 4 and 14 June 2019 and Compulsory Acquisition Hearings to be held between 8 and 12 July 2019</li>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-top-7">8 September 2021 - Deadline 2a &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Deadline for receipt by the ExA of:</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Written Representations relating to any other environmental information submitted by the Applicant to Deadline 1</li>
-          <li>Comments on any other documents provided by the Applicant to Deadline 1</li>
-        </ul>
-        <ul class="govuk-list">
-          <li><a href="../overview-pages/document-library-examination">All documents for deadline 2a</a></li>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-top-7">16 September 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Accompanied Site Inspection 1 </li>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-top-7">18 September 2021 &nbsp; &nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h3>
-        <ul class="govuk-list">
-          <li>Open Floor Hearing 1</li>
-        </ul>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>For any Interested Parties to make representations on the merits of the Proposed Development.</li>
-        </ul> <br>
-        <ul class="govuk-list">
-          <li>10.00am, City Hall, Salisbury.</li>
-        </ul>
-      </div>
-    </div>
-</div>
-</main>
-</div>
-{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
+    </main>
+  </div>
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

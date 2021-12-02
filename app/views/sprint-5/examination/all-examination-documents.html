@@ -36,19 +36,17 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
-        {% set current = 'about-the-application' %}
-        {% include "../includes/vertical_tabs.html" %}
+        {% set current = 'all-examination-documents' %}
+        {% include "./vertical_tabs.html" %}
       </div>
-
-
       <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-m">Project application documents</h2>
+        <h2 class="govuk-heading-m">All examination documents</h2>
 
         <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
         <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
           <div class="govuk-form-group">
             <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-                Search </label>
+                Keywords </label>
             </h3>
             <input class="govuk-input" id="event-name" name="event-name" type="text">
           </div>
@@ -66,7 +64,6 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                   <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">Noise, traffic and air quality</label>
                 </div>
 
-
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
                   <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Landscape and visual</label>
@@ -82,6 +79,40 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               </div>
             </fieldset>
           </div>
+
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Who submitted
+              </h2>
+            </legend>
+
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-examining-panel">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-examining-panel">Examining authority</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-developer">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-developer">Developer</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-individual-interested-party">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-individual-interested-party">Individual interested party</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-organisation-interested-party">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-organisation-interested-party">Organisation interested party</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-official-body-and-local-authority">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-official-body-and-local-authority">Official bodies and local authorities</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
           <div class="govuk-form-group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
@@ -93,110 +124,37 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
 
-
-
-
-
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="environmental-statement">
-                  <label class="govuk-label govuk-checkboxes__label" for="environmental-statement">Environmental statement</label>
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Topics-and-replies">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-plans-and-drawings">Topics and replies</label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="adequacy-of-consultation-report">
-                  <label class="govuk-label govuk-checkboxes__label" for="adequacy-of-consultation-report">Adequacy of consultation report</label>
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Deadlines">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-environmental">Deadlines</label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="procedural-decisions">
-                  <label class="govuk-label govuk-checkboxes__label" for="procedural-decisions">Procedural decisions</label>
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Hearing-agendas">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Hearing agendas</label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="consultation-reports">
-                  <label class="govuk-label govuk-checkboxes__label" for="consultation-reports">Consultation reports</label>
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Recordings-of-hearings">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Recordings of hearings</label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="application-documents">
-                  <label class="govuk-label govuk-checkboxes__label" for="application-documents">Application documents</label>
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Procedural-decisions">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Procedural decisions</label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="site-inspections">
-                  <label class="govuk-label govuk-checkboxes__label" for="site-inspections">Site inspections</label>
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Site-inspections">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-consultation-reports">Site inspections</label>
                 </div>
               </div>
             </fieldset>
           </div>
-          <div class="govuk-form-group">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-                Stage of the project
-              </h2>
-            </legend>
-
-            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
-              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="pre-application">
-                  <label class="govuk-label govuk-checkboxes__label" for="pre-application">Pre-application</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="review-of-the-application">
-                  <label class="govuk-label govuk-checkboxes__label" for="review-of-the-application">Review of the application</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="pre-examination">
-                  <label class="govuk-label govuk-checkboxes__label" for="pre-examination">Pre-Examination</label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <div class="govuk-form-group">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-                Application documents
-              </h2>
-            </legend>
-
-
-
-            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
-              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="application-form">
-                  <label class="govuk-label govuk-checkboxes__label" for="application-form">Application form</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="plans-and-drawings">
-                  <label class="govuk-label govuk-checkboxes__label" for="plans-and-drawings">Plans and drawings</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="consultation-reports">
-                  <label class="govuk-label govuk-checkboxes__label" for="consultation-reports">Consultation reports</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="environmental-statement">
-                  <label class="govuk-label govuk-checkboxes__label" for="environmental-statement">Environmental Statement</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="compulsory-purchase">
-                  <label class="govuk-label govuk-checkboxes__label" for="compulsory-purchase">Compulsory purchase</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="draft-development">
-                  <label class="govuk-label govuk-checkboxes__label" for="draft-development">Draft Development</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="consent-order">
-                  <label class="govuk-label govuk-checkboxes__label" for="consent-order">Consent Order</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="other-documents">
-                  <label class="govuk-label govuk-checkboxes__label" for="other-documents">Other documents</label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
           <a href="#" id="closeFilters" class="govuk-button">Apply filters</a>
         </div>
-        <div class="govuk-grid-row">
+
+        <div class="govuk-grid-row ">
+
           <div class="govuk-grid-column-one-half">
             <p class="results"><strong><span id="results-number">18</span> results<strong></p>
           </div>
@@ -208,37 +166,36 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </select>
           </div>
         </div>
-
         <hr />
 
-
-        <h2 class="govuk-heading-m">Pre-application documents</h2>
         <div class="pins-search-results-group">
-          <h3 class="pins-search-results-group-heading">Environmental impact assessment scoping</h3>
+          <h3 class="pins-search-results-group-heading">Traffic - developer</h3>
           <div class="pins-search-results-group-items">
             <ul class="govuk-list">
-              <li><a href="#">Late scoping consultation responses</a></li>
-              <li><a href="#">Scoping opinion adopted by the Secretary of State</a></li>
-              <li><a href="#">The Applicant's Scoping Report for A404 Dewsbury - Amesbury to Berwick Down. Submitted to the Secretary of State on 20 October 2017</a></li>
+              <li><a href="#">Deadline 2 - Answer to panel's questions - Traffic and transport 1</a></li>
+              <li><a href="#">Deadline 4 - Summary of input into hearing - Traffic and transport</a></li>
+              <li><a href="#">Deadline 6 - Answer to panel's questions - Traffic and transport 2</a></li>
+              <li><a href="#">Deadline 8 - Summary of input into hearing - Traffic and transport 22 august 2019</a></li>
             </ul>
           </div>
         </div>
         <div class="pins-search-results-group">
-          <h3 class="pins-search-results-group-heading">Notice of proposed application</h3>
+          <h3 class="pins-search-results-group-heading">Traffic - organisation interested parties</h3>
           <div class="pins-search-results-group-items">
             <ul class="govuk-list">
-              <li><a href="#">Acknowledgement of S46 Notification Update Letter - Extension to the Public Consultation</a></li>
-              <li><a href="#">S46 notification - update</a></li>
-              <li><a href="#">Acknowledgement of S46 notification</a></li>
-              <li><a href="#">S46 notification</a></li>
+              <li><a href="#">Traffic action group - Deadline 2 - Traffic analysis report (late submission)</a></li>
+              <li><a href="#">Traffic action group - Deadline 2 - Written representation</a></li>
+              <li><a href="#">Traffic action group - Deadline 3 - Summary of input into hearings - 22 and 23 May 2019</a></li>
+              <li><a href="#">Traffic action group - Additional information - Traffic analysis</a></li>
             </ul>
           </div>
         </div>
         <div class="pins-search-results-group">
-          <h3 class="pins-search-results-group-heading">Land rights (S53)</h3>
+          <h3 class="pins-search-results-group-heading">Traffic - examining panel meeting agendas</h3>
           <div class="pins-search-results-group-items">
             <ul class="govuk-list">
-              <li><a href="#">S53 Authorisation Notice – Land Parcel 78/16</a></li>
+              <li><a href="#">Agenda for traffic and transportation hearing (8) - 13 June 2019</a></li>
+              <li><a href="#">Agenda for traffic and transportation hearing (9) - 22 August 2019</a></li>
             </ul>
           </div>
         </div>
@@ -252,30 +209,36 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </ul>
           </div>
         </div>
-        <h2 class="govuk-heading-m">Review of the application documents</h2>
         <div class="pins-search-results-group">
-          <h3 class="pins-search-results-group-heading">Acceptance letter</h3>
+          <h3 class="pins-search-results-group-heading">Noise - organisation interested parties</h3>
           <div class="pins-search-results-group-items">
             <ul class="govuk-list">
-              <li><a href="#">Notification of Decision to Accept Application</a></li>
+              <li><a href="#">Dewsbury Alliance - Deadline 2 - Written representation - Noise and vibration</a></li>
+              <li><a href="#">Dewsbury Alliance - Deadline 4 - Summary of input into hearings - Water, geology - Noise, vibration</a></li>
             </ul>
           </div>
         </div>
         <div class="pins-search-results-group">
-          <h3 class="pins-search-results-group-heading">Adequacy of consultation</h3>
+          <h3 class="pins-search-results-group-heading">Noise - examining panel meeting agendas</h3>
           <div class="pins-search-results-group-items">
             <ul class="govuk-list">
-              <li><a href="#">Cotswold District Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">Dorset County Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">Gloucestershire County Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">Hampshire County Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">Somerset County Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">South Gloucestershire Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">South Oxfordshire and Vale of White Horse District Councils - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">West Berkshire District Council - Adequacy of Consultation Representation</a></li>
-              <li><a href="#">Wiltshire Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">Agenda for noise, vibration, health and wellbeing hearing (5) - 12 June 2019</a></li>
             </ul>
           </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Air quality - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Answer to panel's questions - Air quality and emissions (1)</a></li>
+              <li><a href="#">Deadline 6 - Answer to panel's questions - Air quality and emissions (2)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-pagination" id="pins-search-results-pagination">
+          <a href="#" class="govuk-link govuk-link--no-underline">1</a>
+          <a href="#" class="govuk-link">2</a>
+          <a href="#" class="govuk-link">Next</a>
         </div>
       </div>
     </div>

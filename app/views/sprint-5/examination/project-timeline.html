@@ -49,7 +49,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-quarter">
         {% set current = 'project-timeline' %}
-        {% include "../includes/vertical_tabs.html" %}
+        {% include "./vertical_tabs.html" %}
       </div>
       <div class="govuk-grid-column-three-quarters">
         <h2 class="govuk-heading-m">Project timeline</h2>
@@ -89,7 +89,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                 >Pre-examination</a
               >
               <span class="tag-wrapper">
-                <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                <strong class="govuk-tag govuk-tag--green">Completed</strong>
               </span>
             </h2>
             <p>
@@ -104,7 +104,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                 >Examination of the application</a
               >
               <span class="tag-wrapper">
-                <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                <strong class="govuk-tag govuk-tag--blue">In progress</strong>
               </span>
             </h2>
             <p>

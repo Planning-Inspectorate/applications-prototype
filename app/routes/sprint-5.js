@@ -9,12 +9,12 @@ module.exports = function (router) {
 
 
   // routes for the representations
-  router.get("/sprint-5/representations", function (req, res) {
-    res.render("sprint-5/representations", representations);
+  router.get("/sprint-5/examination/representations", function (req, res) {
+    res.render("sprint-5/examination/representations", representations);
   });
 
-  router.get("/sprint-5/representation", function (req, res) {
-    res.render("sprint-5/representation", representations);
+  router.get("/sprint-5/examination/representation", function (req, res) {
+    res.render("sprint-5/examination/representation", representations);
   });
 
   // routes for the type of party /register flow
@@ -63,7 +63,7 @@ module.exports = function (router) {
         res.redirect("representee-org-name");
 
         // if behalf, show behalf flow
-      } else if (sprintFiveRepresentingFor == "A family group, or couple") {
+      } else if (sprintFiveRepresentingFor == "A family group") {
         res.redirect("representee-family-name");
 
         // otherwise, show myself flow
