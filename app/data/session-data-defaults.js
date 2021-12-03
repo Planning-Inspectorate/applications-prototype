@@ -35,7 +35,9 @@ module.exports = {
   "telephone-number": "01234567890",
   "comment": "I'm concerned that the traffic will be affected",
   "topics": "Traffic, Air quality",
-  "postcode": "BS1 6PN"
+  "postcode": "BS1 6PN",
   // organisation default values
-
+  "myself-comment-array": [],
+  "organisation-comment-array": [],
+  "behalf-comment-array": []
 }

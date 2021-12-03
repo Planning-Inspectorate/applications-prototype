@@ -27,9 +27,9 @@ Check your answers - Register to have your say
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters-from-desktop">
 
-      <h1 class="govuk-heading-xl">You have added {{ comments.length }} comment{% if comments.length > 1 %}s{%endif%}</h1>
+      <h1 class="govuk-heading-xl">You have added {{ data['myself-comment-array'].length }} comment{% if data['myself-comment-array'].length > 1 %}s{%endif%}</h1>
 
-       {% for comment in comments  %}
+       {% for comment in data['myself-comment-array']  %}
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -54,7 +54,7 @@ Check your answers - Register to have your say
         </dl>
       {% endfor %}
 
-      <form autocomplete="off" method="post" novalidate>
+      <form autocomplete="off" method="post" action="check-your-answers" novalidate>
 
       {{ govukRadios({
         idPrefix: "another-myself-comment",

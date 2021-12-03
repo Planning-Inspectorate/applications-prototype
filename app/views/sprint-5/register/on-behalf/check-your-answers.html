@@ -165,18 +165,26 @@ Check your answers - Register to have your say
         </div>
  
       </dl>
+              
+
 
       <h2 class="govuk-heading-m">Who you are representing</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-              Their full name
-            </dt>
+            {% if data['sprint5RepresentingFor'] == 'A family group' %}
+                  The name of the family group you are representing
+            {% elif data['sprint5RepresentingFor'] == 'An organisation or charity' %}
+                  The name of the organisation or charity that you are representing
+            {% else %}
+                  The name of the person you are representing 
+            {% endif %}
+          </dt>
           <dd class="govuk-summary-list__value">
-            {{data['representee-full-name']}}
+            {{data['representee-name']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="representee-full-name">
+            <a href="representing-for">
                 Change
                 <span class="govuk-visually-hidden"> who you are registering for</span>
             </a>
@@ -235,7 +243,7 @@ Check your answers - Register to have your say
       <div class="govuk-grid-column-three-quarters-from-desktop">
         <h2 class="govuk-heading-m">Registration comments</h2>
 
-        {% for comment in comments %}
+       {% for comment in data['behalf-comment-array']   %}
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
