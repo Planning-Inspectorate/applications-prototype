@@ -1,334 +1,366 @@
-{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
-{% endblock %} {% block headIcons %}
-<link
+{% extends "layout.html" %}
+{% block pageTitle %} A404 Dewsbury project overview
+{% endblock %}
+{% block headIcons %}
+  <link
   rel="shortcut icon"
   href="{{ asset_path }}images/unbranded.ico?0.18.3"
   type="image/x-icon"
 />
-{% endblock %} {% block head %}
-<!--[if lte IE 8
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
   ]><link
     href="/public/stylesheets/unbranded-ie8.css"
     rel="stylesheet"
     type="text/css"
 /><![endif]-->
-<!--[if gt IE 8]><!-->
-<link
+  <!--[if gt IE 8]><!-->
+  <link
   href="/public/stylesheets/unbranded.css"
   media="all"
   rel="stylesheet"
   type="text/css"
 />
-<!--<![endif]-->
+  <!--<![endif]-->
 
-{% for stylesheetUrl in extensionConfig.stylesheets %}
-<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-{% endfor %}
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
 
-<!-- Mapbox resources -->
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-<link
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link
   href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
   rel="stylesheet"
 />
-<!-- end Mapbox -->
-{% endblock %} {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+  {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 <a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
-<a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %} {% block content %}
+{% endblock %}
+{% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-
-        <h1 class="govuk-heading-xl">Project timeline</h1>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+          <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+          <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+        </div>
       </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter">
-        {% set current = 'project-timeline' %}
-        {% include "../includes/vertical_tabs.html" %}
-      </div>
-      <div class="govuk-grid-column-three-quarters">
-      <h2 class="govuk-heading-m">Most recent updates</h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% set current = 'project-timeline' %}
+          {% include "../includes/vertical_tabs.html" %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Project timeline</h2>
 
-        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
-          <div class="govuk-accordion__section">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
-                  <h2 class="govuk-accordion__section-heading-m"> Pre-application &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h2>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
+                    <h2 class="govuk-accordion__section-heading-m"> Pre-application &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong>
+                    </h2>
 
-                </span>
-              </h2>
-            </div>
+                  </span>
+                </h2>
+              </div>
 
-            <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
+              <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
 
-                  <div class="govuk-inset-text govuk-!-margin-top-0">
+                    <div class="govuk-!-margin-top-0">
 
-                    <p> This is where the developer must run a consultation with people and organisations. You can get involved at this stage by finding the developer's website </p>
+                      <p> This is where the developer must run a consultation with people and organisations. You can get involved at this stage by finding the developer's website </p>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                        <strong>  October 2019 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 25 October 2019 - Application received by the Planning Inspectorate</li>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>  October 2019 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 25 October 2019 - Application received by the Planning Inspectorate</li>
 
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                        <strong>  November 2019</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>22 November 2019 - Decision on whether or not to accept the application for examination </li></ul>
-                      </div>
-                    </details>
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>  November 2019</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>22 November 2019 - Decision on whether or not to accept the application for examination </li>
+                          </ul>
+                        </div>
+                      </details>
+                    </div>
+
                   </div>
 
-
                 </div>
-
               </div>
             </div>
-          </div>
-          <div class="govuk-accordion__section">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
-                  <h2 class="govuk-accordion__section-heading-m"> Review of application &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h2>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
+                    <h2 class="govuk-accordion__section-heading-m"> Review of application &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong>
+                    </h2>
 
-                </span>
-              </h2>
-            </div>
+                  </span>
+                </h2>
+              </div>
 
-            <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
+              <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
 
-                  <div class="govuk-inset-text govuk-!-margin-top-0">
+                    <div class="govuk-!-margin-top-0">
 
-                    <p> This is called the Acceptance stage. This is when the developer sends us their application, including the consultation they have carried out. We have 28 days to make this decision. </p>
+                      <p> This is called the Acceptance stage. This is when the developer sends us their application, including the consultation they have carried out. We have 28 days to make this decision. </p>
 
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   November 2019</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>22 November 2019 - The application has been accepted for examination  </li>
+                            <li>
+                              <p class="govuk-body"><strong><a href="#">Read the letter</a></strong></p>
+                            </li>
+                          </ul>
+                        </div>
+                      </details>
+                    </div>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   November 2019</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>22 November 2019 - The application has been accepted for examination  </li>
-                          <li> <a href="#" class="govuk-button">Read the letter</a></li>
-                        </ul>
-                      </div>
-                    </details>
                   </div>
 
-
                 </div>
-
               </div>
             </div>
-          </div>
-          <div class="govuk-accordion__section">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
-                  <h2 class="govuk-accordion__section-heading-m"> Pre-examination &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h2>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
+                    <h2 class="govuk-accordion__section-heading-m"> Pre-examination &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong>
+                    </h2>
 
-                </span>
-              </h2>
-            </div>
+                  </span>
+                </h2>
+              </div>
 
-            <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
+              <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
 
-                  <div class="govuk-inset-text govuk-!-margin-top-0">
+                    <div class="govuk-!-margin-top-0">
 
-                    <p> We identify an inspector or a panel of inspectors called the Examining Authority and make a plan for the Examination stage. Anyone who wants to have their say will be able to register at this stage. Registration is open for 30 days. </p>
+                      <p> We identify an inspector or a panel of inspectors called the Examining Authority and make a plan for the Examination stage. Anyone who wants to have their say will be able to register at this stage. Registration is open for 30 days. </p>
 
-
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   November 2019</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 29 November 2019 - Registration of interested parties begins </li></ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   January 2020  </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 03 January 2020 - An <a href="#"> Examining Authority has been appointed</a>. </li> <br>
-                          <li>  03 January 2020 - You can now <a href="#"> register to have your say about this project</a>. </li><br>
-                          <a href="#" class="govuk-button">Register online</a>
-                        <li>  If you wish to have your say on this project you must register for each application separately. If you are unable to complete a registration form online and would like to register your interest, please call the helpline on: 0303 444 5000 to request a paper form. For further advice please see <a href="#">  Advice Note 8.2: How to register to participate in an Examination.</a>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   November 2019</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 29 November 2019 - Registration of interested parties begins </li>
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   January 2020  </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 03 January 2020 - An <a href="#"> Examining Authority has been appointed</a>. </li>
+                            <br>
+                            <li>  03 January 2020 - You can now <a href="#"> register to have your say about this project</a>. </li><br>
+                            <p class="govuk-body"><strong><a href="#">Register online</a></strong></p>
+                            <li>  If you wish to have your say on this project you must register for each application separately. If you are unable to complete a registration form online and would like to register your interest, please call the helpline on: 0303 444 5000 to request a paper form. For further advice please see <a href="#">  Advice Note 8.2: How to register to participate in an Examination.</a>
                              Please see our <a href="#"> Frequently Asked Questions for more information</a>.</li><br>
 
-                               <li> 27 January 2020 - Registration of interested parties closes </li>
+                            <li> 27 January 2020 - Registration of interested parties closes </li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   February 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>20 February 2020 - Relevant representations published on the website </li></ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   March 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>04 March 2020 - <a href="#"> Agendas for the March 2020 Hearings </a> have been published.</li>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   February 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>20 February 2020 - Relevant representations published on the website </li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   April 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 06 April 2020 - <a href="#"> Responses to the Rule 6 and other Additional Submissions </a> have been published.</li>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   March 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>04 March 2020 - <a href="#"> Agendas for the March 2020 Hearings </a> have been published.</li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   May 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 21 May 2020 - The Examining Authority has issued a <a href="#">Procedural Decision </a> in respect of draft submissions and inviting representations on how hearings might be held: these representations should be provided as responses to the online questionnaire, by 5pm 11 June 2020.</li>
-                          <br>
-                          <li> <a href="#" class="govuk-button">Representations questionnaire</a></li>
-                            <li> <a href="#">Frequently Asked Questions </a> (version 1.0) document has also now been published.</li> <br>
-                              <li>29 May 2020 - It is important that all Interested Parties who might wish to
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   April 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 06 April 2020 - <a href="#"> Responses to the Rule 6 and other Additional Submissions </a> have been published.</li>
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   May 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 21 May 2020 - The Examining Authority has issued a <a href="#">Procedural Decision </a> in respect of draft submissions and inviting representations on how hearings might be held: these representations should be provided as responses to the online questionnaire, by 5pm 11 June 2020.</li>
+                            <br>
+                            <li>
+                              <p class="govuk-body"><strong><a href="#">Representations questionnaire</a></strong></p>
+                            </li>
+                            <li>
+                              <a href="#">Frequently Asked Questions </a> (version 1.0) document has also now been published.</li>
+                            <br>
+                            <li>29 May 2020 - It is important that all Interested Parties who might wish to
                                 participate in hearings respond to the online questionnaire inviting representations on how
                                 virtual hearings might be held by 5pm on 11 June 2020.  Responses to this questionnaire will help the
                                 Examining Authority develop hearings that meet public health requirements and Interested Parties’ needs.
                                 The questionnaire is easy to complete on an internet connected device:
                                 computer, laptop, tablet or smartphone.</li>
-                                <br>
-                                <li> <a href="#" class="govuk-button">Representations questionnaire</a></li>
-                                <li>The Planning Inspectorate has sent postal notifications to Interested Parties for whom we have no email address: if they are unable to access the electronic version of the questionnaire they can contact the Case team on 0303 444 5000 for assistance with this between the hours of 9:00am and 12 noon, Monday to Friday.
+                            <br>
+                            <li>
+                              <p class="govuk-body"><strong><a href="#">Representations questionnaire</a></strong></p>
+                            </li>
+                            <li>The Planning Inspectorate has sent postal notifications to Interested Parties for whom we have no email address: if they are unable to access the electronic version of the questionnaire they can contact the Case team on 0303 444 5000 for assistance with this between the hours of 9:00am and 12 noon, Monday to Friday.
                                 </li>
 
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   June 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 08 June 2020 - Please remember that there is a deadline this Thursday 11 June at 5pm for the following:</li>
-                          <li> - Responses to the questionnaire on how virtual hearings might be used to examine the application, to inform our thinking on the forthcoming examination</li>
-                          <li> - Responses to procedural decisions for the submission of early drafts of Statements of Common Ground (7.1) and Comments on Relevant Representations (11).</li> <br>
-                          <li> 26 June 2020 - The Examining Authority has exercised its discretion to accept Additional Submissions in direct response to questions and on procedural matters from:</li>
-                            <li> - <a href="#"> Acme Limited </a> </li>
-                            <li> - <a href="#"> Marine Organisation </a> </li>
-                            <li>- <a href="#"> East Council and East County Council</a>. </li> <br>
-                              <li>These documents have been added to the <a href="#"> Examination Library</a>. Please note that the Examination has not yet started so, whilst the ExA is interested in your views about how the Examination could be run, it cannot consider any submissions about the planning merits of the application. Those must be made later, during the Examination itself. As the ExA has not called for any written submissions other than responses to the questionnaire and procedural matters, it will not accept, consider or publish
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   June 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 08 June 2020 - Please remember that there is a deadline this Thursday 11 June at 5pm for the following:</li>
+                            <li> - Responses to the questionnaire on how virtual hearings might be used to examine the application, to inform our thinking on the forthcoming examination</li>
+                            <li> - Responses to procedural decisions for the submission of early drafts of Statements of Common Ground (7.1) and Comments on Relevant Representations (11).</li>
+                            <br>
+                            <li> 26 June 2020 - The Examining Authority has exercised its discretion to accept Additional Submissions in direct response to questions and on procedural matters from:</li>
+                            <li> - <a href="#"> Acme Limited </a>
+                            </li>
+                            <li> - <a href="#"> Marine Organisation </a>
+                            </li>
+                            <li>- <a href="#"> East Council and East County Council</a>. </li>
+                            <br>
+                            <li>These documents have been added to the <a href="#"> Examination Library</a>. Please note that the Examination has not yet started so, whilst the ExA is interested in your views about how the Examination could be run, it cannot consider any submissions about the planning merits of the application. Those must be made later, during the Examination itself. As the ExA has not called for any written submissions other than responses to the questionnaire and procedural matters, it will not accept, consider or publish
                                 any written submissions that address the planning merits of the application. </li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   July 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 16 July 2020 - The notification of Preliminary Meeting (Rule 6 letter) has been sent</li><br>
-                          <li> <a href="#" class="govuk-button">Read the letter</a></li>
-                          <li>The letter also includes the draft Examination Timetable and Initial Assessment of Principal Issues.</li> <br>
-                          <li>16 July 2020 - The new <a href="#"> Rule 6 Letter</a> notifying you of the Preliminary Meeting has been issued, that includes the draft Examination timetable and replaces the Rule 6 letter of 21 February 2020. Once you have read the letter, please complete the <a href="#"> Preliminary Meeting Involvement Form</a>, which must be completed by Procedural Deadline A (13 August 2020). Further information relating to the Involvement Form, Preliminary Meeting and the Examination is contained in the updated <a href="#"> Frequently Asked Questions </a> document.</li> <br>
-                          <li> <a href="#" class="govuk-button"> Preliminary Meeting Involvement Form</a></li>
-                          <li>28 July 2020 - The notification of the Preliminary Meeting (Rule 6 letter) has been sent,
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   July 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 16 July 2020 - The notification of Preliminary Meeting (Rule 6 letter) has been sent</li><br>
+                            <li>
+                              <p class="govuk-body"><strong><a href="#">Read the letter</a></strong></p>
+                            </li>
+                            <li>The letter also includes the draft Examination Timetable and Initial Assessment of Principal Issues.</li>
+                            <br>
+                            <li>16 July 2020 - The new <a href="#"> Rule 6 Letter</a> notifying you of the Preliminary Meeting has been issued, that includes the draft Examination timetable and replaces the Rule 6 letter of 21 February 2020. Once you have read the letter, please complete the <a href="#"> Preliminary Meeting Involvement Form</a>, which must be completed by Procedural Deadline A (13 August 2020). Further information relating to the Involvement Form, Preliminary Meeting and the Examination is contained in the updated <a href="#"> Frequently Asked Questions </a> document.</li>
+                            <br>
+                            <li>
+                              <p class="govuk-body"><strong><a href="#"> Preliminary Meeting Involvement Form</a></strong></p>
+                            </li>
+                            <li>28 July 2020 - The notification of the Preliminary Meeting (Rule 6 letter) has been sent,
                             please refer to Annex B which introduces the Preliminary Meeting and how you can participate.
                             The FAQs provides further information on the Preliminary Meeting, the Examination and the
                             Involvement form. Interested Parties must complete the <a href="#"> Preliminary Meeting Involvement Form </a>,
                             by Procedural Deadline A (13 August 2020) if they wish to participate.</li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   August 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 11 August 2020 - The notification of the Preliminary Meeting <a href="#">(Rule 6 letter dated 16 July 2020 </a> PDF 604kb) refers to Annex B which introduces the Preliminary Meeting and how you can participate. The <a href="#"> FAQs provide further information on the Preliminary Meeting, the Examination and the Involvement form </a> (PDF 443kb). Interested Parties wishing to participate must complete the <a href="#"> Preliminary Meeting Involvement Form </a> by Procedural Deadline A which is this Thursday 13 August 2020.</li> <br>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   August 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 11 August 2020 - The notification of the Preliminary Meeting <a href="#">(Rule 6 letter dated 16 July 2020 </a> PDF 604kb) refers to Annex B which introduces the Preliminary Meeting and how you can participate. The <a href="#"> FAQs provide further information on the Preliminary Meeting, the Examination and the Involvement form </a> (PDF 443kb). Interested Parties wishing to participate must complete the <a href="#"> Preliminary Meeting Involvement Form </a> by Procedural Deadline A which is this Thursday 13 August 2020.</li>
+                            <br>
                             <li>14 August 2020 - The Examining Authority thanks everyone who completed the Preliminary Meeting (PM) involvement form or provided written submissions by Procedural Deadline A. These have been very helpful ahead of the PM which will commence on Wednesday 16 September 2020. Instructions on how to join the meeting will be issued by email on Tuesday 15 September 2020. Instructions on how to view it in real time (by livestream) or on catchup (a recording) will be published here on the same date.</li><br>
-                              <li>18 August 2020 - The Rule 6 letter (Annex E) notified all Interested Parties (IPs) of the Open Floor Hearings (OFHs) scheduled from 7-9 October 2020. Interested parties must complete the OFH Involvement Form, by Procedural Deadline B (9 September 2020) if they wish to participate. The Examining Authority (ExA) will take these submissions into consideration when finalising the agenda. Where possible the ExA will try to accommodate all IPs preferred dates/times for the first round of OFHs. However if it is not possible to accommodate all submissions, there will be a further opportunity for IPs to request to be heard at the remaining OFHs by Deadline 1, as per the draft Examination timetable.</li><br>
-                              <li> <a href="#" class="govuk-button"> OFH Involvement Form</a></li>
-                              <li> 28 August 2020 - The ExA has now published submissions made at <a href="#"> Procedural Deadline A </a> as two documents to assist preparations for the Preliminary Meeting: a <a href="#"> Report of procedural submissions from persons attending the
+                            <li>18 August 2020 - The Rule 6 letter (Annex E) notified all Interested Parties (IPs) of the Open Floor Hearings (OFHs) scheduled from 7-9 October 2020. Interested parties must complete the OFH Involvement Form, by Procedural Deadline B (9 September 2020) if they wish to participate. The Examining Authority (ExA) will take these submissions into consideration when finalising the agenda. Where possible the ExA will try to accommodate all IPs preferred dates/times for the first round of OFHs. However if it is not possible to accommodate all submissions, there will be a further opportunity for IPs to request to be heard at the remaining OFHs by Deadline 1, as per the draft Examination timetable.</li><br>
+                            <li>
+                              <p class="govuk-body"><strong><a href="#"> OFH Involvement Form</a></strong></p>
+                            </li>
+                            <li> 28 August 2020 - The ExA has now published submissions made at <a href="#"> Procedural Deadline A </a> as two documents to assist preparations for the Preliminary Meeting: a <a href="#"> Report of procedural submissions from persons attending the
                                 Preliminary Meeting</a> (PDF 382kb) and a <a href="#"> Report of procedural submissions from persons not
                                 attending the Preliminary Meeting </a> (PDF 876kb).</li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   September 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 09 September 2020 - The Examining Authority would like to thank those who provided written submissions by <a href="#"> Procedural Deadline A </a>. These have been very helpful ahead of the Preliminary Meeting (PM), which will open at 10.00 on Wednesday 16 September 2020. For those that have indicated a wish to speak on specific agenda items, instructions on how to join the meeting will be issued by email on Tuesday 15 September 2020. For those that would like to view the PM in real time, the link to the livestream will be published on this project web page on Tuesday 15 September 2020. Those participating or observing the PM should familiarise themselves with the<a href="#">  Rule 6 letter </a> (PDF, 604kb), dated 16 July 2020. It is particularly important to read Annex B, which provides an introduction to the PM,
-                            as this will not be covered in detail in the meeting.</li> <br>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   September 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 09 September 2020 - The Examining Authority would like to thank those who provided written submissions by <a href="#"> Procedural Deadline A </a>. These have been very helpful ahead of the Preliminary Meeting (PM), which will open at 10.00 on Wednesday 16 September 2020. For those that have indicated a wish to speak on specific agenda items, instructions on how to join the meeting will be issued by email on Tuesday 15 September 2020. For those that would like to view the PM in real time, the link to the livestream will be published on this project web page on Tuesday 15 September 2020. Those participating or observing the PM should familiarise themselves with the<a href="#">  Rule 6 letter </a> (PDF, 604kb), dated 16 July 2020. It is particularly important to read Annex B, which provides an introduction to the PM,
+                            as this will not be covered in detail in the meeting.</li>
+                            <br>
                             <li>11 September 2020 - The Examining Authority has now published the <a href="#"> detailed Agenda for Part 1 of the Preliminary Meeting (PM) </a>, (PDF, 146kb) which will open at 10.00 on Wednesday 16 September 2020.
                                 The Examining Authority would like to thank those who provided written submissions by <a href="#">Procedural Deadline A </a>. These have been very helpful ahead of the PM. For those that have indicated a wish to speak on specific agenda items, instructions on how to join the meeting will be issued by email on Tuesday 15 September 2020.
                                 For those that would like to view the PM in real time, the link to the livestream will be published on this project web page on Tuesday 15 September 2020.
@@ -336,436 +368,445 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                             <li> 15 September 2020 - Instructions for those wishing to participate in the Preliminary Meeting (PM) have been sent. For those wishing to observe in real time, please use the following link <a href="#"> Livestream of PM (Part 1)</a>.
                                 Please note that the PM will start broadcasting ‘LIVE’ once it opens at 10.00 on Wednesday 16 September 2020. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.
                                 We would remind those observing the PM that there is an opportunity to provide any written responses to matters raised at the PM by Procedural Deadline C (29 September 2020).</li><br>
-                                <li> 18 September 2020 - The recordings of the Preliminary Meeting (Part 1) <a href="#" > Recording of the Preliminary Meeting (Part 1) (Session 1), </a> <a href="#" > Recording of the Preliminary Meeting (Part 1) (Session 2)</a>, <a href="#" > Recording of the Preliminary Meeting (Part 1) (Session 3) </a> have been published and added to the <a href="#" > Examination Library</a>. Any responses to matters discussed during the PM must be submitted by Procedural Deadline C (Tuesday 29 September 2020).
+                            <li> 18 September 2020 - The recordings of the Preliminary Meeting (Part 1) <a href="#" > Recording of the Preliminary Meeting (Part 1) (Session 1), </a>
+                              <a href="#" > Recording of the Preliminary Meeting (Part 1) (Session 2)</a>, <a href="#" > Recording of the Preliminary Meeting (Part 1) (Session 3) </a> have been published and added to the <a href="#" > Examination Library</a>. Any responses to matters discussed during the PM must be submitted by Procedural Deadline C (Tuesday 29 September 2020).
                                 The project Case Teams will be running MS Teams Familiarisation Sessions w/c 28 September 2020, in advance of the Examination starting and the scheduled Open Floor Hearing events (7-9 October). If there are any Interested Parties wishing to attend these Familiarisation Sessions please contact either the<a href="#" >  EA1N </a> and/ or <a href="#" > EA2 </a> case team to request your participation. Requests must be received no later than Wednesday 23 September 2020.
                                 The Case Team would appreciate it if you could confirm your name, unique reference number for these project and your preferred time to attend being 10.00am to 11.00am OR 12.00pm to 1.00pm. The Case Team will confirm via a joining instruction email the date and time you will be expected to attend a dedicated Familiarisation Session. Please be advised that we may not be able to offer everyone a session, however, we will run a further Familiarisation Session for those that were not successful this time during the Examination and
                                 before the first round of Issue Specific Hearings.</li><br>
-                                <li> 28 September 2020 - The Examining Authority has now published the detailed <a href="#" >Agenda for the Open Floor Hearings</a> (OFHs1 – 3) to be held 7-9 October 2020. Annex A to this Agenda provides a running order of speakers and starting time for each OFH event. Speakers have been notified via email today which OFH they are expected to speak at and are encouraged to review Annex B which provides further explanation and advice for speakers prior to attending the OFHs.
+                            <li> 28 September 2020 - The Examining Authority has now published the detailed <a href="#" >Agenda for the Open Floor Hearings</a> (OFHs1 – 3) to be held 7-9 October 2020. Annex A to this Agenda provides a running order of speakers and starting time for each OFH event. Speakers have been notified via email today which OFH they are expected to speak at and are encouraged to review Annex B which provides further explanation and advice for speakers prior to attending the OFHs.
                                   For those wishing to observe the OFHs via the internet on a computer or smart phone on Wednesday 7th, Thursday 8th and Friday 9th October 2020 (please refer to the Agenda for start times), this will be broadcast via Livestream. Please use the following link on the day:
-                                  <a href="#" >Observe the acme project Open Floor Hearings</a></li>
+                                  <a href="#" >Observe the acme project Open Floor Hearings</a>
+                            </li>
                           </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   October 2020 </strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li> 05 October 2020 - Responses submitted for <a href="#">Procedural Deadline C </a> have been published. Additionally, the Examining Authority has published a <a href="#">detailed agenda for part 2 of the Preliminary Meeting</a>, (PDF, 158kb) which will be held on Tuesday 6 October 2020. Procedural Deadline C submissions, and detailed agenda,
-                            have been added to the <a href="#">Examination Library</a> (PDF, 950kb).</li> <br>
-                          <li> 05 October 2020 - Instructions for those wishing to participate in the Preliminary Meeting (PM) have been sent. The <a href="#" > Livestream of PM (Part 2) and Open Floor Hearing 1-3 </a> is available for those wishing to observe this week in real time.
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   October 2020 </strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li> 05 October 2020 - Responses submitted for <a href="#">Procedural Deadline C </a> have been published. Additionally, the Examining Authority has published a <a href="#">detailed agenda for part 2 of the Preliminary Meeting</a>, (PDF, 158kb) which will be held on Tuesday 6 October 2020. Procedural Deadline C submissions, and detailed agenda,
+                            have been added to the <a href="#">Examination Library</a> (PDF, 950kb).</li>
+                            <br>
+                            <li> 05 October 2020 - Instructions for those wishing to participate in the Preliminary Meeting (PM) have been sent. The <a href="#" > Livestream of PM (Part 2) and Open Floor Hearing 1-3 </a> is available for those wishing to observe this week in real time.
                             Please refer to the <a href="#" > Detailed Agenda for PM: Part 2 </a> (PDF, 158kb) and the <a href="#" > Agenda for OFH 1-3 </a>(PDF, 227kb) to see when each event will start broadcasting ‘LIVE’. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or
-                            increasing the sound volume may resolve the issue.</li> <br>
-                        <li> 06 October 2020 - Preliminary Meeting takes place. Examination begins.</li> <br>
-                        <li> 07 October 2020 - The Preliminary Meeting has closed and the Examination has now begun.
+                            increasing the sound volume may resolve the issue.</li>
+                            <br>
+                            <li> 06 October 2020 - Preliminary Meeting takes place. Examination begins.</li>
+                            <br>
+                            <li> 07 October 2020 - The Preliminary Meeting has closed and the Examination has now begun.
                             Those parties speaking at the Open Floor Hearings this week will be sent joining instructions on how to participate before each event.
                             The <a href="#" >Livestream of Open Floor Hearing 1-3 </a> is available for those wishing to observe this week in real time. Please refer to the <a href="#" >Agenda for OFH 1-3 </a>(PDF, 227kb) to see when each event will start broadcasting ‘LIVE’. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.</li>
-                      </ul>
-                      </div>
-                    </details>
+                          </ul>
+                        </div>
+                      </details>
+
+                    </div>
 
                   </div>
 
-
                 </div>
-
               </div>
             </div>
-          </div>
-          <div class="govuk-accordion__section">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
-                  <h2 class="govuk-accordion__section-heading-m"> Examination of the application &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h2>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
+                    <h2 class="govuk-accordion__section-heading-m"> Examination of the application &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong>
+                    </h2>
 
-                </span>
-              </h2>
-            </div>
+                  </span>
+                </h2>
+              </div>
 
-            <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
+              <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
 
-                  <div class="govuk-inset-text govuk-!-margin-top-0">
+                    <div class="govuk-!-margin-top-0">
 
-                    <p> The examination stage is where the Examining Authority, the developer and anyone who has registered to have their say will get involved and comment on the proposed development at a number of set deadlines. This stage takes six months. </p>
+                      <p> The examination stage is where the Examining Authority, the developer and anyone who has registered to have their say will get involved and comment on the proposed development at a number of set deadlines. This stage takes six months. </p>
 
-
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   October 2020</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>07 October 2020 - The Open Floor Hearing (OFH1A) reserved to start at 10.00am on 8 October 2020 will no longer be required and is therefore cancelled.
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   October 2020</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>07 October 2020 - The Open Floor Hearing (OFH1A) reserved to start at 10.00am on 8 October 2020 will no longer be required and is therefore cancelled.
                             Open Floor Hearing 2 (OFH2) will still commence at 2pm on 8 October 2020 as notified within the Rule 6 Letter.
                             Those parties speaking at the Open Floor Hearings this week will be sent joining instructions on how to participate before each event.
                             The <a href="#" >Livestream of Open Floor Hearing 1-3 </a> is available for those wishing to observe this week in real time. Please refer to the <a href="#" >Agenda for OFH 1-3 </a>(PDF, 227kb) to see when each event will start broadcasting ‘LIVE’. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.
-                          </li> <br>
+                          </li>
+                            <br>
                             <li> 08 October 2020 - The OFH2AB reserved to start at 6pm this evening (8 October 2020) will no longer be required and is therefore cancelled.
                                 Open Floor Hearing 3 (OFH3) will still commence at 10am on 9 October 2020 as notified within the Rule 6 Letter.
                                 Those parties speaking at the Open Floor Hearings this week will be sent joining instructions on how to participate before each event.
                                 <a href="#" >The Livestream of Open Floor Hearing 1-3 </a>is available for those wishing to observe this week in real time. Please refer to the <a href="#" >Agenda for OFH 1-3 </a>(PDF, 227kb) to see when each event will start broadcasting ‘LIVE’. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.
-                              </li> <br>
-                          <li> 12 October 2020 - The Examination Timetable (Rule 8 letter) has been sent to Interested Parties Procedural decision following Preliminary Meeting
-                          </li> <br>
-                          <li> 16 October 2020 - Recordings of both parts of the Preliminary Meetings and Open Floor Hearings 1, 2 and 3 (OFHs 1 – 3) have been published.</li> <br>
-                          <li> 19 October 2020 - The Rule 8 Letter confirms the timetable and procedural decisions for the Examination. Read the letter
+                              </li>
+                            <br>
+                            <li> 12 October 2020 - The Examination Timetable (Rule 8 letter) has been sent to Interested Parties Procedural decision following Preliminary Meeting
+                          </li>
+                            <br>
+                            <li> 16 October 2020 - Recordings of both parts of the Preliminary Meetings and Open Floor Hearings 1, 2 and 3 (OFHs 1 – 3) have been published.</li>
+                            <br>
+                            <li> 19 October 2020 - The Rule 8 Letter confirms the timetable and procedural decisions for the Examination. Read the letter
                               The Preliminary Meeting recordings and meeting note (PDF, 565KB) for both parts have now been published.
                               Open Floor Hearings 1-3 (OFH1-3) recordings and action list (PDF, 117KB) are also available.
                               The Examining Authority has carried out its fourth Unaccompanied Site Inspection (USI4) and the USI4 Site Note (PDF, 4MB) undertaken on 12-13 October 2020 has been published. Please review this note prior to making any site inspection nomination for Deadline 1.
                             </li>
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   November 2020</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>04 November 2020 - <a href="#" >The Livestream of Open Floor Hearing 4-5 </a> is available for those wishing to observe this week in real time. Please refer to the <a href="#" >updated Agenda for Open Floor Hearing 4 and 5 </a>(PDF, 107 KB) to see when each event will start broadcasting ‘LIVE’ and the updated List of Speakers per event. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue. The Examining Authority has carried out its fifth Unaccompanied Site Inspection (USI5) and
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   November 2020</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>04 November 2020 - <a href="#" >The Livestream of Open Floor Hearing 4-5 </a> is available for those wishing to observe this week in real time. Please refer to the <a href="#" >updated Agenda for Open Floor Hearing 4 and 5 </a>(PDF, 107 KB) to see when each event will start broadcasting ‘LIVE’ and the updated List of Speakers per event. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue. The Examining Authority has carried out its fifth Unaccompanied Site Inspection (USI5) and
                             the<a href="#" > USI5 Site Note </a>(PDF, 3 MB) undertaken on 30 October 2020 has been published. </li><br>
-                          <li> 05 November 2020 - The OFH4A reserved to start at 2pm this afternoon (5 November 2020) will no longer be required and is therefore cancelled.
-                              The Livestream of Open Floor Hearing 5 is available for those wishing to observe it this week in real time. Please refer to the updated Agenda for Open Floor Hearing 4 and 5 (PDF, 107 KB) to see when each event will start broadcasting ‘LIVE’ and the updated List of Speakers per event. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.</li> <br>
-                              <li>209 November 2020 - Deadline 1 submissions received from the Applicant and Interested Parties have now been published.</li><br>
-                              <li>13 November 2020 - Open Floor Hearings 4 & 5 (OFH4&5) recordings and action list are now available.  </li><br>
-                              <li>19 November 2020 - The Examining Authority has issued a Procedural Decision in relation to the Applicant’s change application (PDF, 173KB) and published an updated Ongoing Procedural Decision Tracker, (PDF, 125KB) along with a Compulsory Acquisition (Regulation 2010) Regulation 6 – Proposed Provisions Checklist (PDF, 154KB).
-Having considered the range of submissions received at Deadline 1, whilst also preparing for events to be held from 1 – 3 December 2020, the ExAs have decided that further Written Questions (ExQ2) will not be published on 26 November 2020. </li> <br>
-                              <li>24 November 2020 - The Agendas for Issue Specific Hearing 1 (ISH1) into Biodiversity and HRA (PDF, 167KB), Compulsory Acquisition Hearing 1 (CAH1) (PDF, 148KB) and Issue Specific Hearing 2 (ISH2) into Onshore siting, design and construction (PDF, 144KB); commencing week of 30 November 2020 have now been published.
-The Examining Authority has used its discretion to accept the late submission made by SASES and these have now been published.  </li> <br>
-                              <li>27 November 2020 - Joining instructions have been sent to all invitees for events commencing week of 30 November 2020. The Livestream for Events w/c 30 November 2020. is available for those wishing to observe in real time. Please refer to the Agendas for Issue Specific Hearing 1 (ISH1) into Biodiversity and HRA (PDF, 167KB), Compulsory Acquisition Hearing 1 (CAH1) (PDF, 148KB) and Issue Specific Hearing 2 (ISH2) into Onshore siting, design and construction (PDF, 144 KB) to see when each event will start broadcasting ‘LIVE’.
+                            <li> 05 November 2020 - The OFH4A reserved to start at 2pm this afternoon (5 November 2020) will no longer be required and is therefore cancelled.
+                              The Livestream of Open Floor Hearing 5 is available for those wishing to observe it this week in real time. Please refer to the updated Agenda for Open Floor Hearing 4 and 5 (PDF, 107 KB) to see when each event will start broadcasting ‘LIVE’ and the updated List of Speakers per event. If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.</li>
+                            <br>
+                            <li>209 November 2020 - Deadline 1 submissions received from the Applicant and Interested Parties have now been published.</li><br>
+                            <li>13 November 2020 - Open Floor Hearings 4 & 5 (OFH4&5) recordings and action list are now available.  </li><br>
+                            <li>19 November 2020 - The Examining Authority has issued a Procedural Decision in relation to the Applicant’s change application (PDF, 173KB) and published an updated Ongoing Procedural Decision Tracker, (PDF, 125KB) along with a Compulsory Acquisition (Regulation 2010) Regulation 6 – Proposed Provisions Checklist (PDF, 154KB).
+Having considered the range of submissions received at Deadline 1, whilst also preparing for events to be held from 1 – 3 December 2020, the ExAs have decided that further Written Questions (ExQ2) will not be published on 26 November 2020. </li>
+                            <br>
+                            <li>24 November 2020 - The Agendas for Issue Specific Hearing 1 (ISH1) into Biodiversity and HRA (PDF, 167KB), Compulsory Acquisition Hearing 1 (CAH1) (PDF, 148KB) and Issue Specific Hearing 2 (ISH2) into Onshore siting, design and construction (PDF, 144KB); commencing week of 30 November 2020 have now been published.
+The Examining Authority has used its discretion to accept the late submission made by SASES and these have now been published.  </li>
+                            <br>
+                            <li>27 November 2020 - Joining instructions have been sent to all invitees for events commencing week of 30 November 2020. The Livestream for Events w/c 30 November 2020. is available for those wishing to observe in real time. Please refer to the Agendas for Issue Specific Hearing 1 (ISH1) into Biodiversity and HRA (PDF, 167KB), Compulsory Acquisition Hearing 1 (CAH1) (PDF, 148KB) and Issue Specific Hearing 2 (ISH2) into Onshore siting, design and construction (PDF, 144 KB) to see when each event will start broadcasting ‘LIVE’.
 The Applicant has provided a presentation to cover Agenda items 3b and 3c during ISH2, this has been accepted by the ExA as an additional submission (PDF, 5MB) on 26 November 2020 and published to the project page.
 If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and therefore un-muting or increasing the sound volume may resolve the issue.  </li>
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   December 2020</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>02 December 2020 - The <a href="#" >Applicant has submitted a revised dDCO and Schedule of Changes </a>which has been accepted by the ExA as an additional submission on 01 December 2020, the ExA has also on 02 December 2020 accepted the additional submission made by <a href="#" >Action group regarding Cumulative Impact </a>(PDF, 6MB).
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   December 2020</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>02 December 2020 - The <a href="#" >Applicant has submitted a revised dDCO and Schedule of Changes </a>which has been accepted by the ExA as an additional submission on 01 December 2020, the ExA has also on 02 December 2020 accepted the additional submission made by <a href="#" >Action group regarding Cumulative Impact </a>(PDF, 6MB).
                             <a href="#" >  Issue Specific Hearing 1 Action Points </a>(PDF, 121KB) have now been published.
                               The <a href="#" >Livestream for ISH2 </a>is available for those wishing to observe in real time. Please refer to the Agenda for <a href="#" >Issue Specific Hearing 2 (ISH2) into Onshore siting, design and construction </a>(PDF, 144KB) to see when the event will start broadcasting ‘LIVE’.
                               The <a href="#" >Applicant has provided a presentation to cover Agenda items 3b and 3c during ISH2</a> (PDF, 5MB), this has been accepted by the ExA as an additional submission on 26 November 2020 and published to the project page.
                               If the Livestream doesn’t initially work, it may be resolved by refreshing the page or if you can’t hear anything, it may be that your sound is turned off and
-                              therefore un-muting or increasing the sound volume may resolve the issue. </li> <br>
-                          <li>04 December 2020 - The reserved hearings scheduled to start today (4 December 2020) at 10am are no longer required and have therefore been cancelled.</li><br>
+                              therefore un-muting or increasing the sound volume may resolve the issue. </li>
+                            <br>
+                            <li>04 December 2020 - The reserved hearings scheduled to start today (4 December 2020) at 10am are no longer required and have therefore been cancelled.</li><br>
                             <li> 04 December 2020 - The action points for Compulsory Acquisition Hearing 1 (CAH1) (PDF, 167KB)
 and Issue Specific Hearing 2 (ISH2) (PDF, 212KB) has now been published.
 </li><br>
-                              <li> 07 December 2020 - Following the Examining Authority’s (ExA) decision to accept the Additional Land Application (PDF, 172KB) for examination, comments are now invited on the Applicant’s proposed provision by Deadline 4 – 13 January 2021.
+                            <li> 07 December 2020 - Following the Examining Authority’s (ExA) decision to accept the Additional Land Application (PDF, 172KB) for examination, comments are now invited on the Applicant’s proposed provision by Deadline 4 – 13 January 2021.
 Please note that any comments must be made on the Registration and Relevant Representation Form and must relate to the Applicant’s application for Additional Land  (PDF, 4MB) only; any submissions that are not in relation to the application for Additional Land, or are not on the prescribed form, will not be seen by the ExA and will be disregarded. Comments submitted after the deadline will also be disregarded.</li><br>
-                                <li> 08 December 2020 - The Examining Authority Rule 8(3) Letter (PDF, 468KB) has been published, giving details of changes to the Examination Timetable and notification for events to be held in January 2021.
+                            <li> 08 December 2020 - The Examining Authority Rule 8(3) Letter (PDF, 468KB) has been published, giving details of changes to the Examination Timetable and notification for events to be held in January 2021.
                                   The Frequently Asked Questions has been updated and published. The recordings and transcripts for Issue Specific Hearings and Compulsory Acquisition Hearings held w/c 30 November 2020 have been published, including ISH1 Action Points, CAH1 Action Points and ISH2 Action Points.
                                   Following the Examining Authority’s (ExA) decision to accept the Additional Land Application (PDF, 172KB) for examination, comments are now invited on the Applicant’s proposed provision by Deadline 4 – 13 January 2021.
                                   Please note that any comments must be made on the Registration and Relevant Representation Form and must relate to the Applicant’s application for Additional Land  (PDF, 4MB) only; any submissions that are not in relation to the application for Additional Land, or are not on the prescribed form, will not be seen by the ExA and will be disregarded. Comments submitted after the deadline will also be disregarded.</li><br>
-                                  <li>17 December 2020 - Deadline 3 submissions have now been published. A Rule 17 Request has been issued to the Applicant and other named Interested Parties. Any parties wishing to provide a response to any questions within this letter can do so by Deadline 4.</li>
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> January 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>08 January 2021 - The Agendas for the following events have been published:
+                            <li>17 December 2020 - Deadline 3 submissions have now been published. A Rule 17 Request has been issued to the Applicant and other named Interested Parties. Any parties wishing to provide a response to any questions within this letter can do so by Deadline 4.</li>
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> January 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>08 January 2021 - The Agendas for the following events have been published:
                             <a href="#" >  Issue Specific Hearing 3 (ISH3) into Biodiversity and Habitats Regulations Assessment</a> (PDF, 172 KB)
                               <a href="#" >Issue Specific Hearing 4 (ISH4) into Onshore Environment, construction, transport and operational effects</a> (PDF, 142 KB)
                             <a href="#" >  Issue Specific Hearing 5 into Social, economic, land and sea use effects (ISH5)</a> (PDF, 133 KB) and
                               <a href="#" >Open Floor Hearings 6 and 7 (OFH6 and OFH7) </a>(PDF, 69 KB) – has been updated 13 January 2021
                               The Agenda for Issue specific Hearing 6 (ISH6) and the Itineraries for Accompanied Site Inspection 1 and 2 (ASI1 and ASI2) will be published no later than 19 January 2021
                               </li><br>
-                          <li> 19 January 2021 - The livestream for events w/c 18 January 2021 is available for those wishing to observe in real time.
+                            <li> 19 January 2021 - The livestream for events w/c 18 January 2021 is available for those wishing to observe in real time.
 Please refer to the appropriate Agendas for each day, being ISH3 into Biodiversity and HRA (PDF, 172 KB)  (Tuesday) ; ISH4 into Onshore Environment, Construction, Transport and Operational effects (PDF, 212 KB) (Tuesday and Wednesday); ISH5 into Social, Economic, Land and Sea Use effects (PDF, 206 KB)  (Thursday) and Open Floor Hearing 6 (PDF, 106 KB)  (Friday), which have been published.
 The final updated Site Inspection Itinerary  ( PDF, 3MB)  (Tuesday 26 and Wednesday 27 January), Agenda for Open Floor Hearing 7 (PDF, 106 KB)  (Thursday 28 January) and the Agenda for ISH6 into the Draft DCO  (PDF , 213KB)  (Friday 29 January) for events commencing w/c 25 January 2021 has been published.
 </li><br>
-                          <li>22 January 2021 - The reserved time for Open Floor Hearings 6A scheduled to start this afternoon (22 January 2021) is no longer required and has therefore been cancelled. Furthermore the time reserved for Issue Specific Hearings 3A, Issue Specific Hearings 4A and Issue Specific Hearings 5A in w/c 1 February 2021 will no longer be required and have therefore been cancelled.
+                            <li>22 January 2021 - The reserved time for Open Floor Hearings 6A scheduled to start this afternoon (22 January 2021) is no longer required and has therefore been cancelled. Furthermore the time reserved for Issue Specific Hearings 3A, Issue Specific Hearings 4A and Issue Specific Hearings 5A in w/c 1 February 2021 will no longer be required and have therefore been cancelled.
 Action lists for Issue Specific Hearings 3 (ISHs3) (PDF, 99 KB) and Open Floor Hearings 6 (OFHs6) (PDF, 97 KB) have been published.</li><br>
-                          <li> 25 January 2021 - The Examining Authority Rule 8(3) Letter (PDF, 258KB) has been published, giving details of changes to the Examination Timetable and notification for events to be held in February 2021. Please refer to the appropriate Actions Points for: ISH3 into Biodiversity and HRA (PDF, 99KB); ISH4 into Onshore Environment, Construction, Transport and Operational effects (PDF, 92KB); ISH5 into Social, Economic, Land and Sea Use effects (PDF, 93KB) and Open Floor Hearing 6 (PDF, 97KB), which have been published.Agenda for Open Floor Hearing 7 (PDF, 106KB)
+                            <li> 25 January 2021 - The Examining Authority Rule 8(3) Letter (PDF, 258KB) has been published, giving details of changes to the Examination Timetable and notification for events to be held in February 2021. Please refer to the appropriate Actions Points for: ISH3 into Biodiversity and HRA (PDF, 99KB); ISH4 into Onshore Environment, Construction, Transport and Operational effects (PDF, 92KB); ISH5 into Social, Economic, Land and Sea Use effects (PDF, 93KB) and Open Floor Hearing 6 (PDF, 97KB), which have been published.Agenda for Open Floor Hearing 7 (PDF, 106KB)
                             (Thursday 28 January) and the Agenda for ISH6 into the Draft DCO (PDF, 213KB) (Friday 29 January)
                             has been published. You can access the livestream for these events here.</li>
 
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> February 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>08 February 2021 - The Examination authority has published the following: </li>
-                    <li>-<a href="#"> A letter relating to the Compulsory Acquisition of Additional Land</a> (PDF, 449KB)</li>
-                    <li>-<a href="#"> Action points from Issue Specific Hearing 6 (ISH6)</a> (PDF, 119KB)</li>
-                    <li>-<a href="#"> Action points from Open Floor Hearing 7 </a>(OFH7) (PDF, 85KB)</li>
-                    <li>-<a href="#"> Notes from the Unaccompanied or Access Required Site Inspections</a> () PDF, 1MB) undertaken on 25, 26 & 27 January 2021.</li> <br>
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> February 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>08 February 2021 - The Examination authority has published the following: </li>
+                            <li>-<a href="#"> A letter relating to the Compulsory Acquisition of Additional Land</a> (PDF, 449KB)</li>
+                            <li>-<a href="#"> Action points from Issue Specific Hearing 6 (ISH6)</a> (PDF, 119KB)</li>
+                            <li>-<a href="#"> Action points from Open Floor Hearing 7 </a>(OFH7) (PDF, 85KB)</li>
+                            <li>-<a href="#"> Notes from the Unaccompanied or Access Required Site Inspections</a> () PDF, 1MB) undertaken on 25, 26 & 27 January 2021.</li>
+                            <br>
 
-                    <li>08 February 2021 - The Agendas for the following events has been published: </li>
-                  <li>-<a href="#"> Compulsory Acquisition Hearing 2 (CAH2)</a>  (PDF, 449KB)</li>
-                  <li>-<a href="#"> Issue Specific Hearing 7 (ISH7)  </a>into Biodiversity and HRA</li>
-                  <li>-<a href="#"> Issue Specific Hearing 8 (ISH8)  </a>(PDF, 85KB)</li>
-                  <li>-<a href="#"> Issue Specific Hearing 9 (ISH9)  </a> into the Draft Development Consent Order</li> <br>
-                  <li> 09 February 2021 - The Examining Authority Rule 8(3) Letter (PDF, 476KB) has been published, giving details of changes to the Examination Timetable and notification for events to be held in March 2021.</li> <br>
-                          <li> 12 February 2021 - The Examining Authority further written questions (ExQ2) (PDF, 632KB) and Commentaries on the draft Development Consent Order (PDF, 573KB) have been published. The published Rule 8(3) Letter (PDF, 474 KB) dated 9 February 2021 confirms the deadline for receipt of responses.
+                            <li>08 February 2021 - The Agendas for the following events has been published: </li>
+                            <li>-<a href="#"> Compulsory Acquisition Hearing 2 (CAH2)</a>  (PDF, 449KB)</li>
+                            <li>-<a href="#"> Issue Specific Hearing 7 (ISH7)  </a>into Biodiversity and HRA</li>
+                            <li>-<a href="#"> Issue Specific Hearing 8 (ISH8)  </a>(PDF, 85KB)</li>
+                            <li>-<a href="#"> Issue Specific Hearing 9 (ISH9)  </a> into the Draft Development Consent Order</li>
+                            <br>
+                            <li> 09 February 2021 - The Examining Authority Rule 8(3) Letter (PDF, 476KB) has been published, giving details of changes to the Examination Timetable and notification for events to be held in March 2021.</li>
+                            <br>
+                            <li> 12 February 2021 - The Examining Authority further written questions (ExQ2) (PDF, 632KB) and Commentaries on the draft Development Consent Order (PDF, 573KB) have been published. The published Rule 8(3) Letter (PDF, 474 KB) dated 9 February 2021 confirms the deadline for receipt of responses.
 The Livestream for events running w/c 15 February 2021 is available for those wishing to observe in real time.
 Please refer to the appropriate Agendas for each day, being Compulsory Acquisition Hearing 2 (CAH2) (PDF, 134 KB) (Tuesday) ; ISH7 into Biodiversity (PDF, 132 KB) (Wednesday); ISH8 into Seascape (PDF, 124 KB) (Thursday) and ISH9 into the draft Development Consent Order (PDF, 132 KB) (Friday), which have been published.</li><br>
-                          <li>19 February 2021 - The Action Points for CAH2, (PDF, 148 KB)  ISH7 into Biodiversity (PDF, 157 KB) and ISH8 into Seascape  (PDF, 141 KB) have been published. The recordings and transcripts for these events have also been published.
+                            <li>19 February 2021 - The Action Points for CAH2, (PDF, 148 KB)  ISH7 into Biodiversity (PDF, 157 KB) and ISH8 into Seascape  (PDF, 141 KB) have been published. The recordings and transcripts for these events have also been published.
 The time reserved for CAH2A, ISH7A, ISH8A and ISH9A in w/c 23 March 2021 will no longer be required and have therefore been cancelled.
 </li><br>
-                          <li> 22 February 2021 - The Examining Authority have issued a Procedural Decision (PDF, 427KB) in relation to Issue Specific Hearing 9 Agenda Item 1a.
+                            <li> 22 February 2021 - The Examining Authority have issued a Procedural Decision (PDF, 427KB) in relation to Issue Specific Hearing 9 Agenda Item 1a.
 The Action Points for Compulsory Acquisition Hearings (CAH2), Issue Specific Hearings (ISH) 7 into Biodiversity, ISH8 into Seascape and ISH9 into the draft Development Consent Order (dDCO) have been published. The recordings and transcripts for these events have also been published.
 The time reserved for CAH2A, ISH7A, ISH8A and ISH9A in w/c 23 March 2021 will no longer be required and have therefore been cancelled.</li>
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>   March 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>02 March 2021 - The Agendas for the following events have been published:
-                          <li>  - <a href="#">Issue Specific Hearing 10 (ISH10) into Health and Wellbeing Assessment </a>(PDF, 204KB) </li>
-                          <li>  - <a href="#">Issue Specific Hearing 11 (ISH11) into Flood risk and drainage </a>(PDF, 205KB) </li>
-                          <li>  - <a href="#">Issue Specific Hearing 12 (ISH12) into Noise</a> (PDF, 207KB) </li>
-                          <li>  - <a href="#">Issue Specific Hearing 13 (ISH13) into Traffic and transport</a> (PDF, 211KB) </li>
-                          <li>  Agendas for events commencing week of 15th March will be published 9 March 2021 </li><br>
-                          <li> 04 March 2021 - The Examining Authority has published the Report on the Implications for European Sites (RIES) (PDF, 733KB).
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>   March 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>02 March 2021 - The Agendas for the following events have been published:
+                          
+                            
+                            
+                            
+                            
+                            
+                            
+                            <li>  - <a href="#">Issue Specific Hearing 10 (ISH10) into Health and Wellbeing Assessment </a>(PDF, 204KB) </li>
+                            <li>  - <a href="#">Issue Specific Hearing 11 (ISH11) into Flood risk and drainage </a>(PDF, 205KB) </li>
+                            <li>  - <a href="#">Issue Specific Hearing 12 (ISH12) into Noise</a> (PDF, 207KB) </li>
+                            <li>  - <a href="#">Issue Specific Hearing 13 (ISH13) into Traffic and transport</a> (PDF, 211KB) </li>
+                            <li>  Agendas for events commencing week of 15th March will be published 9 March 2021 </li><br>
+                            <li> 04 March 2021 - The Examining Authority has published the Report on the Implications for European Sites (RIES) (PDF, 733KB).
                               Information for forthcoming Hearings:</li>
-                              <li>   The Agendas for the following events have been published:</li>
+                            <li>   The Agendas for the following events have been published:</li>
                             <li>     - Issue Specific Hearing 10 (ISH10) into Health and Wellbeing Assessment (PDF, 204KB)</li>
-                              <li>   - Issue Specific Hearing 11 (ISH11) into Flood risk and drainage (PDF, 205KB)</li>
+                            <li>   - Issue Specific Hearing 11 (ISH11) into Flood risk and drainage (PDF, 205KB)</li>
                             <li>     - Issue Specific Hearing 12 (ISH12) into Noise (PDF, 207KB)</li>
                             <li>     - Issue Specific Hearing 13 (ISH13) into Traffic and transport (PDF, 211KB)</li>
-                              <li>   Agendas for events commencing week of 15th March will be published 9 March 2021.
+                            <li>   Agendas for events commencing week of 15th March will be published 9 March 2021.
                               Further Written Questions (ExQ3) were not published on this occasion.</li><br>
-                          <li> 05 March 2021 - As No additional Affected Persons have requested to be heard at an Open Floor Hearing, Open Floor Hearing 8 (OFH8) has been cancelled.
+                            <li> 05 March 2021 - As No additional Affected Persons have requested to be heard at an Open Floor Hearing, Open Floor Hearing 8 (OFH8) has been cancelled.
                               The Examining Authority has published the Report on the Implications for European Sites (RIES) (PDF, 733KB).
                               Agendas for hearings during the week of 8th March can be found here.
                               Agendas for events commencing week of 15th March will be published 9th March 2021.</li><br>
-                          <li> 05 March 2021 - Deadline 7 submissions have now been published.</li>
-                              <li> <li> The Examining Authority has published the Report on the Implications for European Sites (RIES) (PDF, 733KB).</li>
+                            <li> 05 March 2021 - Deadline 7 submissions have now been published.</li>
+                            <li>
+                            <li> The Examining Authority has published the Report on the Implications for European Sites (RIES) (PDF, 733KB).</li>
                             <li>   As no additional Affected Persons have requested to be heard at an Open Floor Hearing, OFH8 has been cancelled.</li>
-                              <li>  The Livestream for events running w/c 8 March 2021 is available for those wishing to observe in real time.</li>
+                            <li>  The Livestream for events running w/c 8 March 2021 is available for those wishing to observe in real time.</li>
                             <li>    Please refer to the appropriate Agendas for each day:</li>
                             <li>    - Issue Specific Hearing 10 (ISH10) into Health and Wellbeing Assessment (PDF, 204KB)</li>
                             <li>    - Issue Specific Hearing 11 (ISH11) into Flood risk and drainage (PDF, 205KB)</li>
                             <li>    - Issue Specific Hearing 12 (ISH12) into Noise (PDF, 207KB)</li>
                             <li>    - Issue Specific Hearing 13 (ISH13) into Traffic and transport (PDF, 211KB)</li>
                             <li>    Agendas for events commencing week of 15th March will be published 9th March 2021.</li><br>
-                          <li> 09 March 2021 - The Livestream for events running w/c 8 March 2021 is available for those wishing to observe in real time.
+                            <li> 09 March 2021 - The Livestream for events running w/c 8 March 2021 is available for those wishing to observe in real time.
 Please refer to the appropriate Agendas for each day:
 Issue Specific Hearing 10 (ISH10) into Health and Wellbeing Assessment (PDF, 204KB)
 Issue Specific Hearing 11 (ISH11) into Flood risk and drainage (PDF, 205KB)
 Issue Specific Hearing 12 (ISH12) into Noise (PDF, 207KB)
 Issue Specific Hearing 13 (ISH13) into Traffic and transport (PDF, 211KB)
 Agendas for hearings during the week of 15th March (ISH14 into Biodiversity and HRA (PDF, 241KB), ISH15 into the dDCO (PDF, 214KB) and Compulsory Acquisition Hearings (CAH3) (PDF, 185KB)) have been published.</li><br>
-                          <li> 5 March 2021 - The Livestream for events running w/c 15 March 2021 is available for those wishing to observe in real time.
+                            <li> 5 March 2021 - The Livestream for events running w/c 15 March 2021 is available for those wishing to observe in real time.
 Please refer to the appropriate Agendas for each day:
 Issue Specific Hearing (ISH) 14 into Biodiversity and Habitats Regulations Assessment (Day 1 and 2) (PDF, 214KB)
 Compulsory Acquisition Hearing 3 (PDF, 185KB)
 ISH15 into the draft DCO (PDF, 214KB)
 The Action Points for ISH10 into Health and Wellbeing Assessment (PDF, 112KB), ISH11 into Flood Risk and Drainage (PDF, 83KB), ISH12 into Noise (PDF, 102KB) and ISH13 into Traffic and Transport (PDF, 156KB) have been published. The recordings and transcripts for these events have also been published.
 The time reserved for ISH10A, ISH11A, ISH12A and ISH13A in w/c 22 March 2021 will no longer be required and these events have been cancelled.<br>
-                          <li> 22 March 2021 - The Examining Authority have published a Rule 17 letter, requesting further information from Environment England dated 17 March 2021, the deadline for a response is D8, 25 March 2021.
+                            <li> 22 March 2021 - The Examining Authority have published a Rule 17 letter, requesting further information from Environment England dated 17 March 2021, the deadline for a response is D8, 25 March 2021.
 The Action Points for ISH10 into Health and Wellbeing Assessment (PDF, 112KB), ISH11 into Flood Risk and Drainage (PDF, 83KB), ISH12 into Noise (PDF, 102KB), ISH13 into Traffic and Transport (PDF, 156KB), ISH14 into Biodiversity and Habitats Regulations Assessment (PDF, 163KB), ISH15 into the draft Development Consent Order (DCO) (PDF, 150KB) and CAH3 (PDF, 131KB) have been published. The recordings and transcripts for these events have also been published.
 The time reserved for ISH10A, ISH11A, ISH12A, ISH13A, CAH3A, ISH14A, and ISH15A in w/c 23 March 2021 will no longer be required and have therefore been cancelled.<br>
-                          <li> 26 March 2021 - The Examining Authority has issued a Procedural Decision to accept the Applicant’s proposed changes to the scheme, which were submitted at Deadline 7.
+                            <li> 26 March 2021 - The Examining Authority has issued a Procedural Decision to accept the Applicant’s proposed changes to the scheme, which were submitted at Deadline 7.
 The Procedural Decision (PDF, 259KB) has been added to the Examination Library (PDF, 2MB).
 <br>
-                          <li> 29 March 2021 - The Deadline 8 submissions have now been published.</li>
-                        </ul>
-                      </div>
-                    </details>
+                            <li> 29 March 2021 - The Deadline 8 submissions have now been published.</li>
+                          </ul>
+                        </div>
+                      </details>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> April 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>06 April 2021 - The Secretary of State has issued a <a href="#">letter extending the Examination from 6 April 2021 until no later than 6 July 2021</a>. (PDF, 96KB)
-                              The Examining Authority has issued their  <a href="#">Rule 8(3) Letter amending the Examination timetable</a>. (PDF, 175KB)
-                              Deadline 9 has now changed. All submissions must now be received by Thursday 15 April 2021. </li><br>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> April 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>06 April 2021 - The Secretary of State has issued a <a href="#">letter extending the Examination from 6 April 2021 until no later than 6 July 2021</a>. (PDF, 96KB) The Examining Authority has issued their  <a href="#">Rule 8(3) Letter amending the Examination timetable</a>. (PDF, 175KB) Deadline 9 has now changed. All submissions must now be received by Thursday 15 April 2021. </li><br>
                             <li> 19 April 2021 - Deadline 9 submissions have now been published.</li><br>
-                            <li> 29 April 2021 - The Examining Authority has issued a letter confirming their Procedural Decision (PDF, 342KB) to accept the Applicants non-material change request. The letter also notifies all Interested Parties for ISH16 and ISH17 commencing the week of 24 May 2021.
-                                The Examining Authority has issued a Rule 17 letter (PDF, 173KB) requesting further information from the Applicant.</li>
-                        </ul>
-                      </div>
-                    </details>
+                            <li> 29 April 2021 - The Examining Authority has issued a letter confirming their Procedural Decision (PDF, 342KB) to accept the Applicants non-material change request. The letter also notifies all Interested Parties for ISH16 and ISH17 commencing the week of 24 May 2021. The Examining Authority has issued a Rule 17 letter (PDF, 173KB) requesting further information from the Applicant.</li>
+                          </ul>
+                        </div>
+                      </details>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> May 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>06 May 2021 - The Examining Authority has issued a Rule 17 letter (PDF, 139KB) requesting further information from the Nuclear Decommissioning Authority.</li><br>
-                            <li> 07 May 2021 - The following documents have been published:
-The Deadline 10 submissions
-Version 3.2 of the Frequently Asked Questions (FAQs) (PDF, 400KB)
-The Planning Inspectorate’s request to extend the examination (PDF, 397 KB)</li><br>
-                            <li> 12 May 2021 - The Examining Authority has published the following documents:
-The note from the Unaccompanied Site Inspections (PDF, 321KB) undertaken on 22 & 23 April 2021;
-Agenda for Issue Specific Hearing 16 (ISH16) (PDF, 206KB) into the proposed substation site; and
-Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.</li><br>
-                            <li> 13 May 2021 - The Examining Authority has issued a Rule 17 letter (PDF, 143KB) requesting further information from the Applicant.
-The agendas for the following hearings have been published:
-Agenda for Issue Specific Hearing 16 (ISH16) (PDF, 206KB) into the proposed substation site; and
-Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.</li><br>
-                            <li> 24 May 2021 - The Applicant has submitted a draft response to Examining Authorities Rule 17 request for information (R17QE), (PDF, 143KB) to be used in ISH16 and ISH17.
-The Livestream for events running w/c 24 May 2021 is available for those wishing to observe in real time.
-Agenda for Issue Specific Hearing 16 (ISH16) (PDF, 206KB) into the proposed substation site; and
-Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.</li><br>
-                            <li> 27 May 2021 - The Action Points for ISH16 into the proposed substation site (PDF, 150KB), have been published. The recordings and transcripts for this event have also been published.
-The Livestream for events running w/c 24 May 2021 is available for those wishing to observe in real time.
-Please refer to the Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.
-The Applicant has submitted a draft response to Examining Authorities Rule 17 request for information (R17QE), (PDF, 143KB) to be used in ISH16 and ISH17.</li>
-                        </ul>
-                      </div>
-                    </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> May 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>06 May 2021 - The Examining Authority has issued a Rule 17 letter (PDF, 139KB) requesting further information from the Nuclear Decommissioning Authority.</li><br>
+                            <li> 07 May 2021 - The following documents have been published: The Deadline 10 submissions Version 3.2 of the Frequently Asked Questions (FAQs) (PDF, 400KB) The Planning Inspectorate’s request to extend the examination (PDF, 397 KB)</li><br>
+                            <li> 12 May 2021 - The Examining Authority has published the following documents: The note from the Unaccompanied Site Inspections (PDF, 321KB) undertaken on 22 & 23 April 2021; Agenda for Issue Specific Hearing 16 (ISH16) (PDF, 206KB) into the proposed substation site; and Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.</li><br>
+                            <li> 13 May 2021 - The Examining Authority has issued a Rule 17 letter (PDF, 143KB) requesting further information from the Applicant. The agendas for the following hearings have been published: Agenda for Issue Specific Hearing 16 (ISH16) (PDF, 206KB) into the proposed substation site; and Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.</li><br>
+                            <li> 24 May 2021 - The Applicant has submitted a draft response to Examining Authorities Rule 17 request for information (R17QE), (PDF, 143KB) to be used in ISH16 and ISH17. The Livestream for events running w/c 24 May 2021 is available for those wishing to observe in real time. Agenda for Issue Specific Hearing 16 (ISH16) (PDF, 206KB) into the proposed substation site; and Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order.</li><br>
+                            <li> 27 May 2021 - The Action Points for ISH16 into the proposed substation site (PDF, 150KB), have been published. The recordings and transcripts for this event have also been published. The Livestream for events running w/c 24 May 2021 is available for those wishing to observe in real time. Please refer to the Agenda for Issue Specific Hearing 17 (ISH17) (PDF, 219KB) into the draft Development Consent Order. The Applicant has submitted a draft response to Examining Authorities Rule 17 request for information (R17QE), (PDF, 143KB) to be used in ISH16 and ISH17.</li>
+                          </ul>
+                        </div>
+                      </details>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong>  June 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>01 June 2021 - The Action points for <a href="#">ISH16 into the proposed substation site</a> (PDF, 150KB), and <a href="#">ISH17 into the dDCO and other matters</a> (PDF, 146KB) have been published.
-                            The <a href="#">recordings and transcripts for these events </a> have also been published. </li><br>
-                          <li> 11 June 2021 - The Deadline 11 submissions have now been published.</li><br>
-                          <li> 14 June 2021 - The ExA has accepted and published submissions from the Applicant made on 11 June 2021, updating the Outline Operational Drainage Management Plan (OODMP) and the Outline Landscape and Ecological Management Strategy (OLEMS). Comments on these documents should be made by Deadline 12.</li><br>
-                          <li> 16 June 2021 - The Examining Authority has published the Updated Report on the Implications for European Sites [PDF, 940KB]. Comments are requested by Deadline 12 (28 June 2021).
-The authority has also publish a Rule 9 Letter [PDF, 271KB] accepting a proposal by the Applicant to exclude land from the Order as a non-material change.</li><br>
-                          <li> 18 June 2021 - The Examining Authority (ExA) has issued a Rule 17 request for further information (PDF, 230 KB) from the Applicant and eight specific Interested Parties (IPs) requiring a response by Deadline 12, Monday 28 June 2021. However, other IPs may also wish to respond to these requests by Deadline 13, Monday 5 July 2021.
-</li><br>
-                          <li> 22 June 2021 - The Examining Authority has accepted additional submissions from the Applicant at their discretion on 22 June 2021. These are a covering letter (PDF, 108KB) and updated versions of the Applicants Deadline 11 submissions, which had information missing, namely:
-AS-133 and AS-134 (to replace REP11-047)
-AS-135 and AS-136 (to replace REP11-083)
-The Examining Authority has also issued a Rule 17 request for further information (PDF, 230 KB) from the Applicant and eight specific Interested Parties (IPs) requiring a response by Deadline 12, Monday 28 June 2021, however other IPs can also provide responses thereto if they wish. IPs may wish to comment on any of these responses by Deadline 13, Monday 5 July 2021.
-</li><br>
-                          <li> 30 June 2021 - The <a href="#">Deadline 12 submissions have now been published</a>.</li>
-                        </ul>
-                      </div>
-                    </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong>  June 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>01 June 2021 - The Action points for <a href="#">ISH16 into the proposed substation site</a> (PDF, 150KB), and <a href="#">ISH17 into the dDCO and other matters</a> (PDF, 146KB) have been published. The <a href="#">recordings and transcripts for these events </a> have also been published. </li><br>
+                            <li> 11 June 2021 - The Deadline 11 submissions have now been published.</li><br>
+                            <li> 14 June 2021 - The ExA has accepted and published submissions from the Applicant made on 11 June 2021, updating the Outline Operational Drainage Management Plan (OODMP) and the Outline Landscape and Ecological Management Strategy (OLEMS). Comments on these documents should be made by Deadline 12.</li><br>
+                            <li> 16 June 2021 - The Examining Authority has published the Updated Report on the Implications for European Sites [PDF, 940KB]. Comments are requested by Deadline 12 (28 June 2021). The authority has also publish a Rule 9 Letter [PDF, 271KB] accepting a proposal by the Applicant to exclude land from the Order as a non-material change.</li><br>
+                            <li> 18 June 2021 - The Examining Authority (ExA) has issued a Rule 17 request for further information (PDF, 230 KB) from the Applicant and eight specific Interested Parties (IPs) requiring a response by Deadline 12, Monday 28 June 2021. However, other IPs may also wish to respond to these requests by Deadline 13, Monday 5 July 2021.</li><br>
+                            <li> 22 June 2021 - The Examining Authority has accepted additional submissions from the Applicant at their discretion on 22 June 2021. These are a covering letter (PDF, 108KB) and updated versions of the Applicants Deadline 11 submissions, which had information missing, namely: AS-133 and AS-134 (to replace REP11-047) AS-135 and AS-136 (to replace REP11-083) The Examining Authority has also issued a Rule 17 request for further information (PDF, 230 KB) from the Applicant and eight specific Interested Parties (IPs) requiring a response by Deadline 12, Monday 28 June 2021, however other IPs can also provide responses thereto if they wish. IPs may wish to comment on any of these responses by Deadline 13, Monday 5 July 2021.</li><br>
+                            <li> 30 June 2021 - The <a href="#">Deadline 12 submissions have now been published</a>.</li>
+                          </ul>
+                        </div>
+                      </details>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> July 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>06 July 2021 - The Examination closes at 23:59 on Tuesday 06 July 2021. </li><br>
-                          <li> 07 July 2021 - The <a href="#">Deadline 13 submissions</a> have now been published.
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> July 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>06 July 2021 - The Examination closes at 23:59 on Tuesday 06 July 2021. </li><br>
+                            <li> 07 July 2021 - The <a href="#">Deadline 13 submissions</a> have now been published.
                             The Examining Authority has issued a<a href="#"> Notification to confirm the completion of the Examination </a>(PDF, 106KB).
                             The Examination closed at 23:59 on Tuesday 6 July 2021.</li>
-                        </ul>
-                      </div>
-                    </details>
+                          </ul>
+                        </div>
+                      </details>
 
+                    </div>
                   </div>
-                  </div>
-
 
                 </div>
 
               </div>
             </div>
 
-          <div class="govuk-accordion__section">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
-                  <h2 class="govuk-accordion__section-heading-m"> Recommendation and decision &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong></h2>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-appellant">
+                    <h2 class="govuk-accordion__section-heading-m"> Recommendation and decision &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong class="govuk-tag govuk-tag--green"> COMPLETED</strong>
+                    </h2>
 
-                </span>
-              </h2>
-            </div>
+                  </span>
+                </h2>
+              </div>
 
-            <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
+              <div id="accordion-default-content-appellant" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-appellant">
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
 
-                  <div class="govuk-inset-text govuk-!-margin-top-0">
+                    <div class="govuk-!-margin-top-0">
 
-                    <p> Recommendation and decision is where the Examining Authority writes its recommendation report. This must be completed and sent to the Secretary of State within three months of the end of Examination.
+                      <p> Recommendation and decision is where the Examining Authority writes its recommendation report. This must be completed and sent to the Secretary of State within three months of the end of Examination.
                        The relevant Secretary of State then makes the final decision.</p>
 
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> October 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>06 October 2021 - Recommendations given by the Planning Inspectorate </li>
 
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> October 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>06 October 2021 - Recommendations given by the Planning Inspectorate </li>
-
-                        </ul>
-                      </div>
-                    </details>
-                    <details class="govuk-details" data-module="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          <strong> December 2021</strong>
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <ul class="govuk-list govuk-list-bulleted">
-                          <li>1 December 2021 - Decision made by the Secretary of State</li><br>
-                          <li> 1 December 2021 - The Secretary of State has granted development consent for this application.
+                          </ul>
+                        </div>
+                      </details>
+                      <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            <strong> December 2021</strong>
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list-bulleted">
+                            <li>1 December 2021 - Decision made by the Secretary of State</li><br>
+                            <li> 1 December 2021 - The Secretary of State has granted development consent for this application.
                             For further information please refer to the following decision
                             documentation:</li>
-                          <li>  <a href="#">Planning Inspectorate Notification of Decision Letter</a></li>
-                          <li> <a href="#"> Secretary of State Decision Letter</a></li>
-                          <li>  <a href="#">Development Consent Order as made by the Secretary of State</a></li>
-                          <li>  <a href="#">Examining Authority’s Recommendation Report</a></li>
-                          <li>  <a href="#">Regulation 23 Notice</a></li>
-                        </ul>
-                      </div>
-                    </details>
+                            <li>
+                              <a href="#">Planning Inspectorate Notification of Decision Letter</a>
+                            </li>
+                            <li>
+                              <a href="#"> Secretary of State Decision Letter</a>
+                            </li>
+                            <li>
+                              <a href="#">Development Consent Order as made by the Secretary of State</a>
+                            </li>
+                            <li>
+                              <a href="#">Examining Authority’s Recommendation Report</a>
+                            </li>
+                            <li>
+                              <a href="#">Regulation 23 Notice</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </details>
 
+                    </div>
 
                   </div>
 
-
-
                 </div>
-
               </div>
             </div>
           </div>
+        </div>
 
-  </main>
-</div>
-{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
+      </main>
+    </div>
+  {% endblock %}
+  {% block footer %}
+    {{ pinsFooter() }}
+  {% endblock %}
