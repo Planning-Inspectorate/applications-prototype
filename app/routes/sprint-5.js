@@ -41,37 +41,6 @@ module.exports = function (router) {
     }
   });
 
-  // routes for the type of party /register flow
-  router.post(
-    "/sprint-5/register/on-behalf/representing-for",
-    function (req, res) {
-      // get the type of interested party
-      var sprintFiveRepresentingFor =
-        req.session.data["sprint5RepresentingFor"];
-
-      // if an individual, show individual flow
-      if (sprintFiveRepresentingFor == "A person") {
-        res.redirect("representee-full-name");
-
-        // if an organisation, show organisation flow
-      } else if (sprintFiveRepresentingFor == "An organisation or charity") {
-        res.redirect("representee-org-name");
-
-        // if behalf, show behalf flow
-      } else if (sprintFiveRepresentingFor == "A family group") {
-        res.redirect("representee-family-name");
-
-        // otherwise, show myself flow
-      } else {
-        res.redirect("representee-full-name");
-      }
-    }
-  );
-
-
-
-  
-
   // MYSELF FLOW
   // 
   // 
