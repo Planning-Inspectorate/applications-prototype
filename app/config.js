@@ -29,6 +29,6 @@ module.exports = {
   useBrowserSync: 'true',
 
   // Shows user submitted data in the terminal
-  useLogging: 'false'
+  useLogging: 'true'
 
 }
