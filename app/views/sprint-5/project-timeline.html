@@ -37,14 +37,15 @@
 {{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 <a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %} {% block content %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-        <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+
+        <h1 class="govuk-heading-xl">Project timeline</h1>
       </div>
     </div>
     <div class="govuk-grid-row">
@@ -53,7 +54,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         {% include "../includes/vertical_tabs.html" %}
       </div>
       <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-m">Project timeline</h2>
+      <h2 class="govuk-heading-m">Most recent updates</h2>
 
         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
