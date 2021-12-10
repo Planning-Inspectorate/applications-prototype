@@ -1,7 +1,7 @@
-{% extends "layout" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-    The Development Consent Order process for National Infrastructure Projects (NSIPs)
+    The decision-making process for National Infrastructure Projects (NSIPs)
 {% endblock %}
 
 {% block pageScripts %}
@@ -20,19 +20,9 @@
     tag: {
       text: "beta"
     },
-  : 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="../">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        Development Consent Order process guide
-      </li>
-    </ol>
-  </div>
 {% endblock %}
 
 {% block content %}
@@ -89,7 +79,7 @@
           </div>
 
           <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-pre-application-1">
-            <p>This is where the developer must consult with people and organisations. The developer must provide information about how people can submit comments to them. It is important to get involved at this stage to influence the application before the developer sends it to the Planning Inspectorate.</p>
+            <p>This is where the developer must consult with people and organisations. The developer must provide information about how people can submit comments to them. It is important to get involved at this stage to influence the application before the developer sends it to the Planning Inspectorate. </p>
             <p><a href="pre-application">Find out what you can do at this stage and check our detailed guides</a></p>
           </div>
 
@@ -112,7 +102,7 @@
           </div>
 
           <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-review-of-the-application-2">
-            <p>This is called the Acceptance stage. This is when the developer sends us all of the information in their application including all of the consultation they have done. We look at all of the documents to check if we can accept the application for examination. We have 28 days to make this decision.</p>
+            <p>This is called the Acceptance stage. This is when the developer sends us all of the information in their application including all of the consultation they have carried out. The Planning Inspectorate looks at the documents to check if we can accept the application for Examination. We have 28 days to make this decision.</p>
             <p><a href="review-of-the-application">How the review works and what happens next</a></p>
           </div>
 
@@ -135,7 +125,7 @@
           </div>
 
           <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-pre-examination-3">
-            <p> We identify an inspector or a panel of inspectors called the Examining Authority and make a plan for the Examination stage. Anyone who wants to have their say will be able to register at this stage. Registration is open for 30 days.</p>
+            <p>We identify an inspector or a panel of inspectors called the Examining Authority and make a plan for the Examination stage. Anyone who wants to have their say will be able to register at this stage. Registration is open for 30 days. The Pre-examination stage takes about three months.</p>
             <p><a href="pre-examination">What happens during the preparation for the Examination</a></p>
           </div>
 
@@ -158,7 +148,7 @@
           </div>
 
           <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-examination-of-the-project-4">
-            <p>The examination stage is where the Examining Authority, the developer and anyone who has registered to have their say will get involved and comment on the proposed development at a number of set deadlines. This stage takes six months.</p>
+            <p>The Examination stage is where the Examining Authority will ask questions about the proposed development. The developer and anyone who has registered to have their say can get involved and submit Examination comments at each deadline in the timetable. You can also attend any hearings that may take place. This stage takes six months.</p>
             <p><a href="examination">What happens at the Examination of the application</a></p>
           </div>
 
@@ -181,8 +171,9 @@
           </div>
 
           <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-recommendation-and-decision-5">
-              <p>Recommendation and decision is where the Examining Authority writes its recommendation report. This must be completed and sent to the Secretary of State within three months of the end of Examination. The relevant Secretary of State then makes the final decision.</p>
-            <p><a href="recommendation-and-decision">Making our recommendation and who makes the final decision</a></p>
+              <p>The recommendation stage is when the Examining Authority writes its recommendation report. This must be completed and sent to the Secretary of State within three months of the end of Examination.</p>
+              <p>The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have three months to make a decision.</p>
+            <p><a href="recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
           </div>
         </li>
         <li class="app-step-nav__step js-step" id="after-a-decision-is-made" >
@@ -197,7 +188,7 @@
               </span>
 
               <span class="js-step-title">
-                What happens after a decision is made
+                What happens after the decision is made
               </span>
             </h2>
           </div>
