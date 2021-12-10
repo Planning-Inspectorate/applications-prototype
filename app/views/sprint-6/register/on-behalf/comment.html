@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Comments - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-5/register/start"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="check-your-comments" method="post">
+        <h1 class="govuk-heading-l">What do you want to tell us about this proposed project?</h1>
+
+        <!-- {{ govukWarningText({
+          text: "This information will be published on our website for the public. You should not include any personal details or sensistive information with your comment.",
+          iconFallbackText: "Warning"
+        }) }} -->
+
+      
+
+        <!-- {% set html %}
+          <p class="govuk-notification-banner__heading">
+            This information will be published on our website. Do not include any personal details.
+          </p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html
+        }) }} -->
+        <!-- <p>Do not include any personal details.</p> -->
+      <p class="govuk-body">Your registration comments (also known as a relevant representation) should relate to the application. You must include a summary of points which you agree and/or disagree with about the application, highlighting what you consider to be the main issues and impacts.
+        <p class="govuk-body">Information about how you think a project may affect your day-to-day life may also be of interest to the Examining Authority.</p>
+          <p class="govuk-body">This information will be:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>used by the Examining Authority to decide how the project should be examined</li>
+            <li>published on our website</li>
+          </ul>
+          <p class="govuk-body">These are your registration comments. You will be able to tell us more during the Examination of the project.</p>
+
+
+        {{ govukInput({
+          label: {
+            text: "What topic does the comment relate to?",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          id: "behalf-topic",
+          name: "behalf-topic"
+        }) 
+        }}
+
+        {{ govukTextarea({
+           label: {
+              text: "Registration comment",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+          maxwords: 200,
+          id: "behalf-comment",
+          name: "behalf-comment"
+        }) }}
+  {{ govukDetails({
+          summaryText: "Do not include any personal details.",
+          html: '
+            <h2 class="govuk-heading-m">Use of language and sensitive information</h2>
+            <p class="govuk-body">You should not use racist, inflammatory or abusive language, or include sensitive information (also called special category information) about yourself or others in your comments.</p>
+            <h2 class="govuk-heading-m">Examples of sensitive information</h2>
+            <p class="govuk-body">Sensitive information refers to:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>comments from children</li>
+              <li>information relating to children</li>
+              <li>information relating to health</li>
+              <li>information relating to crime</li>
+            </ul>
+            <p class="govuk-body">It also means any information relating to an individual&#39;s:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>race</li>
+              <li>ethnic origin</li>
+              <li>politics</li>
+              <li>religion</li>
+              <li>trade union membership</li>
+              <li>genetics</li>
+              <li>physical characteristics</li>
+              <li>sex life</li>
+              <li>sexual orientation</li>
+            </ul>'
+        }) }}
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
