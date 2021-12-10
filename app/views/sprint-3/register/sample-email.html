@@ -1,0 +1,96 @@
+{% extends "../../layout.html" %} {% block pageTitle %} Example email {% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="./confirmation" class="govuk-button">Return to the confirmation page</a>
+
+    <h3 class="govuk-heading-m">Inbox</h3>
+  </div>
+  <!-- list of emails -->
+  <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Planning Inspectorate</span>
+      <p class="govuk-body govuk-!-margin-bottom-1">
+        <strong>You are registered&hellip;</strong>
+      </p>
+      <p class="govuk-body">Dear John Doe,</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Todd Smith</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Jessica Ward</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <span class="govuk-caption-m">Timothy Jenkins</span>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      <strong>Email subject</strong>
+    </p>
+    <p class="govuk-body">Example email content</p>
+  </div>
+  <!-- email content starts here -->
+  <div class="govuk-grid-column-three-quarters">
+    <ul class="govuk-list">
+      <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
+      <li>To: &lt;example@email.com&gt;</li>
+      <li>
+        Subject:
+        <strong>You are registered to have your say about A404 Dewsbury</strong>
+      </li>
+    </ul>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <p class="govuk-body">Dear John Doe,</p>
+    <p class="govuk-body">
+      You are now registered to have your say about the A404 Dewsbury project
+    </p>
+    <p class="govuk-body">
+      Your Interested Party reference number is: <strong>1234567890</strong>
+    </p>
+    <p class="govuk-body">
+      We will contact you if we need more information about the comments you
+      provided in the registration form. We have attached a copy of your
+      registration form to this email
+    </p>
+    <h4 class="govuk-heading-s">How and when to submit further comments</h4>
+    <p class="govuk-body">
+      You can submit further comments at each deadline during the Examination
+      stage. You must submit your comments by completeing the form on the
+      project page, which will appear once the Examination of the application
+      starts.
+    </p>
+    <p class="govuk-body">
+      You will need your Interested Party reference number to make sure your
+      comments are included in the Examination of the application.
+    </p>
+    <p class="govuk-body">
+      We will email you to let you know when the Examination for this project
+      starts. You can
+      <a class="govuk-link" rel="noreferrer noopener" href="#"
+        >get involved in the Preliminary Meeting</a
+      >
+      where we plan how we are going to examine the application.
+    </p>
+    <p class="govuk-body">
+      You can check our guide to
+      <a class="govuk-link" rel="noreferrer noopener" href="#"
+        >find out more about having your say during the Examination of the
+        application, (opens in a new tab)</a
+      >
+    </p>
+    <p class="govuk-body">Yours Sincerely</p>
+    <p class="govuk-body">The Planning Inspectorate</p>
+  </div>
+</div>
+{% endblock %}
