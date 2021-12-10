@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
   Type of interested party - Register to have your say
@@ -28,7 +28,7 @@ serviceUrl: "/register/start",
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" method="post">
+      <form autocomplete="off" class="form" action="full-name" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 

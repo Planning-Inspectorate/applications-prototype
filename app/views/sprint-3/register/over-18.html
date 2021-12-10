@@ -1,18 +1,17 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
-  Email address
+  Your full name - Register to have your say
 {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-  serviceName: "Register to have your say about a national infrastructure project",
-serviceUrl: "/register/start"
-}) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
   {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -27,18 +26,27 @@ serviceUrl: "/register/start"
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="telephone" method="post">
-        {{ govukInput({
-          label: {
-            text: "What is your email address?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+      <form autocomplete="off" class="form" action="address" method="post">
+        {{ govukRadios({
+          fieldset: {
+            legend: {
+              text: "Are you 18 or over?",
+              isPageHeading: true,
+              classes: "govuk-label--l"
+            }
           },
-          hint: {
-            text: "We will use your email address to send you information about this project."
-          },
-          id: "behalf-email",
-          name: "behalf-email"
+          idPrefix: "over-18",
+          name: "over-18",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
   Comments - Register to have your say
@@ -6,10 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-  serviceName: "Register to have your say about a national infrastructure project",
-serviceUrl: "/register/start"
-}) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -83,8 +80,8 @@ serviceUrl: "/register/start"
 
         {{ govukTextarea({
           maxwords: 200,
-          id: "behalf-comment",
-          name: "behalf-comment"
+          id: "comment",
+          name: "comment"
         }) }}
 
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
   UK Address details - Register to have your say
@@ -6,10 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-  serviceName: "Register to have your say about a national infrastructure project",
-serviceUrl: "/register/start"
-}) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 

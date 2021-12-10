@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
   Email address
@@ -6,10 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-  serviceName: "Register to have your say about a national infrastructure project",
-serviceUrl: "/register/start"
-}) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -37,8 +34,8 @@ serviceUrl: "/register/start"
           hint: {
             text: "We will use your email address to send you information about this project."
           },
-          id: "organisation-email",
-          name: "organisation-email"
+          id: "email",
+          name: "email"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

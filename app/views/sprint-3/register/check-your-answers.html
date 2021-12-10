@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
   Check your answers - Register to have your say
@@ -6,10 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-  serviceName: "Register to have your say about a national infrastructure project",
-serviceUrl: "/register/start"
-}) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -152,7 +149,7 @@ serviceUrl: "/register/start"
 
 
 
-      <form autocomplete="off" action="../declaration" method="post" novalidate>
+      <form autocomplete="off" action="declaration" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

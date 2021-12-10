@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "../../layout.html" %}
 
 {% block pageTitle %}
   Comments - Register to have your say
@@ -6,10 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-  serviceName: "Register to have your say about a national infrastructure project",
-serviceUrl: "/register/start"
-}) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,8 +28,8 @@ serviceUrl: "/register/start"
         <!-- Nunjucks object for the Other textbox -->
         {% set otherHtml %}
         {{ govukInput({
-          id: "behalf-other-text",
-          name: "behalf-other-text",
+          id: "other-text",
+          name: "other-text",
           type: "text",
           classes: "govuk-!-width-one-third",
           label: {
@@ -42,8 +39,8 @@ serviceUrl: "/register/start"
         {% endset -%}
 
         {{ govukCheckboxes({
-          idPrefix: "behalf-topics",
-          name: "behalf-topics",
+          idPrefix: "topics",
+          name: "topics",
           fieldset: {
             legend: {
               text: "What topics are you commenting about?",
