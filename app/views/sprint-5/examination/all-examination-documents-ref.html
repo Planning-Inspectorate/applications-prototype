@@ -1,0 +1,324 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <nav>
+ <ul class="govuk-list sidenav">
+   <li class="govuk-body-s ">
+
+     <a href="./">A404 Dewsbury project information</a>
+
+   </li>
+   <li class="govuk-body-s ">
+
+     <a href="./project-timeline">Project timeline</a>
+
+   </li>
+   <li class="govuk-body-s ">
+
+     <a href="./about-the-application">Project application documents</a>
+
+   </li>
+   <li class="govuk-body-s ">
+
+     <a href="./representations">Registration comments</a>
+
+   </li>
+   <li class="govuk-body-s ">
+
+     <a href="./timetable">Examination timetable</a>
+
+   </li>
+   <li
+     class="govuk-body-s  active "
+   >
+      All Examination documents
+   </li>
+   <li class="govuk-body-s ">
+
+     <a href="./recommendation-documents">Recommendation and decision</a>
+
+   </li>
+ </ul>
+ <hr
+   class="
+     govuk-section-break govuk-section-break--l govuk-section-break--visible
+   "
+ />
+ <h3 class="govuk-heading-s">Related guides</h3>
+ <ul class="govuk-list sidenav">
+   <li class="govuk-body-s">
+     <a href="../../../dco-process-guide/"
+       >The process for national infrastructure projects</a
+     >
+   </li>
+   <li class="govuk-body-s">
+     <a href="../../../interested-party-guide/"
+       >Having your say about a national infrastructure project</a
+     >
+   </li>
+
+ </ul>
+</nav>
+
+      </div>
+
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">All examination documents</h2> <h2 class="govuk-body-s"> <a href="/wrong-turn">View the Examination Library with reference numbers</a>
+        </h2>
+
+        <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
+        <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
+          <div class="govuk-form-group">
+            <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+                Keywords </label>
+            </h3>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Filter by theme
+              </h2>
+            </legend>
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-noise-traffic-air">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">Noise, traffic and air quality</label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Landscape and visual</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="heritage">
+                  <label class="govuk-label govuk-checkboxes__label" for="heritage">Heritage</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Local wildlife and habitats</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Who submitted
+              </h2>
+            </legend>
+
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-examining-panel">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-examining-panel">Examining authority</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-developer">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-developer">Developer</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-individual-interested-party">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-individual-interested-party">Individual interested party</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-organisation-interested-party">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-organisation-interested-party">Organisation interested party</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="who-submitted-official-body-and-local-authority">
+                  <label class="govuk-label govuk-checkboxes__label" for="who-submitted-official-body-and-local-authority">Official bodies and local authorities</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Filter by type of information
+              </h2>
+            </legend>
+
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Topics-and-replies">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-plans-and-drawings">Topics and replies</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Deadlines">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-environmental">Deadlines</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Hearing-agendas">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Hearing agendas</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Recordings-of-hearings">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Recordings of hearings</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Procedural-decisions">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-procedure">Procedural decisions</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="Site-inspections">
+                  <label class="govuk-label govuk-checkboxes__label" for="type-consultation-reports">Site inspections</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <a href="#" id="closeFilters" class="govuk-button">Apply filters</a>
+        </div>
+
+        <div class="govuk-grid-row ">
+
+          <div class="govuk-grid-column-one-half">
+            <p class="results"><strong><span id="results-number">18</span> results<strong></p>
+          </div>
+
+          <div style="display:flex; flex-direction: row;" class="govuk-grid-column-one-half">
+            <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+            <select id="document-results-sort" class="govuk-select">
+              <option selected>Recently updated</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Traffic - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 1 -Traffic and transport  </a><br><strong>REP1-001 -</strong>Deadline 2 Submission - Applicant’s Responses to ExA’s First
+                Written Questions - Appendix 1.0 A -Above Ground Structures</li> <hr>
+                <li><a href="#">Deadline 2 - Traffic and transport  </a><br><strong>REP2-001  -</strong>Deadline 2 Submission - Applicants Comments on Responses to
+                Examining Authority's Written Questions</li> <hr>
+                <li><a href="#">Deadline 6 - Traffic and transport 2 </a><br><strong>REP6-001  -</strong>Deadline 6 Submission - Comments on draft Statement of
+                  Common Ground</li> <hr>
+                  <li><a href="#">Deadline 8 - Traffic and transport 22 august 2019  </a><br><strong>REP8-001   -</strong>Deadline 8 Submission - Applicant's Comments on Local Impact
+                    Report</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Traffic - organisation interested parties</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#"> Deadline 2 - Traffic action group </a><br><strong>REP2-002 -</strong>Deadline 2 Submission - Applicant’s Responses to ExA’s First
+Written Questions – Appendix 1.3 G - Public Benefit</li> <hr>
+                <li><a href="#">Deadline 2 - Traffic action group  </a><br><strong>REP2-003 -</strong>Deadline 2 Submission - 7.5A Statement of Common Ground with
+Gateshead Council</li> <hr>
+                <li><a href="#">Deadline 3 - Traffic action group </a><br><strong>REP3-001  -</strong>Deadline 2 Submission - 7.4 Outline Construction Environmental
+Management Plan (Clean) - Revision 1</li> <hr>
+                  <li><a href="#">Traffic action group - Additional information - Traffic analysis </a><br><strong>OD-001  -</strong>Section 56 Notification </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Traffic - examining panel meeting agendas</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Agenda for traffic and transportation hearing   </a><br><strong>EV-001  -</strong>Hearing agenda for ISH1 on draft Development Consent Order
+</li> <hr>
+                <li><a href="#">Agenda for traffic and transportation hearing </a><br><strong>EV-002  -</strong>Further Compulsory Acquisition Hearing Action Points</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Noise and vibration effects </a><br><strong>REP2-003 -</strong>Deadline 2 Submission - 7.5A Statement of Common Ground with
+                Gateshead Council</li> <hr>
+              <li><a href="#">Deadline 8 - Noise and vibration  </a><br><strong>REP8-004   -</strong>Deadline 2 Submission - 7.4 Outline Construction Environmental
+                Management Plan (Clean) - Revision 1</li> <hr>
+                <li><a href="#">Deadline 6 - Noise and vibration effects </a><br><strong> REP6-004  -</strong>Section 56 Notification </li>
+          </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - organisation interested parties</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Dewsbury Alliance - Noise and vibration  </a><br><strong>REP2-005   -</strong>Deadline 2 Submission - Applicant’s Responses to ExA’s First
+                Written Questions – Appendix 1.3E - Justification for Temporary Land Take</li> <hr>
+                <li><a href="#"> Deadline 4 - Dewsbury Alliance - Noise, vibration </a><br><strong>REP4-004  -</strong>Deadline 4 Submission - Applicant’s Responses to ExA’s First
+Written Questions – Appendix 1.3 H - Reasonable Alternatives
+Compulsory Acquisition</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - examining panel meeting agendas</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Agenda for noise, vibration, health and wellbeing hearing </a><br><strong>EV-003 -</strong>Examining Authority’s note of unaccompanied site inspection on 16 July 2020
+
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Air quality - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Air quality and emissions   </a><br><strong>REP2-006 -</strong>Deadline 2 Submission - Applicant’s Responses to ExA’s First
+Written Questions - Appendix 1.7A - Receptor Locations</li> <hr>
+                <li><a href="#">Deadline 6 - Air quality and emissions </a><br><strong> REP6-003 -</strong>Deadline 6 Submission - Applicant’s Responses to ExA’s First
+Written Questions - Appendix 1.7 B - Diversion Routes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-pagination" id="pins-search-results-pagination">
+          <a href="#" class="govuk-link govuk-link--no-underline">1</a>
+          <a href="#" class="govuk-link">2</a>
+          <a href="#" class="govuk-link">Next</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

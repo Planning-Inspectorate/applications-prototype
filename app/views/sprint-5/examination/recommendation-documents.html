@@ -1,0 +1,240 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project recommendation and decisions documents
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <nav>
+   <ul class="govuk-list sidenav">
+     <li class="govuk-body-s ">
+
+       <a href="./">A404 Dewsbury project information</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./project-timeline">Project timeline</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./about-the-application">Project application documents</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./representations">Registration comments</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./timetable">Examination timetable</a>
+
+     </li>
+     <li
+       class="govuk-body-s "
+     >
+      <a href="./all-examination-documents-ref"> All Examination documents</a>
+
+     </li>
+     <li class="govuk-body-s  active">
+
+       Recommendation and decision
+
+     </li>
+   </ul>
+   <hr
+     class="
+       govuk-section-break govuk-section-break--l govuk-section-break--visible
+     "
+   />
+   <h3 class="govuk-heading-s">Related guides</h3>
+   <ul class="govuk-list sidenav">
+     <li class="govuk-body-s">
+       <a href="../../../dco-process-guide/"
+         >The process for national infrastructure projects</a
+       >
+     </li>
+     <li class="govuk-body-s">
+       <a href="../../../interested-party-guide/"
+         >Having your say about a national infrastructure project</a
+       >
+     </li>
+   </ul>
+ </nav>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">All recommendation and decisions documents</h2>
+
+        <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
+        <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
+          <div class="govuk-form-group">
+            <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+                Keywords </label>
+            </h3>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Filter by
+              </h2>
+            </legend>
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-noise-traffic-air">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">BEIS Consultation</label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Development Consent Order as made</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="heritage">
+                  <label class="govuk-label govuk-checkboxes__label" for="heritage">Notice of the Decision by the Secretary of State</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Notification of Decision to Accept Application </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Secretary of State Consultation</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Secretary of State Decision letter and Statement of Reasons (approved) </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <a href="#" id="closeFilters" class="govuk-button">Apply filters</a>
+        </div>
+
+        <div class="govuk-grid-row ">
+
+          <div class="govuk-grid-column-one-half">
+            <p class="results"><strong><span id="results-number">21</span> results<strong></p>
+          </div>
+
+          <div style="display:flex; flex-direction: row;" class="govuk-grid-column-one-half">
+            <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+            <select id="document-results-sort" class="govuk-select">
+              <option selected>Recently updated</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">BEIS consultation </h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">BEIS consultation letter dated 26 January 2017 </a> &nbsp;&nbsp;(PDF, 250 KB)</li>
+              <li><a href="#">Canal and River Trust</a>&nbsp;&nbsp;(PDF,175 KB)</li>
+              <li><a href="#">Department for Business, Energy and Industrial Strategy consultation letter dated 13 December 2016 </a>&nbsp;&nbsp;(PDF,145 KB)</li>
+              <li><a href="#">National Grid</a>&nbsp;&nbsp;(PDF,175 KB)</li>
+              <li><a href="#">Dewsbury Waste Authority </a>&nbsp;&nbsp;(PDF,275 KB)</li>
+              <li><a href="#">Dewsbury Road Community Hub</a>&nbsp;&nbsp;(PDF,575 KB)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Development Consent Order as made</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Development Consent Order as Made by the Secretary of State </a>&nbsp;&nbsp;(PDF,2 MB)</li>
+              <li><a href="#"> A404 Dewsbury - Correction Notice</a>&nbsp;&nbsp;(PDF,1 MB)</li>
+              <li><a href="#"> A404 Dewsbury - Correction Order 2021</a>&nbsp;&nbsp;(PDF,175 KB)</li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Notice of the Decision by the Secretary of State</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Notification of Decision Letter </a>&nbsp;&nbsp;(PDF,175 KB)</li>
+              <li><a href="#">Notice of the Decision by the Secretary of State (Reg 23)</a>&nbsp;&nbsp;(PDF,375 KB)</li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Notification of Decision to Accept Application</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Regulation 31 Notice </a>&nbsp;&nbsp;(PDF,3 MB)</li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Secretary of State Consultation</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">West Yorkshire Combined Authority</a>&nbsp;&nbsp;(PDF,175 KB)</li>
+              <li><a href="#">Environment Agency</a>&nbsp;&nbsp;(PDF,150 KB)</li>
+              <li><a href="#">Harlaxton Energy Networks Ltd</a>&nbsp;&nbsp;(PDF,225 KB)</li>
+              <li><a href="#">Highways England</a>&nbsp;&nbsp;(PDF,185 KB)</li>
+              <li><a href="#">Kendal Turner and Son </a>&nbsp;&nbsp;(PDF,150 KB)</li>
+              <li><a href="#">Secretary of State Consultation Letter</a>&nbsp;&nbsp;(PDF,275 KB)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Secretary of State Decision letter and Statement of Reasons (approved)</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Secretary of State Decision Letter</a>&nbsp;&nbsp;(PDF,3 MB)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pins-search-results-pagination" id="pins-search-results-pagination">
+          <a href="#" class="govuk-link govuk-link--no-underline">1</a>
+          <a href="#" class="govuk-link">2</a>
+          <a href="#" class="govuk-link">Next</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

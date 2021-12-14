@@ -1,0 +1,245 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %} {% block content %}
+
+
+
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-two-thirds">
+        <h1 class="govuk-heading-l">Sitemap</h1> <br>
+        <ul class="govuk-list govuk-list--bullet">
+          <li> <a href="#">Events Calendar</a></li>
+          <li> <a href="#">Events List</a></li>
+          <li> <a href="#">Home</a></li>
+          <li> <a href="#">Projects</a></li>
+        </ul></div>
+          <div class="govuk-grid-column-one-third">
+                        <ul class="govuk-list govuk-list--bullet">
+              <li> <a href="#">Register of applications</a></li>
+                <br>
+              <p> <a href="#">East Midlands</a></p>
+              <li> <a href="#">A38 Derby Junctions</a></li>
+              <li> <a href="#">Cottam Solar Project</a></li>
+              <li> <a href="#">Daventry International Rail Freight Terminal</a></li>
+            <li> <a href="#">  East Midlands Gateway Rail Freight Interchange</a></li>
+            <li> <a href="#">  East Midlands Intermodal Park</a></li>
+            <li> <a href="#">  East Northants Resource Management Facility</a></li>
+              <li> <a href="#">East Northants Resource Management Facility Western Extension</a></li>
+
+              <br><br>
+            <p> <a href="#">  Eastern</a></p>
+            <li> <a href="#">  A12 Chelmsford to A120 Widening Scheme</a></li>
+          <li> <a href="#">  A14 Cambridge to Huntingdon Improvement Scheme</a></li>
+            <li> <a href="#">  A428 Black Cat to Caxton Gibbet Road Improvement scheme</a></li>
+          <li> <a href="#">    A47 – A11 Thickthorn Junction</a></li>
+          <li> <a href="#">    A47 Blofield to North Burlingham</a></li>
+          <li> <a href="#">    A47 North Tuddenham to Easton</a></li>
+            <li> <a href="#">  A47 Wansford to Sutton</a></li>
+            <li> <a href="#">  Bradwell B new nuclear power station</a></li>
+<br><br>
+          <p> <a href="#">  London</a></p>
+          <li> <a href="#">  Expansion of Heathrow Airport (Third Runway)</a></li>
+          <li> <a href="#">  Heathrow West</a></li>
+          <li> <a href="#">  North London (Electricity Line) Reinforcement</a></li>
+          <li> <a href="#">  North London Heat and Power Project</a></li>
+          <li> <a href="#">  Riverside Energy Park</a></li>
+          <li> <a href="#">  Silvertown Tunnel</a></li>
+          <li> <a href="#">  Thames Tideway Tunnel</a></li>
+<br><br>
+
+          <p> <a href="#">  North East</a></p>
+          <li> <a href="#">  A1 Birtley to Coal House Improvement Scheme</a></li>
+          <li> <a href="#">  A1 in Northumberland – Morpeth to Ellingham</a></li>
+          <li> <a href="#">  A19 / A184 Testos Junction Improvement</a></li>
+          <li> <a href="#">  A19 Downhill Lane Junction Improvement</a></li>
+          <li> <a href="#">  A19/A1058 Coast Road Junction Improvement</a></li>
+          <li> <a href="#">  Boston Alternative Energy Facility (BAEF)</a></li>
+          <li> <a href="#">  International Advanced Manufacturing Park TWO (IAMP TWO)</a></li>
+          <li> <a href="#">  Morpeth Northern Bypass</a></li>
+          <li> <a href="#">  Port Blyth New Biomass Plant</a></li>
+          <li> <a href="#">  Tees CCPP</a></li>
+        <li> <a href="#">    The Net Zero Teesside Project</a></li>
+        <li> <a href="#">    VPI Immingham OCGT</a></li>
+        <li> <a href="#">    West Burton C power station</a></li>
+          <li> <a href="#">  York Potash Harbour Facilities Order</a></li>
+
+          <br><br>
+
+          <p> <a href="#">  North West</a></p>
+          <li> <a href="#">  A5036 Port of Liverpool Access Scheme</a></li>
+          <li> <a href="#">  A556 Knutsford to Bowdon Scheme</a></li>
+          <li> <a href="#">  A57 Link Roads (previously known as Trans Pennine Upgrade Programme)</a></li>
+          <li> <a href="#">  A585 Windy Harbour to Skippool Improvement Scheme</a></li>
+          <li> <a href="#">  A66 Northern Trans-Pennine Project</a></li>
+          <li> <a href="#">  Alexandra Dock Biomass Project</a></li>
+<br><br>
+
+
+              <p> <a href="#">     South East</a></p>
+              <li> <a href="#">     A27 Arundel Bypass</a></li>
+              <li> <a href="#">     AQUIND Interconnector</a></li>
+              <li> <a href="#">     Cleve Hill Solar Park</a></li>
+              <li> <a href="#">     Extension to Allington Integrated Waste Management Facility</a></li>
+              <li> <a href="#">     Gatwick Airport Northern Runway</a></li>
+              <li> <a href="#">     Kemsley Paper Mill (K4) CHP Plant</a></li>
+
+<br><br>
+            <p> <a href="#">        South West</a></p>
+              <li> <a href="#">      A30 Chiverton to Carland Cross Scheme</a></li>
+                <li> <a href="#">    A30 Temple to Higher Carblake Improvement</a></li>
+              <li> <a href="#">      A303 Sparkford to Ilchester Dualling</a></li>
+              <li> <a href="#">      A303 Stonehenge</a></li>
+              <li> <a href="#"> A358 Taunton to Southfields</a></li>
+<br><br>
+
+                    <p> <a href="#"> Wales</a></p>
+                <li> <a href="#"> Abergelli Power</a></li>
+                <li> <a href="#">Abergelli Power</a></li>
+              <li> <a href="#">  Awel y Môr Offshore Wind Farm</a></li>
+              <li> <a href="#">  Brechfa Forest Connection</a></li>
+              <li> <a href="#">  Brechfa Forest West Wind Farm</a></li>
+              <li> <a href="#">  Clocaenog Forest Wind Farm</a></li>
+                <li> <a href="#">Glyn Rhonwy Pumped Storage</a></li>
+              <li> <a href="#">  Hirwaun Power Station</a></li>
+              <li> <a href="#">  Internal Power Generation Enhancement for Port Talbot Steelworks</a></li>
+                <li> <a href="#">Mid Wales Electricity Connection (N Grid)</a></li>
+                <li> <a href="#">Mynydd y Gwynt Wind Farm</a></li>
+<br><br>
+                            <p> <a href="#"> West Midlands</a></p>
+                  <li> <a href="#">  M42 Junction 6 Improvement</a></li>
+                  <li> <a href="#">  M54 to M6 Link Road</a></li>
+                  <li> <a href="#">  Meaford Energy Centre</a></li>
+                <li> <a href="#">    Redditch Branch Enhancement Scheme</a></li>
+                <li> <a href="#">  Reinforcement to North Shropshire Electricity Distribution Network</a></li>
+                    <li> <a href="#">Stafford Area Improvements – Norton Bridge Railway</a></li>
+                <li> <a href="#">    West Midlands Interchange</a></li>
+                  <li> <a href="#"> Willington C Gas Pipeline</a></li>
+<br><br>
+
+                    <p> <a href="#">    Yorkshire and the Humber</a></p>
+                    <li> <a href="#">    A160 – A180 Port of Immingham Improvement</a></li>
+                      <li> <a href="#">  A63 Castle Street Improvement-Hull</a></li>
+                  <li> <a href="#">    Able Marine Energy Park</a></li>
+                    <li> <a href="#">    Able Marine Energy Park Material Change 1</a></li>
+                  <li> <a href="#">      Able Marine Energy Park Material Change 2</a></li>
+                  <li> <a href="#">      Continental Link Multi-Purpose Interconnector</a></li>
+                    <li> <a href="#">    Dogger Bank Creyke Beck</a></li>
+                    <li> <a href="#">    Dogger Bank South Offshore Wind Farms</a></li>
+                    <li> <a href="#">    Dogger Bank Teesside A / Sofia Offshore Wind Farm (formerly Dogger Bank Teesside B) – Project previously known as Dogger Bank Teesside A&B</a></li>
+                    <li> <a href="#">    Drax Bioenergy with Carbon Capture and Storage Project</a></li>
+                      <li> <a href="#">  Drax Re-power</a></li>
+<br><br>
+
+                              <p> <a href="#">        Application process</a></p>
+                <li> <a href="#">Planning Inspectorate role</a></li>
+              <li> <a href="#">  The process</a></li>
+              <li> <a href="#">  Participating in the process</a></li>
+              <li> <a href="#">  Pre-application service for applicants</a></li>
+              <li> <a href="#">  Submitting an application for development consent</a></li>
+                <li> <a href="#">Application fees</a></li>
+            <li> <a href="#">    Application fees – archive information</a></li>
+            <li> <a href="#">    Costs</a></li>
+              <li> <a href="#">  Frequently asked questions</a></li>
+              <li> <a href="#">  The Planning Act 2008 (as amended) Section 53: Rights of entry – Frequently asked questions (FAQ)</a></li>
+                <li> <a href="#">The Planning Act 2008 (as amended) Pre-application procedure: Section 47 – Community Consultation Frequently Asked Questions (FAQ)</a></li>
+              <li> <a href="#">  The Planning Act 2008: Environmental Impact Assessment: Scoping Process – Frequently Asked Questions (FAQ)</a></li>
+              <li> <a href="#">  Frequently Asked Questions (FAQ): What is my status in the Examination?</a></li>
+              <li> <a href="#">  The General Data Protection Regulation: Examination events – Frequently Asked Questions (FAQ)</a></li>
+              <li> <a href="#">  Example Documents</a></li>
+<br><br>
+
+                <p> <a href="#">  Legislation and advice</a></p>
+              <li> <a href="#">    Legislation</a></li>
+                <li> <a href="#">  Guidance</a></li>
+                <li> <a href="#">  Advice notes</a></li>
+                <li> <a href="#">  Advice Note One: Local Impact Reports</a></li>
+                <li> <a href="#">  Advice Note two: The role of local authorities in the development consent process</a></li>
+              <li> <a href="#">    Advice Note Three: EIA Notification and Consultation</a></li>
+              <li> <a href="#">    Advice Note Four: Section 52: Obtaining information about interests in land (Planning Act 2008)</a></li>
+                <li> <a href="#">  Advice note Five: Section 53 – Rights of Entry (Planning Act 2008)</a></li>
+                <li> <a href="#">  Advice Note Six: Preparation and submission of application documents</a></li>
+                <li> <a href="#">  Advice Note Six, Appendix One – Preparing the application index to accompany an NSIP application</a></li>
+                <li> <a href="#">  Advice Note Seven: Environmental Impact Assessment: Process, Preliminary Environmental Information and Environmental Statements</a></li>
+                <li> <a href="#">  Advice Note Eight: Overview of the nationally significant infrastructure planning process for members of the public and others</a></li>
+                  <li> <a href="#">Advice Note 8.1: Responding to the developer’s pre-application consultation</a></li>
+              <li> <a href="#">  Advice Note 8.2: How to register to participate in an Examination</a></li>
+<br><br>
+
+                      <p> <a href="#">   Help</a></p>
+            <li> <a href="#"> About the National Infrastructure Planning website</a></li>
+          <li> <a href="#"> Accessibility statement</a></li>
+            <li> <a href="#"> Terms and conditions</a></li>
+          <li> <a href="#">   Cookies</a></li>
+            <li> <a href="#"> Privacy</a></li>
+          <li> <a href="#">   Glossary of terms</a></li>
+          <li> <a href="#">   Welsh language</a></li>
+          <li> <a href="#">   Sitemap</a></li>
+          <li> <a href="#">   Useful links</a></li>
+          <li> <a href="#">   Contact</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<div class="govuk-footer pins-footer">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <ul class="pins-footer-links govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item"><a href="../footerlinks/sitemap" class="govuk-footer__link">Sitemap</a></li>
+          <li class="govuk-footer__inline-list-item"><a href="../footerlinks/terms-and-conditions" class="govuk-footer__link">Terms and conditions</a></li>
+          <li class="govuk-footer__inline-list-item"><a href="../footerlinks/accessibility" class="govuk-footer__link">Accessibility</a></li>
+          <li class="govuk-footer__inline-list-item"><a href="https://www.gov.uk/government/publications/planning-inspectorate-privacy-notices/customer-privacy-notice" class="govuk-footer__link" target="_blank">Privacy Notice (on GOV.UK)</a></li>
+          <li class="govuk-footer__inline-list-item"><a href="../footerlinks/cookies" class="govuk-footer__link">Cookies</a></li>
+        </ul>
+        <span class="govuk-footer__licence-description">
+          Site content: Copyright 2021 <a href="/index">The Planning Inspectorate</a>
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

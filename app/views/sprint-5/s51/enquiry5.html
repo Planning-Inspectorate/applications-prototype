@@ -1,0 +1,193 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+        <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+
+        <nav>
+   <ul class="govuk-list sidenav">
+     <li class="govuk-body-s ">
+
+       <a href="../">A404 Dewsbury project information</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="../project-timeline">Project timeline</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="../about-the-application">Project application documents</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="../representations">Registration comments</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="../timetable">Examination timetable</a>
+
+     </li>
+     <li
+       class="govuk-body-s "
+     >
+      <a href="../examination/all-examination-documents-ref"> All Examination documents</a>
+
+     </li>
+     <li class="govuk-body-s  active">
+
+       s51 advice
+     </li>
+   </ul>
+   <hr
+     class="
+       govuk-section-break govuk-section-break--l govuk-section-break--visible
+     "
+   />
+   <h3 class="govuk-heading-s">Related guides</h3>
+   <ul class="govuk-list sidenav">
+     <li class="govuk-body-s">
+       <a href="../../../dco-process-guide/"
+         >The process for national infrastructure projects</a
+       >
+     </li>
+     <li class="govuk-body-s">
+       <a href="../../../interested-party-guide/"
+         >Having your say about a national infrastructure project</a
+       >
+     </li>
+   </ul>
+  </nav>
+
+
+
+
+
+      </div>
+
+         <!-- loop across the representations in data/representations -->
+
+         <div class="govuk-grid-column-three-quarters">
+     <span class="govuk-caption-l">Enquiry by</span>
+     <h1 class="govuk-heading-m">
+       Rufus James on behalf
+       of Cory Riverside Energy
+     </h1>
+     <p class="govuk-body-m"> Project update meeting <br><br>
+       Our clients seek a dialogue with Highways England in respect of their land interest affected by this proposal as it is respectfully considered that the extent of works and land affected is more than necessary to facilitate this project. There is a...
+</p>
+     <p class="govuk-body-s govuk-!-margin-top-6 govuk-!-margin-bottom-9">
+       Submitted on 28 May 2021
+     </p>
+     <span class="govuk-caption-l">Advice given</span>
+
+     <p class="govuk-body">Thank you for your email in relation to the A404 Dewsbury project (EN010093).
+      Please accept my apology for the delay in responding to your email.
+      As the project has not yet been submitted to the Planning Inspectorate (the Inspectorate), I would encourage you to contact the developer directly (info@riversideenergypark.com) to make your concerns heard as the Applicant has a statutory duty to take your views into account.
+      However, if you feel that your comments are not being considered and you need further information, I would advise you to write to your Local Authority (LA) and set out your concerns. Your comments will be considered when the LA provides its comments to the Inspectorate on whether the Applicant has fulfilled its consultation duties. The LA’s comments on the Applicant’s consultation will be taken into account when the Acceptance Inspector makes his/ her decision whether to accept the application for examination.</p>
+
+      <nav class="dlf-pagination" role="navigation" aria-label="Pagination">
+            <ul class="dlf-pagination__list">
+
+              <li class="dlf-pagination__item dlf-pagination__item--previous">
+                <form id="previousRep" method="post" action="representation">
+                  <label class="hidden" for="representation">
+                    I have a bike</label
+                  >
+                  <input
+                    class="hidden"
+                    value="0"
+                    type="number"
+                    name="representation"
+                    id="representation"
+                  />
+                  <a
+                    class="dlf-pagination__link"
+                    rel="prev"
+                    href="./enquiry4"
+
+                  >
+                    <span class="dlf-pagination__link-title">
+                      <svg
+                        class="dlf-pagination__link-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="13"
+                        width="17"
+                        viewBox="0 0 17 13"
+                      >
+                        <path
+                          fill="#626a6e"
+                          d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+                        ></path>
+                      </svg>
+                      <span class="dlf-pagination__link-text"> Previous </span>
+                    </span>
+                    <span class="dlf-pagination__link-divider visually-hidden"
+                      >:</span
+                    >
+                    <span class="dlf-pagination__link-label">
+                      4 of 5
+                    </span>
+                  </a>
+                </form>
+              </li>
+
+
+
+            </ul>
+          </nav>
+    </div>
+  </main>
+</div>
+
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

@@ -1,0 +1,691 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+
+        <nav>
+   <ul class="govuk-list sidenav">
+     <li class="govuk-body-s ">
+
+       <a href="./">A404 Dewsbury project information</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./project-timeline">Project timeline</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./about-the-application">Project application documents</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./representations">Registration comments</a>
+
+     </li>
+     <li class="govuk-body-s ">
+
+       <a href="./timetable">Examination timetable</a>
+
+     </li>
+     <li
+       class="govuk-body-s "
+     >
+      <a href="./all-examination-documents"> All Examination documents</a>
+
+     </li>
+     <li class="govuk-body-s  active">
+
+       s51 advice
+     </li>
+   </ul>
+   <hr
+     class="
+       govuk-section-break govuk-section-break--l govuk-section-break--visible
+     "
+   />
+   <h3 class="govuk-heading-s">Related guides</h3>
+   <ul class="govuk-list sidenav">
+     <li class="govuk-body-s">
+       <a href="../../../dco-process-guide/"
+         >The process for national infrastructure projects</a
+       >
+     </li>
+     <li class="govuk-body-s">
+       <a href="../../../interested-party-guide/"
+         >Having your say about a national infrastructure project</a
+       >
+     </li>
+   </ul>
+ </nav>
+
+      </div>
+
+
+      <div class="govuk-grid-column-three-quarters">
+      <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
+        <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="event-name">
+              Keywords
+            </label>
+          </h3>
+          <input
+            class="govuk-input"
+            id="event-name"
+            name="event-name"
+            type="text"
+          />
+        </div>
+
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Filter by theme
+            </h2>
+          </legend>
+          <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+            <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="theme-noise-traffic-air"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="theme-noise-traffic-air"
+                  >Noise, traffic and air quality</label
+                >
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="theme-landscape-visual"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="theme-landscape-visual"
+                  >Landscape and visual</label
+                >
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="heritage"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="heritage"
+                  >Heritage</label
+                >
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="theme-wildlife-habitats"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="theme-wildlife-habitats"
+                  >Local wildlife and habitats</label
+                >
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Who submitted
+            </h2>
+          </legend>
+
+          <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+            <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-examining-panel"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-examining-panel"
+                  >Examining authority</label
+                >
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-developer"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-developer"
+                  >Developer</label
+                >
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-individual-interested-party"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-individual-interested-party"
+                  >Individual interested party</label
+                >
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-organisation-interested-party"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-organisation-interested-party"
+                  >Organisation interested party</label
+                >
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  type="checkbox"
+                  name="theme"
+                  id="who-submitted-official-body-and-local-authority"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="who-submitted-official-body-and-local-authority"
+                  >Official bodies and local authorities</label
+                >
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <a href="#" class="govuk-button govuk-!-margin-top-6">Apply</a>
+      </div>
+      {# end of filters #}
+                 <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <p class="results"><strong><span id="results-number"></span> <strong></p>
+          </div>
+
+          <div style="display:flex; flex-direction: row;" class="govuk-grid-column-one-half">
+            <label class="govuk-label govuk-!-margin-right-2" for="document-results-sort">Sort by: </label>
+            <select id="document-results-sort" class="govuk-select">
+              <option selected>Recently updated</option>
+            </select>
+          </div>
+        </div>
+
+        <hr
+          class="
+            govuk-section-break govuk-!-margin-bottom-6
+            govuk-section-break--visible
+            "
+         />
+
+         <!-- loop across the representations in data/representations -->
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm0').submit(); "
+           >
+             John and Sarah Smith
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+           <strong>Query about the proposed development</strong> <br><br>
+
+
+          My wife and I live at Dewsbury. We are concerned that the proposed plans to replace the old roundabout with the new signalled junction will bring traffic closer to our house leading to increased noise and devalue our property. In particular the proposed new "slipway" from Skippool Road onto the Amounderness way-will it be constructed nearer to us? Will the house Throstles Nest be demolished to use its land? Would you let me have detailed plans of the proposed new junction-the plans I can see online are not detailed enough.
+           <!-- show read more link if the content has been truncated -->
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 28 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm0"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="0"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm1').submit(); "
+           >
+             Daine Ham
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+
+           <strong> Mock up land plans</strong> <br> <br>
+
+          Will the house Throstles Nest be demolished to use its land? Would you let me have detailed plans of the proposed new junction-the plans I can see online are not detailed enough.
+
+           <!-- show read more link if the content has been truncated -->
+
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm1').submit(); "
+           >
+             read more
+           </a>
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 28 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm1"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="1"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm2').submit(); "
+           >
+             Robert Jackson
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+
+          <strong> Project meeting with Highways England </strong> <br><br>
+
+          Having reviewed your hearing agendas I wish to raise an issue best discussed in your Issue Specific Hearing (ISH). However at this moment in time I don’t believe my attendance at this meeting is required.
+           <!-- show read more link if the content has been truncated -->
+
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm2').submit(); "
+           >
+             read more
+           </a>
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 29 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm2"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="2"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm3').submit(); "
+           >
+             Jerry Springer
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+             <strong> Query about the proposed development </strong> <br><br>
+           I am concerned that the new cyclepath passes too close to the end of my property (Redacted) . It would respect our privacy if it could be moved just a few metres further away ,this would also preserve several mature trees.
+           <!-- show read more link if the content has been truncated -->
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 30 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm3"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="3"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm4').submit(); "
+           >
+             Rufus James on behalf
+             of Cory Riverside Energy
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+           <strong> Project update meeting</strong> <br><br>
+           Our clients seek a dialogue with Highways England in respect of their land interest affected by this proposal as it is respectfully considered that the extent of works and land affected is more than necessary to facilitate this project. There is a...
+           <!-- show read more link if the content has been truncated -->
+
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm4').submit(); "
+           >
+             read more
+           </a>
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 30 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm4"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="4"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm5').submit(); "
+           >
+             Anonymous
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+           <strong> Query about the proposed development</strong> <br><br>
+           I live at {Redacted} We are concerned that the proposed plans to replace the old roundabout with the new signalled junction will bring traffic closer to our house leading to increased noise and devalue our property. In particular the proposed new "slipway" from Skippool Road onto the Amounderness way-will it be constructed nearer to us?
+           <!-- show read more link if the content has been truncated -->
+
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm5').submit(); "
+           >
+             read more
+           </a>
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 31 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm5"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="5"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm6').submit(); "
+           >
+             John Hop
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+           <strong> Project meeting with Highways England</strong> <br><br>
+           Northern Gas Network own and operate a 12” steel intermediate pressure gas main that crosses the roundabout I believe you are carrying out work. (att is our plans)
+ We treat our IP pipelines with the same safety protocols as our HP assets which insist that all work carried out in proximity to this pipeline is subject to NGN procedure SSW22 which I have also attached. This includes supervision of work within 3m of the pipeline.
+           <!-- show read more link if the content has been truncated -->
+
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm6').submit(); "
+           >
+             read more
+           </a>
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 31 May 2021</p>
+
+         <hr
+           class="
+             govuk-section-break
+             govuk-section-break--l
+             govuk-section-break--visible
+           "
+         />
+
+         <form
+           id="representationsForm6"
+           method="post"
+           action="representation"
+         >
+
+           <label class="hidden" for="representation"> I have a bike</label>
+
+           <input
+             class="hidden"
+             value="6"
+             type="number"
+             name="representation"
+             id="representation"
+           />
+         </form>
+
+         <span class="govuk-caption-m">Enquiry by</span>
+
+         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm7').submit(); "
+           >
+            Jamie Rin
+           </a>
+         </h3>
+         <p>
+           <!-- show the comment -->
+           <strong> Project meeting with Highways England</strong> <br><br>
+           Thank you for your consultation regarding the above development. We note that we have replied to an earlier consultation as listed below and this response should be read in conjunction with that earlier correspondence. Request for Scoping Opinion 6...
+           <!-- show read more link if the content has been truncated -->
+
+           <a
+             href="javascript:{}"
+             onclick="document.getElementById('representationsForm7').submit(); "
+           >
+             read more
+           </a>
+
+         </p>
+
+         <p class="govuk-body-s">Submitted on 1 June 2021</p>
+
+         <hr
+
+    </div>
+  </main>
+</div>
+
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
