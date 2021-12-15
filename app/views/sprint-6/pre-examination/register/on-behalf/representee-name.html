@@ -31,7 +31,9 @@
     <div class="govuk-grid-column-two-thirds">
       <form autocomplete="off" class="form" action="representee-over-18" method="post">
         {% if data['sprint5RepresentingFor'] == 'A family group' %}
-          {{ govukInput({
+          <form autocomplete="off" class="form" action="representee-over-18" method="post">
+
+            {{ govukInput({
             label: {
               text: "What is the name of the family group you are representing?",
               classes: "govuk-label--l",
@@ -43,8 +45,10 @@
             spellcheck: false
           }) 
         }}
-        {% elif data['sprint5RepresentingFor'] == 'An organisation or charity' %}
-          {{ govukInput({
+          {% elif data['sprint5RepresentingFor'] == 'An organisation or charity' %}
+            <form autocomplete="off" class="form" action="representee-address" method="post">
+
+              {{ govukInput({
             label: {
               text: "What is the full name of the organisation or charity that you are representing?",
               classes: "govuk-label--l",
@@ -55,8 +59,10 @@
             spellcheck: false
           }) 
         }}
-        {% else %}
-          {{ govukInput({ 
+            {% else %}
+              <form autocomplete="off" class="form" action="representee-over-18" method="post">
+
+                {{ govukInput({ 
             label: { 
               text: "What is the full name of the person you are representing?", 
               classes: "govuk-label--l", 
@@ -66,17 +72,17 @@
             name: "representee-name", 
             spellcheck: false }) 
           }}
-        {% endif %}
+              {% endif %}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
 
-      </form>
+            </form>
 
-    </div>
-  </div>
+          </div>
+        </div>
 
-{% endblock %}
+      {% endblock %}
 
-{% block footer %}
-  {{ pinsFooter() }}
-{% endblock %}
+      {% block footer %}
+        {{ pinsFooter() }}
+      {% endblock %}
