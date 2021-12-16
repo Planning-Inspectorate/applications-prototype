@@ -8,7 +8,8 @@
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
-    serviceUrl: "/sprint-5/register/start"
+    serviceUrl: "/sprint-6/pre-examination/register/start",
+saveAndExit: true
   }) }}
 {% endblock %}
 
@@ -37,7 +38,7 @@
             Who are you registering for?
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['type-of-interested-party']}}
+           Myself
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -148,44 +149,28 @@
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration comments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['myself-comment']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="postcode">
+              Change
+              <span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
 
       </dl>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters-from-desktop">
-      <h2 class="govuk-heading-m">Registration comments</h2>
-
-       {% for comment in data['myself-comment-array']  %}
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              {{comment.topic}}
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p>{{comment.rep}}</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="#">
-                  Change
-                  <span class="govuk-visually-hidden"> this comment</span>
-              </a>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="#">
-                  Remove
-                  <span class="govuk-visually-hidden"> this comment</span>
-              </a>
-            </dd>
-          </div>
-        </dl>
-      {% endfor %}
       <form autocomplete="off" action="../declaration" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and continue
+          Continue to declaration
         </button>
 
       </form>
