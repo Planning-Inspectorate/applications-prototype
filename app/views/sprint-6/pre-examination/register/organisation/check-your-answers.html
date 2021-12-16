@@ -5,7 +5,8 @@ to have your say {% endblock %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
-    serviceUrl: "/sprint-5/register/start"
+    serviceUrl: "/sprint-6/pre-examination/register/start",
+saveAndExit: true
   }) }}
 {% endblock %}
 {% block beforeContent %}
@@ -209,7 +210,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         <input type="hidden" name="answers-checked" value="true"/>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-        Accept and continue
+        Continue to declaration
       </button>
       </form>
     </div>
