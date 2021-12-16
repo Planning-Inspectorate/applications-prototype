@@ -38,7 +38,7 @@ saveAndExit: true
           Who are you registering for?
         </dt>
           <dd class="govuk-summary-list__value">
-            {{data['sprint5RepresentingFor']}}
+            On behalf of {{data['sprint6RepresentingFor']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -173,9 +173,9 @@ saveAndExit: true
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            {% if data['sprint5RepresentingFor'] == 'A family group' %}
+            {% if data['sprint6RepresentingFor'] == 'A family group' %}
                   The name of the family group you are representing
-            {% elif data['sprint5RepresentingFor'] == 'An organisation or charity' %}
+            {% elif data['sprint6RepresentingFor'] == 'An organisation or charity' %}
                   The name of the organisation or charity that you are representing
             {% else %}
                   The name of the person you are representing 
@@ -237,37 +237,23 @@ saveAndExit: true
             </a>
           </dd>
         </div>
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration comments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['behalf-comment']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./comment">
+              Change
+              <span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
       </dl>
-    </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters-from-desktop">
-        <h2 class="govuk-heading-m">Registration comments</h2>
 
-       {% for comment in data['behalf-comment-array']   %}
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                {{comment.topic}}
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p>{{comment.rep}}</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="#">
-                  Change
-                  <span class="govuk-visually-hidden"> this comment</span>
-                </a>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="#">
-                  Remove
-                  <span class="govuk-visually-hidden"> this comment</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-        {% endfor %}
+    
 
         <form autocomplete="off" action="../declaration" method="post" novalidate>
 

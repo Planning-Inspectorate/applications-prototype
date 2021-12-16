@@ -29,7 +29,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           Who are you registering for?
         </dt>
           <dd class="govuk-summary-list__value">
-            {{data['sprint-5-type-of-interested-party']}}
+              An organisation I work or volunteer for
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -164,7 +164,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               {%if not data['organisation-postcode'] %}
       BS1 6PN
     {% endif %}
-              {{data['myself-postcode']}}
+              {{data['organisation-postcode']}}
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -174,38 +174,22 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </a>
           </dd>
         </div>
-
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration comments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['organisation-comment']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./comment">
+              Change
+              <span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
       </dl>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters-from-desktop">
-      <h2 class="govuk-heading-m">Registration comments</h2>
 
-       {% for comment in data['organisation-comment-array']   %}
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              {{comment.topic}}
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p>{{comment.rep}}</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="#">
-                  Change
-                  <span class="govuk-visually-hidden"> this comment</span>
-              </a>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="#">
-                  Remove
-                  <span class="govuk-visually-hidden"> this comment</span>
-              </a>
-            </dd>
-          </div>
-        </dl>
-      {% endfor %}
       <form autocomplete="off" action="../declaration" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true"/>
 
