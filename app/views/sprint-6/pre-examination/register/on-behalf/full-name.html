@@ -29,7 +29,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="over-18" method="post">
+
+        {% if data['sprint6RepresentingFor'] == 'An organisation or charity you do not work for' %}
+          <form autocomplete="off" class="form" action="organisation-name" method="post">
+        {% else %}
+          <form autocomplete="off" class="form" action="contact-preference" method="post">
+        {% endif %}
+
         {{ govukInput({
           label: {
             text: "What is your full name?",
