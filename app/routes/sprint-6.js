@@ -31,7 +31,7 @@ module.exports = function (router) {
       // if behalf, show behalf flow
     } else if (
       sprintSixTypeOfParty ==
-      "On behalf of another person, a family group or an organisation you do not work for"
+      "On behalf of another person, a family group or an organisation I do not work for"
     ) {
       res.redirect("on-behalf/representing-for");
 
