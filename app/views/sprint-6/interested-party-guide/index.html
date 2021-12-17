@@ -15,6 +15,10 @@
   </script>
 {% endblock %}
 
+{% block header %}
+  {{ pinsHeader() }}
+{% endblock %}
+
 {% block beforeContent %}
 
   {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -129,9 +133,9 @@
             </div>
 
             <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-involved-in-the-preliminary-meeting-3">
-              <p>In the months after the registration for having your say closes, the Examining Authority will hold a Preliminary Meeting. This meeting is to discuss the proposed timetable for the Examination of the application.</p>
+              <p>In the months after the registration period closes, the Examining Authority will hold a Preliminary Meeting. This meeting is to discuss the main issues the Examining Authority will be examining, and the timetable for the Examination of the application.</p>
               <p>
-                <a href="get-involved-in-preliminary-meeting">What you can do after you register to have your say</a>
+                <a href="get-involved-in-preliminary-meeting">What you can do at the Preliminary Meeting</a>
               </p>
             </div>
 
@@ -154,9 +158,9 @@
             </div>
 
             <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-have-your-say-during-the-examination-of-the-project-4">
-              <p>In the months after the registration for having your say closes, the Examining Authority will hold a Preliminary Meeting. This meeting is to discuss the main issues the Examining Authority will be examining, and the timetable for the Examination of the application. </p>
+              <p>The Examination stage is where the Examining Authority asks questions, and the developer and anyone who has registered to have their say may get involved and comment on the proposed development at the deadlines in the Examination timetable. You can also attend any hearings that may take place during this stage. The Examination takes up to six months.</p>
               <p>
-                <a href="./having-your-say-examination">What you can do at the Preliminary Meeting</a>
+                <a href="./having-your-say-examination">Submitting comments during the Examination of the application</a>
               </p>
             </div>
 

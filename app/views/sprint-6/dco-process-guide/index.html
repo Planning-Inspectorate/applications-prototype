@@ -12,7 +12,9 @@
     stepByStepNavigation.start($element)
   </script>
 {% endblock %}
-
+{% block header %}
+  {{ pinsHeader() }}
+{% endblock %}
 {% block beforeContent %}
 
   {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
