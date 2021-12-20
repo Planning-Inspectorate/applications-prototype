@@ -1,18 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your telephone number - Register to have your say
+  Email address
 {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Register to have your say about a national infrastructure project", 
-    serviceUrl: "/sprint-6/pre-examination/register/start",
-saveAndExit: false
+    serviceName: "Get updates about this project", 
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
   }) }}
 {% endblock %}
-
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -29,20 +28,15 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="comment" method="post">
+      <form autocomplete="off" class="form" action="check-your-email" method="post">
         {{ govukInput({
           label: {
-            text: "What is your telephone number?",
+            text: "What is your email address?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          hint: {
-            text: "We will use your phone number to get in touch with you about the project if we cannot reach you by email. We will not publish your telephone number."
-          },
-          id: "organisation-telephone-number",
-          name: "organisation-telephone-number",
-          type: "tel",
-          classes: "govuk-input--width-20"
+          id: "email",
+          name: "email"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
