@@ -31,7 +31,7 @@ module.exports = function (router) {
 
         // if behalf, show behalf flow
       } else if (sprintSixTypeOfParty == "on-behalf") {
-        res.redirect("on-behalf/representing-for");
+        res.redirect("on-behalf/full-name");
 
         // otherwise, show myself flow
       } else {
