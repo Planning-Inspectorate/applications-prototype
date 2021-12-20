@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your full name - Register to have your say
+  Email address
 {% endblock %}
 
 {% block header %}
@@ -14,8 +14,6 @@ saveAndExit: false
 {% endblock %}
 
 {% block beforeContent %}
-
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
   {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -30,30 +28,16 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="representee-address" method="post">
-        {{ govukRadios({
-          fieldset: {
-            legend: {
-              text: "Are they 18 or over?",
-              isPageHeading: true,
-              classes: "govuk-label--l"
-            }
+      <form autocomplete="off" class="form" action="check-your-email" method="post">
+        {{ govukInput({
+          label: {
+            text: "What is your email address?",
+            classes: "govuk-label--l",
+            isPageHeading: true
           },
-          hint: {
-            html: "<p>You can still register for them if they are under 18, but we will process their personal details in a different way.</p>"
-          },
-          idPrefix: "behalf-over-18",
-          name: "behalf-over-18",
-          items: [
-            {
-              value: "Yes",
-              text: "Yes"
-            },
-            {
-              value: "No",
-              text: "No"
-            }
-          ]
+
+          id: "email",
+          name: "email"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
