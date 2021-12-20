@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Email address
+  Confirmation - Register to have your say
 {% endblock %}
 
 {% block header %}
@@ -9,7 +9,7 @@
     {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
     serviceUrl: "/sprint-6/pre-examination/register/start",
-saveAndExit: true
+    saveAndExit: false
   }) }}
 {% endblock %}
 
@@ -20,29 +20,29 @@ saveAndExit: true
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-
-<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="check-your-email" method="post">
-        {{ govukInput({
-          label: {
-            text: "What is your email address?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
 
-          id: "email",
-          name: "email"
-        }) }}
+      <h1 class="govuk-heading-l">Check your email</h1>
+      <p>
+        We have sent a confirmation email to <strong>{% if not data['email']%}joe.bloggs@email.com{% endif %}{{ data['email'] }}</strong>
+      </p>
+      <p>
+        Click the link in the email to return to:
+      </p>
+      <ul class="govuk-list">
+        <li>A404 Dewsbury</li>
+      </ul>
+      <p>
+        The link will stop working after 48 hours.
+      </p>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <a href="./verification-email" class="govuk-button govuk-button--secondary">View email</a>
 
-      </form>
 
     </div>
   </div>

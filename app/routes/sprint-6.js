@@ -20,17 +20,17 @@ module.exports = function (router) {
         req.session.data["sprint-6-type-of-interested-party"];
 
       // if an individual, show individual flow
-      if (sprintSixTypeOfParty == "Myself") {
+      if (sprintSixTypeOfParty == "myself") {
         res.redirect("myself/full-name");
 
         // if an organisation, show organisation flow
       } else if (
-        sprintSixTypeOfParty == "An organisation I work or volunteer for"
+        sprintSixTypeOfParty == "organisation"
       ) {
         res.redirect("organisation/full-name");
 
         // if behalf, show behalf flow
-      } else if (sprintSixTypeOfParty == "behalf") {
+      } else if (sprintSixTypeOfParty == "on-behalf") {
         res.redirect("on-behalf/representing-for");
 
         // otherwise, show myself flow
