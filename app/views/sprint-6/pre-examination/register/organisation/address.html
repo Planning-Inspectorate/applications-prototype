@@ -6,13 +6,12 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-    {{ pinsHeader({
+  {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
     serviceUrl: "/sprint-6/pre-examination/register/start",
 saveAndExit: false
   }) }}
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -24,7 +23,7 @@ saveAndExit: false
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -40,7 +39,7 @@ saveAndExit: false
           }
         }) %}
 
-          {{ govukInput({
+        {{ govukInput({
             label: {
               text: 'Address line 1'
             },
@@ -48,7 +47,7 @@ saveAndExit: false
             name: "organisation-address-line-1"
           }) }}
 
-          {{ govukInput({
+        {{ govukInput({
             label: {
               text: 'Address line 2 (optional)'
             },
@@ -56,17 +55,16 @@ saveAndExit: false
             name: "organisation-address-line-2"
           }) }}
 
-          {{ govukInput({
+        {{ govukInput({
             label: {
-              text: "Address line 3 (optional)'
+              text: "Address line 3 (optional)"
             },
             classes: "govuk-!-width-two-thirds",
             id: "organisation-address-line-3",
             name: "organisation-address-line-3"
           }) }}
 
-
-          {{ govukInput({
+        {{ govukInput({
             label: {
               text: "Postcode"
             },
@@ -75,7 +73,7 @@ saveAndExit: false
             name: "organisation-address-postcode"
           }) }}
 
-          {{ govukInput({
+        {{ govukInput({
             label: {
               text: "Country"
             },
