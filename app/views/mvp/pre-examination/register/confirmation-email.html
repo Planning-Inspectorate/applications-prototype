@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block pageTitle %} Example email {% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="./confirmation" class="govuk-button">Return to the confirmation page</a>
+
+    <h3 class="govuk-heading-l">Your email inbox</h3>
+  </div>
+  <!-- list of emails -->
+  
+  <!-- email content starts here -->
+  <div class="govuk-grid-column-three-quarters">
+    <ul class="govuk-list">
+      <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
+      <li>To: &lt;example@email.com&gt;</li>
+      <li>
+        Subject:
+        <strong>You are registered to have your say about A404 Dewsbury</strong>
+      </li>
+    </ul>
+    <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+    />
+    <p class="govuk-body">Dear John Doe,</p>
+    <p class="govuk-body">
+      You are now registered to have your say about the A404 Dewsbury project
+    </p>
+    <p class="govuk-body">
+      Your Interested Party reference number is: 1234567890
+    </p>
+    <p class="govuk-body">
+    We will contact you if we need more information about the comments you provided in the registration form. We have attached a copy of your registration form to this email.
+    </p>
+      <p class="govuk-body">
+      After the registration period has closed, you will be sent a letter called the Rule 6 letter, telling you when and where the Preliminary Meeting will be held. This is your optional opportunity to talk about how the application will be examined. It will also include a draft timetable for the Examination of the application.
+    </p>
+
+    <p class="govuk-body">
+      You can check our guide for more information here:
+      <a class="govuk-link" rel="noreferrer noopener" href="/interested-party-guide/get-involved-in-preliminary-meeting"> Get involved in the Preliminary Meeting</a>
+    </p>
+    <p class="govuk-body">Yours Sincerely</p>
+    <p class="govuk-body">The Planning Inspectorate</p>
+  </div>
+</div>
+{% endblock %}
