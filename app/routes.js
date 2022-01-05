@@ -6,6 +6,7 @@ require('./routes/sprint-3.js')(router);
 require('./routes/sprint-4.js')(router);
 require('./routes/sprint-5.js')(router);
 require('./routes/sprint-6.js')(router);
+require('./routes/mvp.js')(router);
 
   // routes for the type of party /register flow
   router.get("/reset", function (req, res) {
