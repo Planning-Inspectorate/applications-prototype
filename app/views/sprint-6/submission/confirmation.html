@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Type of interested party - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Have your say during the Examination of the application",
+    serviceUrl: "/sprint-6/pre-examination/register/start",
+    saveAndExit: false
+
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Submission complete</h1>
+        <div class="govuk-panel__body">
+        Thank you
+        </div>
+      </div>
+
+      <p>
+        We have sent a confirmation email to: {{ data['email'] }}
+      </p>
+
+      <br><br><br><br><br><br>
+      <p>You can check our guide to <a href="../interested-party-guide/index.html">find out more about having your say during the Examination of the application, (opens in new tab)</a>.</p>
+
+      <a href="./confirmation-email" class="govuk-button">View sample email</a>
+
+
+      <a href="/sprint-5/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Go back to project page
+      </a>
+
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

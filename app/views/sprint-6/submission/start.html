@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "Have your say during the Examination of the application",
+    serviceUrl: "/sprint-6/pre-examination/register/start",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Have your say during the Examination of the application
+      </h1>
+
+      <div class="govuk-body-l">
+      You are having your say about the <strong>A404 Dewsbury project</strong> at deadline 1
+      </div>
+      <div class="govuk-body-l">
+      Examination will close at 23:59 on <strong>Tuesday 14 February 2022</strong> .</div>
+      <p>Use this service to have your say about a national infrastructure project. We need your personal details and your comments about the A404 Dewsbury.</p>
+      <h2 class="govuk-heading-m">Writing your comments</h2>
+      <p>Your comments will be used by the inspector or panel of inspectors, known as the Examining Authority, to decide what to focus on during the Examination of the application.</p>
+      <p>Your examination comments (also known as a relevant representation) should relate to the application. You must include a summary of points which you agree and/or disagree with about the application, highlighting what you consider to be the main issues and impacts. </p>
+      <p>Information about how you think a project may affect your day-to-day life may also be of interest to the Examining Authority.</p>
+      <p>This information will be:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>used by the Examining Authority to decide if they recommend the project goes ahead</li>
+        <li>published on our website</li>
+      </ul>
+      <p>You will be able to submit further comments during the Examination of the application once you have registered.</p>
+
+      <h2 class="govuk-heading-m">Return to a saved submission</h2>
+
+      <p class="govuk-body">Once you have started your submission, you can save your progress and come back before the end of the examination period. If you save your partially completed submission, we will email a return link to you. Check your emails and click the link to return to submit your comment.</p>
+      <p class="govuk-body">You must return and submit your comment before 23:59 on Tuesday 14 February 2022.</p>
+      <p class="govuk-body"><a href="#">Resend the email with return link</a></p>
+
+
+      <a href="type-of-party" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <!-- <p>We need to know anything you think is important to tell us about the proposed project, in as much detail as possible</p> -->
+      <h3 class="govuk-heading-s">If you are registering yourself as an individual</h3>
+      <p>You will need your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>address</li>
+        <li>email address and telephone number</li>
+        <li>registration comments about the project</li>
+      </ul>
+      <h3 class="govuk-heading-s">If you are registering for an organisation you work or volunteer for</h3>
+      <p>You will need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your full name</li>
+        <li>the name of the charity or organisation you work for</li>
+        <li>your work address</li>
+        <li>email address and telephone number</li>
+        <li>registration comments about the project</li>
+      </ul>
+      <h3 class="govuk-heading-s">If you are registering on behalf of another person or organisation</h3>
+      <p>You will need your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your full name</li>
+        <li>your address</li>
+        <li>your email address and telephone number</li>
+        <li>The details of the person, family group or organisation you are representing</li>
+        <li>their registration comments about the project</li>
+      </ul>
+
+      <!-- <p>You can also <a href="#">register by post</a>.</p> -->
+
+      <!--<p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>-->
+
+      <!-- <p>You can’t register for this service if you’re in the UK illegally.</p> -->
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
