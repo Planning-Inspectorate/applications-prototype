@@ -9,7 +9,7 @@
     {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
     serviceUrl: "/sprint-6/pre-examination/register/start",
-saveAndExit: true
+saveAndExit: false
   }) }}
 {% endblock %}
 
@@ -49,7 +49,7 @@ saveAndExit: true
 
           {{ govukInput({
             label: {
-              text: 'Address line 2'
+              text: 'Address line 2 (optional)'
             },
             id: "address-line-2",
             name: "address-line-2"
@@ -57,7 +57,7 @@ saveAndExit: true
 
           {{ govukInput({
             label: {
-              text: "Address line 3"
+              text: "Address line 3 (optional)"
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-line-3",

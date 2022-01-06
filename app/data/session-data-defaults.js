@@ -17,6 +17,7 @@ module.exports = {
   representation: 0,
 
   // REGISTRATION DEFAULTS
+  "sprint-6-type-of-interested-party": "myself",
   // myself default values
   "full-name": "Joe Bloggs",
   "over-18": "Yes",

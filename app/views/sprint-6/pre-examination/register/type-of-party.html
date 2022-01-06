@@ -9,7 +9,7 @@
     {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
     serviceUrl: "/sprint-6/pre-examination/register/start",
-    saveAndExit: true
+    saveAndExit: false
   }) }}
 {% endblock %}
 
@@ -44,15 +44,15 @@
             },
             items: [
               {
-                value: "Myself",
+                value: "myself",
                 text: "Myself"
               },
               {
-                value: "An organisation I work or volunteer for",
+                value: "organisation",
                 text: "An organisation I work or volunteer for"
               },
               {
-                value: "behalf",
+                value: "on-behalf",
                 text: "On behalf of another person, a family group or an organisation I do not work for"
               }
             ]

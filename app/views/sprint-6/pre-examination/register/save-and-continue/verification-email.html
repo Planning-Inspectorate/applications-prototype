@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Example email {% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Your email inbox</h3>
+    </div>
+    <!-- list of emails -->
+
+    <!-- email content starts here -->
+    <div class="govuk-grid-column-three-quarters">
+      <ul class="govuk-list">
+        <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
+        <li>To: &lt;example@email.com&gt;</li>
+        <li>
+        Subject:
+        <strong>Continue to register to have your say about the A404 Dewsbury project</strong>
+        </li>
+      </ul>
+      <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+/>
+      <p class="govuk-body">Dear John Doe,</p>
+      <p class="govuk-heading-m">
+      Continue to register to have your say about the A404 Dewsbury project
+    </p>
+      <p class="govuk-body">
+This is the link to get back into your registration.
+    </p>
+      <p class="govuk-body">
+        {%set url = data['sprint-6-type-of-interested-party'] %}
+        <a href="../{{url}}/comment">https://applications-prototype.herokuapp.com/sprint-6/pre-examination/register/{{url}}/comment</a>
+      </p>
+      <p class="govuk-body">
+      The registration for this project closes at 23:59 on Tuesday 14 December 2021
+    </p>
+      <p class="govuk-body">
+If you have not started a registration, you can delete or ignore this email.
+    </p>
+      <p class="govuk-body">Thanks</p>
+      <p class="govuk-body">The Planning Inspectorate</p>
+    </div>
+  </div>
+{% endblock %}
