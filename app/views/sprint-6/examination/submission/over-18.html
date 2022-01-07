@@ -8,7 +8,7 @@
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Have your say during the Examination of the application",
-    serviceUrl: "/sprint-6/pre-examination/register/start",
+    serviceUrl: "/sprint-6/examination/submission/start",
 saveAndExit: false
   }) }}
 {% endblock %}
@@ -30,25 +30,35 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="over-18" method="post">
-        {{ govukInput({
-          label: {
-            text: "What is your interested party reference number?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+      <form autocomplete="off" class="form" action="registered-as-interested-party" method="post">
+        {{ govukRadios({
+          fieldset: {
+            legend: {
+              text: "Are you 18 or over?",
+              isPageHeading: true,
+              classes: "govuk-label--l"
+            }
           },
           hint: {
-            html: ""
+            html: "<p>You can still register to have your say if you are under 18, but we will process your personal details in a different way.</p>"
           },
-          id: "full-name",
-          name: "full-name",
-          spellcheck: false
+          idPrefix: "over-18",
+          name: "over-18",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
         }) }}
 
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-      <a class="govuk-body govuk-link" href="#">Save and come back later</a>
 
     </div>
   </div>

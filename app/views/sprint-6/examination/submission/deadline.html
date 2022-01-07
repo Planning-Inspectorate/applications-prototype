@@ -8,7 +8,7 @@
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Have your say during the Examination of the application",
-    serviceUrl: "/sprint-6/pre-examination/register/start",
+    serviceUrl: "/sprint-6/examination/submission/start",
     saveAndExit: false
   }) }}
 {% endblock %}
@@ -28,10 +28,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="telephone" method="post">
+      <form autocomplete="off" class="form" action="submission-type" method="post">
         {% call govukFieldset({
           legend: {
-            text: "When is the deadline?",
+            text: "Which deadline do you want to comment about?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -40,9 +40,9 @@
 <br>
 
 
-        {{ govukSelect({
-            id: "myself-selectAnAddress",
-            name: "myself-selectAnAddress",
+        {{ govukRadios({
+            id: "submission-deadline",
+            name: "submission-deadline",
             label: {
               text: "Select a deadline",
               classes: "govuk-label--s"
@@ -63,14 +63,32 @@
               {
                 value: "Deadline 4 (D4)",
                 text: "Deadline 4 (D4)"
+              },
+              {
+                value: "Deadline 5 (D5)",
+                text: "Deadline 5 (D5)"
+              },
+              {
+                value: "Deadline 6 (D6)",
+                text: "Deadline 6 (D6)"
+              },
+              {
+                value: "Deadline 7 (D7)",
+                text: "Deadline 7 (D7)"
+              },
+              {
+                value: "Deadline 8 (D8)",
+                text: "Deadline 8 (D8)"
+              },
+              {
+                value: "Deadline 9 (D9)",
+                text: "Deadline 9 (D9)"
               }
             ]
           }) }}
-<br><br>
 <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
 </form>
-<a class="govuk-body govuk-link" href="#">Save and come back later</a>
 
     </div>
   </div>
