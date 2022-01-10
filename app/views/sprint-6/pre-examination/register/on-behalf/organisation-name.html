@@ -30,7 +30,7 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="contact-preference" method="post">
+      <form autocomplete="off" class="form" action="email" method="post">
         {{ govukInput({
           label: {
             text: "What is the name of your organisation or charity?",
@@ -39,13 +39,17 @@ saveAndExit: false
           },
           id: "behalf-organisation-name",
           name: "behalf-organisation-name",
-
+      hint: {
+            text: "We will publish your organisation name, your client's name and their comments on the website."
+          },
           spellcheck: false
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
+      <a class="govuk-body govuk-link" href="./email">I don't work for an organisation</a>
+
 
     </div>
   </div>
