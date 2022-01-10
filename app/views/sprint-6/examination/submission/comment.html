@@ -41,7 +41,24 @@ saveAndExit: false
           {{ govukDetails({
           summaryText: "Do not include any personal details.",
           html: '
-
+            <ul class="govuk-list govuk-list--bullet">          
+              <li>Representations from children;</li>
+              <li>Information relating to children;</li>
+              <li>Information relating to health;</li>
+              <li>Information relating to crime</li>
+              <li>Any information relating to an individual’s</li>
+            <ol class="govuk-list govuk-list--number">          
+              <li>Race</li>
+              <li>Ethnic origin</li>
+              <li>Politics</li>
+              <li>Religion</li>
+              <li>Trade union membership</li>
+              <li>Genetics</li>
+              <li>Biometrics</li>
+              <li>Sex life</li>
+              <li>Sexual orientation</li>
+            </ol>
+            </ul>
          '
         }) }}
           <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>

@@ -29,6 +29,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form autocomplete="off" class="form" action="comment" method="post">
+          {% set otherSubmission %}
+        {{ govukInput({
+          id: "otherSubmission",
+          name: "otherSubmission",
+          type: "number",
+          spellcheck: false,
+          label: {
+            text: "Other – provide details "
+          }
+        }) }}
+        {% endset -%}
+
         {% call govukFieldset({
           legend: {
             text: "Which submission item do you want to comment about?",
@@ -77,8 +89,8 @@
                 text: "Applicant’s updated Guide to the Application"
               },
               {
-                value: "An updated version of the draft Development Consent Order (dDCO) in",
-                text: "An updated version of the draft Development Consent Order (dDCO) in"
+                value: "An updated version of the draft Development Consent Order (dDCO)",
+                text: "An updated version of the draft Development Consent Order (dDCO)"
               },
               {
                 value: "Schedule of changes to the dDCO",
@@ -93,12 +105,15 @@
                 text: "Submission by the Applicant of low-resolution documents"
               },
               {
-                value: "Any further information requested by the ExA under Rule 17 of the Examination Ru",
-                text: "Any further information requested by the ExA under Rule 17 of the Examination Ru"
+                value: "Any further information requested by the ExA under Rule 17 of the Examination Rules",
+                text: "Any further information requested by the ExA under Rule 17 of the Examination Rules"
               },
               {
                 value: "Other …",
-                text: "Other …"
+                text: "Other …",
+                conditional: {
+                  html: otherSubmission
+                }
               }
             ]
           }) }}

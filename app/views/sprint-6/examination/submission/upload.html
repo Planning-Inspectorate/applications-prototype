@@ -29,7 +29,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="" method="post">
+      <form action="text-submission-item" method="post">
 
         <span class="govuk-caption-l">
 
@@ -39,33 +39,7 @@
         </h1>
         <p class="govuk-body">
           Please note you can add more than one document.
-        <p>
-          {{ govukSelect({
-              id: "myself-selectAnAddress",
-              name: "myself-selectAnAddress",
-              label: {
-                text: "Submission item",
-                classes: "govuk-label--s"
-              },
-              items: [
-                {
-                  value: "Comments on WRs (D1)",
-                  text: "Comments on WRs"
-                },
-                {
-                  value: "Deadline 2 (D2)",
-                  text: "Deadline 2 (D2)"
-                },
-                {
-                  value: "Deadline 3 (D3)",
-                  text: "Deadline 3 (D3)"
-                },
-                {
-                  value: "Deadline 4 (D4)",
-                  text: "Deadline 4 (D4)"
-                }
-              ]
-            }) }}
+        </p>
 
 
         {{ govukFileUpload({
@@ -103,7 +77,6 @@
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-      <a class="govuk-body govuk-link" href="#">Save and come back later</a>
 
     </div>
   </div>
