@@ -1,6 +1,7 @@
 // Core dependencies
 const fs = require('fs')
 const path = require('path')
+const url = require('url')
 
 // NPM dependencies
 const bodyParser = require('body-parser')
@@ -56,8 +57,6 @@ useHttps = useHttps.toLowerCase()
 
 var useDocumentation = (config.useDocumentation === 'true')
 
-var useLogging = config.useLogging
-
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
 var promoMode = process.env.PROMO_MODE || 'false'
 promoMode = promoMode.toLowerCase()
@@ -67,7 +66,6 @@ if (!useDocumentation) promoMode = 'false'
 
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
-
 var isSecure = (env === 'production' && useHttps === 'true')
 if (isSecure) {
   app.use(utils.forceHttps)
@@ -104,7 +102,6 @@ app.set('view engine', 'html')
 
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
-app.use('/assets', express.static(path.join(__dirname, '/node_modules/govuk-frontend/govuk/assets')))
 
 // Serve govuk-frontend in from node_modules (so not to break pre-extensions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
@@ -208,24 +205,6 @@ app.post('/prototype-admin/clear-data', function (req, res) {
   res.render('prototype-admin/clear-data-success')
 })
 
-// Logging session data
-if (useLogging !== 'false') {
-  app.use((req, res, next) => {
-    const all = (useLogging === 'true')
-    const post = (useLogging === 'post' && req.method === 'POST')
-    const get = (useLogging === 'get' && req.method === 'GET')
-    if (all || post || get) {
-      const log = {
-        method: req.method,
-        url: req.originalUrl,
-        data: req.session.data
-      }
-      console.log(JSON.stringify(log, null, 2))
-    }
-    next()
-  })
-}
-
 // Redirect root to /docs when in promo mode.
 if (promoMode === 'true') {
   console.log('Prototype Kit running in promo mode')
@@ -322,7 +301,11 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
-  res.redirect('/' + req.params[0])
+  res.redirect(url.format({
+    pathname: '/' + req.params[0],
+    query: req.query
+  })
+  )
 })
 
 // Catch 404 and forward to error handler
