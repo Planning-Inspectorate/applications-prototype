@@ -58,18 +58,18 @@
               }
             },
                hint: {
-            text: "The unique reference that identifies you as an Interested Party can be found on the postcard or email you received inviting you to the Preliminary Meeting. Your reference is included in the same place in all correspondence addressed to you from the Examining Authority."
+            html: "<p class='govuk-hint'>The unique reference that identifies you as an Interested Party can be found on the postcard or email you received inviting you to the Preliminary Meeting.</p><p class='govuk-hint'>Your reference is included in the same place in all correspondence addressed to you from the Examining Authority.</p>"
           },
             items: [
               {
-                value: "Yes",
+                value: "yes",
                 text: "Yes",
                 conditional: {
                   html: whatIsYourInterestedPartyNumber
                 }
               },
               {
-                value: "No",
+                value: "no",
                 text: "No",
                 conditional: {
                   html: notAnInterestedParty

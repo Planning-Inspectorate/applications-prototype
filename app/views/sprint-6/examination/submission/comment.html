@@ -35,10 +35,34 @@ saveAndExit: false
           {{ govukTextarea({
      
           maxwords: 200,
-          id: "myself-comment",
-          name: "myself-comment"
+          id: "submission-comment",
+          name: "submission-comment"
         }) }}
-          {{ govukDetails({
+          
+    
+          {{ govukRadios({
+            idPrefix: "text-pii",
+            name: "text-pii",
+            fieldset: {
+              legend: {
+                text: "Does your representation contain sensitive information",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+              {{ govukDetails({
           summaryText: "Do not include any personal details.",
           html: '
             <ul class="govuk-list govuk-list--bullet">          
@@ -61,6 +85,7 @@ saveAndExit: false
             </ul>
          '
         }) }}
+
           <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
         </form>

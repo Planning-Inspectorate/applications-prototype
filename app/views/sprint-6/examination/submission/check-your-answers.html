@@ -6,7 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-    {{ pinsHeader({
+  {{ pinsHeader({
     serviceName: "Have your say during the Examination of the application",
     serviceUrl: "/sprint-6/examination/submission/start",
 saveAndExit: false
@@ -28,36 +28,30 @@ saveAndExit: false
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before making a submission</h1>
+      <h1 class="govuk-heading-xl">Review your submission</h1>
 
       <h2 class="govuk-heading-m">Details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Who are you making a submission for?
+            {%if data['submission-commenting-as'] == 'organisation' %}
+              Organisation name
+            {%else %}
+              Full name
+            {% endif %}
           </dt>
           <dd class="govuk-summary-list__value">
-           Myself
+            {%if data['submission-commenting-as'] == 'organisation' %}
+              {{data['organisation-name']}}
+            {%else %}
+              {{data['full-name']}}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="../type-of-party">
+            <a href="./type-of-party">
               Change
               <span class="govuk-visually-hidden"> who you are registering for</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Full name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['full-name'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="full-name">
-              Change
-              <span class="govuk-visually-hidden"> full name</span>
             </a>
           </dd>
         </div>
@@ -69,7 +63,7 @@ saveAndExit: false
             {{ data['over-18'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="over-18">
+            <a href="./over-18">
               Change
               <span class="govuk-visually-hidden"> 18 or over</span>
             </a>
@@ -77,13 +71,17 @@ saveAndExit: false
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Which of these contact details can you provide?
+             Are you an interested party?
             </dt>
           <dd class="govuk-summary-list__value">
-            {{data['myselfContactPref']}}
+            {%if data['examination-interested-party'] == 'yes' %}
+              {{data['interested-party-number']}}
+            {% else %}
+            No
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="contact-preference">
+            <a href="./registered-as-interested-party">
               Change
               <span class="govuk-visually-hidden"> how you'd like to be contacted</span>
             </a>
@@ -104,90 +102,151 @@ saveAndExit: false
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Telephone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['telephone-number'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="telephone">
-              Change
-              <span class="govuk-visually-hidden"> telephone number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {%if not data['myself-selectAnAddress'] %}
-              {{ data['address-line-1'] }}
-              <br>
-              {{ data['address-line-2'] }}
-              <br>
-              {{ data['address-line-3'] }}
-              <br>
-              {{ data['address-postcode'] }}
-              <br>
-              {{ data['address-country'] }}
-            {% else %}
-              {{ data['myself-selectAnAddress'] | striptags(true) | escape | nl2br }}
-              <br>
-              {%if not data['myself-postcode'] %}
-      BS1 6PN
-    {% endif %}
-              {{data['myself-postcode']}}
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="postcode">
-              Change
-              <span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Examination comments
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['myself-comment']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="postcode">
-              Change
-              <span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            File uploaded
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Comments on WRs.pdf</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="email">
-              Change
-              <span class="govuk-visually-hidden"> email address</span>
-            </a>
-          </dd>
-        </div>
-
       </dl>
-      <form autocomplete="off" action="../declaration" method="post" novalidate>
+    </div>
 
-        <input type="hidden" name="answers-checked" value="true">
+    <div class="govuk-grid-column-three-quarters">
+      <h2 class="govuk-heading-m">Files added</h2>
+      <dl class="govuk-summary-list ">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['file-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['file-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-file">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            File name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            our-comments.pdf
+          </dd>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['file-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['file-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-file">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            File name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            more-of-our-comments.pdf
+          </dd>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+      </dl>
+      <a href="./upload" class="govuk-body govuk-link ">Add more files</a>
+    </div>
+    <div class="govuk-grid-column-full">
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Finish
-        </button>
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">Representations added</h2>
 
-      </form>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['text-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['text-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./comment">
+              Change
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-comment">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['submission-comment'] %}
+                An example comment
+              {% endif %}
+            {{ data['submission-comment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['text-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['text-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./comment">
+              Change
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-comment">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['submission-comment'] %}
+                Another example comment
+              {% endif %}
+            {{ data['submission-comment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+      </dl>
+      <a href="./comment" class="govuk-body govuk-link ">Add more representations</a>
+
+      <p class="govuk-body govuk-!-margin-top-9">If all the information is correct click Finish to complete your submission.</p>
+      <a href="./confirmation" class="govuk-button" data-module="govuk-button">
+        Finish
+      </a>
 
     </div>
   </div>

@@ -37,9 +37,7 @@
         <h1 class="govuk-heading-l">
           Upload your documents for A404 Dewsbury
         </h1>
-        <p class="govuk-body">
-          Please note you can add more than one document.
-        </p>
+  
 
 
         {{ govukFileUpload({
@@ -48,15 +46,14 @@
           label: {
             classes: "govuk-label--m",
             text: "Upload a file"
+          },
+          hint: {
+            text: "Please note you can add more than one document."
           }
         }) }}
 
-        {{ govukInsetText({
-          text: "File size should be no more than 15MB"
-        }) }}
-
         {{ govukDetails({
-          summaryText: "Help with file formats",
+          summaryText: "File requirements",
           html: '
             <p class="govuk-body">
               Your file must be in one of the following formats:
@@ -71,7 +68,60 @@
               <li>jpeg</li>
               <li>png</li>
             </ul>
+            <p>All files must be: </p>
+            <ul>
+              <li>a single document, appendix or image</li>
+              <li>smaller than 50mb</li>
+            </ul>
           '
+        }) }}
+
+ 
+
+          {{ govukRadios({
+            idPrefix: "file-pii",
+            name: "file-pii",
+            fieldset: {
+              legend: {
+                text: "Does the file contain sensitive information?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+       {{ govukDetails({
+          summaryText: "Sensitive Information definition",
+          html: '
+            <ul class="govuk-list govuk-list--bullet">          
+              <li>Representations from children;</li>
+              <li>Information relating to children;</li>
+              <li>Information relating to health;</li>
+              <li>Information relating to crime</li>
+              <li>Any information relating to an individual’s</li>
+            <ol class="govuk-list govuk-list--number">          
+              <li>Race</li>
+              <li>Ethnic origin</li>
+              <li>Politics</li>
+              <li>Religion</li>
+              <li>Trade union membership</li>
+              <li>Genetics</li>
+              <li>Biometrics</li>
+              <li>Sex life</li>
+              <li>Sexual orientation</li>
+            </ol>
+            </ul>
+         '
         }) }}
 
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
