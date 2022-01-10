@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Type of interested party - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "Have your say during the Examination of the application",
+    serviceUrl: "/sprint-6/examination/submission/start",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="deadline" method="post">
+
+        {% set whatIsYourInterestedPartyNumber %}
+        {{ govukInput({
+          id: "interested-party-number",
+          name: "interested-party-number",
+          type: "number",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "What is your Interested Party number?"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set notAnInterestedParty %}
+          <p class="govuk-body">As you are not an Interested Party it is at the discretion of the Examining Authority as to whether your submission is accepted.</p>
+        {% endset -%}
+
+        {{ govukRadios({
+            idPrefix: "examination-interested-party",
+            name: "examination-interested-party",
+            fieldset: {
+              legend: {
+                text: "Are you registered as an interested party?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+               hint: {
+            html: "<p class='govuk-hint'>The unique reference that identifies you as an Interested Party can be found on the postcard or email you received inviting you to the Preliminary Meeting.</p><p class='govuk-hint'>Your reference is included in the same place in all correspondence addressed to you from the Examining Authority.</p>"
+          },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: whatIsYourInterestedPartyNumber
+                }
+              },
+              {
+                value: "no",
+                text: "No",
+                conditional: {
+                  html: notAnInterestedParty
+                }
+              }
+            ]
+          }) }}
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

@@ -8,7 +8,7 @@
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Have your say during the Examination of the application",
-    serviceUrl: "/sprint-6/pre-examination/register/start",
+    serviceUrl: "/sprint-6/examination/submission/start",
 saveAndExit: false
   }) }}
 {% endblock %}
@@ -37,19 +37,14 @@ saveAndExit: false
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          hint: {
-            html: "<p>We will publish your name on the website along with your comments about the project.</p>
-            <p>You must register as an individual. If your partner wants to register, they will have to fill in a separate form with their details.</p>"
-          },
           id: "full-name",
           name: "full-name",
           spellcheck: false
         }) }}
-
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
+
       </form>
-      <a class="govuk-body govuk-link" href="#">Save and come back later</a>
     </div>
   </div>
 

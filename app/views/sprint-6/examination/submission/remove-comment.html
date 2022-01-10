@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Comments - Register to have
+your say {% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-6/pre-examination/register/start"
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+  {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form
+      autocomplete="off"
+      class="form"
+      action="check-your-answers"
+      method="post"
+    >
+        <h1 class="govuk-heading-l">
+        Are you sure you want to remove this comment?
+      </h1>
+        <!-- Nunjucks object for the Other textbox -->
+        {% set otherHtml %}
+        {{ govukInput({ id: "behalf-other-text", name:
+      "behalf-other-text", type: "text", classes: "govuk-!-width-one-third",
+      label: { text: "Other topic" } }) }}
+        {% endset -%}
+        {{ govukInsetText({
+      text: data['behalf-comment']  }) }}
+        {{ govukRadios({
+      idPrefix: "where-do-you-live", name: "where-do-you-live", items: [ { value: "", text: "Yes"
+      }, { value: "comment", text: "No" } ] }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

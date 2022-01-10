@@ -39,4 +39,29 @@ module.exports = function (router) {
       }
     }
   );
+
+  // routes for the type of party /register flow
+  router.post(
+    "/sprint-6/examination/submission/type-of-party",
+    function (req, res) {
+      // get the type of interested party
+      var submissionCommentingAs =
+        req.session.data["submission-commenting-as"];
+
+      // if an individual, show individual flow
+      if (submissionCommentingAs == "myself") {
+        res.redirect("full-name");
+
+        // if an organisation, show organisation flow
+      } else if (submissionCommentingAs == "organisation") {
+        res.redirect("organisation-name");
+      
+
+        // otherwise, show myself flow
+      } else {
+        res.redirect("full-name");
+      }
+    }
+  );
+
 };

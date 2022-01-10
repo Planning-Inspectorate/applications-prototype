@@ -8,7 +8,7 @@
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Have your say during the Examination of the application",
-    serviceUrl: "/sprint-6/pre-examination/register/start",
+    serviceUrl: "/sprint-6/examination/submission/start",
 saveAndExit: false
   }) }}
 {% endblock %}
@@ -30,7 +30,7 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="contact-preference" method="post">
+      <form autocomplete="off" class="form" action="registered-as-interested-party" method="post">
         {{ govukRadios({
           fieldset: {
             legend: {
@@ -59,7 +59,6 @@ saveAndExit: false
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-      <a class="govuk-body govuk-link" href="#">Save and come back later</a>
 
     </div>
   </div>
