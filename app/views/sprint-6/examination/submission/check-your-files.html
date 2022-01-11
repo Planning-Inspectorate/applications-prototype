@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-6/pre-examination/register/start"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+
+      <h1 class="govuk-heading-xl">You have added two files</h1>
+
+      <h2 class="govuk-heading-m">Files added</h2>
+      <dl class="govuk-summary-list ">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['file-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['file-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-file">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            File name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            our-comments.pdf
+          </dd>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['file-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['file-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-file">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            File name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            more-of-our-comments.pdf
+          </dd>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+      </dl>
+
+      <p class="govuk-body">
+        <a href="./upload" class="govuk-link ">Add another file</a>
+      </p>
+
+      <a href="text-submission-item" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Continue
+      </a>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

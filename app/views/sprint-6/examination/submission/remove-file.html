@@ -19,12 +19,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form
-      autocomplete="off"
-      class="form"
-      action="check-your-answers"
-      method="post"
-    >
+
         <h1 class="govuk-heading-l">
         Are you sure you want to remove this file?
       </h1>
@@ -39,8 +34,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         {{ govukRadios({
       idPrefix: "where-do-you-live", name: "where-do-you-live", items: [ { value: "", text: "Yes"
       }, { value: "comment", text: "No" } ] }) }}
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-      </form>
+        <a class="govuk-button" href="javascript:history.back()" data-module="govuk-button">Continue</a>
     </div>
   </div>
 

@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/sprint-6/pre-examination/register/start"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+
+      <h1 class="govuk-heading-xl">You have added two comments</h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">Representations added</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['text-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['text-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./comment">
+              Change
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-comment">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['submission-comment'] %}
+                An example comment
+              {% endif %}
+            {{ data['submission-comment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Submission
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['text-submission-item'] %}
+                Comments on responses received by D1
+              {% endif %}
+            {{ data['text-submission-item'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./comment">
+              Change
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="./remove-comment">
+              Remove
+              <span class="govuk-visually-hidden"> who you are registering for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Representation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {%if not data['submission-comment'] %}
+                Another example comment
+              {% endif %}
+            {{ data['submission-comment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+      </dl>
+      <p class="govuk-body">
+        <a href="./comment" class="govuk-body govuk-link ">Add another representation</a>
+      </p>
+      <a href="check-your-answers" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Continue
+      </a>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
