@@ -6,11 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-    serviceName: "Have your say during the Examination of the application",
-    serviceUrl: "/sprint-6/examination/submission/start",
-saveAndExit: false
-  }) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,7 +24,7 @@ saveAndExit: false
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Review your submission</h1>
+      <h1 class="govuk-heading-l">Review your submission</h1>
 
       <h2 class="govuk-heading-m">Details</h2>
 
@@ -55,17 +51,17 @@ saveAndExit: false
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
+ <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Are you 18 or over?
+            Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['over-18'] }}
+            <p>{{ data['email'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="./over-18">
+            <a href="email">
               Change
-              <span class="govuk-visually-hidden"> 18 or over</span>
+              <span class="govuk-visually-hidden"> email address</span>
             </a>
           </dd>
         </div>
@@ -88,20 +84,7 @@ saveAndExit: false
           </dd>
         </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['email'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="email">
-              Change
-              <span class="govuk-visually-hidden"> email address</span>
-            </a>
-          </dd>
-        </div>
+       
       </dl>
     </div>
 

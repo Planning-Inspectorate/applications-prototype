@@ -6,11 +6,7 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-    serviceName: "Have your say during the Examination of the application",
-    serviceUrl: "/sprint-6/examination/submission/start",
-saveAndExit: false
-  }) }}
+  {{ pinsHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +25,7 @@ saveAndExit: false
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form autocomplete="off" class="form" action="check-your-comments" method="post">
-        <h1 class="govuk-heading-l">Representation</h1>
+        <h1 class="govuk-heading-l">What is your representation?</h1>
 
 
           {{ govukTextarea({
