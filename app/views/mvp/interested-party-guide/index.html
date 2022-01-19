@@ -16,8 +16,9 @@
 {% endblock %}
 
 {% block header %}
-  {{ pinsHeader() }}
-{% endblock %}
+  {{ pinsHeader(    
+   { returnToOverview: "true"}
+) }}{% endblock %}
 
 {% block beforeContent %}
 
