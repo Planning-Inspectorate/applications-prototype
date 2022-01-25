@@ -28,7 +28,7 @@
 This is the link to get back into your registration.
     </p>
       <p class="govuk-body">
-        {%set url = data['mvp-type-of-interested-party'] %}
+        {% set url = data['mvp-type-of-interested-party'] or "myself" %}
         <a href="../{{url}}/comment">https://applications-prototype.herokuapp.com/mvp/pre-examination/register/{{url}}/comment</a>
       </p>
       <p class="govuk-body">
