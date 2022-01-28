@@ -1,0 +1,142 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<!-- Mapbox resources -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <a href="../timetable-published-email" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        {% set current = 'about-the-application' %}
+        {% include "../includes/exam_vertical_tabs.html" %}
+      </div>
+
+
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">Project application documents</h2>
+          <h3 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="search">
+                Search 
+            </label>
+          </h3>
+          <small id="search-hint" class="govuk-hint">
+          Search by document name, who submitted or reference number
+            </small>
+          <div style="display: inline-flex; width: 100%;" class="govuk-!-margin-top-3">
+            <input class="govuk-input" id="search" name="search" type="text">
+            <div>
+              <a href="#" class="govuk-button" >
+                    Search
+              </a>
+            </div>
+          </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <p class="results"><strong><span id="results-number">18</span> results<strong></p>
+          </div>
+
+        </div>
+
+        <hr />
+
+
+        <h2 class="govuk-heading-m">Pre-application documents</h2>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Environmental impact assessment scoping</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Late scoping consultation responses</a></li>
+              <li><a href="#">Scoping opinion adopted by the Secretary of State</a></li>
+              <li><a href="#">The Applicant's Scoping Report for A404 Dewsbury - Amesbury to Berwick Down. Submitted to the Secretary of State on 20 October 2017</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Notice of proposed application</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Acknowledgement of S46 Notification Update Letter - Extension to the Public Consultation</a></li>
+              <li><a href="#">S46 notification - update</a></li>
+              <li><a href="#">Acknowledgement of S46 notification</a></li>
+              <li><a href="#">S46 notification</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Land rights (S53)</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">S53 Authorisation Notice – Land Parcel 78/16</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Noise - developer</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Deadline 2 - Answer to panel's questions - Noise and vibration effects (1)</a></li>
+              <li><a href="#">Deadline 8 - Summary of input into hearing - Noise and vibration</a></li>
+              <li><a href="#">Deadline 6 - Answer to panel's questions - Noise and vibration effects (2)</a></li>
+            </ul>
+          </div>
+        </div>
+        <h2 class="govuk-heading-m">Review of the application documents</h2>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Acceptance letter</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Notification of Decision to Accept Application</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pins-search-results-group">
+          <h3 class="pins-search-results-group-heading">Adequacy of consultation</h3>
+          <div class="pins-search-results-group-items">
+            <ul class="govuk-list">
+              <li><a href="#">Cotswold District Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">Dorset County Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">Gloucestershire County Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">Hampshire County Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">Somerset County Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">South Gloucestershire Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">South Oxfordshire and Vale of White Horse District Councils - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">West Berkshire District Council - Adequacy of Consultation Representation</a></li>
+              <li><a href="#">Wiltshire Council - Adequacy of Consultation Representation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

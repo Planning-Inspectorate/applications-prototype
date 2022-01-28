@@ -1,0 +1,104 @@
+{% extends "layout.html" %} {% block pageTitle %} Start page example {% endblock
+%} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="./review-and-submit" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-l">
+      A404 Dewsbury deadline 3 project information
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">Deadline 2</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Examiner’s questions 2</strong><br />
+          Examining Authority<br />
+          <small class="govuk-body-s">Published 15 December 2021 </small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Issue specific hearing 2 - noise and vibration</strong><br />
+          Acme Ltd<br />
+          <small class="govuk-body-s">Published 19 December 2021 </small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Noise and vibration report</strong><br />
+          Acme Ltd<br />
+          <small class="govuk-body-s">Published 19 December 2021 </small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Issue specific hearing - Water, geology</strong><br />
+          Acme Ltd<br />
+          <small class="govuk-body-s">Published 17 January 2022 </small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Deadline 1</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Panel’s questions 1</strong><br />
+          Examining Authority <br />
+          <small class="govuk-body-s">Published 19 December 2021</small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Issue specific hearing - traffic and transport</strong><br />
+          Acme Ltd<br />
+          <small class="govuk-body-s">Published 15 December 2021</small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list">
+          <strong>Traffic analysis report</strong><br />
+          Acme Ltd<br />
+          <small class="govuk-body-s">Published 15 December 2021</small>
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"> View&nbsp;document </a><br>
+          <a class="govuk-link" href="#"> All&nbsp;submissions</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

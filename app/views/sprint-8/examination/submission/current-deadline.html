@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  <a href="./review-and-submit" class="govuk-back-link">Back</a>
+
+            <h1 class="govuk-heading-l">
+A404 Dewsbury deadline 3 project information
+      </h1>
+      </div></div>
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list">
+                        <strong>Examiner’s questions 3</strong><br>
+      Examining Authority<br>
+                        <small class="govuk-body-s">Published 17 January 2022 </small>
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+        View&nbsp;document
+      </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list">
+                        <strong>Late scoping consultation responses</strong><br>
+      Acme Ltd<br>
+                        <small class="govuk-body-s">Published 17 January 2022 </small>
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+        View&nbsp;document
+      </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list">
+                        <strong>Scoping opinion adopted by the Secretary of State</strong><br>
+      Acme Ltd<br>
+                        <small class="govuk-body-s">Published 17 January 2022 </small>
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+        View&nbsp;document
+      </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list">
+                        <strong>The Applicant’s Scoping Report for A404 Dewsbury - Amesbury to Berwick Down. Submitted to the Secretary of State on 20 October 2021</strong><br>
+      Examining Authority<br>
+                        <small class="govuk-body-s">Published 17 January 2022 </small>
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+        View&nbsp;document
+      </a>
+                    </dd>
+                </div>
+
+            </dl>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ pinsFooter() }}
+{% endblock %}

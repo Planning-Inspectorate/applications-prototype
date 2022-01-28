@@ -1,0 +1,132 @@
+{% extends "layout.html" %} {% block pageTitle %} Start page example {% endblock
+%} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <a href="./review-and-submit" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-l">
+      Review the project information and make a submission
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Your details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="read-declaration-status">
+               Your personal or organisation details
+              </a>
+            </span>
+            <strong
+              class="govuk-tag govuk-tag--grey app-task-list__tag"
+              id="list-convictions-status"
+              >Not started</strong
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Make a
+          submission - this deadline
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="company-information-status">
+                Examiner’s questions 3
+              </a>
+            </span>
+            <strong
+              class="govuk-tag govuk-tag--grey app-task-list__tag"
+              id="list-convictions-status"
+              >Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="contact-details-status">
+                Late scoping consultation responses
+              </a>
+            </span>
+            <strong
+              class="govuk-tag govuk-tag--grey app-task-list__tag"
+              id="list-convictions-status"
+              >Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="list-convictions-status">
+                Scoping opinion adopted by the Secretary of State
+              </a>
+            </span>
+            <strong
+              class="govuk-tag govuk-tag--grey app-task-list__tag"
+              id="list-convictions-status"
+              >Not started</strong>
+          </li>
+          <li class="app-task-list__item" style="display:flex;">
+            <span class="app-task-list__task-name">
+              <a href="#">The Applicant’s Scoping Report for A404 Dewsbury - Amesbury to
+                Berwick Down. Submitted to the Secretary of State on 20 October
+                2021</a>
+            </span>
+            <strong
+                style="align-self: flex-start;" 
+              class="govuk-tag govuk-tag--grey app-task-list__tag govuk-!-margin-left-6"
+              id="financial-evidence-status"
+              >Not&nbsp;started</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Make a
+          submission - past deadlines
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#">All past deadline project information</a>
+            </span>
+            <strong
+              class="govuk-tag govuk-tag--grey app-task-list__tag"
+              id="submit-pay-status"
+              >Not started</strong
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Send submission
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Check your answers and submit
+            </span>
+            <strong
+              class="govuk-tag govuk-tag--grey app-task-list__tag"
+              id="submit-pay-status"
+              >Cannot start yet</strong
+            >
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

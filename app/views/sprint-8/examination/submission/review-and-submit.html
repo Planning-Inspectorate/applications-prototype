@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <a href="./start" class="govuk-back-link">Back</a>
+
+      <h1 class="govuk-heading-l">
+A404 Dewsbury deadline 3 project information
+      </h1>
+
+      <h2 class="govuk-heading-m">Review project information for this deadline</h2>
+      <p class="govuk-body">There are 4 documents in this deadline that you can make a submission about. You can also make a submission about something else.</p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="./current-deadline">Review the documents for this deadline</a>
+      </p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Review project information for past deadlines</h2>
+      <p class="govuk-body">You can review documents from past deadlines and see who else has made a submission about those documents.</p>
+      <p class="govuk-body">If you make a submission about documents at a past deadline, these may not be included in the examination of the project.</p>
+      <p class="govuk-body">
+        <a class="govuk-link" href="./previous-deadline">Review the documents for past deadlines</a>
+      </p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Make a submission</h2>
+      <p class="govuk-body">
+        <a class="govuk-link" href="./task-list">Make a submission</a>
+      </p>
+
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
