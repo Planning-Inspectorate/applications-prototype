@@ -80,6 +80,8 @@ var appViews = extensions.getAppViews([
   path.join(__dirname, '/lib/')
 ])
 
+app.use('/assets', express.static(path.join(__dirname, '/node_modules/govuk-frontend/govuk/assets')))
+
 var nunjucksConfig = {
   autoescape: true,
   noCache: true,
