@@ -50,22 +50,162 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
         <div class="govuk-grid-column-three-quarters">
           <h2 class="govuk-heading-m">Project application documents</h2>
-          <h3 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="search">
-                Search 
-            </label>
-          </h3>
-          <small id="search-hint" class="govuk-hint">
+           <button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>
+        <div id="expandingFilterSection" class="expandingFilterSection hidden govuk-!-margin-bottom-6">
+          <div class="govuk-form-group">
+            <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+                Search </label>
+            </h3>
+                 <small id="search-hint" class="govuk-hint">
           Search by document name, who submitted or reference number
             </small>
-          <div style="display: inline-flex; width: 100%;" class="govuk-!-margin-top-3">
-            <input class="govuk-input" id="search" name="search" type="text">
-            <div>
-              <a href="#" class="govuk-button" >
-                    Search
-              </a>
-            </div>
+            <input class="govuk-input govuk-!-margin-top-3" id="event-name" name="event-name" type="text">
           </div>
+
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Filter by theme
+              </h2>
+            </legend>
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-noise-traffic-air">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">Noise, traffic and air quality</label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Landscape and visual</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="heritage">
+                  <label class="govuk-label govuk-checkboxes__label" for="heritage">Heritage</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
+                  <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Local wildlife and habitats</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Filter by type of information
+              </h2>
+            </legend>
+
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+
+
+
+
+
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="environmental-statement">
+                  <label class="govuk-label govuk-checkboxes__label" for="environmental-statement">Environmental statement</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="adequacy-of-consultation-report">
+                  <label class="govuk-label govuk-checkboxes__label" for="adequacy-of-consultation-report">Adequacy of consultation report</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="procedural-decisions">
+                  <label class="govuk-label govuk-checkboxes__label" for="procedural-decisions">Procedural decisions</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="consultation-reports">
+                  <label class="govuk-label govuk-checkboxes__label" for="consultation-reports">Consultation reports</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="application-documents">
+                  <label class="govuk-label govuk-checkboxes__label" for="application-documents">Application documents</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="site-inspections">
+                  <label class="govuk-label govuk-checkboxes__label" for="site-inspections">Site inspections</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Stage of the project
+              </h2>
+            </legend>
+
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="pre-application">
+                  <label class="govuk-label govuk-checkboxes__label" for="pre-application">Pre-application</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="review-of-the-application">
+                  <label class="govuk-label govuk-checkboxes__label" for="review-of-the-application">Review of the application</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="pre-examination">
+                  <label class="govuk-label govuk-checkboxes__label" for="pre-examination">Pre-Examination</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                Application documents
+              </h2>
+            </legend>
+
+
+
+            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
+              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="application-form">
+                  <label class="govuk-label govuk-checkboxes__label" for="application-form">Application form</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="plans-and-drawings">
+                  <label class="govuk-label govuk-checkboxes__label" for="plans-and-drawings">Plans and drawings</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="consultation-reports">
+                  <label class="govuk-label govuk-checkboxes__label" for="consultation-reports">Consultation reports</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="environmental-statement">
+                  <label class="govuk-label govuk-checkboxes__label" for="environmental-statement">Environmental Statement</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="compulsory-purchase">
+                  <label class="govuk-label govuk-checkboxes__label" for="compulsory-purchase">Compulsory purchase</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="draft-development">
+                  <label class="govuk-label govuk-checkboxes__label" for="draft-development">Draft Development</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="consent-order">
+                  <label class="govuk-label govuk-checkboxes__label" for="consent-order">Consent Order</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="other-documents">
+                  <label class="govuk-label govuk-checkboxes__label" for="other-documents">Other documents</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <a href="#" id="closeFilters" class="govuk-button">Apply filters</a>
+        </div>
+         
           <div class="govuk-grid-row ">
             <div class="govuk-grid-column-one-half">
               <p class="results">
