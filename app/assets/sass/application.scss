@@ -62,6 +62,7 @@ $pins-timeline-circle-size: 50px;
 
   &.govuk-main-wrapper {
     padding-top: 0;
+    
   }
 
   .pins-pane-width {
@@ -74,7 +75,26 @@ $pins-timeline-circle-size: 50px;
   //     flex: 0 0 260px;
   // }
 }
+@media (min-width: 1020px) {
+  .govuk-width-container {
+    max-width: none;
+    margin-right: 30px !important;
+    margin-left: 30px !important;
+    // width: 100%;
+    // gap: 30px;
+  }
+}
 
+.govuk-accordion__section-heading-text{
+  font-size: 1.1em;
+  margin-bottom: 6px !important;
+}
+.govuk-accordion__section-toggle-text{
+  font-size: .8em;
+}
+.govuk-accordion__show-all{
+  display: none;
+}
 .pins-aside-page-contents {
   @media screen and (min-width: 1750px) {
     position: absolute;

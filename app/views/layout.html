@@ -49,13 +49,11 @@
   {{ pinsHeader({
     homepageUrl: "/",
     serviceName: "",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    serviceUrl: "/"
   }) }}
 {% endblock %}
 
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 {% if useAutoStoreData %}
   {% block footer %}
     {{ govukFooter({

@@ -1,0 +1,188 @@
+
+<h2 class="govuk-heading-m">Filter by</h2>
+
+<button class="govuk-button">Apply filters</button>
+<h3 class="govuk-label-wrapper">
+  <label
+    class="govuk-label govuk-label--s govuk-!-margin-bottom-0"
+    for="search"
+  >
+    Keyword
+  </label>
+</h3>
+<small id="search-hint" class="govuk-hint" style="font-size: 1em !important;"
+>
+  Filter by document name, who submitted or reference number
+</small>
+<div class="govuk-!-margin-top-3">
+  <input class="govuk-input" id="search" name="search" type="text" />
+</div>
+
+<h3 class="govuk-heading-s govuk-!-margin-top-6">Type of document</h3>
+<div
+  class="govuk-accordion"
+  data-module="govuk-accordion"
+  id="accordion-default"
+>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span
+          class="govuk-accordion__section-button"
+          id="accordion-default-heading-1"
+        >
+          Pre-examination
+        </span>
+      </h2>
+    </div>
+    <div
+      id="accordion-default-content-1"
+      class="govuk-accordion__section-content"
+      aria-labelledby="accordion-default-heading-1"
+    >
+      {{ govukRadios({ classes: "govuk-radios--small", idPrefix: "changed-name",
+      name: "changed-name", items: [ 
+{ 
+    value: "All Pre-examination documents",
+    text: "All Pre-examination documents" 
+}, 
+{ 
+    value: "Appointment of Examining Authority",
+    text: "Appointment of Examining Authority" 
+}, 
+{ 
+    value: "Certificates and Notices",
+    text: "Certificates and Notices" 
+}, 
+{ 
+    value: "Preliminary Meeting Note",
+    text: "Preliminary Meeting Note" 
+}, 
+{ 
+    value: "Preliminary Meeting Part 1",
+    text: "Preliminary Meeting Part 1"
+}, {
+    value: "Procedural Deadline A",
+    text: "Procedural Deadline A"
+}, {
+    value: "Procedural Deadline B",
+    text: "Procedural Deadline B"
+}, {
+    value: "Procedural Decisions",
+    text: "Procedural Decisions" 
+}, 
+{ 
+    value: "Unaccompanied Site Inspection",
+    text: "Unaccompanied Site Inspection" 
+}]
+      }) }}
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span
+          class="govuk-accordion__section-button"
+          id="accordion-default-heading-2"
+        >
+          Review of the application
+        </span>
+      </h2>
+    </div>
+    <div
+      id="accordion-default-content-2"
+      class="govuk-accordion__section-content"
+      aria-labelledby="accordion-default-heading-2"
+    >
+      {{ govukRadios({ classes: "govuk-radios--small", idPrefix: "changed-name",
+      name: "changed-name", items: [ 
+          { 
+value: "All Developer's application documents",
+text: "All Developer's application documents"
+}, 
+          { 
+value: "All Review of the application documents",
+text: "All Review of the application documents"
+}, 
+          { 
+value: "Acceptance Letter",
+text: "Acceptance Letter"
+}, 
+      { 
+value: "Adequacy of Consultation",
+text:"Adequacy of Consultation"
+}, 
+      { 
+value: "Application Form",
+text: "Application Form"
+}, 
+      { 
+value: "Compulsory Acquisition Information",
+text: "Compulsory Acquisition Information"
+}, 
+      { 
+value: "Draft Development Consent Orders",
+text: "Draft Development Consent Orders" 
+}, 
+{ 
+value: "Environmental Statement",
+text: "Environmental Statement" 
+}, 
+{ 
+value: "Other Documents",
+text: "Other Documents"
+}, 
+{ 
+value: "Other Documents from the Developers Application",
+text: "Other Documents from the Developers Application"
+}, 
+{ 
+    value: "Plans",
+    text: "Plans" 
+}, 
+{ 
+    value: "Procedural Decisions",
+    text: "Procedural Decisions" 
+}, 
+{ 
+value: "Reports",
+text: "Reports" } ] }) }}
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span
+          class="govuk-accordion__section-button"
+          id="accordion-default-heading-3"
+        >
+          Pre-application
+        </span>
+      </h2>
+    </div>
+    <div
+      id="accordion-default-content-3"
+      class="govuk-accordion__section-content"
+      aria-labelledby="accordion-default-heading-3"
+    >
+      {{ govukRadios({ classes: "govuk-radios--small", idPrefix: "changed-name",
+      name: "changed-name", items: [ 
+        { 
+            value: "All Pre-application documents",
+            text: "All Pre-application documents" 
+        }, 
+          { 
+value: "Environmental Impact AssessmentScoping",
+text: "Environmental Impact Assessment Scoping" 
+}, 
+{ 
+value: "Environmental Impact Assessment Scoping",
+text: "Environmental Impact Assessment Scoping"
+}, 
+      { 
+    value: "Notice of proposed application (s46)",
+    text: "Notice of proposed application (s46)" 
+} ] }) }}
+    </div>
+  </div>
+</div>
