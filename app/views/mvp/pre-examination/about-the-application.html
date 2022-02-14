@@ -36,8 +36,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
 {% block content %}
 
-  <div class="">
-    <main class="">
+  <div>
+    <main>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
           <a href="../timetable-published-email" class="govuk-back-link">Back</a>
@@ -49,19 +49,16 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           {% set current = 'about-the-application' %}
           {% include "../includes/vertical_tabs.html" %}
         </div>
-      <div class="govuk-grid-row">
-
-        <div class="govuk-grid-column-full" >
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-1">Project application documents</h1>
-              <p class="results">
+        <div class="govuk-grid-row govuk-!-margin-left-3" style="max-width: calc(100% - 175px)">
+          <div class="govuk-grid-column-full" >
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Project application documents</h1>
+            <p class="results">
                 Showing  <strong>1</strong> to <strong>20</strong> of <strong>313</strong> documents
               </p>
-                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      </div>
-            <div class="govuk-grid-row">
-
-        <div class="govuk-grid-column-two-thirds" >
-
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </div>
+          <div class="govuk-grid-row govuk-!-padding-left-6  govuk-!-padding-right-6">
+            <div class="govuk-grid-column" >
               <div class="govuk-grid-row  govuk-!-padding-left-3">
                 <div class="govuk-grid-column-two-thirds">
                   <div class="govuk-grid-row">
@@ -204,8 +201,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                           </dl>
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                    </ul>
-                   </div>
+                      </ul>
+                    </div>
                   </div>
                   <div class="govuk-grid-row govuk-!-margin-top-7">
                     <div class="govuk-grid-column">
@@ -243,8 +240,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                           </dl>
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                    </ul>
-                   </div>
+                      </ul>
+                    </div>
                   </div>
                   <div class="govuk-grid-row govuk-!-margin-top-9">
                     <div class="govuk-grid-column">
@@ -591,11 +588,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                     </div>
                   </div>
                 </div>
-            </div>
                 <div class="govuk-grid-column-one-third">
                   {% include "../includes/filters.html" %}
                 </div>
-          </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
@@ -603,4 +600,3 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     {% block footer %}
       {{ pinsFooter() }}
     {% endblock %}
-

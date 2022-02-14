@@ -75,8 +75,9 @@ $pins-timeline-circle-size: 50px;
   //     flex: 0 0 260px;
   // }
 }
+
 @media (min-width: 1020px) {
-  .govuk-width-container {
+  .full-bleed {
     max-width: none;
     margin-right: 30px !important;
     margin-left: 30px !important;
