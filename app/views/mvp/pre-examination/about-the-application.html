@@ -62,35 +62,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             <input class="govuk-input govuk-!-margin-top-3" id="event-name" name="event-name" type="text">
           </div>
 
-          <div class="govuk-form-group">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
-                Filter by theme
-              </h2>
-            </legend>
-            <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
-              <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-noise-traffic-air">
-                  <label class="govuk-label govuk-checkboxes__label" for="theme-noise-traffic-air">Noise, traffic and air quality</label>
-                </div>
 
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-landscape-visual">
-                  <label class="govuk-label govuk-checkboxes__label" for="theme-landscape-visual">Landscape and visual</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="heritage">
-                  <label class="govuk-label govuk-checkboxes__label" for="heritage">Heritage</label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="theme-wildlife-habitats">
-                  <label class="govuk-label govuk-checkboxes__label" for="theme-wildlife-habitats">Local wildlife and habitats</label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
           <div class="govuk-form-group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
@@ -167,6 +139,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
             <fieldset class="govuk-fieldset" aria-labelledby="who-submitted">
               <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+           
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="application-form">
+                  <label class="govuk-label govuk-checkboxes__label" for="application-form">All application documents</label>
+                </div>
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" type="checkbox" name="theme" id="application-form">
                   <label class="govuk-label govuk-checkboxes__label" for="application-form">Application form</label>
@@ -218,7 +195,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
               <h2 class="govuk-heading-m">Pre-application documents</h2>
               <div class="pins-search-results-group">
-                <h3 class="pins-search-results-group-heading">Grouping determined by case team</h3>
+                <h3 class="pins-search-results-group-heading">Environmental impact assessment scoping</h3>
                 <div class="pins-search-results-group-items">
                   <ul class="govuk-list">
                     <li>
@@ -246,7 +223,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                 </div>
               </div>
               <div class="pins-search-results-group">
-                <h3 class="pins-search-results-group-heading">Grouping determined by case team</h3>
+                <h3 class="pins-search-results-group-heading">Notice of proposed application</h3>
                 <div class="pins-search-results-group-items">
                   <ul class="govuk-list">
                     <li>
@@ -282,7 +259,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                 </div>
               </div>
               <div class="pins-search-results-group">
-                <h3 class="pins-search-results-group-heading">Grouping determined by case team</h3>
+                <h3 class="pins-search-results-group-heading">Land rights (S53)</h3>
                 <div class="pins-search-results-group-items">
                   <ul class="govuk-list">
                     <li>
@@ -297,7 +274,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               </div>
               <h2 class="govuk-heading-m">Review of the application documents</h2>
               <div class="pins-search-results-group">
-                <h3 class="pins-search-results-group-heading">Grouping determined by case team</h3>
+                <h3 class="pins-search-results-group-heading">Acceptance letter</h3>
                 <div class="pins-search-results-group-items">
                   <ul class="govuk-list">
                     <li>
@@ -305,7 +282,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         <strong>Notification of Decision to Accept Application</strong>
                       </a>
                       <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
+                      <small class="govuk-body-s">Rep - 009</small>
                     </li>
                   </ul>
                 </div>
@@ -313,78 +290,50 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               
               <h2 class="govuk-heading-m">Pre-examination documents</h2>
               <div class="pins-search-results-group">
-                <h3 class="pins-search-results-group-heading">Grouping determined by case team</h3>
+                <h3 class="pins-search-results-group-heading">Appointment of Examining Authority</h3>
                 <div class="pins-search-results-group-items">
                   <ul class="govuk-list">
                     <li>
                       <a class="govuk-body govuk-link" href="#">
-                        <strong>Cotswold District Council - Adequacy of Consultation Representation</strong>
+                        <strong>Notice of appointment of the Examining Authority</strong>
                       </a>
-                      <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
+                      <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Planning Inspectorate - published 17 January 2022</p>
+                      <small class="govuk-body-s">Rep - 010</small>
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="pins-search-results-group">
-                <h3 class="pins-search-results-group-heading">Grouping determined by case team</h3>
+                <h3 class="pins-search-results-group-heading">Certificates and Notices</h3>
                 <div class="pins-search-results-group-items">
                   <ul class="govuk-list">
                     <li>
                       <a class="govuk-body govuk-link" href="#">
-                        <strong>Dorset County Council - Adequacy of Consultation Representation</strong>
+                        <strong>Applicant’s S56 notice of accepted application</strong>
                       </a>
                       <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
+                      <small class="govuk-body-s">Rep - 011</small>
                     </li>
                     <li>
                       <a class="govuk-body govuk-link" href="#">
-                        <strong>Gloucestershire County Council - Adequacy of Consultation Representation</strong>
+                        <strong>Certificate of Compliance with Regulation 16 Notice</strong>
                       </a>
                       <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
+                      <small class="govuk-body-s">Rep - 012</small>
                     </li>
                     <li>
                       <a class="govuk-body govuk-link" href="#">
-                        <strong>Hampshire County Council - Adequacy of Consultation Representation</strong>
+                        <strong>Certificate of Compliance with Section 59 of the Planning Act 2008</strong>
                       </a>
                       <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
+                      <small class="govuk-body-s">Rep - 013</small>
                     </li>
                     <li>
                       <a class="govuk-body govuk-link" href="#">
-                        <strong>Somerset County Council - Adequacy of Consultation Representation</strong>
+                        <strong>Certificate of compliance with section 56 of the Planning Act 2008</strong>
                       </a>
                       <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
-                    </li>
-                    <li>
-                      <a class="govuk-body govuk-link" href="#">
-                        <strong>South Gloucestershire Council - Adequacy of Consultation Representation</strong>
-                      </a>
-                      <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
-                    </li>
-                    <li>
-                      <a class="govuk-body govuk-link" href="#">
-                        <strong>South Oxfordshire and Vale of White Horse District Councils - Adequacy of Consultation Representation</strong>
-                      </a>
-                      <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
-                    </li>
-                    <li>
-                      <a class="govuk-body govuk-link" href="#">
-                        <strong>West Berkshire District Council - Adequacy of Consultation Representation</strong>
-                      </a>
-                      <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
-                    </li>
-                    <li>
-                      <a class="govuk-body govuk-link" href="#">
-                        <strong>Wiltshire Council - Adequacy of Consultation Representation</strong>
-                      </a>
-                      <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Acme Ltd - published 17 January 2022</p>
-                      <small class="govuk-body-s">Rep - 001</small>
+                      <small class="govuk-body-s">Rep - 014</small>
                     </li>
                   </ul>
                 </div>
