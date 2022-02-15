@@ -72,6 +72,7 @@ $pins-timeline-circle-size: 50px;
   //     flex: 0 0 260px;
   // }
 }
+// mobile styles 
 @media (max-width: 800px) {
   .filter-desktop {
     display: none;
@@ -91,12 +92,17 @@ $pins-timeline-circle-size: 50px;
   }
 
 }
-
+// tablet plus
 @media (min-width: 800px) {
+  .project-section {
+    background: #e4f5f4; 
+    margin: 0 -30px
+  }
   .full-bleed {
     max-width: 1440px;
-    margin: 0 60px;
+    margin: 0 30px;
   }
+
   .filter-mobile {
     display: none;
   }
@@ -113,7 +119,18 @@ $pins-timeline-circle-size: 50px;
     min-width: 175px;
   }
 }
+// small desktops
+@media (min-width: 1020px) {
+  .full-bleed {
+    margin: 0 60px;
+  }
+  .project-section {
+    background: #e4f5f4; 
+    margin: 0 -60px
+  }
+}
 
+// large desktops
 @media (min-width: 1440px) {
   .full-bleed {
     max-width: 1440px;

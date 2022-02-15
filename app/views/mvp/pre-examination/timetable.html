@@ -1,4 +1,5 @@
 {% set containerClasses = containerClasses | default("full-bleed") %}
+{% set mainClasses = mainClasses | default("govuk-!-padding-top-0") %}
 
 {% extends "layout.html" %}
 {% block pageTitle %} A404 Dewsbury project overview
@@ -31,19 +32,24 @@
   {{ pinsHeader() }}
 {% endblock %}
 {% block beforeContent %}
-  {{
-govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
-<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+      <div class="project-section">    
+        <div class="full-bleed">
+          {{ govukPhaseBanner({ 
+              tag: { 
+                text: "beta" 
+              }, 
+              html: 'This is a new service – your <a class="govuk-link " href="#">feedback</a> will help us to improve it.' 
+            }) 
+          }}
+          <p class="govuk-heading-xl govuk-!-padding-top-9 govuk-!-padding-bottom-9" >A404 Dewsbury</p>
+        </div>
+      </div>
 {% endblock %}
 {% block content %}
 
   <div >
     <main >
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-          <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
-        </div>
-      </div>
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'timetable' %}
