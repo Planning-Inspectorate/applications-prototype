@@ -3,12 +3,10 @@ $govuk-global-styles: true;
 $govuk-new-link-styles: true;
 
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
-$govuk-assets-path: '/govuk/assets/';
+$govuk-assets-path: "/govuk/assets/";
 
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
-
-
 
 // PINS specific colours
 $pins-blue: #1d70b8;
@@ -62,7 +60,6 @@ $pins-timeline-circle-size: 50px;
 
   &.govuk-main-wrapper {
     padding-top: 0;
-    
   }
 
   .pins-pane-width {
@@ -75,25 +72,63 @@ $pins-timeline-circle-size: 50px;
   //     flex: 0 0 260px;
   // }
 }
+@media (max-width: 800px) {
+  .filter-desktop {
+    display: none;
+  }
+  .filter-mobile {
+    display: block;
+  }
+  .full-bleed-flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .side-nav{
+    max-width: 100%;
+    margin-bottom: 3em;
+  }
 
-@media (min-width: 1020px) {
+}
+
+@media (min-width: 800px) {
   .full-bleed {
-    max-width: none;
-    margin-right: 30px !important;
-    margin-left: 30px !important;
-    // width: 100%;
-    // gap: 30px;
+    max-width: 1440px;
+    margin: 0 30px;
+  }
+  .filter-mobile {
+    display: none;
+  }
+  .filter-desktop {
+    display: block;
+  }
+  .full-bleed-flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .side-nav{
+    min-width: 175px;
   }
 }
 
-.govuk-accordion__section-heading-text{
+@media (min-width: 1440px) {
+  .full-bleed {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.govuk-accordion__section-heading-text {
   font-size: 1.1em;
   margin-bottom: 6px !important;
 }
-.govuk-accordion__section-toggle-text{
-  font-size: .8em;
+.govuk-accordion__section-toggle-text {
+  font-size: 0.8em;
 }
-.govuk-accordion__show-all{
+.govuk-accordion__show-all {
   display: none;
 }
 .pins-aside-page-contents {
@@ -665,7 +700,7 @@ h2.govuk-accordion__section-heading {
 
     &:hover {
       text-decoration: none;
-    } 
+    }
 
     .ons-btn__inner {
       background: transparent;
@@ -685,7 +720,7 @@ h2.govuk-accordion__section-heading {
       margin-top: -3px;
       vertical-align: middle;
       width: 18px;
-      margin-left: 0.5rem!important;
+      margin-left: 0.5rem !important;
     }
   }
 }

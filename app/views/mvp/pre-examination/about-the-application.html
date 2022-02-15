@@ -1,3 +1,5 @@
+{% set containerClasses = containerClasses | default("full-bleed") %}
+
 {% extends "layout.html" %}
 {% block pageTitle %} A404 Dewsbury project overview
 {% endblock %}
@@ -31,7 +33,7 @@
 {% block beforeContent %}
   {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
-<a class="govuk-link govuk-!-font-weight-bold" href="#">feedback</a> will help us to improve it.' }) }}
+<a class="govuk-link " href="#">feedback</a> will help us to improve it.' }) }}
 {% endblock %}
 
 {% block content %}
@@ -44,30 +46,40 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <p class="govuk-heading-m">A404 Dewsbury</p>
         </div>
       </div>
-      <div style="width: 100%; display:flex; justify:space-between;" class="">
-        <div class="" style="min-width:175px; ">
+      <div class="full-bleed-flex-container">
+        <div class="side-nav">
           {% set current = 'about-the-application' %}
           {% include "../includes/vertical_tabs.html" %}
         </div>
-        <div class="govuk-grid-row govuk-!-margin-left-3" style="max-width: calc(100% - 175px)">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-margin-right-0">
           <div class="govuk-grid-column-full" >
             <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Project application documents</h1>
             <p class="results">
                 Showing  <strong>1</strong> to <strong>20</strong> of <strong>313</strong> documents
               </p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <div class=" filter-mobile">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text govuk-!-font-size-27 govuk-!-font-weight-bold">
+                    Filter documents
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  {% include "../includes/filters.html" %}
+                </div>
+              </details>
+            </div>
+            </div>
           </div>
-          <div class="govuk-grid-row govuk-!-padding-left-6  govuk-!-padding-right-6">
-            <div class="govuk-grid-column" >
-              <div class="govuk-grid-row  govuk-!-padding-left-3">
+              <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-margin-right-0">
                 <div class="govuk-grid-column-two-thirds">
-                  <div class="govuk-grid-row">
-                    <div class="govuk-grid-column" >
                       <h2 class="govuk-heading-m">Pre-examination </h2>
                       <h3 class="govuk-heading-s">Additional Submissions</h3>
                       <ul class="govuk-list">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002116-SEF_2.1_Land%20and%20Crown%20Land%20Plans_Rev%201.pdf">
+                          <a class="govuk-link " target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002116-SEF_2.1_Land%20and%20Crown%20Land%20Plans_Rev%201.pdf">
                             Applicant’s response to s51 advice - 2.1 Land and Crown Plans - Rev 1 - Pending formal acceptance by the Examining Authority once appointed
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -99,7 +111,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002117-SEF_2.2_Works%20Plans_Rev%201.pdf">
+                          <a class="govuk-link " target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002117-SEF_2.2_Works%20Plans_Rev%201.pdf">
                             Applicant’s response to s51 advice - 2.2 Works Plans - Rev 1 - Pending formal acceptance by the Examining Authority once appointed
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -131,7 +143,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002122-SEF_ES_6.2_Appendix_9C_Flood%20Risk%20Assessment_Rev%201_Part%202.pdf">
+                          <a class="govuk-link " target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002122-SEF_ES_6.2_Appendix_9C_Flood%20Risk%20Assessment_Rev%201_Part%202.pdf">
                             Applicant’s response to s51 advice - 6.2 Appendix 9C - Flood Risk Assessment - Part 2 - Rev 1 -Pending formal acceptance by the Examining Authority once appointed
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -163,14 +175,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-grid-row govuk-!-margin-top-7">
-                    <div class="govuk-grid-column">
+
                       <h3 class="govuk-heading-s ">Certificates and Notices</h3>
                       <ul class="govuk-list">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002130-Sunnica%20Energy%20Farm_S56%20Notice%20-%20Reg%209%20FINAL.pdf">
+                          <a class="govuk-link " target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002130-Sunnica%20Energy%20Farm_S56%20Notice%20-%20Reg%209%20FINAL.pdf">
                             Section 56 Notice
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -202,14 +211,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-grid-row govuk-!-margin-top-7">
-                    <div class="govuk-grid-column">
+
                       <h3 class="govuk-heading-s ">Examination Library</h3>
                       <ul class="govuk-list">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002090-Sunnica%20Energy%20Farm%20Examination%20Library.pdf">
+                          <a class="govuk-link " target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002090-Sunnica%20Energy%20Farm%20Examination%20Library.pdf">
                             Examination library
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -241,15 +247,12 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-grid-row govuk-!-margin-top-9">
-                    <div class="govuk-grid-column">
+
                       <h2 class="govuk-heading-m">Review of the application </h2>
                       <h3 class="govuk-heading-s">Acceptance letter</h3>
                       <ul class="govuk-list">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Notification of Decision to Accept Application
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -281,15 +284,12 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-grid-row govuk-!-margin-top-9">
-                    <div class="govuk-grid-column">
+
                       <h2 class="govuk-heading-m">Pre-application </h2>
                       <h3 class="govuk-heading-s">Environmental Impact Assessment Scoping</h3>
                       <ul class="govuk-list">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Cotswold District Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -321,14 +321,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </ul>
-                    </div>
-                  </div>
-                  <div class="govuk-grid-row govuk-!-margin-top-7">
-                    <div class="govuk-grid-column">
+
                       <h3 class="govuk-heading-s">Notice of proposed application (s46)</h3>
                       <ul class="govuk-list">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Dorset County Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -360,7 +357,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Gloucestershire County Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -392,7 +389,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Hampshire County Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -424,7 +421,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Somerset County Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -456,7 +453,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             South Gloucestershire Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -488,7 +485,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             South Oxfordshire and Vale of White Horse District Councils - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -520,7 +517,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             West Berkshire District Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -552,7 +549,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         </li>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                         <li>
-                          <a class="govuk-link govuk-!-font-weight-bold" href="#">
+                          <a class="govuk-link " href="#">
                             Wiltshire Council - Adequacy of Consultation Representation
                           </a>
                           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-2">
@@ -585,14 +582,12 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                       </ul>
                       {% include "../../includes/pagination.html"%}
-                    </div>
-                  </div>
                 </div>
-                <div class="govuk-grid-column-one-third">
+                <div style="min-width:175px;" class="govuk-grid-column-one-third filter-desktop">
                   {% include "../includes/filters.html" %}
                 </div>
               </div>
-            </div>
+
           </div>
         </main>
       </div>
