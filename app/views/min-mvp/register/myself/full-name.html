@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your full name - Register to have your say
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceUrl: "/mvp/pre-examination/register/start",
+saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="over-18" method="post">
+        {{ govukInput({
+          label: {
+            text: "What is your full name?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            html: "<p class='govuk-hint'>We will publish your name on the website along with your comments about the project.</p>
+            <p class='govuk-hint'>You must register as an individual. If your partner wants to register, they will have to fill in a separate form with their details.</p>"
+          },
+          id: "full-name",
+          name: "full-name",
+          spellcheck: false
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
