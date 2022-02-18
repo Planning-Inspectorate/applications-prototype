@@ -1,7 +1,11 @@
 {% extends "layout.html" %} {% block pageTitle %} Example email {% endblock %}
 {% block header %}
 <!-- Blank header with no service name for the start page -->
-{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+  {{ pinsHeader({
+    containerClasses: "full-bleed"
+  }) }}
+  
+   {% endblock %} {% block beforeContent %} {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 <a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
 {% endblock %} 
