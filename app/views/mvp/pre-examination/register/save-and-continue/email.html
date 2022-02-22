@@ -31,10 +31,13 @@ saveAndExit: false
       <form autocomplete="off" class="form" action="check-your-email" method="post">
         {{ govukInput({
           label: {
-            text: "What is your email address?",
+            text: "What is the email address you used to save your registration?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
+            hint: {
+              text: "This is the email address where we sent the link to return to your saved registration."
+            },
           id: "email",
           name: "email"
         }) }}
