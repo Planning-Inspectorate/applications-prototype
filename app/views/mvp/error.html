@@ -5,6 +5,39 @@
 {% endblock %}
 
 {% block header %}
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on [name of service]",
+  messages: [
+    {
+      headingText: "Cookies on [name of service]",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button",
+          name: "cookies",
+          value: "accept"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button",
+          name: "cookies",
+          value: "reject"
+        },
+        {
+          text: "View cookies",
+          href: "#"
+        }
+      ]
+    }
+  ]
+}) }}
+
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
     serviceName: "Register to have your say about a national infrastructure project", 
@@ -29,17 +62,17 @@ saveAndExit: false
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#email">Enter an email address in the correct format, like name@example.com</a>
-      </li>
-    </ul>
-  </div>
-</div>
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#email">Enter an email address in the correct format, like name@example.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <form autocomplete="off" class="form" action="telephone" method="post">
         {{ govukInput({
           label: {
