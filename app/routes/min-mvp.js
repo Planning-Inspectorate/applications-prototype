@@ -23,4 +23,35 @@ module.exports = function (router) {
       res.redirect("myself/full-name");
     }
   });
+
+
+  // routes for the type of party /register flow
+  router.post(
+    "/min-mvp/register/on-behalf/representing-for",
+    function (req, res) {
+      // get the type of interested party
+      var representingFor = req.session.data["minMvpRepresentingFor"];
+
+      // if an individual, show individual flow
+      if (representingFor == "A family group") {
+        res.redirect("representee-family-name");
+
+        // if an organisation, show organisation flow
+      } else if (
+        representingFor == "An organisation or charity I do not work for"
+      ) {
+        res.redirect("representee-org-name");
+
+        // if behalf, show behalf flow
+      } else if (representingFor == "A person") {
+        res.redirect("representee-full-name");
+
+        // otherwise, show myself flow
+      } else{
+        res.redirect("representing-for");
+      }
+
+    }
+  );
 };
+

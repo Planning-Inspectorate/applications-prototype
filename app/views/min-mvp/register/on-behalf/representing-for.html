@@ -28,13 +28,12 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="representee-name" method="post">
+      <form autocomplete="off" class="form" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-            idPrefix: "sprint6RepresentingFor",
-            name: "sprint6RepresentingFor",
+            idPrefix: "minMvpRepresentingFor",
+            name: "minMvpRepresentingFor",
             fieldset: {
               legend: {
                 text: "Who are you representing?",
