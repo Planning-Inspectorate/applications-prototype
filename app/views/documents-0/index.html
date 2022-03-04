@@ -1,0 +1,138 @@
+{% extends "layout.html" %} {% block pageTitle %} A404 Dewsbury project overview
+{% endblock %} {% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %} {% block head %}
+<!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+<!-- end Mapbox -->
+{% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }} {% endblock %} {% block beforeContent %} {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %} {% block content %}
+
+{# create filters for stages #}
+{% set stages = ['All stages'] %}
+{% for document in documents %}
+  {% set stages = (stages.push(document.stage), stages) | unique %}
+{% endfor %}
+
+{# create filters for submittedBy #}
+{% set allPublishers = ['Anyone'] %}
+{% for document in documents %}
+  {% set allPublishers = (allPublishers.push(document.title), allPublishers) | unique %}
+{% endfor %}
+
+{# create filters for types #}
+{% set allTypes = ['All types'] %}
+{% for document in documents %}
+  {% set allTypes = (allTypes.push(document.type), allTypes) | unique %}
+{% endfor %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+  Group by (doesn't work)
+  </h3>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          stage
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          type of document
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+  Filter by
+  </h3>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="keyword">
+      Keywords
+    </label>
+    <input class="govuk-input" id="keyword" name="keyword" type="text">
+</div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="stages">
+        Stage
+      </label>
+      <select class="govuk-select" id="stages" name="stages">
+        {% for stage in stages %}
+          <option value="{{stage}}">{{stage}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="submittedBy">
+        Submitted by
+      </label>
+      <select class="govuk-select" id="submittedBy" name="submittedBy">
+        {% for publisher in allPublishers %}
+          <option value="{{publisher}}">{{publisher}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="type">
+        Type of document
+      </label>
+      <select class="govuk-select" id="type" name="type">
+        {% for type in allTypes %}
+          <option value="{{type}}">{{type}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="govuk-grid-column-two-thirds" id="documents">
+    {% for document in documents %}
+      <article data-stage="{{document.stage}}" data-submittedBy="{{document.title}}" data-type="{{document.type}}">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="{{ document.url }}" target="_blank">
+            {{ document.description }}
+            {% if not document.description %}
+              {{ document.title }}
+            {% endif %}
+          </a>
+        </h3>
+        <ul class="govuk-list">
+          {% if document.description %}
+            <li class="govuk-body-s">Submitted by {{ document.title }}</li>
+          {% endif %}
+
+          <li class="govuk-body-s">Published on {{ document.publishedDate }}</li>
+          <li class="govuk-body-s">Reference number REF 00{{loop.index}}</li>
+        </ul>
+        <hr class="
+              govuk-section-break
+              govuk-section-break--l
+              govuk-section-break--visible
+            " />
+      </article>  
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}

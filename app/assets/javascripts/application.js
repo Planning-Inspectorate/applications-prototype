@@ -28,4 +28,41 @@ $(document).ready(function () {
     $("#expandingFilterSection").toggle();
   })
 
+  $('#stages').on('change', function(){
+    let selectedStage = $('#stages').find(":selected").text()
+    if(selectedStage == "All stages"){
+      $("article").show();
+    } else {
+      $("article[data-stage='" + selectedStage + "']").show();
+      $("article:not([data-stage='" + selectedStage + "'])").hide();
+    }
+  })
+ 
+  $('#submittedBy').on('change', function(){
+    let selectedSubmittedBy = $('#submittedBy').find(":selected").text()
+    if(selectedSubmittedBy == "Anyone"){
+      $("article").show();
+    } else {
+      $("article[data-submittedBy='" + selectedSubmittedBy + "']").show();
+      $("article:not([data-submittedBy='" + selectedSubmittedBy + "'])").hide();
+    }
+  })
+
+  $('#type').on('change', function(){
+    let selectedTypes = $('#type').find(":selected").text()
+    if(selectedTypes == "All types"){
+      $("article").show();
+    } else {
+      $("article[data-type='" + selectedTypes + "']").show();
+      $("article:not([data-type='" + selectedTypes + "'])").hide();
+    }
+  })
+
+  $("#keyword").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#documents article").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+
 })
