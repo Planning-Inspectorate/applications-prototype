@@ -41,6 +41,13 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   {% set allTypes = (allTypes.push(document.type), allTypes) | unique %}
 {% endfor %}
 
+{# create filters for types #}
+{% set byType = [''] %}
+{% for document in documents %}
+  {% set allTypes = (allTypes.push(document.type), allTypes) | unique %}
+  {% if document.type %}}
+{% endfor %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
