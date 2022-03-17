@@ -52,9 +52,13 @@ $(document).ready(function () {
     let selectedTypes = $('#type').find(":selected").text()
     if(selectedTypes == "All types"){
       $("article").show();
+      $(".category").show();
     } else {
+      $(".category[data-type='" + selectedTypes + "']").show();
       $("article[data-type='" + selectedTypes + "']").show();
+
       $("article:not([data-type='" + selectedTypes + "'])").hide();
+      $(".category:not([data-type='" + selectedTypes + "'])").hide();
     }
   })
 
@@ -63,6 +67,15 @@ $(document).ready(function () {
     $("#documents article").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
+  });
+
+  $(document).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 800) {
+      $('.app-back-to-top').addClass("app-back-to-top--fixed");
+    } else {
+      $('.app-back-to-top').removeClass("app-back-to-top--fixed");
+    }
   });
 
 })

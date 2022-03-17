@@ -39,6 +39,13 @@ module.exports = function (env) {
   ------------------------------------------------------------------ */
 
   env.addFilter('unique', arr => arr instanceof Array && arr.filter((e, i, arr) => arr.indexOf(e) == i) || arr);
+  
+  filters.groupBy = function(xs, key){
+    return xs.reduce(function(rv, x) {
+      (rv[x[key]] = rv[x[key]] || []).push(x);
+      return rv;
+    }, {});
+  }
 
 
 

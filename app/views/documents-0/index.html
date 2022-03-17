@@ -42,15 +42,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 {% endfor %}
 
 {# create groups for types #}
-{% set byType = [''] %}
-{% for document in documents %}
-  {% set allTypes = (allTypes.push(document.type), allTypes) | unique %}
-  
-{% endfor %}
-
+{% set byType = documents | groupBy('type') %}
+{% set byStage = documents | groupBy('stage') %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-third side-filter">
     <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
   Group by (doesn't work)
   </h3>
@@ -113,7 +109,40 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       </select>
     </div>
   </div>
+
   <div class="govuk-grid-column-two-thirds" id="documents">
+
+  {% for type in allTypes%}
+    {%if loop.index0 >= 1 %}
+      <p class="category govuk-body-l govuk-!-font-weight-bold" data-type="{{type}}">{{ type }}</p>
+    {% endif %}
+    {% for document in byType[type] %}
+      <article class="{% if loop.index0 >= byType.length %}govuk-!-margin-bottom-9{% endif %}" data-stage="{{document.stage}}" data-submittedBy="{{document.title}}" data-type="{{document.type}}">
+          <a href="{{ document.url }}" target="_blank">
+            <strong>{{ document.description }}
+            {% if not document.description %}
+              {{ document.title }}
+            {% endif %}
+            </strong>
+          </a>
+        <ul class="govuk-list govuk-!-margin-top-2">
+          {% if document.description %}
+            <li class="govuk-body-s">Submitted by {{ document.title }}</li>
+          {% endif %}
+          <li class="govuk-body-s">Published on {{ document.publishedDate }}</li>
+          <li class="govuk-body-s">Reference number REF 00{{loop.index}}</li>
+        </ul>
+              <hr class="
+              govuk-section-break
+              govuk-section-break--l
+              govuk-section-break--visible
+            " />
+      </article>  
+    {% endfor %}
+       
+  {% endfor %}
+ 
+{# 
     {% for document in documents %}
       <article data-stage="{{document.stage}}" data-submittedBy="{{document.title}}" data-type="{{document.type}}">
         <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
@@ -138,8 +167,14 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
               govuk-section-break--visible
             " />
       </article>  
-    {% endfor %}
+    {% endfor %} #}
   </div>
 </div>
-
+<div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
 {% endblock %} {% block footer %} {{ pinsFooter() }} {% endblock %}
