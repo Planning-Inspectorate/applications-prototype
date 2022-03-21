@@ -27,7 +27,24 @@ saveAndExit: false
 <a class="govuk-back-link" href="javascript:history.back()">Back</a>{% endblock %}
 
 {% block content %}
-
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#postcode-input">Enter address line 1</a>
+      </li>
+      <li>
+        <a href="#postcode-input">Enter a postcode, like AA1 1AA</a>
+      </li>
+      <li>
+        <a href="#passport-issued-day">Enter a country</a>
+      </li>
+    </ul>
+  </div>
+</div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form autocomplete="off" class="form" action="comment" method="post">
@@ -43,6 +60,9 @@ saveAndExit: false
             label: {
               text: 'Address line 1'
             },
+                   errorMessage: {
+    text: "Enter address line 1"
+  },
             id: "address-line-1",
             name: "address-line-1"
           }) }}
@@ -59,6 +79,7 @@ saveAndExit: false
             label: {
               text: "Address line 3 (optional)"
             },
+           
             classes: "govuk-!-width-two-thirds",
             id: "address-line-3",
             name: "address-line-3"
@@ -68,7 +89,10 @@ saveAndExit: false
           {{ govukInput({
             label: {
               text: "Postcode"
-            },
+            },   
+            errorMessage: {
+    text: "Enter a postcode, like AA1 1AA"
+  },
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "address-postcode"
@@ -80,6 +104,9 @@ saveAndExit: false
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-country",
+             errorMessage: {
+    text: "Enter a country"
+  },
             name: "address-country"
           }) }}
 

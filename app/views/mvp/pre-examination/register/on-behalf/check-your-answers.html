@@ -155,11 +155,26 @@ saveAndExit: false
 
       <h2 class="govuk-heading-m">Who you are representing</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who are you representing
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['representingFor'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="representing-for">
+              Change
+              <span class="govuk-visually-hidden"> who are you representing</span>
+              </a>
+            </dd>
+          </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            {% if data['sprint6RepresentingFor'] == 'A family group' %}
+            {% if data['representingFor'] == 'A family group' %}
                   The name of the family group you are representing
-            {% elif data['sprint6RepresentingFor'] == 'An organisation or charity' %}
+            {% elif data['representingFor'] == 'An organisation or charity' %}
                   The name of the organisation or charity that you are representing
             {% else %}
                   The name of the person you are representing 
@@ -171,10 +186,35 @@ saveAndExit: false
           <dd class="govuk-summary-list__actions">
             <a href="representing-for">
                 Change
-                <span class="govuk-visually-hidden"> who you are registering for</span>
+                <span class="govuk-visually-hidden"> 
+  {% if data['representingFor'] == 'A family group' %}
+                  The name of the family group you are representing
+            {% elif data['representingFor'] == 'An organisation or charity' %}
+                  The name of the organisation or charity that you are representing
+            {% else %}
+                  The name of the person you are representing 
+            {% endif %}
+
+                </span>
             </a>
           </dd>
         </div>
+        {% if data['representingFor'] == 'A family group' or data['representingFor'] == 'A person' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Are they 18 or over?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['behalf-over-18'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="over-18">
+              Change
+              <span class="govuk-visually-hidden"> if they are 18 or over</span>
+              </a>
+            </dd>
+          </div>
+        {% endif %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
               Thier address
@@ -231,7 +271,7 @@ saveAndExit: false
           <dd class="govuk-summary-list__actions">
             <a href="./comment">
               Change
-              <span class="govuk-visually-hidden"> address</span>
+              <span class="govuk-visually-hidden"> their address</span>
             </a>
           </dd>
         </div>
