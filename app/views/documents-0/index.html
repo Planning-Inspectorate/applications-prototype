@@ -41,28 +41,40 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   {% set allTypes = (allTypes.push(document.type), allTypes) | unique %}
 {% endfor %}
 
+{% set allDates = [] %}
+{% for document in documents %}
+  {% set allDates = (allDates.push(document.publishedDate), allDates) | unique %}
+{% endfor %}
+
 {# create groups for types #}
+{% set byPubDate = documents | groupBy('publishedDate') %}
 {% set byType = documents | groupBy('type') %}
 {% set byStage = documents | groupBy('stage') %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third side-filter">
     <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-  Group by (doesn't work)
+  Group by
   </h3>
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" id="groupby">
     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
-        <label class="govuk-label govuk-radios__label" for="changed-name">
+        <input checked="checked" class="govuk-radios__input" id="group-by-3" name="group-by" type="radio" value="type">
+        <label class="govuk-label govuk-radios__label" for="group-by-3">
+          type of document
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="group-by-1" name="group-by" type="radio" value="stage">
+        <label class="govuk-label govuk-radios__label" for="group-by-1">
           stage
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
-        <label class="govuk-label govuk-radios__label" for="changed-name-2">
-          type of document
+        <input class="govuk-radios__input" id="group-by-2" name="group-by" type="radio" value="dates">
+        <label class="govuk-label govuk-radios__label" for="group-by-2">
+          dates
         </label>
       </div>
     </div>
@@ -112,7 +124,9 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
   <div class="govuk-grid-column-two-thirds" id="documents">
 
-  {% for type in allTypes%}
+{# Group by type #}
+  <div id="groupbytype">
+  {% for type in allTypes %}
     {%if loop.index0 >= 1 %}
       <p class="category govuk-body-l govuk-!-font-weight-bold" data-type="{{type}}">{{ type }}</p>
     {% endif %}
@@ -139,9 +153,71 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             " />
       </article>  
     {% endfor %}
-       
   {% endfor %}
- 
+ </div>
+ {# group by stages #}
+  <div id="groupbystage">
+  {% for stage in stages %}
+    {%if loop.index0 >= 1 %}
+      <p class="category govuk-body-l govuk-!-font-weight-bold" data-type="{{stage}}">{{ stage }}</p>
+    {% endif %}
+    {% for document in byStage[stage] %}
+      <article class="{% if loop.index0 >= byStage.length %}govuk-!-margin-bottom-9{% endif %}" data-stage="{{document.stage}}" data-submittedBy="{{document.title}}" data-type="{{document.type}}">
+          <a href="{{ document.url }}" target="_blank">
+            <strong>{{ document.description }}
+            {% if not document.description %}
+              {{ document.title }}
+            {% endif %}
+            </strong>
+          </a>
+        <ul class="govuk-list govuk-!-margin-top-2">
+          {% if document.description %}
+            <li class="govuk-body-s">Submitted by {{ document.title }}</li>
+          {% endif %}
+          <li class="govuk-body-s">Published on {{ document.publishedDate }}</li>
+          <li class="govuk-body-s">Reference number REF 00{{loop.index}}</li>
+        </ul>
+              <hr class="
+              govuk-section-break
+              govuk-section-break--l
+              govuk-section-break--visible
+            " />
+      </article>  
+    {% endfor %}
+  {% endfor %}
+ </div>
+
+
+
+ {# group by dates #}
+  <div id="groupbydate">
+  {% for pubDate in allDates %}
+      <p class="category govuk-body-l govuk-!-font-weight-bold" data-type="{{ pubDate }}">Published on {{ pubDate }}</p>
+    {% for document in byPubDate[pubDate] %}
+      <article class="{% if loop.index0 >= byType.length %}govuk-!-margin-bottom-9{% endif %}" data-stage="{{document.stage}}" data-submittedBy="{{document.title}}" data-type="{{document.type}}">
+          <a href="{{ document.url }}" target="_blank">
+            <strong>{{ document.description }}
+            {% if not document.description %}
+              {{ document.title }}
+            {% endif %}
+            </strong>
+          </a>
+        <ul class="govuk-list govuk-!-margin-top-2">
+          {% if document.description %}
+            <li class="govuk-body-s">Submitted by {{ document.title }}</li>
+          {% endif %}
+          <li class="govuk-body-s">Published on {{ document.publishedDate }}</li>
+          <li class="govuk-body-s">Reference number REF 00{{loop.index}}</li>
+        </ul>
+              <hr class="
+              govuk-section-break
+              govuk-section-break--l
+              govuk-section-break--visible
+            " />
+      </article>  
+    {% endfor %}
+  {% endfor %}
+ </div>
 {# 
     {% for document in documents %}
       <article data-stage="{{document.stage}}" data-submittedBy="{{document.title}}" data-type="{{document.type}}">

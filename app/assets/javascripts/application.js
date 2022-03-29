@@ -62,6 +62,45 @@ $(document).ready(function () {
     }
   })
 
+  // get the 3 lists
+  let type = $("#groupbytype");
+  let date = $("#groupbydate");
+  let stage = $("#groupbystage");
+
+  // hide stage and date by default
+  stage.hide()
+  date.hide()
+
+  // when the group by radio is changed
+  $('#groupby').on('change', function(e){
+
+    // capture the current value of the radios
+    let currentGroup = e.target.value;
+
+    // show/hide sections based on selection
+    switch(currentGroup) {
+      case "dates":
+        date.show()
+        type.hide()
+        stage.hide()
+        break;
+      case "type":
+        type.show()
+        stage.hide()
+        date.hide()
+        break;
+      case "stage":
+        stage.show()
+        type.hide()
+        date.hide()
+        break;  
+      default:
+        type.show()
+        stage.hide()
+        date.hide()
+    }
+  })
+
   $("#keyword").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#documents article").filter(function() {
