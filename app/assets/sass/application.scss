@@ -673,3 +673,75 @@ h2.govuk-accordion__section-heading {
     position: fixed;
     bottom: 30px;
   }
+
+
+  // mobile styles 
+@media (max-width: 800px) {
+  .filter-desktop {
+    display: none;
+  }
+  .filter-mobile {
+    display: block;
+  }
+  .full-bleed-flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .side-nav{
+    max-width: 100%;
+    margin-bottom: 3em;
+  }
+  .project-section {
+    background: #e4f5f4; 
+    margin: 0 -30px;
+    padding: 0 30px;
+  }
+
+}
+// tablet plus
+@media (min-width: 800px) {
+  .project-section {
+    background: #e4f5f4; 
+    margin: 0 -30px
+  }
+  .full-bleed {
+    max-width: 1440px;
+    margin: 0 30px;
+  }
+
+  .filter-mobile {
+    display: none;
+  }
+  .filter-desktop {
+    display: block;
+  }
+  .full-bleed-flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .side-nav{
+    min-width: 175px;
+  }
+}
+// small desktops
+@media (min-width: 1020px) {
+  .full-bleed {
+    margin: 0 60px;
+  }
+  .project-section {
+    background: #e4f5f4; 
+    margin: 0 -60px
+  }
+}
+
+// large desktops
+@media (min-width: 1440px) {
+  .full-bleed {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
