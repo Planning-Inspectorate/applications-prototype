@@ -136,6 +136,43 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           />
         </form>
         {% endfor %}
+
+
+
+  <nav class="hmcts-pagination" id="pagination-label">
+
+<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+<ul class="hmcts-pagination__list">
+
+<li class="hmcts-pagination__item  hmcts-pagination__item--prev">
+  <a class="hmcts-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+
+<li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="">1</a></li>
+
+<li class="hmcts-pagination__item hmcts-pagination__item--dots">...</li>
+
+<li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="">5</a></li>
+
+<li class="hmcts-pagination__item hmcts-pagination__item--active">6</li>
+
+<li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="">7</a></li>
+
+<li class="hmcts-pagination__item hmcts-pagination__item--dots">...</li>
+
+<li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="">10</a></li>
+
+<li class="hmcts-pagination__item  hmcts-pagination__item--next">
+  <a class="hmcts-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+
+</ul>
+
+<p class="hmcts-pagination__results">Showing <b>10</b> to <b>20</b> of <b>256</b> results</p>
+
+</nav> 
+
       </div>
       <div class="govuk-grid-column-one-quarter">
       <!--<button id="toggleFilters" class="govuk-button govuk-button">Show search and filters</button>-->
@@ -149,15 +186,14 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     </div>
 
             <a href="#" class="govuk-button govuk-!-margin-top-2">Apply filters</a>
-
-            <label class="govuk-label govuk-label--s" for="event-name">
+            <label class="govuk-label govuk-label--s" for="keyword">
               Keywords
             </label>
           </h3>
           <input
             class="govuk-input"
-            id="event-name"
-            name="event-name"
+            id="keyword"
+            name="keyword"
             type="text"
           />
         </div>
