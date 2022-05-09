@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+{% block pageTitle %} A404 Dewsbury project overview
+{% endblock %}
+{% block headIcons %}
+  <link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
+  <!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+  {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+          <h1 class="govuk-heading-xl">A404 Dewsbury</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% set current = 'index' %}
+          {% include "../includes/vertical_tabs.html"
+ %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Project information</h2>
+
+          <p class="govuk-body">
+          The potential A404 Dewsbury to Berwick Down scheme proposes to
+          construct a new section of dual carriageway to address problems
+          associated with the single carriageway section of the A404 between
+          Amesbury’s Countess roundabout and the dual carriageway section to the
+          west of Winterbourne Stoke.
+        </p>
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+          <h2 class="govuk-heading-m">Project stage (4 of 6) </h2>
+
+          <p>
+          This project is in the
+          <strong>Examination</strong>
+          stage
+          </p>
+
+          <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What happens during this stage?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      The examination stage is where the Examining Authority, the developer and 
+      anyone who has registered to have their say will get involved and comment
+      on the proposed development at a number of set deadlines. This stage takes
+      six months.
+    </div>
+  </details>
+
+          <p>
+          ?
+          </p>
+
+
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+          <h2 class="govuk-heading-m">Recent updates</h2>
+
+          <p><strong>The recordings and transcripts of the Preliminary Meeting have been published</strong>
+          <br>
+          27 April 2022
+          <br>
+            <a href="../">Review recordings and transcripts</a>
+          </p>
+
+          <p><strong>The Examining Authority’s Action Points arising from the
+          Preliminary Meeting have been published</strong>
+          <br>
+          16 February 2022
+          <br>
+            <a href="../">Review Preliminary Meeting Action Points</a>
+          </p>
+
+
+          <p><strong>The Examination Library has been updated</strong>
+          <br>
+          16 February 2022</p>
+
+
+          <p>
+            <a href="./project-timeline">Check project timeline for all updates</a>
+        </p>
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+          />
+
+          <h2 class="govuk-heading-m">About the project</h2>
+
+          <ul class="govuk-list">
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="/wrong-turn">Application introduction</a>
+            </p>
+            <p class="govuk-body">
+            Information about the project and what the developer is proposing
+          </p>
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="/wrong-turn">Environmental information</a>
+            </p>
+            <p class="govuk-body">
+            Information about how the project might impact the environment and
+            what the developer is proposing to make the impact less serious.
+          </p>
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="/wrong-turn">Drawings</a>
+            </p>
+            <p class="govuk-body">
+            How the proposed project will look and the area it will impact.
+          </p>
+          </ul>
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+
+          <h2 class="govuk-heading-m">
+             Contact us for support
+          </h2>
+          <p>If you need help with the project you can contact our case team:</p>
+          <dl>
+            <dt class="govuk-body govuk-!-padding-right-1" style="float:left; clear: left;">Email:</dt>
+            <dd class="govuk-body" ><a href="#">A404Dewsbury@planninginspectorate.gov.uk</a></dd>
+            <dt class="govuk-body govuk-!-padding-right-1" style="float:left; clear: left;">Telephone:</dt>
+            <dd class="govuk-body" ><a href="">0303 444 5000</a></dd>
+          </dl>
+
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+
+ <h2 class="govuk-heading-m">About the developer</h2>
+
+          <p>The Developer proposing this project is Acme Group Ltd.</p>
+
+          <img
+          src="/public/images/logos/acme-group-ltd-logo.png"
+          alt="Acme Group Ltd's logo"
+/>
+
+          <p class="govuk-body govuk-!-margin-top-6">
+            <a href="/wrong-turn"
+            >Visit the project website by Acme Group Ltd</a
+          >
+          for more information.
+        </p>
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "/>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
