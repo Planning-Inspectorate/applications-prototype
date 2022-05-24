@@ -96,10 +96,24 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
           <a href="./register/start" class="govuk-button"
           >Register to have your say</a>
+
+          <!--<a href="./register/start" role="button" draggable="false" class="govuk-button" style="background-color:#5694ca; color:white" data-module="govuk-button">
+          &nbsp;Make a submission&nbsp;
+        </a>-->
+
           <p>
             <a href="../interested-party-guide/registering-to-have-your-say"
             >Find out more about registering to have your say</a>.
-        </p>
+          </p>
+
+          <!--<p class="govuk-body"><strong>or</strong></p>
+
+          <a href="./register/start" class="govuk-button"
+          >Make a submission</a>
+
+          <a href="./register/start" role="button" draggable="false" class="govuk-button" style="background-color:#5694ca; color:white" data-module="govuk-button">
+          &nbsp;Make a submission&nbsp;
+        </a>-->
 
           <hr
           class="
@@ -172,7 +186,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <!--<div id="email-hint" class="govuk-hint">
             We’ll only use this to send you a receipt
           </div>-->
-          <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+          <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
           </div>
 
           <a href="" class="govuk-button"
