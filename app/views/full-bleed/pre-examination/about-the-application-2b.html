@@ -1,0 +1,305 @@
+
+{% set containerClasses = containerClasses | default("full-bleed") %}
+{% set mainClasses = mainClasses | default("govuk-!-padding-top-0") %}
+
+{% extends "layout.html" %}
+{% block pageTitle %} A404 Dewsbury project overview
+{% endblock %}
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    containerClasses: "full-bleed"
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+<div class="project-section">    
+  <div class="full-bleed">
+    {{ govukPhaseBanner({ 
+        tag: { 
+          text: "beta" 
+        }, 
+        html: 'This is a new service – your <a class="govuk-link " href="#">feedback</a> will help us to improve it.' 
+      }) 
+    }}
+    <p class="govuk-heading-xl govuk-!-padding-top-9 govuk-!-padding-bottom-9" >A404 Dewsbury</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+    
+        </div>
+      </div>
+      <div class="full-bleed-flex-container">
+        <div class="side-nav">
+          {% set current = 'about-the-application' %}
+          {% include "../includes/vertical_tabs.html" %}
+        </div>
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-margin-right-0">
+          <div class="govuk-grid-column-full" >
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Project application documents</h1>
+            <p>
+              <input class="govuk-input govuk-!-width-one-half" id="search" name="search" type="text" /> <button class="govuk-button">Search</button>
+            </p>
+            <p class="results">
+                Showing  <strong>1</strong> to <strong>20</strong> of <strong>313</strong> documents, newest first.
+              </p>
+            <div class=" filter-mobile">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text govuk-!-font-size-27 govuk-!-font-weight-bold">
+                    Filter documents
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  {% include "../includes/filters-2b.html" %}
+                </div>
+              </details>
+            </div>
+            </div>
+          </div>
+              <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-margin-right-0">
+                <div class="govuk-grid-column-two-thirds">
+                  <ul class="gem-c-document-list">
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002116-SEF_2.1_Land%20and%20Crown%20Land%20Plans_Rev%201.pdf">
+                        Applicant’s response to s51 advice 2.1 Land and Crown Plans - Rev 1 - Pending formal acceptance by the Examining Authority once appointed  (PDF, 4MB)
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        Published by Dorset County Council
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          19 July 2017
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-examination
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Additional Submissions
+                        </div>
+                      </div>
+                    </li>
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002117-SEF_2.2_Works%20Plans_Rev%201.pdf">
+                        Applicant’s response to s51 advice - 2.2 Works Plans - Rev 1 - Pending formal acceptance by the Examining Authority once appointed (PDF, 4MB)
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <p class="gem-c-document-list__item-description ">
+                        Published by the Planning Inspectorate
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          19 July 2017
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-examination
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Additional Submissions
+                        </div>
+                      </div>
+                    </li>
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002122-SEF_ES_6.2_Appendix_9C_Flood%20Risk%20Assessment_Rev%201_Part%202.pdf">
+                        Applicant’s response to s51 advice - 6.2 Appendix 9C - Flood Risk Assessment - Part 2 - Rev 1 -Pending formal acceptance by the Examining Authority once appointed (PDF, 4MB)
+                      </a>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          19 July 2017
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-examination
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Additional Submissions
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002130-Sunnica%20Energy%20Farm_S56%20Notice%20-%20Reg%209%20FINAL.pdf">
+                        Section 56 Notice
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          19 July 2017
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-examination
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Certificates and Notices
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" target="_blank" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010106/EN010106-002090-Sunnica%20Energy%20Farm%20Examination%20Library.pdf">
+                        Examination library
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          5 January 2022
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-examination
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Examination Library
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" href="#">
+                        Notification of Decision to Accept Application
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          5 January 2022
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Review of the application
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Acceptance letter
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" href="#">
+                        Cotswold District Council - Environmental Impact Assessment Scope
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          5 January 2022
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-application
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Environmental Impact Assessment Scoping
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" href="#">
+                        Dorset County Council - Environmental Impact Assessment Scope
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          5 January 2022
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-application
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Environmental Impact Assessment Scoping
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" href="#">
+                        Cotswold District Council - Adequacy of Consultation Representation
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          5 January 2022
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-application
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Notice of proposed application (s46)
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="gem-c-document-list__item  ">
+                      <a class="govuk-link gem-c-document-list__item-title" href="#">
+                        Dorset County Council - Adequacy of Consultation Representation
+                      </a>
+                      <p class="gem-c-document-list__item-description ">
+                        <!--                        Rules governing school exclusion.-->
+                      </p>
+                      <div class="govuk-grid-row document-metadata">
+                        <div class="govuk-grid-column-one-third">
+                          5 January 2022
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Pre-application
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                          Notice of proposed application (s46)
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                  {% include "../../includes/pagination.html"%}
+                </div>
+                <div style="min-width:175px;" class="govuk-grid-column-one-third filter-desktop">
+                  {% include "../includes/filters-2b.html" %}
+                </div>
+              </div>
+
+          </div>
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
