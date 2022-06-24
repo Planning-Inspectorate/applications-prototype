@@ -1,0 +1,104 @@
+{% set containerClasses = containerClasses | default("full-bleed") %}
+{% set mainClasses = mainClasses | default("govuk-!-padding-top-0") %}
+
+{% extends "layout.html" %}
+{% block pageTitle %} Drax Bioenergy with Carbon Capture and Storage Project
+{% endblock %}
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+	
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    containerClasses: "full-bleed"
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+<div >
+  <div class="full-bleed">
+
+    {{ govukPhaseBanner({
+        tag: {
+          text: "beta"
+        },
+        html: 'This is a new service – your <a class="govuk-link " href="#">feedback</a> will help us to improve it.'
+      })
+    }}
+    <h1 class="govuk-heading-xl govuk-!-padding-top-9 govuk-!-padding-bottom-9" >Drax Bioenergy with Carbon Capture and Storage Project</h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row govuk-!-margin-left-0">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'comments' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+
+</nav>
+
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+<a class="govuk-back-link" href="relevant-representations-library" data-cy="back">Back to list</a>
+<div class="pins-govuk-result-list">
+      <span class="govuk-caption-l">Representation by</span>
+      <h1 class="govuk-heading-l">
+        Members of the Public/Businesses
+      </h1>
+      <p class="govuk-body">
+        The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+      </p>
+
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third">
+          07 May 2022
+        </div>
+        <div class="govuk-grid-column-one-third">
+          Members of the Public/Businesses
+        </div>
+        <div class="govuk-grid-column-one-third">
+
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
