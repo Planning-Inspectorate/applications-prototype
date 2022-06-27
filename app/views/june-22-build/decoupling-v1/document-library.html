@@ -20,48 +20,6 @@
   <!--<![endif]-->
   <style type="text/css">
 
-  .pins-govuk-result-list {
-      color: #0b0c0c;
-      font-family: "GDS Transport", arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-weight: 400;
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 1.25;
-      margin: 0;
-      padding: 0;
-  }
-  .pins-govuk-result-list__item {
-      margin-bottom: 25px;
-      padding-top: 10px;
-      border-top: 1px solid #b1b4b6;
-      list-style: none;
-  }
-  .pins-govuk-result-list__item-title {
-      font-family: "GDS Transport", arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-weight: 700;
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 1.25;
-      display: inline-block;
-  }
-  .pins-govuk-result-list__item-description, .pins-govuk-result-list__subtext {
-      font-family: "GDS Transport", arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-weight: 400;
-      font-size: 14px;
-      font-size: 0.875rem;
-      line-height: 1.5;
-  }
-  .document-metadata {
-      margin-top: 10px;
-      color: #505a5f;
-      font-size: 1rem;
-  }
 
   </style>
   {% for stylesheetUrl in extensionConfig.stylesheets %}
@@ -265,7 +223,13 @@ data-module="govuk-checkboxes">
 data-module="govuk-checkboxes">
 
 
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="top5Type-2" name="type" type="checkbox" value="Transboundary">
+  <label class="govuk-label govuk-checkboxes__label" for="top5Type-2">
+Application documents
+</label>
 
+</div>
 
 
 
