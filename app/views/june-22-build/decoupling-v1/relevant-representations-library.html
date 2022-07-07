@@ -66,10 +66,10 @@
     <div class="govuk-grid-row">
 
 <h2 class="govuk-heading-l">Relevant representations (registration comments)</h2>
-<p>
+
 <input class="govuk-input govuk-!-width-one-half" id="searchTerm" name="searchTerm" type="text" value="">
 <button class="govuk-button" data-cy="search-button">Search</button>
-</p>
+
 
     </div>
     <div class="govuk-grid-row">
@@ -185,13 +185,85 @@
 </div>
 
       </div>
+
       <div class="govuk-grid-column-one-third">
 
 
 <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-margin-right-3">
 
+    <div style="background-color: #f3f2f1; padding: 10px;">
+    <h2 class="govuk-heading-m">Filter by</h2>
+    <div class="govuk-form-group">
 
 
+    <div class="govuk-checkboxes govuk-checkboxes--small"
+    data-module="govuk-checkboxes">
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities">
+      <label class="govuk-label govuk-checkboxes__label" for="type">
+    Local authorities
+    </label>
+
+    </div>
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses">
+          <label class="govuk-label govuk-checkboxes__label" for="type">
+      Members of the public or businesses (4)
+    </label>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees">
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Other statutory consultees
+    </label>
+
+        </div>
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Parish Councils">
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Parish councils
+        </label>
+
+        </div>
+
+</div>
+</div>
+        <button class="govuk-button" data-cy="apply-filter-button" data-module="govuk-button">Apply</button>
+        </div>
+
+</div>
+
+
+
+
+
+  </fieldset>
+
+</div>
+</div>
+
+<!--
 <div class="govuk-form-group">
 
 <fieldset class="govuk-fieldset">
@@ -273,7 +345,9 @@ Local authorities
 
 
       </div>
-    </div>
+    </div>-->
+
+
   </div>
 </div>
 </form>
