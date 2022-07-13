@@ -10,6 +10,7 @@ require('./routes/min-mvp.js')(router);
 require('./routes/sprint-6.js')(router);
 require('./routes/sprint-8.js')(router);
 require('./routes/documents-0.js')(router);
+require('./routes/decoupled.js')(router);
 
   // routes for the type of party /register flow
   router.get("/reset", function (req, res) {

@@ -7,7 +7,7 @@
 {% block header %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceName: "Register to have your say about a national infrastructure project",
     serviceUrl: "/mvp/pre-examination/register/start",
 saveAndExit: false
   }) }}
@@ -29,7 +29,7 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="address" method="post">
+      <form autocomplete="off" class="form" action="Comment" method="post">
         {{ govukInput({
           label: {
             text: "What is your telephone number?",
@@ -45,11 +45,11 @@ saveAndExit: false
           classes: "govuk-input--width-20"
         }) }}
 
-        
+
 
       <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
-        <a class="govuk-button govuk-button--secondary" href="../save-and-continue/confirmation">Save and come back later</a>
+        <!--<a class="govuk-button govuk-button--secondary" href="../save-and-continue/confirmation">Save and come back later</a>-->
       </div>
 
       <!--<div class="govuk-button-group">

@@ -7,7 +7,7 @@
 {% block header %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceName: "Register to have your say about a national infrastructure project",
     serviceUrl: "/mvp/pre-examination/register/start",
 saveAndExit: false
   }) }}
@@ -21,14 +21,14 @@ saveAndExit: false
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="start">Back</a>
+  <a class="govuk-back-link" href="address">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" method="post">
+      <form autocomplete="off" class="form" method="post" action="/june-22-build/decoupling-v1/register/on-behalf/representing-who">
 
           {{ govukRadios({
             idPrefix: "representingFor",
