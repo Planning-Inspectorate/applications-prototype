@@ -25,11 +25,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+
+    <form autocomplete="off" class="form" action="email" method="post">
+
       <h1 class="govuk-heading-xl">
-      Test
+      Unregistered party
       </h1>
 
-    <form autocomplete="off" class="form" action="" method="post">
+  <p> </p>
+
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+  {{ govukWarningText({
+    text: "As you are not an Interested Party it is at the discretion of the Examining Authority as to whether your submission is accepted.",
+    iconFallbackText: "Warning"
+  }) }}
+
+      <p>Think we should ask the full registration flow of contact information here but we have nowhere to save it to at present - <strong>discuss</strong> </p>
+
+      <p>Also would we have to ask it for every subsequent submission? </p>
+
+
+      <p> so we'll skip to email for now </p>
 
       <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
