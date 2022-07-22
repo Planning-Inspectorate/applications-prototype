@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Submission complete
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+               <h1 class="govuk-panel__title">
+                 Submission complete
+               </h1>
+               <div class="govuk-panel__body">
+                 Your reference number<br><strong>HDJ2123F</strong>
+               </div>
+             </div>
+
+             <p class="govuk-body">We have sent you a confirmation email.</p>
+
+             <h2 class="govuk-heading-m">What happens next</h2>
+
+
+
+             <p class="govuk-body">
+               <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+             </p>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
