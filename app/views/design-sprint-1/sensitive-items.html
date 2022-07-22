@@ -17,18 +17,18 @@ Which items contain sensitive information?  {% endblock %}
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
-
-{% endblock %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {{ govukBackLink({
   text: "Back",
   href: "#"
 }) }}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/form-handler" method="post" novalidate>
+      <form action="check-answers" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
