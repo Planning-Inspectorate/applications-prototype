@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form autocomplete="off" class="form" action="email" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "What's your interested party number?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "ip-number",
+          name: "ip-number"
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "How to find your interested party number",
+          text: "The unique reference that identifies you as an Interested Party can be found on the postcard or email you received inviting you to the Preliminary Meeting. Your reference is included in the same place on all correspondence addressed to you from the Examining Authority."
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

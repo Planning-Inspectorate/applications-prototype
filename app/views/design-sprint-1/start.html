@@ -18,7 +18,7 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
 {% endblock %}
 
 {% block content %}
@@ -26,14 +26,25 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-      Test
+      Make a submission on a national infrastructure project
       </h1>
 
-    <form autocomplete="off" class="form" action="" method="post">
+    <div class="govuk-body-l">
+      You are making a submission on <strong> {{data['projectname']}}</strong>
+    </div>
+          <p>Some content stuff </p>
 
-      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
 
-    </form>
+          {{ govukButton({
+            text: "Start now",
+            href: "involvement",
+            isStartButton: true
+          }) }}
+
+  <h2 class="govuk-heading-m">Before you start</h2>
+
+  <p>Some more content wizardry  maybe mention about IP and non IP, need for IP number etc</p>
 
     </div>
   </div>

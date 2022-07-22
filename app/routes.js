@@ -11,6 +11,7 @@ require('./routes/sprint-6.js')(router);
 require('./routes/sprint-8.js')(router);
 require('./routes/documents-0.js')(router);
 require('./routes/decoupled.js')(router);
+require('./routes/design-sprints.js')(router);
 
   // routes for the type of party /register flow
   router.get("/reset", function (req, res) {
