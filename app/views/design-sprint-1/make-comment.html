@@ -33,13 +33,13 @@ Make a comment
 
 
       <div class="govuk-form-group">
-        <span class="govuk-caption-l">Deadline 10</span>
+        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
 
         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
             Make a comment
           </label>
         </h1>
-        <h2 class="govuk-heading-m">Deadline item name</h2>
+        <h2 class="govuk-heading-m">{{data['deadline']['activedeadlineitem']}}</h2>
 
         <textarea class="govuk-textarea" id="make-comment" name="make-comment" rows="5" aria-describedby="make-comment-hint"></textarea>
       </div>

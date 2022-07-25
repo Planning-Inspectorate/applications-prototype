@@ -26,13 +26,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form autocomplete="off" class="form" action="whofor-answer" method="post">
+<form autocomplete="off" class="form" action="who-for-answer" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
   {{ govukRadios({
     idPrefix: "whofor",
-    name: "whofor",
+    name: "entity[whofor]",
     fieldset: {
       legend: {
         text: "Who are you making the submission for?",
@@ -42,15 +42,15 @@
     },
     items: [
       {
-        value: "myself" ,
+        value: "Myself" ,
         text: "Myself"
       },
       {
-        value: "organisation",
+        value: "An organisation I work for",
         text: "An organisation I work for"
       },
       {
-        value: "other",
+        value: "On behalf of another person, a family group or another organisation I do not work for",
         text: "On behalf of another person, a family group or another organisation I do not work for"
       }
     ]

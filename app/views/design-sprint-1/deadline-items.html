@@ -34,22 +34,29 @@ Which items would you like to submit against for this deadline?  {% endblock %}
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">Deadline 10</span>
+        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
         <h1 class="govuk-fieldset__heading">
 Which items would you like to submit against for this deadline?       </h1>
       </legend>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="deadline-item-1" name="deadline-items" type="checkbox" value="Deadline item 1">
+         <input class="govuk-checkboxes__input" id="deadline-item-1" name="deadline[deadlineitems]" type="checkbox" value="Comment on submissions received by deadline 9">
          <label class="govuk-label govuk-checkboxes__label" for="deadline-item-1">
-           Deadline item 1
+           Comment on submissions received by deadline 9
          </label>
        </div>
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="deadline-item-2" name="deadline-items" type="checkbox" value="Deadline item 2">
+         <input class="govuk-checkboxes__input" id="deadline-item-2" name="deadline[deadlineitems]" type="checkbox" value="          Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules
+">
          <label class="govuk-label govuk-checkboxes__label" for="deadline-item-2">
-          Deadline item 2
+          Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="deadline-item-other" name="deadline[deadlineitems]" type="checkbox" value="Other">
+         <label class="govuk-label govuk-checkboxes__label" for="deadline-item-other">
+          Other
          </label>
        </div>
 

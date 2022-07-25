@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page example
+  What's the name of your organisation?
 {% endblock %}
 
 {% block header %}
@@ -25,19 +25,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form autocomplete="off" class="form" action="deadline-items" method="post">
-        {{ govukInput({
-          label: {
-            text: "What is your email address?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "We will use your email address to confirm we've received your submission. We will not publish your email address."
-          },
-          id: "email",
-          name: "entity[email]"
-        }) }}
+      <form autocomplete="off" class="form" action="email" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="full-name">
+            What's the name of your organisation?
+            </label>
+          </h1>
+          <input class="govuk-input" id="organisation-name" name="entity[organisationname]" type="text">
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 

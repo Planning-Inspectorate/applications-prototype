@@ -11,6 +11,29 @@ module.exports = function (router) {
   });
 
 
+
+  router.post("/design-sprint-1/ip-number-available-answer", function(req, res) {
+    //route user to correct journey depending on entity
+    if(req.session.data.entity['ipavailable']=="Yes"){
+      res.redirect("ip-number");
+    }
+    else {
+      res.redirect("applicant-yes-no");
+
+    }
+  });
+
+  router.post("/design-sprint-1/applicant-yes-no-answer", function(req, res) {
+    //If user is applicant, skip to email, elase collect as non registered party
+    if(req.session.data.entity['applicant']=="Yes"){
+      res.redirect("email");
+    }
+    else {
+      res.redirect("over-18-yes-no");
+
+    }
+  });
+
   router.post("/design-sprint-1/involvement-answer", function(req, res) {
     // get the type of interested party
 
@@ -32,20 +55,17 @@ module.exports = function (router) {
   });
 
 
-  router.post("/design-sprint-1/whofor-answer", function(req, res) {
+  router.post("/design-sprint-1/who-for-answer", function(req, res) {
     // get the type of interested party
-
-     console.log(req.session.data["whofor"])
-    var whofor = req.session.data["whofor"];
- console.log("involvement")
+    var whofor = req.session.data['entity']['whofor'];
     // if an individual, show individual flow
-    if (whofor == "myself") {
-      req.session.data["NameDesc"] = "What\'s your name";
+    if (whofor == "Myself") {
+      res.redirect("individual-name");
       // otherwise, show on behalf flow
     } else {
-      req.session.data["NameDesc"] = "What\'s the name of your organisation";
+      res.redirect("organisation-name");
+
     }
-    res.redirect("name");
   });
 
 
