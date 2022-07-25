@@ -29,7 +29,7 @@ How would you like to make a submission?  {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/form-handler" method="post" novalidate>
+      <form action="/design-sprint-1/submission-type-routing" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -41,13 +41,13 @@ How would you like to make a submission?       </h1>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="submission-method-upload" name="submission-method" type="checkbox" value="Upload files">
+         <input class="govuk-checkboxes__input" id="submission-method-upload" name="submission-method" type="checkbox" value="Upload files" {{ checked("['submission-method']['upload']", "Upload files") }}>
          <label class="govuk-label govuk-checkboxes__label" for="submission-method-upload">
            Upload files
          </label>
        </div>
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="submission-method-comment" name="submission-method" type="checkbox" value="Make a representation">
+         <input class="govuk-checkboxes__input" id="submission-method-comment" name="submission-method" type="checkbox" value="Make a text representation" {{ checked("['submission-method']['comment']", "Make a text representation") }}>
          <label class="govuk-label govuk-checkboxes__label" for="submission-method-comment">
            Make a representation
          </label>
