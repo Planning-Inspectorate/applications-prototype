@@ -47,7 +47,8 @@
        }) }}
      {% endif %}
 
-     <h1 class="govuk-heading-xl">Upload files</h1>
+     <h1 class="govuk-heading-l">Upload files</h1>
+     <h2 class="govuk-heading-m">{{data['deadline']['activedeadlineitem']}}</h2>
      {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
      {%- from "govuk/components/button/macro.njk" import govukButton -%}
      {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}

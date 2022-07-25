@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page example
+  What's the name of your organisation?
 {% endblock %}
 
 {% block header %}
@@ -26,12 +26,21 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form autocomplete="off" class="form" action="email" method="post">
-        <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="full-name">
-              {{data['NameDesc']}}
+            What's your name?
             </label>
           </h1>
-          <input class="govuk-input" id="event-name" name="full-namename" type="text">
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+          First name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="width-20" name="entity[firstname]" type="text">
+          </div>
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+          Last name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="width-20" name="entity[lastname]" type="text">
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
