@@ -50,4 +50,60 @@ module.exports = function (router) {
 
 
 
+
+
+router.post("/design-sprint-1/submission-type-routing", function(req, res) {
+  // route user to upload files and/or make a text representation
+
+  //Store checkbox values
+  var submissionType =[]
+  submissionType = req.session.data['submission-method'];
+
+  // Route  user to upload or make a text representation
+if (submissionType.includes("Upload files")){
+  res.redirect("upload-files");
+}
+else {
+  res.redirect("make-comment");
+}
+
+
+});
+
+
+router.post("/design-sprint-1/upload-files-routing", function(req, res) {
+  // route user to upload files and/or make a text representation
+
+  //Store checkbox values
+  var submissionType =[]
+  submissionType = req.session.data['submission-method'];
+
+  // Route  user to make a comment if they specified, otherwise route to sensitive information screens
+if (submissionType.includes("Make a text representation")){
+  res.redirect("make-comment");
+}
+else {
+  res.redirect("sensitive-information");
+}
+
+
+});
+
+router.post("/design-sprint-1/sensitive-information-routing", function(req, res) {
+  // route user to upload files and/or make a text representation
+
+  //Store checkbox values
+  var sensitiveInformation = req.session.data['sensitive-information'];
+
+   if (sensitiveInformation == "Yes") {
+     res.redirect("sensitive-items");
+   }
+   else {
+     res.redirect("check-answers");
+   }
+
+});
+
+
+
 };
