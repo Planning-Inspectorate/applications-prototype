@@ -14,7 +14,7 @@ module.exports = function (router) {
   router.post("/design-sprint-1/involvement-answer", function(req, res) {
     // get the type of interested party
 
-     console.log("this is a test")
+  //   console.log("this is a test")
     var involvement = req.session.data["involvement"];
  console.log("involvement")
     // if an individual, show individual flow
@@ -27,8 +27,25 @@ module.exports = function (router) {
 
       // otherwise, show on behalf flow
     } else {
-      res.redirect("other");
+      res.redirect("who-for");
     }
+  });
+
+
+  router.post("/design-sprint-1/whofor-answer", function(req, res) {
+    // get the type of interested party
+
+     console.log(req.session.data["whofor"])
+    var whofor = req.session.data["whofor"];
+ console.log("involvement")
+    // if an individual, show individual flow
+    if (whofor == "myself") {
+      req.session.data["NameDesc"] = "What\'s your name";
+      // otherwise, show on behalf flow
+    } else {
+      req.session.data["NameDesc"] = "What\'s the name of your organisation";
+    }
+    res.redirect("name");
   });
 
 
