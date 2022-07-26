@@ -21,7 +21,7 @@ Which items would you like to submit against for this deadline?  {% endblock %}
 
 {{ govukBackLink({
   text: "Back",
-  href: "#"
+  href: "javascript:history.back();"
 }) }}
 
 {% endblock %}
@@ -29,7 +29,7 @@ Which items would you like to submit against for this deadline?  {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="how-make-submission" method="post" novalidate>
+      <form action="/design-sprint-1/deadline-items-answer" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -47,7 +47,7 @@ Which items would you like to submit against for this deadline?       </h1>
          </label>
        </div>
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="deadline-item-2" name="deadline[deadlineitems]" type="checkbox" value="          Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules
+         <input class="govuk-checkboxes__input" id="deadline-item-2" name="deadline[deadlineitems]" type="checkbox" value="Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules
 ">
          <label class="govuk-label govuk-checkboxes__label" for="deadline-item-2">
           Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules

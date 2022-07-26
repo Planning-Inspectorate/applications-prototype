@@ -22,7 +22,7 @@ Make a comment
 
 {{ govukBackLink({
   text: "Back",
-  href: "#"
+  href: "javascript:history.back();"
 }) }}
 {% endblock %}
 
@@ -39,9 +39,9 @@ Make a comment
             Make a comment
           </label>
         </h1>
-        <h2 class="govuk-heading-m">{{data['deadline']['activedeadlineitem']}}</h2>
+        <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
 
-        <textarea class="govuk-textarea" id="make-comment" name="make-comment" rows="5" aria-describedby="make-comment-hint"></textarea>
+        <textarea class="govuk-textarea" id="make-comment" name="deadlineitem[comment]" rows="5" aria-describedby="make-comment-hint"></textarea>
       </div>
       <button class="govuk-button" data-module="govuk-button">
         Save and continue

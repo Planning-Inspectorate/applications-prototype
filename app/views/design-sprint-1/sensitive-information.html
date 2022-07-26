@@ -22,7 +22,7 @@ Does your submission contain sensitive information?
 
 {{ govukBackLink({
   text: "Back",
-  href: "#"
+  href: "javascript:history.back();"
 }) }}
 {% endblock %}
 
@@ -39,16 +39,17 @@ Does your submission contain sensitive information?
           Does your submission contain sensitive information?
         </h1>
       </legend>
+      <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="sensitive-information-yes" name="sensitive-information" type="radio" value="Yes">
+          <input class="govuk-radios__input" id="sensitive-information-yes" name="deadlineitem[sensitiveinformation]" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="sensitive-information-yes">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="sensitive-information-no" name="sensitive-information" type="radio" value="No">
+          <input class="govuk-radios__input" id="sensitive-information-no" name="deadlineitem[sensitiveinformation]" type="radio" value="No">
           <label class="govuk-label govuk-radios__label" for="sensitive-information-no">
             No
           </label>

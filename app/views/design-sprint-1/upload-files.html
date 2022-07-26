@@ -22,7 +22,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "#"
+  href: "javascript:history.back();"
 }) }}
 <script type="text/javascript">
   if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
@@ -48,7 +48,7 @@
      {% endif %}
 
      <h1 class="govuk-heading-l">Upload files</h1>
-     <h2 class="govuk-heading-m">{{data['deadline']['activedeadlineitem']}}</h2>
+     <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
      {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
      {%- from "govuk/components/button/macro.njk" import govukButton -%}
      {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
