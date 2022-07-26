@@ -38,7 +38,7 @@ $(document).ready(function () {
       $("article:not([data-stage='" + selectedStage + "'])").hide();
     }
   })
- 
+
   $('#submittedBy').on('change', function(){
     let selectedSubmittedBy = $('#submittedBy').find(":selected").text()
     if(selectedSubmittedBy == "Anyone"){
@@ -94,7 +94,7 @@ $(document).ready(function () {
         stage.show()
         type.hide()
         date.hide()
-        break;  
+        break;
       default:
         type.show()
         stage.hide()
@@ -119,5 +119,3 @@ $(document).ready(function () {
   });
 
 })
-
-
