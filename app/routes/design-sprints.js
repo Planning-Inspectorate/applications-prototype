@@ -157,7 +157,7 @@ else {
 
 router.post("/design-sprint-1/upload-files-routing", function(req, res) {
   // route user to upload files and/or make a text representation
-
+  console.log(req.session.data['deadlineitemuploadedfiles']);
   //Create variable to say contains uploaded files
   req.session.data.deadlineitem['uploadedfilesavailable'] = true;
   //Store checkbox values

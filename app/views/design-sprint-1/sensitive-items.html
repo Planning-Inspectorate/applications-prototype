@@ -40,24 +40,14 @@ Which items contain sensitive information?        </h1>
       <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          {% for file in data['deadlineitem']['uploadedfiles'] %}
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="sensitive-item-1" name="deadlineitem[sensitiveitems]" type="checkbox" value="Item 1">
-         <label class="govuk-label govuk-checkboxes__label" for="sensitive-item-1">
-           Item 1
+         <input class="govuk-checkboxes__input" id="{{file}}" name="deadlineitem[sensitiveitems]" type="checkbox" value="{{file}}">
+         <label class="govuk-label govuk-checkboxes__label" for="{{file}}">
+           {{file}}
          </label>
        </div>
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="sensitive-item-2" name="deadlineitem[sensitiveitems]" type="checkbox" value="Item 2">
-         <label class="govuk-label govuk-checkboxes__label" for="sensitive-item-2">
-           Item 2
-         </label>
-       </div>
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="sensitive-item-3" name="deadlineitem[sensitiveitems]" type="checkbox" value="Item 3">
-         <label class="govuk-label govuk-checkboxes__label" for="sensitive-item-3">
-           Item 3
-         </label>
-       </div>
+       {% endfor %}
      </div>
 
    </fieldset>
