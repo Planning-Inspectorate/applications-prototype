@@ -1,6 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
+// Import routes for new versioning system
+router.use("/:folder/v:version", (req, res, next) => {
+  try {
+    return require(`./views/${req.params.folder}/v${req.params.version}/_routes`)(req, res, next)
+  } catch (e) {
+    next()
+  }
+})
+
+// Old versioning imports
 require('./routes/errors.js')(router);
 require('./routes/sprint-3.js')(router);
 require('./routes/sprint-4.js')(router);
@@ -13,11 +23,11 @@ require('./routes/documents-0.js')(router);
 require('./routes/decoupled.js')(router);
 require('./routes/design-sprints.js')(router);
 
-  // routes for the type of party /register flow
-  router.get("/reset", function (req, res) {
-    req.session.destroy(function(err) {
-        res.redirect("/");
-    });
+// routes for the type of party /register flow
+router.get("/reset", function (req, res) {
+  req.session.destroy(function(err) {
+      res.redirect("/");
   });
+});
 
 module.exports = router;
