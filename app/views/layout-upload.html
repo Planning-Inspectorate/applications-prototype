@@ -79,21 +79,7 @@
 {% block bodyEnd %}
   {% block scripts %}|
     {% include "includes/scripts.html" %}
-    <script type="text/javascript">
-      MOJFrontend.initAll();
-    </script>
-
-  <script type="text/javascript">
-    if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
-
-  </script>
-
+  
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->

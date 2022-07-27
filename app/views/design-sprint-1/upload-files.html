@@ -24,15 +24,7 @@
   text: "Back",
   href: "javascript:history.back();"
 }) }}
-<script type="text/javascript">
-  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
-  </script>
+
 {% endblock %}
 
 {% block content %}
@@ -47,14 +39,13 @@
        }) }}
      {% endif %}
 
+     <form action="/design-sprint-1/upload-files-routing" method="post" id="multiupload">
+
+
      <h1 class="govuk-heading-l">Upload files</h1>
      <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
-     {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
-     {%- from "govuk/components/button/macro.njk" import govukButton -%}
-     {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
-     {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
 
-     <form action="/design-sprint-1/upload-files-routing" method="post" enctype="multipart/form-data">
+
        {% set uploadHtml %}
          {{ govukFileUpload({
            id: "documents",
@@ -92,6 +83,20 @@
 {% endblock %}
 
 
+
 {% block footer %}
   {{ pinsFooter() }}
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+  // I really should learn how the MOJ upload works, however, a hack to get all the files passed into data
+    $('#multiupload').submit(function(e) {
+      e.preventDefault();
+      $('.moj-multi-file-upload__filename').each(function() {
+        $('<input name="deadlineitem[uploadedfiles]" type="checkbox" value="'+ $(this).text() +'" checked="true" style="display: none">').insertBefore('.govuk-heading-l');
+      });
+      $(this).unbind('submit').submit();
+    })
+  </script>
 {% endblock %}
