@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set items = data['submissiondata'] %}
-{% set upload = data['deadlineitemuploadedfiles'] %}
+
 {% block pageTitle %}
   Start page example
 {% endblock %}
@@ -32,12 +32,6 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Check your answers</h1>
-      <ul class="govuk-list govuk-list--bullet">
-            {% for file in data['deadlineitemuploadedfiles'] %}
-              <li>{{file}}</li>
-            {% endfor %}
-          </ul>
-
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -213,7 +207,11 @@
                 Uploaded evidence
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{item.uploadedfiles}}
+                    <ul class="govuk-list">
+                    {% for file in item.uploadedfiles %}
+                    <li>{{file}}</li>
+                    {% endfor %}
+                    </ul>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="upload-files">
@@ -259,7 +257,11 @@
                   Sensitive items
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{item.sensitiveitems}}
+                  <ul class="govuk-list">
+                  {% for file in item.sensitiveitems %}
+                  <li>{{file}}</li>
+                  {% endfor %}
+                  </ul>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="sensitive-items">

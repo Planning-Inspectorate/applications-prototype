@@ -39,7 +39,7 @@
        }) }}
      {% endif %}
 
-     <form action="/design-sprint-1/upload-files-routing" method="post" enctype="multipart/form-data" id="multiupload">
+     <form action="/design-sprint-1/upload-files-routing" method="post" id="multiupload">
 
 
      <h1 class="govuk-heading-l">Upload files</h1>
@@ -94,7 +94,7 @@
     $('#multiupload').submit(function(e) {
       e.preventDefault();
       $('.moj-multi-file-upload__filename').each(function() {
-        $('<input name="deadlineitemuploadedfiles" type="checkbox" value="'+ $(this).text() +'" checked="true" style="display: none">').insertBefore('#govuk-heading-l');
+        $('<input name="deadlineitem[uploadedfiles]" type="checkbox" value="'+ $(this).text() +'" checked="true" style="display: none">').insertBefore('.govuk-heading-l');
       });
       $(this).unbind('submit').submit();
     })
