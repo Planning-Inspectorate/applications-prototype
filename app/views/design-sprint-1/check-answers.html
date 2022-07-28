@@ -83,7 +83,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Who are you?
+                  Making submission for
                 </dt>
                 <dd class="govuk-summary-list__value">
                     {{data['entity']['whofor']}}
@@ -98,7 +98,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Are you the applicant?
+                  Applicant or not
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['entity']['applicant']}}
@@ -112,7 +112,7 @@
               {% endif %}
               {% if data['entity']['applicant']=="No" %}
 
-              <div class="govuk-summary-list__row">
+              <!--<div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Over 18?
                 </dt>
@@ -124,10 +124,10 @@
                     Change<span class="govuk-visually-hidden"> over 18</span>
                   </a>
                 </dd>
-              </div>
+              </div>-->
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Who are you?
+                  Making submission for
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['entity']['whofor']}}
@@ -142,28 +142,28 @@
               {% if data['entity']['whofor']=="Myself" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Name
+                  Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['entity']['firstname']}} {{data['entity']['lastname']}}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="individual-name">
-                    Change<span class="govuk-visually-hidden"> name</span>
+                    Change<span class="govuk-visually-hidden"> full name</span>
                   </a>
                 </dd>
               </div>
               {% else %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Organisation name
+                  Organisation's name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['entity']['organisationname']}}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="organisation-name">
-                    Change<span class="govuk-visually-hidden"> organisation name</span>
+                    Change<span class="govuk-visually-hidden"> organisation's name</span>
                   </a>
                 </dd>
               </div>
@@ -190,13 +190,17 @@
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Evidence type
+                  How you've submitted your representation
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{item.submissionmethod}}
+                  <ul class="govuk-list">
+                  {% for file in item.submissionmethod %}
+                  <li>{{file}}</li>
+                  {% endfor %}
+                  </ul>
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="how-make-submission">
+                  <a class="govuk-link" href="javascript:alert('Not in prototype')">
                     Change<span class="govuk-visually-hidden"> evidence type</span>
                   </a>
                 </dd>
@@ -204,7 +208,7 @@
               {% if item.uploadedfilesavailable == true %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                Uploaded evidence
+              Documents uploaded
                 </dt>
                 <dd class="govuk-summary-list__value">
                     <ul class="govuk-list">
@@ -214,7 +218,7 @@
                     </ul>
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="upload-files">
+                  <a class="govuk-link" href="javascript:alert('Not in prototype')">
                     Change<span class="govuk-visually-hidden"> uploaded evidence</span>
                   </a>
                 </dd>
@@ -223,16 +227,16 @@
               {% if item.commentsavailable == true %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Comment
+                  Your comment
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{item.comment}}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <p><a class="govuk-link" href="make-comment">
+                  <p><a class="govuk-link" href="javascript:alert('Not in prototype')">
                     Change<span class="govuk-visually-hidden"> comment</span>
                   </a><br/>
-                  <a class="govuk-link" href="make-comment">
+                  <a class="govuk-link" href="javascript:alert('Not in prototype')">
                     Delete<span class="govuk-visually-hidden"> comment</span>
                   </a>
                 </dd>
@@ -246,7 +250,7 @@
                   {{item.sensitiveinformation}}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="sensitive-information">
+                  <a class="govuk-link" href="javascript:alert('Not in prototype')">
                     Change<span class="govuk-visually-hidden"> sensitive information</span>
                   </a>
                 </dd>
@@ -254,7 +258,7 @@
               {% if item.sensitiveinformation=="Yes" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Sensitive items
+                  Documents or comments containing sensitive information
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <ul class="govuk-list">
@@ -264,13 +268,13 @@
                   </ul>
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="sensitive-items">
+                  <a class="govuk-link" href="javascript:alert('Not in prototype')">
                     Change<span class="govuk-visually-hidden"> sensitive items</span>
                   </a>
                 </dd>
               </div>
               {% endif %}
-              <p class="govuk-!-margin-top-3"><a href="">Delete deadine item</a></p>
+              <p class="govuk-!-margin-top-3"><a href="delete-item?remove={{loop.index - 1}}">Delete deadine item</a></p>
 
             </dl>
 {% endfor %}
