@@ -28,7 +28,7 @@ Are you sure you want to delete data for this item?  {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="check-answers" method="post" novalidate>
+    <form action="/design-sprint-1/delete-item-answer" method="post" novalidate>
 
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -40,13 +40,13 @@ Are you sure you want to delete data for this item?  {% endblock %}
 
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="delete-item-yes" name="deadlineitem[delete]" type="radio" value="Yes">
+        <input class="govuk-radios__input" id="delete-item-yes" name="confirm-remove" type="radio" value="Yes">
         <label class="govuk-label govuk-radios__label" for="delete-item-yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="delete-item-no" name="deadlineitem[delete]" type="radio" value="No">
+        <input class="govuk-radios__input" id="delete-item-no" name="confirm-remove" type="radio" value="No">
         <label class="govuk-label govuk-radios__label" for="delete-item-no">
           No
         </label>
@@ -57,7 +57,7 @@ Are you sure you want to delete data for this item?  {% endblock %}
 </div>
 
         <button class="govuk-button" data-module="govuk-button">
-          Save and continue
+          Continue
         </button>
       </form>
 

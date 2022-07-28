@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which items contain sensitive information?  {% endblock %}
+Does your submission contain sensitive information?
+{% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -28,34 +29,36 @@ Which items contain sensitive information?  {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-1/sensitive-items-routing" method="post" novalidate>
+      <form action="/design-sprint-1/sensitive-information-routing" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
         <h1 class="govuk-fieldset__heading">
-Which files contain sensitive information?        </h1>
-<h1 class="govuk-fieldset__heading">
-Which comments contain sensitive information?        </h1>
-<h1 class="govuk-fieldset__heading">
-Which files and comments contain sensitive information?        </h1>
+          Does your submission contain sensitive information for provide further information requested by the Examination Authority under Rule 17 of the Examination Rules?
+        </h1>
+
       </legend>
-      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
+      <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
 
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          {% for file in data['deadlineitem']['uploadedfiles'] %}
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="{{file}}" name="deadlineitem[sensitiveitems]" type="checkbox" value="{{file}}">
-         <label class="govuk-label govuk-checkboxes__label" for="{{file}}">
-           {{file}}
-         </label>
-       </div>
-       {% endfor %}
-     </div>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sensitive-information-yes" name="deadlineitem[sensitiveinformation]" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="sensitive-information-yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sensitive-information-no" name="deadlineitem[sensitiveinformation]" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="sensitive-information-no">
+            No
+          </label>
+        </div>
+      </div>
 
-   </fieldset>
- </div>
+    </fieldset>
+  </div>
 
           <button class="govuk-button" data-module="govuk-button">
             Continue

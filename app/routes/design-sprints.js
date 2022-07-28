@@ -58,7 +58,7 @@ module.exports = function (router) {
       res.redirect("email");
     }
     else {
-      res.redirect("over-18-yes-no");
+      res.redirect("who-for");
 
     }
   });
@@ -91,9 +91,12 @@ module.exports = function (router) {
     if (whofor == "Myself") {
       res.redirect("individual-name");
       // otherwise, show on behalf flow
-    } else {
+    } else if (whofor=="An organisation I work for") {
       res.redirect("organisation-name");
 
+    }
+    else {
+      res.redirect("other-name");
     }
   });
 
@@ -101,6 +104,8 @@ module.exports = function (router) {
     // if an object to create all sets of the sale details doesn't exist then create it
 
     let deadlineItems = req.session.data.deadline['deadlineitems']
+
+
     let numberItems = deadlineItems.length
     req.session.data.deadlineitemscount = numberItems
     console.log(req.session.data.deadlineitemscount)
@@ -141,7 +146,7 @@ router.post("/design-sprint-1/submission-type-routing", function(req, res) {
   submissionType = req.session.data.deadlineitem['submissionmethod'];
 
   // Route  user to upload or make a text representation
-if (submissionType.includes("Upload files")){
+if (submissionType.includes("Upload supporting evidence")){
   res.redirect("upload-files");
 }
 else {
@@ -299,27 +304,25 @@ router.post("/design-sprint-1/sensitive-items-routing", function(req, res) {
 
 });
 
-
-//Example remove answer
-router.post(`/return/eu-sales-from-country-delete-answer`, function (req, res) {
+router.post(`/design-sprint-1/delete-item-answer`, function (req, res) {
 
         let confirmRemove = req.session.data['confirm-remove']
         let removeObj = req.session.data['remove']
-        let euSalesFromList = req.session.data['eu-sales-list-from-countries']
+        let submissionData = req.session.data['submissiondata']
 
 
         if(confirmRemove === 'Yes') {
-        removeFromList( removeObj, euSalesFromList)
+        removeFromList( removeObj, submissionData)
         }
 
-        if(euSalesFromList.length < 1){
-        res.redirect(`sales-from-eu`)
-        }else{
-        res.redirect(`eu-sales-list-from-countries`)
-        }
+        res.redirect(`check-answers`)
+
+
 
 
 });
+
+
 
 
 };

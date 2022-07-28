@@ -36,22 +36,22 @@ How would you like to make a submission?  {% endblock %}
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
         <h1 class="govuk-fieldset__heading">
-How would you like to make a submission?       </h1>
+How would you like to submit comments ("written representation")?       </h1>
       </legend>
 
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">{{data['deadline']['deadlinename']}}</p>
+      <p class="govuk-body">{{data['deadline']['deadlinename']}}.</p>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="submission-method-upload" name="deadlineitem[submissionmethod]" type="checkbox" value="Upload files" {{ checked("['submission-method']['upload']", "Upload files") }}>
+         <input class="govuk-checkboxes__input" id="submission-method-upload" name="deadlineitem[submissionmethod]" type="checkbox" value="Upload supporting evidence" {{ checked("['submission-method']['upload']", "Upload files") }}>
          <label class="govuk-label govuk-checkboxes__label" for="submission-method-upload">
-           Upload files
+           Upload supporting evidence
          </label>
        </div>
        <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="submission-method-comment" name="deadlineitem[submissionmethod]" type="checkbox" value="Make a text representation" {{ checked("['submission-method']['comment']", "Make a text representation") }}>
+         <input class="govuk-checkboxes__input" id="submission-method-comment" name="deadlineitem[submissionmethod]" type="checkbox" value="Write a comment" {{ checked("['submission-method']['comment']", "Write a comment") }}>
          <label class="govuk-label govuk-checkboxes__label" for="submission-method-comment">
-           Make a representation
+           Write a comment
          </label>
        </div>
 
@@ -61,7 +61,7 @@ How would you like to make a submission?       </h1>
  </div>
 
           <button class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Continue
           </button>
         </form>
 
