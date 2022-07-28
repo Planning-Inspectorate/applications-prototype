@@ -1,7 +1,7 @@
 {% extends "layout-upload.html" %}
 
 {% block pageTitle %}
-Upload files
+  Start page example
 {% endblock %}
 
 {% block header %}
@@ -41,36 +41,9 @@ Upload files
 
      <form action="/design-sprint-1/upload-files-routing" method="post" id="multiupload">
 
-       <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
 
-     <h1 class="govuk-heading-l">Upload files</h1>
-     <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
-     <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What's the file format and size?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">Your file must be in one of the following formats:</p>
-    <ul class="govuk-list govuk-list--bullet">
-  <li>pdf</li>
-  <li>doc</li>
-  <li>docx</li>
-  <li>tif</li>
-  <li>tiff</li>
-  <li>jpg</li>
-  <li>jpeg</li>
-  <li>png</li>
-</ul>
-<p class="govuk-body">All files must be:</p>
-<ul class="govuk-list govuk-list--bullet">
-<li>a single document</li>
-<li>smaller than 50mb</li>
+     <h1 class="govuk-heading-l">Upload files to provide further information requested by the Examination Authority under Rule 17 of the Examination Rules</h1>
 
-</ul>
-  </div>
-</details>
 
        {% set uploadHtml %}
          {{ govukFileUpload({

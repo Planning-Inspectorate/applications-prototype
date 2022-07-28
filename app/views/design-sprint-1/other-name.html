@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What's the name of your organisation?
+    What's the full name of the person, family group or organisation?
 {% endblock %}
 
 {% block header %}
@@ -26,15 +26,13 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form autocomplete="off" class="form" action="email" method="post">
+        <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="full-name">
-            What's your full name?
+            What's the full name of the person, family group or organisation?
             </label>
           </h1>
-          <div class="govuk-form-group">
-
-          <input class="govuk-input govuk-input--width-30" id="width-30" name="entity[firstname]" type="text">
-          </div>
-
+          <input class="govuk-input" id="organisation-name" name="entity[organisationname]" type="text">
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

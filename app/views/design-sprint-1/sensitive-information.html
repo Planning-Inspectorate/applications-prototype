@@ -36,11 +36,19 @@ Does your submission contain sensitive information?
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
         <h1 class="govuk-fieldset__heading">
-          Does your submission contain sensitive information?
+          Do your comment and files contain sensitive information?
         </h1>
-      
+
+        <h1 class="govuk-fieldset__heading">
+          Do your files contain sensitive information?
+        </h1>
+
+        <h1 class="govuk-fieldset__heading">
+          Does your comment contain sensitive information?
+        </h1>
+
       </legend>
-      <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
+      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
@@ -61,7 +69,7 @@ Does your submission contain sensitive information?
   </div>
 
           <button class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Continue
           </button>
         </form>
 
