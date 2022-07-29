@@ -146,10 +146,18 @@ router.post("/design-sprint-1/submission-type-routing", function(req, res) {
   submissionType = req.session.data.deadlineitem['submissionmethod'];
 
   // Route  user to upload or make a text representation
-if (submissionType.includes("Upload supporting evidence")){
-  res.redirect("upload-files");
+if (submissionType.includes("Upload files")){
+  if (submissionType.includes("Write a comment")){
+    req.session.data.deadlineitem['submissiontext']= "Both"
+    res.redirect("upload-files");
+  }
+  else {
+    req.session.data.deadlineitem['submissiontext']= "Files"
+      res.redirect("upload-files");
+  }
 }
 else {
+    req.session.data.deadlineitem['submissiontext']= "Comment"
   req.session.data.deadlineitem['commentsavailable'] = true;
   req.session.data.deadlineitem['uploadedfilesavailable'] = false;
 
@@ -170,7 +178,7 @@ router.post("/design-sprint-1/upload-files-routing", function(req, res) {
   submissionType = req.session.data.deadlineitem['submissionmethod'];
 
   // Route  user to make a comment if they specified, otherwise route to sensitive information screens
-if (submissionType.includes("Make a text representation")){
+if (submissionType.includes("Write a comment")){
   //Create variable to say contains uploaded files
   req.session.data.deadlineitem['commentsavailable'] = true;
   res.redirect("make-comment");
