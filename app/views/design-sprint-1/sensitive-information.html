@@ -35,18 +35,21 @@ Does your submission contain sensitive information?
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+        {% if data['deadlineitem']['submissiontext']=="Both" %}
         <h1 class="govuk-fieldset__heading">
           Do your comment and files contain sensitive information?
         </h1>
-
+      {% endif %}
+      {% if data['deadlineitem']['submissiontext']=="Files" %}
         <h1 class="govuk-fieldset__heading">
           Do your files contain sensitive information?
         </h1>
-
+        {% endif %}
+        {% if data['deadlineitem']['submissiontext']=="Comment" %}
         <h1 class="govuk-fieldset__heading">
           Does your comment contain sensitive information?
         </h1>
-
+        {% endif %}
       </legend>
       <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
 
