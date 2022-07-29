@@ -34,20 +34,9 @@ Which items contain sensitive information?  {% endblock %}
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
-        {% if data['deadlineitem']['submissiontext']=="Files" %}
         <h1 class="govuk-fieldset__heading">
-Which files contain sensitive information?        </h1>
-{% endif %}
-{% if data['deadlineitem']['submissiontext']=="Comment" %}
-<h1 class="govuk-fieldset__heading">
-Which comment contains sensitive information?        </h1>
-{% endif %}
-{% if data['deadlineitem']['submissiontext']=="Both" %}
-<h1 class="govuk-fieldset__heading">
-Which files and comments contain sensitive information?        </h1>
-{% endif %}
+Which items contain sensitive information in provide further information requested by the Examination Authority under Rule 17 of the Examination Rules?        </h1>
       </legend>
-      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           {% for file in data['deadlineitem']['uploadedfiles'] %}

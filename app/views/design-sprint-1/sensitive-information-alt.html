@@ -35,23 +35,12 @@ Does your submission contain sensitive information?
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
-        {% if data['deadlineitem']['submissiontext']=="Both" %}
         <h1 class="govuk-fieldset__heading">
-          Do your comment and files contain sensitive information?
+          Does your submission contain sensitive information for provide further information requested by the Examination Authority under Rule 17 of the Examination Rules?
         </h1>
-      {% endif %}
-      {% if data['deadlineitem']['submissiontext']=="Files" %}
-        <h1 class="govuk-fieldset__heading">
-          Do your files contain sensitive information?
-        </h1>
-        {% endif %}
-        {% if data['deadlineitem']['submissiontext']=="Comment" %}
-        <h1 class="govuk-fieldset__heading">
-          Does your comment contain sensitive information?
-        </h1>
-        {% endif %}
+
       </legend>
-      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
+      <h2 class="govuk-heading-m">{{data['deadline']['deadlinename']}}</h2>
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">

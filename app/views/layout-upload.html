@@ -35,6 +35,7 @@
 {% from "govuk/components/pins-footer/macro.njk"                      import pinsFooter %}
 {% from "govuk/components/pins-step-by-step-navigation/macro.njk"     import pinsStepByStepNavigation %}
 {% from "govuk/components/pins-contents-sidebar/macro.njk"            import pinsContentSidebar %}
+{%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -78,21 +79,7 @@
 {% block bodyEnd %}
   {% block scripts %}|
     {% include "includes/scripts.html" %}
-    <script type="text/javascript">
-      MOJFrontend.initAll();
-    </script>
-
-  <script type="text/javascript">
-    if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
-
-  </script>
-
+  
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->

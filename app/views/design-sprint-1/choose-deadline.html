@@ -20,7 +20,7 @@ Which deadline would you like to submit against?
 }) }}
 {{ govukBackLink({
   text: "Back",
-  href: "#"
+  href: "javascript:history.back();"
 }) }}
 
 {% endblock %}
@@ -28,7 +28,7 @@ Which deadline would you like to submit against?
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="deadline-items" method="post" novalidate>
+      <form action="ip-number-available" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -40,15 +40,15 @@ Which deadline would you like to submit against?
 
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="choose-deadline-10" name="choose-deadline" type="radio" value="Deadline 10">
+          <input class="govuk-radios__input" id="choose-deadline-10" name="deadline[deadline]" type="radio" value="Deadline 10">
           <label class="govuk-label govuk-radios__label" for="choose-deadline-10">
-            Deadline 10
+          9
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="choose-deadline-9" name="choose-deadline" type="radio" value="Deadline 9">
+          <input class="govuk-radios__input" id="choose-deadline-9" name="deadline[deadline]" type="radio" value="Deadline 9">
           <label class="govuk-label govuk-radios__label" for="choose-deadline-9">
-            Deadline 9
+           10
           </label>
         </div>
       </div>
@@ -57,7 +57,7 @@ Which deadline would you like to submit against?
   </div>
 
           <button class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Continue
           </button>
         </form>
 

@@ -36,18 +36,18 @@
             isPageHeading: true
           },
           id: "ip-number",
-          name: "ip-number"
+          name: "entity[ipnumber]"
         }) }}
 
         {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-        {{ govukDetails({
+    <!--    {{ govukDetails({
           summaryText: "How to find your interested party number",
           text: "The unique reference that identifies you as an Interested Party can be found on the postcard or email you received inviting you to the Preliminary Meeting. Your reference is included in the same place on all correspondence addressed to you from the Examining Authority."
-        }) }}
+        }) }}-->
 
 
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
