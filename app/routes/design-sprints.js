@@ -32,12 +32,6 @@ function removeFromList(obj, itemList) {
 // sprint 4 routes
 module.exports = function (router) {
   // routes for the representations
-  router.get("/design-sprint-1/start", function (req, res) {
-    req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
-  //  console.log("this is a test")
-  //  console.log(req.session.data['projectname']);
-        res.render("design-sprint-1/start");
-  });
 
 
 
@@ -334,7 +328,9 @@ router.post(`/design-sprint-1/delete-item-answer`, function (req, res) {
 
 /// Timetable data stuff
 
-router.get('/design-sprint-1/timetable-start', function (req, res) {
+router.get('/design-sprint-1/start', function (req, res) {
+
+    req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
 
 req.session.data['Timetable-data'] = [
 	{
@@ -609,9 +605,10 @@ req.session.data['Timetable-data'] = [
     deadlineItems.push({id : 'Deadline 10', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
 
 
-        req.session.data['deadlineItems'] = deadlineItems;
+        req.session.data['deadlineitemlist'] = deadlineItems;
+        console.log(req.session.data['deadlineitemlist']);
 
-res.redirect('timetable/timetable');
+res.render("design-sprint-1/start");
 })
 // end of timetable data stuff
 
