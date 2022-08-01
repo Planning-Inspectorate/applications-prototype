@@ -153,13 +153,29 @@
                   </a>
                 </dd>
               </div>
-              {% else %}
+              {% endif %}
+              {% if data['entity']['whofor']=="An organisation I work for" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Organisation's name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['entity']['organisationname']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="organisation-name">
+                    Change<span class="govuk-visually-hidden"> organisation's name</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+              {% if data['entity']['whofor']=="On behalf of another person, a family group or another organisation I do not work for" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Submitting on behalf of
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['othername']}}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="organisation-name">
