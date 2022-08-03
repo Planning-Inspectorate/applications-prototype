@@ -103,7 +103,6 @@ function loadDeadlineData(){
 
     deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by D8'});
       deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
-      deadlineItems.push({id : 'Deadline 9', name : 'Requested from the Applicant only:'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final SoCG and SCSoCG'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final dDCO in MS Word clean and tracked versions'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the dDCO'});
@@ -698,7 +697,6 @@ console.log("The get is running")
 
     deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by D8'});
       deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
-      deadlineItems.push({id : 'Deadline 9', name : 'Requested from the Applicant only:'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final SoCG and SCSoCG'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final dDCO in MS Word clean and tracked versions'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the dDCO'});
