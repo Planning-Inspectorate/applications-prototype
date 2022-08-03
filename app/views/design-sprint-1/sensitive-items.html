@@ -58,6 +58,17 @@ Which files and comments contain sensitive information?        </h1>
          </label>
        </div>
        {% endfor %}
+
+       {% if data['deadlineitem']['comment']|length == 0 %}
+      
+       {% else %}
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="{{file}}" name="deadlineitem[sensitiveitems]" type="checkbox" value="{{file}}">
+         <label class="govuk-label govuk-checkboxes__label" for="{{file}}">
+          My comment
+         </label>
+       </div>
+       {% endif %}
      </div>
 
    </fieldset>
