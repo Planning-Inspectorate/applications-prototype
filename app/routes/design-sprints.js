@@ -433,7 +433,8 @@ res.render("design-sprint-1/start");
 
 
 
-router.get('/design-sprint-1/timetable/timetable', function (req, res) {
+router.get('/design-sprint-1/timetable/timetableload', function (req, res) {
+console.log("The get is running")
 
   req.session.data['Timetable-data'] = [
   	{
@@ -709,7 +710,7 @@ router.get('/design-sprint-1/timetable/timetable', function (req, res) {
 
 
           req.session.data['deadlineItems'] = deadlineItems;
-res.render("design-sprint-1/timetable/timetable");
+res.redirect('/design-sprint-1/timetable/timetable');
 })
 // end of timetable data stuff
 
