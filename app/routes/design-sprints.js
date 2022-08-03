@@ -598,7 +598,7 @@ router.get('/design-sprint-1/timetable/timetable', function (req, res) {
   		"date_of_event" : "13 August 2022",
   		"timetable_type" : "Exams",
   		"type_of_event" : "Deadline",
-  		"Status" : "Open"
+  		"Status" : "Closed"
   	},
   	{
   		"title" : "Deadline 9",
