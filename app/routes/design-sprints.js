@@ -109,12 +109,15 @@ function loadDeadlineData(){
         deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the dDCO'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final Compulsory Acquisition Schedule, in clean and tracked versions'});
               deadlineItems.push({id : 'Deadline 9', name : 'Final updated Guide to the Application'});
+              deadlineItems.push({id : 'Deadline 9', name : 'Other'});
 
 
              -
 
     deadlineItems.push({id : 'Deadline 10', name : 'Comments on any submissions received by D9'});
       deadlineItems.push({id : 'Deadline 10', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
+      deadlineItems.push({id : 'Deadline 10', name : 'Other'});
+
 
 
           return deadlineItems;
@@ -701,12 +704,16 @@ console.log("The get is running")
         deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the dDCO'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final Compulsory Acquisition Schedule, in clean and tracked versions'});
               deadlineItems.push({id : 'Deadline 9', name : 'Final updated Guide to the Application'});
+              deadlineItems.push({id : 'Deadline 9', name : 'Other'});
+
 
 
              -
 
     deadlineItems.push({id : 'Deadline 10', name : 'Comments on any submissions received by D9'});
       deadlineItems.push({id : 'Deadline 10', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
+      deadlineItems.push({id : 'Deadline 10', name : 'Other'});
+
 
 
           req.session.data['deadlineItems'] = deadlineItems;
