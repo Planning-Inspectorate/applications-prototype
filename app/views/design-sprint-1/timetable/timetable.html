@@ -85,12 +85,12 @@
       <div class="govuk-grid-column-two-thirds">
 <div class="govuk-grid-row">
 
-  <p class="results">
+  <p style="font-size:16px;padding:0;margin:0;color:#000;font-family: "GDS Transport, arial, sans-serif;">
                   The examination opened on 13 March 2022.
 
-                  <h3>Next</h3>
-                <p style="font-size:16px"><a href="#next">Deadline 7a - closes 05 August 2022 <br>
-                <a href="#next">Issue Specific Hearing 5 (ISH5) on 12 August</a></p>
+                  <h3 class="govuk-heading-m">Next</h3>
+                <p style="font-size:16px"><a href="#next">Deadline 9 - closes 27 August 2022 <br>
+                <a href="#nextmeet">Issue Specific Hearing 5 (ISH5) on 12 August</a></p>
 
   <ul class="pins-govuk-result-list">
 
@@ -126,19 +126,27 @@ Examination      </div>
 
 {% for item in data['Timetable-data'] %}
   <!--<li>{{ item.case_reference }}</li>-->
-  <li class="pins-govuk-result-list__item">
-
-    <div class="govuk-grid-row document-metadata">
-      <div class="govuk-grid-column-one-third" data-cy="published-date">
-            {% if "Deadline 7a" in item.title   %}
-          <a name="next"></a>
+  {% if "Deadline 9" in item.title   %}
+<a name="next"></a>
 {% endif %}
 
 
-      <strong>{{ item.date_of_event }}</strong>
+{% if "Issue Specific Hearing 5 (ISH5)" in item.title   %}
+<a name="nextmeet"></a>
+{% endif %}
+
+  <li class="pins-govuk-result-list__item">
+
+    <div class="govuk-grid-row document-metadata">
+
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+
+
+
+      <strong><span style="font-size:16px;padding:0;margin:0;color:#000;font-family: "GDS Transport, arial, sans-serif;">{{ item.date_of_event }}</span></strong>
       </div>
       <div class="govuk-grid-column-one-third" data-cy="published-stage">
-        <h3 style="font-size:16px;padding:0;margin:0">{{ item.title }}</h3>
+        <h3 style="font-size:16px;padding:0;margin:0;color:#000;font-family: "GDS Transport, arial, sans-serif;">{{ item.title }}</h3>
       </div>
       <div class="govuk-grid-column-one-third" data-cy="published-title"  align="right">
         {% if ("Open" in item.Status) or ("Closed" in item.Status) %}
@@ -320,9 +328,9 @@ Open Deadlines
 
 
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities" checked>
+      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities" >
       <label class="govuk-label govuk-checkboxes__label" for="type">
-    Open deadlines (3)
+    Open deadlines (2)
     </label>
 
     </div>
@@ -332,9 +340,9 @@ Open Deadlines
 
 
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses" checked>
+          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses" >
           <label class="govuk-label govuk-checkboxes__label" for="type">
-            Closed deadlines (8)
+            Closed deadlines (9)
     </label>
 
         </div>
@@ -342,7 +350,7 @@ Open Deadlines
 
 
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees" checked>
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees" >
           <label class="govuk-label govuk-checkboxes__label" for="type-2">
       Upcoming hearings (1)
     </label>
@@ -355,7 +363,7 @@ Open Deadlines
 
 
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees" checked>
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees" >
           <label class="govuk-label govuk-checkboxes__label" for="type-2">
       Closed hearings (5)
     </label>
