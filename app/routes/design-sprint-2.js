@@ -129,7 +129,7 @@ module.exports = function (router) {
 
 
 
-  router.post("/design-sprint-1/ip-number-available-answer", function(req, res) {
+  router.post("/design-sprint-2/ip-number-available-answer", function(req, res) {
     //route user to correct journey depending on entity
     if(req.session.data.entity['ipavailable']=="Yes"){
       res.redirect("ip-number");
@@ -140,7 +140,7 @@ module.exports = function (router) {
     }
   });
 
-  router.post("/design-sprint-1/applicant-yes-no-answer", function(req, res) {
+  router.post("/design-sprint-2/applicant-yes-no-answer", function(req, res) {
     //If user is applicant, skip to email, elase collect as non registered party
     if(req.session.data.entity['applicant']=="Yes"){
       res.redirect("email");
@@ -151,7 +151,7 @@ module.exports = function (router) {
     }
   });
 
-  router.post("/design-sprint-1/involvement-answer", function(req, res) {
+  router.post("/design-sprint-2/involvement-answer", function(req, res) {
     // get the type of interested party
 
   //   console.log("this is a test")
@@ -172,7 +172,7 @@ module.exports = function (router) {
   });
 
 
-  router.post("/design-sprint-1/who-for-answer", function(req, res) {
+  router.post("/design-sprint-2/who-for-answer", function(req, res) {
     // get the type of interested party
     var whofor = req.session.data['entity']['whofor'];
     // if an individual, show individual flow
@@ -188,7 +188,7 @@ module.exports = function (router) {
     }
   });
 
-  router.post("/design-sprint-1/deadline-items-answer", function(req, res) {
+  router.post("/design-sprint-2/deadline-items-answer", function(req, res) {
     // if an object to create all sets of the sale details doesn't exist then create it
 
     let deadlineItems = req.session.data.deadline['deadlineitems']
@@ -213,18 +213,18 @@ module.exports = function (router) {
 
   });
 
-  router.get("/design-sprint-1/how-make-submission", function (req, res) {
+  router.get("/design-sprint-2/how-make-submission", function (req, res) {
     req.session.data.deadlineactiveloopindex = (req.session.data.deadlineloopnumber - 1)
     var i = req.session.data.deadlineactiveloopindex
     req.session.data.deadline['deadlinename'] = req.session.data.deadline.deadlineitems[i]
     console.log(req.session.data.deadline['deadlinename'])
 
-    res.render("design-sprint-1/how-make-submission");
+    res.render("design-sprint-2/how-make-submission");
   });
 
 
 
-router.post("/design-sprint-1/submission-type-routing", function(req, res) {
+router.post("/design-sprint-2/submission-type-routing", function(req, res) {
   // route user to upload files and/or make a text representation
 
   //Identify name of active deadline item
@@ -256,7 +256,7 @@ else {
 });
 
 
-router.post("/design-sprint-1/upload-files-routing", function(req, res) {
+router.post("/design-sprint-2/upload-files-routing", function(req, res) {
   // route user to upload files and/or make a text representation
   console.log(req.session.data['deadlineitemuploadedfiles']);
   //Create variable to say contains uploaded files
@@ -279,7 +279,7 @@ else {
 
 });
 
-router.post("/design-sprint-1/sensitive-information-routing", function(req, res) {
+router.post("/design-sprint-2/sensitive-information-routing", function(req, res) {
   // route user to upload files and/or make a text representation
 
   //Store checkbox values
@@ -343,7 +343,7 @@ router.post("/design-sprint-1/sensitive-information-routing", function(req, res)
 
 });
 
-router.post("/design-sprint-1/sensitive-items-routing", function(req, res) {
+router.post("/design-sprint-2/sensitive-items-routing", function(req, res) {
 
 
   //Decrement count by 1
@@ -400,7 +400,7 @@ router.post("/design-sprint-1/sensitive-items-routing", function(req, res) {
 
 });
 
-router.post(`/design-sprint-1/delete-item-answer`, function (req, res) {
+router.post(`/design-sprint-2/delete-item-answer`, function (req, res) {
 
         let confirmRemove = req.session.data['confirm-remove']
         let removeObj = req.session.data['remove']
@@ -422,7 +422,7 @@ router.post(`/design-sprint-1/delete-item-answer`, function (req, res) {
 
 /// Timetable data stuff
 
-router.get('/design-sprint-1/start', function (req, res) {
+router.get('/design-sprint-2/start', function (req, res) {
 
 req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
 let storedDeadlines = loadDeadlineData();
@@ -430,12 +430,12 @@ req.session.data['deadlineitemlist'];
 req.session.data['deadlineitemlist']= storedDeadlines;
 console.log (req.session.data['deadlineitemlist']);
 
-res.render("design-sprint-1/start");
+res.render("design-sprint-2/start");
 })
 
 
 
-router.get('/design-sprint-1/timetable/timetableload', function (req, res) {
+router.get('/design-sprint-2/timetable/timetableload', function (req, res) {
 console.log("The get is running")
 
   req.session.data['Timetable-data'] = [
@@ -715,7 +715,7 @@ console.log("The get is running")
 
 
           req.session.data['deadlineItems'] = deadlineItems;
-res.redirect('/design-sprint-1/timetable/timetable');
+res.redirect('/design-sprint-2/timetable/timetable');
 })
 // end of timetable data stuff
 
