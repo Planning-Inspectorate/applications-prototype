@@ -1,0 +1,128 @@
+{% extends "layout-upload.html" %}
+
+{% block pageTitle %}
+Upload files
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back();"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if errorSummary.items.length %}
+       {{ govukErrorSummary({
+         titleText: 'There is a problem',
+         errorList: errorSummary.items
+       }) }}
+     {% endif %}
+
+     <form action="/design-sprint-1/upload-files-routing" method="post" id="multiupload">
+
+       <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+
+     <h1 class="govuk-heading-l">Upload files</h1>
+     <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
+     <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What's the file format and size?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Your file must be in one of the following formats:</p>
+    <ul class="govuk-list govuk-list--bullet">
+  <li>pdf</li>
+  <li>doc</li>
+  <li>docx</li>
+  <li>tif</li>
+  <li>tiff</li>
+  <li>jpg</li>
+  <li>jpeg</li>
+  <li>png</li>
+</ul>
+<p class="govuk-body">All files must be:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>a single document</li>
+<li>smaller than 50mb</li>
+
+</ul>
+  </div>
+</details>
+
+       {% set uploadHtml %}
+         {{ govukFileUpload({
+           id: "documents",
+           name: "documents",
+           classes: 'moj-multi-file-upload__input',
+           label: {
+             text: "Upload a file",
+             classes: 'govuk-label--m'
+           },
+           attributes: { multiple: '' },
+           errorMessage: errorMessage
+         }) }}
+
+         {{govukButton({
+           text: 'Upload file',
+           classes: 'govuk-button--secondary moj-multi-file-upload__button'
+         })}}
+       {% endset %}
+
+       {{ mojMultiFileUpload({
+         uploadedFiles: {
+           heading: { text: 'Files added' },
+           items: uploadedFiles
+         },
+         uploadHtml: uploadHtml
+       }) }}
+
+       {{govukButton({
+         text: 'Continue'
+       })}}
+     </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+  // I really should learn how the MOJ upload works, however, a hack to get all the files passed into data
+    $('#multiupload').submit(function(e) {
+      e.preventDefault();
+      $('.moj-multi-file-upload__filename').each(function() {
+        $('<input name="deadlineitem[uploadedfiles]" type="checkbox" value="'+ $(this).text() +'" checked="true" style="display: none">').insertBefore('.govuk-heading-l');
+      });
+      $(this).unbind('submit').submit();
+    })
+  </script>
+{% endblock %}
