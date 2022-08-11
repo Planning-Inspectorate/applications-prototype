@@ -28,12 +28,12 @@ Which items contain sensitive information?  {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-1/sensitive-items-routing" method="post" novalidate>
+      <form action="/design-sprint-2/sensitive-items-routing" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+        <span class="govuk-caption-l">Deadline item:<br/> {{data['deadline']['deadlinename']}}}</span>
         {% if data['deadlineitem']['submissiontext']=="Files" %}
         <h1 class="govuk-fieldset__heading">
 Which files contain sensitive information?        </h1>
@@ -47,7 +47,6 @@ Which comment contains sensitive information?        </h1>
 Which files and comments contain sensitive information?        </h1>
 {% endif %}
       </legend>
-      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           {% for file in data['deadlineitem']['uploadedfiles'] %}
@@ -60,7 +59,7 @@ Which files and comments contain sensitive information?        </h1>
        {% endfor %}
 
        {% if data['deadlineitem']['comment']|length == 0 %}
-      
+
        {% else %}
        <div class="govuk-checkboxes__item">
          <input class="govuk-checkboxes__input" id="{{file}}" name="deadlineitem[sensitiveitems]" type="checkbox" value="{{file}}">

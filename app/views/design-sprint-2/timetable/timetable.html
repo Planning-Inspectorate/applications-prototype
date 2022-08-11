@@ -185,7 +185,7 @@ Examination      </div>
   </div>
     {% if "Deadline" in item.type_of_event %}
       {% if "Open" in item.Status %}
-      <p class="">  <form action="../start" method="post" novalidate><button class="govuk-button govuk-button--secondary" data-module="govuk-button">   Make a submission</button></form></P>
+      <p class="">  <form action="../start" method="post" novalidate><button class="govuk-button " data-module="govuk-button">   Make a submission</button></form></P>
         {% else %} <br><a href="#">View documents received against this deadline ({{ [23,17,50, 34,16, 75, 19, 67, 44, 33]|random() }})</a>
         {% endif %}
     {% endif %}

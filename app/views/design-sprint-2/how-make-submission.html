@@ -29,23 +29,22 @@ How would you like to make a submission?  {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-1/submission-type-routing" method="post" novalidate>
+      <form action="/design-sprint-2/submission-type-routing" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+        <span class="govuk-caption-l">Deadline item:<br/> {{data['deadline']['deadlinename']}}</span>
         <h1 class="govuk-fieldset__heading">
 How would you like to submit comments ("written representation")?       </h1>
       </legend>
 
-      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
        <div class="govuk-checkboxes__item">
          <input class="govuk-checkboxes__input" id="submission-method-upload" name="deadlineitem[submissionmethod]" type="checkbox" value="Upload files" {{ checked("['submission-method']['upload']", "Upload files") }}>
          <label class="govuk-label govuk-checkboxes__label" for="submission-method-upload">
-           Upload supporting evidence
+           Upload files
          </label>
        </div>
        <div class="govuk-checkboxes__item">

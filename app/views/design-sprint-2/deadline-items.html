@@ -29,15 +29,18 @@ Which items would you like to submit against for this deadline?  {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-1/deadline-items-answer" method="post" novalidate>
+      <form action="/design-sprint-2/deadline-items-answer" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
         <h1 class="govuk-fieldset__heading">
 Which items would you like to submit against for this deadline?       </h1>
       </legend>
+      <div id="ip-number-hint" class="govuk-hint">Select all that apply.</div>
+
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
  {% for item in data['deadlineitemlist'] %}
  {% if item.id == data['deadline']['deadline'] %}
