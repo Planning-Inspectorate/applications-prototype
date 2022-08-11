@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page example
+  What's your interested party number?
 {% endblock %}
 
 {% block header %}
@@ -34,6 +34,9 @@
             text: "What's your interested party number?",
             classes: "govuk-label--l",
             isPageHeading: true
+          },
+          hint: {
+            text: "You can find it on the postcard or email you received inviting you to the Preliminary meeting or letters to you from the Examination Authority."
           },
           id: "ip-number",
           name: "entity[ipnumber]"

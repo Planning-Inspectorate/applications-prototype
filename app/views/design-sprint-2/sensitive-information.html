@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Does your submission contain sensitive information?
+Does your submission contain personal information?
 {% endblock %}
 
 {% block header %}
@@ -29,29 +29,51 @@ Does your submission contain sensitive information?
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-1/sensitive-information-routing" method="post" novalidate>
+      <form action="/design-sprint-2/sensitive-information-routing" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+        <span class="govuk-caption-l">Deadline item:<br/> {{data['deadline']['deadlinename']}}</span>
         {% if data['deadlineitem']['submissiontext']=="Both" %}
         <h1 class="govuk-fieldset__heading">
-          Do your comment and files contain sensitive information?
+          Do your comment and files contain personal information?
         </h1>
       {% endif %}
       {% if data['deadlineitem']['submissiontext']=="Files" %}
         <h1 class="govuk-fieldset__heading">
-          Do your files contain sensitive information?
+          Do your files contain personal information?
         </h1>
         {% endif %}
         {% if data['deadlineitem']['submissiontext']=="Comment" %}
         <h1 class="govuk-fieldset__heading">
-          Does your comment contain sensitive information?
+          Does your comment contain personale information?
         </h1>
         {% endif %}
       </legend>
-      <p class="govuk-body">{{data['deadline']['deadlinename']}}</p>
+      <div id="sensitive-information-hint" class="govuk-hint">
+        <p class="govuk-body">Check if your files contain representations from and information relating to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>children</li>
+          <li>health</li>
+          <li>crime</li>
+          </ul>
+
+            <p class="govuk-body">This also includes any information relating to an individual's:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>race</li>
+            <li>ethnic origin</li>
+            <li>politics</li>
+            <li>religion</li>
+            <li>trade union membership</li>
+            <li>genetics</li>
+            <li>biometrics</li>
+            <li>sex life</li>
+            <li>sexual orientation</li>
+          </ul>
+      </div>
+
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
