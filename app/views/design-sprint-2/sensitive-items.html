@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which items contain sensitive information?  {% endblock %}
+Which items contain personal information?  {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -33,20 +33,21 @@ Which items contain sensitive information?  {% endblock %}
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">Deadline item:<br/> {{data['deadline']['deadlinename']}}}</span>
+        <span class="govuk-caption-l">Deadline item:<br/> {{data['deadline']['deadlinename']}}</span>
         {% if data['deadlineitem']['submissiontext']=="Files" %}
         <h1 class="govuk-fieldset__heading">
-Which files contain sensitive information?        </h1>
+Which files contain personal information?        </h1>
 {% endif %}
 {% if data['deadlineitem']['submissiontext']=="Comment" %}
 <h1 class="govuk-fieldset__heading">
-Which comment contains sensitive information?        </h1>
+Which comment contains personal information?        </h1>
 {% endif %}
 {% if data['deadlineitem']['submissiontext']=="Both" %}
 <h1 class="govuk-fieldset__heading">
-Which files and comments contain sensitive information?        </h1>
+Which files and comments contain personal information?        </h1>
 {% endif %}
       </legend>
+      <div id="sensitive-items-hint" class="govuk-hint">Select all that apply.</div>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           {% for file in data['deadlineitem']['uploadedfiles'] %}

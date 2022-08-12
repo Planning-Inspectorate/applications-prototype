@@ -30,9 +30,23 @@ Which items would you like to submit against for this deadline?  {% endblock %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="/design-sprint-2/deadline-items-answer" method="post" novalidate>
+          {% if (data['error']=="true")%}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#deadline-item-error">Select a deadline item</a>
+              </li>
 
-      <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+      <div class="govuk-form-group   {% if (data['error']=="true")%}govuk-form-group--error{% endif %}">
+    <fieldset class="govuk-fieldset" aria-describedby="daedline-item-hint   {% if (data['error']=="true")%}deadline-item-error{% endif %}">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
         <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
@@ -40,7 +54,11 @@ Which items would you like to submit against for this deadline?  {% endblock %}
 Which items would you like to submit against for this deadline?       </h1>
       </legend>
       <div id="ip-number-hint" class="govuk-hint">Select all that apply.</div>
-
+        {% if (data['error']=="true")%}
+      <p id="deadline-item-error" class="govuk-error-message">
+           <span class="govuk-visually-hidden">Error:</span> Select a deadline item
+         </p>
+         {% endif %}
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
  {% for item in data['deadlineitemlist'] %}
  {% if item.id == data['deadline']['deadline'] %}
