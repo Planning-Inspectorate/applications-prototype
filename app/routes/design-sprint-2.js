@@ -230,31 +230,42 @@ router.post("/design-sprint-2/submission-type-routing", function(req, res) {
   //Identify name of active deadline item
 
   //Store checkbox values
-  var submissionType =[]
+  var submissionType;
   submissionType = req.session.data.deadlineitem['submissionmethod'];
 
   // Route  user to upload or make a text representation
-if (submissionType.includes("Upload files")){
-  if (submissionType.includes("Write a comment")){
-    req.session.data.deadlineitem['submissiontext']= "Both"
+if (submissionType == "Upload files"){
+    req.session.data.deadlineitem['submissiontext']= "Files"
+    req.session.data.deadlineitem['commentsavailable'] = false;
+    req.session.data.deadlineitem['uploadedfilesavailable'] = true;
     res.redirect("upload-files");
   }
+  else if (submissionType == "Make a comment"){
+      req.session.data.deadlineitem['submissiontext']= "Comment"
+        req.session.data.deadlineitem['commentsavailable'] = true;
+        req.session.data.deadlineitem['uploadedfilesavailable'] = false;
+      res.redirect("make-comment");
+    }
   else {
-    req.session.data.deadlineitem['submissiontext']= "Files"
-      res.redirect("upload-files");
+    req.session.data.deadlineitem['submissiontext']= "Both"
+    req.session.data.deadlineitem['commentsavailable'] = true;
+    req.session.data.deadlineitem['uploadedfilesavailable'] = true;
+      res.redirect("make-comment");
   }
-}
-else {
-    req.session.data.deadlineitem['submissiontext']= "Comment"
-  req.session.data.deadlineitem['commentsavailable'] = true;
-  req.session.data.deadlineitem['uploadedfilesavailable'] = false;
-
-  res.redirect("make-comment");
-}
 
 
 });
 
+router.post("/design-sprint-2/make-comment-routing", function(req, res) {
+  if (req.session.data.deadlineitem['submissionmethod'] == "Both"){
+    res.redirect("upload-files");
+  }
+  else {
+    res.redirect("sensitive-information");
+  }
+
+
+});
 
 router.post("/design-sprint-2/upload-files-routing", function(req, res) {
   // route user to upload files and/or make a text representation
@@ -262,20 +273,7 @@ router.post("/design-sprint-2/upload-files-routing", function(req, res) {
   //Create variable to say contains uploaded files
   req.session.data.deadlineitem['uploadedfilesavailable'] = true;
   //Store checkbox values
-  var submissionType =[]
-  submissionType = req.session.data.deadlineitem['submissionmethod'];
-
-  // Route  user to make a comment if they specified, otherwise route to sensitive information screens
-if (submissionType.includes("Write a comment")){
-  //Create variable to say contains uploaded files
-  req.session.data.deadlineitem['commentsavailable'] = true;
-  res.redirect("make-comment");
-}
-else {
-  req.session.data.deadlineitem['commentsavailable'] = false;
   res.redirect("sensitive-information");
-}
-
 
 });
 

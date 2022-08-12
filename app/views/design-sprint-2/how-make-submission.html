@@ -40,18 +40,23 @@ How would you like to submit comments ("written representation")?       </h1>
       </legend>
 
 
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="submission-method-upload" name="deadlineitem[submissionmethod]" type="checkbox" value="Upload files" {{ checked("['submission-method']['upload']", "Upload files") }}>
-         <label class="govuk-label govuk-checkboxes__label" for="submission-method-upload">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="submission-method-comment" name="deadlineitem[submissionmethod]" type="radio" value="Write a comment">
+          <label class="govuk-label govuk-radios__label" for="submission-method-comment">
+            Write a comment
+          </label>
+        </div>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="submission-method-upload" name="deadlineitem[submissionmethod]" type="radio" value="Upload files">
+         <label class="govuk-label govuk-radios__label" for="submission-method-upload">
            Upload files
          </label>
        </div>
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="submission-method-comment" name="deadlineitem[submissionmethod]" type="checkbox" value="Write a comment" {{ checked("['submission-method']['comment']", "Write a comment") }}>
-         <label class="govuk-label govuk-checkboxes__label" for="submission-method-comment">
-           Write a comment
-         </label>
+       <div class="govuk-radios__item">
+         <input class="govuk-radios__input" id="submission-method-both" name="deadlineitem[submissionmethod]" type="radio" value="Both">
+         <label class="govuk-label govuk-radios__label" for="submission-method-both">
+           Both
        </div>
 
      </div>
