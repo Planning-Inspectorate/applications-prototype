@@ -126,7 +126,11 @@ function loadDeadlineData(){
 // sprint 4 routes
 module.exports = function (router) {
   // routes for the representations
+  router.post("/design-sprint-2/choose-deadline-answer", function(req, res) {
+    //route user to correct journey depending on entity
+      res.redirect("ip-number-available");
 
+  });
 
 
   router.post("/design-sprint-2/ip-number-available-answer", function(req, res) {
@@ -424,6 +428,7 @@ router.get('/design-sprint-2/start', function (req, res) {
 
 req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
 let storedDeadlines = loadDeadlineData();
+req.session.data['error']= false;
 req.session.data['deadlineitemlist'];
 req.session.data['deadlineitemlist']= storedDeadlines;
 console.log (req.session.data['deadlineitemlist']);
