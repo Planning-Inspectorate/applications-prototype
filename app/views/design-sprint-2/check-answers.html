@@ -47,25 +47,26 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Interested party number available
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['entity']['ipavailable']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="ip-number-available">
-              Change<span class="govuk-visually-hidden"> interested party number available</span>
-            </a>
-          </dd>
-        </div>
+
 
         </dl>
 
             <h2 class="govuk-heading-m">Your details</h2>
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Interested party number available
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['ipavailable']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="ip-number-available">
+                    Change<span class="govuk-visually-hidden"> interested party number available</span>
+                  </a>
+                </dd>
+              </div>
               {% if data['entity']['ipavailable']=="Yes" %}
 
               <div class="govuk-summary-list__row">
