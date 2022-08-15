@@ -23,8 +23,6 @@ require('./routes/documents-0.js')(router);
 require('./routes/decoupled.js')(router);
 require('./routes/design-sprints.js')(router);
 require('./routes/design-sprint-2.js')(router);
-require('./routes/design-sprint-2b.js')(router);
-
 
 // routes for the type of party /register flow
 router.get("/reset", function (req, res) {
