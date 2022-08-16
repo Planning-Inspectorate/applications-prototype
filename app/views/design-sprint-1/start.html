@@ -18,7 +18,10 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
-
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back();"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -125,7 +128,7 @@
   </ul>
     </div>
 
-  <div class="govuk-grid-column-one-third">
+  <!--<div class="govuk-grid-column-one-third">
 
 <div class="gem-c-contextual-sidebar">
 
@@ -155,7 +158,7 @@
 
 
 
-</div>
+</div>-->
   </div>
 </div>
 {% endblock %}
