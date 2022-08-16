@@ -38,35 +38,30 @@ Which items would you like to submit against for this deadline?  {% endblock %}
         <h1 class="govuk-fieldset__heading">
 Which items would you like to submit against for this deadline?       </h1>
       </legend>
-
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="deadline-item-1" name="deadline[deadlineitems]" type="checkbox" value="Comment on submissions received by deadline 9">
-         <label class="govuk-label govuk-checkboxes__label" for="deadline-item-1">
-           Comment on submissions received by deadline 9
-         </label>
-       </div>
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="deadline-item-2" name="deadline[deadlineitems]" type="checkbox" value="Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules
-">
-         <label class="govuk-label govuk-checkboxes__label" for="deadline-item-2">
-          Provide further information requested by the Examination Authority under Rule 17 of the Examination Rules
-         </label>
-       </div>
-       <div class="govuk-checkboxes__item">
-         <input class="govuk-checkboxes__input" id="deadline-item-other" name="deadline[deadlineitems]" type="checkbox" value="Other">
-         <label class="govuk-label govuk-checkboxes__label" for="deadline-item-other">
-          Other
-         </label>
-       </div>
+ {% for item in data['deadlineitemlist'] %}
+ {% if item.id == data['deadline']['deadline'] %}
 
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="{{item.name}}" name="deadline[deadlineitems]" type="checkbox" value="{{item.name}}">
+         <label class="govuk-label govuk-checkboxes__label" for="{{item.name}}">
+           {{item.name}}
+         </label>
+       </div>
+       {% endif %}
+       {% endfor %}
      </div>
 
    </fieldset>
  </div>
 
+
+
+
+
+
           <button class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Continue
           </button>
         </form>
 
