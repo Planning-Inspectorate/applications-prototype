@@ -424,6 +424,8 @@ router.post(`/design-sprint-1/delete-item-answer`, function (req, res) {
 
 router.get('/design-sprint-1/start', function (req, res) {
 
+
+
 req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
 let storedDeadlines = loadDeadlineData();
 req.session.data['deadlineitemlist'];
@@ -437,12 +439,15 @@ res.render("design-sprint-1/start");
 
 router.get('/design-sprint-1/timetable/timetableload', function (req, res) {
 console.log("The get is running")
+console.log (req.query.form)
 
+let examForm = req.query.form
+console.log (examForm)
   req.session.data['Timetable-data'] = [
   	{
   		"title" : "Procedural Deadline A",
   		"description" : "Procedural Deadline A\r\n\r\nDeadline for receipt by the ExA of: Written submissions on Examination procedure, including draft timetable\r\n* Requests to speak at the Preliminary Meeting Part 1\r\n* Requests to speak at Issue Specific Hearing 1 on the draft Development Consent Order",
-  		"date_of_event" : "08 March 2022",
+  		"date_of_event" : "8 March 2022",
   		"timetable_type" : "Exams",
   		"type_of_event" : "Deadline",
   		"Status" : "Closed"
@@ -494,7 +499,7 @@ console.log("The get is running")
   	{
   		"title" : "Procedural Deadline B",
   		"description" : "Procedural Deadline B\r\n\r\nDeadline for:\r\n* Registration for ISH2, ISH3, ISH4 and CAH",
-  		"date_of_event" : "08 May 2022",
+  		"date_of_event" : "8 May 2022",
   		"timetable_type" : "Exams",
   		"type_of_event" : "Deadline",
   		"Status" : "Closed"
@@ -550,7 +555,7 @@ console.log("The get is running")
   	{
   		"title" : "Publication by the ExA of",
   		"description" : "The ExA’s further Written Questions (ExQ2), if required",
-  		"date_of_event" : "04 June 2022",
+  		"date_of_event" : "4 June 2022",
   		"timetable_type" : "Events",
   		"type_of_event" : "Procedural Decision",
   		"Status" : "Closed"
@@ -566,7 +571,7 @@ console.log("The get is running")
   	{
   		"title" : "Deadline 6",
   		"description" : "Deadline 6 (D6)\r\n\r\nDeadline for:\r\n* Comments on responses to ExQ2, if required\r\n* Comments on any submissions received by D5\r\n* Any further information requested by the ExA under Rule 17 of the Examination Rules",
-  		"date_of_event" : "02 July 2022",
+  		"date_of_event" : "2 July 2022",
   		"timetable_type" : "Exams",
   		"type_of_event" : "Deadline",
   		"Status" : "Closed"
@@ -614,14 +619,60 @@ console.log("The get is running")
   	{
   		"title" : "Deadline 10",
   		"description" : "Deadline 10 (D10)\r\n\r\nDeadline for:\r\n* Comments on any submissions received by D9\r\n* Any further information requested by the ExA under Rule 17 of the Examination Rules",
-  		"date_of_event" : "03 September 2022",
+  		"date_of_event" : "3 September 2022",
   		"timetable_type" : "Exams",
   		"type_of_event" : "Deadline",
   		"Status" : "Open"
   	}
   ]
 
+    req.session.data['Timetable-data-short'] = [
 
+    	{
+    		"title" : "Issue Specific Hearing 1 (ISH1)",
+    		"description" : "Issue Specific Hearing 1 (ISH1)\r\n\r\nDraft Development Consent Order",
+    		"date_of_event" : "13 March 2022",
+    		"timetable_type" : "Events",
+    		"type_of_event" : "Issue Specific Hearing",
+    		"Status" : "Closed"
+    	},
+    	{
+    		"title" : "Deadline 1",
+    		"description" : [
+                {"model":"Sentra",
+                "model":"Maxima",
+                "model":"Skyline"}
+            ],
+    		"date_of_event" : "29 March 2022",
+    		"timetable_type" : "Exams",
+    		"type_of_event" : "Deadline",
+    		"Status" : "Closed"
+    	},
+    	{
+    		"title" : "Deadline 2",
+    		"description" : "Deadline 2 (D2)\r\n\r\nDeadline for:\r\n* Responses to ExQ1\r\n* Written Representations (WR) and summaries of any WR exceeding 1500 words\r\n* Local Impact Reports (LIR) from local authorities\r\n* Comments on the Applicant’s proposed ASI itinerary\r\n* Comments on any submissions received by D1\r\n* Any further information requested by the ExA under Rule 17 of the Examination Rules",
+    		"date_of_event" : "16 April 2022",
+    		"timetable_type" : "Exams",
+    		"type_of_event" : "Deadline",
+    		"Status" : "Open"
+    	},
+      	{
+    		"title" : "Issue Specific Hearing 2 (ISH2)",
+    		"description" : "Issue Specific Hearing on Environmental Matters",
+    		"date_of_event" : "14 May 2022",
+    		"timetable_type" : "Events",
+    		"type_of_event" : "Issue Specific Hearing",
+    		"Status" : ""
+    	},
+    	{
+    		"title" : "Deadline 3",
+    		"description" : "Deadline 3 (D10)\r\n\r\nDeadline for:\r\n* Comments on any submissions received by D9\r\n* Any further information requested by the ExA under Rule 17 of the Examination Rules",
+    		"date_of_event" : "3 June 2022",
+    		"timetable_type" : "Exams",
+    		"type_of_event" : "Deadline",
+    		"Status" : "Open"
+    	}
+    ]
 
           var deadlineItems = [];
         deadlineItems.push({id : 'Deadline 1', name : 'Comments on RRs'});
@@ -715,7 +766,14 @@ console.log("The get is running")
 
 
           req.session.data['deadlineItems'] = deadlineItems;
-res.redirect('/design-sprint-1/timetable/timetable');
+if (examForm == "short")
+{
+res.redirect('/design-sprint-1/timetable/timetable-basic-data');
+}
+else {
+  res.redirect('/design-sprint-1/timetable/timetable');
+}
+
 })
 // end of timetable data stuff
 
