@@ -46,6 +46,8 @@ $pins-timeline-circle-size: 50px;
 @import "patterns/related-items";
 
 // pins specific components
+@import "patterns/pins-header";
+@import "patterns/pins-footer";
 @import "patterns/breadcrumb";
 @import "patterns/dwp-timeline";
 @import "patterns/pagination";
