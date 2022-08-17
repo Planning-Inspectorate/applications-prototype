@@ -746,7 +746,7 @@ console.log (examForm)
               deadlineItems.push({id : 'Deadline 5', name : 'Written Representations (WR) and summaries of any WR exceeding 1500 words'});
 
 
-    deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by D8'});
+    deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by Deadline 8'});
       deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final SoCG and SCSoCG'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final dDCO in MS Word clean and tracked versions'});

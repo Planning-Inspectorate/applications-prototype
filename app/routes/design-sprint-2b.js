@@ -101,14 +101,14 @@ function loadDeadlineData(){
               deadlineItems.push({id : 'Deadline 5', name : 'Written Representations (WR) and summaries of any WR exceeding 1500 words'});
 
 
-    deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by D8'});
-      deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final SoCG and SCSoCG'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final dDCO in MS Word clean and tracked versions'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the dDCO'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final Compulsory Acquisition Schedule, in clean and tracked versions'});
-              deadlineItems.push({id : 'Deadline 9', name : 'Final updated Guide to the Application'});
-              deadlineItems.push({id : 'Deadline 9', name : 'Other'});
+              deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by Deadline 8'});
+                deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the Examining Authority under Rule 17 of the Examination Rules'});
+                  deadlineItems.push({id : 'Deadline 9', name : 'Final Statements of Common Ground (SoCG) and Statement of Commonality of the Statements of Common Ground (SCSoCG)'});
+                  deadlineItems.push({id : 'Deadline 9', name : 'Final draft Development Consent Order in MS Word clean and tracked versions'});
+                  deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the draft Development Consent Order'});
+                  deadlineItems.push({id : 'Deadline 9', name : 'Final Compulsory Acquisition Schedule, in clean and tracked versions'});
+                        deadlineItems.push({id : 'Deadline 9', name : 'Final updated Guide to the Application'});
+                        deadlineItems.push({id : 'Deadline 9', name : 'Other'});
 
 
              -
@@ -638,11 +638,11 @@ console.log("The get is running")
               deadlineItems.push({id : 'Deadline 5', name : 'Written Representations (WR) and summaries of any WR exceeding 1500 words'});
 
 
-    deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by D8'});
-      deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the ExA under Rule 17 of the Examination Rules'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final SoCG and SCSoCG'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final dDCO in MS Word clean and tracked versions'});
-        deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the dDCO'});
+    deadlineItems.push({id : 'Deadline 9', name : 'Comments on any submissions received by Deadline 8'});
+      deadlineItems.push({id : 'Deadline 9', name : 'Any further information requested by the Examining Authority under Rule 17 of the Examination Rules'});
+        deadlineItems.push({id : 'Deadline 9', name : 'Final Statements of Common Ground (SoCG) and Statement of Commonality of the Statements of Common Ground (SCSoCG)'});
+        deadlineItems.push({id : 'Deadline 9', name : 'Final draft Development Consent Order in MS Word clean and tracked versions'});
+        deadlineItems.push({id : 'Deadline 9', name : 'Final Schedule of changes to the draft Development Consent Order'});
         deadlineItems.push({id : 'Deadline 9', name : 'Final Compulsory Acquisition Schedule, in clean and tracked versions'});
               deadlineItems.push({id : 'Deadline 9', name : 'Final updated Guide to the Application'});
               deadlineItems.push({id : 'Deadline 9', name : 'Other'});
