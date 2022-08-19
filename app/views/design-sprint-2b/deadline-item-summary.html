@@ -7,6 +7,7 @@
     {% set title %} You added {{items.length}} deadline items {% endset %}
 {% else %}
     {% set title %}You have not added a deadline item{% endset %}
+    {% set oneitem = true %}
 {% endif %}
 {% block pageTitle %}
 You have added x deadline items
@@ -65,6 +66,13 @@ You have added x deadline items
   {% endfor %}
   </div>
 
+{% if oneitem == true %}
+<form method="post" action="/design-sprint-2b/deadline-items" novalidate action="">
+<button class="govuk-button" data-module="govuk-button">
+  Add a deadline item
+</button>
+</form>
+{% else %}
   <form method="post" action="/design-sprint-2b/add-deadline-item-answer" novalidate action="">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
@@ -94,7 +102,7 @@ You have added x deadline items
       Continue
     </button>
   </form>
-
+{% endif %}
   <!-- hidden form for change links -->
   <form id="change-deadline-items-form" method="post" action="change-deadline-items-form-answer" style="display: none;">
   <input type="hidden" id="change-deadline-items-position" name="change-deadline-items-position" value="1">

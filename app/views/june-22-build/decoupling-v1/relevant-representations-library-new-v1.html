@@ -1,0 +1,720 @@
+{% set containerClasses = containerClasses | default("full-bleed") %}
+{% set mainClasses = mainClasses | default("govuk-!-padding-top-0") %}
+
+{% extends "layout.html" %}
+{% block pageTitle %} Drax Bioenergy with Carbon Capture and Storage Project
+{% endblock %}
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
+  <style type="text/css">
+  .moj-filter {
+  background-color: govuk-colour("white");
+  box-shadow: inset 0 0 0 1px govuk-colour("mid-grey");
+
+  &:focus {
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
+  }
+}
+
+
+.moj-filter__header {
+  background-color: govuk-colour("mid-grey");
+  font-size: 0; // Hide whitespace between elements
+  padding: govuk-spacing(2) govuk-spacing(4);
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  [class^=govuk-heading-] {
+    margin-bottom: 0;
+  }
+
+}
+
+
+// JavaScript
+.moj-filter__legend {
+  overflow: visible; // Override govuk to allow for focus style to be seen
+  width: 100%;
+
+  button {
+    @include govuk-font($size: 24, $weight: bold);
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: 0 none;
+    cursor: pointer; // Adam would not approve
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    -webkit-appearance: none;
+
+    // Fix unwanted button padding in Firefox
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    &::after {
+      background-image: url(#{$moj-images-path}icon-toggle-plus-minus.svg);
+      background-position: 0 0;
+      content: "";
+      display: block;
+      height: 16px;
+      margin-top: -8px; // Half the height of the icon
+      position: absolute; top: 50%; right: 0;
+      width: 16px;
+    }
+
+    &[aria-expanded="true"] {
+      &::after {
+        background-position: 16px 16px;
+      }
+    }
+
+    &:focus {
+      // @include govuk-focusable;
+    }
+
+  }
+
+}
+
+
+.moj-filter__header-title,
+.moj-filter__header-action {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+.moj-filter__close {
+  // @include govuk-focusable;
+  color: govuk-colour("black");
+  cursor: pointer; // I know Adam won’t like this
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+
+
+  &:focus {
+    background-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour;
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
+    outline: none;
+  }
+
+  // Fix unwanted button padding in Firefox
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  &::before {
+    background-image: url(#{$moj-images-path}icon-close-cross-black.svg);
+    content: "";
+    display: inline-block;
+    height: 14px;
+    margin-right: govuk-spacing(1);
+    position: relative;
+    top: -1px; // Alignment tweak
+    vertical-align: middle;
+    width: 14px;
+  }
+
+}
+
+
+.moj-filter__close {
+  @include govuk-font(19);
+}
+
+
+.moj-filter__selected {
+  background-color: govuk-colour("light-grey");
+  box-shadow: inset 0 0 0 1px govuk-colour("mid-grey");
+  padding: govuk-spacing(4);
+
+  ul:last-of-type {
+    margin-bottom: 0; // IE9 +
+  }
+
+}
+
+
+.moj-filter__selected-heading {
+  font-size: 0; // Hide whitespace between elements
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+}
+
+
+.moj-filter__heading-title,
+.moj-filter__heading-action {
+  @include govuk-font(16);
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+.moj-filter-tags {
+  font-size: 0;
+  margin-bottom: govuk-spacing(4); // Needs to adjust to 15px on mobile
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    margin-right: govuk-spacing(2);
+  }
+
+}
+
+
+.moj-filter__tag {
+  @include govuk-font(16);
+  background-color: govuk-colour("white");
+  border: 1px solid govuk-colour("black");
+  color: govuk-colour("black");
+  display: inline-block;
+  margin-top: govuk-spacing(1);
+  padding: govuk-spacing(1);
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: govuk-colour("black");
+  }
+
+  &:focus {
+    color: $govuk-focus-text-colour;
+    background-color: $govuk-focus-colour;
+  }
+
+  &:hover {
+    background-color: govuk-colour("black");
+    color: govuk-colour("white");
+  }
+
+  &:after {
+    background-image: url(#{$moj-images-path}icon-tag-remove-cross.svg);
+    content: "";
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    margin-left: govuk-spacing(1);
+    vertical-align: middle;
+    width: 10px;
+  }
+
+  &:hover:after {
+    background-image: url(#{$moj-images-path}icon-tag-remove-cross-white.svg);
+  }
+
+}
+
+
+.moj-filter__options {
+  box-shadow: inset 0 0 0 1px govuk-colour("mid-grey");
+  margin-top: -1px;
+  padding: govuk-spacing(4);
+
+  div:last-of-type {
+    margin-bottom: 0; // IE9 +
+  }
+
+}
+</style>
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    containerClasses: "full-bleed"
+  }) }}
+{% endblock %}
+
+
+    {% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+      <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+    {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<h1 class="govuk-heading-xl govuk-!-padding-top-9 govuk-!-padding-bottom-9" >Drax Bioenergy with Carbon Capture and Storage Project</h1>
+</div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'comments' %}
+      {% include "../includes/vertical_tabs_without_related.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+
+</nav>
+<div class="moj-filter">
+
+  <div class="moj-filter__header">
+
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-m">Filter</h2>
+    </div>
+
+    <div class="moj-filter__header-action">
+
+    </div>
+
+  </div>
+
+  <div class="moj-filter__content">
+
+    <div class="moj-filter__selected">
+
+      <div class="moj-filter__selected-heading">
+
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-m">Selected filters</h2>
+        </div>
+
+        <div class="moj-filter__heading-action">
+          <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+        </div>
+
+      </div>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
+
+      <ul class="moj-filter-tags">
+
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Members of the public or businesses</a></li>
+
+
+      </ul>
+
+
+    </div>
+
+    <div class="moj-filter__options">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Apply filters
+      </button>
+
+
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Type
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
+              <label class="govuk-label govuk-checkboxes__label" for="type">
+                Local authorities (4)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                Members of the public or businesses (3)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                Non-statutory organisations (7)
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-4" name="type" type="checkbox" value="4">
+              <label class="govuk-label govuk-checkboxes__label" for="type-4">
+                Other consultees (1)
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-5" name="type" type="checkbox" value="5">
+              <label class="govuk-label govuk-checkboxes__label" for="type-5">
+                Parish councils (5)
+              </label>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+<nav>
+  <h3 class="govuk-heading-s govuk-!-margin-top-3">Related guides</h3>
+
+  <ul class="govuk-list sidenav">
+
+    <li class="govuk-body-s">
+      <a href="../interested-party-guide/"
+        >Having your say about a national infrastructure project</a
+      >
+    </li>
+    </ul>
+    </nav>
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
+
+<h2 class="govuk-heading-l">Relevant representations (registration comments)</h2>
+
+<input class="govuk-input govuk-!-width-one-half" id="searchTerm" name="searchTerm" type="text" value="">
+<button class="govuk-button" data-cy="search-button">Search</button>
+
+
+
+
+  <p class="results">
+                  Showing  <strong>1</strong> to <strong>1</strong> of <strong>4</strong> documents, newest first.
+                </p>
+  <ul class="pins-govuk-result-list">
+
+      <li class="pins-govuk-result-list__item">
+        <a href="relevant-representations-library-item" class="govuk-link pins-govuk-result-list__item-title">
+
+            Paul test
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            07 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+      <li class="pins-govuk-result-list__item">
+        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+            Mrs Test
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            06 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+      <li class="pins-govuk-result-list__item">
+        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+            Mrs Sue Test
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            05 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+      <li class="pins-govuk-result-list__item">
+        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+            Test Planning Alliance (Community Planning Alliance)
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            03 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+
+
+  </ul>
+
+
+
+
+
+</div>
+
+      </div>
+
+    <!--  <div class="govuk-grid-column-one-third">
+
+
+<div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-margin-right-3">
+
+    <div style="background-color: #f3f2f1; padding: 10px;">
+    <h2 class="govuk-heading-m">Filter by</h2>
+    <div class="govuk-form-group">
+
+
+    <div class="govuk-checkboxes govuk-checkboxes--small"
+    data-module="govuk-checkboxes">
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities">
+      <label class="govuk-label govuk-checkboxes__label" for="type">
+    Local authorities
+    </label>
+
+    </div>
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses">
+          <label class="govuk-label govuk-checkboxes__label" for="type">
+      Members of the public or businesses (4)
+    </label>
+
+        </div>
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees">
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Non-statutory organisations
+    </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees">
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Other statutory consultees
+    </label>
+
+        </div>
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Parish Councils">
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Parish councils
+        </label>
+
+        </div>
+
+</div>
+</div>
+        <button class="govuk-button" data-cy="apply-filter-button" data-module="govuk-button">Apply</button>
+        </div>
+
+</div>
+
+
+
+
+
+  </fieldset>
+
+</div>
+</div>-->
+
+<!--
+<div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset">
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+<h1 class="govuk-fieldset__heading">
+Filter by
+</h1>
+
+</legend>
+
+
+<div class="govuk-checkboxes govuk-checkboxes--small"
+data-module="govuk-checkboxes">
+
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities">
+  <label class="govuk-label govuk-checkboxes__label" for="type">
+Local authorities
+</label>
+
+</div>
+
+
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses">
+      <label class="govuk-label govuk-checkboxes__label" for="type">
+  Members of the public or businesses (4)
+</label>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees">
+      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+  Other statutory consultees
+</label>
+
+    </div>
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Parish Councils">
+      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+  Parish councils
+    </label>
+
+    </div>
+
+
+
+
+</div>
+
+
+</fieldset>
+
+
+</div>
+
+
+<button class="govuk-button" data-cy="apply-filter-button">Apply Filters</button>
+</div>
+
+
+      </div>
+    </div>-->
+
+
+
+</form>
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
