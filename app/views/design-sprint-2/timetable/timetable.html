@@ -188,7 +188,7 @@ Examination      </div>
     {% endif %}
     {% if ("Open" in item.Status) or ("Closed" in item.Status) %}
     <br><a href="#">View recordings</a>
-    <br><a href="#">View action points</a>
+    <!--<br><a href="#">View action points</a>-->
     {% else %}
     <br><a href="#">View agenda</a>
 
@@ -203,7 +203,7 @@ Examination      </div>
     {% if "Deadline" in item.type_of_event %}
       {% if "Open" in item.Status %}
       <p style="bottom-margin:0px;bottom-padding:0px;">  <form style="bottom-margin:0px;bottom-padding:0px;" action="../../design-sprint-2b/start" method="post" novalidate><button class="govuk-button" data-module="govuk-button">   Make a submission</button></form></p>
-        {% else %} <br><a href="#">View documents received against this deadline ({{ [23,17,50, 34,16, 75, 19, 67, 44, 33]|random() }})</a>
+        {% else %} <br><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline ({{ [23,17,50, 34,16, 75, 19, 67, 44, 33]|random() }})</a>
         {% endif %}
     {% endif %}
   </li>
