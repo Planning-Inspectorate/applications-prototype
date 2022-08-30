@@ -7,7 +7,7 @@
 {% block header %}
     <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Get updates about this project", 
+    serviceName: "Get updates about this project",
     serviceUrl: "/sprint-6/get-updates/",
     saveAndExit: false
   }) }}
@@ -25,7 +25,7 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
+          <h1 class="govuk-heading-l">Confirm your email address</h1>
             <p class="govuk-body-l">
                 We’ve sent an email to <strong>{% if not data['email'] %} joe.bloggs@email.com {% endif %}{{data['email']}}</strong>
             </p>
@@ -39,7 +39,7 @@
                 html: '
                     <p class="govuk-body">Emails sometimes take a few minutes to arrive.</p>
                     <p class="govuk-body">If you do not receive an email soon, check your spam or junk folder.</p>
-                    <p class="govuk-body">If this does not work, <a href="#">contact The Planning Inspectorate for help</a>.</p>
+                    <p class="govuk-body">If this does not work, <a href="#">contact us for help</a>.</p>
                    '
                 }) }}
             <a href="./verify-email" class="govuk-button govuk-button--secondary">Show email</a>
