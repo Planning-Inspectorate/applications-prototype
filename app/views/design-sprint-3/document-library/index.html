@@ -1,0 +1,480 @@
+
+{% set containerClasses = containerClasses | default("full-bleed") %}
+{% set mainClasses = mainClasses | default("govuk-!-padding-top-0") %}
+
+{% extends "layout.html" %}
+{% block pageTitle %} Drax Bioenergy with Carbon Capture and Storage Documents
+{% endblock %}
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
+{% endblock %}
+{% block head %}
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
+  <style type="text/css">
+
+
+  </style>
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    containerClasses: "full-bleed"
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+<div >
+  <div class="full-bleed">
+
+    {{ govukPhaseBanner({
+        tag: {
+          text: "beta"
+        },
+        html: 'This is a new service – your <a class="govuk-link " href="#">feedback</a> will help us to improve it.'
+      })
+    }}
+    <h1 class="govuk-heading-xl govuk-!-padding-top-9 govuk-!-padding-bottom-9" >Drax Bioenergy with Carbon Capture and Storage Project
+</h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'about-the-application' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+</nav>
+
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
+
+<h2 class="govuk-heading-l">Documents</h2>
+   <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
+<!--
+   <div class="govuk-inset-text">
+     You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.
+   </div>-->
+<input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
+<button class="govuk-button" data-cy="search-button">Search</button>
+
+
+<div class="moj-filter govuk-!-margin-bottom-5">
+
+  <div class="moj-filter__header">
+
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-m">Filter</h2>
+    </div>
+
+    <div class="moj-filter__header-action">
+
+    </div>
+
+  </div>
+
+  <div class="moj-filter__content">
+
+    <div class="moj-filter__selected">
+
+      <div class="moj-filter__selected-heading">
+
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-m">Selected filters</h2>
+        </div>
+
+        <div class="moj-filter__heading-action">
+          <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+        </div>
+
+      </div>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Document type</h3>
+      <ul class="moj-filter-tags">
+
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Blue</a></li>
+
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Yellow</a></li>
+
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Project stage</h3>
+
+      <ul class="moj-filter-tags">
+
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Completed</a></li>
+
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Author</h3>
+
+      <ul class="moj-filter-tags">
+
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Completed</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="moj-filter__options">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Apply filters
+      </button>
+
+    <!--  <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="keywords">
+          Keywords
+        </label>
+
+        <input class="govuk-input" id="keywords" name="keywords" type="text">
+      </div>-->
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Document type
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type">
+                Notice of proposed application (s46) (2)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                Hearing notice (1)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type-3">
+              Other documents (4)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="4">
+              <label class="govuk-label govuk-checkboxes__label" for="type-4">
+                Additional submissions (2)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="5">
+              <label class="govuk-label govuk-checkboxes__label" for="type-5">
+                s56 notification
+              </label>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Project stage
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="pre-application">
+              <label class="govuk-label govuk-checkboxes__label" for="stage">
+                Pre-application
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="stage-2" name="stage" type="checkbox" value="acceptance">
+              <label class="govuk-label govuk-checkboxes__label" for="stage-2">
+                Acceptance
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="stage-3" name="stage" type="checkbox" value="pre-examination">
+              <label class="govuk-label govuk-checkboxes__label" for="stage-3">
+              Pre-examination
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="stage-4" name="stage" type="checkbox" value="examination">
+              <label class="govuk-label govuk-checkboxes__label" for="stage-4">
+              Examination
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="stage-5" name="stage" type="checkbox" value="decision">
+              <label class="govuk-label govuk-checkboxes__label" for="stage-5">
+            Decision
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="stage-5" name="stage" type="checkbox" value="decided">
+              <label class="govuk-label govuk-checkboxes__label" for="stage-5">
+              Decided
+              </label>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Author
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="author" name="author" type="checkbox" value="planning-inspectorate">
+              <label class="govuk-label govuk-checkboxes__label" for="author">
+                Planning Inspectorate
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="author-2" name="author" type="checkbox" value="drax">
+              <label class="govuk-label govuk-checkboxes__label" for="author-2">
+                Drax Bioenergy
+              </label>
+
+            </div>
+
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  <p class="results">
+                  Showing  <strong>1</strong> to <strong>3</strong> of <strong>3</strong> documents, newest first.
+                </p>
+
+  <ul class="pins-govuk-result-list">
+
+<ul class="pins-govuk-result-list">
+
+  <li class="pins-govuk-result-list__item">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Examination library with reference numbers (PDF, 68KB)
+    </a>
+    <p class="pins-govuk-result-list__item-description ">
+
+        From the Planning Inspectorate
+
+    </p>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 October 2021
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Pre-examination
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+Examination      </div>
+    </div>
+  </li>
+
+    <li class="pins-govuk-result-list__item">
+      <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
+        Scoping Report submitted to the Secretary of State on  (PDF, 68KB)
+      </a>
+      <p class="pins-govuk-result-list__item-description ">
+
+          From North Lincolnshire Green Energy Park Ltd
+
+      </p>
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third" data-cy="published-date">
+          25 October 2021
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-stage">
+          Pre-application
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-title">
+          Environmental impact assessment scoping
+        </div>
+      </div>
+    </li>
+
+
+    <li class="pins-govuk-result-list__item">
+      <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
+        Scoping Report annexe (PDF, 68KB)
+      </a>
+      <p class="pins-govuk-result-list__item-description ">
+
+          From North Lincolnshire Green Energy Park Ltd
+
+      </p>
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third" data-cy="published-date">
+          25 October 2021
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-stage">
+          Pre-application
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-title">
+          Environmental impact assessment scoping
+        </div>
+      </div>
+    </li>
+
+    <li class="pins-govuk-result-list__item">
+      <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
+        Scoping Report annexe two (PDF, 68KB)
+      </a>
+      <p class="pins-govuk-result-list__item-description ">
+
+          From North Lincolnshire Green Energy Park Ltd
+
+      </p>
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third" data-cy="published-date">
+          25 October 2021
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-stage">
+          Pre-application
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-title">
+          Environmental impact assessment scoping
+        </div>
+      </div>
+    </li>
+
+    <li class="pins-govuk-result-list__item">
+      <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
+        Notification of Decision to Accept Application (PDF, 68KB)
+      </a>
+      <p class="pins-govuk-result-list__item-description ">
+
+          From the Planning Inspectorate
+
+      </p>
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third" data-cy="published-date">
+          25 October 2021
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-stage">
+          Acceptance  (review of the application)
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-title">
+          Acceptance letter
+        </div>
+      </div>
+    </li>
+
+
+
+    <li class="pins-govuk-result-list__item">
+      <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000002-Transboundary test document.pdf"target="_blank">
+        Regulation 32- Transboundary Screening (PDF, 68KB)
+      </a>
+      <p class="pins-govuk-result-list__item-description ">
+
+
+            From North Lincolnshire Green Energy Park Ltd
+
+
+      </p>
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third" data-cy="published-date">
+          25 October 2021
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-stage">
+          Pre-examination
+        </div>
+        <div class="govuk-grid-column-one-third" data-cy="published-title">
+          Transboundary
+        </div>
+      </div>
+    </li>
+
+</ul>
+
+
+
+
+
+
+</div>
+
+      </div>
+
+  </div>
+</div>
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
