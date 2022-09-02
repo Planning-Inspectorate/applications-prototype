@@ -359,7 +359,32 @@ router.post(`/design-sprint-3/delete-item-answer`, function (req, res) {
 
 });
 
+//Show hide doc lib filters
+router.post("/design-sprint-3/show-hide-filters", function(req, res) {
+  if(req.session.data['showFilters']==true){
+    req.session.data['showFilters']=false
+    res.redirect("document-library");
+  }
+  else {
+    req.session.data['showFilters']=true
+    res.redirect("document-library");
 
+  }
+});
+
+//Show hide doc lib filters
+router.post("/design-sprint-3/clear-filters", function(req, res) {
+  req.session.data['filtersApplied'] = false
+    res.redirect("document-library");
+});
+
+//Apply doc lib filters
+router.post("/design-sprint-3/apply-filters", function(req, res) {
+  req.session.data['filtersApplied'] = true
+    res.redirect("document-library");
+
+
+});
 
 /// Timetable data stuff
 

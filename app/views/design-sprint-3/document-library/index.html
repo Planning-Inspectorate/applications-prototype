@@ -18,10 +18,7 @@
   <!--[if gt IE 8]><!-->
   <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
   <!--<![endif]-->
-  <style type="text/css">
 
-
-  </style>
   {% for stylesheetUrl in extensionConfig.stylesheets %}
     <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
   {% endfor %}
@@ -29,6 +26,8 @@
   <!-- Mapbox resources -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+
+
   <!-- end Mapbox -->
 {% endblock %}
 {% block header %}
@@ -75,9 +74,17 @@
    <div class="govuk-inset-text">
      You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.
    </div>-->
+
+{% if data['showFilters'] %}
+<form method="post" action="/design-sprint-3/show-hide-filters">
+   <button class="govuk-button" id="toggleButton" data-module="govuk-button">
+     Hide search and filters
+   </button>
+</form>
+<div>
 <input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
 <button class="govuk-button" data-cy="search-button">Search</button>
-
+</div>
 
 <div class="moj-filter govuk-!-margin-bottom-5">
 
@@ -94,7 +101,7 @@
   </div>
 
   <div class="moj-filter__content">
-
+{% if data['filtersApplied'] %}
     <div class="moj-filter__selected">
 
       <div class="moj-filter__selected-heading">
@@ -104,7 +111,7 @@
         </div>
 
         <div class="moj-filter__heading-action">
-          <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+          <p><a class="govuk-link govuk-link--no-visited-state" href="#">Clear filters</a></p>
         </div>
 
       </div>
@@ -112,9 +119,8 @@
       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Document type</h3>
       <ul class="moj-filter-tags">
 
-        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Blue</a></li>
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Hearing notice</a></li>
 
-        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Yellow</a></li>
 
       </ul>
 
@@ -122,7 +128,7 @@
 
       <ul class="moj-filter-tags">
 
-        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Completed</a></li>
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Pre-application</a></li>
 
       </ul>
 
@@ -130,17 +136,20 @@
 
       <ul class="moj-filter-tags">
 
-        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Completed</a></li>
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Drax Bioenergy</a></li>
 
       </ul>
 
     </div>
+    {% endif %}
 
     <div class="moj-filter__options">
 
+<form method="post" action="/design-sprint-3/apply-filters">
       <button class="govuk-button" data-module="govuk-button">
         Apply filters
       </button>
+      </form>
 
     <!--  <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m" for="keywords">
@@ -163,7 +172,7 @@
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
               <label class="govuk-label govuk-checkboxes__label" for="type">
                 Notice of proposed application (s46) (2)
               </label>
@@ -237,7 +246,7 @@
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="stage-3" name="stage" type="checkbox" value="pre-examination">
+              <input class="govuk-checkboxes__input" id="stage-3" name="stage" type="checkbox" value="pre-examination" checked>
               <label class="govuk-label govuk-checkboxes__label" for="stage-3">
               Pre-examination
               </label>
@@ -293,7 +302,7 @@
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="author-2" name="author" type="checkbox" value="drax">
+              <input class="govuk-checkboxes__input" id="author-2" name="author" type="checkbox" value="drax" checked>
               <label class="govuk-label govuk-checkboxes__label" for="author-2">
                 Drax Bioenergy
               </label>
@@ -312,7 +321,13 @@
   </div>
 
 </div>
-
+{% else %}
+<form method="post" action="/design-sprint-3/show-hide-filters">
+   <button class="govuk-button" id="toggleButton" data-module="govuk-button">
+     Show search and filters
+   </button>
+</form>
+{% endif %}
 
   <p class="results">
                   Showing  <strong>1</strong> to <strong>3</strong> of <strong>3</strong> documents, newest first.

@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Does your submission contain personal information?
+  {% if data['deadlineitem']['submissiontext']=="Both" %}
+Comment or files has personal information or not
+{% endif %}
+  {% if data['deadlineitem']['submissiontext']=="Files" %}
+  Files have personal information or not
+  {% endif %}
+    {% if data['deadlineitem']['submissiontext']=="Comment" %}
+    Comment has personal information or not
+    {% endif %}
 {% endblock %}
 
 {% block header %}
