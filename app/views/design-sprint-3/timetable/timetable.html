@@ -1,15 +1,13 @@
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-Examination timetable  {% endblock %}
-
+{% block pageTitle %} Examination timetable
+{% endblock %}
 {% block header %}
   <!-- Blank header with no service name for the start page -->
   {{ pinsHeader() }}
 {% endblock %}
 
-{% block beforeContent %}
 
+{% block beforeContent %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
@@ -18,20 +16,16 @@ Examination timetable  {% endblock %}
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
-
-
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-column-full">
-  <div class="govuk-grid-row">
-    <h1 class="govuk-heading-xl" >Drax Bioenergy with Carbon Capture and Storage Project
-</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Drax Bioenergy with Carbon Capture and Storage Project</h1>
     </div>
     </div>
 
-<div class="govuk-grid-row ">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <nav>
       {% set current = 'timetable' %}
@@ -41,6 +35,7 @@ Examination timetable  {% endblock %}
 
   </div>
   <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
 
 <h2 class="govuk-heading-l">Examination timetable</h2>
    <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
@@ -52,15 +47,31 @@ Examination timetable  {% endblock %}
 <button class="govuk-button" data-cy="search-button">Search</button>-->
 
 
-  <p style="font-size:16px;padding:0;margin:0;color:#000;font-family: "GDS Transport, arial, sans-serif;">
-                  The examination opened on 13 March 2022.
+    </div>
 
-                  <div class="govuk-inset-text">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+
+  <p style="font-size:16px;padding:0;margin-bottom:15px;color:#000;font-family: "GDS Transport, arial, sans-serif;">
+                  The examination opened on 13 March 2022.<br></p>
 
 
 
+                    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+                    {% set html %}
+                      <p class="govuk-notification-banner__heading">
+                        Next deadline: <a href="#next" class="govuk-notification-banner__link">Deadline 9 closes 27 August 2022</a></br>
+
+                    {% endset %}
+
+                    {{ govukNotificationBanner({
+                      html: html
+                    }) }}
+                    <!--<div class="govuk-inset-text">
                     <p style="font-size:16px">Next deadline: <a href="#next">Deadline 9 closes 27 August 2022</a></br>
-                                      </div>
+                                      </div>-->
 
                 <!--  <h3 class="govuk-heading-m">Next</h3>
                 <p style="font-size:16px"><a href="#next">Deadline 2 - closes 16 April 2022 <br>
