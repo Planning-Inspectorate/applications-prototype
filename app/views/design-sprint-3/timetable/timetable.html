@@ -1,63 +1,37 @@
-
-{% set containerClasses = containerClasses | default("full-bleed") %}
-{% set mainClasses = mainClasses | default("govuk-!-padding-top-0") %}
-
 {% extends "layout.html" %}
-{% block pageTitle %} Drax Bioenergy with Carbon Capture and Storage Documents
-{% endblock %}
-{% block headIcons %}
-  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
-{% endblock %}
-{% block head %}
-  <!--[if lte IE 8
-  ]><link
-    href="/public/stylesheets/unbranded-ie8.css"
-    rel="stylesheet"
-    type="text/css"
-/><![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
-  <!--<![endif]-->
-  <style type="text/css">
 
+{% block pageTitle %}
+Examination timetable  {% endblock %}
 
-  </style>
-  {% for stylesheetUrl in extensionConfig.stylesheets %}
-    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
-  {% endfor %}
-
-  <!-- Mapbox resources -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
-  <!-- end Mapbox -->
-{% endblock %}
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader({
-    containerClasses: "full-bleed"
-  }) }}
+  {{ pinsHeader() }}
 {% endblock %}
-{% block beforeContent %}
-<div >
-  <div class="full-bleed">
 
-    {{ govukPhaseBanner({
-        tag: {
-          text: "beta"
-        },
-        html: 'This is a new service – your <a class="govuk-link " href="#">feedback</a> will help us to improve it.'
-      })
-    }}
-    <h1 class="govuk-heading-xl govuk-!-padding-top-9 govuk-!-padding-bottom-9" >Drax Bioenergy with Carbon Capture and Storage Project
-</h1>
-  </div>
-</div>
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-column-full">
+  <div class="govuk-grid-row">
+    <h1 class="govuk-heading-xl" >Drax Bioenergy with Carbon Capture and Storage Project
+</h1>
+    </div>
+    </div>
 
-
-<div class="govuk-grid-row govuk-!-margin-left-0">
+<div class="govuk-grid-row ">
   <div class="govuk-grid-column-one-quarter">
     <nav>
       {% set current = 'timetable' %}
@@ -67,7 +41,6 @@
 
   </div>
   <div class="govuk-grid-column-three-quarters">
-    <div class="govuk-grid-row">
 
 <h2 class="govuk-heading-l">Examination timetable</h2>
    <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
@@ -78,12 +51,6 @@
 <!--<input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
 <button class="govuk-button" data-cy="search-button">Search</button>-->
 
-
-    </div>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-<div class="govuk-grid-row">
 
   <p style="font-size:16px;padding:0;margin:0;color:#000;font-family: "GDS Transport, arial, sans-serif;">
                   The examination opened on 13 March 2022.

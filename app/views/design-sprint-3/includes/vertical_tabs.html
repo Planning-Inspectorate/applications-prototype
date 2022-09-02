@@ -10,19 +10,24 @@
       <a href="./project-timeline">Project timeline</a>
       {% else %} Project timeline {% endif %}
     </li>-->
+    <li class="govuk-body-s {% if 'project-information' in current %} active {% endif %}">
+      {% if not 'project-information' in current %}
+      <a href="/design-sprint-3/project-overview/index">Project information</a>
+      {% else %} Project information {% endif %}
+    </li>
     <li class="govuk-body-s {% if 'about-the-application' in current %} active {% endif %}">
       {% if not 'about-the-application' in current %}
-      <a href="./document-library">Documents</a>
+      <a href="/design-sprint-3/document-library/index">Documents</a>
       {% else %} Documents {% endif %}
     </li>
     <li class="govuk-body-s {% if 'comments' in current %} active {% endif %}">
       {% if not 'comments' in current %}
-      <a href="./relevant-representations-library">Relevant representations (registration comments)</a>
+      <a href="/design-sprint-3/relevant-representations/index">Relevant representations (registration comments)</a>
       {% else %} Relevant representations (registration comments) {% endif %}
     </li>
     <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
       {% if not 'timetable' in current %}
-      <a href="../timetable/timetable">Examination timetable</a>
+      <a href="/design-sprint-3/timetable/timetableload">Examination timetable</a>
       {% else %} Examination timetable {% endif %}
     </li>
 
