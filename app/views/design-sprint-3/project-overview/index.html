@@ -22,6 +22,12 @@
   rel="stylesheet"
   type="text/css"
 />
+<link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.css" />
+<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css" />
+<style>
+    body { margin:0; padding:0; }
+    #map { width:100%;height:35em;position:relative;margin-bottom:20px; }
+    </style>
   <!--<![endif]-->
 
   {% for stylesheetUrl in extensionConfig.stylesheets %}
@@ -93,6 +99,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           Persons have the right to be heard in any Examination hearings.
           </p>
 
+
+
           <p>
           You can also <a href="../"> view the Rule 8 letter</a> to find out more about what you
           can do during the Examination stage.
@@ -144,9 +152,19 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             govuk-section-break--visible
           "
 />
+<h3  class="govuk-heading-m">Project location</H3>
 
+<p class="govuk-body">Drax Power Station, North Yorkshire</P>
 
+<div id="map"></div>
 
+<hr
+class="
+  govuk-section-break
+  govuk-section-break--xl
+  govuk-section-break--visible
+"
+/>
 
        <h3 class="govuk-heading-m">
          Contact us for support
@@ -246,4 +264,54 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 {% endblock %}
 {% block footer %}
   {{ pinsFooter() }}
+{% endblock %}
+
+{% block pageScripts %}
+<script src="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.js"></script>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js"></script>
+<script>
+
+    var apiKey = 'qT0QWbtJjfNOhw0hAwDymAKtztxD4dwQ';
+
+    var serviceUrl = 'https://api.os.uk/maps/vector/v1/vts';
+
+    // Initialize the map object.
+    var map = new mapboxgl.Map({
+        container: 'map',
+        minZoom: 6,
+        maxZoom: 18,
+        style: serviceUrl + '/resources/styles?key=' + apiKey,
+        maxBounds: [
+            [ -10.76418, 49.528423 ],
+            [ 1.9134116, 61.331151 ]
+        ],
+        center: [ -0.99508176169251 , 53.742669336673  ],
+        zoom: 13,
+        transformRequest: url => {
+            return {
+                url: url + '&srs=3857'
+            }
+        }
+    });
+
+    map.dragRotate.disable(); // Disable map rotation using right click + drag.
+    map.touchZoomRotate.disableRotation(); // Disable map rotation using touch rotation gesture.
+
+    // Add navigation control (excluding compass button) to the map.
+    map.addControl(new mapboxgl.NavigationControl({
+        showCompass: false
+    }));
+
+    const marker = new mapboxgl.Marker()
+    .setLngLat([-0.99508176169251 , 53.742669336673])
+    .addTo(map); // add the marker to the map
+
+//     const popup = new mapboxgl.Popup({ closeOnClick: false, openOnClick: true})
+// .setLngLat([-0.99508176169251 , 53.742669336673])
+// .setHTML('<h1>Drax Energy</h1>')
+// .addTo(map);
+
+
+
+</script>
 {% endblock %}
