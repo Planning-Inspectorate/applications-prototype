@@ -388,6 +388,18 @@ router.post("/design-sprint-3/apply-filters", function(req, res) {
 
 /// Timetable data stuff
 
+//
+router.get("/design-sprint-3/accordion", function(req, res) {
+  req.session.data['accordion-default-content-1'] = true;
+  req.session.data['accordion-default-content-2'] = "false";
+    console.log (req.session.data['accordion-default-content-1']);
+    console.log (req.session.data['accordion-default-content-2']);
+    res.redirect("/design-sprint-3/timetable/timetable-upcoming-first-accordion");
+
+
+});
+
+
 router.get('/design-sprint-3/start', function (req, res) {
 
 req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
@@ -404,7 +416,9 @@ res.render("design-sprint-3/start");
 
 
 router.get('/design-sprint-3/timetable/timetableload', function (req, res) {
-console.log("The get is running")
+console.log("The get is running");
+
+
 
   req.session.data['Timetable-data'] = [
   	{
@@ -561,7 +575,7 @@ console.log("The get is running")
   		"date_of_event" : "12 August 2022",
   		"timetable_type" : "Events",
   		"type_of_event" : "Issue Specific Hearing",
-  		"Status" : ""
+  		"Status" : "Closed"
   	},
   	{
   		"title" : "Deadline 8",

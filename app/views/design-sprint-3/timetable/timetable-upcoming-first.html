@@ -21,20 +21,6 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-
-                        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-
-                        {% set html %}
-                          <p class="govuk-notification-banner__heading">
-                            Next deadline: <a href="#next" class="govuk-notification-banner__link">Deadline 9 closes 27 August 2022</a></br>
-
-                        {% endset %}
-
-                        {{ govukNotificationBanner({
-                          html: html
-                        }) }}
-
       <h1 class="govuk-heading-xl">Drax Bioenergy with Carbon Capture and Storage Project</h1>
     </div>
     </div>
@@ -44,17 +30,14 @@
     <nav>
       {% set current = 'timetable' %}
       {% include "../includes/vertical_tabs.html" %}
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
-</nav>
+<!--<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+--></nav>
 
   </div>
   <div class="govuk-grid-column-three-quarters">
     <div class="govuk-grid-row">
 
 <h2 class="govuk-heading-l">Examination timetable</h2>
-
-
-
    <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
 <!--
    <div class="govuk-inset-text">
@@ -72,10 +55,17 @@
 
   <p style="font-size:16px;padding:0;margin-bottom:15px;color:#000;font-family: "GDS Transport, arial, sans-serif;">
                   The examination opened on 13 March 2022.<br></p>
+                    <!-- {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
+                    {% set html %}
+                      <p class="govuk-notification-banner__heading">
+                        Next deadline: <a href="#next" class="govuk-notification-banner__link">Deadline 9 closes 27 August 2022</a></br>
 
+                    {% endset %}
 
-  
+                    {{ govukNotificationBanner({
+                      html: html
+                    }) }} -->
                     <!--<div class="govuk-inset-text">
                     <p style="font-size:16px">Next deadline: <a href="#next">Deadline 9 closes 27 August 2022</a></br>
                                       </div>-->
@@ -116,11 +106,13 @@ Examination      </div>
 </ul> -->
 
 
-{% for item in data['Timetable-data'] %}
+{% for item in data['Timetable-data']|sort(attribute='Status',reverse='true') %}
   <!--<li>{{ item.case_reference }}</li>-->
-  {% if "Deadline 9" in item.title   %}
-<a name="next"></a>
-{% endif %}
+
+
+
+
+
 
 
 {% if "Issue Specific Hearing 5 (ISH5)" in item.title   %}
@@ -129,13 +121,21 @@ Examination      </div>
 
   <li class="pins-govuk-result-list__item">
 
+    {% if "Deadline 9" in item.title   %}
+  <a name="next"></a>
+  <h3 class="govuk-heading-m">Upcoming events and deadlines</h3>
+  {% elif "Procedural Deadline A" in item.title   %}
+  <h3 class="govuk-heading-m">Past events and deadlines</h3>
+
+  {% endif %}
+
     <div class="govuk-grid-row document-metadata">
 
     <!--  <div class="govuk-grid-column-one-third" data-cy="published-date"> -->
 
         <div class="govuk-grid-column-full" data-cy="published-date" >
 
-      <strong><h3 style="font-size:16px;color:#000;font-family: "GDS Transport, arial, sans-serif;">{{ item.date_of_event }} - {{ item.title }}
+      <strong><h4 style="margin-top:0px;font-size:16px;color:#000;font-family: "GDS Transport, arial, sans-serif;">{{ item.date_of_event }} - {{ item.title }}
 
         {% if ("Open" in item.Status)  %}
         <span style="margin-left:15px;margin-right:15px" class="govuk-tag govuk-tag--blue" id="eligibility-status">{{ item.Status }}
@@ -144,7 +144,7 @@ Examination      </div>
     <span style="margin-left:15px;margin-right:15px" class="govuk-tag" id="eligibility-status">{{ item.Status }}
   {% endif %}
 
-</span> </h3></strong>
+</span> </h4></strong>
 
     <!--  </div>
     <div class="govuk-grid-column-one-third" data-cy="published-stage" -->
@@ -160,6 +160,9 @@ Examination      </div>
 
 <div>  <p class="pins-govuk-result-list__item-description style=">
 <ul>
+
+
+
 
   {% for deadlineItem in data['deadlineItems'] %}
     {% if deadlineItem.id in item.title %}
