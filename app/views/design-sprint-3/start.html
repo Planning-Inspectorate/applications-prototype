@@ -98,37 +98,41 @@
   <!--  <h2 class="govuk-heading-m">Other ways to have your say</h2>
     <p class="govuk-body">If you cannot apply online, you can <a href="javascript:alert('Not in prototype')" class="govuk-link">apply by post</a>. The address to send your application to is at the end of the form.</p>
 -->
-          {% from "govuk/components/button/macro.njk" import govukButton %}
 
-          {{ govukButton({
-            text: "Start now",
-            href: "ip-number-available",
-            isStartButton: true
-          }) }}
 
   <h2 class="govuk-heading-m">Before you start</h2>
-  <h2 class="govuk-heading-s">If you're an individual and have registered as an interested party</h2>
+  <!--<h2 class="govuk-heading-s">If you're an individual and have registered as an interested party</h2>-->
 
 
   <p class="govuk-body">You'll need your:</p>
   <ul class="govuk-list govuk-list--bullet">
+
     <li>interested party number</li>
-    <li>email address
-</li>
+
+
     <li>documents to support your comments if you plan to upload them</li>
   </ul>
   <p class="govuk-body">If you have not registered as an interested party, we'll ask you for your personal details and documents to support your comments if you plan to upload them.</p>
 
-  <h2 class="govuk-heading-s">If you're submitting comments as an organisation you work for</h2>
-  <p class="govuk-body">You'll need your organisation's:</p>
+  <!--<h2 class="govuk-heading-s">If you're submitting comments as an organisation you work for</h2>-->
+  <!--<p class="govuk-body">You'll need your organisation's:</p>
   <ul class="govuk-list govuk-list--bullet">
       <li>name</li>
     <li>interested party number</li>
     <li>email address
 </li>
     <li>supporting documents if you plan to upload your documents</li>
-  </ul>
+  </ul>-->
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Start now",
+    href: "ip-number-available",
+    isStartButton: true
+  }) }}
     </div>
+
+
 
 <!--  <div class="govuk-grid-column-one-third">
 

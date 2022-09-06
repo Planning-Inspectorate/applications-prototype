@@ -17,7 +17,7 @@
     </li>
     <li class="govuk-body-s {% if 'about-the-application' in current %} active {% endif %}">
       {% if not 'about-the-application' in current %}
-      <a href="/design-sprint-3/document-library/index">Documents</a>
+      <a href="/design-sprint-3/document-library/index-2">Documents</a>
       {% else %} Documents {% endif %}
     </li>
     <li class="govuk-body-s {% if 'comments' in current %} active {% endif %}">
@@ -27,8 +27,13 @@
     </li>
     <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
       {% if not 'timetable' in current %}
-      <a href="/design-sprint-3/timetable/timetableload">Examination timetable</a>
+      <a href="/design-sprint-3/timetable/timetable-upcoming-first-accordion">Examination timetable</a>
       {% else %} Examination timetable {% endif %}
+    </li>
+    <li class="govuk-body-s {% if 'getupdates' in current %} active {% endif %}">
+      {% if not 'getupdates' in current %}
+      <a href="/design-sprint-3/get-updates/index">Get updates</a>
+      {% else %} Get updates {% endif %}
     </li>
 
   <!--  <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
