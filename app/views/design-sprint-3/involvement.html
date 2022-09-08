@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who are you making the submission for?
+  Start page example
 {% endblock %}
 
 {% block header %}
@@ -19,39 +19,39 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <a class="govuk-back-link" href="javascript:history.back();">Back</a>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form autocomplete="off" class="form" action="who-for-answer" method="post">
+<form autocomplete="off" class="form" action="involvement-answer" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
   {{ govukRadios({
-    idPrefix: "whofor",
-    name: "entity[whofor]",
+    idPrefix: "involvement",
+    name: "involvement",
     fieldset: {
       legend: {
-        text: "Who are you making the submission for?",
+        text: "Are you the applicant or an interested party?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
     },
     items: [
       {
-        value: "Myself" ,
-        text: "Myself"
+        value: "applicant" ,
+        text: "The applicant (Drax Power Limited)"
       },
       {
-        value: "An organisation I work for",
-        text: "An organisation I work for"
+        value: "interestedparty",
+        text: "An interested party"
       },
       {
-        value: "On behalf of another person, a family group or another organisation I do not work for",
-        text: "On behalf of another person, a family group or another organisation I do not work for"
+        value: "other",
+        text: "Neither of the above"
       }
     ]
   }) }}

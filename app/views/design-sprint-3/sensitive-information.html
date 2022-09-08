@@ -1,15 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  {% if data['deadlineitem']['submissiontext']=="Both" %}
-Comment or files has personal information or not
-{% endif %}
-  {% if data['deadlineitem']['submissiontext']=="Files" %}
-  Files have personal information or not
-  {% endif %}
-    {% if data['deadlineitem']['submissiontext']=="Comment" %}
-    Comment has personal information or not
-    {% endif %}
+Does your submission contain personal information?
 {% endblock %}
 
 {% block header %}
@@ -37,7 +29,7 @@ Comment or files has personal information or not
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-2b/sensitive-information-routing" method="post" novalidate>
+      <form action="/design-sprint-3/sensitive-information-routing" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">

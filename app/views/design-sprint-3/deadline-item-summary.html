@@ -10,7 +10,7 @@
     {% set oneitem = true %}
 {% endif %}
 {% block pageTitle %}
-Add another deadline item
+You have added x deadline items
 {% endblock %}
 
 {% block header %}
@@ -67,13 +67,13 @@ Add another deadline item
   </div>
 
 {% if oneitem == true %}
-<form method="post" action="/design-sprint-2b/deadline-items" novalidate action="">
+<form method="post" action="/design-sprint-3/deadline-items" novalidate action="">
 <button class="govuk-button" data-module="govuk-button">
   Add a deadline item
 </button>
 </form>
 {% else %}
-  <form method="post" action="/design-sprint-2b/add-deadline-item-answer" novalidate action="">
+  <form method="post" action="/design-sprint-3/add-deadline-item-answer" novalidate action="">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Delete deadline items {% endblock %}
+Are you the applicant?  {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -28,26 +28,26 @@ Delete deadline items {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/design-sprint-2b/delete-item-answer" method="post" novalidate>
+    <form action="/design-sprint-3/applicant-yes-no-answer" method="post" novalidate>
 
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-      Are you sure you want to delete data for this item?
+        Are you Drax Power Limited?
       </h1>
     </legend>
 
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="delete-item-yes" name="confirm-remove" type="radio" value="Yes">
-        <label class="govuk-label govuk-radios__label" for="delete-item-yes">
+        <input class="govuk-radios__input" id="entity-applicant-yes" name="entity[applicant]" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="entity-applicant-yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="delete-item-no" name="confirm-remove" type="radio" value="No">
-        <label class="govuk-label govuk-radios__label" for="delete-item-no">
+        <input class="govuk-radios__input" id="entity-applicant-no" name="entity[applicant]" type="radio" value="No">
+        <label class="govuk-label govuk-radios__label" for="entity-applicant-no">
           No
         </label>
       </div>

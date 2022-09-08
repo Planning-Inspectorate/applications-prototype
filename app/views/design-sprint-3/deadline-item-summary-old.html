@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
-
+{% set items = data['submissiondata'] %}
+{% set count = items.length %}
+{% if count == 1 %}
+    {% set title %} You added one deadline item {% endset %}
+{% elif count > 1 %}
+    {% set title %} You added {{items.length}} deadline items {% endset %}
+{% else %}
+    {% set title %}You have not added a deadline item{% endset %}
+{% endif %}
 {% block pageTitle %}
 You have added x deadline items
 {% endblock %}
@@ -29,123 +37,135 @@ You have added x deadline items
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l">Check your answers</h1>
-
-          <h2 class="govuk-heading-m"></h2>
-          <form method="post" action="/design-sprint-2b/check-deadline-item-answer">
+          <h1 class="govuk-heading-l">{{title}}</h1>
+          {% for item in items %}
+          <h2 class="govuk-heading-m">{{item.deadlinename}}</h2>
   <div class="govuk-form-group">
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Deadline item
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <ul class="govuk-list">
-        {{data['deadlineitem']['deadlinename']}}
-
-          </ul>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="deadline-items">
-            Change<span class="govuk-visually-hidden"> evidence type</span>
-          </a>
-        </dd>
-      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           How you've submitted your representation
         </dt>
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list">
-        {{data['deadlineitem']['submissionmethod']}}
+        {{item.submissionmethod}}
 
           </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="how-make-submission">
+          <a class="govuk-link" href="javascript:alert('Not in prototype')">
             Change<span class="govuk-visually-hidden"> evidence type</span>
           </a>
         </dd>
       </div>
-      {% if data['deadlineitem']['uploadedfilesavailable'] == true %}
+      {% if item.uploadedfilesavailable == true %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
       Documents uploaded
         </dt>
         <dd class="govuk-summary-list__value">
             <ul class="govuk-list">
-            {% for file in data['deadlineitem']['uploadedfiles'] %}
+            {% for file in item.uploadedfiles %}
             <li>{{file}}</li>
             {% endfor %}
             </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="upload-files">
+          <a class="govuk-link" href="javascript:alert('Not in prototype')">
             Change<span class="govuk-visually-hidden"> uploaded evidence</span>
           </a>
         </dd>
       </div>
       {% endif %}
-      {% if data['deadlineitem']['commentsavailable'] == true %}
+      {% if item.commentsavailable == true %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Your comment
         </dt>
         <dd class="govuk-summary-list__value">
-        {{data['deadlineitem']['comment']}}
+          {{item.comment}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <p><a class="govuk-link" href="make-comment">
+          <p><a class="govuk-link" href="javascript:alert('Not in prototype')">
             Change<span class="govuk-visually-hidden"> comment</span>
+          </a><br/>
+          <a class="govuk-link" href="javascript:alert('Not in prototype')">
+            Delete<span class="govuk-visually-hidden"> comment</span>
           </a>
         </dd>
       </div>
       {% endif %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Personal information
+          Sensitive information
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data['deadlineitem']['sensitiveinformation']}}
+          {{item.sensitiveinformation}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="sensitive-information">
+          <a class="govuk-link" href="javascript:alert('Not in prototype')">
             Change<span class="govuk-visually-hidden"> sensitive information</span>
           </a>
         </dd>
       </div>
-      {% if data['deadlineitem']['sensitiveinformation']=="Yes" %}
+      {% if item.sensitiveinformation=="Yes" %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Documents or comments containing personal information
+          Documents or comments containing sensitive information
         </dt>
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list">
-          {% for file in data['deadlineitem']['sensitiveitems'] %}
+          {% for file in item.sensitiveitems %}
           <li>{{file}}</li>
           {% endfor %}
           </ul>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="sensitive-items">
+          <a class="govuk-link" href="javascript:alert('Not in prototype')">
             Change<span class="govuk-visually-hidden"> sensitive items</span>
           </a>
         </dd>
       </div>
       {% endif %}
+      <p class="govuk-!-margin-top-3"><a href="delete-item?remove={{loop.index - 1}}">Delete deadine item</a></p>
 
     </dl>
 
   </div>
+  {% endfor %}
+  <form method="post" action="/design-sprint-3/add-deadline-item-answer" novalidate action="">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+          Do you need to add another deadline item?
+        </legend>
+
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="add-another" name="addAnother" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="add-another">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="add-another-2" name="addAnother" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="add-another-2">
+              No
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
 
     <button class="govuk-button" data-module="govuk-button">
       Continue
     </button>
-</form>
+  </form>
     </div>
   </div>
-
 {% endblock %}
+
 
 {% block footer %}
   {{ pinsFooter() }}

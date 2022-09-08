@@ -2,7 +2,7 @@
 {% set items = data['submissiondata'] %}
 
 {% block pageTitle %}
-Check your answers
+  Start page example
 {% endblock %}
 
 {% block header %}
@@ -53,7 +53,7 @@ Check your answers
                 </dd>
               </div>
 
-              {% if data['entity']['ipavailable']=="Yes" %}
+
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -81,7 +81,7 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% else %}
+
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -96,8 +96,6 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% endif %}
-              {% if data['entity']['applicant']=="No" %}
 
               <!--<div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -112,21 +110,8 @@ Check your answers
                   </a>
                 </dd>
               </div>-->
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Making submission for
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['entity']['whofor']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="who-for">
-                    Change<span class="govuk-visually-hidden"> who are you</span>
-                  </a>
-                </dd>
-              </div>
-              {% endif %}
-              {% if data['entity']['whofor']=="Myself" %}
+            
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Full name
@@ -140,8 +125,7 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% endif %}
-              {% if data['entity']['whofor']=="An organisation I work for" %}
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Organisation's name
@@ -155,8 +139,7 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% endif %}
-              {% if data['entity']['whofor']=="On behalf of another person, a family group or another organisation I do not work for" %}
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Submitting on behalf of
@@ -170,7 +153,7 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% endif %}
+
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">

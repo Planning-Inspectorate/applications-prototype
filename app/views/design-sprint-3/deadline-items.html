@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which item would you like to submit against for this deadline?     {% endblock %}
+Which items would you like to submit against for this deadline?  {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -29,7 +29,7 @@ Which item would you like to submit against for this deadline?     {% endblock %
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/design-sprint-2b/deadline-items-answer" method="post" novalidate>
+      <form action="/design-sprint-3/deadline-items-answer" method="post" novalidate>
 
       <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="daedline-item-hint   {% if (data['error']=="true")%}deadline-item-error{% endif %}">

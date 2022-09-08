@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Delete deadline items {% endblock %}
+Do you have an interested party number?  {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -28,26 +28,30 @@ Delete deadline items {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/design-sprint-2b/delete-item-answer" method="post" novalidate>
+    <form action="/design-sprint-3/ip-number-available-answer" method="post" novalidate>
 
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-      Are you sure you want to delete data for this item?
+        Do you have an interested party number?
       </h1>
     </legend>
+    <div id="ip-number-hint" class="govuk-hint">
+      <p class="govuk-hint">This is a unique reference number that identifies you as an Interested Party.</p>
 
+    <p class="govuk-hint">You will have been given this number when you registered.</p>
+    </div>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="delete-item-yes" name="confirm-remove" type="radio" value="Yes">
-        <label class="govuk-label govuk-radios__label" for="delete-item-yes">
+        <input class="govuk-radios__input" id="ip-available-yes" name="entity[ipavailable]" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="ip-available-yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="delete-item-no" name="confirm-remove" type="radio" value="No">
-        <label class="govuk-label govuk-radios__label" for="delete-item-no">
+        <input class="govuk-radios__input" id="ip-available-no" name="entity[ipavailable]" type="radio" value="No">
+        <label class="govuk-label govuk-radios__label" for="ip-available-no">
           No
         </label>
       </div>
