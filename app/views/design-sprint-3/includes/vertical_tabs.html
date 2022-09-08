@@ -15,6 +15,11 @@
       <a href="/design-sprint-3/project-overview/index">Project information</a>
       {% else %} Project information {% endif %}
     </li>
+    <li class="govuk-body-s {% if 'timeline' in current %} active {% endif %}">
+      {% if not 'timeline' in current %}
+      <a href="/design-sprint-3/timeline/index">Timeline</a>
+      {% else %} Timeline {% endif %}
+    </li>
     <li class="govuk-body-s {% if 'about-the-application' in current %} active {% endif %}">
       {% if not 'about-the-application' in current %}
       <a href="/design-sprint-3/document-library/index-2">Documents</a>
