@@ -20,11 +20,11 @@ Check your answers
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
 {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back();"
 }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -33,7 +33,13 @@ Check your answers
       <span class="govuk-caption-l">Deadline 9</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
-
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+        You cannot make any further changes after you submit.
+        </strong>
+      </div>
 
 
             <h2 class="govuk-heading-m">Your details</h2>
@@ -212,9 +218,7 @@ Check your answers
 
             </dl>
 
-            <div class="govuk-inset-text">
-              You cannot make any further changes after you submit.<br/><br/> Check your answers again before you submit.
-            </div>
+
 
             <form action="submission-complete" method="post" novalidate>
 

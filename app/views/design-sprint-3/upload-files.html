@@ -46,7 +46,7 @@ Upload files
      <h1 class="govuk-heading-l">Upload files</h1>
 
 
-    <p class="govuk-body">Your file must be PDF, PNG, DOC, DOCX, JPG, JPEG, TIF, TIFF, XLS or XSLX. </p>
+    <p class="govuk-body">Your files must be PDF, PNG, DOC, DOCX, JPG, JPEG, TIF, TIFF, XLS or XSLX. </p>
 
 <p class="govuk-body">All files must be:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -55,6 +55,9 @@ Upload files
 
 </ul>
 
+<p class="govuk-body">You must not submit the same file against multiple deadline items.</p>
+
+
 
        {% set uploadHtml %}
          {{ govukFileUpload({
@@ -62,7 +65,7 @@ Upload files
            name: "documents",
            classes: 'moj-multi-file-upload__input',
            label: {
-             text: "Upload a file",
+             text: "Upload files",
              classes: 'govuk-label--m'
            },
            attributes: { multiple: '' },
