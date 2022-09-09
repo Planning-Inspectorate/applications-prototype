@@ -31,7 +31,7 @@ Make a comment
     <div class="govuk-grid-column-two-thirds">
       <form action="/design-sprint-3/make-comment-routing" method="post" novalidate>
 
-        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="65234">
 
       <div class="govuk-form-group">
         <span class="govuk-caption-l">Deadline item:<br/>{{data['deadlineitem']['deadlinename']}}</span>
@@ -44,7 +44,7 @@ Make a comment
         <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint" name="deadlineitem[comment]" rows="5" aria-describedby="make-comment-hint"></textarea>
       </div>
       <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-   You can enter up to 2000 characters
+   You can enter up to 65,234 characters
  </div>
  </div>
       <button class="govuk-button" data-module="govuk-button">
