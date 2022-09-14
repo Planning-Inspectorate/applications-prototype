@@ -40,7 +40,9 @@ Make a comment
             Make a comment
           </label>
         </h1>
-
+        <div id="more-detail-hint" class="govuk-hint">
+          This comment should be relevant to {{data['deadlineitem']['deadlinename']}}.
+          </div>
         <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint" name="deadlineitem[comment]" rows="5" aria-describedby="make-comment-hint"></textarea>
       </div>
       <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
