@@ -39,7 +39,11 @@
 
     </legend>
 
-
+    {% if data['entity']['ipavailable'] == "No" %}
+               <div id="whofor-item-hint" class="govuk-hint">
+             You&#39;ve not registered as an interested party. You can still submit comments, but we may not accept them.
+           </div>
+    {% endif %}
     <div class="govuk-radios"
       data-module="govuk-radios">
 
@@ -53,11 +57,7 @@
             <label class="govuk-label govuk-radios__label" for="whofor">
           Myself
         </label>
- {% if data['entity']['ipavailable'] == "No" %}
-            <div id="whofor-item-hint" class="govuk-hint govuk-radios__hint">
-          You&#39;ve not registered as an interested party. You can still submit comments, but we may not accept them.
-        </div>
-{% endif %}
+
           </div>
 
 
