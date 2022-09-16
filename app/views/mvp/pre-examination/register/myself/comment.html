@@ -72,8 +72,9 @@ saveAndExit: false
           {{ govukDetails({
           summaryText: "Do not include any personal details.",
           html: '
-            <h2 class="govuk-heading-m">Use of language and sensitive information</h2>
+            <h2 class="govuk-heading-m">Use of language, hyperlinks and sensitive information</h2>
             <p class="govuk-body">You should not use racist, inflammatory or abusive language, or include sensitive information (also called special category information) about yourself or others in your comments.</p>
+            <p class="govuk-body">Do not include links to third party websites. You can include links to either GOV.UK or websites for chartered professional institutes like IEMA.</p>
             <h2 class="govuk-heading-m">Examples of sensitive information</h2>
             <p class="govuk-body">Sensitive information refers to:</p>
             <ul class="govuk-list govuk-list--bullet">
@@ -81,7 +82,9 @@ saveAndExit: false
               <li>information relating to children</li>
               <li>information relating to health</li>
               <li>information relating to crime</li>
+            
             </ul>
+
             <p class="govuk-body">It also means any information relating to an individual&#39;s:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>race</li>
@@ -93,7 +96,9 @@ saveAndExit: false
               <li>physical characteristics</li>
               <li>sex life</li>
               <li>sexual orientation</li>
-            </ul>'
+            </ul>
+
+            '
         }) }}
 
       <div class="govuk-button-group">
