@@ -25,6 +25,8 @@ require('./routes/design-sprints.js')(router);
 require('./routes/design-sprint-2.js')(router);
 require('./routes/design-sprint-2b.js')(router);
 require('./routes/design-sprint-3.js')(router);
+require('./routes/design-sprint-3b.js')(router);
+
 
 
 // routes for the type of party /register flow

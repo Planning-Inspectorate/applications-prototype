@@ -1,0 +1,264 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Examination timetable  {% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Drax Bioenergy with Carbon Capture and Storage Project</h1>
+    </div>
+    </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'comments' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+
+</nav>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+
+<h2 class="govuk-heading-l">Relevant representations (registration comments)</h2>
+
+<input class="govuk-input govuk-!-width-one-half" id="searchTerm" name="searchTerm" type="text" value="">
+<button class="govuk-button" data-cy="search-button">Search</button>
+
+
+
+
+  <p class="results">
+                  Showing  <strong>1</strong> to <strong>1</strong> of <strong>4</strong> documents, newest first.
+                </p>
+  <ul class="pins-govuk-result-list">
+
+      <li class="pins-govuk-result-list__item">
+        <a href="relevant-representations-library-item" class="govuk-link pins-govuk-result-list__item-title">
+
+            Paul test
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            07 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+      <li class="pins-govuk-result-list__item">
+        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+            Mrs Test
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            06 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+      <li class="pins-govuk-result-list__item">
+        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+            Mrs Sue Test
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            05 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+      <li class="pins-govuk-result-list__item">
+        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+            Test Planning Alliance (Community Planning Alliance)
+
+        </a>
+        <p class="pins-govuk-result-list__item-description ">
+            The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+        </p>
+        <div class="govuk-grid-row document-metadata">
+          <div class="govuk-grid-column-one-third" data-cy="published-date">
+            03 May 2022
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="published-stage">
+            Members of the public or businesses
+          </div>
+          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+          </div>
+        </div>
+      </li>
+
+
+
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  </fieldset>
+
+</div>
+</div>
+
+<!--
+<div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset">
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+<h1 class="govuk-fieldset__heading">
+Filter by
+</h1>
+
+</legend>
+
+
+<div class="govuk-checkboxes govuk-checkboxes--small"
+data-module="govuk-checkboxes">
+
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities">
+  <label class="govuk-label govuk-checkboxes__label" for="type">
+Local authorities
+</label>
+
+</div>
+
+
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses">
+      <label class="govuk-label govuk-checkboxes__label" for="type">
+  Members of the public or businesses (4)
+</label>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees">
+      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+  Other statutory consultees
+</label>
+
+    </div>
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Parish Councils">
+      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+  Parish councils
+    </label>
+
+    </div>
+
+
+
+
+</div>
+
+
+</fieldset>
+
+
+</div>
+
+
+<button class="govuk-button" data-cy="apply-filter-button">Apply Filters</button>
+</div>
+
+
+      </div>
+    </div>-->
+
+
+  </div>
+</div>
+</form>
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
