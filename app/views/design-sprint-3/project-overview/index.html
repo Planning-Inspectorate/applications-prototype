@@ -70,14 +70,32 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
           {% set html %}
             <p class="govuk-body">
-          Content to be decided on for testing
+          The following documents have been published
             </p>
+
+            <ul>
+              <li>The examination timetable (rule 8 letter)</li>
+                <li>The examining authority's first written questions. The deadline for responses is 12/12/2020</li>
+            </ul>
+            <p>The examination library has been updated</p>
           {% endset %}
 
           {{ govukNotificationBanner({
             html: html
           }) }}
 
+          <!-- WHN... maybe-->
+
+          <!--<p>What Happens Next</p>
+          <p>Dates for the examination can be viewed on the examination timetable page</p>
+          <p>12/11/2020 - deadline for close of examination. See the examination timetable for further information</p>
+          <p>If you have a legal interest in land affected by by a nationally significant infrastructure project and:</p>
+          <ul>
+          <li> - Have not been identified by the applicant; and</li>
+        <li> - Did not register to become an interested party</li>
+        </ul>
+        <p>Then you can make a request to the examining authority to become an interested party under s102a of the planning act 2008</p>
+-->
 
           <h2 class="govuk-heading-m">Project information</h2>
 
