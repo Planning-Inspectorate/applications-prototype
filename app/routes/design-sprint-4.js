@@ -433,6 +433,43 @@ router.post("/design-sprint-4/apply-filters-3", function(req, res) {
 
 });
 
+/// representations filtersapplied
+router.post("/design-sprint-4/reps-show-hide-filters", function(req, res) {
+  if(req.session.data['showrepfilters']=="true"){
+    req.session.data['showrepfilters']="false" ;
+    req.session.data['repfilterlabel']="Show" ;
+    res.redirect("relevant-representations/index");
+  }
+  else {
+    req.session.data['showrepfilters']="true" ;
+    req.session.data['repfiltersapplied'] = ""
+    req.session.data['doccount'] = ""
+    req.session.data['repfilterlabel']="Hide" ;
+    res.redirect("relevant-representations/index");
+
+  }
+});
+
+
+//Apply rep filters
+router.post("/design-sprint-4/apply-rep-filters", function(req, res) {
+  req.session.data['repfiltersapplied'] = "Yes"
+  req.session.data['doccount'] = "3"
+  req.session.data['showrepfilters'] = "false"
+  req.session.data['repfilterlabel']="Show" ;
+  req.session.data['results'] = "true"
+    res.redirect("relevant-representations/index");
+
+
+});
+
+router.get("/design-sprint-4/rep-filter-start", function(req, res) {
+req.session.data['showrepfilters']="true" ;
+req.session.data['repfilterlabel']="Hide" ;
+  res.redirect("relevant-representations/index");
+
+  });
+
 /// Timetable data stuff
 
 //
