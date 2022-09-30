@@ -553,10 +553,10 @@ console.log("The get is running");
   	{
   		"title" : "Issue Specific Hearing 4 (ISH4)",
   		"description" : "Issue Specific Hearing on draft Development Consent Order",
-  		"date_of_event" : "16 May 2022",
+  		"date_of_event" : "16 Aug 2022",
   		"timetable_type" : "Events",
   		"type_of_event" : "Issue Specific Hearing",
-  		"Status" : "Closed"
+  		"Status" : "Open"
   	},
   	{
   		"title" : "Deadline 4",
