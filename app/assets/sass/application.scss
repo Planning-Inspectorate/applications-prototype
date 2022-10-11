@@ -276,10 +276,16 @@ svg.pins-step-by-step-navigation-icon {
         width: 20%;
         max-width: 150px;
 
+        a {
+          text-decoration: none;
+        }
+
         span {
           height: 32px;
           display: block;
+          text-decoration: underline;
         }
+
 
         .pins-timeline-badge {
           display: flex;
@@ -1113,4 +1119,16 @@ element.style {
 
 .interrupt-p {
   color: #fff
+}
+
+
+//Timeline
+
+.govuk-accordion__section-heading-text-focus {
+
+  small {
+    display: block;
+    font-weight: 400;
+    color: $govuk-secondary-text-colour;
+  }
 }
