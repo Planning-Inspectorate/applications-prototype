@@ -67,16 +67,24 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         </div>
         <div class="govuk-grid-column-three-quarters">
 
-          {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-          {% set html %}
-            <p class="govuk-body">
-          Content to be decided on for testing
-            </p>
-          {% endset %}
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Latest Updates
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-body">
+    The following documents have been published
+      </p>
 
-          {{ govukNotificationBanner({
-            html: html
-          }) }}
+      <ul>
+        <li><a href="">The examination timetable (rule 8 letter)</a></li>
+          <li><a href="">The examining authority's first written questions. The deadline for responses is 12/12/2020</a></li>
+      </ul>
+      <p><a href="document-library">The examination library has been updated</a></p>
+    </div>
+  </div>
 
 
           <h2 class="govuk-heading-m">Project information</h2>
@@ -104,18 +112,18 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           <div class="pins-timeline">
             <p>This project is at: <strong>Examination of the project stage</strong></p>
             <ol>
-              <li class="completed">Pre-application and application received<div class="pins-timeline-badge">&#10003;</div></li>
-              <li class="current">Pre-examination<div class="pins-timeline-badge">&#10003;
-              </div></li>
-              <li>Examination of the project<div class="pins-timeline-badge"><svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+            <li><a href="../timeline#preapplication"> <span>Pre-Application</span> <div class="pins-timeline-badge govuk-tag--green">&#10003;</div> </a> </li>
+              <li><a href="../timeline#review"> <span>Review of Application </span> <div class="pins-timeline-badge govuk-tag--green">&#10003;
+              </div></a></li>
+              <li><a href="../timeline#preexamination"><span>Pre-Examination </span>  <div class="pins-timeline-badge govuk-tag--green">&#10003;</div></li>
+
+              <li><a href="../timeline#examination"><span>Examination of the Application</span><div class="pins-timeline-badge govuk-tag--blue"><svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
                 <path fill="currentColor" d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z">
                 </path>
-              </svg></div></li>
-
-              <li>Recommendation and decision<div class="pins-timeline-badge"></div></li>
-              <li>Outcome of the project<div class="pins-timeline-badge"></div></li>
+              </svg></div></a></li>
+              <li> <a href="../timeline#recommendation"><span>Recommedation & Decision</span><div class="pins-timeline-badge govuk-tag--grey"></div></a></li>
             </ol>
-            <p><a href="dco-process-guide/index.html">Find out what you can do at the Examination stage of the project.</a>.</p>
+            <!--<p class="govuk-!-margin-top-5 govuk-!-margin-bottom-0"><a href="dco-process-guide" class="govuk-body">Find out what you can do at the Examination stage of the project.</a></p>-->
           </div>
           <p>
           During the Examination stage, you can submit comments at the <a href="../timetable/timetable-upcoming-first-accordion"> deadlines

@@ -253,6 +253,7 @@ svg.pins-step-by-step-navigation-icon {
       flex-wrap: nowrap;
       padding-left: 0;
       font-family: $govuk-font-family;
+      margin: 35px 0 25px 0;
       // Timeline connecting line
       &::before {
         content: "";
@@ -275,6 +276,11 @@ svg.pins-step-by-step-navigation-icon {
         width: 20%;
         max-width: 150px;
 
+        span {
+          height: 32px;
+          display: block;
+        }
+
         .pins-timeline-badge {
           display: flex;
           justify-content: center;
@@ -284,10 +290,9 @@ svg.pins-step-by-step-navigation-icon {
                     line-height: 150%;
                     vertical-align: middle;
                     */
-          color: $pins-timeline-badge-icon-colour;
-          box-shadow: inset 0 0 0 2px $pins-timeline-badge-background-solid,
-            inset 0 0 0 3px white;
-          background-color: $pins-timeline-badge-background-solid;
+          // color: $pins-timeline-badge-icon-colour;
+          box-shadow: inset 0 0 0 2px $pins-timeline-progress-colour, inset 0 0 0 3px white;
+          // background-color: $pins-timeline-badge-background-solid;
           height: $pins-timeline-circle-size;
           width: $pins-timeline-circle-size;
           border-radius: 50%;
