@@ -400,6 +400,30 @@ router.post("/design-sprint-4/show-hide-filters-3", function(req, res) {
   }
 });
 
+router.post("/design-sprint-4/show-hide-filters-v1", function(req, res) {
+  if(req.session.data['showfilters']=="true"){
+    req.session.data['showfilters']="false"
+    res.redirect("/design-sprint-4/document-library/index-v1");
+  }
+  else {
+    req.session.data['showfilters']="true"
+    res.redirect("/design-sprint-4/document-library/index-v1");
+
+  }
+});
+
+router.post("/design-sprint-4/show-hide-filters-v2", function(req, res) {
+  if(req.session.data['showfilters']=="true"){
+    req.session.data['showfilters']="false"
+    res.redirect("/design-sprint-4/document-library/index-v2");
+  }
+  else {
+    req.session.data['showfilters']="true"
+    res.redirect("/design-sprint-4/document-library/index-v2");
+
+  }
+});
+
 //Show hide doc lib filters
 router.post("/design-sprint-4/clear-filters", function(req, res) {
   req.session.data['filtersapplied'] = "false"
@@ -429,6 +453,26 @@ router.post("/design-sprint-4/apply-filters-3", function(req, res) {
   req.session.data['showfilters'] = "false"
   req.session.data['results'] = "true"
     res.redirect("/design-sprint-4/document-library/index-3");
+
+
+});
+
+
+//Apply doc lib filters
+router.post("/design-sprint-4/apply-filters-v1", function(req, res) {
+  req.session.data['filtersapplied'] = "true"
+  req.session.data['showfilters'] = "false"
+  req.session.data['results'] = "true"
+    res.redirect("/design-sprint-4/document-library/index-v1");
+
+
+});
+
+router.post("/design-sprint-4/apply-filters-v2", function(req, res) {
+  req.session.data['filtersapplied'] = "true"
+  req.session.data['showfilters'] = "false"
+  req.session.data['results'] = "true"
+    res.redirect("/design-sprint-4/document-library/index-v2");
 
 
 });
