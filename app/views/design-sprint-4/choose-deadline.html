@@ -48,7 +48,7 @@ Which deadline would you like to submit against?
       <div class="govuk-form-group     {% if (data['error']=="true")%} govuk-form-group--error{% endif %}">
     <fieldset class="govuk-fieldset" aria-describedby="change-deadline-hint   {% if (data['error']=="true")%}deadline-error{% endif %}">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
+        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
         Which deadline would you like to submit against?
         </h1>
       </legend>
@@ -64,17 +64,25 @@ Which deadline would you like to submit against?
           Deadline 9 - 27 August 2022
           </label>
           <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  View deadline items
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
+                  <li>Comments on any submissions received by Deadline 8</li>
+                  <li>Any further information requested by the Examining Authority under Rule 17 of the Examination Rules</li>
+                  <li>Final Statements of Common Ground (SoCG) and Statement of Commonality of the Statements of Common Ground (SCSoCG)</li>
+                  <li>Final draft Development Consent Order in MS Word clean and tracked versions</li>
+                  <li>Final Schedule of changes to the draft Development Consent Order</li>
+                  <li>Final Compulsory Acquisition Schedule, in clean and tracked versions</li>
+                  <li>Final updated Guide to the Application</li>
+                <li>Other</li>
+                    </ul>              </div>
+            </details>
 
-  <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
-    <li>Comments on any submissions received by Deadline 8</li>
-    <li>Any further information requested by the Examining Authority under Rule 17 of the Examination Rules</li>
-    <li>Final Statements of Common Ground (SoCG) and Statement of Commonality of the Statements of Common Ground (SCSoCG)</li>
-    <li>Final draft Development Consent Order in MS Word clean and tracked versions</li>
-    <li>Final Schedule of changes to the draft Development Consent Order</li>
-    <li>Final Compulsory Acquisition Schedule, in clean and tracked versions</li>
-    <li>Final updated Guide to the Application</li>
-  <li>Other</li>
-      </ul>
        </div>
         </div>
         <div class="govuk-radios__item">
@@ -83,11 +91,20 @@ Which deadline would you like to submit against?
            Deadline 10 - 3 September 2022
           </label>
           <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-            <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
-              <li>Comments on any submissions received by Deadline 9</li>
-              <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
-            <li>Other</li>
-                </ul>
+            <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View deadline items
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
+      <li>Comments on any submissions received by Deadline 9</li>
+      <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
+    <li>Other</li>
+        </ul>  </div>
+</details>
+
        </div>
         </div>
       </div>

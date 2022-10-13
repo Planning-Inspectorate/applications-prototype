@@ -206,6 +206,17 @@ module.exports = function (router) {
 
   });
 
+  router.post("/design-sprint-4/choose-deadline-single-answer", function(req, res) {
+    if (req.session.data['single-deadline'] == "Yes"){
+      res.redirect("deadline-items");
+    }
+    else {
+      res.redirect("choose-deadline-single-no");
+    }
+
+
+  });
+
   router.post("/design-sprint-4/deadline-items-answer", function(req, res) {
     // if an object to create all sets of the sale details doesn't exist then create it
 
