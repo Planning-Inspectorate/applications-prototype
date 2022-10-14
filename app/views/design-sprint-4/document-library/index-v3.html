@@ -102,6 +102,7 @@
           </button>
         </div>
 
+<p class="govuk-body"><a id="show-all" class="govuk-link">Show all sections</a></p>
 
         <div class="facets__content">
 
@@ -110,12 +111,16 @@
 
           <div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
             <h2 class="app-c-option-select__heading js-container-heading">
-              <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Pre-application (15)</button>
+              <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="pre-application-toggle" aria-controls="report_type">Pre-application (15)</button>
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
             </h2>
             <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-              <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+
+
+
+              <div class="app-c-option-select__container-inner js-auto-height-inner" id="pre-application-opener">
 
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
@@ -227,14 +232,15 @@
 
 
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" id="developer-application-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Developer's Application (144)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="developer-application-opener">
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Developer's Application</legend>
@@ -350,14 +356,14 @@
 
 
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" id="acceptance-toggle">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Acceptance (3)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="acceptance-opener">
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Acceptance</legend>
@@ -410,14 +416,14 @@
 </div>
 
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" id="pre-examination-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Pre-Examination (15)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="pre-examination-opener">
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Pre-Examination</legend>
@@ -494,14 +500,14 @@
 </div>
 
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" id="examination-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Examination (24)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="examination-opener">
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Examination</legend>
@@ -577,14 +583,14 @@
   </div>
 </div>
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" id="deadlines-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Deadlines (195)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="deadlines-opener">
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Deadlines</legend>
@@ -646,14 +652,16 @@
   </div>
 </div>
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" id="author-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
-    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Author</button>
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Author (4)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="author-opener">
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Author</legend>
@@ -666,7 +674,7 @@
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="author" name="author" type="checkbox" value="pins">
             <label class="govuk-label govuk-checkboxes__label" for="author">
-    The Planning Inspectorate
+    The Planning Inspectorate  (1)
       </label>
 
           </div>
@@ -678,7 +686,7 @@
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="author-2" name="author" type="checkbox" value="drax">
                       <label class="govuk-label govuk-checkboxes__label" for="author-2">
-              Drax Bioenergy
+              Drax Bioenergy (3)
                 </label>
 
                     </div>
@@ -699,65 +707,71 @@
   </div>
 </div>
 
-<div class="app-c-expander" data-module="expander" data-open-on-load="false" data-expander-module-started="true" style="border-bottom: none;">
-    <h2 class="app-c-expander__heading">
-      <button class="app-c-expander__button js-button" type="button" aria-expanded="true" aria-controls="expander-content-acb3a90e">Date</button>
-      <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-expander__icon app-c-expander__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
-      <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-expander__icon app-c-expander__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
-    </h2>
-    <div class="app-c-expander__content js-content app-c-expander__content--visible" id="expander-content-acb3a90e">
-
-    <div class="app-c-date-filter govuk-!-margin-bottom-0" id="public_timestamp">
-
-<div class="govuk-form-group">
-
-  <div class="js-taxonomy-select">
-          <div class="govuk-form-group gem-c-select">
-        <label class="govuk-label" for="level_one_taxon">Date type</label>
 
 
 
-      <select name="level_one_taxon" id="level_one_taxon" class="govuk-select gem-c-select__select--full-width" data-module="track-select-change" data-track-select-change-module-started="true"><option value=""></option>
-  <option data-track-category="filterClicked" data-track-action="level_one_taxon" data-track-label="Brexit" value="d6c2de5d-ef90-45d1-82d4-5f2438369eea">Published date</option>
-  <option data-track-category="filterClicked" data-track-action="level_one_taxon" data-track-label="Business and industry" value="495afdb6-47be-4df1-8b38-91c8adb1eefc">Deadline date</option>
-</select>
-  </div>
+    <div class="app-c-option-select js-collapsible js-opened" id="date-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" style="border-bottom:none">
+      <h2 class="app-c-option-select__heading js-container-heading">
+        <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Date</button>
+        <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+        <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+      </h2>
+      <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
+
+
+        <div class="app-c-option-select__container-inner js-auto-height-inner" id="date-opener">
+    <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Date</legend>
+
+
+
+            <div class="govuk-form-group">
+
+        <label for="public_timestamp[from]" class="gem-c-label govuk-label">Date from</label>
+        <div id="hint-b3568032" class="gem-c-hint govuk-hint govuk-!-margin-bottom-3">
+          For example, 2005 or 21/11/2014
+        </div>
+
+
+
+          <input aria-describedby="hint-b3568032" aria-controls="js-search-results-info" class="gem-c-input govuk-input" id="public_timestamp[from]" name="public_timestamp[from]" spellcheck="false" type="text" value="">
+        </div>
+
+
+        <div class="govuk-form-group">
+
+
+        <label for="public_timestamp[to]" class="gem-c-label govuk-label">Date to</label>
+        <div id="hint-b3568032" class="gem-c-hint govuk-hint govuk-!-margin-bottom-3">
+          For example, 2005 or 21/11/2014
+        </div>
+
+
+          <input aria-describedby="hint-c7294dac" aria-controls="js-search-results-info" class="gem-c-input govuk-input" id="public_timestamp[to]" name="public_timestamp[to]" spellcheck="false" type="text" value="">
+
+          </div>
+
+
+
+    </ul>
+    </fieldset>
+    </div>
         </div>
       </div>
-      <div class="govuk-form-group">
-
-  <label for="public_timestamp[from]" class="gem-c-label govuk-label">Date from</label>
-  <div id="hint-b3568032" class="gem-c-hint govuk-hint govuk-!-margin-bottom-3">
-    For example, 2005 or 21/11/2014
-  </div>
 
 
 
-    <input aria-describedby="hint-b3568032" aria-controls="js-search-results-info" class="gem-c-input govuk-input" id="public_timestamp[from]" name="public_timestamp[from]" spellcheck="false" type="text" value="">
-</div>
 
-
-<div class="govuk-form-group">
-
-
-  <label for="public_timestamp[to]" class="gem-c-label govuk-label">Date to</label>
-  <div id="hint-b3568032" class="gem-c-hint govuk-hint govuk-!-margin-bottom-3">
-    For example, 2005 or 21/11/2014
-  </div>
-
-
-    <input aria-describedby="hint-c7294dac" aria-controls="js-search-results-info" class="gem-c-input govuk-input" id="public_timestamp[to]" name="public_timestamp[to]" spellcheck="false" type="text" value="">
-</div>
-    </div>
     <form method="post" action="/design-sprint-4/apply-filters-v3">
-       <button class="govuk-button govuk-!-margin-top-9" id="toggleButton" data-module="govuk-button">
+       <button class="govuk-button govuk-!-margin-top-7" id="toggleButton" data-module="govuk-button">
         Apply filters
        </button>
     </form>
 
-    </div>
-</div>
 
+</div>
+</div>
 
           <div class="facets__tags-block js-mobile-facet-tag-block" data-module="remove-filter" data-remove-filter-module-started="true">
               <span class="govuk-visually-hidden">
@@ -1388,4 +1402,52 @@ Deadline 2       </div>
     {% endblock %}
     {% block footer %}
       {{ pinsFooter() }}
+    {% endblock %}
+    {% block pageScripts %}
+    <script>
+      $(document).ready(function(){
+          $("#pre-application-opener").hide();
+          $("#developer-application-opener").hide();
+          $("#acceptance-opener").hide();
+          $("#pre-examination-opener").hide();
+          $("#examination-opener").hide();
+          $("#deadlines-opener").hide();
+          $("#author-opener").hide();
+          $("#date-opener").hide();
+          $("#pre-application-toggle").click(function(){
+          $("#pre-application-opener").toggle();
+        });
+          $("#developer-application-toggle").click(function(){
+          $("#developer-application-opener").toggle();
+        });
+          $("#acceptance-toggle").click(function(){
+          $("#acceptance-opener").toggle();
+        });
+          $("#pre-examination-toggle").click(function(){
+          $("#pre-examination-opener").toggle();
+          });
+          $("#examination-toggle").click(function(){
+          $("#examination-opener").toggle();
+          });
+          $("#deadlines-toggle").click(function(){
+          $("#deadlines-opener").toggle();
+          });
+          $("#author-toggle").click(function(){
+          $("#author-opener").toggle();
+          });
+          $("#date-toggle").click(function(){
+          $("#date-opener").toggle();
+          });
+          $("#show-all").click(function(){
+            $("#pre-application-opener").toggle();
+            $("#developer-application-opener").toggle();
+            $("#acceptance-opener").toggle();
+            $("#pre-examination-opener").toggle();
+            $("#examination-opener").toggle();
+            $("#deadlines-opener").toggle();
+            $("#author-opener").toggle();
+            $("#date-opener").toggle();
+              });
+     });
+      </script>
     {% endblock %}
