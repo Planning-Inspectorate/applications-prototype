@@ -55,18 +55,15 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 {% block content %}
 
 {% set current = 'project-information' %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
-          <h1 class="govuk-heading-xl">Project Information</h1>
-        </div>
-      </div>
+      
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'project-information' %}
           {% include "../includes/vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
+          <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
+          <h1 class="govuk-heading-xl">Project Information</h1>
 
           <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
@@ -88,7 +85,6 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   </div>
 
 
-          <h2 class="govuk-heading-m">Project information</h2>
 
           <p class="govuk-body">
         Drax Power Limited proposes to install post-combustion capture technology that would capture carbon dioxide emissions from up to two of the existing biomass units at Drax Power Station. The proposal includes the construction and operation of carbon capture technology and associated equipment, and the integration of the units into the existing Common Services at Drax Power Station. The proposal includes associated development.
