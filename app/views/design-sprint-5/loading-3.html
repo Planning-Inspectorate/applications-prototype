@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% set items = data['submissiondata'] %}
+
+{% block pageTitle %}
+Processing submission
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceName: "Have your say during the Examination of the application",
+  serviceUrl: "/design-sprint-5/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+{% endblock %}
+
+{% block content %}
+<style type="text/css">
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  height: 10%;
+  margin-top: 30px;
+}
+
+.center-para {
+   text-align: center;
+}
+
+.ccms-loader {
+border: 12px solid #DEE0E2;
+border-radius: 50%;
+border-top-color: #13a19b;
+width: 80px;
+height: 80px;
+-webkit-animation: spin 2s linear infinite;
+animation: spin 2s linear infinite;
+display: table;
+margin-right: auto;
+margin-left: auto;
+}
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+  </style>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <!--    <h1 class="govuk-heading-l">We are submitting your application</h1>
+      <p class="govuk-body">This may take several minutes. We will notify you when this is complete. </p>-->
+
+      <div class="ccms-loader">
+        </div><div class="center-para govuk-!-margin-top-7">
+<h1 class="govuk-heading-m">Processing submission</h1>
+<p class="govuk-body">We've processed 8 of 10 items.</p>
+<p class="govuk-body">This may take several minutes. Do not refresh this page. </p>
+
+</div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Section 51 advice
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'section51' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+</nav>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-xl">Project Information</h1>
+
+
+<a class="govuk-back-link" href="index" data-cy="back">Back to list</a>
+<div class="pins-govuk-result-list">
+      <h2 class="govuk-heading-l">
+      Advice following issue of decision to accept the application for examination
+      </h2>
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-5">
+Enquiry      </h3>
+
+<dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Author
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Drax Power Limited - anon
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date published
+            </dt>
+            <dd class="govuk-summary-list__value">
+              20 June 2022
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Enquiry type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Email
+            </dd>
+          </div>
+        </dl>
+
+      <p class="govuk-body">
+
+Advice following issue of decision to accept the application for examination.
+      </p>
+
+    <h3 class="govuk-heading-m">
+Advice given     </h3>
+<p class="govuk-body">Please see attached.</p>
+<h3 class="govuk-heading-m">
+Attachments     </h3>
+
+<p class="govuk-body"><a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-Advice-00010-1-20220620_EN010120_Drax%20BECCS_s51%20advice%20following%20acceptance.pdf">View advice (PDF)</a></p>
+
+      </div>
+
+    </div>
+
+
+</div>
+
+      </div>
+
+
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
