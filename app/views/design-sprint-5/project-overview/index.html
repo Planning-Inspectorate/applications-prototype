@@ -55,7 +55,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 {% block content %}
 
 {% set current = 'project-information' %}
-      
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'project-information' %}
@@ -84,11 +84,56 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     </div>
   </div>
 
+          <h2 class="govuk-heading-m">About the project</h2>
+  <p class="govuk-body">
+Drax Power Limited proposes to install post-combustion capture technology that would capture carbon dioxide emissions from up to two of the existing biomass units at Drax Power Station. </p>
+<p class="govuk-body">The proposal includes the construction and operation of carbon capture technology and associated equipment, and the integration of the units into the existing Common Services at Drax Power Station. The proposal includes associated development.
+</p>
+
+  <div class="pins-timeline">
+    <p>This project is at: <strong>Examination of the project stage</strong></p>
+    <ol>
+    <li><a href="../timeline#preapplication"> <span>Pre-Application</span> <div class="pins-timeline-badge govuk-tag--green">&#10003;</div> </a> </li>
+      <li><a href="../timeline#review"> <span>Review of Application </span> <div class="pins-timeline-badge govuk-tag--green">&#10003;
+      </div></a></li>
+      <li><a href="../timeline#preexamination"><span>Pre-Examination </span>  <div class="pins-timeline-badge govuk-tag--green">&#10003;</div></li>
+
+      <li><a href="../timeline#examination"><span>Examination of the Application</span><div class="pins-timeline-badge govuk-tag--blue"><svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+        <path fill="currentColor" d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z">
+        </path>
+      </svg></div></a></li>
+      <li> <a href="../timeline#recommendation"><span>Recommedation & Decision</span><div class="pins-timeline-badge govuk-tag--grey"></div></a></li>
+    </ol>
+    <!--<p class="govuk-!-margin-top-5 govuk-!-margin-bottom-0"><a href="dco-process-guide" class="govuk-body">Find out what you can do at the Examination stage of the project.</a></p>-->
+  </div>
+  <p>
+
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is the Examination stage?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">During the Examination stage, you can submit comments at the <a href="../timetable/timetable-upcoming-first-accordion"> deadlines
+    set out in the Examination timetable</a>. Interested Parties and Affected
+    Persons have the right to be heard in any Examination hearings.
+    </p>
 
 
-          <p class="govuk-body">
-        Drax Power Limited proposes to install post-combustion capture technology that would capture carbon dioxide emissions from up to two of the existing biomass units at Drax Power Station. The proposal includes the construction and operation of carbon capture technology and associated equipment, and the integration of the units into the existing Common Services at Drax Power Station. The proposal includes associated development.
-        </p>
+
+    <p>
+    You can also <a href="../"> view the Rule 8 letter</a> to find out more about what you
+    can do during the Examination stage.
+      </p>
+
+    <p>
+      <a href ="../timetable/timetable-upcoming-first-accordion"> Find out more about the Examination of the application </a>
+      </p>  </div>
+</details>
+
+
+
           <!--<p>
             <strong>
               <a href="../get-updates/">Get updates about this project</a
@@ -96,61 +141,16 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           >
           </p>-->
 
-          <hr
-          class="
-            govuk-section-break
-            govuk-section-break--xl
-            govuk-section-break--visible
-          "
-/>
-
-          <h2 class="govuk-heading-m">Project stage</h2>
-
-          <div class="pins-timeline">
-            <p>This project is at: <strong>Examination of the project stage</strong></p>
-            <ol>
-            <li><a href="../timeline#preapplication"> <span>Pre-Application</span> <div class="pins-timeline-badge govuk-tag--green">&#10003;</div> </a> </li>
-              <li><a href="../timeline#review"> <span>Review of Application </span> <div class="pins-timeline-badge govuk-tag--green">&#10003;
-              </div></a></li>
-              <li><a href="../timeline#preexamination"><span>Pre-Examination </span>  <div class="pins-timeline-badge govuk-tag--green">&#10003;</div></li>
-
-              <li><a href="../timeline#examination"><span>Examination of the Application</span><div class="pins-timeline-badge govuk-tag--blue"><svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
-                <path fill="currentColor" d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z">
-                </path>
-              </svg></div></a></li>
-              <li> <a href="../timeline#recommendation"><span>Recommedation & Decision</span><div class="pins-timeline-badge govuk-tag--grey"></div></a></li>
-            </ol>
-            <!--<p class="govuk-!-margin-top-5 govuk-!-margin-bottom-0"><a href="dco-process-guide" class="govuk-body">Find out what you can do at the Examination stage of the project.</a></p>-->
-          </div>
-          <p>
-          During the Examination stage, you can submit comments at the <a href="../timetable/timetable-upcoming-first-accordion"> deadlines
-          set out in the Examination timetable</a>. Interested Parties and Affected
-          Persons have the right to be heard in any Examination hearings.
-          </p>
 
 
+          <!--<h2 class="govuk-heading-m">Project stage</h2>-->
 
-          <p>
-          You can also <a href="../"> view the Rule 8 letter</a> to find out more about what you
-          can do during the Examination stage.
-            </p>
 
-          <p>
-            <a href ="../timetable/timetable-upcoming-first-accordion"> Find out more about the Examination of the application </a>
-            </p>
         <!--  <p>
             <a href="../../dco-process-guide/examination">Find out more about the Examination of the application stage</a>.
         </p> -->
 
-          <hr
-          class="
-            govuk-section-break
-            govuk-section-break--xl
-            govuk-section-break--visible
-          "
-/>
 
-          <h2 class="govuk-heading-m">About the project</h2>
 
           <ul class="govuk-list">
             <p class="govuk-heading-s govuk-!-margin-bottom-1">
@@ -168,7 +168,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             what the developer is proposing to make the impact less serious.
           </p>
             <p class="govuk-heading-s govuk-!-margin-bottom-1">
-              <a href="/wrong-turn">Drawings</a>
+              <a href="/wrong-turn">Plans</a>
             </p>
             <p class="govuk-body">
             How the proposed project will look and the area it will impact.
@@ -196,8 +196,16 @@ class="
 />
 
        <h2 class="govuk-heading-m">
-         Contact us
+         Stay informed
        </h2>
+       <p class="govuk-body">The notification service provides email updates for the Drax Bionerergy with Carbon Capture and Storage projet following the submission of the application to the Planning Insptectorate. We will not provide updates about the project at the Pre-application stage of the process.</p>
+       {% from "govuk/components/button/macro.njk" import govukButton %}
+
+       {{ govukButton({
+         text: "Get email updates",
+         href: "../get-updates/index",
+         isStartButton: false
+       }) }}
        <h3 class="govuk-heading-s">
            Telephone
          </h3>
