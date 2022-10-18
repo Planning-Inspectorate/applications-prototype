@@ -398,6 +398,9 @@ router.post("/design-sprint-4/show-hide-filters-2", function(req, res) {
   }
 });
 
+
+
+
 //Show hide doc lib filters
 router.post("/design-sprint-4/show-hide-filters-3", function(req, res) {
   if(req.session.data['showfilters']=="true"){

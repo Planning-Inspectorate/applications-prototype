@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set items = data['submissiondata'] %}
+{% set uploadnumber = 1 %}
 
 {% block pageTitle %}
 Processing submission
@@ -74,7 +75,7 @@ margin-left: auto;
       <div class="ccms-loader">
         </div><div class="center-para govuk-!-margin-top-7">
 <h1 class="govuk-heading-m">Processing submission</h1>
-<p class="govuk-body">We've processed 8 of 10 items.</p>
+<p class="govuk-body">We've processed {{uploadnumber}} of 10 items.</p>
 <p class="govuk-body">This may take several minutes. Do not refresh this page. </p>
 
 </div>
@@ -85,4 +86,13 @@ margin-left: auto;
 
 {% block footer %}
   {{ pinsFooter() }}
+{% endblock %}
+{% block pageScripts %}
+  <script>
+
+    setTimeout(function () {
+         // after 2 seconds
+         window.location = "/design-sprint-5/submission-complete";
+      },6000)
+  </script>
 {% endblock %}
