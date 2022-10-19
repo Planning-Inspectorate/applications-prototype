@@ -75,7 +75,7 @@ margin-left: auto;
       <div class="ccms-loader">
         </div><div class="center-para govuk-!-margin-top-7">
 <h1 class="govuk-heading-m">Processing submission</h1>
-<p class="govuk-body">We've processed {{uploadnumber}} of 10 items.</p>
+<p class="govuk-body"><div id='hithere' class="govuk-body">We've processed 0 of 4 items.</div></p>
 <p class="govuk-body">This may take several minutes. Do not refresh this page. </p>
 
 </div>
@@ -90,9 +90,47 @@ margin-left: auto;
 {% block pageScripts %}
   <script>
 
-    setTimeout(function () {
-         // after 2 seconds
-         window.location = "/design-sprint-5/submission-complete";
-      },6000)
+
+const div = document.getElementById('hithere');
+i = 0
+
+    function myLoop() {         //  create a loop function
+      setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+        console.log('hello');   //  your code here
+        //div.insertAdjacentText('beforeend', i);
+        div.textContent = "We've processed " +  i + " of 4 items.";
+        i++;                    //  increment the counter
+        if (i < 5) {           //  if the counter < 10, call the loop function
+          myLoop();             //  ..  again which will trigger another
+        }
+        else {
+          window.location = "/design-sprint-5/submission-complete";
+        }                      //  ..  setTimeout()
+      }, 1500)
+          }
+
+    myLoop();                   //  start the loop
+
+
+
+
+
+
+//     setTimeout(function () {
+//          // after 2 seconds
+//
+//
+//
+//          var i;
+// for (i = 0; i < 7; ++i) {
+//   //window.document.write(i);
+//   div.insertAdjacentText('beforeend', i);
+//   //await timer(3000);
+//     // do something with `substr[i]`
+// }
+//
+//
+//         // window.location = "/design-sprint-5/submission-complete";
+//       },2000)
   </script>
 {% endblock %}
