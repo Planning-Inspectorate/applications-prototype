@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Documents
+  Document library
 {% endblock %}
 
 {% block header %}
@@ -35,7 +35,26 @@
   <div class="govuk-grid-column-one-third">
     <nav>
       {% set current = 'about-the-application' %}
-      {% include "../includes/two_thirds_no_guides.html" %}
+      <nav>
+        <ul class="govuk-list sidenav">
+        <!--  <li class="govuk-body-s {% if 'index' in current %} active {% endif %}">
+            {% if not 'index' in current %}
+            <a href="./">A404 Dewsbury project information</a>
+            {% else %} A404 Dewsbury project information {% endif %}
+          </li>-->
+        <!--  <li class="govuk-body-s {% if 'project-timeline' in current %} active {% endif %}">
+            {% if not 'project-timeline' in current %}
+            <a href="./project-timeline">Project timeline</a>
+            {% else %} Project timeline {% endif %}
+          </li>-->
+          <li class="govuk-body-s {% if 'project-information' in current %} active {% endif %}">
+            {% if not 'project-information' in current %}
+            <a href="/design-sprint-6/project-overview/index">Project information</a>
+            {% else %} Project information {% endif %}
+          </li>
+        </ul>
+
+      </nav>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
 <div class="filter-form">
    <div id="keywords" role="search" aria-label="Air Accidents Investigation Branch reports">
@@ -630,6 +649,7 @@
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Author</legend>
 
+        <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
 
 
 
@@ -656,6 +676,7 @@
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Post-decision</legend>
 
+        <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
 
 
 
@@ -780,7 +801,7 @@
 
 
 
-    <form method="post" action="/design-sprint-5/wide-nav/doc-library?filtersapplied=true">
+    <form method="post" action="/design-sprint-6/apply-filters-v3">
        <button class="govuk-button govuk-!-margin-top-7" id="toggleButton" data-module="govuk-button">
         Apply filters
        </button>
@@ -788,47 +809,19 @@
 
 
 </div>
-<hr
-  class="
-    govuk-section-break govuk-section-break--l govuk-section-break--visible
-  "
-/>
-<p class="govuk-heading-s">Related guides</p>
-<ul class="govuk-list sidenav">
-<!--  <li class="govuk-body-s">
-    <a href="../dco-process-guide/">
-    Find out more about the decision making process for national infrastructure projects
-    </a
-    >
-  </li>-->
-  <li class="govuk-body-s">
-      <a href="../dco-process-guide/">
-      Find out more about the decision making process for national infrastructure projects
-      </a
-      >
-    </li>
-  <li class="govuk-body-s">
-    <a href="../interested-party-guide/"
-      >Having your say about a national infrastructure project</a
-    >
-  </li>
-</ul>
 </nav>
 
   </div>
 
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
-    <h1 class="govuk-heading-xl">Documents</h1>
+    <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-xl">Document library</h1>
    <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
-
+<!--
    <div class="govuk-inset-text">
-     View <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination documents with reference numbers</a>
-    <!-- You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.-->
-   </div>
-   <h2 class="govuk-heading-m">Search documents</h2>
-   <p class="govuk-body">Search by author, description or document type.</p>
+     You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.
+   </div>-->
   <div>
    <input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
    <button class="govuk-button" data-cy="search-button">Search</button>
@@ -1573,7 +1566,7 @@
 
 
 
-    <form method="post" action="/design-sprint-5/apply-filters-v3">
+    <form method="post" action="/design-sprint-6/apply-filters-v3">
        <button class="govuk-button govuk-!-margin-top-7" id="toggleButton" data-module="govuk-button">
         Apply filters
        </button>
@@ -1631,9 +1624,13 @@
 
 {% endif %}
 {% if (data['filtersapplied']=="true") %}
-<h3 class="govuk-heading-m">Filtered results</h3>
+
    <div class="facet-tags__group"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:GDS Transport,arial,sans-serif; padding-right: 10px;">Acceptance:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:GDS Transport,arial,sans-serif;">Other documents</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
-<p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>
+     <div class="facet-tags__group">
+        <div class="facet-tags__wrapper">
+          <span class="facet-tags__preposition" style="font-family:GDS Transport,arial,sans-serif; padding-right: 10px;">Author:</span> <span class="facet-tag govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:GDS Transport,arial,sans-serif;">The Planning Inspectorate</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Commercial - rotorcraft" data-module="remove-filter-link" data-track-label="Commercial - rotorcraft" data-facet="aircraft_category" data-value="commercial-rotorcraft" data-name="">✕</button> </span>
+         </div>
+      </div>
 {% endif %}
 {% if (data['filtersapplied']=="true") %}
 <p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">3</span> of <span class="govuk-!-font-weight-bold">3</span> documents, newest first.  </p>
@@ -1691,7 +1688,7 @@
      </div>
    </li>
 
-   <!--<li class="pins-govuk-result-list__item">
+   <li class="pins-govuk-result-list__item">
      <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
        Examination library with reference numbers (PDF, 68KB)
      </a>
@@ -1710,7 +1707,7 @@
        <div class="govuk-grid-column-one-third" data-cy="published-title">
   Examination       </div>
      </div>
-   </li>-->
+   </li>
 
 
 </ul>
@@ -1720,7 +1717,7 @@
 
 <ul class="pins-govuk-result-list">
 
-  <!--<li class="pins-govuk-result-list__item">
+  <li class="pins-govuk-result-list__item">
   <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf" target="_blank">
     Examination library with reference numbers (PDF, 68KB)
   </a>
@@ -1739,7 +1736,7 @@
     <div class="govuk-grid-column-one-third" data-cy="published-title">
 Acceptance       </div>
   </div>
-</li>-->
+</li>
 
 
 <li class="pins-govuk-result-list__item">
@@ -2221,6 +2218,8 @@ Deadline 2       </div>
           $("#pre-examination-opener").hide();
           $("#examination-opener").hide();
           $("#deadlines-opener").hide();
+          $("#decision-opener").hide();
+          $("#post-decision-opener").hide();
           $("#author-opener").hide();
           $("#date-opener").hide();
           $("#pre-application-toggle").click(function(){
@@ -2241,6 +2240,12 @@ Deadline 2       </div>
           $("#deadlines-toggle").click(function(){
           $("#deadlines-opener").toggle();
           });
+          $("#decision-toggle").click(function(){
+          $("#decision-opener").toggle();
+          });
+          $("#post-decision-toggle").click(function(){
+          $("#post-decision-opener").toggle();
+          });
           $("#author-toggle").click(function(){
           $("#author-opener").toggle();
           });
@@ -2254,6 +2259,8 @@ Deadline 2       </div>
             $("#pre-examination-opener").toggle();
             $("#examination-opener").toggle();
             $("#deadlines-opener").toggle();
+            $("#decision-opener").toggle();
+            $("#post-decision-opener").toggle();
             $("#author-opener").toggle();
             $("#date-opener").toggle();
               });

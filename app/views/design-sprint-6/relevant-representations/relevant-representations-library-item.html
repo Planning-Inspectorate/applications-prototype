@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Relevant representations - Representation by
+North Testshire County Council and Testby District Council {% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'comments' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+
+</nav>
+
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-xl">Relevant representations (registration comments)</h1>
+<a class="govuk-back-link" href="index" data-cy="back">Back to list</a>
+<div class="pins-govuk-result-list">
+      <span class="govuk-caption-m">Representation by</span>
+      <h2 class="govuk-heading-m">
+        North Testshire County Council and Testby District Council
+      </h2>
+      <p class="govuk-body">
+        The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+      </p>
+
+      <div class="govuk-grid-row document-metadata">
+        <div class="govuk-grid-column-one-third">
+          07 May 2022
+        </div>
+        <div class="govuk-grid-column-one-third">
+          Local authorities
+        </div>
+        <div class="govuk-grid-column-one-third">
+
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

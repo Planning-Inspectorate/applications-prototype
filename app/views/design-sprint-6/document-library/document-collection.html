@@ -1,0 +1,284 @@
+{% extends "layout.html" %}
+{% block pageTitle %} ocument version history
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--<![endif]-->
+  <style type="text/css">
+
+
+  </style>
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet"/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+{{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+
+<div >
+
+
+    {{ govukPhaseBanner({
+        tag: {
+          text: "beta"
+        },
+        html: 'This is a new service – your <a class="govuk-link " href="#">feedback</a> will help us to improve it.'
+      })
+    }}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "index-version-example"
+    }) }}
+    <!--<a class="govuk-back-link" href="javascript:history.back()">Back</a>-->
+
+    <h1 class="govuk-heading-xl govuk-!-padding-top-3" style="margin-bottom:0px;margin-bottom:0px;" >
+<span class="govuk-caption-xl">Document collection</span>
+      Consultation Report (PDF, 968KB)
+</h1>
+<p class="govuk-body-m">From Drax Power Limited</p>
+  </div>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row govuk-!-margin-left-0">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+
+
+
+
+
+
+   <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
+<!--
+   <div class="govuk-inset-text">
+     You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.
+   </div>-->
+
+      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+
+<ul class="pins-govuk-result-list">
+  <p>Showing 1 to 6 of 6 documents</P>
+
+  <li class="pins-govuk-result-list__item" class="pins-govuk-result-list__item" style="font-size:16px;margin-bottom:5px;">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Consultation Report (PDF, 3MB)
+    </a>
+    <div class="govuk-grid-row document-metadata" style="margin-top:5px;padding-top:0px">
+    <div class="govuk-grid-column-two-thirds" data-cy="published-date">From Drax Power Limited
+    </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" >APP-053
+    </div>  </div>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 February 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Developer's Application
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+ Reports </div>
+    </div>
+  </li>
+
+
+  <li class="pins-govuk-result-list__item" class="pins-govuk-result-list__item" style="font-size:16px;margin-bottom:5px;">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Consultation Report - Annexe A (PDF, 968KB)
+    </a>
+    <div class="govuk-grid-row document-metadata" style="margin-top:5px;padding-top:0px">
+    <div class="govuk-grid-column-two-thirds" data-cy="published-date">From Drax Power Limited
+    </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" >APP-054
+    </div>  </div>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 February 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Developer's Application
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+ Reports     </div>
+    </div>
+  </li>
+
+  <li class="pins-govuk-result-list__item" class="pins-govuk-result-list__item" style="font-size:16px;margin-bottom:5px;">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Consultation Report - Annexe B (PDF, 101KB)
+    </a>
+    <div class="govuk-grid-row document-metadata" style="margin-top:5px;padding-top:0px">
+    <div class="govuk-grid-column-two-thirds" data-cy="published-date">From Drax Power Limited
+    </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" >APP-055
+    </div>  </div>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 February 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Developer's Application
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+ Reports     </div>
+    </div>
+  </li>
+  <li class="pins-govuk-result-list__item" class="pins-govuk-result-list__item" style="font-size:16px;margin-bottom:5px;">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Consultation Report - Annexe C (PDF, 4MB)
+    </a>
+    <div class="govuk-grid-row document-metadata" style="margin-top:5px;padding-top:0px">
+    <div class="govuk-grid-column-two-thirds" data-cy="published-date">From Drax Power Limited
+    </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" >APP-056
+    </div>  </div>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 February 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Developer's Application
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+ Reports     </div>
+    </div>
+  </li>
+  <li class="pins-govuk-result-list__item" class="pins-govuk-result-list__item" style="font-size:16px;margin-bottom:5px;">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Consultation Report - Annexe D (PDF, 804KB)
+    </a>
+    <div class="govuk-grid-row document-metadata" style="margin-top:5px;padding-top:0px">
+    <div class="govuk-grid-column-two-thirds" data-cy="published-date">From Drax Power Limited
+    </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" >APP-057
+    </div>  </div>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 February 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Developer's Application
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+ Reports     </div>
+    </div>
+  </li>
+  <li class="pins-govuk-result-list__item" class="pins-govuk-result-list__item" style="font-size:16px;margin-bottom:5px;">
+    <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf"target="_blank">
+      Consultation Report - Annexe E (PDF, 2MB)
+    </a>
+    <div class="govuk-grid-row document-metadata" style="margin-top:5px;padding-top:0px">
+    <div class="govuk-grid-column-two-thirds" data-cy="published-date">From Drax Power Limited
+    </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" >APP-058
+    </div>  </div>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 February 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Developer's Application
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+ Reports     </div>
+    </div>
+  </li>
+
+</ul>
+
+
+
+  <!--<ul class="pins-govuk-result-list">
+
+<ul class="pins-govuk-result-list">
+
+  <li class="pins-govuk-result-list__item">
+
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-full" data-cy="published-date">
+        <a href="" class="govuk-link pins-govuk-result-list__item-title">Version 3.0 - latest version</a> - published on  25 August 2022
+      </div>
+    </div>
+<div class="govuk-grid-row document-metadata">
+<div class="govuk-grid-column-full" data-cy="published-date">
+  Includes amendments to the:<br><br>
+    <ul class="govuk-list--bullet"><li>plans
+<!--  </li><li>site plans
+</li><li>access plans
+</li><li>report
+</li></ul>
+  </div>  </div>
+
+
+</li>
+
+<li class="pins-govuk-result-list__item">
+
+  <div class="govuk-grid-row document-metadata">
+    <div class="govuk-grid-column-full" data-cy="published-date">
+      <a href="" class="govuk-link pins-govuk-result-list__item-title">Version 2.0</a> - published on  22 July 2022
+    </div>
+  </div>
+<div class="govuk-grid-row document-metadata">
+<div class="govuk-grid-column-full" data-cy="published-date">
+A raft of changes to the  A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the A raft of changes to the
+</div>  </div>
+
+
+</li>
+<li class="pins-govuk-result-list__item">
+
+  <div class="govuk-grid-row document-metadata">
+    <div class="govuk-grid-column-full" data-cy="published-date">
+      <a href="" class="govuk-link pins-govuk-result-list__item-title">Version 1.0</a> - published on  17 May 2022
+    </div>
+  </div>
+<div class="govuk-grid-row document-metadata">
+<div class="govuk-grid-column-full" data-cy="published-date">
+Original submission provided with the application documents
+</div>  </div>
+
+
+</li>
+</ul>-->
+
+
+
+
+
+
+</div>
+
+      </div>
+
+  </div>
+</div>
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

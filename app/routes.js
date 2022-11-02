@@ -28,6 +28,8 @@ require('./routes/design-sprint-3.js')(router);
 require('./routes/design-sprint-3b.js')(router);
 require('./routes/design-sprint-4.js')(router);
 require('./routes/design-sprint-5.js')(router);
+require('./routes/design-sprint-6.js')(router);
+
 
 
 
