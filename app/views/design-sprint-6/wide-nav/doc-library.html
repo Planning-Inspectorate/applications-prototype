@@ -1646,7 +1646,7 @@
 <p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>
 {% endif %}
 {% if (data['filtersapplied']=="true") %}
-<p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">3</span> of <span class="govuk-!-font-weight-bold">3</span> documents, newest first.  </p>
+<p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">2</span> of <span class="govuk-!-font-weight-bold">2</span> documents, newest first.  </p>
 
 {% else %}
   <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">23</span> documents, newest first.  </p>
@@ -2206,33 +2206,38 @@ Deadline 2       </div>
 </ul>
 
  {% endif %}
- <nav class="moj-pagination" id="pagination-label">
-          <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
-          <ul class="moj-pagination__list">
+
+          {% if (data['filtersapplied']=="true") %}
+          <hr>
+          {% else %}
+          <nav class="moj-pagination" id="pagination-label">
+                   <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+                   <ul class="moj-pagination__list">
 
 
-                <li class="moj-pagination__item moj-pagination__item--active">1</li>
-
-
-
-                <li class="moj-pagination__item">
-                  <a class="moj-pagination__link" href="doc-library-2">2</a>
-                </li>
-
+                         <li class="moj-pagination__item moj-pagination__item--active">1</li>
 
 
 
+                         <li class="moj-pagination__item">
+                           <a class="moj-pagination__link" href="doc-library-2">2</a>
+                         </li>
 
 
-                <li class="moj-pagination__item  moj-pagination__item--next">
-                  <a class="moj-pagination__link" href="doc-library-2">Next<span class="govuk-visually-hidden"> set of pages</span></a>
-                </li>
 
 
-          </ul>
+
+
+                         <li class="moj-pagination__item  moj-pagination__item--next">
+                           <a class="moj-pagination__link" href="doc-library-2">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                         </li>
+
+
+                   </ul>
           <p class="moj-pagination__results">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">23</span> results</p>
+          {% endif %}
         </nav>
- 
+
 
 
 
