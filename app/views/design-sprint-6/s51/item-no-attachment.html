@@ -23,7 +23,11 @@
 {% endblock %}
 
 {% block content %}
-
+<style type="text/css">
+  .no-margin {
+    margin-top: 0px;
+  }
+  </style>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-quarter">
     <nav>
@@ -35,15 +39,24 @@
   </div>
 
   <div class="govuk-grid-column-three-quarters">
-    <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
-    <h1 class="govuk-heading-xl">Section 51 advice</h1>
+
+          <div class="govuk-breadcrumbs no-margin">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="index">Section 51 advice</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+        Advice in detail
+          </li>
+
+        </ol>
+      </div>
+    <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-l">Drawings/plans enquiry</h1>
 
 
-<a class="govuk-back-link" href="index" data-cy="back">Back to list</a>
-<div class="pins-govuk-result-list">
-      <h2 class="govuk-heading-l">
-      Drawings/plans enquiry
-      </h2>
+<a class="govuk-back-link no-nargin" href="index" data-cy="back">Back to list</a>
+
 
       <h3 class="govuk-heading-m govuk-!-margin-top-5">
 Enquiry      </h3>
@@ -84,9 +97,6 @@ Enquiry text would go here.
 Advice given     </h3>
 <p class="govuk-body">Advice issued would go here.</p>
 
-      </div>
-
-    </div>
 
 
 </div>
