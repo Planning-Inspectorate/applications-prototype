@@ -37,12 +37,87 @@ Relevant representations  {% endblock %}
   <div class="govuk-grid-column-one-third">
     <nav>
       {% set current = 'comments' %}
-      {% include "../includes/two_thirds.html" %}
+      {% include "../includes/vertical_tabs_no_guides.html" %}
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+<h3 class="govuk-heading-m">Filter</h3>
 
-</nav>
 
-  </div>
+
+
+<form method="post" action="relevant-reps?filtersapplied=true">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="local-authorities" name="relevant-reps" type="checkbox" value="local-authorities" {% if (data['filtersapplied']=="true") %}checked {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="local-authorities">
+          Local authorities (2)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="public" name="relevant-reps" type="checkbox" value="public">
+        <label class="govuk-label govuk-checkboxes__label" for="public">
+        Members of the public/businesses (3)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="non-statutory-orgs" name="relevant-reps" type="checkbox" value="non-statutory-orgs" {% if (data['filtersapplied']=="true") %}checked {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="non-statutory-orgs">
+          Non-statutory organisations (1)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="other" name="relevant-reps" type="checkbox" value="other">
+        <label class="govuk-label govuk-checkboxes__label" for="other">
+          Other statutory consultees (2)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="parish-councils" name="relevant-reps" type="checkbox" value="parish-councils">
+        <label class="govuk-label govuk-checkboxes__label" for="parish-councils">
+          Parish councils (1)
+        </label>
+      </div>
+    </div>
+
+
+  </fieldset>
+</div>
+<button class="govuk-button" id="toggleButton" data-module="govuk-button">
+ Apply filters
+</button>
+</form>
+
+<hr
+  class="
+    govuk-section-break govuk-section-break--l govuk-section-break--visible
+  "
+/>
+<p class="govuk-heading-s">Related guides</p>
+<ul class="govuk-list sidenav">
+<!--  <li class="govuk-body-s">
+    <a href="../dco-process-guide/">
+    Find out more about the decision making process for national infrastructure projects
+    </a
+    >
+  </li>-->
+  <li class="govuk-body-s">
+      <a href="../dco-process-guide/">
+      Find out more about the decision making process for national infrastructure projects
+      </a
+      >
+    </li>
+  <li class="govuk-body-s">
+    <a href="../interested-party-guide/"
+      >Having your say about a national infrastructure project</a
+    >
+  </li>
+</ul>
+
+    </nav>
+    </div>
 
   <div class="govuk-grid-column-two-thirds">
 
@@ -56,151 +131,96 @@ Relevant representations  {% endblock %}
 
 
 
-<form method="post" action="/design-sprint-6/reps-show-hide-filters">
-   <button class="govuk-button govuk-button--secondary" id="toggleButton" data-module="govuk-button">
-     {% if not data['repfilterlabel']   %}
-     Show
-     {% endif %}
-     {{ data['repfilterlabel'] }} filter
-   </button>
-</form>
-<!-- /////////////////////////// -->
-
-{% if (data['showrepfilters']=="true") %}
-
-<div class="filter-form">
-   <div id="keywords" role="search" aria-label="Air Accidents Investigation Branch reports">
-
-
-
-    </div>
-
-    <div data-module="gem-track-click" data-track-category="filterClicked" data-track-action="skip-Link" data-track-label="" data-gem-track-click-module-started="true">
-      <a class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" data-module="govuk-skip-link" href="#js-results" data-govuk-skip-link-module-started="true">Skip to results</a>
-
-    </div>
-
-    <div id="facet-wrapper" data-module="mobile-filters-modal" class="facets" role="search" aria-label="Search filters" data-mobile-filters-modal-module-started="true">
-      <div class="facets__box">
-        <div class="facets__header">
-          <div>
-
-
-
-          </div>
-        </div>
-
-
-        <div class="facets__content">
-
-
-<!-- <div class="app-c-option-select js-collapsible" data-module="option-select" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
-  <h2 class="app-c-option-select__heading js-container-heading">
-    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-category" aria-controls="aircraft_category">Document type</button><!--<div class="app-c-option-select__selected-counter js-selected-counter">1 selected</div>-->
-  <!--  <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
-    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
-  </h2>
-  <div role="group" aria-labelledby="option-select-title-category" class="app-c-option-select__container js-options-container" id="aircraft_category" tabindex="-1" style="height: 800.333px;">
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
-
-
-    </div>
-  </div>
-</div> -->
-
-
-
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
-
-  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner">
-
-<div id="checkboxes-9dbc4828" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Received from</legend>
-
-        <ul class="govuk-checkboxes gem-c-checkboxes__list">
-            <li class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="pre-application">
-          <label class="govuk-label govuk-checkboxes__label" for="stage">
-            Local authorities (2)
-          </label>
-
-        </li>
-        <li class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="app-documents">
-        <label class="govuk-label govuk-checkboxes__label" for="stage">
-        Members of the public/businesses (3)
-        </label>
-
-        </li>
-
-        <li class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="stage-2" name="stage" type="checkbox" value="acceptance" >
-          <label class="govuk-label govuk-checkboxes__label" for="stage-2">
-            Non-statutory organisations (1)
-          </label>
-
-        </li>
-
-        <li class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="stage-3" name="stage" type="checkbox" value="pre-examination">
-          <label class="govuk-label govuk-checkboxes__label" for="stage-3">
-          Other statutory consultees (2)
-          </label>
-
-        </li>
-
-        <li class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="stage-4" name="stage" type="checkbox" value="examination">
-          <label class="govuk-label govuk-checkboxes__label" for="stage-4">
-          Parish Councils (1)
-          </label>
-
-</ul>
-</fieldset>
-</div>
-    </div>
-  </div>
-</div>
 
 
 
 
-<form method="post" action="/design-sprint-6/apply-rep-filters">
-   <button class="govuk-button" id="toggleButton" data-module="govuk-button">
-    Apply filters
-   </button>
-</form>
+{% if (data['filtersapplied']=="true") %}
+<h3 class="govuk-heading-m">Filtered results</h3>
+   <div class="facet-tags__group"> <div class="facet-tags__wrapper"><span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:GDS Transport,arial,sans-serif;">Local authorities</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"><span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:GDS Transport,arial,sans-serif;">Non-statutory organisations</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div></div>
+<p class="govuk-body govuk-!-margin-top-3"><a href="relevant-reps?filtersapplied=false" class="govuk-link">Clear filters</a></p>
+   <p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">3</span> of <span class="govuk-!-font-weight-bold">3</span> representations, newest first.  </p>
+{% else %}
+<p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">23</span> representations, newest first.  </p>
+{% endif %}
+{% if (data['filtersapplied']=="true") %}
+<ul class="pins-govuk-result-list">
+  <li class="pins-govuk-result-list__item">
+    <a href="../relevant-representations/relevant-representations-library-item" class="govuk-link pins-govuk-result-list__item-title">
 
+        North Testshire County Council and Testby District Council
 
-        </div>
+    </a>
+    <p class="pins-govuk-result-list__item-description ">
+        The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+    </p>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        7 May 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Local authorities
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
       </div>
     </div>
+  </li>
+  <li class="pins-govuk-result-list__item">
+    <a href="#" class="govuk-link pins-govuk-result-list__item-title">
 
+        Test & Top District Council
 
+    </a>
+    <p class="pins-govuk-result-list__item-description ">
+        The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
+    </p>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        1 May 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Local authorities
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
 
-{% endif %}
+      </div>
+    </div>
+  </li>
+  <li class="pins-govuk-result-list__item">
+    <a href="#" class="govuk-link pins-govuk-result-list__item-title">
 
-<!-- ///////////////////////////// -->
+        Test Wildlife Trust
 
+    </a>
+    <p class="pins-govuk-result-list__item-description ">
+        The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
-  <p class="govuk-body">
-                  Showing  <strong>1</strong> to <strong>  {% if not data['doccount']   %} 9 {% else %} {{ data['doccount'] }} {% endif %}</strong> of <strong>{% if not data['doccount']   %} 9 {% else %} {{ data['doccount'] }} {% endif %}</strong> documents, newest first.
-                </p>
+    </p>
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        5 May 2022
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Non-statutory organisations
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
 
-{% if data['repfiltersapplied'] %}
-   <div class="facet-tags__group" style="background-color:#f3f2f1;"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:GDS Transport,arial,sans-serif; padding-right: 10px;">Filters applied:</span> <span class="facet-tag" style="margin-right: 10px;" > <span class="facet-tag__text" style="font-family:GDS Transport,arial,sans-serif;">Other statutory consultees</span> <button type="button" style="margin-right: 10px;" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation"  data-name="">✕</button></span>  <span class="facet-tags__preposition"  style="font-family:GDS Transport,arial,sans-serif; padding-right: 30px;"><span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:GDS Transport,arial,sans-serif;">Non-statutory organisations</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button></span></span></div></div>
-{% endif %}
+      </div>
+    </div>
+  </li>
 
+  </ul>
+  <hr>
+{% else %}
   <ul class="pins-govuk-result-list">
 
 
-{% if not data['repfiltersapplied'] %}
 
       <li class="pins-govuk-result-list__item">
-        <a href="relevant-representations-library-item" class="govuk-link pins-govuk-result-list__item-title">
+        <a href="../relevant-representations/relevant-representations-library-item" class="govuk-link pins-govuk-result-list__item-title">
 
             North Testshire County Council and Testby District Council
 
@@ -209,16 +229,15 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            07 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Local authorities
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Local authorities
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 7 May 2022
+          </div>
+
         </div>
       </li>
 
@@ -234,16 +253,16 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            06 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Members of the public or businesses
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Members of the public or business
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 6 May 2022
+          </div>
+
         </div>
       </li>
 
@@ -257,16 +276,16 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            05 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Members of the public or businesses
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Members of the public or business
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 5 May 2022
+          </div>
+
         </div>
       </li>
 
@@ -280,19 +299,19 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            03 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Members of the public or businesses
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Members of the public or business
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 5 May 2022
+          </div>
+
         </div>
       </li>
-      {% endif %}
+
 
       <li class="pins-govuk-result-list__item">
         <a href="#" class="govuk-link pins-govuk-result-list__item-title">
@@ -304,16 +323,16 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            05 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Non-statutory organisations
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Non-statutory organisations
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 5 May 2022
+          </div>
+
         </div>
       </li>
 
@@ -330,20 +349,20 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            05 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Other statutory consultees
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Other statutory consultees
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 5 May 2022
+          </div>
+
         </div>
       </li>
 
-      {% if not data['repfiltersapplied'] %}
+
 
       <li class="pins-govuk-result-list__item">
         <a href="#" class="govuk-link pins-govuk-result-list__item-title">
@@ -355,20 +374,20 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            05 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Parish Councils
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Parish councils
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 5 May 2022
+          </div>
+
         </div>
       </li>
 
-{% endif %}
+
 
       <li class="pins-govuk-result-list__item">
         <a href="#" class="govuk-link pins-govuk-result-list__item-title">
@@ -380,20 +399,20 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            05 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Other statutory consultees
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Other statutory consultees
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 5 May 2022
+          </div>
+
         </div>
       </li>
 
-{% if not data['repfiltersapplied'] %}
+
 
       <li class="pins-govuk-result-list__item">
         <a href="#" class="govuk-link pins-govuk-result-list__item-title">
@@ -405,29 +424,53 @@ Relevant representations  {% endblock %}
             The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
 
         </p>
-        <div class="govuk-grid-row document-metadata">
-          <div class="govuk-grid-column-one-third" data-cy="published-date">
-            01 May 2022
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="published-stage">
-            Local authorities
-          </div>
-          <div class="govuk-grid-column-one-third" data-cy="contains-attachments">
+
+        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+          <div class="govuk-grid-column-two-thirds" data-cy="author-category">
+              <span class="govuk-!-font-weight-bold">Author category:</span> Local authorities
 
           </div>
+          <div class="govuk-grid-column-one-third" data-cy="date-published">
+             <span class="govuk-!-font-weight-bold">Date published:</span> 1 May 2022
+          </div>
+
         </div>
       </li>
-{% endif %}
+
   </ul>
 
 
 
+  <nav class="moj-pagination" id="pagination-label">
+           <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+           <ul class="moj-pagination__list">
+
+
+                 <li class="moj-pagination__item moj-pagination__item--active">1</li>
+
+
+
+                 <li class="moj-pagination__item">
+                   <a class="moj-pagination__link" href="#">2</a>
+                 </li>
 
 
 
 
 
 
+                 <li class="moj-pagination__item  moj-pagination__item--next">
+                   <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                 </li>
+
+
+           </ul>
+  <p class="moj-pagination__results">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">23</span> results</p>
+
+
+
+
+{% endif %}
 
 
   </fieldset>
