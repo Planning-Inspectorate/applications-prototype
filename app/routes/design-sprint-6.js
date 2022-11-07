@@ -126,7 +126,7 @@ function loadDeadlineData(){
 // sprint 4 routes
 module.exports = function (router) {
   // routes for the representations
-  router.post("/design-sprint-5/choose-deadline-answer", function(req, res) {
+  router.post("/design-sprint-6/choose-deadline-answer", function(req, res) {
     //route user to correct journey depending on entity
     console.log("deadline item list")
     console.log(req.session.data['deadlineitemlist'])
@@ -135,7 +135,7 @@ module.exports = function (router) {
   });
 
 
-  router.post("/design-sprint-5/ip-number-available-answer", function(req, res) {
+  router.post("/design-sprint-6/ip-number-available-answer", function(req, res) {
     //route user to correct journey depending on entity
 
     if(req.session.data.entity['ipavailable']=="Yes"){
@@ -147,7 +147,7 @@ module.exports = function (router) {
     }
   });
 
-  router.post("/design-sprint-5/applicant-yes-no-answer", function(req, res) {
+  router.post("/design-sprint-6/applicant-yes-no-answer", function(req, res) {
     //If user is applicant, skip to email, elase collect as non registered party
     if(req.session.data.entity['applicant']=="Yes"){
       res.redirect("email");
@@ -158,7 +158,7 @@ module.exports = function (router) {
     }
   });
 
-  router.post("/design-sprint-5/involvement-answer", function(req, res) {
+  router.post("/design-sprint-6/involvement-answer", function(req, res) {
     // get the type of interested party
 
   //   console.log("this is a test")
@@ -179,7 +179,7 @@ module.exports = function (router) {
   });
 
 
-  router.post("/design-sprint-5/who-for-answer", function(req, res) {
+  router.post("/design-sprint-6/who-for-answer", function(req, res) {
     // get the type of interested party
     var whofor = req.session.data['entity']['whofor'];
     // if an individual, show individual flow
@@ -195,7 +195,7 @@ module.exports = function (router) {
     }
   });
 
-  router.post("/design-sprint-5/add-deadline-item-answer", function(req, res) {
+  router.post("/design-sprint-6/add-deadline-item-answer", function(req, res) {
     if (req.session.data.addAnother == "Yes"){
       res.redirect("deadline-items");
     }
@@ -206,7 +206,7 @@ module.exports = function (router) {
 
   });
 
-  router.post("/design-sprint-5/choose-deadline-single-answer", function(req, res) {
+  router.post("/design-sprint-6/choose-deadline-single-answer", function(req, res) {
     if (req.session.data['single-deadline'] == "Yes"){
       res.redirect("deadline-items");
     }
@@ -217,7 +217,7 @@ module.exports = function (router) {
 
   });
 
-  router.post("/design-sprint-5/deadline-items-answer", function(req, res) {
+  router.post("/design-sprint-6/deadline-items-answer", function(req, res) {
     // if an object to create all sets of the sale details doesn't exist then create it
 
 
@@ -230,7 +230,7 @@ module.exports = function (router) {
 
 
 
-router.post("/design-sprint-5/submission-type-routing", function(req, res) {
+router.post("/design-sprint-6/submission-type-routing", function(req, res) {
   // route user to upload files and/or make a text representation
 
   //Identify name of active deadline item
@@ -262,7 +262,7 @@ if (submissionType == "Upload files"){
 
 });
 
-router.post("/design-sprint-5/make-comment-routing", function(req, res) {
+router.post("/design-sprint-6/make-comment-routing", function(req, res) {
   if (req.session.data.deadlineitem['submissionmethod'] == "Both"){
     res.redirect("upload-files");
   }
@@ -273,7 +273,7 @@ router.post("/design-sprint-5/make-comment-routing", function(req, res) {
 
 });
 
-router.post("/design-sprint-5/upload-files-routing", function(req, res) {
+router.post("/design-sprint-6/upload-files-routing", function(req, res) {
   // route user to upload files and/or make a text representation
   console.log(req.session.data['deadlineitemuploadedfiles']);
   //Create variable to say contains uploaded files
@@ -283,7 +283,7 @@ router.post("/design-sprint-5/upload-files-routing", function(req, res) {
 
 });
 
-router.post("/design-sprint-5/sensitive-information-routing", function(req, res) {
+router.post("/design-sprint-6/sensitive-information-routing", function(req, res) {
   // route user to upload files and/or make a text representation
 
   //Store checkbox values
@@ -300,7 +300,7 @@ router.post("/design-sprint-5/sensitive-information-routing", function(req, res)
 
 });
 
-router.post("/design-sprint-5/sensitive-items-routing", function(req, res) {
+router.post("/design-sprint-6/sensitive-items-routing", function(req, res) {
 
 
     res.redirect("check-deadline-item");
@@ -308,7 +308,7 @@ router.post("/design-sprint-5/sensitive-items-routing", function(req, res) {
 
 });
 
-router.post("/design-sprint-5/check-deadline-item-answer", function(req, res) {
+router.post("/design-sprint-6/check-deadline-item-answer", function(req, res) {
 
 
     // if an array to store all the sets of correction values doesn't exist create it
@@ -339,7 +339,7 @@ router.post("/design-sprint-5/check-deadline-item-answer", function(req, res) {
 
 });
 
-router.post("/design-sprint-5/change-deadline-items-form-answer", function(req, res) {
+router.post("/design-sprint-6/change-deadline-items-form-answer", function(req, res) {
 
   if( req.session.data['change-deadline-items-position'] ){
 
@@ -354,7 +354,7 @@ router.post("/design-sprint-5/change-deadline-items-form-answer", function(req, 
 
 });
 
-router.post(`/design-sprint-5/delete-item-answer`, function (req, res) {
+router.post(`/design-sprint-6/delete-item-answer`, function (req, res) {
 
         let confirmRemove = req.session.data['confirm-remove']
         let removeObj = req.session.data['remove']
@@ -373,7 +373,7 @@ router.post(`/design-sprint-5/delete-item-answer`, function (req, res) {
 });
 
 //Show hide doc lib filters
-router.post("/design-sprint-5/show-hide-filters", function(req, res) {
+router.post("/design-sprint-6/show-hide-filters", function(req, res) {
   if(req.session.data['showfilters']=="true"){
     req.session.data['showfilters']="false"
     res.redirect("document-library");
@@ -386,75 +386,75 @@ router.post("/design-sprint-5/show-hide-filters", function(req, res) {
 });
 
 //Show hide doc lib filters
-router.post("/design-sprint-5/show-hide-filters-2", function(req, res) {
+router.post("/design-sprint-6/show-hide-filters-2", function(req, res) {
   if(req.session.data['showfilters']=="true"){
     req.session.data['showfilters']="false"
-    res.redirect("/design-sprint-5/document-library/index-2");
+    res.redirect("/design-sprint-6/document-library/index-2");
   }
   else {
     req.session.data['showfilters']="true"
-    res.redirect("/design-sprint-5/document-library/index-2");
+    res.redirect("/design-sprint-6/document-library/index-2");
 
   }
 });
 
 //Show hide doc lib filters
-router.post("/design-sprint-5/show-hide-filters-3", function(req, res) {
+router.post("/design-sprint-6/show-hide-filters-3", function(req, res) {
   if(req.session.data['showfilters']=="true"){
     req.session.data['showfilters']="false"
-    res.redirect("/design-sprint-5/document-library/index-3");
+    res.redirect("/design-sprint-6/document-library/index-3");
   }
   else {
     req.session.data['showfilters']="true"
-    res.redirect("/design-sprint-5/document-library/index-3");
+    res.redirect("/design-sprint-6/document-library/index-3");
 
   }
 });
 
-router.post("/design-sprint-5/show-hide-filters-v1", function(req, res) {
+router.post("/design-sprint-6/show-hide-filters-v1", function(req, res) {
   if(req.session.data['showfilters']=="true"){
     req.session.data['showfilters']="false"
-    res.redirect("/design-sprint-5/document-library/index-v1");
+    res.redirect("/design-sprint-6/document-library/index-v1");
   }
   else {
     req.session.data['showfilters']="true"
-    res.redirect("/design-sprint-5/document-library/index-v1");
+    res.redirect("/design-sprint-6/document-library/index-v1");
 
   }
 });
 
-router.post("/design-sprint-5/show-hide-filters-v2", function(req, res) {
+router.post("/design-sprint-6/show-hide-filters-v2", function(req, res) {
   if(req.session.data['showfilters']=="true"){
     req.session.data['showfilters']="false"
-    res.redirect("/design-sprint-5/document-library/index-v2");
+    res.redirect("/design-sprint-6/document-library/index-v2");
   }
   else {
     req.session.data['showfilters']="true"
-    res.redirect("/design-sprint-5/document-library/index-v2");
+    res.redirect("/design-sprint-6/document-library/index-v2");
 
   }
 });
 
-router.post("/design-sprint-5/show-hide-filters-v3", function(req, res) {
+router.post("/design-sprint-6/show-hide-filters-v3", function(req, res) {
   if(req.session.data['showfilters']=="true"){
     req.session.data['showfilters']="false"
-    res.redirect("/design-sprint-5/document-library/index-v3");
+    res.redirect("/design-sprint-6/document-library/index-v3");
   }
   else {
     req.session.data['showfilters']="true"
-    res.redirect("/design-sprint-5/document-library/index-v3");
+    res.redirect("/design-sprint-6/document-library/index-v3");
 
   }
 });
 
 //Show hide doc lib filters
-router.post("/design-sprint-5/clear-filters", function(req, res) {
+router.post("/design-sprint-6/clear-filters", function(req, res) {
   req.session.data['filtersapplied'] = "false"
     res.redirect("document-library");
 });
 
 //Apply doc lib filters
-router.post("/design-sprint-5/apply-filters", function(req, res) {
+router.post("/design-sprint-6/apply-filters", function(req, res) {
   req.session.data['filtersapplied'] = "true"
     res.redirect("document-library");
 
@@ -462,55 +462,55 @@ router.post("/design-sprint-5/apply-filters", function(req, res) {
 });
 
 //Apply doc lib filters
-router.post("/design-sprint-5/apply-filters-2", function(req, res) {
+router.post("/design-sprint-6/apply-filters-2", function(req, res) {
   req.session.data['filtersapplied'] = "true"
   req.session.data['showfilters'] = "false"
   req.session.data['results'] = "true"
-    res.redirect("/design-sprint-5/document-library/index-2");
+    res.redirect("/design-sprint-6/document-library/index-2");
 
 
 });
 //Apply doc lib filters
-router.post("/design-sprint-5/apply-filters-3", function(req, res) {
+router.post("/design-sprint-6/apply-filters-3", function(req, res) {
   req.session.data['filtersapplied'] = "true"
   req.session.data['showfilters'] = "false"
   req.session.data['results'] = "true"
-    res.redirect("/design-sprint-5/document-library/index-3");
+    res.redirect("/design-sprint-6/document-library/index-3");
 
 
 });
 
 
 //Apply doc lib filters
-router.post("/design-sprint-5/apply-filters-v1", function(req, res) {
+router.post("/design-sprint-6/apply-filters-v1", function(req, res) {
   req.session.data['filtersapplied'] = "true"
   req.session.data['showfilters'] = "false"
   req.session.data['results'] = "true"
-    res.redirect("/design-sprint-5/document-library/index-v1");
+    res.redirect("/design-sprint-6/document-library/index-v1");
 
 
 });
 
-router.post("/design-sprint-5/apply-filters-v2", function(req, res) {
+router.post("/design-sprint-6/apply-filters-v2", function(req, res) {
   req.session.data['filtersapplied'] = "true"
   req.session.data['showfilters'] = "false"
   req.session.data['results'] = "true"
-    res.redirect("/design-sprint-5/document-library/index-v2");
+    res.redirect("/design-sprint-6/document-library/index-v2");
 
 
 });
 
-router.post("/design-sprint-5/apply-filters-v3", function(req, res) {
+router.post("/design-sprint-6/apply-filters-v3", function(req, res) {
   req.session.data['filtersapplied'] = "true"
   req.session.data['showfilters'] = "false"
   req.session.data['results'] = "true"
-    res.redirect("/design-sprint-5/document-library/index-v3");
+    res.redirect("/design-sprint-6/document-library/index-v3");
 
 
 });
 
 /// representations filtersapplied
-router.post("/design-sprint-5/reps-show-hide-filters", function(req, res) {
+router.post("/design-sprint-6/reps-show-hide-filters", function(req, res) {
   if(req.session.data['showrepfilters']=="true"){
     req.session.data['showrepfilters']="false" ;
     req.session.data['repfilterlabel']="Show" ;
@@ -528,7 +528,7 @@ router.post("/design-sprint-5/reps-show-hide-filters", function(req, res) {
 
 
 //Apply rep filters
-router.post("/design-sprint-5/apply-rep-filters", function(req, res) {
+router.post("/design-sprint-6/apply-rep-filters", function(req, res) {
   req.session.data['repfiltersapplied'] = "Yes"
   req.session.data['doccount'] = "3"
   req.session.data['showrepfilters'] = "false"
@@ -539,7 +539,7 @@ router.post("/design-sprint-5/apply-rep-filters", function(req, res) {
 
 });
 
-router.get("/design-sprint-5/rep-filter-start", function(req, res) {
+router.get("/design-sprint-6/rep-filter-start", function(req, res) {
 req.session.data['showrepfilters']="true" ;
 req.session.data['repfilterlabel']="Hide" ;
   res.redirect("relevant-representations/index");
@@ -549,18 +549,18 @@ req.session.data['repfilterlabel']="Hide" ;
 /// Timetable data stuff
 
 //
-router.get("/design-sprint-5/accordion", function(req, res) {
+router.get("/design-sprint-6/accordion", function(req, res) {
   req.session.data['accordion-default-content-1'] = true;
   req.session.data['accordion-default-content-2'] = "false";
     console.log (req.session.data['accordion-default-content-1']);
     console.log (req.session.data['accordion-default-content-2']);
-    res.redirect("/design-sprint-5/timetable/timetable-upcoming-first-accordion");
+    res.redirect("/design-sprint-6/timetable/timetable-upcoming-first-accordion");
 
 
 });
 
 
-router.get('/design-sprint-5/start', function (req, res) {
+router.get('/design-sprint-6/start', function (req, res) {
 
 req.session.data['projectname'] = "Drax Bioenergy with Carbon Capture and Storage Project" ;
 req.session.data['deadline'] = "Deadline 9"
@@ -570,12 +570,12 @@ req.session.data['deadlineitemlist'];
 req.session.data['deadlineitemlist']= storedDeadlines;
 console.log (req.session.data['deadlineitemlist']);
 
-res.render("design-sprint-5/start");
+res.render("design-sprint-6/start");
 })
 
 
 
-router.get('/design-sprint-5/timetable/timetableload', function (req, res) {
+router.get('/design-sprint-6/timetable/timetableload', function (req, res) {
 console.log("The get is running");
 
 
@@ -857,7 +857,7 @@ console.log("The get is running");
 
 
           req.session.data['deadlineItems'] = deadlineItems;
-res.redirect('/design-sprint-5/timetable/timetable');
+res.redirect('/design-sprint-6/timetable/timetable');
 })
 // end of timetable data stuff
 
