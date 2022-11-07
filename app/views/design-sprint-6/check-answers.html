@@ -37,13 +37,7 @@ Check your answers
       <span class="govuk-caption-l">Deadline 9</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-        You cannot make any further changes after you submit.
-        </strong>
-      </div>
+
 
 
             <h2 class="govuk-heading-m">Your details</h2>
@@ -239,18 +233,29 @@ Check your answers
 
             </dl>
 
-              <form action="loading-spinner-1" method="post" novalidate>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+              You cannot make any further changes after you press continue.
+              </strong>
+            </div>
+
+              <form action="confirmation" method="post" novalidate>
 
               <input type="hidden" name="answers-checked" value="true">
-
+ <div class="govuk-button-group">
               <button class="govuk-button " data-module="govuk-button">
-                Submit
+                Continue
+              </button> <!--</form>
+              <form action="confirmation-2" method="post" novalidate>--><button class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+                Save your progress and return later
               </button>
-
+</div>
             </form>
-            <p class="govuk-body">
+  <!--          <p class="govuk-body">
               <a href="loading-spinner-save">Save your progress and return later</a>
-              </p>
+              </p> -->
           </div>
 
     </div>
