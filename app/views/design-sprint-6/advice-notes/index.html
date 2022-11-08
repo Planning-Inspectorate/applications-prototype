@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Advice notes
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+{% block header %}
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Advice notes
+    </h1>
+<p class="govuk-body">Advice notes inform industry and members of the public about a range of planning issues throughout the planning application process under the Planning Act 2008 (PA2008).</p>
+<p class="govuk-body">Advice notes include: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>guidance on what to include in an application</li>
+<li>how the process works </li>
+</ul>
+<h2 class="govuk-heading-l">Advice notes</h2>
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          One: Local impact reports (version 2, last updated April 2012)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <p class='govuk-body'>Advice on the creation of Local Impact Reports (LIR) and includes how it works, the timetable to operate by and what to include in the LIR. </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          Two: The role of local authorities in the development consent process (version one, published February 2015)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      <p class='govuk-body'>
+Advice on the role of local authorities at different stages of the Planning Act 2008 process.  This includes an overview of the process, the local authority’s role and how to get in touch at various stages.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+          Three: Environmental Impact Assessment (EIA) consultation and notification (version 7, republished August 2017)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+      <p class='govuk-body'>This advice explains how the Planning Inspectorate identifies consultation bodies to be notified under Regulation 11 of The Infrastructure Planning (Environmental Impact Assessment) Regulations 2017 (the ‘EIA Regulations’). </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+          How people read
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+      <p class='govuk-body'>This is the content for How people read.</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+{% endblock %}
