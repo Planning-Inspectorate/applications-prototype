@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What's your interested party number?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceName: "Have your say during the Examination of the application",
+  serviceUrl: "/design-sprint-7/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form autocomplete="off" class="/design-sprint-7/ip-number-answer" action="who-for" method="post">
+  {% if (data['error']=="true")%}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+        <a href="#ip-error">Enter your interested party number</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+{% endif %}
+
+
+
+        <div class="govuk-form-group   {% if (data['error']=="true")%}govuk-form-group--error{% endif %}">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+              What's your interested party number?
+            </label>
+          </h1>
+          <div id="ip-number-hint" class="govuk-hint">
+          You can find it on the postcard or email you received inviting you to the Preliminary meeting or letters to you from the Examination Authority.
+          </div>
+          {% if error %}
+          <p id="ip-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter your interested party number
+  </p>
+  {% endif %}
+          <input class="govuk-input   {% if (data['error']=="true")%}govuk-input--error{% endif %}" id="ip-number" name="entity[ipnumber]" type="text" aria-describedby="ip-number-hint">
+        </div>
+    <!--    {{ govukDetails({
+          summaryText: "How to find your interested party number",
+          text: "The unique reference that identifies you as an Interested Party can be found on the postcard or email you received inviting you to the Preliminary Meeting. Your reference is included in the same place on all correspondence addressed to you from the Examining Authority."
+        }) }}-->
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
