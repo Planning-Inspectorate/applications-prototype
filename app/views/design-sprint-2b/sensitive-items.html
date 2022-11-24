@@ -1,7 +1,16 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which items contain personal information?  {% endblock %}
+{% if data['deadlineitem']['submissiontext']=="Both" %}
+Which files and comments contain personal information
+{% endif %}
+{% if data['deadlineitem']['submissiontext']=="Files" %}
+Which files contain personal information
+{% endif %}
+  {% if data['deadlineitem']['submissiontext']=="Comment" %}
+  Comment has personal information or not
+  {% endif %}
+  {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
