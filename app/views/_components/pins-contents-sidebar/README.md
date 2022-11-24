@@ -6,7 +6,7 @@ See the [main README quick start guide](https://github.com/alphagov/govuk-fronte
 
 ## Guidance and Examples
 
-This is a custom component for the Planning Inspectorate
+This is a custom component for the planning inspectorate
 
 ## Component options
 
