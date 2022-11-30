@@ -1,7 +1,7 @@
 // Core dependencies
 const path = require('path')
 const fs = require('fs')
-
+ 
 checkFiles()
 
 // Local dependencies
