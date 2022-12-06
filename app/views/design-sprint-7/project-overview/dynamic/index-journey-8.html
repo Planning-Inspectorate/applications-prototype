@@ -61,7 +61,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'project-information' %}
-          {% include "../includes/vertical_tabs.html" %}
+          {% include "../../includes/vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
@@ -73,8 +73,13 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         Latest Updates
       </h2>
     </div>
-    <div class="govuk-notification-banner__content">No auto banner</p>
-      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-dynamic-journey-11">Next</a></p>
+    <div class="govuk-notification-banner__content">
+      The preliminary meeting has happened, and procedural decisions have been made.</p><p>
+
+      The decisions are contained in the examination timetable (rule 8 letter). </p><p>This has been sent to interested parties.</p><p>
+
+     <a href="#">Read the letter</a></p>
+      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-journey-9">Next</a></p>
     </div>
   </div>
 
@@ -129,10 +134,21 @@ class="
 
 <h2 class="govuk-heading-m">Project stage</h2>
 <p class="govuk-body">          <p>
-          This project is at the <strong> Decision </strong> stage
+          This project is at the <strong> Examination of the application </strong> stage
         </p>
         <p>
-      Nothing drafted
+        During the Examination stage, you can submit comments at the <a href="../"> deadlines
+        set out in the Examination timetable</a>. Interested Parties and Affected
+        Persons have the right to be heard in any Examination hearings.
+        </p>
+
+        <p>
+        You can also <a href="../"> view the Rule 8 letter</a> to find out more about what you
+        can do during the Examination stage.
+          </p>
+
+        <p>
+          <a href ="../"> Find out more about the Examination of the application </a>
           </p>
 
 
@@ -207,7 +223,7 @@ class="
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details" >
+              <details class="govuk-details" data-module="govuk-details" open>
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
   Examination
@@ -219,13 +235,13 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details" open>
+              <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
   Recommendation and decision
@@ -238,7 +254,7 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row" style="border-bottom:none;">

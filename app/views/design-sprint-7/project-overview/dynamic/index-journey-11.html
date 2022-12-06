@@ -61,7 +61,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'project-information' %}
-          {% include "../includes/vertical_tabs.html" %}
+          {% include "../../includes/vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
@@ -73,10 +73,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         Latest Updates
       </h2>
     </div>
-    <div class="govuk-notification-banner__content">
-      <p class="govuk-body">No auto banner
-  </p>
-      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-dynamic-journey-2">Next</a></p>
+    <div class="govuk-notification-banner__content">No auto banner</p>
+      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-journey-11">Next</a></p>
     </div>
   </div>
 
@@ -130,9 +128,12 @@ class="
 />
 
 <h2 class="govuk-heading-m">Project stage</h2>
-  <p>This project is at: <strong>Pre-application stage</strong></p>
-<p class="govuk-body">Nothing drafted
-</p>
+<p class="govuk-body">          <p>
+          <s>This project is at the <strong> post-decision </strong> stage</s>
+        </p>
+        <p>
+      Nothing drafted
+          </p>
 
 
 
@@ -143,7 +144,7 @@ class="
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details" open>
+              <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text" >
       Pre-application
@@ -158,17 +159,17 @@ class="
 </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
 
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="govuk-details" data-module="govuk-details" >
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-    Acceptance for examination
+    Acceptance for examination (shouldn't it be acceptance (review of the application)
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -178,13 +179,13 @@ class="
 </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="govuk-details" data-module="govuk-details" >
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
     Pre-examination
@@ -200,13 +201,13 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="govuk-details" data-module="govuk-details" >
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
   Examination
@@ -218,13 +219,13 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="govuk-details" data-module="govuk-details" >
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
   Recommendation and decision
@@ -237,13 +238,13 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row" style="border-bottom:none;">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="govuk-details" data-module="govuk-details" open>
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
 After the decision is made
@@ -255,7 +256,7 @@ After the decision is made
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+
             </dd>
             </div>
           </dl>

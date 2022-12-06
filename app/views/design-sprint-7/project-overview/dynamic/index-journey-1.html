@@ -61,7 +61,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'project-information' %}
-          {% include "../includes/vertical_tabs.html" %}
+          {% include "../../includes/vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
@@ -74,14 +74,9 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       </h2>
     </div>
     <div class="govuk-notification-banner__content">
-      You can now register as an Interested Party <a href = "#"> Register online</a>
-      <p> If you are unable to complete a registration form online and would like to register your interest, please call the helpline on: 0303 444 5000 to request a paper form.
-
-      </p><p>For further advice please see Advice Note 8.2: How to register to participate in an Examination.
-
-      </p><p>You can check our step by step guide to find out more about having your say about a national infrastructure project.</p>
-
-      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-dynamic-journey-5">Next</a></p>
+      <p class="govuk-body">No auto banner
+  </p>
+      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-journey-2">Next</a></p>
     </div>
   </div>
 
@@ -135,27 +130,8 @@ class="
 />
 
 <h2 class="govuk-heading-m">Project stage</h2>
-<p class="govuk-body">          <p>
-          This project is at the <strong> Pre-examination</strong> stage
-        </p>
-
-        <p>
-        If you want to comment on this proposed project, you can now register
-        to have your say. Registration will close at
-        <strong>23:59 on Tuesday 14 December 2021</strong>.
-      </p>
-
-        <a href="./register/start" class="govuk-button"
-        >Register to have your say</a>
-
-        <!--<a href="./register/start" role="button" draggable="false" class="govuk-button" style="background-color:#5694ca; color:white" data-module="govuk-button">
-        &nbsp;Make a submission&nbsp;
-      </a>-->
-
-        <p>
-          <a href="../interested-party-guide/registering-to-have-your-say"
-          >Find out more about registering to have your say</a>.
-
+  <p>This project is at: <strong>Pre-application stage</strong></p>
+<p class="govuk-body">Nothing drafted
 </p>
 
 
@@ -167,7 +143,7 @@ class="
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details">
+              <details class="govuk-details" data-module="govuk-details" open>
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text" >
       Pre-application
@@ -182,17 +158,17 @@ class="
 </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
 
-              <details class="govuk-details" data-module="govuk-details" >
+              <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-    Acceptance for examination (shouldn't it be acceptance (review of the application)
+    Acceptance for examination
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -202,13 +178,13 @@ class="
 </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details"  open>
+              <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
     Pre-examination
@@ -224,7 +200,7 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -242,7 +218,6 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
             </dd>
           </div>

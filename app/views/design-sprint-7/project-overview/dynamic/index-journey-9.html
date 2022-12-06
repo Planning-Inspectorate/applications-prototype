@@ -61,7 +61,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {% set current = 'project-information' %}
-          {% include "../includes/vertical_tabs.html" %}
+          {% include "../../includes/vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
@@ -73,23 +73,12 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         Latest Updates
       </h2>
     </div>
-    <div class="govuk-notification-banner__content">
-      <p class="govuk-body">
-    The following documents have been published
-      </p>
-
-      <ul>
-        <li><a href="">The examination timetable (rule 8 letter)</a></li>
-          <li><a href="">The examining authority's first written questions. The deadline for responses is 12/12/2020</a></li>
-      </ul>
-      <p><a href="document-library">The examination library has been updated</a></p>
-      <p>View <a href="../timeline/update-archive-alt">all updates</a>  |  <a href="index-dynamic-alt-pre-exam-2">Next</a></p>
+    <div class="govuk-notification-banner__content">No auto banner</p>
+      <p>View <a href="../timeline/update-archive-alt">all updates</a> |  <a href="index-journey-10">Next</a></p>
     </div>
   </div>
 
           <h2 class="govuk-heading-m">About the project</h2>
-          <p>Type of application: <strong>Generating station</strong></p>
-
 
   <p class="govuk-body">
 Drax Power Limited proposes to install post-combustion capture technology that would capture carbon dioxide emissions from up to two of the existing biomass units at Drax Power Station. </p>
@@ -139,29 +128,35 @@ class="
 />
 
 <h2 class="govuk-heading-m">Project stage</h2>
-<p>This project is at: <strong>pre-examination stage</strong></p><div class="govuk-inset-text"><p>The examining authority is appointed and is made up of one or more inspectors. Anyone who wants to have their say will be able to register at this stage.
-
-</p><p>The developer must publish that the application has been accepted by us. They include when and how parties can register to get involved. The time period for registering is set by the developer but must be no less than 28 days.
-
-</p><p>The pre-examination stage usually takes about 3 months.</p>
-</div><p class="govuk-body">        </p>
-          <p>
-          At this stage you can register to have your say about the proposed project.
-          This page will be updated when the registration period opens.
-          You can view the project application documents to find out more about the application.
+<p class="govuk-body">          <p>
+          This project is at the <strong> Recommendation</strong> stage
         </p>
+        <p>
+      Nothing drafted
+          </p>
 
-          <p>
-            <a href="../interested-party-guide/registering-to-have-your-say"
-            >Find out more about registering to have your say</a>.
-        </p>
-</p>
+
+
+
+
 
 <dl class="govuk-summary-list govuk-!-margin-top-3">
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              Pre-application
+              <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text" >
+      Pre-application
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">This is where the developer starts to create their application. This is where the developer must run a consultation and engage with people and organisations in the area. They must also create detailed documents about the impact the project could have on the environment.</p>
+
+    <p class="govuk-body">It is important to get involved at this stage to influence the application before the developer sends it to the planning inspectorate. </p>
+    <p class="govuk-body"><a href="../dco-process-guide/pre-application">Find out what you can do at this stage and check our detailed guides</a></p>
+  </div>
+</details>
             </dd>
             <dd class="govuk-summary-list__actions">
             <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
@@ -171,7 +166,17 @@ class="
 
             <dd class="govuk-summary-list__value">
 
-              Acceptance for examination
+              <details class="govuk-details" data-module="govuk-details" >
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    Acceptance for examination (shouldn't it be acceptance (review of the application)
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">This is when the developer sends us their application documents. We check if we can accept the application for examination. We have 28 days to make this decision.</p>
+    <p class="govuk-body"><a href="../dco-process-guide/review-of-the-application">How the acceptance stage works and what happens next </a></p>
+  </div>
+</details>
             </dd>
             <dd class="govuk-summary-list__actions">
             <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
@@ -180,34 +185,75 @@ class="
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-            Pre-examination
+              <details class="govuk-details" data-module="govuk-details" >
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    Pre-examination
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The examining authority is appointed and is made up of one or more inspectors. Anyone who wants to have their say will be able to register at this stage.</p>
+
+  <p class="govuk-body">The developer must publish that the application has been accepted by us. They include when and how parties can register to get involved. The time period for registering is set by the developer but must be no less than 28 days.</p>
+
+  <p class="govuk-body">The pre-examination stage usually takes about 3 months.</p>
+    <p class="govuk-body"><a href="../dco-process-guide/pre-examination">What happens during the pre-examination stage </a></p>
+  </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details" >
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+  Examination
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The examining authority will ask questions about the proposed development. The developer and anyone who has registered to have their say can get involved and submit comments at each deadline in the timetable. You can also attend hearings that may take place. This stage takes up to 6 months.</p>
+    <p class="govuk-body"><a href="../dco-process-guide/examination">What happens at the Examination of the application</a></p>
+  </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details" open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+  Recommendation and decision
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.</p>
+    <p class="govuk-body">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision.</p>
+    <p class="govuk-body"><a href="../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
+  </details>
             </dd>
             <dd class="govuk-summary-list__actions">
             <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-
-            <dd class="govuk-summary-list__value">
-            Examination of the application
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-
-            <dd class="govuk-summary-list__value">
-              Recommendation and decision
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
-            </dd>
-          </div>
           <div class="govuk-summary-list__row" style="border-bottom:none;">
 
             <dd class="govuk-summary-list__value">
-              After the decision is made
+              <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+After the decision is made
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Once the Secretary of State has made a decision, there is a 6-week period where people can challenge the decision in the high court. This is called a judicial review.</p>
+    <p class="govuk-body"><a href="../dco-process-guide/what-happens-after-a-decision-has-been-made">What you can do after the decision has been made</a></p>
+  </details>
             </dd>
             <dd class="govuk-summary-list__actions">
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
