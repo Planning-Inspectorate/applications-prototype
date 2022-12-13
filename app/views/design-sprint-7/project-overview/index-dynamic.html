@@ -451,13 +451,23 @@ class="
 -->
 
        <h2 class="govuk-heading-m">
-         Stay informed
+        Subscribe for updates
        </h2>
-       <p class="govuk-body">The notification service provides email updates for the Drax Bionerergy with Carbon Capture and Storage project following the submission of the application to the planning inspectorate. We will not provide updates about the project at the pre-application stage of the process.</p>
+       <p class="govuk-body">Enter your email address to receive:</p>
+       <ul class="govuk-list govuk-list--bullet">
+  <li>updates on project progress</li>
+
+<li>information on how to have your say</li>
+
+<li>notifications when key documents are published</li>
+</ul>
+<div class="govuk-inset-text">
+Read the <a href="https://www.gov.uk/government/publications/planning-inspectorate-privacy-notices/customer-privacy-notice">privacy notice</a> to see how we handle your information.
+</div>
        {% from "govuk/components/button/macro.njk" import govukButton %}
 
        {{ govukButton({
-         text: "Get email updates",
+         text: "Subscribe",
          href: "../get-updates/index",
          isStartButton: false
        }) }}
