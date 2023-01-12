@@ -1,0 +1,444 @@
+{% extends "layout.html" %}
+{% block pageTitle %}Drax Bioenergy with Carbon Capture and Storage Project
+{% endblock %}
+{% block headIcons %}
+  <link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
+{% endblock %}
+{% block head %}
+
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.css" />
+<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css" />
+<style>
+    body { margin:0; padding:0; }
+    #map { width:100%;height:35em;position:relative;margin-bottom:20px; }
+    </style>
+  <!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+  {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% endblock %}
+{% block content %}
+
+{% set current = 'project-information' %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-xl">Drax Bioenergy with Carbon Capture and Storage Project</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% set current = 'project-information' %}
+
+
+          <!---->
+
+          <nav>
+            <ul class="govuk-list sidenav">
+            <!--  <li class="govuk-body-s {% if 'index' in current %} active {% endif %}">
+                {% if not 'index' in current %}
+                <a href="./">A404 Dewsbury project information</a>
+                {% else %} A404 Dewsbury project information {% endif %}
+              </li>-->
+            <!--  <li class="govuk-body-s {% if 'project-timeline' in current %} active {% endif %}">
+                {% if not 'project-timeline' in current %}
+                <a href="./project-timeline">Project timeline</a>
+                {% else %} Project timeline {% endif %}
+              </li>-->
+              <li class="govuk-body-s {% if 'project-information' in current %} active {% endif %}">
+                {% if not 'project-information' in current %}
+                <a href="/design-sprint-9/project-overview/index">Project information</a>
+                {% else %} Project information {% endif %}
+              </li>
+              <li class="govuk-body-s {% if 'timeline' in current %} active {% endif %}">
+                {% if not 'timeline' in current %}
+                <a href="/design-sprint-9/timeline/index">Timeline</a>
+                {% else %} Timeline {% endif %}
+              </li>
+              <li class="govuk-body-s {% if 'about-the-application' in current %} active {% endif %}">
+                {% if not 'about-the-application' in current %}
+                <a href="/design-sprint-9/document-library/index-2">Documents</a>
+                {% else %} Documents {% endif %}
+              </li>
+              <li class="govuk-body-s {% if 'comments' in current %} active {% endif %}">
+                {% if not 'comments' in current %}
+                <a href="/design-sprint-9/relevant-representations/index">Register to have your say</a>
+                {% else %} Register to have your say {% endif %}
+              </li>
+              <li class="govuk-body-s {% if 'section51' in current %} active {% endif %}">
+                {% if not 'section51' in current %}
+                <a href="/design-sprint-9/s51/index">Section 51 advice</a>
+                {% else %} Section 51 advice {% endif %}
+              </li>
+              <li class="govuk-body-s {% if 'getupdates' in current %} active {% endif %}">
+                {% if not 'getupdates' in current %}
+                <a href="/design-sprint-9/get-updates/index">Get email updates</a>
+                {% else %} Get updates {% endif %}
+              </li>
+
+            <!--  <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
+                {% if not 'timetable' in current %}
+                <a href="./timetable">Examination timetable</a>
+                {% else %} Examination timetable {% endif %}
+              </li>-->
+            <!--  <li
+                class="govuk-body-s {% if 'all-examination-documents' in current %} active {% endif %}"
+              >
+                {% if not 'all-examination-documents' in current %}
+                <a href="./all-examination-documents">All Examination documents</a>
+                {% else %} All Examination documents {% endif %}
+              </li>-->
+
+            <!--  <li class="govuk-body-s {% if 'recommendation' in current %} active {% endif %}">
+                {% if not 'recommendation' in current %}
+                <a href="./recommendation">Recommendation and decision</a>
+                {% else %} Recommendation and decision {% endif %}
+              </li>-->
+            </ul>
+            <hr
+              class="
+                govuk-section-break govuk-section-break--l govuk-section-break--visible
+              "
+            />
+            <h3 class="govuk-heading-s">Related guides</h3>
+            <ul class="govuk-list sidenav">
+            <!--  <li class="govuk-body-s">
+                <a href="../dco-process-guide/">
+                Find out more about the decision making process for national infrastructure projects
+                </a
+                >
+              </li>-->
+
+              <li class="govuk-body-s">
+                <a href="../interested-party-guide/"
+                  >Having your say about a national infrastructure project</a
+                >
+              </li>
+
+              <li class="govuk-body-s">
+                   <a href="../dco-process-guide/">
+                   Find out more about the decision making process for national infrastructure projects
+                   </a
+                   >
+                 </li>
+
+            </ul>
+          </nav>
+
+
+          <!-- end of nav bar -->
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+
+          {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+          {% set html %}
+            <p class="govuk-body">
+          Pre-Examination stage (1 of 2 registration form added) <br><br>Has reg form ever been in nav should it be?
+            </p>
+                          <p class="govuk-body">
+
+                <ul class="moj-pagination__list">
+
+
+                      <li class="moj-pagination__item  moj-pagination__item--prev">
+                        <a class="moj-pagination__link" href="index-nav-journey-acceptance">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                      </li> ||
+
+                      <li class="moj-pagination__item  moj-pagination__item--next">
+                          <a class="moj-pagination__link" href="index-nav-journey-pre-exam-2">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                        </li></u></p>
+          {% endset %}
+
+          {{ govukNotificationBanner({
+            html: html
+          }) }}
+
+
+          <h2 class="govuk-heading-m">Project information</h2>
+
+          <p class="govuk-body">
+        Drax Power Limited proposes to install post-combustion capture technology that would capture carbon dioxide emissions from up to two of the existing biomass units at Drax Power Station. The proposal includes the construction and operation of carbon capture technology and associated equipment, and the integration of the units into the existing Common Services at Drax Power Station. The proposal includes associated development.
+        </p>
+          <!--<p>
+            <strong>
+              <a href="../get-updates/">Get updates about this project</a
+            >.</strong
+          >
+          </p>-->
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+          <h2 class="govuk-heading-m">Project stage</h2>
+
+          <p>
+          This project is in the
+          <strong>Examination</strong> stage
+          </p>
+
+          <p>
+          During the Examination stage, you can submit comments at the <a href="../timetable/timetable-upcoming-first-accordion"> deadlines
+          set out in the Examination timetable</a>. Interested Parties and Affected
+          Persons have the right to be heard in any Examination hearings.
+          </p>
+
+
+
+          <p>
+          You can also <a href="../"> view the Rule 8 letter</a> to find out more about what you
+          can do during the Examination stage.
+            </p>
+
+          <p>
+            <a href ="../timetable/timetable-upcoming-first-accordion"> Find out more about the Examination of the application </a>
+            </p>
+        <!--  <p>
+            <a href="../../dco-process-guide/examination">Find out more about the Examination of the application stage</a>.
+        </p> -->
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+          <h2 class="govuk-heading-m">About the project</h2>
+
+          <ul class="govuk-list">
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="/wrong-turn">Application introduction</a>
+            </p>
+            <p class="govuk-body">
+            Information about the project and what the developer is proposing
+          </p>
+
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="/wrong-turn">Environmental information</a>
+            </p>
+            <p class="govuk-body">
+            Information about how the project might impact the environment and
+            what the developer is proposing to make the impact less serious.
+          </p>
+            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a href="/wrong-turn">Drawings</a>
+            </p>
+            <p class="govuk-body">
+            How the proposed project will look and the area it will impact.
+          </p>
+          </ul>
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+<h3  class="govuk-heading-m">Project location</H3>
+
+<p class="govuk-body">Drax Power Station, North Yorkshire</P>
+
+<div id="map" aria-label="Drax map" aria-role="img" alt="Drax map" title="Drax Map"></div>
+
+<hr
+class="
+  govuk-section-break
+  govuk-section-break--xl
+  govuk-section-break--visible
+"
+/>
+
+       <h3 class="govuk-heading-m">
+         Contact us
+       </h3>
+       <h4 class="govuk-heading-s">
+           Telephone
+         </h4>
+           <p>If you have an interested party number, have it with you when you call.
+        <p class="govuk-body">
+          Telephone: 0303 444 5000<br/>
+          Monday to Friday, 9am to 12pm (except public holidays)
+
+       </p>
+ <h4 class="govuk-heading-s">
+     Email or contact form
+   </h4>
+
+<p class="govuk-body"><a href="mailto:DraxBECCS@planninginspectorate.gov.uk">DraxBECCS@planninginspectorate.gov.uk</a> or <a href="https://contact-us.planninginspectorate.gov.uk/hc/en-gb/requests/new">complete this contact form</a>.</p>
+
+ <p class="govuk-body">If you use the form, select 'to ask a question or get an update' from the dropdown tab.</p>
+
+
+<p class="govuk-body">If you're writing an email, quote the name of the project in the subject line.</p>
+
+ <p class="govuk-body">We aim to respond within 10 working days.</p>
+
+ <h4 class="govuk-heading-s">
+     Alternative formats
+   </h4>
+<p class="govuk-body">Call or email to ask for project documents in alternative formats such as PDF, large print, easy read, audio recording or braille.</p>
+
+
+   </section>
+
+
+          <!-- <h2 class="govuk-heading-m">Affected area</h2>
+
+          <p>
+          This proposed road will be a linear route between Amesbury and Berwick
+          Down, Wiltshire.
+        </p>
+          <p>You can:</p>
+          <ul class="govuk-list">
+            <li>
+              <a href="/wrong-turn"
+              >View a map of the area of the proposed project.</a
+            >
+            </li>
+            <li>
+              <a href="./check-for-impact/postcode"
+              >Check if your postcode is within the project area.
+            </a>
+            </li>
+          </ul> -->
+
+
+
+
+          <!-- <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+          <h2 class="govuk-heading-m">About the developer</h2>
+
+          <p>The Developer proposing this project is Acme Group Ltd.</p>
+
+          <img
+          src="/public/images/logos/acme-group-ltd-logo.png"
+          alt="Acme Group Ltd's logo"
+/>
+
+          <p class="govuk-body govuk-!-margin-top-6">
+            <a href="/wrong-turn"
+            >Visit the project website by Acme Group Ltd</a
+          >
+          for more information.
+        </p> -->
+      <!--    <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "/>
+          <h2 class="govuk-heading-m">
+              Talk to an advisor
+          </h2>
+          <p>If you need to speak to someone access information on this website in a different format such as accessible PDFs, large print, easy read, audio recording or braille:</p>
+          <ul class="govuk-list">
+            <li>Email: <a href="mailto:A404Dewsbury@planninginspectorate.gov.uk">A404Dewsbury@planninginspectorate.gov.uk</a>
+            </li>
+            <li>Call: 0303 444 5000</li>
+            <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+          </ul>-->
+
+        </div>
+      </div>
+
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
+
+{% block pageScripts %}
+<script src="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.js"></script>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js"></script>
+<script>
+
+    var apiKey = 'qT0QWbtJjfNOhw0hAwDymAKtztxD4dwQ';
+
+    var serviceUrl = 'https://api.os.uk/maps/vector/v1/vts';
+
+    // Initialize the map object.
+    var map = new mapboxgl.Map({
+        container: 'map',
+        minZoom: 6,
+        maxZoom: 18,
+        style: serviceUrl + '/resources/styles?key=' + apiKey,
+        maxBounds: [
+            [ -10.76418, 49.528423 ],
+            [ 1.9134116, 61.331151 ]
+        ],
+        center: [ -0.99508176169251 , 53.742669336673  ],
+        zoom: 13,
+        transformRequest: url => {
+            return {
+                url: url + '&srs=3857'
+            }
+        }
+    });
+
+    map.dragRotate.disable(); // Disable map rotation using right click + drag.
+    map.touchZoomRotate.disableRotation(); // Disable map rotation using touch rotation gesture.
+
+    // Add navigation control (excluding compass button) to the map.
+    map.addControl(new mapboxgl.NavigationControl({
+        showCompass: false
+    }));
+
+    const marker = new mapboxgl.Marker()
+    .setLngLat([-0.99508176169251 , 53.742669336673])
+    .addTo(map); // add the marker to the map
+
+//     const popup = new mapboxgl.Popup({ closeOnClick: false, openOnClick: true})
+// .setLngLat([-0.99508176169251 , 53.742669336673])
+// .setHTML('<h1>Drax Energy</h1>')
+// .addTo(map);
+
+
+
+</script>
+{% endblock %}
