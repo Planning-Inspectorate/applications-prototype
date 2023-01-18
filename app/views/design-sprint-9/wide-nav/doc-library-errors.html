@@ -726,8 +726,51 @@
 
 
 
+<!-- <div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        When was your passport issued?
+      </h1>
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </div>
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> The date your passport was issued must be in the past
+    </p>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="passport-issued-day" name="passport-issued-day" type="text" value="6" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="passport-issued-month" name="passport-issued-month" type="text" value="3" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="passport-issued-year" name="passport-issued-year" type="text" value="2076" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div> -->
 
-    <div class="app-c-option-select js-collapsible js-opened" id="date-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" style="border-bottom:none">
+
+
+    <div class="app-c-option-select js-collapsible js-opened" id="date-toggle" data-module="option-select" data-closed-on-load="false" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" style="border-bottom:none">
       <h2 class="app-c-option-select__heading js-container-heading">
         <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Date published</button>
         <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
@@ -736,28 +779,34 @@
       <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
 
 
-        <div class="app-c-option-select__container-inner js-auto-height-inner" id="date-opener">
+        <div class="app-c-option-select__container-inner js-auto-height-inner" id="date-opener" data-open-on-load="true">
     <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Date</legend>
 
 
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-form-group--error">
+              <p id="passport-issued-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> The Date published from must include year
+              </p>
             <fieldset class="govuk-fieldset" role="group" aria-describedby="start-hint">
+
               <legend class="govuk-fieldset__legend">
                 From
               </legend>
               <!-- <div id="start-hint" class="govuk-hint">
                 For example, 27 3 2022
               </div> -->
+
               <div class="govuk-date-input" id="start">
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
                     <label class="govuk-label govuk-date-input__label" for="start-day">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start--day" name="start--day" type="text" inputmode="numeric">
+
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start--day" name="start--day" type="text" inputmode="numeric" value="12">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -765,7 +814,7 @@
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start--month" name="start--month" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start--month" name="start--month" type="text" inputmode="numeric" value="9">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -795,7 +844,7 @@
                     <label class="govuk-label govuk-date-input__label" for="end-day">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end--day" name="end--day" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end--day" name="end--day" type="text" inputmode="numeric" >
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -896,6 +945,24 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#passport-issued-day">The Date published from must include year</a>
+        </li>
+        <!-- <li>
+          <a href="#postcode-input">For example, 27 3 2022</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</div>
 
     <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
     <h1 class="govuk-heading-xl">Documents</h1>
@@ -1598,7 +1665,7 @@
 
 
 
-    <div class="app-c-option-select js-collapsible js-opened" id="date-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" style="border-bottom:none">
+    <div class="app-c-option-select js-collapsible js-opened" id="date-toggle" data-module="option-select" data-closed-on-load="false" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" style="border-bottom:none">
       <h2 class="app-c-option-select__heading js-container-heading">
         <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Date</button>
         <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
@@ -1632,7 +1699,7 @@
 
         <label for="public_timestamp[to]" class="gem-c-label govuk-label">Date to</label>
         <div id="hint-b3568032" class="gem-c-hint govuk-hint govuk-!-margin-bottom-3">
-          For example, 2005 or 21/11/2014
+          For example, 27 3 2022
         </div>
 
 
@@ -2372,7 +2439,7 @@ Deadline 2       </div>
           $("#examination-opener").hide();
           $("#deadlines-opener").hide();
           $("#author-opener").hide();
-          $("#date-opener").hide();
+          $("#date-opener").show();
           $("#pre-application-toggle").click(function(){
           $("#pre-application-opener").toggle();
         });
