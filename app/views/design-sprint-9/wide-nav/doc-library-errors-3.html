@@ -786,10 +786,10 @@
 
 
 
-            <div class="govuk-form-group">
-              <!-- <p id="passport-issued-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> The date published from must include year
-              </p> -->
+            <div class="govuk-form-group govuk-form-group--error">
+              <p id="passport-issued-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> The from date entered should start before the to date
+              </p>
             <fieldset class="govuk-fieldset" role="group" aria-describedby="start-hint">
 
               <legend class="govuk-fieldset__legend">
@@ -802,12 +802,11 @@
               <div class="govuk-date-input" id="start">
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-
                     <label class="govuk-label govuk-date-input__label" for="start-day">
                       Day
                     </label>
 
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start--day" name="start--day" type="text" inputmode="numeric" value="12">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="start--day" name="start--day" type="text" inputmode="numeric" value="12">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -815,7 +814,7 @@
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start--month" name="start--month" type="text" inputmode="numeric" value="9">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="start--month" name="start--month" type="text" inputmode="numeric" value="9">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -823,17 +822,14 @@
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="start--year" type="text" inputmode="numeric" value="2019">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="passport-issued-year" name="start--year" type="text" inputmode="numeric" value="2021">
                   </div>
                 </div>
               </div>
             </fieldset>
 
-  </div>
-<div class="govuk-form-group govuk-form-group--error">
-  <p id="passport-issued-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> The date published to must include year
-  </p>
+
+<div class="govuk-form-group">
 
             <fieldset class="govuk-fieldset" role="group" aria-describedby="end-hint">
               <legend class="govuk-fieldset__legend">
@@ -848,15 +844,15 @@
                     <label class="govuk-label govuk-date-input__label" for="end-day">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end--day" name="end--day" type="text" inputmode="numeric" value="5">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="end--day" name="end--day" type="text" inputmode="numeric" value="1">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month" >
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end--month" name="end--month" type="text" inputmode="numeric" value="8">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="end--month" name="end--month" type="text" inputmode="numeric" value="5">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -864,7 +860,7 @@
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="passport-issued-year" name="end--year" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="passport-issued-year" name="end--year" type="text" inputmode="numeric" value="2022">
                   </div>
                 </div>
               </div>
@@ -872,7 +868,7 @@
 
 
           </div>
-
+</div>
 
 
             <!-- <div class="govuk-form-group">
@@ -958,7 +954,7 @@
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#passport-issued-day">The date published to must include year</a>
+          <a href="#passport-issued-day">The from date entered should start before the to date</a>
         </li>
         <!-- <li>
           <a href="#postcode-input">For example, 27 3 2022</a>
