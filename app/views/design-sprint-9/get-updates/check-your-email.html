@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your email
+  Get updates and confirm email
 {% endblock %}
 
 {% block header %}
@@ -25,11 +25,11 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l">Confirm your email address</h1>
+          <h1 class="govuk-heading-l">Confirm you want to get emails</h1>
             <p class="govuk-body-l">
-                We’ve sent an email to <strong>{% if not data['email'] %} joe.bloggs@email.com {% endif %}{{data['email']}}</strong>
+                We have sent an email to <strong>{% if not data['email'] %} joe.bloggs@email.com {% endif %}{{data['email']}}</strong>
             </p>
-            <p>Click the link in the email to confirm you want emails from Planning Inspectorate about:</p>
+            <p>Check your email and confirm you want to get updates about:</p>
             <ul class="govuk-list">
                 <li>A404 Dewsbury</li>
             </ul>
@@ -37,15 +37,18 @@
              {{ govukDetails({
                 summaryText: "Not received an email?",
                 html: '
-                    <p class="govuk-body">Emails sometimes take a few minutes to arrive.</p>
-                    <p class="govuk-body">If you do not receive an email soon, check your spam or junk folder.</p>
-                    <p class="govuk-body">If this does not work, <a href="#">contact us for help</a>.</p>
+                    <p class="govuk-body">If you have not received an email to your inbox, check your spam or junk folder.</p>
+                    <p class="govuk-body">If this does not work, request a new email notification.</p>
+                    <!--<p class="govuk-body">If this does not work, <a href="#">contact us for help</a>.</p>-->
                    '
                 }) }}
             <a href="./verify-email" class="govuk-button govuk-button--secondary">Show email</a>
         </div>
     </div>
 {% endblock %}
+
+
+
 
 {% block footer %}
     {{ pinsFooter() }}
