@@ -1,0 +1,405 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Examination timetable
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Drax Bioenergy with Carbon Capture and Storage Project</h1>
+    </div>
+    </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'timetable' %}
+      {% include "../includes/vertical_tabs.html" %}
+<!--<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+--></nav>
+
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
+
+<h2 class="govuk-heading-l">Examination timetable</h2>
+   <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
+<!--
+   <div class="govuk-inset-text">
+     You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.
+   </div>-->
+<!--<input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
+<button class="govuk-button" data-cy="search-button">Search</button>-->
+
+
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+
+  <p style="font-size:16px;padding:0;margin-bottom:15px;color:#000;font-family: "arial, sans-serif;">
+                  The examination opened on 13 March 2022.<br></p>
+                    <!-- {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+                    {% set html %}
+                      <p class="govuk-notification-banner__heading">
+                        Next deadline: <a href="#next" class="govuk-notification-banner__link">Deadline 9 closes 27 August 2022</a></br>
+
+                    {% endset %}
+
+                    {{ govukNotificationBanner({
+                      html: html
+                    }) }} -->
+                    <!--<div class="govuk-inset-text">
+                    <p style="font-size:16px">Next deadline: <a href="#next">Deadline 9 closes 27 August 2022</a></br>
+                                      </div>-->
+
+                <!--  <h3 class="govuk-heading-m">Next</h3>
+                <p style="font-size:16px"><a href="#next">Deadline 2 - closes 16 April 2022 <br>
+                <a href="#nextmeet">Issue Specific Hearing 2 (ISH2) on 14 May 2022</a></p> -->
+
+  <ul class="pins-govuk-result-list">
+
+<ul class="pins-govuk-result-list">
+
+  <!-- <li class="pins-govuk-result-list__item">
+
+    <div class="govuk-grid-row document-metadata">
+      <div class="govuk-grid-column-one-third" data-cy="published-date">
+        25 October 2021
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-stage">
+        Examination
+      </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title">
+Examination      </div>
+    </div>
+  </li> -->
+
+
+
+
+
+
+<!-- <ul>
+{% for item in data['supplementary-data'] %}
+  <li>{{ item.call_raised_year }}</li>
+{% else %}
+  <li>This would display if the 'item' collection were empty</li>
+{% endfor %}
+</ul> -->
+
+
+{% for item in data['Timetable-data']|sort(attribute='Status',reverse='true') %}
+  <!--<li>{{ item.case_reference }}</li>-->
+
+
+
+
+
+
+
+{% if "Issue Specific Hearing 5 (ISH5)" in item.title   %}
+<a name="nextmeet"></a>
+{% endif %}
+
+  <li class="pins-govuk-result-list__item">
+
+    {% if "Deadline 9" in item.title   %}
+  <a name="next"></a>
+  <h3 class="govuk-heading-m">Upcoming events and deadlines</h3>
+  {% elif "Procedural Deadline A" in item.title   %}
+  <h3 class="govuk-heading-m">Past events and deadlines</h3>
+
+  {% endif %}
+
+    <div class="govuk-grid-row document-metadata">
+
+    <!--  <div class="govuk-grid-column-one-third" data-cy="published-date"> -->
+
+        <div class="govuk-grid-column-full" data-cy="published-date" >
+
+      <strong><h4 style="margin-top:0px;font-size:16px;color:#000;font-family: "arial, sans-serif;">{{ item.date_of_event }} - {{ item.title }}
+
+        {% if ("Open" in item.Status)  %}
+        <span style="margin-left:15px;margin-right:15px" class="govuk-tag govuk-tag--blue" id="eligibility-status">{{ item.Status }}
+          {% endif %}
+{% if ("Closed" in item.Status)  %}
+    <span style="margin-left:15px;margin-right:15px" class="govuk-tag" id="eligibility-status">{{ item.Status }}
+  {% endif %}
+
+</span> </h4></strong>
+
+    <!--  </div>
+    <div class="govuk-grid-column-one-third" data-cy="published-stage" -->
+        <!--<h3 style="font-size:16px;padding:0;margin:0;color:#000;font-family: "arial, sans-serif;">{{ item.title }}</h3> -->
+    <!--  </div>
+      <div class="govuk-grid-column-one-third" data-cy="published-title"  align="right"> -->
+    <!--    {% if ("Open" in item.Status) or ("Closed" in item.Status) %}
+  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">{{ item.Status }}   </strong>
+
+        {% endif %}  -->
+         </div>
+    </div>
+
+<div>  <p class="pins-govuk-result-list__item-description style=">
+<ul>
+
+
+
+
+  {% for deadlineItem in data['deadlineItems'] %}
+    {% if deadlineItem.id in item.title %}
+      <li>{{ deadlineItem.name }}</li>
+      {% endif %}
+  {% endfor %}
+  </ul>
+  {% if "Deadline" not in item.type_of_event %}
+    {% if "" in item.description %}
+      <ul><li >{{ item.description }}</li></ul>
+    {% endif %}
+    {% if ("Open" in item.Status) or ("Closed" in item.Status) %}
+    <br><a href="#">View recordings</a>
+    <!--<br><a href="#">View action points</a>-->
+    {% else %}
+    <br><a href="#">View agenda</a>
+
+    {% endif %}
+  {% else %}
+  <!-- bit pointless!! -->
+  {% endif %}
+
+
+</p>
+  </div>
+    {% if "Deadline" in item.type_of_event %}
+      {% if "Open" in item.Status %}
+      <p style="bottom-margin:0px;bottom-padding:0px;">  <form style="bottom-margin:0px;bottom-padding:0px;" action="../../design-sprint-11/start" method="post" novalidate><button class="govuk-button" data-module="govuk-button">   Make a submission</button></form></p>
+        {% else %} <br><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline ({{ [23,17,50, 34,16, 75, 19, 67, 44, 33]|random() }})</a>
+        {% endif %}
+    {% endif %}
+  </li>
+{% else %}
+  <li>This would display if the 'item' collection were empty</li>
+{% endfor %}
+
+
+<li class="pins-govuk-result-list__item">The Examination is expected to close on 13 September 2022</li>
+
+</ul>
+</div>
+
+
+
+
+
+      </div>
+      <div class="govuk-grid-column-one-third"> <!-- here -->
+
+
+<!-- <div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-margin-right-3">
+  <div style="background-color: #f3f2f1; padding: 10px;">
+  <h2 class="govuk-heading-m">Filter by</h2>
+<div class="govuk-accordion filter-accordion" data-module="govuk-accordion" id="accordion-default">
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h3 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+        <span class="filter-heading" data-cy="project-stage">Hearings</span>
+      </span>
+    </h3>
+
+  </div>
+  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+<div class="govuk-form-group">
+<div class="govuk-checkboxes govuk-checkboxes--small"
+data-module="govuk-checkboxes">
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="1">
+      <label class="govuk-label govuk-checkboxes__label" for="stage">
+  Upcoming Hearings
+</label>
+
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="2">
+      <label class="govuk-label govuk-checkboxes__label" for="stage">
+  Past hearings
+</label>
+
+    </div>
+
+</div>
+
+</div>
+
+  </div>
+</div>
+
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h3 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+        <span class="filter-heading" data-cy="document-type">Deadlines</span>
+      </span>
+    </h3>
+
+  </div>
+  <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+<div class="govuk-form-group">
+
+<div class="govuk-checkboxes govuk-checkboxes--small"
+data-module="govuk-checkboxes">
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="top5Type-2" name="type" type="checkbox" value="Transboundary">
+  <label class="govuk-label govuk-checkboxes__label" for="top5Type-2">
+Open Deadlines
+</label>
+
+</div>
+
+
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="top5Type" name="type" type="checkbox" value="Environmental Impact Assessment Scoping">
+      <label class="govuk-label govuk-checkboxes__label" for="top5Type">
+  Closed Deadlines
+</label>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+  </div>
+</div>
+
+
+</div>
+
+
+  <button class="govuk-button" data-cy="apply-filter-button">Apply</button>
+</div> -->
+<!--
+<div class="govuk-grid-row govuk-!-margin-left-3 govuk-!-margin-right-3">
+
+    <div style="background-color: #f3f2f1; padding: 10px;">
+    <h2 class="govuk-heading-m">Filter by</h2>
+    <div class="govuk-form-group">
+
+
+    <div class="govuk-checkboxes govuk-checkboxes--small"
+    data-module="govuk-checkboxes">
+
+
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Local Authorities" >
+      <label class="govuk-label govuk-checkboxes__label" for="type">
+    Open deadlines (2)
+    </label>
+
+    </div>
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="Members of the Public/Businesses" >
+          <label class="govuk-label govuk-checkboxes__label" for="type">
+            Closed deadlines (9)
+    </label>
+
+        </div>
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees" >
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Upcoming hearings (1)
+    </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="Other Statutory Consultees" >
+          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+      Closed hearings (5)
+    </label>
+
+        </div>
+
+
+
+</div>
+</div>
+        <button class="govuk-button" data-cy="apply-filter-button" data-module="govuk-button">Apply</button>
+        </div>
+
+</div>
+
+
+      </div>
+-->
+<!-- to here -->
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

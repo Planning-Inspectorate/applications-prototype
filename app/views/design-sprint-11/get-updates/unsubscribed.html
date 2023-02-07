@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Get updates about this project",
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+
+
+              {% if (data['type-of-updates'] == "unsubscribe") %}
+                You have unsubscribed from updates about the A404 Dewsbury project
+              {% elif (data['type-of-updates'] == "change-address")  %}
+                Confirm your new email address
+              {% elif (data['type-of-updates'] == "change-frequency")  %}
+                You have changed how often you get updates
+              {% endif %}
+
+          </h1>
+
+
+
+            <!--<p>You are subscribed to email updates about the A404 Dewsbury project.</p>-->
+
+
+            {% if (data['type-of-updates'] == "unsubscribe") %}
+            <p>You will  no longer be sent updates about the A404 Dewsbury Project</p>
+            <p><a href="../pre-examination/" class="govuk-link">View A404 Dewsbury project overview</a></p>
+            {% elif (data['type-of-updates'] == "change-address")  %}
+          <!--  <p>Updates will be sent to your new mail address</p> -->
+
+
+
+            <p class="govuk-body-l">
+                We have sent an email to your new email address <strong>{% if not data['email'] %} joe.bloggs@email.com {% endif %}{{data['email']}}</strong>
+            </p>
+            <p>Check your email and confirm you want to get updates about:</p>
+            <ul class="govuk-list">
+                <li>A404 Dewsbury</li>
+            </ul>
+            <p>The link will stop working after 48 hours.</p>
+             {{ govukDetails({
+                summaryText: "Not received an email?",
+                html: '
+                    <p class="govuk-body">If you have not received an email to your inbox, check your spam or junk folder.</p>
+                    <p class="govuk-body">If this does not work, request a new email notification.</p>
+                    <!--<p class="govuk-body">If this does not work, <a href="#">contact us for help</a>.</p>-->
+                   '
+                }) }}
+
+
+
+            <p><a href="unsubscribe" class="govuk-link">Make a further change</a></p>
+            {% elif (data['type-of-updates'] == "change-frequency")  %}
+              {% if (data['type-of-updates-2'] == "final")  %}
+              <p>You will  be sent an email when the final decision is made</p>
+                {% else  %}
+                <p>You will  be sent an email each time we update the project</p>
+              {% endif  %}
+            <p><a href="unsubscribe" class="govuk-link">Make a further change</a></p>
+            {% endif %}
+
+                <a href="./verify-email" class="govuk-button govuk-button--secondary">Show email</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ pinsFooter() }}
+{% endblock %}

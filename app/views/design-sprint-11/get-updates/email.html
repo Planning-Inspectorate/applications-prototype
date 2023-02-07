@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your email address?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Get updates about this project",
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="on" class="form" action="check-your-email" method="post">
+        {{ govukInput({
+          label: {
+            text: "What is your email address?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "email",
+          name: "email"
+        }) }}
+
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      How we use your information
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  Planning inspectorate email updates will only store information you have provided.</p>
+
+  <p class="govuk-body">You can access, update or permanently delete your email updates and the information associated with them at any time.</p>
+
+  We will never:
+
+  <ul><li>sell or rent your information to third parties</li>
+
+  <li>share your information with third parties for marketing purposes</li>
+  </ul>
+  <p class="govuk-body">     You can read the <a href="https://www.gov.uk/government/publications/planning-inspectorate-privacy-notices/customer-privacy-notice" class="govuk-link">full privacy notice</a> for more detail on how your information is stored, shared and used.</p>
+  </div>
+</details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

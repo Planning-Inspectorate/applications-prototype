@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+{% set items = data['submissiondata'] %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceName: "Have your say during the Examination of the application",
+  serviceUrl: "/design-sprint-11/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back();"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Deadline 9</span>
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+
+
+            <h2 class="govuk-heading-m">Your details</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Interested party number available
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['ipavailable']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="ip-number-available">
+                    Change<span class="govuk-visually-hidden"> interested party number available</span>
+                  </a>
+                </dd>
+              </div>
+
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Interested party number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['ipnumber']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="ip-number">
+                    Change<span class="govuk-visually-hidden"> interested party number</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Making submission for
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{data['entity']['whofor']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="who-for">
+                    Change<span class="govuk-visually-hidden"> who for</span>
+                  </a>
+                </dd>
+              </div>
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Applicant or not
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['applicant']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="applicant-yes-no">
+                    Change<span class="govuk-visually-hidden"> are you the applicant</span>
+                  </a>
+                </dd>
+              </div>
+
+              <!--<div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Over 18?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['over18']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="over-18-yes-no">
+                    Change<span class="govuk-visually-hidden"> over 18</span>
+                  </a>
+                </dd>
+              </div>-->
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Full name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['firstname']}} {{data['entity']['lastname']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="individual-name">
+                    Change<span class="govuk-visually-hidden"> full name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Organisation's name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['organisationname']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="organisation-name">
+                    Change<span class="govuk-visually-hidden"> organisation's name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Submitting on behalf of
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['othername']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="organisation-name">
+                    Change<span class="govuk-visually-hidden"> organisation's name</span>
+                  </a>
+                </dd>
+              </div>
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['email']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="email">
+                    Change<span class="govuk-visually-hidden"> email address</span>
+                  </a>
+                </dd>
+              </div>
+                        </dl>
+
+
+            <h2 class="govuk-heading-m">Your submissions</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Deadline items added
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <ul class="govuk-list">
+                    <ul class="govuk-list">
+                    {% for item in items %}
+                <li>{{item.deadlinename}}</li>
+                  {% endfor %}
+                  </ul>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="deadline-item-summary">
+                    Change<span class="govuk-visually-hidden"> evidence type</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+            <div class="govuk-inset-text">
+              You cannot make any further changes after you submit.<br/><br/> Check your answers again before you submit.
+            </div>
+
+            <form action="submission-complete" method="post" novalidate>
+
+              <input type="hidden" name="answers-checked" value="true">
+
+              <button class="govuk-button " data-module="govuk-button">
+                Submit
+              </button>
+
+            </form>
+
+          </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

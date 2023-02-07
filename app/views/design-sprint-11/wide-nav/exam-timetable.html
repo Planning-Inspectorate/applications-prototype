@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Examination timetable
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% endblock %}
+
+{% block content %}
+<style>
+  .breakline {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .accordionheading {
+    font-size: 24px !important;
+  }
+  </style>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <nav>
+      {% set current = 'timetable' %}
+      {% include "../includes/two_thirds.html" %}
+<!--<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+--></nav>
+</div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-xl">Examination timetable</h1>
+      <!--<h2 class="govuk-heading-l">Examination timetable</h2>-->
+  <p class="govuk-body">The examination opened on 13 March 2022.</p>
+    <p class="govuk-body">The examination is expected to close on 13 September 2022.</p>
+
+     <form action="../../design-sprint-11/start" method="post" novalidate><button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">   Make a submission</button></form>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button accordionheading" id="accordion-default-heading-1">
+                Upcoming deadlines and events
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            {% if (data['noopendeadlines']=="true") %}
+            <p class="gouvk-body">There are no deadlines and events.</p>
+            {% else %}
+            <h3 class="govuk-heading-s">27 August 2022 - Deadline 9
+              <span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag govuk-tag--blue" id="eligibility-status">Open</span> </h3>
+                 <p class="govuk-body">The deadline items are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+            <li>Comments on any submissions received by Deadline 8</li>
+            <li>Any further information requested by the Examining Authority under Rule 17 of the Examination Rules</li>
+            <li>Final Statements of Common Ground (SoCG) and Statement of Commonality of the Statements of Common Ground (SCSoCG)</li>
+            <li>Final draft Development Consent Order in MS Word clean and tracked versions</li>
+            <li>Final Schedule of changes to the draft Development Consent Order</li>
+            <li>Final Compulsory Acquisition Schedule, in clean and tracked versions</li>
+            <li>Final updated Guide to the Application</li>
+            <li>Other</li>
+        </ul>
+        <hr class="breakline">
+        <h3 class="govuk-heading-s">3 September 2022 - Deadline 10
+          <span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag govuk-tag--blue" id="eligibility-status">Open</span> </h3>
+             <p class="govuk-body">The deadline items are:</p>
+             <ul class="govuk-list govuk-list--bullet">
+               <li>Comments on any submissions received by Deadline 9</li>
+               <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
+             <li>Other</li>
+                 </ul>
+
+             {% endif %}
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button accordionheading" id="accordion-default-heading-2">
+              Past deadlines and events
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+            {% if (data['noopendeadlines']=="true") %}
+            <p class="gouvk-body">There are no deadlines and events.</p>
+            {% else %}
+            <h3 class="govuk-heading-s">08 March 2022 - Procedural Deadline A<span style="margin-left:15px;margin-right:15px;float:right;" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+               <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library" class="govuk-link">View documents received against this deadline (19)</a></p>
+               <hr class="breakline">
+                 <h3 class="govuk-heading-s">12 March 2022 - Preliminary Meeting<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                  <p class="govuk-body">The purpose of the Preliminary Meeting is to consider how the application will be examined.</p>
+                  <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                  <hr class="breakline">
+                   <h3 class="govuk-heading-s">13 March 2022 - Issue Specific Hearing 1 (ISH1)<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                   <p class="govuk-body">Issue Specific Hearing 1 (ISH1) Draft Development Consent Order</p>
+                   <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                   <hr class="breakline">
+                   <h3 class="govuk-heading-s">29 March 2022 - Deadline 1<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                   <p class="govuk-body">The deadline items are:</p>
+                     <ul class="govuk-list govuk-list--bullet">
+                         <li>Comments on RRs</li>
+                         <li>Comments on updated application documents</li>
+                         <li>Notification by Statutory Parties of their wish to be considered as an Interested Party (IP) by the ExA</li>
+                         <li>Notification of wish to speak at an Open Floor Hearing (OFH</li>
+                         <li>Notification of wish to speak at a Compulsory Acquisition Hearing (CAH)</li>
+                         <li>Request to receive future correspondence by email</li>
+                         <li>Request to receive future correspondence by email</li>
+</ul>
+                         <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                         <hr class="breakline">
+                         <h3 class="govuk-heading-s">16 April 2022 - Deadline 2<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                         <p class="govuk-body">The deadline items are:</p>
+                           <ul class="govuk-list govuk-list--bullet">
+                             <li>Responses to ExQ1</li>
+                             <li>Written Representations (WR) and summaries of any WR exceeding 1500 words</li>
+                             <li>Responses to ExQ1</li>
+                             <li>Comments on the Applicant’s proposed ASI itinerary</li>
+                             <li>Comments on any submissions received by D1</li>
+                             <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
+
+      </ul>
+                               <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline</a></p>
+                               <hr class="breakline">
+                               <h3 class="govuk-heading-s">30 April 2022 - Deadline 3<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                               <p class="govuk-body">The deadline items are:</p>
+                                 <ul class="govuk-list govuk-list--bullet">
+                                   <li>Comments on responses to the ExQ1</li>
+                                   <li>Written Representations (WR) and summaries of any WR exceeding 1500 words</li>
+                                   <li>Responses to comments made on RRs</li>
+                                   <li>Comments on LIRs</li>
+                                   <li>Comments on any submissions received by D2</li>
+                                   <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
+                                   <li>Comments on WRs</li>
+                                   <li>Responses to ExQ1</li>
+                                  </ul>
+                                   <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline</a></p>
+                                   <hr class="breakline">
+                                   <h3 class="govuk-heading-s">08 May 2022 - Procedural Deadline B<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                   <p class="govuk-body">Registration for ISH2, ISH3, ISH4 and CAH.</p>
+                                       <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline</a></p>
+                                       <hr class="breakline">
+                                       <h3 class="govuk-heading-s">14 May 2022 - Issue Specific Hearing 2 (ISH2)<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                       <p class="govuk-body">Issue Specific Hearing on Environmental Matters.</p>
+                                       <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                                       <hr class="breakline">
+                                       <h3 class="govuk-heading-s">15 May 2022 - Issue Specific Hearing 3 (ISH3)<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                       <p class="govuk-body">Issue Specific Hearing on Traffic, Transport and Socio-Economic Matters.</p>
+                                       <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                                       <hr class="breakline">
+                                       <h3 class="govuk-heading-s">16 May 2022 - Compulsory Acquisition Hearing (CAH)<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                       <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                                       <hr class="breakline">
+                                       <h3 class="govuk-heading-s">16 May 2022 - Issue Specific Hearing 4 (ISH4)<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                       <p class="govuk-body">Issue Specific Hearing on draft Development Consent Order.</p>
+                                       <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                                       <hr class="breakline">
+                                       <h3 class="govuk-heading-s">23 May 2022 - Deadline 4<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                       <p class="govuk-body">The deadline items are:</p>
+                                         <ul class="govuk-list govuk-list--bullet">
+                                           <li>Post Hearing submissions including written submissions of oral case</li>
+                                           <li>Progressed SoCG and SCSoCG</li>
+                                           <li>An updated CAS in clean and tracked versions</li>
+                                           <li>Updated Guide to the Application</li>
+                                          </ul>
+                                          <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline</a></p>
+                                          <hr class="breakline">
+                                          <h3 class="govuk-heading-s">28 May 2022 - Unaccompanied Site Inspection<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                          <p class="govuk-body">If required.</p>
+                                          <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                                          <hr class="breakline">
+                                          <h3 class="govuk-heading-s">04 June 2022 - Publication by the ExA of<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                          <p class="govuk-body">The ExA’s further Written Questions (ExQ2), if required.</p>
+                                          <p class="govuk-body"><a class="govuk-link" href="#">View recordings</a></p>
+                                          <hr class="breakline">
+                                          <h3 class="govuk-heading-s">19 June 2022 - Deadline 5<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                          <p class="govuk-body">The deadline items are:</p>
+                                            <ul class="govuk-list govuk-list--bullet">
+                                              <li>Progressed SoCG and SCSoCG</li>
+                                              <li>An updated version of the dDCO in clean and tracked versions and a schedule of changes</li>
+                                              <li>Schedule of changes to the BoR</li>
+                                              <li>Written Representations (WR) and summaries of any WR exceeding 1500 words</li>
+                                              <li>Written Representations (WR) and summaries of any WR exceeding 1500 words</li>
+                                             </ul>
+                                             <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline</a></p>
+                                             <hr class="breakline">
+                                             <h3 class="govuk-heading-s">02 July 2022 - Deadline 6<span style="margin-left:15px;margin-right:15px;float:right" class="govuk-tag" id="eligibility-status">Closed</span> </h3>
+                                             <p class="govuk-body">The deadline items are:</p>
+                                               <ul class="govuk-list govuk-list--bullet">
+                                                 <li>Comments on any submissions received by D1</li>
+                                                 <li>Comments on any submissions received by D5</li>
+                                                 <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
+                                                </ul>
+                                                <p class="govuk-body"><a href="../../june-22-build/decoupling-v1/document-library">View documents received against this deadline</a></p>
+                                                {% endif %}
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

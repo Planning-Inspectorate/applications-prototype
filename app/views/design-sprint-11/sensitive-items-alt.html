@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which items contain sensitive information?  {% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceName: "Have your say during the Examination of the application",
+  serviceUrl: "/design-sprint-11/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back();"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/design-sprint-1/sensitive-items-routing" method="post" novalidate>
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+        <h1 class="govuk-fieldset__heading">
+Which items contain sensitive information in provide further information requested by the Examination Authority under Rule 17 of the Examination Rules?        </h1>
+      </legend>
+
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          {% for file in data['deadlineitem']['uploadedfiles'] %}
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="{{file}}" name="deadlineitem[sensitiveitems]" type="checkbox" value="{{file}}">
+         <label class="govuk-label govuk-checkboxes__label" for="{{file}}">
+           {{file}}
+         </label>
+       </div>
+       {% endfor %}
+     </div>
+
+   </fieldset>
+ </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
