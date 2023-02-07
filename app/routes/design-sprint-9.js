@@ -917,6 +917,25 @@ router.post(
   }
 );
 
+router.get("/design-sprint-9/get-updates/unsubscribe-answer",
+  function (req, res) {
+    var unsubscribeChange = req.session.data["type-of-updates"];
+    console.log(unsubscribeChange);
+    if (unsubscribeChange == "unsubscribe"){
+      res.redirect("unsubscribe-confirm");
+    }
+    else if (unsubscribeChange == "change-address")
+    {
+      res.redirect("email-change");
+
+    }
+    else if (unsubscribeChange == "change-frequency")
+    {
+      res.redirect("type-of-updates-change");
+    }
+
+  }
+);
 
 
 

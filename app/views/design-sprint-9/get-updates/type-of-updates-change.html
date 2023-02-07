@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  How often do you want to get emails about the project?
+  How often do you want to get updates about the project?
 {% endblock %}
 
 {% block header %}
@@ -28,37 +28,33 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="/design-sprint-9/get-updates/unsubscribe-answer" method="post">
+      <form autocomplete="off" class="form" action="unsubscribed" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-            idPrefix: "type-of-updates",
-            name: "type-of-updates",
+            idPrefix: "type-of-updates-2",
+            name: "type-of-updates-2",
             fieldset: {
               legend: {
-                text: "How do you want to change your subscription",
+                text: "How often do you want to get updates about the project?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
               {
-                value: "unsubscribe",
-                text: "Unsubscribe"
+                value: "All updates",
+                text: "Each time we update the project (you may get more than one email a day)"
               },
               {
-                value: "change-address",
-                text: "Change your email address"
-              },
-                        {
-              value: "change-frequency",
-              text: "Change how often you get emails about the project"
-            }
-          ]
+                value: "final",
+                text: "Only when the final decision has been made"
+              }
+            ]
           }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Confirm</button>
 
       </form>
 
