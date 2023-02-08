@@ -7,6 +7,7 @@
   href="{{ asset_path }}images/unbranded.ico?0.18.3"
   type="image/x-icon"
 />
+
 {% endblock %}
 {% block head %}
 
@@ -53,9 +54,11 @@
   {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 <a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% set primarynav = 'projects' %}
+
+  {% include "../includes/primary-nav.html" %}
 {% endblock %}
 {% block content %}
-
 {% set current = 'project-information' %}
 
       <div class="govuk-grid-row">

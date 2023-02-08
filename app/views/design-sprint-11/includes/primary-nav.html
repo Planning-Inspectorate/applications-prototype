@@ -1,0 +1,36 @@
+<div class="moj-primary-navigation">
+
+  <div class="moj-primary-navigation__container">
+
+    <div class="moj-primary-navigation__nav">
+
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+
+        <ul class="moj-primary-navigation__list">
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" {% if 'home' in primarynav %} aria-current="page"{% endif %} href="../home/index">Home</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"{% if 'projects' in primarynav %} aria-current="page"{% endif %} href="../projects/index">Projects</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" {% if 'processguide' in primarynav %} aria-current="page"{% endif %}href="../dco-process-guide/index">Process guide</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"{% if 'guidance' in primarynav %} aria-current="page"{% endif %} href="#4">Guidance and legislation</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"{% if 'advicenotes' in primarynav %} aria-current="page"{% endif %} href="../advice-notes/index">Advice notes</a>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+  </div>
+
+</div>

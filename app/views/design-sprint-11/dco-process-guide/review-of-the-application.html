@@ -31,6 +31,10 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
+  {% set primarynav = 'processguide' %}
+
+    {% include "design-sprint-11/includes/primary-nav.html" %}
+    {% include "../includes/secondary-nav-process-guide.html" %}
 
 {% endblock %}
 {% block content %}

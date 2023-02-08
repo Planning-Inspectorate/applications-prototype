@@ -15,6 +15,9 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
+{% set primarynav = 'projects' %}
+
+  {% include "../includes/primary-nav.html" %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% endblock %}
 
