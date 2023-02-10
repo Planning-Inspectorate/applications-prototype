@@ -21,7 +21,9 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
+    {% if (data['type-of-updates'] == "unsubscribe") %}
   <a class="govuk-back-link" href="unsubscribe">Back</a>
+  {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -31,11 +33,11 @@
       <form autocomplete="off" class="form" action="unsubscribed" method="post">
 
         <h1 class="govuk-heading-l">Are you sure you want to unsubscribe?</h1>
-<p class="govuk-body"> You will no longer be sent updates about the A404 Dewsbury project</p>
+<p class="govuk-body"> You will no longer be sent updates about Drax Bioenergy with Carbon Capture and Storage overview</p>
 
 
 
-        <button class="govuk-button" data-module="govuk-button">Confirm</button>
+        <button class="govuk-button" data-module="govuk-button" id="type-of-updates" name="type-of-updates" value="unsubscribe">Unsubscribe</button>
 
       </form>
 
