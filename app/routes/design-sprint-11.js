@@ -1,5 +1,7 @@
 const representations = require("../data/representations.json");
 
+const projectList  = require("../data/project-list.json");
+
 function addToList(obj, itemList, change){
   if(!itemList){
     itemList = []; // if no array exists create one
@@ -937,6 +939,10 @@ router.get("/design-sprint-11/get-updates/unsubscribe-answer",
   }
 );
 
-
+router.get("/design-sprint-11/projects/project-list-answer",
+  function (req, res) {
+    console.log(projectList);
+}
+);
 
 };

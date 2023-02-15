@@ -1,0 +1,1420 @@
+{
+  "project-list" : [
+	{
+		"casereference" : "BC080001",
+		"projectname" : "The London Resort",
+		"stage" : 8,
+		"promotername" : "London Resort Company Holdings"
+	},
+	{
+		"casereference" : "EN060001",
+		"projectname" : "Willington C Gas Pipeline",
+		"stage" : 7,
+		"promotername" : "RWE npower"
+	},
+	{
+		"casereference" : "TR010014",
+		"projectname" : "A30 Temple to Higher Carblake Improvement",
+		"stage" : 7,
+		"promotername" : "Cornwall Council"
+	},
+	{
+		"casereference" : "TR010007",
+		"projectname" : "A160 - A180 Port of Immingham Improvement",
+		"stage" : 7,
+		"promotername" : "Highways Agency"
+	},
+	{
+		"casereference" : "TR010017",
+		"projectname" : "A19/A1058 Coast Road Junction Improvement",
+		"stage" : 7,
+		"promotername" : "Highways Agency"
+	},
+	{
+		"casereference" : "EN010003",
+		"projectname" : "Galloper Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "Galloper Wind Farm Ltd"
+	},
+	{
+		"casereference" : "EN010036",
+		"projectname" : "Kentish Flats Extension",
+		"stage" : 7,
+		"promotername" : "Vattenfall"
+	},
+	{
+		"casereference" : "TR010010",
+		"projectname" : "Morpeth Northern Bypass",
+		"stage" : 7,
+		"promotername" : "Northumberland County Council"
+	},
+	{
+		"casereference" : "EN010026",
+		"projectname" : "Burbo Bank Extension offshore wind farm",
+		"stage" : 7,
+		"promotername" : "DONG Energy Burbo Extension (UK) Ltd."
+	},
+	{
+		"casereference" : "EN010008",
+		"projectname" : "Brechfa Forest West Wind Farm",
+		"stage" : 7,
+		"promotername" : "RWE Npower Renewables"
+	},
+	{
+		"casereference" : "TR010002",
+		"projectname" : "A556 Knutsford to Bowdon Scheme",
+		"stage" : 7,
+		"promotername" : "Highways Agency"
+	},
+	{
+		"casereference" : "EN010013",
+		"projectname" : "Clocaenog Forest Wind Farm",
+		"stage" : 7,
+		"promotername" : "RWE npower renewables"
+	},
+	{
+		"casereference" : "TR010009",
+		"projectname" : "M1 Junction 10a Grade Separation - Luton",
+		"stage" : 7,
+		"promotername" : "Luton Borough Council"
+	},
+	{
+		"casereference" : "TR010011",
+		"projectname" : "Woodside Link Houghton Regis Bedfordshire",
+		"stage" : 7,
+		"promotername" : "Central Bedfordshire Council"
+	},
+	{
+		"casereference" : "TR010008",
+		"projectname" : "Heysham to M6 Link Road",
+		"stage" : 7,
+		"promotername" : "Lancashire County Council"
+	},
+	{
+		"casereference" : "TR010015",
+		"projectname" : "Norwich Northern Distributor Road (NDR)",
+		"stage" : 7,
+		"promotername" : "Norfolk County Council"
+	},
+	{
+		"casereference" : "EN010021",
+		"projectname" : "Dogger Bank Creyke Beck",
+		"stage" : 7,
+		"promotername" : "Forewind"
+	},
+	{
+		"casereference" : "WS010001",
+		"projectname" : "East Northants Resource Management Facility",
+		"stage" : 7,
+		"promotername" : "Augean PLC"
+	},
+	{
+		"casereference" : "EN010058",
+		"projectname" : "Seabank 3 CCGT",
+		"stage" : 1,
+		"promotername" : "SSE plc"
+	},
+	{
+		"casereference" : "EN010073",
+		"projectname" : "Tidal Lagoon Cardiff",
+		"stage" : 1,
+		"promotername" : "Tidal Lagoon Power"
+	},
+	{
+		"casereference" : "EN010075",
+		"projectname" : "Tidal Lagoon Newport",
+		"stage" : 8,
+		"promotername" : "Tidal Lagoon Newport"
+	},
+	{
+		"casereference" : "EN010037",
+		"projectname" : "Alexandra Dock Biomass Project",
+		"stage" : 8,
+		"promotername" : "RES UK & Ireland"
+	},
+	{
+		"casereference" : "EN010069",
+		"projectname" : "Abergelli Power",
+		"stage" : 7,
+		"promotername" : "Abergelli Power Limited"
+	},
+	{
+		"casereference" : "EN010007",
+		"projectname" : "Wylfa Newydd Nuclear Power Station",
+		"stage" : 8,
+		"promotername" : "Horizon Nuclear Power"
+	},
+	{
+		"casereference" : "EN010034",
+		"projectname" : "Avon Power Station 950 MW output",
+		"stage" : 1,
+		"promotername" : "Scottish Power"
+	},
+	{
+		"casereference" : "EN010063",
+		"projectname" : "Killingholme Energy Centre",
+		"stage" : 8,
+		"promotername" : "Killingholme Energy Limited"
+	},
+	{
+		"casereference" : "EN020021",
+		"projectname" : "Reinforcement to North Shropshire Electricity Distribution Network",
+		"stage" : 7,
+		"promotername" : "SP Manweb"
+	},
+	{
+		"casereference" : "EN010080",
+		"projectname" : "Hornsea Project Three Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "Orsted Hornsea Project Three (UK) Ltd"
+	},
+	{
+		"casereference" : "EN010074",
+		"projectname" : "The West Somerset Tidal Lagoon",
+		"stage" : 1,
+		"promotername" : "Longbay Seapower"
+	},
+	{
+		"casereference" : "EN020008",
+		"projectname" : "SP Mid Wales (Electricity) Connections Project (SP Manweb)",
+		"stage" : 1,
+		"promotername" : "SP Manweb"
+	},
+	{
+		"casereference" : "EN020010",
+		"projectname" : "Mid Wales Electricity Connection (N Grid)",
+		"stage" : 1,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "TR050004",
+		"projectname" : "Rail Central (Strategic Rail Freight Interchange)",
+		"stage" : 8,
+		"promotername" : "Ashfield Land Management Limited and Gazeley GLP Northampton s.á.r.l."
+	},
+	{
+		"casereference" : "TR020002",
+		"projectname" : "Manston Airport",
+		"stage" : 7,
+		"promotername" : "RiverOak Strategic Partners Ltd"
+	},
+	{
+		"casereference" : "WS010002",
+		"projectname" : "Perrys Farm Hazardous Waste Management Facility",
+		"stage" : 1,
+		"promotername" : "Peel Environmental"
+	},
+	{
+		"casereference" : "EN020007",
+		"projectname" : "North West Coast Connections Project - N Grid",
+		"stage" : 8,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "EN020015",
+		"projectname" : "North Wales Connection",
+		"stage" : 8,
+		"promotername" : "National Grid Electricity Transmission Plc"
+	},
+	{
+		"casereference" : "WS010004",
+		"projectname" : "Hydrodec Oil Re-Refinery Eastham",
+		"stage" : 1,
+		"promotername" : "Hydrodec Re-refining (UK) Limited"
+	},
+	{
+		"casereference" : "TR010006",
+		"projectname" : "M20 Junction 10A",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010006",
+		"projectname" : "Oldbury New Nuclear Power Station",
+		"stage" : 8,
+		"promotername" : "Horizon Nuclear Power"
+	},
+	{
+		"casereference" : "EN010012",
+		"projectname" : "The Sizewell C Project",
+		"stage" : 7,
+		"promotername" : "NNB Generation Company (SZC) Limited"
+	},
+	{
+		"casereference" : "EN020002",
+		"projectname" : "Bramford to Twinstead",
+		"stage" : 1,
+		"promotername" : "National Grid Electricity Transmission"
+	},
+	{
+		"casereference" : "EN010018",
+		"projectname" : "Tilbury Gas Fired Power Station",
+		"stage" : 8,
+		"promotername" : "RWE npower"
+	},
+	{
+		"casereference" : "EN010047",
+		"projectname" : "NuGens Moorside Project in West Cumbria",
+		"stage" : 8,
+		"promotername" : "NuGeneration Limited (\"NuGen\")"
+	},
+	{
+		"casereference" : "TR010016",
+		"projectname" : "A63 Castle Street Improvement-Hull",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010067",
+		"projectname" : "Mynydd Lluest y Graig Wind Farm",
+		"stage" : 8,
+		"promotername" : "Vattenfall Wind Power Ltd"
+	},
+	{
+		"casereference" : "EN010068",
+		"projectname" : "Millbrook Power",
+		"stage" : 7,
+		"promotername" : "Millbrook Power Limited"
+	},
+	{
+		"casereference" : "TR050003",
+		"projectname" : "East Midlands Intermodal Park",
+		"stage" : 1,
+		"promotername" : "Goodman Real Estate (UK) Limited"
+	},
+	{
+		"casereference" : "EN010070",
+		"projectname" : "Keadby Wind Farm Extension",
+		"stage" : 8,
+		"promotername" : "Keadby Wind Farm Limited"
+	},
+	{
+		"casereference" : "TR010022",
+		"projectname" : "A38 Derby Junctions",
+		"stage" : 6,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "BC030001",
+		"projectname" : "International Advanced Manufacturing Park TWO (IAMP TWO)",
+		"stage" : 8,
+		"promotername" : "Sunderland City Council and South Tyneside Council"
+	},
+	{
+		"casereference" : "TR010043",
+		"projectname" : "Great Yarmouth Third River Crossing",
+		"stage" : 7,
+		"promotername" : "Norfolk County Council"
+	},
+	{
+		"casereference" : "TR010013",
+		"projectname" : "M20 to A2070 Link Road",
+		"stage" : 8,
+		"promotername" : "AXA Real Estate & DMI Properties (Ashford) Ltd"
+	},
+	{
+		"casereference" : "TR030001",
+		"projectname" : "Able Marine Energy Park",
+		"stage" : 7,
+		"promotername" : "Able Humber Ports Ltd"
+	},
+	{
+		"casereference" : "TR050001",
+		"projectname" : "Daventry International Rail Freight Terminal",
+		"stage" : 7,
+		"promotername" : "Rugby Radio Station Ltd Partnership & Prologis UK"
+	},
+	{
+		"casereference" : "EN010051",
+		"projectname" : "Dogger Bank Teesside A / Sofia Offshore Wind Farm (formerly Dogger Bank Teesside B) - Project previously known as Dogger Bank Teesside A&B",
+		"stage" : 7,
+		"promotername" : "Forewind Ltd"
+	},
+	{
+		"casereference" : "EN010061",
+		"projectname" : "Ferrybridge Multifuel 2 (FM2) Power Station",
+		"stage" : 7,
+		"promotername" : "Multifuel Energy Ltd"
+	},
+	{
+		"casereference" : "EN010001",
+		"projectname" : "Hinkley Point C New Nuclear Power Station",
+		"stage" : 7,
+		"promotername" : "NNB Generation Company Limited"
+	},
+	{
+		"casereference" : "EN020001",
+		"projectname" : "Hinkley Point C Connection",
+		"stage" : 7,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "EN010059",
+		"projectname" : "Hirwaun Power Station",
+		"stage" : 7,
+		"promotername" : "Hirwaun Power Limited"
+	},
+	{
+		"casereference" : "TR040002",
+		"projectname" : "Ipswich Rail Chord",
+		"stage" : 7,
+		"promotername" : "Network Rail"
+	},
+	{
+		"casereference" : "EN020003",
+		"projectname" : "Kings Lynn B Connection Project",
+		"stage" : 7,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "TR040011",
+		"projectname" : "Portishead Branch Line - MetroWest Phase 1",
+		"stage" : 7,
+		"promotername" : "North Somerset Council"
+	},
+	{
+		"casereference" : "EN010050",
+		"projectname" : "Knottingley Power Project",
+		"stage" : 7,
+		"promotername" : "Knottingley Power Limited"
+	},
+	{
+		"casereference" : "EN010016",
+		"projectname" : "Port Blyth New Biomass Plant",
+		"stage" : 7,
+		"promotername" : "North Blyth Energy Ltd"
+	},
+	{
+		"casereference" : "EN010024",
+		"projectname" : "Navitus Bay Wind Park",
+		"stage" : 7,
+		"promotername" : "Navitus Bay Development Limited"
+	},
+	{
+		"casereference" : "EN010020",
+		"projectname" : "Mynydd y Gwynt Wind Farm",
+		"stage" : 7,
+		"promotername" : "Mynydd y Gwynt Ltd"
+	},
+	{
+		"casereference" : "TR040001",
+		"projectname" : "North Doncaster Rail Chord (near Shaftholme)",
+		"stage" : 7,
+		"promotername" : "Network Rail"
+	},
+	{
+		"casereference" : "TR040010",
+		"projectname" : "Bere Alston to Tavistock Railway Reinstatement and Associated Trails",
+		"stage" : 1,
+		"promotername" : "Devon County Council"
+	},
+	{
+		"casereference" : "TR040009",
+		"projectname" : "Western Rail Link to Heathrow",
+		"stage" : 1,
+		"promotername" : "Network Rail Infrastructure Limited"
+	},
+	{
+		"casereference" : "EN010038",
+		"projectname" : "North Killingholme Power Project",
+		"stage" : 7,
+		"promotername" : "C.GEN Killingholme Ltd"
+	},
+	{
+		"casereference" : "EN020009",
+		"projectname" : "North London (Electricity Line) Reinforcement",
+		"stage" : 7,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "EN010032",
+		"projectname" : "Rampion Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "E.ON Climate and Renewables"
+	},
+	{
+		"casereference" : "TR040005",
+		"projectname" : "Redditch Branch Enhancement Scheme",
+		"stage" : 7,
+		"promotername" : "Network Rail"
+	},
+	{
+		"casereference" : "EN010054",
+		"projectname" : "South Hook Combined Heat & Power Station",
+		"stage" : 7,
+		"promotername" : "QPI Global Ventures Ltd"
+	},
+	{
+		"casereference" : "TR040004",
+		"projectname" : "Stafford Area Improvements - Norton Bridge Railway",
+		"stage" : 7,
+		"promotername" : "Network Rail"
+	},
+	{
+		"casereference" : "EN010049",
+		"projectname" : "Tidal Lagoon Swansea Bay",
+		"stage" : 7,
+		"promotername" : "Tidal Lagoon (Swansea Bay) PLC"
+	},
+	{
+		"casereference" : "EN010062",
+		"projectname" : "Internal Power Generation Enhancement for Port Talbot Steelworks",
+		"stage" : 7,
+		"promotername" : "Tata Steel UK limited"
+	},
+	{
+		"casereference" : "WW010001",
+		"projectname" : "Thames Tideway Tunnel",
+		"stage" : 7,
+		"promotername" : "Thames Water"
+	},
+	{
+		"casereference" : "EN010005",
+		"projectname" : "Triton Knoll Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "Triton Knoll Offshore Wind Farm Limited"
+	},
+	{
+		"casereference" : "WS010003",
+		"projectname" : "Whitemoss Landfill Western Extension",
+		"stage" : 7,
+		"promotername" : "Whitemoss Landfill Limited"
+	},
+	{
+		"casereference" : "EN010039",
+		"projectname" : "Palm Paper 3 CCGT Power station Kings Lynn",
+		"stage" : 7,
+		"promotername" : "Palm Paper Ltd"
+	},
+	{
+		"casereference" : "EN030001",
+		"projectname" : "Preesall Saltfield Underground Gas Storage",
+		"stage" : 7,
+		"promotername" : "Halite Energy Group Ltd"
+	},
+	{
+		"casereference" : "EN010060",
+		"projectname" : "Progress Power Station",
+		"stage" : 7,
+		"promotername" : "Progress Power Limited"
+	},
+	{
+		"casereference" : "TR010021",
+		"projectname" : "Silvertown Tunnel",
+		"stage" : 7,
+		"promotername" : "Transport for London"
+	},
+	{
+		"casereference" : "EN010027",
+		"projectname" : "Walney Extension Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "DONG Energy Walney Extension (UK) Ltd"
+	},
+	{
+		"casereference" : "EN010053",
+		"projectname" : "Hornsea Offshore Wind Farm (Zone 4) - Project Two",
+		"stage" : 7,
+		"promotername" : "SMart Wind Limited"
+	},
+	{
+		"casereference" : "TR050002",
+		"projectname" : "East Midlands Gateway Rail Freight Interchange",
+		"stage" : 7,
+		"promotername" : "Roxhill (Kegworth) Limited"
+	},
+	{
+		"casereference" : "EN010025",
+		"projectname" : "East Anglia ONE Offshore Windfarm",
+		"stage" : 7,
+		"promotername" : "East Anglia One Ltd"
+	},
+	{
+		"casereference" : "EN010048",
+		"projectname" : "White Rose Carbon Capture and Storage Project",
+		"stage" : 7,
+		"promotername" : "Capture Power Limited"
+	},
+	{
+		"casereference" : "EN010064",
+		"projectname" : "Meaford Energy Centre",
+		"stage" : 7,
+		"promotername" : "Meaford Energy Limited"
+	},
+	{
+		"casereference" : "TR030002",
+		"projectname" : "York Potash Harbour Facilities Order",
+		"stage" : 7,
+		"promotername" : "York Potash Ltd"
+	},
+	{
+		"casereference" : "TR010019",
+		"projectname" : "M4 Junctions 3 to 12 Smart Motorway",
+		"stage" : 7,
+		"promotername" : "Highways Agency (now Highways England)"
+	},
+	{
+		"casereference" : "EN020016",
+		"projectname" : "Brechfa Forest Connection",
+		"stage" : 7,
+		"promotername" : "Western Power Distribution (South Wales) plc"
+	},
+	{
+		"casereference" : "EN020019",
+		"projectname" : "Triton Knoll Electrical System",
+		"stage" : 7,
+		"promotername" : "Triton Knoll Offshore Wind Farm Limited"
+	},
+	{
+		"casereference" : "EN070003",
+		"projectname" : "Thorpe Marsh Gas Pipeline",
+		"stage" : 7,
+		"promotername" : "Thorpe Marsh Power Limited"
+	},
+	{
+		"casereference" : "EN060004",
+		"projectname" : "River Humber Gas Pipeline Replacement Project",
+		"stage" : 7,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "TR010018",
+		"projectname" : "A14 Cambridge to Huntingdon Improvement Scheme",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN020014",
+		"projectname" : "North Wales Wind Farms Connection",
+		"stage" : 7,
+		"promotername" : "SP MANWEB"
+	},
+	{
+		"casereference" : "EN010056",
+		"projectname" : "East Anglia THREE Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "East Anglia THREE Limited"
+	},
+	{
+		"casereference" : "EN020017",
+		"projectname" : "Richborough Connection Project",
+		"stage" : 7,
+		"promotername" : "National Grid"
+	},
+	{
+		"casereference" : "EN010071",
+		"projectname" : "North London Heat and Power Project",
+		"stage" : 7,
+		"promotername" : "North London Waste Authority"
+	},
+	{
+		"casereference" : "EN030002",
+		"projectname" : "Keuper Gas Storage Project",
+		"stage" : 7,
+		"promotername" : "Keuper Gas Storage Limited"
+	},
+	{
+		"casereference" : "EN010072",
+		"projectname" : "Glyn Rhonwy Pumped Storage",
+		"stage" : 7,
+		"promotername" : "Snowdonia Pumped Hydro Limited"
+	},
+	{
+		"casereference" : "EN070001",
+		"projectname" : "Yorkshire and Humber CCS Cross Country Pipeline",
+		"stage" : 7,
+		"promotername" : "National Grid Carbon Limited"
+	},
+	{
+		"casereference" : "EN010055",
+		"projectname" : "Wrexham Energy Centre",
+		"stage" : 7,
+		"promotername" : "Wrexham Power Limited"
+	},
+	{
+		"casereference" : "EN010011",
+		"projectname" : "Rookery South Energy from Waste Generating Station",
+		"stage" : 7,
+		"promotername" : "Covanta Rookery South Limited"
+	},
+	{
+		"casereference" : "EN010033",
+		"projectname" : "Hornsea Offshore Wind Farm (Zone 4) - Project One",
+		"stage" : 7,
+		"promotername" : "SMart Wind Ltd"
+	},
+	{
+		"casereference" : "EN010077",
+		"projectname" : "East Anglia ONE North Offshore Windfarm",
+		"stage" : 7,
+		"promotername" : "East Anglia ONE North Limited"
+	},
+	{
+		"casereference" : "EN010078",
+		"projectname" : "East Anglia TWO Offshore Windfarm",
+		"stage" : 7,
+		"promotername" : "East Anglia TWO Limited"
+	},
+	{
+		"casereference" : "TR050005",
+		"projectname" : "West Midlands Interchange",
+		"stage" : 7,
+		"promotername" : "Four Ashes Limited"
+	},
+	{
+		"casereference" : "EN010079",
+		"projectname" : "Norfolk Vanguard",
+		"stage" : 7,
+		"promotername" : "Norfolk Vanguard Limited"
+	},
+	{
+		"casereference" : "EN010081",
+		"projectname" : "Eggborough CCGT",
+		"stage" : 7,
+		"promotername" : "Eggborough Power Limited"
+	},
+	{
+		"casereference" : "EN020004",
+		"projectname" : "Electric line connection to Maesgwyn wind farm",
+		"stage" : 8,
+		"promotername" : "Electric line connection to Maesgwyn wind farm"
+	},
+	{
+		"casereference" : "EN010004",
+		"projectname" : "Brig y Cwm Energy from Waste Generating Station",
+		"stage" : 8,
+		"promotername" : "Covanta Brig y Cwm Ltd"
+	},
+	{
+		"casereference" : "EN010044",
+		"projectname" : "Roosecote (Barrow) Biomass Power Station",
+		"stage" : 8,
+		"promotername" : "Centrica Energy"
+	},
+	{
+		"casereference" : "EN010046",
+		"projectname" : "Fieldes Lock - Rail linked power station",
+		"stage" : 8,
+		"promotername" : "Veolia Environmental Services (UK) Plc"
+	},
+	{
+		"casereference" : "EN010015",
+		"projectname" : "Atlantic Array Wind Farm",
+		"stage" : 8,
+		"promotername" : "Channel Energy Limited"
+	},
+	{
+		"casereference" : "TR010045",
+		"projectname" : "A27 Arundel Bypass",
+		"stage" : 1,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR050006",
+		"projectname" : "Northampton Gateway Rail Freight Interchange",
+		"stage" : 7,
+		"promotername" : "Roxhill Developments Limited"
+	},
+	{
+		"casereference" : "EN010086",
+		"projectname" : "Hillhouse Enterprise Zone Power Station",
+		"stage" : 8,
+		"promotername" : "Wyre Power Ltd"
+	},
+	{
+		"casereference" : "EN010083",
+		"projectname" : "Wheelabrator Kemsley Generating Station (K3) and Wheelabrator Kemsley North (WKN) Waste to Energy Facility",
+		"stage" : 7,
+		"promotername" : "WTI/EFW Holdings Ltd"
+	},
+	{
+		"casereference" : "EN010082",
+		"projectname" : "Tees CCPP",
+		"stage" : 7,
+		"promotername" : "Sembcorp Utilities (UK) Limited"
+	},
+	{
+		"casereference" : "EN010097",
+		"projectname" : "VPI Immingham OCGT",
+		"stage" : 7,
+		"promotername" : "VPI Immingham B Ltd"
+	},
+	{
+		"casereference" : "TR010020",
+		"projectname" : "A19 / A184 Testos Junction Improvement",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010084",
+		"projectname" : "Thanet Extension Offshore Wind Farm",
+		"stage" : 7,
+		"promotername" : "Vattenfall Wind Power Limited"
+	},
+	{
+		"casereference" : "TR010023",
+		"projectname" : "Lake Lothing Third Crossing",
+		"stage" : 7,
+		"promotername" : "Suffolk County Council"
+	},
+	{
+		"casereference" : "EN010091",
+		"projectname" : "Drax Re-power",
+		"stage" : 7,
+		"promotername" : "Drax Power Limited"
+	},
+	{
+		"casereference" : "EN010099",
+		"projectname" : "TIGRE Project 1 (TP1)",
+		"stage" : 1,
+		"promotername" : "TIGRE Group"
+	},
+	{
+		"casereference" : "EN010088",
+		"projectname" : "West Burton C power station",
+		"stage" : 7,
+		"promotername" : "EDF Energy (Thermal Generation) Limited"
+	},
+	{
+		"casereference" : "EN010087",
+		"projectname" : "Norfolk Boreas",
+		"stage" : 7,
+		"promotername" : "Norfolk Boreas Limited"
+	},
+	{
+		"casereference" : "TR030003",
+		"projectname" : "Tilbury2",
+		"stage" : 7,
+		"promotername" : "Port of Tilbury London Limited"
+	},
+	{
+		"casereference" : "TR010026",
+		"projectname" : "A30 Chiverton to Carland Cross Scheme",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010024",
+		"projectname" : "A19 Downhill Lane Junction Improvement",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010090",
+		"projectname" : "Kemsley Paper Mill (K4) CHP Plant",
+		"stage" : 7,
+		"promotername" : "DS Smith Paper Ltd"
+	},
+	{
+		"casereference" : "EN010089",
+		"projectname" : "Tilbury Energy Centre",
+		"stage" : 8,
+		"promotername" : "RWE Generation UK plc."
+	},
+	{
+		"casereference" : "TR010025",
+		"projectname" : "A303 Stonehenge",
+		"stage" : 6,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010028",
+		"projectname" : "A2 Bean and Ebbsfleet junction improvements",
+		"stage" : 8,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010027",
+		"projectname" : "M42 Junction 6 Improvement",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010030",
+		"projectname" : "M25 junction 10/A3 Wisley interchange improvement",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010029",
+		"projectname" : "M25 junction 28 improvements",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010031",
+		"projectname" : "A1 Birtley to Coal House Improvement Scheme",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010033",
+		"projectname" : "A5036 Port of Liverpool Access Scheme",
+		"stage" : 1,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010032",
+		"projectname" : "Lower Thames Crossing",
+		"stage" : 3,
+		"promotername" : "National Highways"
+	},
+	{
+		"casereference" : "TR010034",
+		"projectname" : "A57 Link Roads (previously known as Trans Pennine Upgrade Programme)",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010035",
+		"projectname" : "A585 Windy Harbour to Skippool Improvement Scheme",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010085",
+		"projectname" : "Cleve Hill Solar Park",
+		"stage" : 7,
+		"promotername" : "Cleve Hill Solar Park Ltd"
+	},
+	{
+		"casereference" : "EN010093",
+		"projectname" : "Riverside Energy Park",
+		"stage" : 7,
+		"promotername" : "Cory Riverside Energy"
+	},
+	{
+		"casereference" : "TR010036",
+		"projectname" : "A303 Sparkford to Ilchester Dualling",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR020003",
+		"projectname" : "Expansion of Heathrow Airport (Third Runway)",
+		"stage" : 1,
+		"promotername" : "Heathrow Airport Limited"
+	},
+	{
+		"casereference" : "EN010094",
+		"projectname" : "Ferrybridge D Combined Cycle Gas Turbine (CCGT) Power Station Project",
+		"stage" : 1,
+		"promotername" : "SSE Generation Limited"
+	},
+	{
+		"casereference" : "TR050007",
+		"projectname" : "Hinckley National Rail Freight Interchange",
+		"stage" : 2,
+		"promotername" : "Tritax Symmetry (Hinckley) Limited"
+	},
+	{
+		"casereference" : "TR010037",
+		"projectname" : "A47 - A11 Thickthorn Junction",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010038",
+		"projectname" : "A47 North Tuddenham to Easton",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010040",
+		"projectname" : "A47 Blofield to North Burlingham",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010039",
+		"projectname" : "A47 Wansford to Sutton",
+		"stage" : 6,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "WW010003",
+		"projectname" : "Cambridge Waste Water Treatment Plant Relocation",
+		"stage" : 2,
+		"promotername" : "Anglian Water Services Limited"
+	},
+	{
+		"casereference" : "EN020023",
+		"projectname" : "Nautilus Interconnector",
+		"stage" : 1,
+		"promotername" : "National Grid Ventures"
+	},
+	{
+		"casereference" : "EN070005",
+		"projectname" : "Southampton to London Pipeline Project",
+		"stage" : 7,
+		"promotername" : "Esso Petroleum Company, Limited"
+	},
+	{
+		"casereference" : "EN010095",
+		"projectname" : "Boston Alternative Energy Facility (BAEF)",
+		"stage" : 6,
+		"promotername" : "Alternative Use Boston Projects Limited"
+	},
+	{
+		"casereference" : "EN010098",
+		"projectname" : "Hornsea Project Four Offshore Wind Farm",
+		"stage" : 6,
+		"promotername" : "Orsted Hornsea Project Four Limited"
+	},
+	{
+		"casereference" : "EN020022",
+		"projectname" : "AQUIND Interconnector",
+		"stage" : 7,
+		"promotername" : "AQUIND Limited"
+	},
+	{
+		"casereference" : "EN010109",
+		"projectname" : "Sheringham and Dudgeon Extension Projects",
+		"stage" : 4,
+		"promotername" : "Equinor"
+	},
+	{
+		"casereference" : "EN010101",
+		"projectname" : "Little Crow Solar Park",
+		"stage" : 7,
+		"promotername" : "INRG SOLAR (Little Crow) Ltd"
+	},
+	{
+		"casereference" : "TR010044",
+		"projectname" : "A428 Black Cat to Caxton Gibbet Road Improvement scheme",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010060",
+		"projectname" : "A12 Chelmsford to A120 Widening Scheme",
+		"stage" : 4,
+		"promotername" : "National Highways"
+	},
+	{
+		"casereference" : "EN010102",
+		"projectname" : "Hinkley Point C New Nuclear Power Station Material Change 1",
+		"stage" : 1,
+		"promotername" : "NNB Generation Company (HPC) Limited"
+	},
+	{
+		"casereference" : "TR010054",
+		"projectname" : "M54 to M6 Link Road",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR010055",
+		"projectname" : "M3 Junction 9 Improvement",
+		"stage" : 3,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR020004",
+		"projectname" : "Heathrow West",
+		"stage" : 1,
+		"promotername" : "Heathrow West Limited"
+	},
+	{
+		"casereference" : "EN010106",
+		"projectname" : "Sunnica Energy Farm",
+		"stage" : 4,
+		"promotername" : "Sunnica Ltd"
+	},
+	{
+		"casereference" : "EN010104",
+		"projectname" : "Wheelabrator Harewood Waste-to-Energy Facility",
+		"stage" : 8,
+		"promotername" : "WTI/EFW Holdings Limited"
+	},
+	{
+		"casereference" : "EN010103",
+		"projectname" : "The Net Zero Teesside Project",
+		"stage" : 6,
+		"promotername" : "Net Zero Teesside Power Limited “NZT Power” and Net Zero North Sea Storage Limited “NZNS Storage”"
+	},
+	{
+		"casereference" : "TR020001",
+		"projectname" : "Expansion of London Luton Airport",
+		"stage" : 1,
+		"promotername" : "London Luton Airport Limited"
+	},
+	{
+		"casereference" : "TR010056",
+		"projectname" : "A417 Missing Link",
+		"stage" : 7,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010107",
+		"projectname" : "South Humber Bank Energy Centre",
+		"stage" : 7,
+		"promotername" : "EP Waste Management Limited"
+	},
+	{
+		"casereference" : "TR020005",
+		"projectname" : "Gatwick Airport Northern Runway",
+		"stage" : 1,
+		"promotername" : "Gatwick Airport Limited"
+	},
+	{
+		"casereference" : "EN010108",
+		"projectname" : "Extension to Allington Integrated Waste Management Facility",
+		"stage" : 1,
+		"promotername" : "FCC Environment (UK) Limited"
+	},
+	{
+		"casereference" : "TR030004",
+		"projectname" : "Oikos Marine & South Side Development",
+		"stage" : 1,
+		"promotername" : "Oikos Storage Ltd"
+	},
+	{
+		"casereference" : "EN010110",
+		"projectname" : "Medworth Energy from Waste Combined Heat and Power Facility",
+		"stage" : 3,
+		"promotername" : "Medworth CHP Limited"
+	},
+	{
+		"casereference" : "EN010111",
+		"projectname" : "Bradwell B new nuclear power station",
+		"stage" : 1,
+		"promotername" : "Bradwell B"
+	},
+	{
+		"casereference" : "EN010112",
+		"projectname" : "Awel y Môr Offshore Wind Farm",
+		"stage" : 4,
+		"promotername" : "Awel y Môr Offshore Wind Farm Limited"
+	},
+	{
+		"casereference" : "TR010059",
+		"projectname" : "A1 in Northumberland - Morpeth to Ellingham",
+		"stage" : 6,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN010114",
+		"projectname" : "Keadby 3 Carbon Capture Power Station",
+		"stage" : 7,
+		"promotername" : "Keadby Generation Limited"
+	},
+	{
+		"casereference" : "EN010116",
+		"projectname" : "North Lincolnshire Green Energy Park",
+		"stage" : 4,
+		"promotername" : "North Lincolnshire Green Energy Park Limited"
+	},
+	{
+		"casereference" : "WS010005",
+		"projectname" : "East Northants Resource Management Facility Western Extension",
+		"stage" : 7,
+		"promotername" : "Augean South Limited"
+	},
+	{
+		"casereference" : "EN010117",
+		"projectname" : "Rampion 2 Offshore Wind Farm",
+		"stage" : 1,
+		"promotername" : "Rampion Extension Development Limited"
+	},
+	{
+		"casereference" : "EN010115",
+		"projectname" : "Five Estuaries Offshore Wind Farm",
+		"stage" : 1,
+		"promotername" : "Five Estuaries Offshore Wind Farm Ltd"
+	},
+	{
+		"casereference" : "EN010118",
+		"projectname" : "Longfield Solar Farm",
+		"stage" : 5,
+		"promotername" : "Longfield Solar Energy Farm Limited"
+	},
+	{
+		"casereference" : "EN010119",
+		"projectname" : "North Falls Offshore Wind Farm",
+		"stage" : 1,
+		"promotername" : "North Falls Offshore Wind Farm Ltd"
+	},
+	{
+		"casereference" : "EN010120",
+		"projectname" : "Drax Bioenergy with Carbon Capture and Storage Project",
+		"stage" : 4,
+		"promotername" : "Drax Power Limited"
+	},
+	{
+		"casereference" : "TR030006",
+		"projectname" : "Able Marine Energy Park Material Change 2",
+		"stage" : 7,
+		"promotername" : "Able Humber Ports Ltd"
+	},
+	{
+		"casereference" : "TR030005",
+		"projectname" : "Able Marine Energy Park Material Change 1",
+		"stage" : 1,
+		"promotername" : "Able Humber Ports Ltd"
+	},
+	{
+		"casereference" : "EN070006",
+		"projectname" : "Humber Low Carbon Pipelines",
+		"stage" : 1,
+		"promotername" : "National Grid Carbon (NGC)"
+	},
+	{
+		"casereference" : "EN020024",
+		"projectname" : "Yorkshire GREEN",
+		"stage" : 3,
+		"promotername" : "National Grid Electricity Transmission (NGET)"
+	},
+	{
+		"casereference" : "TR010061",
+		"projectname" : "A358 Taunton to Southfields",
+		"stage" : 1,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "EN070007",
+		"projectname" : "HyNet Carbon Dioxide Pipeline",
+		"stage" : 3,
+		"promotername" : "Liverpool Bay CCS Limited"
+	},
+	{
+		"casereference" : "TR010062",
+		"projectname" : "A66 Northern Trans-Pennine Project",
+		"stage" : 4,
+		"promotername" : "National Highways"
+	},
+	{
+		"casereference" : "TR050008",
+		"projectname" : "Oxfordshire Strategic Rail Freight Interchange",
+		"stage" : 1,
+		"promotername" : "Oxfordshire Railfreight Limited"
+	},
+	{
+		"casereference" : "TR010063",
+		"projectname" : "M5 Junction 10 Improvements Scheme",
+		"stage" : 1,
+		"promotername" : "Gloucestershire County Council"
+	},
+	{
+		"casereference" : "TR010064",
+		"projectname" : "M60/M62/M66 Simister Island",
+		"stage" : 1,
+		"promotername" : "Highways England"
+	},
+	{
+		"casereference" : "TR040012",
+		"projectname" : "East West Rail - Bedford to Cambridge and Western improvements",
+		"stage" : 1,
+		"promotername" : "East West Railway Company Limited"
+	},
+	{
+		"casereference" : "EN010122",
+		"projectname" : "Oaklands Farm Solar Project",
+		"stage" : 1,
+		"promotername" : "Oaklands Solar Farm Limited"
+	},
+	{
+		"casereference" : "TR030007",
+		"projectname" : "Immingham Eastern Ro-Ro Terminal",
+		"stage" : 8,
+		"promotername" : "Associated British Ports"
+	},
+	{
+		"casereference" : "EN010138",
+		"projectname" : "Rivenhall IWMF and Energy Centre",
+		"stage" : 1,
+		"promotername" : "Indaver Rivenhall Ltd"
+	},
+	{
+		"casereference" : "EN010123",
+		"projectname" : "Heckington Fen Solar Park",
+		"stage" : 1,
+		"promotername" : "Ecotricity (Heck Fen Solar) Limited"
+	},
+	{
+		"casereference" : "EN010129",
+		"projectname" : "Slough Multifuel Extension Project",
+		"stage" : 3,
+		"promotername" : "SSE Slough Multifuel Limited"
+	},
+	{
+		"casereference" : "EN010133",
+		"projectname" : "Cottam Solar Project",
+		"stage" : 3,
+		"promotername" : "Cottam Solar Project Limited"
+	},
+	{
+		"casereference" : "EN010132",
+		"projectname" : "West Burton Solar Project",
+		"stage" : 1,
+		"promotername" : "West Burton Solar Project Limited"
+	},
+	{
+		"casereference" : "EN020025",
+		"projectname" : "Continental Link Multi-Purpose Interconnector",
+		"stage" : 1,
+		"promotername" : "National Grid Ventures"
+	},
+	{
+		"casereference" : "EN010127",
+		"projectname" : "Mallard Pass Solar Project",
+		"stage" : 3,
+		"promotername" : "Mallard Pass Solar Farm Limited"
+	},
+	{
+		"casereference" : "EN010131",
+		"projectname" : "Gate Burton Energy Park",
+		"stage" : 2,
+		"promotername" : "Gate Burton Energy Park Ltd"
+	},
+	{
+		"casereference" : "EN010125",
+		"projectname" : "Dogger Bank South Offshore Wind Farms",
+		"stage" : 1,
+		"promotername" : "RWE Renewables UK Dogger Bank South (West) Ltd and RWE Renewables UK Dogger Bank South (East) Ltd"
+	},
+	{
+		"casereference" : "EN070008",
+		"projectname" : "Viking CCS Pipeline",
+		"stage" : 1,
+		"promotername" : "Chrysaor Production (UK) Limited"
+	},
+	{
+		"casereference" : "EN010135",
+		"projectname" : "Stonestreet Green Solar",
+		"stage" : 1,
+		"promotername" : "EPL 001 Limited"
+	},
+	{
+		"casereference" : "EN010092",
+		"projectname" : "Thurrock Flexible Generation Plant",
+		"stage" : 7,
+		"promotername" : "Thurrock Power Ltd"
+	},
+	{
+		"casereference" : "EN060006",
+		"projectname" : "Hynet North West Hydrogen Pipeline",
+		"stage" : 1,
+		"promotername" : "Cadent Gas Limited"
+	},
+	{
+		"casereference" : "EN010121",
+		"projectname" : "Morecambe Offshore Windfarm Generation Assets",
+		"stage" : 1,
+		"promotername" : "Morecambe Offshore Windfarm Ltd."
+	},
+	{
+		"casereference" : "EN010136",
+		"projectname" : "Morgan Offshore Wind Farm Generation Assets",
+		"stage" : 1,
+		"promotername" : "Morgan Offshore Wind Limited"
+	},
+	{
+		"casereference" : "EN010137",
+		"projectname" : "Mona Offshore Wind Farm",
+		"stage" : 1,
+		"promotername" : "Mona Offshore Wind Limited"
+	},
+	{
+		"casereference" : "EN010128",
+		"projectname" : "Cory Decarbonisation Project",
+		"stage" : 1,
+		"promotername" : "Cory Environmental Holdings Limited (CEHL)"
+	},
+	{
+		"casereference" : "WS010006",
+		"projectname" : "Larkshall Mill Aggregate Manufacturing and Carbon Capture Facility",
+		"stage" : 1,
+		"promotername" : "O.C.O Technology Limited"
+	},
+	{
+		"casereference" : "WA020001",
+		"projectname" : "River Thames Scheme",
+		"stage" : 1,
+		"promotername" : "The Environment Agency and Surrey County Council"
+	},
+	{
+		"casereference" : "EN020026",
+		"projectname" : "Sea Link",
+		"stage" : 1,
+		"promotername" : "National Grid Electricity Transmission"
+	},
+	{
+		"casereference" : "TR030008",
+		"projectname" : "Immingham Green Energy Terminal",
+		"stage" : 1,
+		"promotername" : "Associated British Ports"
+	},
+	{
+		"casereference" : "EN020027",
+		"projectname" : "East Anglia Green Energy Enablement (GREEN) Project",
+		"stage" : 1,
+		"promotername" : "National Grid Electricity Transmission (NGET)"
+	},
+	{
+		"casereference" : "EN010140",
+		"projectname" : "Helios Renewable Energy Project",
+		"stage" : 1,
+		"promotername" : "Enso Green Holdings D Limited"
+	},
+	{
+		"casereference" : "EN010126",
+		"projectname" : "Temple Oaks Renewable Energy Park",
+		"stage" : 1,
+		"promotername" : "Ridge Clean Energy Limited"
+	},
+	{
+		"casereference" : "EN010130",
+		"projectname" : "Outer Dowsing Offshore Wind (Generating Station)",
+		"stage" : 1,
+		"promotername" : "Total Energies and Corio Generation"
+	},
+	{
+		"casereference" : "WA010002",
+		"projectname" : "Hampshire Water Transfer and Water Recycling Project",
+		"stage" : 1,
+		"promotername" : "Southern Water Services Limited"
+	},
+	{
+		"casereference" : "EN010143",
+		"projectname" : "East Yorkshire Solar Farm",
+		"stage" : 1,
+		"promotername" : "East Yorkshire Solar Farm Limited"
+	},
+	{
+		"casereference" : "TR010065",
+		"projectname" : "A46 Newark Bypass",
+		"stage" : 1,
+		"promotername" : "National Highways"
+	},
+	{
+		"casereference" : "EN010142",
+		"projectname" : "Tillbridge Solar Project",
+		"stage" : 1,
+		"promotername" : "Tillbridge Solar Limited"
+	},
+	{
+		"casereference" : "EN010139",
+		"projectname" : "Byers Gill Solar",
+		"stage" : 1,
+		"promotername" : "JBM Solar"
+	},
+	{
+		"casereference" : "EN020032",
+		"projectname" : "Morgan and Morecambe Offshore Wind Farms Transmission Assets",
+		"stage" : 1,
+		"promotername" : "Morgan Offshore Wind Limited and Morecambe Offshore Windfarm Limited"
+	},
+	{
+		"casereference" : "EN010148",
+		"projectname" : "Tween Bridge Solar Farm",
+		"stage" : 1,
+		"promotername" : "RWE Renewables Limited"
+	},
+	{
+		"casereference" : "EN010144",
+		"projectname" : "Dogger Bank D Wind Farm",
+		"stage" : 1,
+		"promotername" : "Gatroben Developments 2 Limited"
+	}
+]
+}
