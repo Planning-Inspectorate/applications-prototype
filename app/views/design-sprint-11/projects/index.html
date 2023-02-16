@@ -6,8 +6,11 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
-
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-11/home",
+    saveAndExit: false
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
