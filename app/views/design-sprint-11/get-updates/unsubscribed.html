@@ -50,6 +50,19 @@
 
             {% if (data['type-of-updates'] == "unsubscribe" or data['type-of-updates'] == "change-frequency") %}
         <!--    <p>You will  no longer be sent updates about Drax Bioenergy with Carbon Capture and Storage</p> -->
+
+        <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    {{heading }}
+                  </h1>
+                  <div class="govuk-panel__body">
+                    {{success }}
+                  </div>
+                </div>
+
+<!--
+
+
             <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -58,18 +71,20 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      {{success }}
-      <!--You have unsubscribed from updates about Drax Bioenergy with Carbon Capture and Storage-->
+
+      <!--You have unsubscribed from updates about Drax Bioenergy with Carbon Capture and Storage
     </h3>
     </div>
-  </div>
+  </div>-->
 {% endif %}
 
 
-  <h1 class="govuk-heading-l">
-{{heading }}
-  </h1>
+<!--  <h1 class="govuk-heading-l">-->
+  <!--</h1> -->
+
+
               {% if (data['type-of-updates'] == "unsubscribe") %}
+              <h2 class="govuk-heading-m">What happens next</h2>
                <p class="govuk-body">You will  no longer be sent updates about Drax Bioenergy with Carbon Capture and Storage</p>
 
             {% elif (data['type-of-updates'] == "change-address")  %}
