@@ -166,14 +166,14 @@ $govuk-header-link-underline-thickness: 3px;
 }
 
 .govuk-header__link--service-name {
-  display: inline-block;
+
   margin-bottom: govuk-spacing(2);
   @include govuk-font($size: 24, $weight: bold);
 }
 
 .govuk-header__logo,
 .govuk-header__content {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 .govuk-header__logo {
@@ -185,6 +185,7 @@ $govuk-header-link-underline-thickness: 3px;
     padding-right: $govuk-gutter-half;
     float: left;
     vertical-align: top;
+      display: inline-block;
   }
 }
 

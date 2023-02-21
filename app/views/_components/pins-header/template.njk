@@ -224,6 +224,7 @@
             </g>
             <g id="Rectangle_88" data-name="Rectangle 88"><rect class="cls-1" x="78.97" width="3" height="55"/></g>
           </svg>
+
         </span>
 
         {% if (params.productName) %}
@@ -235,6 +236,12 @@
     </div>
 
     <div class="govuk-header__content">
+    {% if params.serviceName %}
+        <a href="{{ params.serviceUrl }}" class="govuk-header__link govuk-header__link--service-name">
+          {{ params.serviceName }}
+        </a>
+
+    {% endif %}
       {% if params.saveAndExit %}
         <a role="button" class="ons-btn" href="/sprint-6/pre-examination/register/save-and-continue/confirmation">
           <span class="ons-btn__inner">Save and exit <svg class="ons-svg-icon" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
@@ -276,11 +283,5 @@
       {% endif %}
     </div>
   </div>
-  {% if params.serviceName %}
-    <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
-      <a href="{{ params.serviceUrl }}" class="govuk-header__link govuk-header__link--service-name">
-        {{ params.serviceName }}
-      </a>
-    </div>
-  {% endif %}
+
 </header>
