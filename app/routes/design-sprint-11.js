@@ -1,6 +1,8 @@
 const representations = require("../data/representations.json");
 
-const projectList  = require("../data/project-list.json");
+//const projectList  = require("../data/project-list.json");
+
+const fs = require('fs');
 
 function addToList(obj, itemList, change){
   if(!itemList){
@@ -939,9 +941,133 @@ router.get("/design-sprint-11/get-updates/unsubscribe-answer",
   }
 );
 
-router.get("/design-sprint-11/projects/project-list-answer",
-  function (req, res) {
-    console.log(projectList);
+
+
+router.post("/design-sprint-11/projects/view-case-form-answer", function(req, res) {
+
+  if( req.session.data['view-case-position'] ){
+
+  let choice = req.session.data['view-case-position']
+  console.log(req.session.data['newProjectList'])
+  req.session.data['case'] = req.session.data['newProjectList'][choice];
+  //console.log(req.session.data['representation']);
+  }
+
+
+    res.redirect("/design-sprint-11/project-overview/index-dynamic-data");
+
+
+});
+
+
+
+router.get("/design-sprint-11/projects/projects-load", function (req, res) {
+    console.log("The get is running");
+
+
+//var myProjectList = [projectList] ;
+
+//console.log(myProjectList.projectname)
+
+fs.readFile('app/data/project-list.json', 'utf8', (error, data) => {
+     if(error){
+        console.log(error);
+        return;
+     }
+     console.log(JSON.parse(data));
+
+})
+
+
+
+  //req.session.data['FileProjectList'] = myProjectList;
+//   console.log(req.session.data['FileProjectList']);
+
+
+stages = new Array();
+stages[1] = "pre-application";
+stages[2] ="acceptance"; ;
+stages[3] = "pre-exam";
+stages[4] = "pre-application";
+stages[5] ="acceptance"; ;
+stages[6] = "pre-exam";
+
+req.session.data['stages'] = stages;
+console.log("write");
+console.log(req.session.data['stages']);
+
+
+req.session.data['stagesSecond'] = [
+    {
+      1 : "pre-application",
+      "projectname" : "The London Resort",
+      "stage" : "Withdrawn",
+      "promotername" : "London Resort Company Holdings"
+    },
+    {
+      2 : "EN060001",
+      "projectname" : "Willington C Gas Pipeline",
+      "stage" : "Decision",
+      "promotername" : "RWE npower"
+    }
+]
+
+  req.session.data['newProjectList'] = [
+	{
+		"casereference" : "BC080001",
+		"projectname" : "The London Resort",
+		"proposal" : "BC08 - Leisure",
+		"projectlocation" : "Swanscombe Peninsula and land adjacent to Ebbsfleet Station",
+		"stage" : "Acceptance",
+		"promotername" : "London Resort Company Holdings",
+		"webaddress" : "",
+		"summary" : "Leisure and entertainment resort including a theme park, hotels, bars, restaurants, business space, training academy, monorail and associated infrastructure works. The application is anticipated to be submitted to the Planning Inspectorate in 2020.",
+		"projectemailaddress" : "LondonResort@planninginspectorate.gov.uk"
+	},
+	{
+		"casereference" : "EN060001",
+		"projectname" : "Willington C Gas Pipeline",
+		"proposal" : "EN06 - Gas Transporter Pipe-lines",
+		"projectlocation" : "Near Burton on Trent",
+		"stage" : "Pre-application",
+		"promotername" : "RWE npower",
+		"webaddress" : "http://www.rwe.com/web/cms/en/368514/rwe-npower/about-us/our-businesses/new-power-stations",
+		"summary" : "The application is for gas pipeline approximately 27km in length, buried for its entire length, with an above ground installation at the start point. The proposed pipeline will start near Yoxall in Staffordshire, where a connection will be made into the national transmission system, and the pipeline will terminate at a block valve within the site of the new Willington C Power Station in Derbyshire. The construction of the pipeline will be carried out within a temporary construction corridor, nominally 30m in width, but widening where additional working area is required. Three temporary construction compounds are required. One permanent access is required at the above ground installation.",
+		"projectemailaddress" : "nienquiries@planninginspectorate.gov.uk"
+	},
+	{
+		"casereference" : "TR010014",
+		"projectname" : "A30 Temple to Higher Carblake Improvement",
+		"proposal" : "TR01 - Highways",
+		"projectlocation" : "Approximately 3 miles north east of Bodmin",
+		"stage" : "Pre-application",
+		"promotername" : "Cornwall Council",
+		"webaddress" : "http://www.cornwall.gov.uk/default.aspx?page=33044",
+		"summary" : "The scheme involves the upgrading of the existing 4.5km stretch of single carriageway road to a dual carriageway standard, with the provision of 3 new grade separated junctions with over bridges. The existing side road traffic movements will be rationalised and new public highway will be constructed to link the side roads with the 3 new junctions.",
+		"projectemailaddress" : "nienquiries@planninginspectorate.gov.uk"
+	},
+	{
+		"casereference" : "TR010007",
+		"projectname" : "A160 - A180 Port of Immingham Improvement",
+		"proposal" : "TR01 - Highways",
+		"projectlocation" : "Between Brocklesby Interchange and the Port of Immingham, North and North East Lincolnshire",
+		"stage" : "Acceptance",
+		"promotername" : "Highways Agency",
+		"webaddress" : "http://www.highways.gov.uk/roads/road-projects/a160a180-improvements-immingham/",
+		"summary" : "Works to the A160 between the junction with the A180 at Brocklesby Interchange and the Port of Immingham. The project would widen the existing single carriageway section of the A160 to dual carriageway, with associated works to junctions along the length of the route.",
+		"projectemailaddress" : "nienquiries@planninginspectorate.gov.uk"
+	}
+]
+
+
+
+
+      //req.session.data['newProjectList'] = ""
+
+  //  let showlist = req.session.data['newProjectList'] ;
+  //    console.log(req.session.data['newProjectList']);
+    res.redirect("search");
+
 }
 );
 

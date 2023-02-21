@@ -43,7 +43,7 @@ font-size:16pt;
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-quarter">
     <nav>
       {% set current = 'about-the-application' %}
 
@@ -218,7 +218,7 @@ font-size:16pt;
 
 
 
-<div class="app-c-option-select js-collapsible js-opened" id="developer-application-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" id="type-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Type</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
@@ -464,7 +464,52 @@ font-size:16pt;
 </div>
 
 
+<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" id="say-toggle">
+  <h2 class="app-c-option-select__heading js-container-heading">
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Have your say</button>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h2>
+  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="say-opener">
+<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Have your say</legend>
 
+        <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                    Register to have your say
+             (1)
+    </label>
+
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                    Have your say
+             (3)
+    </label>
+
+        </div>
+
+
+
+
+
+
+
+
+</ul>
+</fieldset>
+</div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -659,11 +704,11 @@ font-size:16pt;
 
 
 
-    <form method="post" action="/design-sprint-11/wide-nav/doc-library?filtersapplied=true">
+    <!--<form method="post" action="/design-sprint-11/wide-nav/doc-library?filtersapplied=true">
        <button class="govuk-button govuk-!-margin-top-7" id="toggleButton" data-module="govuk-button">
         Apply filters
        </button>
-    </form>
+    </form>-->
 
 
 </div>
@@ -696,7 +741,7 @@ font-size:16pt;
 
   </div>
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-xl">Projects</h1>
    <p class="govuk-body">Search by project name, developer name or stage</p>
@@ -866,7 +911,7 @@ font-size:16pt;
 
 
 
-<div class="app-c-option-select js-collapsible js-opened" id="developer-application-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<!-- <div class="app-c-option-select js-collapsible js-opened" id="type-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Type</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
@@ -986,11 +1031,11 @@ font-size:16pt;
 </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" id="acceptance-toggle">
+<!-- <div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" id="acceptance-toggle">
   <h2 class="app-c-option-select__heading js-container-heading">
     <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Acceptance (3)</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
@@ -1026,7 +1071,7 @@ font-size:16pt;
 </fieldset>
 </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 
@@ -1482,8 +1527,16 @@ font-size:16pt;
 
 
 {% endif %}
+
+
+  <div id="filter-tags" name="filter-tags">
+    <h3 class="govuk-heading-m" >Filtered results</h3>
+       <div class="facet-tags__group"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Acceptance:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Other documents</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
+    <p class="govuk-body govuk-!-margin-top-3"><a href="#" class="govuk-link" id="clearfilter">Clear filters</a></p>
+    </div>
+
 {% if (data['filtersapplied']=="true") %}
-<h3 class="govuk-heading-m">Filtered results</h3>
+<h3 class="govuk-heading-m" >Filtered results</h3>
    <div class="facet-tags__group"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Acceptance:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Other documents</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
 <p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>
 {% endif %}
@@ -1526,12 +1579,12 @@ font-size:16pt;
 <p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>
 {% endif %}
 {% if (data['filtersapplied']=="true") %}
-<p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">2</span> of <span class="govuk-!-font-weight-bold">2</span> documents, newest first.  </p>
+<p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">2</span> of <span class="govuk-!-font-weight-bold">2</span> projects.  </p>
 
     <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-2">|</span> <span class="govuk-!-margin-left-2"><a href="#">50</a></span> <span class="govuk-!-margin-left-2">|</span><span class="govuk-!-margin-left-2"> <a href="#">100</a></span>
 
 {% else %}
-  <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> documents, newest first.  </p>
+  <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> projects, newest first.  </p>
   <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-1">|</span> <span class="govuk-!-margin-left-1"><a href="#">50</a></span> <span class="govuk-!-margin-left-1">|</span><span class="govuk-!-margin-left-1"> <a href="#">100</a></span>
   {% endif %}
 
@@ -1639,6 +1692,95 @@ Acceptance       </div>
 
  {% endif %}
 
+
+   <!--{% if data['FileProjectList'] | length %}<table class="govuk-table" data-module="moj-sortable-table">
+         <thead class="govuk-table__head">
+     <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header" aria-sort="none">Project name</th>
+       <th scope="col" class="govuk-table__header" aria-sort="none">Applicant</th>
+       <!--<th scope="col" class="govuk-table__header" aria-sort="none">Issues count</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Issues</th>
+       <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+     </tr>
+   </thead>
+   <tbody class="govuk-table__body">
+{% endif %}
+
+               {% for fileproject in data['FileProjectList'] %}
+
+                  <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">{{ fileproject.projectname }}</td>
+                  <td class="govuk-table__cell">{{ fileproject.promotername }}</td>
+                <!--   <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  fileproject.stage }}</span></td>
+
+                  </tr>
+                  {% else %}
+                  <li>There are no projects </li>
+                {% endfor %}
+
+        {% if data['newProjectList'] |length %}
+</tbody>
+</table>
+{% endif %}-->
+
+
+
+
+ {% if data['newProjectList'] |length %}<table class="govuk-table" data-module="moj-sortable-table">
+         <thead class="govuk-table__head">
+     <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header" aria-sort="none">Project name</th>
+       <th scope="col" class="govuk-table__header" aria-sort="none">Applicant</th>
+       <!--<th scope="col" class="govuk-table__header" aria-sort="none">Issues count</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Issues</th>-->
+       <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+       <!--<th scope="col" class="govuk-table__header" aria-sort="none">View</th>-->
+     </tr>
+   </thead>
+   <tbody class="govuk-table__body">
+{% endif %}
+
+
+
+{# {{ data['stages'][1]  }}
+
+  {% for stage in data['stages'] %}
+    {{ loop.index - 1}} = {{ stage }}
+  {% endfor %} #}
+  {% set stagenum = 2 %}
+  {% set stagenum = 3 %}
+
+                {% for project in data['newProjectList'] %}
+
+                  {% set stagenum = index.loopPosition | int %}
+
+
+                  {{ stagenum | int  }}
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="{{loop.index - 1}}">
+      <span aria-hidden="true">{{ project.projectname }}</span><span class="govuk-visually-hidden">Review data for {{fileproject.projectname}}</span></a></td>
+                <!--  <td class="govuk-table__cell">{{ project.projectname }}</td>-->
+                  <td class="govuk-table__cell">{{ project.promotername }}</td>
+                <!--   <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td> -->
+                  <td class="govuk-table__cell"><span id="list-convictions-status"> {{  project.stage }}</span></td>
+                <!--  <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="#{{loop.index - 1}}#">
+    <span aria-hidden="true">Review</span><span class="govuk-visually-hidden">Review data for #{{fileproject.projectname}}#</span></a></td>-->
+                  </tr>
+                  {% else %}
+                  <li>There are no projects </li>
+                  {% endfor %}
+
+        {% if data['newProjectList'] |length %}
+</tbody>
+</table>
+{% endif %}
+
+
+
           {% if (data['filtersapplied']=="true") %}
           <hr>
           {% else %}
@@ -1666,15 +1808,23 @@ Acceptance       </div>
 
 
                    </ul>
-          <p class="moj-pagination__results">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> results</p>
+          <p class="moj-pagination__results">Showings <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> results</p>
           {% endif %}
+
+
 
 
           <form autocomplete="on" class="form" action="project-list-answer" method="post">
 
-         <button class="govuk-button" data-module="govuk-button">Continue</button>
+         <!-- <button class="govuk-button" data-module="govuk-button">Continue</button> -->
 
               </form>
+
+
+              <form id="view-case-form" method="post" action="view-case-form-answer" style="display: none;">
+              <input type="hidden" id="view-case-position" name="view-case-position" value="1">
+                    </form>
+
 
         </nav>
 
@@ -1704,13 +1854,19 @@ Acceptance       </div>
           $("#deadlines-opener").hide();
           $("#author-opener").hide();
           $("#date-opener").hide();
+          $("#say-opener").hide();
+          $("#filter-tags").hide();
+
           $("#pre-application-toggle").click(function(){
+          //  alert("pre-app") ;
           $("#pre-application-opener").toggle();
         });
-          $("#developer-application-toggle").click(function(){
+          $("#type-toggle").click(function(){
+          //  alert("here") ;
           $("#developer-application-opener").toggle();
         });
           $("#acceptance-toggle").click(function(){
+
           $("#acceptance-opener").toggle();
         });
           $("#pre-examination-toggle").click(function(){
@@ -1728,6 +1884,10 @@ Acceptance       </div>
           $("#date-toggle").click(function(){
           $("#date-opener").toggle();
           });
+          $("#say-toggle").click(function(){
+          $("#say-opener").toggle();
+          });
+
           $("#show-all").click(function(){
             $("#pre-application-opener").toggle();
             $("#developer-application-opener").toggle();
@@ -1737,7 +1897,43 @@ Acceptance       </div>
             $("#deadlines-opener").toggle();
             $("#author-opener").toggle();
             $("#date-opener").toggle();
-              });
+            $("#say-opener").toggle();
+            });
+
+              $("input[type='checkbox']").click(function(){
+                //alert("$this.val");
+                  $("#filter-tags").show();
+                });
+
+                $("#clearfilter").click(function(){
+                  //alert("$this.val");
+                    $("#filter-tags").hide();
+                  });
+
+
      });
+
+
+    // on click of any change-item link
+    $('a.view-case').click(function(e) {
+        e.preventDefault();
+      //  alert("Hello! I am an alert box!!");
+
+        // get the loop position of the country being changed from ni-sales-list
+        var loopPosition = ($(this).attr("data-loop-position"))
+        console.log("loop position is ");
+      //  alert(loopPosition);
+        console.log(loopPosition);
+
+        //populate the form with the loop position
+        $("#view-case-position").val(loopPosition);
+
+        //submit the hidden form
+        $('#view-case-form').submit();
+
+    });
+
+
+
       </script>
     {% endblock %}
