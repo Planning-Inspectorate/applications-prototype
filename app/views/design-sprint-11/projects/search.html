@@ -6,7 +6,11 @@
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
-  {{ pinsHeader() }}
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-11/home",
+    saveAndExit: false
+  }) }}
 
 {% endblock %}
 
@@ -37,6 +41,7 @@ font-size:16pt;
 {% set primarynav = 'projects' %}
 
   {% include "../includes/primary-nav.html" %}
+    {% include "../includes/secondary-nav-projects.html" %}
 {% endblock %}
 
 {% block content %}
