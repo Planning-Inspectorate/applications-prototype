@@ -26,10 +26,12 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">Confirm you want to get emails</h1>
-            <p class="govuk-body-l">
-                We have sent an email to <strong>{% if not data['email'] %} joe.bloggs@email.com {% endif %}{{data['email']}}</strong>
+            <p class="govuk-body">
+                Your email confirmation has not been successful.</p>  <p class="govuk-body">Phone the Planning Inspectorate support team for help on 0303 444 5000 or
+
+ email <a href=mailto:"NIEnquiries@planninginspectorate.gov.uk">NIEnquiries@planninginspectorate.gov.uk</a>
             </p>
-            <p>Check your email and confirm you want to get updates about:</p>
+            <!-- <p>Check your email and confirm you want to get updates about:</p>
             <ul class="govuk-list">
                 <li>Drax Bioenergy with Carbon Capture and Storage</li>
             </ul>
@@ -42,10 +44,7 @@
                     <!--<p class="govuk-body">If this does not work, <a href="#">contact us for help</a>.</p>-->
                    '
                 }) }}
-
-
-            <a href="./verify-email" class="govuk-button govuk-button--secondary">Show email</a>
-            <p><a href="check-your-email-strikeout" class="govuk-button govuk-button--secondary">Show strikeout page</a>
+            <!--<a href="./verify-email" class="govuk-button govuk-button--secondary">Show email</a> -->
         </div>
     </div>
 {% endblock %}
