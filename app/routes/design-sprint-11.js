@@ -962,9 +962,14 @@ router.post("/design-sprint-11/projects/view-case-form-answer", function(req, re
 
 
 router.get("/design-sprint-11/projects/projects-load", function (req, res) {
-    console.log("The get is running");
+    console.log("The get is running new");
+const  filelistcb = require('../data/project-list-play.json')
 
+console.log(filelistcb[0].projectname);
 
+req.session.data['Mefilylist'] = filelistcb ;
+
+//
 //var myProjectList = [projectList] ;
 
 //console.log(myProjectList.projectname)
@@ -974,8 +979,10 @@ fs.readFile('app/data/project-list.json', 'utf8', (error, data) => {
         console.log(error);
         return;
      }
-     console.log(JSON.parse(data));
-
+     //console.log(JSON.parse(data));
+    // console.log(JSON.parse(data));
+     let filelistcb = JSON.parse(data) ;
+     //console.log(filelistcb);
 })
 
 
@@ -993,8 +1000,8 @@ stages[5] ="acceptance"; ;
 stages[6] = "pre-exam";
 
 req.session.data['stages'] = stages;
-console.log("write");
-console.log(req.session.data['stages']);
+//console.log("write");
+//console.log(req.session.data['stages']);
 
 
 req.session.data['stagesSecond'] = [

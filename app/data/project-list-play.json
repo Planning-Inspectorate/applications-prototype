@@ -1,0 +1,133 @@
+[
+	{
+		"casereference" : "BC080001",
+		"projectname" : "The London Resort",
+		"stage" : 8,
+		"promotername" : "London Resort Company Holdings"
+	},
+  {
+  		"casereference" : "EN060001",
+  		"projectname" : "Willington C Gas Pipeline",
+  		"stage" : 7,
+  		"promotername" : "RWE npower"
+  	},{
+  		"casereference" : "TR010014",
+  		"projectname" : "A30 Temple to Higher Carblake Improvement",
+  		"stage" : 7,
+  		"promotername" : "Cornwall Council"
+  	},
+  	{
+  		"casereference" : "TR010007",
+  		"projectname" : "A160 - A180 Port of Immingham Improvement",
+  		"stage" : 7,
+  		"promotername" : "Highways Agency"
+  	},
+  	{
+  		"casereference" : "TR010017",
+  		"projectname" : "A19/A1058 Coast Road Junction Improvement",
+  		"stage" : 7,
+  		"promotername" : "Highways Agency"
+  	},
+  	{
+  		"casereference" : "EN010003",
+  		"projectname" : "Galloper Offshore Wind Farm",
+  		"stage" : 7,
+  		"promotername" : "Galloper Wind Farm Ltd"
+  	},
+  	{
+  		"casereference" : "EN010036",
+  		"projectname" : "Kentish Flats Extension",
+  		"stage" : 7,
+  		"promotername" : "Vattenfall"
+  	},
+  	{
+  		"casereference" : "TR010010",
+  		"projectname" : "Morpeth Northern Bypass",
+  		"stage" : 7,
+  		"promotername" : "Northumberland County Council"
+  	},
+  	{
+  		"casereference" : "EN010026",
+  		"projectname" : "Burbo Bank Extension offshore wind farm",
+  		"stage" : 7,
+  		"promotername" : "DONG Energy Burbo Extension (UK) Ltd."
+  	},
+  	{
+  		"casereference" : "EN010008",
+  		"projectname" : "Brechfa Forest West Wind Farm",
+  		"stage" : 7,
+  		"promotername" : "RWE Npower Renewables"
+  	},
+  	{
+  		"casereference" : "TR010002",
+  		"projectname" : "A556 Knutsford to Bowdon Scheme",
+  		"stage" : 7,
+  		"promotername" : "Highways Agency"
+  	},
+  	{
+  		"casereference" : "EN010013",
+  		"projectname" : "Clocaenog Forest Wind Farm",
+  		"stage" : 7,
+  		"promotername" : "RWE npower renewables"
+  	},
+  	{
+  		"casereference" : "TR010009",
+  		"projectname" : "M1 Junction 10a Grade Separation - Luton",
+  		"stage" : 7,
+  		"promotername" : "Luton Borough Council"
+  	},
+  	{
+  		"casereference" : "TR010011",
+  		"projectname" : "Woodside Link Houghton Regis Bedfordshire",
+  		"stage" : 7,
+  		"promotername" : "Central Bedfordshire Council"
+  	},
+  	{
+  		"casereference" : "TR010008",
+  		"projectname" : "Heysham to M6 Link Road",
+  		"stage" : 7,
+  		"promotername" : "Lancashire County Council"
+  	},
+  	{
+  		"casereference" : "TR010015",
+  		"projectname" : "Norwich Northern Distributor Road (NDR)",
+  		"stage" : 7,
+  		"promotername" : "Norfolk County Council"
+  	},
+  	{
+  		"casereference" : "EN010021",
+  		"projectname" : "Dogger Bank Creyke Beck",
+  		"stage" : 7,
+  		"promotername" : "Forewind"
+  	},
+  	{
+  		"casereference" : "WS010001",
+  		"projectname" : "East Northants Resource Management Facility",
+  		"stage" : 7,
+  		"promotername" : "Augean PLC"
+  	},
+  	{
+  		"casereference" : "EN010058",
+  		"projectname" : "Seabank 3 CCGT",
+  		"stage" : 1,
+  		"promotername" : "SSE plc"
+  	},
+  	{
+  		"casereference" : "EN010073",
+  		"projectname" : "Tidal Lagoon Cardiff",
+  		"stage" : 1,
+  		"promotername" : "Tidal Lagoon Power"
+  	},
+  	{
+  		"casereference" : "EN010075",
+  		"projectname" : "Tidal Lagoon Newport",
+  		"stage" : 8,
+  		"promotername" : "Tidal Lagoon Newport"
+  	},
+  	{
+  		"casereference" : "EN010144",
+  		"projectname" : "Dogger Bank D Wind Farm",
+  		"stage" : 1,
+  		"promotername" : "Gatroben Developments 2 Limited"
+  	}
+]

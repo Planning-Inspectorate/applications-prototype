@@ -183,7 +183,7 @@ font-size:16pt;
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="pre-application-5" name="pre-application" type="checkbox" value="procedural-decisions">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application-5">
+            <label class="govuk-label govuk-checkboxes__label" for="recommendation">
         Recommendation (1)
       </label>
 
@@ -1536,7 +1536,7 @@ font-size:16pt;
 
   <div id="filter-tags" name="filter-tags">
     <h3 class="govuk-heading-m" >Filtered results</h3>
-       <div class="facet-tags__group"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Acceptance:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Other documents</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
+       <div class="facet-tags__group"> <div class="facet-tags__wrapper" id="groupOne"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Stage:</span> <span class="facet-tag  govuk-!-margin-right-3"><a href="#" id="myacceptance"><span class="facet-tag__text" style="font-family:arial,sans-serif;" id="myacceptance">Acceptance</span><button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
     <p class="govuk-body govuk-!-margin-top-3"><a href="#" class="govuk-link" id="clearfilter">Clear filters</a></p>
     </div>
 
@@ -1698,42 +1698,7 @@ Acceptance       </div>
  {% endif %}
 
 
-   <!--{% if data['FileProjectList'] | length %}<table class="govuk-table" data-module="moj-sortable-table">
-         <thead class="govuk-table__head">
-     <tr class="govuk-table__row">
-       <th scope="col" class="govuk-table__header" aria-sort="none">Project name</th>
-       <th scope="col" class="govuk-table__header" aria-sort="none">Applicant</th>
-       <!--<th scope="col" class="govuk-table__header" aria-sort="none">Issues count</th>
-        <th scope="col" class="govuk-table__header" aria-sort="none">Issues</th>
-       <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
-     </tr>
-   </thead>
-   <tbody class="govuk-table__body">
-{% endif %}
-
-               {% for fileproject in data['FileProjectList'] %}
-
-                  <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">{{ fileproject.projectname }}</td>
-                  <td class="govuk-table__cell">{{ fileproject.promotername }}</td>
-                <!--   <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  fileproject.stage }}</span></td>
-
-                  </tr>
-                  {% else %}
-                  <li>There are no projects </li>
-                {% endfor %}
-
-        {% if data['newProjectList'] |length %}
-</tbody>
-</table>
-{% endif %}-->
-
-
-
-
- {% if data['newProjectList'] |length %}<table class="govuk-table" data-module="moj-sortable-table">
+   {% if data['Mefilylist'] | length %}<table class="govuk-table" data-module="moj-sortable-table">
          <thead class="govuk-table__head">
      <tr class="govuk-table__row">
        <th scope="col" class="govuk-table__header" aria-sort="none">Project name</th>
@@ -1741,7 +1706,64 @@ Acceptance       </div>
        <!--<th scope="col" class="govuk-table__header" aria-sort="none">Issues count</th>
         <th scope="col" class="govuk-table__header" aria-sort="none">Issues</th>-->
        <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
-       <!--<th scope="col" class="govuk-table__header" aria-sort="none">View</th>-->
+     </tr>
+   </thead>
+   <tbody class="govuk-table__body">
+{% endif %}
+
+    {% for fileproject in data['Mefilylist'] %}
+
+    {% if fileproject.stage == 8 %}
+      {% set stageDescription = "Withdrawn" %}
+    {% elif fileproject.stage == 7  %}
+    {% set stageDescription = "Post decision" %}
+    {% elif fileproject.stage == 6 %}
+    {% set stageDescription = "Decision" %}
+    {% elif fileproject.stage == 5 %}
+    {% set stageDescription = "Recommendation" %}
+    {% elif fileproject.stage == 4  %}
+
+    {% set stageDescription = "Examination" %}
+    {% elif fileproject.stage == 3  %}
+
+    {% set stageDescription = "Pre-examination" %}
+    {% elif fileproject.stage == 2  %}
+
+    {% set stageDescription = "Acceptance" %}{% elif fileproject.stage == 1  %}
+
+    {% set stageDescription = "Pre-application" %}
+
+    {% endif %}
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ fileproject.projectname }}</td>
+      <td class="govuk-table__cell">{{ fileproject.promotername }}</td>
+      <!--   <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>-->
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>
+
+    </tr>
+    {% else %}
+    <li>There are no projects </li>
+    {% endfor %}
+
+        {% if data['newProjectList'] |length %}
+</tbody>
+</table>
+{% endif %}
+
+
+
+
+ <!-- {% if data['newProjectList'] |length %}<table class="govuk-table" data-module="moj-sortable-table">
+         <thead class="govuk-table__head">
+     <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header" aria-sort="none">Project name</th>
+       <th scope="col" class="govuk-table__header" aria-sort="none">Applicant</th>
+       <!--<th scope="col" class="govuk-table__header" aria-sort="none">Issues count</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Issues</th>
+       <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+       <!--<th scope="col" class="govuk-table__header" aria-sort="none">View</th>
      </tr>
    </thead>
    <tbody class="govuk-table__body">
@@ -1767,13 +1789,13 @@ Acceptance       </div>
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="{{loop.index - 1}}">
       <span aria-hidden="true">{{ project.projectname }}</span><span class="govuk-visually-hidden">Review data for {{fileproject.projectname}}</span></a></td>
-                <!--  <td class="govuk-table__cell">{{ project.projectname }}</td>-->
+                <!--  <td class="govuk-table__cell">{{ project.projectname }}</td>
                   <td class="govuk-table__cell">{{ project.promotername }}</td>
                 <!--   <td class="govuk-table__cell"></td>
-                  <td class="govuk-table__cell"></td> -->
+                  <td class="govuk-table__cell"></td>
                   <td class="govuk-table__cell"><span id="list-convictions-status"> {{  project.stage }}</span></td>
                 <!--  <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="#{{loop.index - 1}}#">
-    <span aria-hidden="true">Review</span><span class="govuk-visually-hidden">Review data for #{{fileproject.projectname}}#</span></a></td>-->
+    <span aria-hidden="true">Review</span><span class="govuk-visually-hidden">Review data for #{{fileproject.projectname}}#</span></a></td>
                   </tr>
                   {% else %}
                   <li>There are no projects </li>
@@ -1782,7 +1804,7 @@ Acceptance       </div>
         {% if data['newProjectList'] |length %}
 </tbody>
 </table>
-{% endif %}
+{% endif %} -->
 
 
 
@@ -1906,14 +1928,28 @@ Acceptance       </div>
             });
 
               $("input[type='checkbox']").click(function(){
-                //alert("$this.val");
+              //alert(this).val;
                   $("#filter-tags").show();
                 });
 
+                $("#myacceptance").click(function(){
+                  alert("HERE");
+                  //  $("#groupOne").hide();
+                    });
+
                 $("#clearfilter").click(function(){
                   //alert("$this.val");
-                    $("#filter-tags").hide();
+                  //  alert("helo");
+                   $("#filter-tags").hide();
                   });
+
+                //
+                // $("#myacceptance").click(function(){
+                //   alert("helo");
+                //       //;$(this).hide();
+                //     });
+
+
 
 
      });
