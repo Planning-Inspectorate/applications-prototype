@@ -83,13 +83,9 @@ font-size:16pt;
 <p class="govuk-body"><a id="show-all" class="govuk-link">Show all sections</a></p>
 
         <div class="facets__content">
-
-
-
-
           <div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
             <h2 class="app-c-option-select__heading js-container-heading">
-              <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="pre-application-toggle" aria-controls="report_type">Stage</button>
+              <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="stage-toggle" aria-controls="report_type">Stage</button>
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
             </h2>
@@ -98,11 +94,11 @@ font-size:16pt;
 
 
 
-              <div class="app-c-option-select__container-inner js-auto-height-inner" id="pre-application-opener">
+              <div class="app-c-option-select__container-inner js-auto-height-inner" id="stage-opener">
 
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Pre-application</legend>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">stage</legend>
 
         <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
 
@@ -110,79 +106,41 @@ font-size:16pt;
 
         <ul class="govuk-checkboxes gem-c-checkboxes__list">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application" name="pre-application" type="checkbox" value="eias">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application">
+            <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="Pre-application">
+            <label class="govuk-label govuk-checkboxes__label" for="stage">
        Pre-application(3)
       </label>
 
           </div>
 
-
-
-
-
-
-
-
-
-
-
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application-2" name="pre-application" type="checkbox" value="non-acceptance-letter">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application-2">
+            <input class="govuk-checkboxes__input" id="stage-2" name="stage" type="checkbox" value="Acceptance">
+            <label class="govuk-label govuk-checkboxes__label" for="stage-2">
         Acceptance (2)
       </label>
 
           </div>
 
-
-
-
-
-
-
-
-
-
-
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application-3" name="pre-application" type="checkbox" value="nops">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application-3">
+            <input class="govuk-checkboxes__input" id="stage-3" name="stage" type="checkbox" value="Pre-examination">
+            <label class="govuk-label govuk-checkboxes__label" for="stage-3">
         Pre-examination (5)
       </label>
 
           </div>
 
 
-
-
-
-
-
-
-
-
-
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application-4" name="pre-application" type="checkbox" value="other">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application-4">
+            <input class="govuk-checkboxes__input" id="stage-4" name="stage" type="checkbox" value="Examination">
+            <label class="govuk-label govuk-checkboxes__label" for="stage-4">
         Examination (6)
       </label>
 
           </div>
 
 
-
-
-
-
-
-
-
-
-
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application-5" name="pre-application" type="checkbox" value="procedural-decisions">
+            <input class="govuk-checkboxes__input" id="stage-5" name="stage" type="checkbox" value="Recommendation">
             <label class="govuk-label govuk-checkboxes__label" for="recommendation">
         Recommendation (1)
       </label>
@@ -190,8 +148,8 @@ font-size:16pt;
           </div>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application-5" name="pre-application" type="checkbox" value="procedural-decisions">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application-5">
+            <input class="govuk-checkboxes__input" id="stage-5" name="stage" type="checkbox" value="Decision">
+            <label class="govuk-label govuk-checkboxes__label" for="stage-5">
         Decision (1)
       </label>
 
@@ -199,8 +157,8 @@ font-size:16pt;
 
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application-5" name="pre-application" type="checkbox" value="procedural-decisions">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application-5">
+            <input class="govuk-checkboxes__input" id="stage-5" name="stage" type="checkbox" value="Decided">
+            <label class="govuk-label govuk-checkboxes__label" for="stage-5">
         Decided (33)
       </label>
 
@@ -222,299 +180,344 @@ font-size:16pt;
 
 
 
-
-<div class="app-c-option-select js-collapsible js-opened" id="type-toggle" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
-    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Type</button>
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="type-toggle" aria-controls="report_type">Type</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
 
-    <div class="app-c-option-select__container-inner js-auto-height-inner" id="developer-application-opener">
+
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="type-opener">
+
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Developer's application</legend>
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Type</legend>
+
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="developers-application" name="sector" type="checkbox" value="Business">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application">
+Business and Commercial (3)
+</label>
+
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="developers-application-2" name="sector" type="checkbox" value="Energy">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application-2">
+Energy (104)
+</label>
+
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="developers-application-3" name="sector" type="checkbox" value="Transport">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application-3">
+Transport (102)
+</label>
+
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="developers-applicatione-4" name="sector" type="checkbox" value="Water">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application-4">
+Water (7)
+</label>
+
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="developers-application-5" name="sector" type="checkbox" value="Waste">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application-5">
+Waste (12)
+</label>
+
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="developers-application-6" name="sector" type="checkbox" value="Waste-Water">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application-6">
+Waste water (16)
+</label>
+
+</div>
 
 
-        <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
-
-
-        <ul class="govuk-checkboxes gem-c-checkboxes__list">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="developers-application" name="developers-application" type="checkbox" value="application-form">
-            <label class="govuk-label govuk-checkboxes__label" for="developers-application">
-      Business and Commercial (3)
-      </label>
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="developers-application-2" name="developers-application" type="checkbox" value="ddco">
-            <label class="govuk-label govuk-checkboxes__label" for="developers-application-2">
-        Energy (104)
-      </label>
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="developers-application-3" name="developers-application" type="checkbox" value="environmental-statement">
-            <label class="govuk-label govuk-checkboxes__label" for="developers-application-3">
-        Transport (102)
-      </label>
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="developers-applicatione-4" name="developers-application" type="checkbox" value="other">
-            <label class="govuk-label govuk-checkboxes__label" for="developers-application-4">
-        Water (7)
-      </label>
-
-          </div>
+</ul>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
 
 
 
-
+<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+  <h2 class="app-c-option-select__heading js-container-heading">
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="location-toggle" aria-controls="report_type">Location</button>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h2>
+  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
 
 
 
 
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="location-opener">
+
+<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Location</legend>
+
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
 
 
 
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="developers-application-5" name="developers-application" type="checkbox" value="plans">
-            <label class="govuk-label govuk-checkboxes__label" for="developers-application-5">
-        Waste (12)
-      </label>
+{% for locations  in data['location'] %}
 
-          </div>
+{% set locationsNospace  = locations | replace(" ","") %}
 
 
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="location" name="location" type="checkbox" value="{{locationsNospace}}">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application">
+{{locations}} (3)
+</label>
 
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="developers-application-6" name="developers-application" type="checkbox" value="reports">
-            <label class="govuk-label govuk-checkboxes__label" for="developers-application-6">
-        Waste water (16)
+</div>
+
+{% endfor %}
+
+<!--  cb here -->
+
+
+
+
+</ul>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+  <h2 class="app-c-option-select__heading js-container-heading">
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="say-toggle" aria-controls="report_type">Have your say</button>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h2>
+  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
+
+
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="say-opener">
+
+<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Have your say</legend>
+
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
+
+
+{% for says  in data['say'] %}
+
+{% set saysNospace  = says | replace(" ","") %}
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="location" name="location" type="checkbox" value="{{saysNospace}}">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application">
+{{says}} (3)
+</label>
+
+</div>
+
+{% endfor %}
+
+
+</ul>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+
+<!--
+
+<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+  <h2 class="app-c-option-select__heading js-container-heading">
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="location-toggle" aria-controls="report_type">Location</button>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h2>
+  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
+
+
+
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="location-opener">
+
+<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Location</legend>
+
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+  <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                            East Midlands
+     (1)
+</label>
+
+</div>
+
+
+<ul class="govuk-checkboxes gem-c-checkboxes__list">
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="acceptance-1" name="acceptance" type="checkbox" value="acceptance-letter">
+    <label class="govuk-label govuk-checkboxes__label" for="acceptance-1">
+
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        London
+                 (1)
         </label>
 
-          </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        North East
+                 (1)
+        </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        North West
+                 (1)
+        </label>
+
+            </div>
 
 
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        South East
+                 (1)
+        </label>
 
+            </div>
 
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        South West
+                 (1)
+        </label>
 
+            </div>
 
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        Wales
+                 (1)
+        </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        West Midlands
+                 (1)
+        </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+              <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                                        Yorkshire and the Humber
+                 (1)
+        </label>
+
+            </div>
 
 
 </ul>
 </fieldset>
 </div>
-    </div>
-  </div>
 </div>
+</div>
+</div> -->
 
-
-
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" id="acceptance-toggle">
+<!-- <div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
   <h2 class="app-c-option-select__heading js-container-heading">
-    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Location</button>
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="yoursay-toggle" aria-controls="report_type">Have your say</button>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
     <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
   </h2>
   <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner" id="acceptance-opener">
+
+
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="yoursay-opener">
+
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Location</legend>
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Have your say</legend>
 
-        <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
 
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+  <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                            Register to have your say
+     (1)
+</label>
 
+</div>
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
+  <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
+                            Have your say
+     (3)
+</label>
 
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-          <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                    East Midlands
-             (1)
-    </label>
-
-        </div>
-
-
-        <ul class="govuk-checkboxes gem-c-checkboxes__list">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="acceptance-1" name="acceptance" type="checkbox" value="acceptance-letter">
-            <label class="govuk-label govuk-checkboxes__label" for="acceptance-1">
-              Eastern (1)
-      </label>
-
-          </div>
-
-
-
-
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                London
-                         (1)
-                </label>
-
-                    </div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                North East
-                         (1)
-                </label>
-
-                    </div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                North West
-                         (1)
-                </label>
-
-                    </div>
-
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                South East
-                         (1)
-                </label>
-
-                    </div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                South West
-                         (1)
-                </label>
-
-                    </div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                Wales
-                         (1)
-                </label>
-
-                    </div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                West Midlands
-                         (1)
-                </label>
-
-                    </div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-                      <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                                Yorkshire and the Humber
-                         (1)
-                </label>
-
-                    </div>
-
+</div>
 
 
 </ul>
 </fieldset>
 </div>
-    </div>
-  </div>
 </div>
-
-
-<div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true" id="say-toggle">
-  <h2 class="app-c-option-select__heading js-container-heading">
-    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="option-select-title-report-type" aria-controls="report_type">Have your say</button>
-    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
-    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
-  </h2>
-  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
-    <div class="app-c-option-select__container-inner js-auto-height-inner" id="say-opener">
-<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Have your say</legend>
-
-        <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
-
-
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-          <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                    Register to have your say
-             (1)
-    </label>
-
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="acceptance-2" name="acceptance" type="checkbox" value="other">
-          <label class="govuk-label govuk-checkboxes__label" for="acceptance-2">
-                                    Have your say
-             (3)
-    </label>
-
-        </div>
-
-
-
-
-
-
-
-
-</ul>
-</fieldset>
 </div>
-    </div>
-  </div>
-</div>
+</div> -->
+
+
+
+
+
+
 
 
 
@@ -794,7 +797,7 @@ font-size:16pt;
 
           <div class="app-c-option-select js-collapsible js-opened" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
             <h2 class="app-c-option-select__heading js-container-heading">
-              <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="pre-application-toggle" aria-controls="report_type">Stage</button>
+              <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="true" id="stage-toggle" aria-controls="report_type">Stage</button>
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
               <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
             </h2>
@@ -803,7 +806,7 @@ font-size:16pt;
 
 
 
-              <div class="app-c-option-select__container-inner js-auto-height-inner" id="pre-application-opener">
+              <div class="app-c-option-select__container-inner js-auto-height-inner" id="stage-opener">
 
 <div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
       <fieldset class="govuk-fieldset">
@@ -815,8 +818,8 @@ font-size:16pt;
 
         <ul class="govuk-checkboxes gem-c-checkboxes__list">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="pre-application" name="pre-application" type="checkbox" value="eias">
-            <label class="govuk-label govuk-checkboxes__label" for="pre-application">
+            <input class="govuk-checkboxes__input" id="stage" name="stage" type="checkbox" value="eias">
+            <label class="govuk-label govuk-checkboxes__label" for="stage">
       Environmental Impact Assessment Scoping (5)
       </label>
 
@@ -1533,17 +1536,141 @@ font-size:16pt;
 
 {% endif %}
 
-
+<!-- CB - tags start   -->
   <div id="filter-tags" name="filter-tags">
     <h3 class="govuk-heading-m" >Filtered results</h3>
-       <div class="facet-tags__group"> <div class="facet-tags__wrapper" id="groupOne"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Stage:</span> <span class="facet-tag  govuk-!-margin-right-3"><a href="#" id="myacceptance"><span class="facet-tag__text" style="font-family:arial,sans-serif;" id="myacceptance">Acceptance</span><button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
+
+
+
+    <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-stage">
+
+      <div class="facet-tags__wrapper" > <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Stage:</span>
+
+         <span class="facet-tags__preposition"> &nbsp; </span>
+        <span class="facet-tag" id="tag-Pre-application"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Pre-application</span>
+        <button type="button" class="facet-tag__remove" name="mybutton" value="Pre-application" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from] id="btn-Pre-application">✕</button>
+      </span>
+
+      <span class="facet-tags__preposition"> &nbsp; </span>
+      <span class="facet-tag" id="tag-Acceptance"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Acceptance</span>
+      <button type="button" class="facet-tag__remove" name="mybutton" value="Acceptance" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+    </span>
+    <span class="facet-tags__preposition"> &nbsp; </span>
+    <span class="facet-tag" id="tag-Pre-examination"> &nbsp;<span class="facet-tag__text" style="font-family:arial,sans-serif;">Pre-examination</span>
+    <button type="button" class="facet-tag__remove" name="mybutton" value="Pre-examination" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+
+<span class="facet-tags__preposition"> &nbsp; </span>
+  <span class="facet-tag" id="tag-Examination"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Examination</span>
+  <button type="button" class="facet-tag__remove" name="mybutton" value="Examination" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+
+<span class="facet-tags__preposition"> &nbsp; </span>
+<span class="facet-tag" id="tag-Recommendation"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Recommendation</span>
+<button type="button" class="facet-tag__remove" name="mybutton" value="Recommendation" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+<span class="facet-tags__preposition"> &nbsp; </span>
+<span class="facet-tag" id="tag-Decision"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Decision</span>
+<button type="button" class="facet-tag__remove" name="mybutton" value="Decision"  aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+<span class="facet-tags__preposition"> &nbsp; </span>
+<span class="facet-tag" id="tag-Decided"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Decided</span>
+<button type="button" class="facet-tag__remove" name="mybutton" value="Decided"  aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+
+
+      </div>
+    </div>
+
+  <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-type">
+      <div class="facet-tags__wrapper" style="background-color:#f3f2f1;"> <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Type:</span>
+
+        <span class="facet-tags__preposition"> &nbsp; </span>
+        <span class="facet-tag"id="tag-Business"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Business and Commercial</span>
+        <button type="button" class="facet-tag__remove" name="mybutton" value="Business" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+      </span>
+      <span class="facet-tags__preposition"> &nbsp; </span>
+      <span class="facet-tag" id="tag-Energy"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Energy</span>
+      <button type="button" class="facet-tag__remove" name="mybutton" value="Energy" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+    </span>
+    <span class="facet-tags__preposition"> &nbsp; </span>
+    <span class="facet-tag" id="tag-Transport"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Transport</span>
+    <button type="button" class="facet-tag__remove" name="mybutton" value="Transport" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+  </span>
+  <span class="facet-tags__preposition"> &nbsp; </span>
+  <span class="facet-tag" id="tag-Water"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Water</span>
+  <button type="button" class="facet-tag__remove" name="mybutton" value="Water" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+<span class="facet-tags__preposition"> &nbsp; </span>
+<span class="facet-tag" id="tag-Waste"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Waste</span>
+<button type="button" class="facet-tag__remove" name="mybutton" value="Waste" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+<span class="facet-tags__preposition"> &nbsp; </span>
+<span class="facet-tag" id="tag-Waste-Water"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Waste water</span>
+<button type="button" class="facet-tag__remove" name="mybutton" value="Waste-Water" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+</div>
+
+
+    </div>
+
+
+    <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-locations">
+        <div class="facet-tags__wrapper" style="background-color:#f3f2f1;"> <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Location:</span>
+
+
+    {% for locations  in data['location'] %}
+
+    {% set locationsNospace  = locations | replace(" ","") %}
+
+    <span class="facet-tags__preposition"> &nbsp; </span>
+    <span class="facet-tag" id="tag-{{locationsNospace}}"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">{{locations}}</span>
+    <button type="button" class="facet-tag__remove" name="mybutton" value="{{locationsNospace}}" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+    </span>
+
+    {% endfor %}
+
+    </div>  </div>
+
+
+    <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-say">
+        <div class="facet-tags__wrapper" style="background-color:#f3f2f1;"> <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Have your say:</span>
+
+
+    {% for says  in data['say'] %}
+
+    {% set saysNospace  = says | replace(" ","") %}
+
+    <span class="facet-tags__preposition"> &nbsp; </span>
+    <span class="facet-tag" id="tag-{{sayssNospace}}"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">{{says}}</span>
+    <button type="button" class="facet-tag__remove" name="mybutton" value="{{locationsNospace}}" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+    </span>
+
+    {% endfor %}
+
+    </div>  </div>
+
+         <!-- <div class="facet-tags__group" id="fc-location">
+           <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Pre-examination:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text govuk-!-margin-right" style="font-family:arial,sans-serif;">Additional submissions</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span>   </div>
+         </div>
+
+
+
+                  <div class="facet-tags__group" id="fc-say">
+                    <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Pre-examination:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text govuk-!-margin-right" style="font-family:arial,sans-serif;">Additional submissions</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span>   </div>
+                  </div> -->
+
     <p class="govuk-body govuk-!-margin-top-3"><a href="#" class="govuk-link" id="clearfilter">Clear filters</a></p>
     </div>
 
+
+
+
+
 {% if (data['filtersapplied']=="true") %}
-<h3 class="govuk-heading-m" >Filtered results</h3>
+<!--<h3 class="govuk-heading-m" >Filtered results</h3>
    <div class="facet-tags__group"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Acceptance:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Other documents</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">  </div> </div>
-<p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>
+<p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>-->
 {% endif %}
 {% if (data['filtersapplied']=="publishedbetween") %}
 <h3 class="govuk-heading-m">Filtered results</h3>
@@ -1565,7 +1692,7 @@ font-size:16pt;
 {% endif %}
 
 {% if (data['filtersapplied']=="multiple") %}
-<h3 class="govuk-heading-m">Filtered results</h3>
+<!-- <h3 class="govuk-heading-m">Filtered results</h3>
    <div class="facet-tags__group">
      <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Acceptance:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text govuk-!-margin-right" style="font-family:arial,sans-serif;">Acceptance letter</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span>  <span class="facet-tags__preposition"> &nbsp;</span><span class="facet-tag  govuk-!-margin-right-3">  <span class="facet-tag__text" style="font-family:arial,sans-serif;">Other documents</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div>
    </div>
@@ -1581,121 +1708,11 @@ font-size:16pt;
    <div class="facet-tags__group">
      <div class="facet-tags__wrapper"> <span class="facet-tags__preposition"  style="font-family:arial,sans-serif; padding-right: 10px;">Date to:</span> <span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text govuk-!-margin-right" style="font-family:arial,sans-serif;">30 March 2021</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span>   </div>
    </div>
-<p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p>
+<p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p> -->
 {% endif %}
-{% if (data['filtersapplied']=="true") %}
-<p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">2</span> of <span class="govuk-!-font-weight-bold">2</span> projects.  </p>
 
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-2">|</span> <span class="govuk-!-margin-left-2"><a href="#">50</a></span> <span class="govuk-!-margin-left-2">|</span><span class="govuk-!-margin-left-2"> <a href="#">100</a></span>
-
-{% else %}
   <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> projects, newest first.  </p>
   <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-1">|</span> <span class="govuk-!-margin-left-1"><a href="#">50</a></span> <span class="govuk-!-margin-left-1">|</span><span class="govuk-!-margin-left-1"> <a href="#">100</a></span>
-  {% endif %}
-
- {% if (data['filtersapplied']=="true") %}
- <ul class="pins-govuk-result-list">
-
-
-
- <li class="pins-govuk-result-list__item">
-   <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
-     Section 55 Checklist (PDF, 295KB)
-   </a>
-   <p class="pins-govuk-result-list__item-description ">
-
-       From the planning inspectorate
-
-   </p>
-   <div class="govuk-grid-row document-metadata">
-     <div class="govuk-grid-column-one-third" data-cy="published-date">
-       29 June 2021
-     </div>
-     <div class="govuk-grid-column-one-third" data-cy="published-stage">
-       Acceptance (review of the application)
-     </div>
-     <div class="govuk-grid-column-one-third" data-cy="published-title">
-       Procedural Decisions
-     </div>
-   </div>
- </li>
-
-   <li class="pins-govuk-result-list__item">
-     <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
-       Notification of Decision to Accept Application   (PDF, 138KB)
-     </a>
-     <p class="pins-govuk-result-list__item-description ">
-
-         From the planning inspectorate
-
-     </p>
-     <div class="govuk-grid-row document-metadata">
-       <div class="govuk-grid-column-one-third" data-cy="published-date">
-         28 June 2021
-       </div>
-       <div class="govuk-grid-column-one-third" data-cy="published-stage">
-         Acceptance (review of the application)
-       </div>
-       <div class="govuk-grid-column-one-third" data-cy="published-title">
-         Acceptance letter
-       </div>
-     </div>
-   </li>
-
-   <!--<li class="pins-govuk-result-list__item">
-     <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-000001-Smalll Test document for Doc upload.pdf"target="_blank">
-       Examination library with reference numbers (PDF, 68KB)
-     </a>
-     <p class="pins-govuk-result-list__item-description ">
-
-         From the planning inspectorate
-
-     </p>
-     <div class="govuk-grid-row document-metadata">
-       <div class="govuk-grid-column-one-third" data-cy="published-date">
-         25 June 2021
-       </div>
-       <div class="govuk-grid-column-one-third" data-cy="published-stage">
-         Acceptance (review of the application)
-       </div>
-       <div class="govuk-grid-column-one-third" data-cy="published-title">
-  Examination       </div>
-     </div>
-   </li>-->
-
-
-</ul>
- {% else %}
-
-
-
-<ul class="pins-govuk-result-list">
-
-  <!--<li class="pins-govuk-result-list__item">
-  <a class="govuk-link pins-govuk-result-list__item-title" href="https://nitestaz.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf" target="_blank">
-    Examination library with reference numbers (PDF, 68KB)
-  </a>
-  <p class="pins-govuk-result-list__item-description ">
-
-      From the planning inspectorate
-
-  </p>
-  <div class="govuk-grid-row document-metadata">
-    <div class="govuk-grid-column-one-third" data-cy="published-date">
-      25 June 2021
-    </div>
-    <div class="govuk-grid-column-one-third" data-cy="published-stage">
-      Acceptance (review of the application)
-    </div>
-    <div class="govuk-grid-column-one-third" data-cy="published-title">
-Acceptance       </div>
-  </div>
-</li>-->
-
-
-
-
- {% endif %}
 
 
    {% if data['Mefilylist'] | length %}<table class="govuk-table" data-module="moj-sortable-table">
@@ -1736,7 +1753,9 @@ Acceptance       </div>
     {% endif %}
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">{{ fileproject.projectname }}</td>
+      <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
+   <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="{{loop.index - 1}}">
+<span aria-hidden="true">{{ fileproject.projectname }}</span><span class="govuk-visually-hidden">Review data for {{fileproject.projectname}}</span></a></td>
       <td class="govuk-table__cell">{{ fileproject.promotername }}</td>
       <!--   <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell"></td>-->
@@ -1835,7 +1854,7 @@ Acceptance       </div>
 
 
                    </ul>
-          <p class="moj-pagination__results">Showings <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> results</p>
+          <p class="moj-pagination__results">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> results</p>
           {% endif %}
 
 
@@ -1873,7 +1892,12 @@ Acceptance       </div>
     {% block pageScripts %}
     <script>
       $(document).ready(function(){
-          $("#pre-application-opener").hide();
+          $("#fc-type").hide();
+          $("#stage-opener").hide();
+          $("#type-opener").hide();
+          $("#location-opener").hide();
+          $("#yoursay-opener").hide();
+          hideTags();
           $("#developer-application-opener").hide();
           $("#acceptance-opener").hide();
           $("#pre-examination-opener").hide();
@@ -1884,11 +1908,26 @@ Acceptance       </div>
           $("#say-opener").hide();
           $("#filter-tags").hide();
 
-          $("#pre-application-toggle").click(function(){
-          //  alert("pre-app") ;
-          $("#pre-application-opener").toggle();
-        });
           $("#type-toggle").click(function(){
+          //  alert("pre-app") ;
+          $("#type-opener").toggle();
+        });
+
+        $("#location-toggle").click(function(){
+        //  alert("pre-app") ;
+        $("#location-opener").toggle();
+      });
+
+      $("#yoursay-toggle").click(function(){
+      //  alert("pre-app") ;
+      $("#yoursay-opener").toggle();
+    });
+
+          $("#stage-toggle").click(function(){
+          //  alert("pre-app") ;
+          $("#stage-opener").toggle();
+        });
+          $("#developer-application-toggle").click(function(){
           //  alert("here") ;
           $("#developer-application-opener").toggle();
         });
@@ -1916,7 +1955,9 @@ Acceptance       </div>
           });
 
           $("#show-all").click(function(){
-            $("#pre-application-opener").toggle();
+            $("#stage-opener").toggle();
+            $("#type-opener").toggle();
+            $("#location-opener").toggle();
             $("#developer-application-opener").toggle();
             $("#acceptance-opener").toggle();
             $("#pre-examination-opener").toggle();
@@ -1927,32 +1968,95 @@ Acceptance       </div>
             $("#say-opener").toggle();
             });
 
-              $("input[type='checkbox']").click(function(){
-              //alert(this).val;
+              $("input[name='stage']").click(function(){
                   $("#filter-tags").show();
+                  $("#fc-stage").show();
+                  $("#tag-" + this.value).show();
                 });
 
-                $("#myacceptance").click(function(){
-                  alert("HERE");
-                  //  $("#groupOne").hide();
-                    });
-
-                $("#clearfilter").click(function(){
-                  //alert("$this.val");
-                  //  alert("helo");
-                   $("#filter-tags").hide();
+                $("input[name='sector']").click(function(){
+                    $("#fc-type").show();
+                    $("#filter-tags").show();
+                    $("#tag-" + this.value).show();
                   });
 
-                //
-                // $("#myacceptance").click(function(){
-                //   alert("helo");
-                //       //;$(this).hide();
-                //     });
+                  $("input[name='say']").click(function(){
+                      $("#fc-say").show();
+                      $("#filter-tags").show();
+                      $("#tag-" + this.value).show();
+                    });
+
+                  $("input[name='location']").click(function(){
+                     //alert(this.value) ;
+                      $("#fc-projectlocation").show();
+                      $("#filter-tags").show();
+                      $("#tag-" + this.value).show();
+                    });
+
+                  $("input[type='button']").click(function(){
+                  //  alert("clicked") ;
+                    });
+
+                    $("button[name='mybutton']").click(function(){
+                        $("#tag-" + this.value).hide();
+                      });
 
 
+                $("#myacceptance").click(function(){
+
+                    });
+
+
+
+                $("#clearfilter").click(function(){
+                  hideTags();
+                  $("#stage-opener").hide();
+                  $("#type-opener").hide();
+                  $("#location-opener").hide();
+                  $("#yoursay-opener").hide();
+                  $('input[type="checkbox"]').each(function() {
+			            this.checked = false;});
+                  $("#filter-tags").hide();
+                  });
 
 
      });
+
+     function hideTags() {
+       //alert("got here") ;
+       $("#tag-Pre-application").hide();
+       $("#tag-Acceptance").hide();
+       $("#tag-Pre-examination ").hide();
+       $("#tag-Examination").hide();
+       $("#tag-Recommendation").hide();
+       $("#tag-Decision").hide();
+       $("#tag-Decided").hide();
+       $("#fc-type").hide();
+       $("#fc-location").hide();
+       $("#fc-say").hide();
+
+       $("#fc-stage").hide();
+       $("#tag-Business").hide();
+       $("#tag-Energy").hide();
+       $("#tag-Transport").hide();
+       $("#tag-Water").hide();
+       $("#tag-Waste").hide();
+       $("#tag-Waste-Water").hide();
+
+       $("#tag-EastMidlands").hide();
+       $("#tag-Eastern").hide();
+       $("#tag-NorthEast").hide();
+       $("#tag-NorthWest").hide();
+       $("#tag-SouthEast").hide();
+       $("#tag-SouthWest").hide();
+       $("#tag-Wales").hide();
+       $("#tag-WestMidlands").hide();
+       $("#tag-YorkshireandtheHumber").hide();
+
+       $("#tag-Registertohaveyoursay").hide();
+       $("#tag-Haveyoursay").hide();
+
+}
 
 
     // on click of any change-item link
