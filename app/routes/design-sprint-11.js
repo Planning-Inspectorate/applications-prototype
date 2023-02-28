@@ -1004,6 +1004,24 @@ req.session.data['stages'] = stages;
 //console.log(req.session.data['stages']);
 
 
+location = new Array();
+location[0] = "East Midlands";
+location[1] = "Eastern";
+location[2] ="North East"; ;
+location[3] = "North West";
+location[4] = "South East";
+location[5] ="South West";
+location[6] = "Wales";
+location[7] ="West Midlands";
+location[8] = "Yorkshire and the Humber";
+
+req.session.data['location'] = location;
+
+say = new Array();
+say[0] = "Register to have your say";
+say[1] = "Have your say";
+req.session.data['say'] = say;
+
 req.session.data['stagesSecond'] = [
     {
       1 : "pre-application",
