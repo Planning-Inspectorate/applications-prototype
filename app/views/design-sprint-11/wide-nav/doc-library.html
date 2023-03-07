@@ -1719,7 +1719,7 @@
 
         <div class="facet-tags__wrapper" > <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Pre-application:</span>
 
-           <span class="facet-tags__preposition"> &nbsp; </span>
+           <span class="facet-tags__preposition">&nbsp</span>
           <span class="facet-tag" id="tag-eias" name="ftag"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Environmental Impact Assessment Scoping</span>
           <button type="button" class="facet-tag__remove" name="mybutton" value="eias" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from] id="btn-eias">✕</button>
         </span><span id="br-eias"></br> </span>
@@ -1755,7 +1755,8 @@
           <span class="facet-tags__preposition"> &nbsp; </span>
           <span class="facet-tag"id="tag-application-form" name="ftag"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Application Form</span>
           <button type="button" class="facet-tag__remove" name="mybutton" value="application-form" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]" id="btn-application-form">✕</button>
-        </span><span id="br-application-form"></br> </span>
+        </span>
+        <span id="br-ddco"></br></span>
         <span class="facet-tags__preposition"> &nbsp; </span>
         <span class="facet-tag" id="tag-ddco" name="ftag"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Draft Development Consent Orders</span>
         <button type="button" class="facet-tag__remove" name="mybutton" value="ddco" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]" id="btn-ddco">✕</button>
@@ -1764,6 +1765,7 @@
       <span class="facet-tag" id="tag-environmental-statement" name="ftag"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Environmental Statement</span>
       <button type="button" class="facet-tag__remove" name="mybutton" value="environmental-statement" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]" id="btn-environmental-statement">✕</button>
     </span>
+    <span id="br-other-dev"></br></span>
     <span class="facet-tags__preposition"> &nbsp; </span>
     <span class="facet-tag" id="tag-other-dev" name="ftag"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Other documents</span>
     <button type="button" class="facet-tag__remove" name="mybutton" value="other-dev" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]" id="btn-other-dev">✕</button>
@@ -2511,7 +2513,7 @@ Deadline 2       </div>
           $("#br-ddco").hide();
           $("#br-environmental-statement").hide();
           $("#br-plans").hide();
-
+          $("#br-other-dev").hide();
 
           $("#pre-application-opener").hide();
           $("#developer-application-opener").hide();
@@ -2535,6 +2537,8 @@ Deadline 2       </div>
 
         $("input[name='pre-application']").click(function(){
           // alert("#br-" + this.value)
+          if (this.checked == true)
+         {
           $("#filter-tags").show();
           $("#fc-pre-application").show();
 
@@ -2542,6 +2546,13 @@ Deadline 2       </div>
         //  alert(this.value) ;
          $("#tag-" + this.value).show();
          $("#br-" + this.value).show();
+        }
+       else {
+         $("#tag-" + this.value).hide();
+          $("#br-" + this.value).show();
+
+       }
+
           });
 
           $("input[name='developers-application']").click(function(){
@@ -2567,15 +2578,17 @@ Deadline 2       </div>
             });
 
             $("button[name='mybutton']").click(function(){
-               //alert(this.value) ;
+            //  alert(this.value) ;
                 $("#tag-" + this.value).hide();
                 $( "#chk-" + this.value).prop( "checked", false );
+              //  $('input[type="checkbox"]').each(function() {
+            //    this.checked = false;});
+
               });
 
 
-
           $("#developer-application-toggle").click(function(){
-            //alert($("#developer-application-toggle").attr("aria-expanded")) ;
+          //alert($("#developer-application-toggle").attr("aria-expanded")) ;
             if ($("#developer-application-toggle").attr("aria-expanded") == "true")
             {
               $("#developer-application-toggle").attr("aria-expanded","false");

@@ -1091,7 +1091,7 @@ req.session.data['stagesSecond'] = [
 
   //  let showlist = req.session.data['newProjectList'] ;
   //    console.log(req.session.data['newProjectList']);
-    res.redirect("search");
+    res.redirect("index");
 
 }
 );
