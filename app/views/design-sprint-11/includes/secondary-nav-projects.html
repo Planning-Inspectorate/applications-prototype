@@ -9,13 +9,14 @@
 
   <ul class="moj-sub-navigation__list">
    <li class="moj-sub-navigation__item">
-     <a class="moj-sub-navigation__link" aria-current="page" href="#1">Projects</a>
+     <a class="moj-sub-navigation__link" {% if 'index' in secondarynavprojects %} aria-current="page"{% endif %}href="index">Projects</a>
    </li>
 
    <li class="moj-sub-navigation__item">
-     <a class="moj-sub-navigation__link" href="register">Register of applications</a>
+     <a class="moj-sub-navigation__link" {% if 'register' in secondarynavprojects %} aria-current="page"{% endif %}href="register">Register of applications</a>
    </li>
 
+   
 
  </ul>
 
