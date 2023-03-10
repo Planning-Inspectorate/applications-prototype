@@ -2581,6 +2581,24 @@ Deadline 2       </div>
             //  alert(this.value) ;
                 $("#tag-" + this.value).hide();
                 $( "#chk-" + this.value).prop( "checked", false );
+                var numberOfChecked = $('input:checkbox:checked').length;
+              //  var numberOfChecked =  $('checkbox[name=pre-application][]:checked').length;
+              //  alert(numberOfChecked);
+                if (numberOfChecked == 0){
+                $("#filter-tags").hide();
+                clearall();
+              }
+
+            //  var counttwo = $('input[name="pre-application[]"]:checked').length;
+          //   alert(counttwo);
+      //    var countByName = $('input.pre-application:checked').length;
+      //    var countByName =  $('checkbox[name=pre-application]:checked').length;
+          // var countByName=  $('checkbox[name=pre-application]]:checked').length;
+          //  var countByName= $('checkbox[name=pre-application]:checked').length;
+          //   alert(countByName);
+              // else if{$('input[name="pre-application[]"]:checked').length;{
+              //
+              // }
               //  $('input[type="checkbox"]').each(function() {
             //    this.checked = false;});
 
@@ -2666,13 +2684,12 @@ Deadline 2       </div>
                   $("#tag-eias").hide();
                   $("#br-eias").hide();
                   $("#").hide();
-$("#tag-non-acceptance-letter").hide();
-$("#tag-nops").hide();
-$("#br-nops").hide();
-$("#br-other").hide();
-$("#tag-other").hide();
-$("#tag-procedural-decisions").hide();
-
+                  $("#tag-non-acceptance-letter").hide();
+                  $("#tag-nops").hide();
+                  $("#br-nops").hide();
+                  $("#br-other").hide();
+                  $("#tag-other").hide();
+                  $("#tag-procedural-decisions").hide();
                   $("#fc-pre-application").hide();
                   $("#fc-developers-application").hide();
                   $("#fc-say").hide();
@@ -2681,8 +2698,26 @@ $("#tag-procedural-decisions").hide();
 
              }
 
+            function clearall() {
+             $("#pre-application-opener").hide();
+             $("#developer-application-opener").hide();
+             $("#acceptance-opener").hide();
+             $("#pre-examination-opener").hide();
+             $("#examination-opener").hide();
+             $("#deadlines-opener").hide();
+             $("#author-opener").hide();
+             $("#date-opener").hide();
+               $("#pre-application-toggle").attr("aria-expanded","false");
+               $("#developer-application-toggle").attr("aria-expanded","false");
+               $("#say-toggle").attr("aria-expanded","false");
+               $("#stage-toggle").attr("aria-expanded","false");
+               $('input[type="checkbox"]').each(function() {
+               this.checked = false;});
+               hideTags();
 
+               $("#filter-tags").hide();
 
+             }
 
 
      });
