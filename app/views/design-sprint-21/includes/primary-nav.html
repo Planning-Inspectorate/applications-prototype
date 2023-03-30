@@ -1,0 +1,73 @@
+
+</div>
+<div class="moj-primary-navigation">
+
+  <div class="moj-primary-navigation__container">
+
+    <div class="moj-primary-navigation__nav">
+
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+        <li class="moj-primary-navigation__item">
+          <a class="moj-primary-navigation__link" {% if 'processguide' in primarynav %} aria-current="page"{% endif %}href="/design-sprint-21/dco-process-guide/index">The planning process</a>
+        </li>
+
+
+
+        <li class="moj-primary-navigation__item">
+          <a class="moj-primary-navigation__link"{% if 'projects' in primarynav %} aria-current="page"{% endif %} href="/design-sprint-21/projects/projects-load">All projects</a>
+        </li>
+
+
+        <li class="moj-primary-navigation__item">
+          <a class="moj-primary-navigation__link"{% if 'guidance' in primarynav %} aria-current="page"{% endif %} href="#4">Services</a>
+        </li>
+
+        <li class="moj-primary-navigation__item">
+          <a class="moj-primary-navigation__link"{% if 'advicenotes' in primarynav %} aria-current="page"{% endif %} href="/design-sprint-21/advice-notes/index">Advice and guidance</a>
+        </li>
+
+        <li class="moj-primary-navigation__item">
+          <a class="moj-primary-navigation__link"{% if 'legislation' in primarynav %} aria-current="page"{% endif %} href="#">Legislation</a>
+        </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+    <div class="moj-primary-navigation__search">
+      <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find project">
+        <div class="moj-search-toggle__toggle"></div>
+        <div class="moj-search-toggle__search">
+
+          <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+
+            <form action="" method="get">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                  Search
+                </label>
+
+                <div id="search2-hint" class="govuk-hint moj-search__hint ">
+                  Enter case number, for example 123456
+                </div>
+
+                <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+
+              </div>
+
+              <button class="govuk-button moj-search__button " data-module="govuk-button">
+                Search
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="govuk-width-container">

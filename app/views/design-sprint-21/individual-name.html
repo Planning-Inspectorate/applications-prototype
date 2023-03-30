@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What's your full name?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceName: "Have your say during the Examination of the application",
+  serviceUrl: "/design-sprint-21/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form autocomplete="off" class="form" action="email" method="post">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
+            What's your name?
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="first-name">
+    First name
+  </label>
+          <input class="govuk-input govuk-input--width-20" id="first-name" name="entity[firstname]" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="last-name">
+        Last name
+        </label>
+          <input class="govuk-input govuk-input--width-20" id="last-name" name="entity[lastname]" type="text">
+          </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
