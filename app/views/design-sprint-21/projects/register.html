@@ -64,12 +64,10 @@ font-size:16pt;
   </div>
 
   <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230  </span> projects.  </p>
+  <p class="govuk-body"><a href="">Download a csv file with data for 230 projects</a></p>
+
+
   <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-1">|</span> <span class="govuk-!-margin-left-1"><a href="#">50</a></span> <span class="govuk-!-margin-left-1">|</span><span class="govuk-!-margin-left-1"> <a href="#">100</a></span>
-
-
-
-
-
 
 
    {% if data['Mefilylist'] | length %}<table class="govuk-table" data-module="moj-sortable-table">
@@ -126,9 +124,9 @@ font-size:16pt;
       <td class="govuk-table__cell">{{ fileproject.DateofAcceptance }}</td>
 
       <!--   <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell"></td>-->
-      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>
-
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>-->
+<td class="govuk-table__cell">{{ stageDescription }}</td>
     </tr>
 
   {% endif %}
