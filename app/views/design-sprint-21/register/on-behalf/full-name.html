@@ -32,9 +32,27 @@ saveAndExit: false
     <div class="govuk-grid-column-two-thirds">
 
           <form autocomplete="off" class="form" action="organisation-name" method="post">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
+              What is your name?
+              </label>
+            </h1>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="behalf-first-name">
+      First name
+    </label>
+            <input class="govuk-input govuk-input--width-20" id="behalf-first-name" name="behalf-first-name" type="text" value="{{ data['behalf-first-name'] }}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="behalf-last-name">
+          Last name
+          </label>
+            <input class="govuk-input govuk-input--width-20" id="behalf-last-name" name="behalf-last-name" type="text" value="{{ data['behalf-last-name'] }}">
+            </div>
 
 
-        {{ govukInput({
+        <!-- {{ govukInput({
           label: {
             text: "What is your full name?",
             classes: "govuk-label--l",
@@ -44,7 +62,7 @@ saveAndExit: false
           name: "behalf-full-name",
 
           spellcheck: false
-        }) }}
+        }) }} -->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

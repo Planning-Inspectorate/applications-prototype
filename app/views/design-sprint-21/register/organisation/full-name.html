@@ -7,7 +7,7 @@
 {% block header %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceName: "Register to have your say about a national infrastructure project",
     serviceUrl: "/mvp/pre-examination/register/start",
 saveAndExit: false
   }) }}
@@ -30,8 +30,25 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
+        What is your name?
+        </label>
+      </h1>
       <form autocomplete="off" class="form" action="over-18" method="post">
-        {{ govukInput({
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="organisation-first-name">
+  First name
+</label>
+        <input class="govuk-input govuk-input--width-20" id="organisation-first-name" name="organisation-first-name" type="text" value="{{ data['organisation-first-name'] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="organisation-last-name">
+      Last name
+      </label>
+        <input class="govuk-input govuk-input--width-20" id="organisation-last-name" name="organisation-last-name" type="text" value="{{ data['organisation-last-name'] }}">
+        </div>
+        <!-- {{ govukInput({
           label: {
             text: "What is your full name?",
             classes: "govuk-label--l",
@@ -40,7 +57,7 @@ saveAndExit: false
           id: "organisation-full-name",
           name: "organisation-full-name",
           spellcheck: false
-        }) }}
+        }) }} -->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

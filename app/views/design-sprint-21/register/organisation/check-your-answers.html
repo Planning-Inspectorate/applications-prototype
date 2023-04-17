@@ -4,7 +4,7 @@ to have your say {% endblock %}
 {% block header %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceName: "Register to have your say about a national infrastructure project",
     serviceUrl: "/mvp/pre-examination/register/start",
 saveAndExit: false
   }) }}
@@ -45,7 +45,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           Full name
         </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['organisation-full-name'] }}
+            {{ data['organisation-first-name'] }} {{ data['organisation-last-name'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="full-name">
