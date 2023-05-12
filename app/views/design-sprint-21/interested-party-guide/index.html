@@ -19,7 +19,6 @@
   {{ pinsHeader(
    {  returnToOverviewContent: "Return to the A414 Dewsbury overview",      returnToOverviewLink: "../pre-examination"}
 ) }}{% endblock %}
-
 {% block beforeContent %}
 
   {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -30,7 +29,7 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <div class="govuk-breadcrumbs">
+  <!-- <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
         <a class="govuk-breadcrumbs__link" href="../index.html">Home</a>
@@ -39,7 +38,8 @@
         Interested Party Guide
       </li>
     </ol>
-  </div>
+  </div> -->
+    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
