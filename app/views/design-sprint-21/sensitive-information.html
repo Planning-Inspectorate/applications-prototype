@@ -39,24 +39,30 @@ Does your submission contain personal information?
     <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <span class="govuk-caption-l">Deadline item:<br/>{{data['deadlineitem']['deadlinename']}}</span>
-        {% if data['deadlineitem']['submissiontext']=="Both" %}
         <h1 class="govuk-fieldset__heading">
-          Do your comment and files contain personal information?
+          Does your submission contain personal information?
         </h1>
+        <!-- {% if data['deadlineitem']['submissiontext']=="Both" %}
+        <h1 class="govuk-fieldset__heading">
+          Does your submission contain personal information?
+        </h1>
+        {% set hintText = "comment and files contain" %}
       {% endif %}
       {% if data['deadlineitem']['submissiontext']=="Files" %}
         <h1 class="govuk-fieldset__heading">
-          Do your files contain personal information?
+          Does your submission contain personal information?
         </h1>
+        {% set hintText = "files contain" %}
         {% endif %}
         {% if data['deadlineitem']['submissiontext']=="Comment" %}
         <h1 class="govuk-fieldset__heading">
-          Does your comment contain personal information?
+          Does your submission contain personal information
         </h1>
-        {% endif %}
+        {% set hintText = "comment contains" %}
+        {% endif %} -->
       </legend>
       <div id="sensitive-information-hint" class="govuk-hint">
-        <p class="govuk-hint">Check if your files contain information about:</p>
+        <p class="govuk-hint">Check if your submission contains personal information:</p>
 
         <ul class="govuk-list govuk-list--bullet govuk-hint">
           <li>children</li>
