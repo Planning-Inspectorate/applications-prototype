@@ -159,7 +159,7 @@ font-size:16pt;
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="chk-Decided" name="stage" type="checkbox" value="Decided">
             <label class="govuk-label govuk-checkboxes__label" for="stage-5">
-        Post decision (33)
+        Decided (33)
       </label>
 
           </div>
@@ -306,6 +306,48 @@ Waste water (16)
 </div>
 
 
+<div class="app-c-option-select js-collapsible js-closed" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+  <h2 class="app-c-option-select__heading js-container-heading">
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="say-toggle" aria-controls="report_type">Have your say</button>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h2>
+  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
+
+
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="say-opener">
+
+<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Have your say</legend>
+
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p>
+
+
+{% for says  in data['say'] %}
+
+{% set saysNospace  = says | replace(" ","") %}
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="chk-{{saysNospace}}" name="say" type="checkbox" value="{{saysNospace}}">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application">
+{{says}} (3)
+</label>
+
+</div>
+
+{% endfor %}
+
+
+</ul>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
 
 <!--
 
@@ -1532,7 +1574,7 @@ Waste water (16)
 <button type="button" class="facet-tag__remove" name="mybutton" value="Decision"  aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
 </span>
 <span class="facet-tags__preposition"> &nbsp; </span>
-<span class="facet-tag" id="tag-Decided"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Post decision</span>
+<span class="facet-tag" id="tag-Decided"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Decided</span>
 <button type="button" class="facet-tag__remove" name="mybutton" value="Decided"  aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
 </span>
 
@@ -1669,7 +1711,7 @@ Waste water (16)
 <p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p> -->
 {% endif %}
 
-  <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> projects</p>
+  <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">230</span> projects, newest first.  </p>
   <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-1">|</span> <span class="govuk-!-margin-left-1"><a href="#">50</a></span> <span class="govuk-!-margin-left-1">|</span><span class="govuk-!-margin-left-1"> <a href="#">100</a></span>
 
     <!-- <table class="govuk-table" data-module="moj-sortable-table">-->
@@ -1761,7 +1803,6 @@ Waste water (16)
 
                   {% set stagenum = index.loopPosition | int %}
 
-loop.index
 
                   {{ stagenum | int  }}
 
@@ -1774,14 +1815,8 @@ loop.index
                   <td class="govuk-table__cell"></td>
                   <td class="govuk-table__cell"><span id="list-convictions-status"> {{  project.stage }}</span></td>
                 <!--  <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="#{{loop.index - 1}}#">
-    <span aria-hidden="true">Review</span><span class="govuk-visually-hidden">Review data for #{{fileproject.projectname}}#</span></a>            {{loop.index}}
-                loop.index</td>
+    <span aria-hidden="true">Review</span><span class="govuk-visually-hidden">Review data for #{{fileproject.projectname}}#</span></a></td>
                   </tr>
-
-      
-
-
-
                   {% else %}
                   <li>There are no projects </li>
                   {% endfor %}
