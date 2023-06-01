@@ -72,19 +72,7 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Making submission for
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{data['entity']['whofor']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="who-for">
-                    Change<span class="govuk-visually-hidden"> who for</span>
-                  </a>
-                </dd>
-              </div>
+
               {% else %}
 
               <div class="govuk-summary-list__row">
@@ -101,6 +89,21 @@ Check your answers
                 </dd>
               </div>
               {% endif %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Making submission for
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{data['entity']['whofor']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="who-for">
+                    Change<span class="govuk-visually-hidden"> who for</span>
+                  </a>
+                </dd>
+              </div>
+
               {% if data['entity']['applicant']=="No" %}
 
               <!--<div class="govuk-summary-list__row">
@@ -116,7 +119,10 @@ Check your answers
                   </a>
                 </dd>
               </div>-->
-              <div class="govuk-summary-list__row">
+
+
+
+              <!-- <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Making submission for
                 </dt>
@@ -128,7 +134,7 @@ Check your answers
                     Change<span class="govuk-visually-hidden"> who are you</span>
                   </a>
                 </dd>
-              </div>
+              </div> -->
               {% endif %}
               {% if data['entity']['whofor']=="Myself" %}
               <div class="govuk-summary-list__row">
@@ -144,8 +150,8 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% endif %}
-              {% if data['entity']['whofor']=="An organisation I work for" %}
+
+              {% elif data['entity']['whofor']=="An organisation I work for" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Organisation's name
@@ -159,17 +165,25 @@ Check your answers
                   </a>
                 </dd>
               </div>
-              {% endif %}
-              {% if data['entity']['whofor']=="On behalf of another person, a family group or another organisation I do not work for" %}
+
+              {% else %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Submitting on behalf of
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['entity']['othername']}}
+                  {% if data['entity']['whofor']=="On behalf of another person" %}
+                   {% set pageLink = "other-person" %}
+                    {{data['entity']['firstname']}}   {{data['entity']['lastname']}}
+                  {% else %}
+                    {{data['entity']['othername']}}
+                    {% set pageLink = "other-name" %}
+                  {% endif %}
+
+
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="organisation-name">
+                  <a class="govuk-link" href="{{pageLink}}">
                     Change<span class="govuk-visually-hidden"> organisation's name</span>
                   </a>
                 </dd>

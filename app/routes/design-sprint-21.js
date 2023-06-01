@@ -187,12 +187,16 @@ module.exports = function (router) {
     // get the type of interested party
     var whofor = req.session.data['entity']['whofor'];
     // if an individual, show individual flow
+    console.log(whofor);
     if (whofor == "Myself") {
       res.redirect("individual-name");
       // otherwise, show on behalf flow
     } else if (whofor=="An organisation I work for") {
       res.redirect("organisation-name");
 
+    }
+    else if (whofor=="On behalf of another person") {
+      res.redirect("other-person");
     }
     else {
       res.redirect("other-name");
