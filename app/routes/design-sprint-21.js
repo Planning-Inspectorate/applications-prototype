@@ -967,10 +967,11 @@ router.post("/design-sprint-21/projects/view-case-form-answer", function(req, re
 
 router.get("/design-sprint-21/projects/projects-load", function (req, res) {
     console.log("The get is running new");
+      req.session.data['drax'] = "false" ;
 const  filelistcb = require('../data/project-list-play.json')
 
 console.log(filelistcb[0].projectname);
-
+    req.session.data['filtersapplied'] = "false"
 req.session.data['Mefilylist'] = filelistcb ;
 
 //
@@ -996,22 +997,61 @@ fs.readFile('app/data/project-list.json', 'utf8', (error, data) => {
 
 
 stages = new Array();
-stages[1] = "pre-application";
-stages[2] ="acceptance"; ;
-stages[3] = "pre-exam";
-stages[4] = "pre-application";
-stages[5] ="acceptance"; ;
-stages[6] = "pre-exam";
+stages[0] = "Pre-application";
+stages[1] ="Acceptance"; ;
+stages[2] = "Pre-examination";
+stages[3] = "Examination";
+stages[4] ="Recommendation";
+stages[5] = "Decision";
+stages[6] = "Post decision";
+stages[7] = "Withdrawn";
 
 req.session.data['stages'] = stages;
 //console.log("write");
 //console.log(req.session.data['stages']);
 
 
+subtypes = new Array();
+subtypes[0] = "An Industrial Process or Processes";
+subtypes[1] = "Leisure";
+subtypes[2] = "Generating Station";
+subtypes[3] = "Electric line";
+subtypes[4] = "Underground Gas Storage Facility";
+subtypes[5] = "Gas Transporter Pipe-line";
+subtypes[6] = "Other Pipe-line";
+subtypes[7] = "Electric line";
+subtypes[8] = "Highways";
+subtypes[9] = "Airports";
+subtypes[10] = "Harbour Facilities";
+subtypes[11] = "Railways";
+subtypes[12] = "Rail Freight Interchanges";
+subtypes[13] = "Transfer of Water Resources";
+subtypes[14] = "Hazardous Waste Facilities";
+subtypes[15] = "Waste Water treatment Plants";
+
+req.session.data['subtypes'] = subtypes;
+
+
+
+types = new Array();
+types[0] = "Business and commercial";
+types[1] ="Energy";
+types[2] = "Transport";
+types[3] = "Water";
+types[4] ="Waste";
+types[5] = "Waste water";
+
+req.session.data['types'] = types;
+
+
+
+
+
+
 location = new Array();
 location[0] = "East Midlands";
 location[1] = "Eastern";
-location[2] ="North East"; ;
+location[2] ="North East";
 location[3] = "North West";
 location[4] = "South East";
 location[5] ="South West";
@@ -1099,5 +1139,59 @@ req.session.data['stagesSecond'] = [
 
 }
 );
+
+
+router.post("/design-sprint-21/project-filter-answer",
+  function (req, res) {
+    //var unsubscribeChange = req.session.data["type-of-updates"];
+    let  mylocation = req.session.data['chk-location'];
+    console.log(mylocation);
+    if (mylocation)
+    {
+      console.log(mylocation.length);
+      req.session.data['tag-location-show']= "true" ;
+    }
+
+    //req.session.data["mvp-type-of-interested-party"];
+   //console.log(mylocation.length);
+    req.session.data['filtersapplied'] = "true"
+
+      res.redirect("/design-sprint-21/projects/index");
+
+
+});
+
+
+router.post("/design-sprints-21/form-drax",
+  function (req, res) {
+    //var unsubscribeChange = req.session.data["type-of-updates"];
+    req.session.data['drax'] = "true" ;
+
+  req.session.data['Mefilylist'] =   [{
+      "casereference" : "EN010120",
+      "projectname" : "Drax Bioenergy with Carbon Capture and Storage Project",
+      "proposal" : "EN01 - Generating Stations",
+      "projectlocation" : "Immedtiately to the East of Dogger Bank C Wind Farm, in the North Sea.",
+      "stage" : 4,
+      "promotername" : "Gatroben Developments 2 Limited",
+      "webaddress" : "https://www.sserenewables.com/",
+      "summary" : "Dogger Bank D (DBD) Wind Farm encompass a circa 1300MW offshore wind farm, offshore and onshore high voltage transmission infrastructure connecting into the National Grid or another offtake solution",
+      "projectemailaddress" : "doggerbankd@planninginspectorate.gov.uk",
+      "DateofAcceptance" : "0000-00-00",
+      "DateofApplication" : "0000-00-00"
+    }
+  ]
+
+  //Medrax = req.session.data['drax'] = filelistcb ;
+
+    //req.session.data["mvp-type-of-interested-party"];
+   console.log(req.session.data['drax']);
+     req.session.data['filtersapplied'] = "false" ;
+
+      res.redirect("/design-sprint-21/projects/index");
+
+
+});
+
 
 };
