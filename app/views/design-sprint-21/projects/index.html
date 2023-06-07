@@ -1216,7 +1216,7 @@ font-size:16pt;
     {% for fileproject in data['Mefilylist'] %}
 
 
-
+    <!-- <p>{{loop.index}}</p> -->
 
 
     {% if fileproject.stage == 8 %}
@@ -1241,6 +1241,9 @@ font-size:16pt;
 
     {% endif %}
 
+    {% if loop.index > 24 %}
+  {% else %}
+
     <tr class="govuk-table__row">
       <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
    <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="{{loop.index - 1}}">
@@ -1252,6 +1255,8 @@ font-size:16pt;
             <td class="govuk-table__cell">{{  stageDescription }}</td>
 
     </tr>
+      {% endif %}
+
     {% else %}
     <li>There are no projects </li>
     {% endfor %}
