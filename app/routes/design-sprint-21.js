@@ -1154,7 +1154,10 @@ router.post("/design-sprint-21/project-filter-answer",
 
     //req.session.data["mvp-type-of-interested-party"];
    //console.log(mylocation.length);
-    req.session.data['filtersapplied'] = "true"
+    req.session.data['filtersapplied'] = "true" ;
+  req.session.data['drax'] = "false" ;
+  let filelistall = require('../data/project-list-play.json')
+  req.session.data['Mefilylist'] = filelistall ;
 
       res.redirect("/design-sprint-21/projects/index");
 
@@ -1187,6 +1190,7 @@ router.post("/design-sprints-21/form-drax",
     //req.session.data["mvp-type-of-interested-party"];
    console.log(req.session.data['drax']);
      req.session.data['filtersapplied'] = "false" ;
+
 
       res.redirect("/design-sprint-21/projects/index");
 

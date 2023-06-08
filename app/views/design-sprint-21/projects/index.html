@@ -365,13 +365,15 @@ font-size:16pt;
   <!-- <p class="govuk-body">Search by project name, developer name or stage</p>-->
   <div>
     {% if (data['drax']=="true") %}
+
    <input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="Drax">
    {% else %}
+    <form action="/design-sprints-21/form-drax" method="post">
    <input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
      {% endif %}
    <button class="govuk-button" data-cy="search-button">Search</button>
    </div>
-
+   </form>
 
 
 {% if (data['showfilters']=="true") %}
@@ -1252,8 +1254,11 @@ font-size:16pt;
       <!--   <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell"></td>-->
       <!--<td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>-->
-            <td class="govuk-table__cell">{{  stageDescription }}</td>
-
+        {% if data['chk-stages'] %}
+            <td class="govuk-table__cell">{{data['chk-stages'][0]}}</td>
+        {% else %}
+            <td class="govuk-table__cell">{{stageDescription }}</td>
+            {% endif %}
     </tr>
       {% endif %}
 
