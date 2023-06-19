@@ -30,7 +30,44 @@
     <div class="govuk-grid-column-two-thirds">
       <form autocomplete="off" class="form" action="unsubscribed" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                {{ govukCheckboxes({
+                  name: "type-of-updates-2",
+                  fieldset: {
+                    legend: {
+                      text: "How often do you want to get updates about the project?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+
+                  items: [
+                    {
+                      value: "Each time we update the project (you may get more than one email a day)",
+                      text: "Each time we update the project (you may get more than one email a day)",
+                      behaviour: "exclusive"
+                    },
+                    {
+                      divider: "or"
+                    },
+                    {
+                      value: "application is submitted",
+                      text: "When the application is submitted"
+                    },
+                    {
+                      value: "registration of Interested Parties opens",
+                      text: "When you can register to have your say"
+                    },
+
+                    {
+                      value: "none",
+                      text: "Only when the final decision has been made"
+                    }
+                  ]
+                }) }}
+
+
+        <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
             idPrefix: "type-of-updates-2",
@@ -52,7 +89,7 @@
                 text: "Only when the final decision has been made"
               }
             ]
-          }) }}
+          }) }} -->
 
         <button class="govuk-button" data-module="govuk-button">Confirm</button>
 
