@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Get updates about this project",
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-panel govuk-panel--confirmation">
+                    <h1 class="govuk-panel__title">
+                      Get updates success
+                    </h1>
+                    <div class="govuk-panel__body">
+                      You have subscribed to emails about Drax Bioenergy with Carbon Capture and Storage overview
+                    </div>
+                  </div>
+
+
+          <!-- <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Success
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <h3 class="govuk-notification-banner__heading">
+    You have subscribed to emails about Drax Bioenergy with Carbon Capture and Storage overview
+  </h3>
+  <!--<p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p>
+</div>
+</div>
+
+            <h1 class="govuk-heading-l">
+             Get updates success
+            </h1>
+            <!--<p>You are subscribed to email updates about the A404 Dewsbury project.</p>-->
+            <h2 class="govuk-heading-m">What happens next</h2>
+            {% if (data['type-of-updates'] == "final")  %}
+            <p class="govuk-body">You will  be sent an email when the final decision is made</p>
+
+              {% else  %}
+              <p class="govuk-body">You will  be sent an email each time we update the project</p>
+
+            {% endif  %}
+            <!-- <p>We'll send updates when information about the proposed development is added to the planning inspectorate website.</p> -->
+            <p><a href="../project-overview/index-dynamic" class="govuk-link">View Drax Bioenergy with Carbon Capture and Storage overview</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ pinsFooter() }}
+{% endblock %}

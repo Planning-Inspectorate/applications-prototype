@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceName: "Have your say during the examination of the application",
+  serviceUrl: "/design-sprint-26/start/"
+
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form autocomplete="off" class="form" action="who-for-answer" method="post">
+  <div class="govuk-form-group">
+
+    <fieldset class="govuk-fieldset">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+      <h1 class="govuk-fieldset__heading">
+        Who are you making the submission for?
+      </h1>
+
+    </legend>
+
+    {% if data['entity']['ipavailable'] == "No" %}
+               <div id="whofor-item-hint" class="govuk-hint">
+             You&#39;ve not registered as an interested party. You can still submit comments, but we may not accept them.
+           </div>
+    {% endif %}
+    <div class="govuk-radios"
+      data-module="govuk-radios">
+
+
+
+
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whofor" name="entity[whofor]" type="radio" value="Myself" aria-describedby="whofor-item-hint">
+            <label class="govuk-label govuk-radios__label" for="whofor">
+          Myself
+        </label>
+
+          </div>
+
+
+
+
+
+
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whofor-2" name="entity[whofor]" type="radio" value="An organisation I work for">
+            <label class="govuk-label govuk-radios__label" for="whofor-2">
+          An organisation I work for
+        </label>
+
+          </div>
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whofor-3" name="entity[whofor]" type="radio" value="On behalf of another person">
+            <label class="govuk-label govuk-radios__label" for="whofor-3">
+          On behalf of another person
+        </label>
+
+          </div>
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whofor-4" name="entity[whofor]" type="radio" value="On behalf of a family group or another organisation I do not work for">
+            <label class="govuk-label govuk-radios__label" for="whofor-4">
+          On behalf of a family group or another organisation I do not work for
+        </label>
+
+          </div>
+
+
+
+
+    </div>
+
+
+  </fieldset>
+
+
+  </div>
+
+
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+</form>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

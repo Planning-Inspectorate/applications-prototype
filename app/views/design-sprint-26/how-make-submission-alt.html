@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How would you like to make a submission?  {% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back();"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/design-sprint-26/submission-type-routing" method="post" novalidate>
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-l">{{data['deadline']['deadline']}}</span>
+        <h1 class="govuk-fieldset__heading">
+How would you like to provide further information requested by the Examination Authority under Rule 17 of the Examination Rules?</h1>
+      </legend>
+
+
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="submission-method-upload" name="deadlineitem[submissionmethod]" type="checkbox" value="Upload files" {{ checked("['submission-method']['upload']", "Upload files") }}>
+         <label class="govuk-label govuk-checkboxes__label" for="submission-method-upload">
+           Upload files
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="submission-method-comment" name="deadlineitem[submissionmethod]" type="checkbox" value="Make a text representation" {{ checked("['submission-method']['comment']", "Make a text representation") }}>
+         <label class="govuk-label govuk-checkboxes__label" for="submission-method-comment">
+           Make a representation
+         </label>
+       </div>
+
+     </div>
+
+   </fieldset>
+ </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

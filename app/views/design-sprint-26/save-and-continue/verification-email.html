@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Example email {% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-l">Your email inbox</h3>
+    </div>
+    <!-- list of emails -->
+
+    <!-- email content starts here -->
+    <div class="govuk-grid-column-three-quarters">
+      <ul class="govuk-list">
+        <li>From: &lt;support@planninginspectorate.gov.uk&gt;</li>
+        <li>To: &lt;example@email.com&gt;</li>
+        <li>
+        Subject:
+        <strong>Continue to comment on the Drax Bioenergy with Carbon Capture and Storage Project</strong>
+        </li>
+      </ul>
+      <hr
+      class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+/>
+      <p class="govuk-body">Dear John Doe,</p>
+
+      <p class="govuk-body">
+Use the link below to continue the comment on the [PROJECT NAME].
+    </p>
+      <p class="govuk-body">
+        <a href="../check-answers">https://applications-prototype.herokuapp.com/sprint-4/check-answers</a>
+      </p>
+      <p class="govuk-body">
+      The deadline for this project closes at [DEADLINE DATE].
+    </p>
+
+      <p class="govuk-body">Yours sincerely,</p>
+      <p class="govuk-body govuk-!-margin-top-7">The planning inspectorate</p>
+    </div>
+  </div>
+{% endblock %}

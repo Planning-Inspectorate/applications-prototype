@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Examination timetable
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% endblock %}
+
+{% block content %}
+<style>
+  .breakline {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .accordionheading {
+    font-size: 24px !important;
+  }
+  </style>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'timetable' %}
+      {% include "../includes/vertical_tabs.html" %}
+<!--<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+--></nav>
+</div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-xl">Examination timetable</h1>
+      <!--<h2 class="govuk-heading-l">Examination timetable</h2>-->
+      <p class="govuk-body">The examination timetable gives the dates of events and deadlines for submissions to be made by.</p>
+        <p class="govuk-body">You can have your say during the examination stage of the project.</p>
+        <h2 class="govuk-heading-m">The examination stage</h2>
+  <p class="govuk-body">There are no dates for this yet.</p>
+
+  </div>
+</div>
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

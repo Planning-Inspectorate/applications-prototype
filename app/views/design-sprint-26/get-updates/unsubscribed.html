@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceName: "Get updates about this project",
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+              {% if (data['type-of-updates'] == "unsubscribe") %}
+              <!--  You have unsubscribed from updates about Drax Bioenergy with Carbon Capture and Storage -->
+                {% set heading = "Unsubscribe success" %}
+                {% set success = "You have unsubscribed from updates about Drax Bioenergy with Carbon Capture and Storage" %}
+              {% elif (data['type-of-updates'] == "change-address")  %}
+                {% set heading = "Confirm your new email address" %}
+              {% elif (data['type-of-updates'] == "change-frequency")  %}
+                {% set heading = "Manage your email subscriptions" %}
+                  {% if (data['type-of-updates-2'] == "final")  %}
+                      {% set success = "You will now get an email about Drax Bioenergy with Carbon Capture and Storage when the final decision has been made." %}
+                  {% else %}
+                      {% set success = "You will now get an email about Drax Bioenergy with Carbon Capture and Storage each time there is an update" %}
+
+                  {% endif %}
+              {% endif %}
+
+
+            {% if (data['type-of-updates'] == "unsubscribe" or data['type-of-updates'] == "change-frequency") %}
+        <!--    <p>You will  no longer be sent updates about Drax Bioenergy with Carbon Capture and Storage</p> -->
+
+        <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    {{heading }}
+                  </h1>
+                  <div class="govuk-panel__body">
+                    {{success }}
+                  </div>
+                </div>
+
+<!--
+
+
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+
+      <!--You have unsubscribed from updates about Drax Bioenergy with Carbon Capture and Storage
+    </h3>
+    </div>
+  </div>-->
+{% endif %}
+
+
+<!--  <h1 class="govuk-heading-l">-->
+  <!--</h1> -->
+
+
+              {% if (data['type-of-updates'] == "unsubscribe") %}
+              <h2 class="govuk-heading-m">What happens next</h2>
+               <p class="govuk-body">You will  no longer be sent updates about Drax Bioenergy with Carbon Capture and Storage</p>
+
+            {% elif (data['type-of-updates'] == "change-address")  %}
+          <!--  <p>Updates will be sent to your new mail address</p> -->
+
+
+
+            <p class="govuk-body-l">
+                We have sent an email to your new email address <strong>{% if not data['email'] %} joe.bloggs@email.com {% endif %}{{data['email']}}</strong>
+            </p>
+            <p class="govuk-body">Check your email and confirm you want to get updates about:</p>
+            <ul class="govuk-list">
+                <li>Drax Bioenergy with Carbon Capture and Storage</li>
+            </ul>
+            <p class="govuk-body">The link will stop working after 48 hours.</p>
+             {{ govukDetails({
+                summaryText: "Not received an email?",
+                html: '
+                    <p class="govuk-body">If you have not received an email to your inbox, check your spam or junk folder.</p>
+                    <p class="govuk-body">If this does not work, request a new email notification.</p>
+
+
+                    <!--<p class="govuk-body">If this does not work, <a href="#">contact us for help</a>.</p>-->
+                   '
+                }) }}
+
+
+
+
+                <a href="./verify-email-change" class="govuk-button govuk-button--secondary">Show email</a>
+            {% elif (data['type-of-updates'] == "change-frequency")  %}
+              <!-- {% if (data['type-of-updates-2'] == "final")  %}
+              <p class="govuk-body">You will  be sent an email when the final decision is made</p>
+                {% else  %}
+                <p class="govuk-body">You will  be sent an email each time we update the project</p>
+              {% endif  %} -->
+                <p class="govuk-body"><a href="unsubscribe" class="govuk-link">Manage your email subscriptions</a></p>
+            {% endif %}
+                {% if not (data['type-of-updates'] == "change-address")  %}
+              <p class="govuk-body"><a href="../pre-examination/" class="govuk-link">View Drax Bioenergy with Carbon Capture and Storage overview</a></p>
+              {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ pinsFooter() }}
+{% endblock %}

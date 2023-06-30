@@ -1,0 +1,23 @@
+<style type="text/css">
+  .moj-sub-navigation {
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+  </style>
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+   <li class="moj-sub-navigation__item">
+     <a class="moj-sub-navigation__link" {% if 'index' in secondarynavprojects %} aria-current="page"{% endif %}href="index">Projects</a>
+   </li>
+
+   <li class="moj-sub-navigation__item">
+     <a class="moj-sub-navigation__link" {% if 'register' in secondarynavprojects %} aria-current="page"{% endif %}href="register">Register of applications</a>
+   </li>
+
+   
+
+ </ul>
+
+</nav>
