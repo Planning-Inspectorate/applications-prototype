@@ -191,11 +191,11 @@ module.exports = function (router) {
     if (whofor == "Myself") {
       res.redirect("individual-name");
       // otherwise, show on behalf flow
-    } else if (whofor=="An organisation I work for") {
+    } else if (whofor=="My household") {
       res.redirect("organisation-name");
 
     }
-    else if (whofor=="On behalf of another person") {
+    else if (whofor=="On behalf of an individual") {
       res.redirect("other-person");
     }
     else {
