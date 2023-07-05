@@ -92,7 +92,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   </div>
 
           <h2 class="govuk-heading-m">About the project</h2>
-          <p>Type of application: <strong>Generating station</strong></p>
+          <p>Type of application: <strong>{{case.proposal.slice(6)}}</strong></p>
   <p class="govuk-body">
     {{case.summary}}
  </p>
