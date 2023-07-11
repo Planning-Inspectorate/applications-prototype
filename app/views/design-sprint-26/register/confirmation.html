@@ -34,8 +34,9 @@
         </div>
       </div>
 
+
       <p>
-        We have sent a confirmation email to: {{ data['email'] }}
+        We have sent a confirmation email to: {{ data['email'] if data['email'] else "your.mail@example.co.uk" }}
       </p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
