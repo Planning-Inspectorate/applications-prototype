@@ -60,6 +60,11 @@
     margin-bottom: 0;
 }
 
+.app-masthead__link {
+    color: #fff;
+    margin-bottom: 00px;
+}
+
 .app-button--inverted,
 .app-button--inverted:link,
 .app-button--inverted:visited {
@@ -108,15 +113,36 @@
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl app-masthead__title">Want to have your say on a national infrastructure project?</h1>
-        <p class="app-masthead__description">Add description text here about information for interested parties.</p>
+        <!-- <h1 class="govuk-heading-xl app-masthead__title">Want to have your say on a national infrastructure project?</h1> -->
+        <h1 class="govuk-heading-xl app-masthead__title">Find a project</h1>
+        <p class="app-masthead__description">This site lists all projects for England and Wale ......</p><br>
 
-        <a href="/get-started/" role="button" draggable="false" class="govuk-button app-button--inverted govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-button--start" data-module="govuk-button">
+        <!-- <a href="/get-started/" role="button" draggable="false" class="govuk-button app-button--inverted govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-button--start" data-module="govuk-button">
   Get started
   <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
     <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
   </svg></a>
-  <p class="govuk-!-margin-top-3 app-masthead__description">If you are an applicant, <a href="" style="color:#fff;">view applicant information</a>.</p>
+
+  <p class="govuk-!-margin-top-3 app-masthead__description">If you are an applicant, <a href="" style="color:#fff;">view applicant information</a>.</p> -->
+
+
+    <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Find a project</h2> -->
+    <div>
+       <form action="/design-sprints-21/form-drax" method="post">
+     <input class="govuk-input govuk-!-width-two-thirds" id="search" type="text" value="">
+
+     <button class="govuk-button"  data-module="govuk-button" >Search</button>
+ </form >
+     </div>
+
+     <a href="/get-started/" role="button" draggable="false" class="govuk-button app-button--inverted govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-button--start" data-module="govuk-button">
+View all projects
+<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+ <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+</svg></a>
+     <!-- <p class="govuk-body"><a href="/design-sprint-26/projects/projects-load" class="app-masthead__link">View all projects</a></p> -->
+
+</div>
 
       </div>
 
@@ -134,15 +160,22 @@
       </div>
 
       <div class="govuk-grid-column-one-half homepage-search">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Find a project</h2>
-        <div>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Guidance</h2>
+
+
+
+
+        <!-- <div>
            <form action="/design-sprints-21/form-drax" method="post">
          <input class="govuk-input govuk-!-width-two-thirds" id="search" type="text" value="">
 
          <button class="govuk-button"  data-module="govuk-button" >Search</button>
      </form >
-         </div>
-         <p class="govuk-body"><a href="/design-sprint-26/projects/projects-load">View all projects</a></p>
+         </div> -->
+           <p class="govuk-body"><a href="/design-sprint-26/projects/projects-load">How to have your say on a national infrastructure project</a></p>
+         <p class="govuk-body"><a href="/design-sprint-26/projects/projects-load">Guidance for applicants</a></p>
+            <p class="govuk-body"><a href="/design-sprint-26/projects/projects-load">Guidance for local authorities</a></p>
+
 
     </div>
   </div>

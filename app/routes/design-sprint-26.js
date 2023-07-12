@@ -881,6 +881,10 @@ router.post("/design-sprint-26/register/type-of-party", function (req, res) {
     res.redirect("myself/full-name");
 
     // if an organisation, show organisation flow
+  } else if (sprintSixTypeOfParty == "my-household") {
+    res.redirect("organisation/full-name");
+
+    // if an organisation, show organisation flow
   } else if (sprintSixTypeOfParty == "organisation") {
     res.redirect("organisation/full-name");
 
