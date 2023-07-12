@@ -7,7 +7,7 @@
 {% block header %}
   <!-- Blank header with no service name for the start page -->
     {{ pinsHeader({
-    serviceName: "Register to have your say about a national infrastructure project", 
+    serviceName: "Register to have your say about a national infrastructure project",
     serviceUrl: "/mvp/pre-examination/register/start",
 saveAndExit: false
   }) }}
@@ -30,7 +30,12 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form autocomplete="off" class="form" action="organisation-name" method="post">
+
+    {% if data['mvp-type-of-interested-party'] == "my-household" %}
+      <form autocomplete="off" class="form" action="household-name" method="post">
+        {% else %}
+          <form autocomplete="off" class="form" action="organisation-name" method="post">
+              {% endif %}
         {{ govukRadios({
           fieldset: {
             legend: {
@@ -38,7 +43,7 @@ saveAndExit: false
               isPageHeading: true,
               classes: "govuk-label--l"
             }
-          }, 
+          },
           hint: {
             text: "You can still register to have your say if you are under 18, but we will process your personal details in a different way."
           },

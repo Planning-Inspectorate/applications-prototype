@@ -29,7 +29,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           Who are you registering for?
         </dt>
           <dd class="govuk-summary-list__value">
+              {% if data['mvp-type-of-interested-party'] == "my-household" %}
+              My household
+              {% else %}
               An organisation I work or volunteer for
+              {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -70,13 +74,25 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-          What is the name of your organisation or charity?
+            {% if data['mvp-type-of-interested-party'] == "my-household" %}
+What is the name of your household?
+  {% else %}
+  What is the name of your organisation or charity?
+
+  {% endif %}
+
         </dt>
           <dd class="govuk-summary-list__value">
             {{ data['organisation-name'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="organisation-name">
+            {% if data['mvp-type-of-interested-party'] == "my-household" %}
+<a href="household-name">
+  {% else %}
+<a href="organisation-name">
+
+  {% endif %}
+
             Change
             <span class="govuk-visually-hidden">
               name of your organisation or charity</span
@@ -84,6 +100,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </a>
           </dd>
         </div>
+        {% if data['mvp-type-of-interested-party'] !== "my-household" %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           What is your job title or volunteer role?
@@ -101,6 +119,9 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           </dd>
         </div>
 
+
+
+          {% endif %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

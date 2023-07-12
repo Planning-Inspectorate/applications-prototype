@@ -43,7 +43,8 @@
 {% block beforeContent %}
   {{
 govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
-<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+<a class="govuk-link" href="#" >feedback</a> will help us to improve it.' }) }}
+
 {% endblock %}
 {% block content %}
 
@@ -54,6 +55,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
           {% include "../includes/vertical_tabs.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
+          <a class="govuk-back-link" href="javascript:history.back()" style="margin-top:0px;">Back</a>
           <!--<h2 class="govuk-heading-m">Project timeline</h2>-->
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
           <h1 class="govuk-heading-xl">Archive of project updates</h1>
@@ -68,7 +70,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         <div class="moj-timeline__header">
                           <h3 class="moj-timeline__title">7 October 2020</h3>
 
-                          <p class="moj-timeline__byline">by Joe Bloggs</p>
+                          <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                         </div>
 
@@ -94,7 +96,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                               <div class="moj-timeline__header">
                                 <h3 class="moj-timeline__title">6 October 2020</h3>
 
-                                <p class="moj-timeline__byline">by Joe Bloggs</p>
+                                <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                               </div>
                               <div class="moj-timeline__description">
@@ -113,7 +115,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                             <div class="moj-timeline__header">
                               <h3 class="moj-timeline__title">5 October 2020</h3>
 
-                              <p class="moj-timeline__byline">by Joe Bloggs</p>
+                              <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                             </div>
                             <div class="moj-timeline__description">
@@ -133,7 +135,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                           <div class="moj-timeline__header">
                             <h3 class="moj-timeline__title">5 October 2020</h3>
 
-                            <p class="moj-timeline__byline">by Joe Bloggs</p>
+                            <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                           </div>
                           <div class="moj-timeline__description">
@@ -153,7 +155,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                         <div class="moj-timeline__header">
                           <h3 class="moj-timeline__title">28 September 2020</h3>
 
-                          <p class="moj-timeline__byline">by Joe Bloggs</p>
+                          <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                         </div>
                         <div class="moj-timeline__description">
@@ -174,7 +176,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                       <div class="moj-timeline__header">
                         <h3 class="moj-timeline__title">18 September 2020</h3>
 
-                        <p class="moj-timeline__byline">by Joe Bloggs</p>
+                        <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                       </div>
                       <div class="moj-timeline__description">
@@ -196,7 +198,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                     <div class="moj-timeline__header">
                       <h3 class="moj-timeline__title">15 September 2020</h3>
 
-                      <p class="moj-timeline__byline">by Joe Bloggs</p>
+                      <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                     </div>
                     <div class="moj-timeline__description">
@@ -215,7 +217,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                     <div class="moj-timeline__header">
                       <h3 class="moj-timeline__title">11 September 2020</h3>
 
-                      <p class="moj-timeline__byline">by Joe Bloggs</p>
+                      <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                     </div>
                     <div class="moj-timeline__description">
@@ -233,7 +235,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
                     <div class="moj-timeline__header">
                       <h3 class="moj-timeline__title">9 September 2020</h3>
 
-                      <p class="moj-timeline__byline">by Joe Bloggs</p>
+                      <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
                     </div>
                     <div class="moj-timeline__description">
@@ -256,7 +258,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     <div class="moj-timeline__header">
       <h3 class="moj-timeline__title">22 November 2019</h3>
 
-      <p class="moj-timeline__byline">by Joe Bloggs</p>
+      <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
     </div>
 
@@ -282,7 +284,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     <div class="moj-timeline__header">
       <h3 class="moj-timeline__title">22 November 2019</h3>
 
-      <p class="moj-timeline__byline">by Joe Bloggs</p>
+      <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
     </div>
 
@@ -311,7 +313,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
     <div class="moj-timeline__header">
       <h3 class="moj-timeline__title">October 2019</h3>
 
-      <p class="moj-timeline__byline">by Joe Bloggs</p>
+      <!--<p class="moj-timeline__byline">by Joe Bloggs</p>-->
 
     </div>
 

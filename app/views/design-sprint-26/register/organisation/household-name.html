@@ -30,41 +30,24 @@ saveAndExit: false
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-
-      <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
-        What is your name?
-        </label>
-      </h1>
-      <form autocomplete="off" class="form" action="over-18" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="organisation-first-name">
-  First name
-</label>
-        <input class="govuk-input govuk-input--width-20" id="organisation-first-name" name="organisation-first-name" type="text" value="{{ data['organisation-first-name'] }}">
-        </div>
-
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="organisation-last-name">
-      Last name
-      </label>
-        <input class="govuk-input govuk-input--width-20" id="organisation-last-name" name="organisation-last-name" type="text" value="{{ data['organisation-last-name'] }}">
-        </div>
-        <!-- {{ govukInput({
+      <form autocomplete="off" class="form" action="email" method="post">
+        {{ govukInput({
           label: {
-            text: "What is your full name?",
+            text: "What is the name of your household?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          id: "organisation-full-name",
-          name: "organisation-full-name",
+          id: "organisation-name",
+          name: "organisation-name",
+          hint: {
+            text: "We will publish your household name on the website along with your comments about the project."
+          },
           spellcheck: false
-        }) }} -->
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-
     </div>
   </div>
 
