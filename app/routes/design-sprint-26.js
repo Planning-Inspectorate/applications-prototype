@@ -192,7 +192,7 @@ module.exports = function (router) {
       res.redirect("individual-name");
       // otherwise, show on behalf flow
     } else if (whofor=="My household") {
-      res.redirect("organisation-name");
+      res.redirect("household-name");
 
     }
     else if (whofor=="On behalf of an individual") {
@@ -908,7 +908,7 @@ router.post(
     // console.log("Here C")
 
     // if an individual, show individual flow
-    if (representingFor == "A family group") {
+    if (representingFor == "A household") {
       res.redirect("representee-family-name");
 
       // if an organisation, show organisation flow

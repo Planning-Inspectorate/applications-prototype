@@ -58,6 +58,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </a>
           </dd>
         </div>
+
+        {% if data['mvp-type-of-interested-party'] !== "on-behalf" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Are you 18 or over?
@@ -72,6 +74,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
             </a>
           </dd>
         </div>
+        {% endif %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             {% if data['mvp-type-of-interested-party'] == "my-household" %}

@@ -151,6 +151,21 @@ Check your answers
                 </dd>
               </div>
 
+              {% elif data['entity']['whofor']=="My household" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Household name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['entity']['organisationname']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="household-name">
+                    Change<span class="govuk-visually-hidden"> household name</span>
+                  </a>
+                </dd>
+              </div>
+
               {% elif data['entity']['whofor']=="An organisation I work for" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -172,7 +187,7 @@ Check your answers
                   Submitting on behalf of
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data['entity']['whofor']=="On behalf of another person" %}
+                  {% if data['entity']['whofor']=="On behalf of an individual" %}
                    {% set pageLink = "other-person" %}
                     {{data['entity']['firstname']}}   {{data['entity']['lastname']}}
                   {% else %}
@@ -263,11 +278,11 @@ Check your answers
               <input type="hidden" name="answers-checked" value="true">
  <div class="govuk-button-group">
               <button class="govuk-button " data-module="govuk-button">
-                Continue
+                Submit
               </button> <!--</form>
-              <form action="confirmation-2" method="post" novalidate>--><button class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+              <form action="confirmation-2" method="post" novalidate><button class="govuk-button govuk-button--secondary" data-module="govuk-button" >
                 Save your progress and return later
-              </button>
+              </button>-->
 </div>
             </form>
   <!--          <p class="govuk-body">

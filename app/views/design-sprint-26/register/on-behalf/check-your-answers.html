@@ -38,7 +38,7 @@ saveAndExit: false
           Who are you registering for?
         </dt>
           <dd class="govuk-summary-list__value">
-            On behalf of {{data['sprint6RepresentingFor']}}
+            On behalf of another person or an organisation I do not work for
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="../type-of-party">
@@ -61,7 +61,7 @@ saveAndExit: false
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Are you 18 or over?
         </dt>
@@ -74,12 +74,12 @@ saveAndExit: false
             <span class="govuk-visually-hidden"> 18 or over</span>
             </a>
           </dd>
-        </div>
+        </div> -->
 
-        {% if data['sprint5RepresentingFor'] == "An organisation or charity" %}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What is the name of your organisation or charity?
+              Organisation name
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['behalf-organisation-name'] }}
@@ -91,7 +91,35 @@ saveAndExit: false
               </a>
             </dd>
           </div>
-        {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+            <dd class="govuk-summary-list__value">
+              {%if not data['behalf-selectAnAddress'] %}
+                {{ data['behalf-address-line-1'] }}
+                {{ data['behalf-address-line-2'] }}
+                {{ data['behalf-address-line-3'] }}
+                {{ data['behalf-address-postcode'] }}
+                {{ data['behalf-address-country'] }}
+              {% else %}
+                {{ data['behalf-selectAnAddress'] | striptags(true) | escape | nl2br }} </br>
+                {%if not data['behalf-postcode'] %}
+                 BS1 6PN
+                {% endif %}
+                {{data['behalf-postcode']}}
+              {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="postcode">
+              Change
+              <span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+
   <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Email address
@@ -106,33 +134,7 @@ saveAndExit: false
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-          Address
-        </dt>
-          <dd class="govuk-summary-list__value">
-            {%if not data['behalf-selectAnAddress'] %}
-              {{ data['behalf-address-line-1'] }}
-              {{ data['behalf-address-line-2'] }}
-              {{ data['behalf-address-line-3'] }}
-              {{ data['behalf-address-postcode'] }}
-              {{ data['behalf-address-country'] }}
-            {% else %}
-              {{ data['behalf-selectAnAddress'] | striptags(true) | escape | nl2br }} </br>
-              {%if not data['behalf-postcode'] %}
-               BS1 6PN
-              {% endif %}
-              {{data['behalf-postcode']}}
-            {% endif %}
 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="postcode">
-            Change
-            <span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
-        </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -172,9 +174,9 @@ saveAndExit: false
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            {% if data['representingFor'] == 'A family group' %}
-                  The name of the family group you are representing
-            {% elif data['representingFor'] == 'An organisation or charity' %}
+            {% if data['representingFor'] == 'A household' %}
+                  The name of the household you are representing
+            {% elif data['representingFor'] == 'An organisation or charity I do not work for' %}
                   The name of the organisation or charity that you are representing
             {% else %}
                   The name of the person you are representing
@@ -187,8 +189,8 @@ saveAndExit: false
             <a href="representee-full-name">
                 Change
                 <span class="govuk-visually-hidden">
-  {% if data['representingFor'] == 'A family group' %}
-                  The name of the family group you are representing
+  {% if data['representingFor'] == 'A household' %}
+                  The name of the household you are representing
             {% elif data['representingFor'] == 'An organisation or charity' %}
                   The name of the organisation or charity that you are representing
             {% else %}
@@ -199,7 +201,7 @@ saveAndExit: false
             </a>
           </dd>
         </div>
-        {% if data['representingFor'] == 'A family group' or data['representingFor'] == 'A person' %}
+        {% if data['representingFor'] == 'A household' or data['representingFor'] == 'A person' %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Are they 18 or over?
