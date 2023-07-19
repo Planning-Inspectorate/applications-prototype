@@ -31,7 +31,25 @@ saveAndExit: false
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form autocomplete="off" class="form" action="email" method="post">
-        {{ govukInput({
+
+
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="organisation-name">
+              What is the name of your household?
+            </label>
+          </h1>
+          <div id="event-name-hint" class="govuk-hint">
+            <p class='govuk-hint'>For example: 'The Smith Household' or 'The residents of Number 1, Park Road'
+
+</p>           <p class='govuk-hint'>We will publish your household name on the website along with your comments about the project.</p>
+  </div>
+          <input class="govuk-input" id="organisation-name" name="organisation-name" type="text">
+        </div>
+
+
+        <!-- {{ govukInput({
           label: {
             text: "What is the name of your household?",
             classes: "govuk-label--l",
@@ -40,10 +58,12 @@ saveAndExit: false
           id: "organisation-name",
           name: "organisation-name",
           hint: {
-            text: "We will publish your household name on the website along with your comments about the project."
+            text: "For example: 'The Smith Household' or 'The residents of Number 1, Park Road'
+
+We will publish your household name on the website along with your comments about the project."
           },
           spellcheck: false
-        }) }}
+        }) }} -->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

@@ -19,9 +19,22 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
       action="representee-over-18"
       method="post"
     >
-      {{ govukInput({ label: { text: "What is the name of the household you
+      <!-- {{ govukInput({ label: { text: "What is the name of the household you
       are representing?", classes: "govuk-label--l", isPageHeading: true }, id:
-      "representee-name", name: "representee-name", spellcheck: false }) }}
+      "representee-name", name: "representee-name", spellcheck: false }) }} -->
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="representee-name">
+            What is the name of the household you are representing?
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          <p class='govuk-hint'>For example: 'The Smith Household' or 'The residents of Number 1, Park Road'
+
+</p>          </div>
+        <input class="govuk-input" id="representee-name" name="representee-name" type="text">
+      </div>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
