@@ -59,12 +59,12 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   {% include "../../includes/primary-nav.html" %}
 {% endblock %}
 {% block content %}
-{% set current = 'project-information' %}
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
-          {% set current = 'project-information' %}
-          {% include "../../includes/vertical_tabs.html" %}
+          {% set current = '7' %}
+          {% include "../../includes/vertical_tabs_dynamic.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
@@ -113,7 +113,7 @@ class="
 
 <p class="govuk-body">In this meeting, the examining authority sets out how they examine the application. This includes the examination timetable and the issues they will focus on during examination.</p>
 
-<p class="govuk-body"><a href="">Find out more about getting involved in the preliminary meeting</a></p>
+<p class="govuk-body"><a href="/design-sprint-26/interested-party-guide/get-involved-in-preliminary-meeting">Find out more about getting involved in the preliminary meeting</a></p>
 
 
 <!-- <p class="govuk-body">Contact the project case team to find out more about how to get involved if you are not registered.</p> -->

@@ -10,10 +10,10 @@
       <a href="./project-timeline">Project timeline</a>
       {% else %} Project timeline {% endif %}
     </li>-->
-    <li class="govuk-body-s {% if 'project-information' in current %} active {% endif %}">
-      {% if not 'project-information' in current %}
-      <a href="/design-sprint-26/project-overview/index-dynamic">Project information</a>
-      {% else %} Project information {% endif %}
+    <li class="govuk-body-s active">
+
+      Project information
+
     </li>
     <!--<li class="govuk-body-s {% if 'timeline' in current %} active {% endif %}">
       {% if not 'timeline' in current %}
@@ -21,35 +21,39 @@
       {% else %} Timeline {% endif %}
     </li>-->
 
-    <li class="govuk-body-s {% if 'about-the-application' in current %} active {% endif %}">
-      {% if not 'about-the-application' in current %}
+    <li class="govuk-body-s">
+
       <a href="/design-sprint-26/wide-nav/doc-library">Documents</a>
-      {% else %} Documents{% endif %}
-    </li>
-    <li class="govuk-body-s {% if 'comments' in current %} active {% endif %}">
-      {% if not 'comments' in current %}
-      <a href="/design-sprint-26/wide-nav/relevant-reps">Relevant representations (registration comments)</a>
-      {% else %} Relevant representations (registration comments) {% endif %}
-    </li>
-    <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
-      {% if not 'timetable' in current %}
+
+    </li>{% if current >= 7 %}
+    <li class="govuk-body-s ">
+            <a href="/design-sprint-26/wide-nav/relevant-reps">Relevant representations (registration comments)</a>
+
+    </li>{% endif %}
+  {% if current >= 8 %} <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
+
       <a href="/design-sprint-26/timetable/timetable-upcoming-first-accordion">Examination timetable</a>
-      {% else %} Examination timetable {% endif %}
+     {% endif %}
     </li>
-    <li class="govuk-body-s {% if 'submission' in current %} active {% endif %}">
-      {% if not 'submission' in current %}
+      {% if current == 8 %}
+    <li class="govuk-body-s">
+
       <a href="/design-sprint-26/start">Have your say</a>
-      {% else %} Have your say {% endif %}
+
+    </li>{% endif %}
+
+    <li class="govuk-body-s">
+      {% if 'register' in current %}
+      <!-- <a href="/design-sprint-26/start">Have your say</a> -->
+     <a href="/design-sprint-26/start">Register to have your say</a> {% endif %}
     </li>
-    <li class="govuk-body-s {% if 'getupdates' in current %} active {% endif %}">
+    <li class="govuk-body-s">
       {% if not 'getupdates' in current %}
-      <a href="/design-sprint-26/get-updates/index">Get updates</a>
+      <a href="/design-sprint-26/get-updates/index">Get email updates</a>
       {% else %} Get updates {% endif %}
     </li>
-    <li class="govuk-body-s {% if 'section51' in current %} active {% endif %}">
-      {% if not 'section51' in current %}
+  <li class="govuk-body-s">
       <a href="/design-sprint-26/s51/index">Section 51 advice</a>
-      {% else %} Section 51 advice {% endif %}
     </li>
 
   <!--  <li class="govuk-body-s {% if 'timetable' in current %} active {% endif %}">
@@ -79,13 +83,13 @@
   <p class="govuk-heading-s">Related guides</p>
   <ul class="govuk-list sidenav">
   <li class="govuk-body-s">
-      <a href="../dco-process-guide/">
+      <a href="../../dco-process-guide/">
       Find out more about the decision making process for national infrastructure projects
       </a
       >
     </li>
     <li class="govuk-body-s">
-      <a href="../interested-party-guide/"
+      <a href="../../interested-party-guide/"
         >Having your say about a national infrastructure project</a
       >
     </li>
