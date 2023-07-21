@@ -59,11 +59,11 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
   {% include "../../includes/primary-nav.html" %}
 {% endblock %}
 {% block content %}
-
+{% set current = 'project-information' %}
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
-          {% set current = 'project-information' %}
+          {% set current = 'register' %}
           {% include "../../includes/vertical_tabs_dynamic.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
@@ -81,7 +81,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
       </p>
 
-      <p>View <a href="index-dynamic-2">previous</a> | <a href="index-dynamic-5">Next</a></p>
+      <p>View <a href="index-dynamic-3">previous</a> | <a href="index-dynamic-5">Next</a></p>
     </div>
   </div>
 
@@ -104,11 +104,19 @@ class="
 />
 
 <h2 class="govuk-heading-m">Project stage</h2>
-<p>This project is at the <strong>pre-examination</strong> stage</p>
+  <p class="govuk-body">This project is at the <strong>pre-examination</strong> stage</p>
 
-<p class="govuk-body">At this stage you can register to have your say about the proposed project. This page will be updated when the registration period opens. You can view the project application documents to find out more about the application.</p>
+
+  <p class="govuk-body">If you want to comment on this proposed project, you can now register to have your say. Registration closes on [date] at 23:59.</p>
+
+    <p class="govuk-body"><a href="./register/start" class="govuk-button"
+  >Register to have your say</a></p>
 
 <p class="govuk-body"><a href="/design-sprint-26/interested-party-guide/registering-to-have-your-say" class="govuk-link"> Find out more about registering to have your say.</a></p>
+
+
+
+
 
 <dl class="govuk-summary-list govuk-!-margin-top-3">
           <div class="govuk-summary-list__row">
