@@ -55,12 +55,22 @@
             </h1>
             <!--<p>You are subscribed to email updates about the A404 Dewsbury project.</p>-->
             <h2 class="govuk-heading-m">What happens next</h2>
-            {% if (data['type-of-updates'] == "final")  %}
-            <p class="govuk-body">You will  be sent an email when the final decision is made</p>
+
+            {% if (data['type-of-updates'] == "Each time we update the project (you may get more than one email a day)")  %}
+                <p class="govuk-body">You will  be sent an email each time we update the project</p>
 
               {% else  %}
-              <p class="govuk-body">You will  be sent an email each time we update the project</p>
 
+
+                  <p class="govuk-body">You will  be sent an email when: </p>
+                    <ul class="govuk-list  govuk-list--bullet">
+                    {% for item in data['type-of-updates']   %}
+                    {%  if ( item == "_unchecked" )  %}
+                    {%  else %}
+                    <li>  {{item}} </li>
+{%  endif %}
+                    {% endfor %}
+                      </ul>
             {% endif  %}
             <!-- <p>We'll send updates when information about the proposed development is added to the planning inspectorate website.</p> -->
             <p><a href="../project-overview/index-dynamic" class="govuk-link">View Drax Bioenergy with Carbon Capture and Storage overview</a></p>
