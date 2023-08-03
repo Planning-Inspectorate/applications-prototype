@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Advice notes
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-26/home",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% set primarynav = 'advicenotes' %}
+    {% set secondarynavprojects = 'Applicant guide' %}
+
+    {% include "../includes/primary-nav.html" %}
+          {% include "../includes/secondary-nav-advice.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Guide for applicants</h1>
+
+<h2 class="govuk-heading-s">
+  Contents
+</h2>
+
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-link" href="applicant-guide-1">Pre-application service</a>
+          </li>
+          <li>
+            submitting an application
+          </li>
+          <li>
+            <a class="govuk-link" href="applicant-guide-3">Detailed guidance and resources</a>
+          </li>
+        </ul>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h2 class="govuk-heading-m">Submitting an application for development consent</h2>
+        <p class="govuk-body">Applicants are advised to contact the Planning Inspectorate before completing the form to ensure that electronic documentation is provided in the required manner.</p>
+        <p class="govuk-body">The Planning Inspectorate’s <a class="govuk-link" href="#">Advice Note Six: Preparation and submission of application documents</a> provides more information in this regard.
+        </p>
+
+        <p class="govuk-body">The application form contains functionality that is not supported by all browsers and is best completed using adobe reader. Clicking on the form link allows you to save the file or open it in adobe reader.  Should you have any difficulties downloading the form please email <a href="malilto:Corpcomms@planninginspectorate.gov.uk">Corpcomms@planninginspectorate.gov.uk</a></p>
+
+           <p class="govuk-body"><a class="govuk-link" href="#">Adobe reader can be downloaded at http://www.adobe.com/products/reader/</a></p>
+
+
+
+        <p class="govuk-body">Please note that guidance is also embedded in the application form itself.</p>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body"><a class="govuk-link" href="applicant-guide-1">Previous</a> | <a class="govuk-link" href="applicant-guide-3">Next</a> </p>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
