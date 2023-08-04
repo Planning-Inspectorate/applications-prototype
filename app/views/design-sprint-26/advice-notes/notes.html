@@ -1,0 +1,439 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Advice notes
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-26/home",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% set primarynav = 'advicenotes' %}
+    {% set secondarynavprojects = 'advice' %}
+    {% include "../includes/primary-nav.html" %}
+
+          {% include "../includes/secondary-nav-advice.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Advice notes
+    </h1>
+<p class="govuk-body">Advice notes inform industry and members of the public about a range of planning issues throughout the planning application process under the Planning Act 2008 (PA2008).</p>
+<p class="govuk-body">Advice notes include: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>guidance on what to include in an application</li>
+<li>how the process works </li>
+<li>what you need to do and when</li>
+</ul>
+<h2 class="govuk-heading-m">Advice notes</h2>
+<!--<h3 class="gov-uk-heading-m">One: Local impact reports (version 2, last updated April 2012)</h3>
+<p class="govuk-body">
+<h3 class="gov-uk-heading-m">Two: The role of local authorities in the development consent process (version one, published February 2015)
+</h3>
+<h3 class="gov-uk-heading-m">Three: Environmental Impact Assessment (EIA) consultation and notification (version 7, republished August 2017)
+</h3>
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          One: Local impact reports (version 2, last updated April 2012)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <p class='govuk-body'>Advice on the creation of Local Impact Reports (LIR) and includes how it works, the timetable to operate by and what to include in the LIR. </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          Two: The role of local authorities in the development consent process (version one, published February 2015)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      <p class='govuk-body'>
+Advice on the role of local authorities at different stages of the Planning Act 2008 process.  This includes an overview of the process, the local authority’s role and how to get in touch at various stages.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+          Three: Environmental Impact Assessment (EIA) consultation and notification (version 7, republished August 2017)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+      <p class='govuk-body'>This advice explains how the planning inspectorate identifies consultation bodies to be notified under Regulation 11 of The Infrastructure Planning (Environmental Impact Assessment) Regulations 2017 (the ‘EIA Regulations’). </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+          How people read
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+      <p class='govuk-body'>This is the content for How people read.</p>
+    </div>
+  </div>
+</div>-->
+<ul class="pins-govuk-result-list">
+
+  <li class="pins-govuk-result-list__item">
+          <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+              One: Local impact reports
+
+          </a>
+          <p class="pins-govuk-result-list__item-description ">
+              Advice on the creation of Local Impact Reports (LIR) and includes how it works, the timetable to operate by and what to include in the LIR.
+
+          </p>
+          <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+            <div class="govuk-grid-column-one-third" data-cy="author-category">
+                <span class="govuk-!-font-weight-bold">Version:</span> 2
+
+            </div>
+            <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+               <span class="govuk-!-font-weight-bold">Last updated:</span> April 2012
+            </div>
+
+          </div>
+        </li>
+
+        <li class="pins-govuk-result-list__item">
+                <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                  Two: The role of local authorities in the development consent process
+                </a>
+                <p class="pins-govuk-result-list__item-description ">
+Advice on the role of local authorities at different stages of the Planning Act 2008 process.  This includes an overview of the process, the local authority’s role and how to get in touch at various stages.
+                </p>
+                <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                  <div class="govuk-grid-column-one-third" data-cy="author-category">
+                      <span class="govuk-!-font-weight-bold">Version:</span> 1
+
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                     <span class="govuk-!-font-weight-bold">Last updated:</span> February 2015
+                  </div>
+
+                </div>
+              </li>
+
+
+                    <li class="pins-govuk-result-list__item">
+                            <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                              Three: Environmental Impact Assessment (EIA) consultation and notification
+                            </a>
+                            <p class="pins-govuk-result-list__item-description ">
+      This advice explains how the planning inspectorate identifies consultation bodies to be notified under Regulation 11 of The Infrastructure Planning (Environmental Impact Assessment) Regulations 2017 (the ‘EIA Regulations’).                       </p>
+                            <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                              <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                  <span class="govuk-!-font-weight-bold">Version:</span> 7
+
+                              </div>
+                              <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                 <span class="govuk-!-font-weight-bold">Last updated:</span> August 2017
+                              </div>
+
+                            </div>
+                          </li>
+                          <li class="pins-govuk-result-list__item">
+                                  <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                  Four: Section 52
+                                  </a>
+                                  <p class="pins-govuk-result-list__item-description ">
+            Find out how to apply to the planning inspectorate to authorise an applicant to serve a written notice.                        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                    <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                        <span class="govuk-!-font-weight-bold">Version:</span> 6
+
+                                    </div>
+                                    <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                       <span class="govuk-!-font-weight-bold">Last updated:</span>  March 2017
+                                    </div>
+
+                                  </div>
+                                </li>
+                          <li class="pins-govuk-result-list__item">
+
+                                  <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                    Five: Section 53 Rights of entry
+                                  </a>
+                                  <p class="pins-govuk-result-list__item-description ">
+            Read advice on applying for a right of entry to gain access onto land in order to carry out surveys.  </p>
+                                  <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                    <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                        <span class="govuk-!-font-weight-bold">Version:</span> 6
+
+                                    </div>
+                                    <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                       <span class="govuk-!-font-weight-bold">Last updated:</span> March 2017
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li class="pins-govuk-result-list__item">
+                                        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                        Six: Preparation and submission of application documents
+                                        </a>
+                                        <p class="pins-govuk-result-list__item-description ">
+                 Guidance for applicants on how to prepare, organise and submit applications to the planning inspectorate.                       </p>
+                                        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                          <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                              <span class="govuk-!-font-weight-bold">Version:</span> 11
+
+                                          </div>
+                                          <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                             <span class="govuk-!-font-weight-bold">Last updated:</span> May 2018
+                                          </div>
+
+                                        </div>
+                                      </li>
+                                      <li class="pins-govuk-result-list__item">
+                                              <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                Seven: Environmental Impact Assessment (EIA)
+                                              </a>
+                                              <p class="pins-govuk-result-list__item-description ">
+                        Guidance for applicants on how to prepare the Environmental Statement.                </p>
+                                              <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                    <span class="govuk-!-font-weight-bold">Version:</span> 7
+
+                                                </div>
+                                                <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                   <span class="govuk-!-font-weight-bold">Last updated:</span> June 2020
+                                                </div>
+
+                                              </div>
+                                            </li>
+                                            <li class="pins-govuk-result-list__item">
+                                                    <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                      Eight: Planning process overview
+                                                    </a>
+                                                    <p class="pins-govuk-result-list__item-description ">
+Read a step-by-step overview through the planning process for Nationally Significant Infrastructure Projects. </p>
+                                                    <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                      <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                          <span class="govuk-!-font-weight-bold">Version:</span> 3
+
+                                                      </div>
+                                                      <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                         <span class="govuk-!-font-weight-bold">Last updated:</span> December 2016
+                                                      </div>
+
+                                                    </div>
+                                                  </li>
+                                                  <li class="pins-govuk-result-list__item">
+                                                          <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                            Nine: Rochdale Envelope
+                                                          </a>
+                                                          <p class="pins-govuk-result-list__item-description ">
+                                    This advice note addresses the use of the ‘Rochdale Envelope’ approach under the Planning Act 2008 (PA2008).        </p>
+                                                          <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                            <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                <span class="govuk-!-font-weight-bold">Version:</span> 3
+
+                                                            </div>
+                                                            <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                               <span class="govuk-!-font-weight-bold">Last updated:</span> July 2018
+                                                            </div>
+
+                                                          </div>
+                                                        </li>
+                                                        <li class="pins-govuk-result-list__item">
+                                                                <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                  Ten: Habitat Regulations Assessment
+                                                                </a>
+                                                                <p class="pins-govuk-result-list__item-description ">
+                                        This advice refers to the Habitats Regulations Assessment (HRA) process. Find out what information needs to be provided with a DCO application with respect to HRA at each stage of the Planning Act 2008 process.                  </p>
+                                                                <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                  <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                      <span class="govuk-!-font-weight-bold">Version:</span> 9
+
+                                                                  </div>
+                                                                  <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                     <span class="govuk-!-font-weight-bold">Last updated:</span> August 2022
+                                                                  </div>
+
+                                                                </div>
+                                                              </li>
+                                                              <li class="pins-govuk-result-list__item">
+                                                                      <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                        Eleven: Working with public bodies in the planning process
+                                                                      </a>
+                                                                      <p class="pins-govuk-result-list__item-description ">
+This advice explains the framework which governs the involvement of relevant consultees and consenting bodies. </p>                                                                      <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                        <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                            <span class="govuk-!-font-weight-bold">Version:</span> 4
+
+                                                                        </div>
+                                                                        <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                           <span class="govuk-!-font-weight-bold">Last updated:</span> November 2017
+                                                                        </div>
+
+                                                                      </div>
+                                                                    </li>
+                                                                    <li class="pins-govuk-result-list__item">
+                                                                            <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                              Twelve: Transboundary Impacts and Process
+                                                                            </a>
+                                                                            <p class="pins-govuk-result-list__item-description ">
+This advice note explains the roles and responsibilities of the Secretary of State, the planning inspectorate, European Economic Area Member States and applicant applicable under Regulation 32 of The Infrastructure Planning (Environmental Impact Assessment) Regulations 2017.  </p>                                                                            <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                              <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                  <span class="govuk-!-font-weight-bold">Version:</span> 6
+
+                                                                              </div>
+                                                                              <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                 <span class="govuk-!-font-weight-bold">Last updated:</span> December 2020
+                                                                              </div>
+
+                                                                            </div>
+                                                                          </li>
+                                                                          <li class="pins-govuk-result-list__item">
+                                                                                  <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                                    Thirteen: Preparation of a draft Development Consent Order and Explanatory Memorandum
+                                                                                  </a>
+                                                                                  <p class="pins-govuk-result-list__item-description ">
+This advice note has been prepared to provide some assistance to applicants when preparing their draft Development Consent Order and Explanatory Memorandum. </p>                                                                                  <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                                    <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                        <span class="govuk-!-font-weight-bold">Version:</span> 3
+
+                                                                                    </div>
+                                                                                    <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                       <span class="govuk-!-font-weight-bold">Last updated:</span> February 2019
+                                                                                    </div>
+
+                                                                                  </div>
+                                                                                </li>
+                                                                                <li class="pins-govuk-result-list__item">
+                                                                                        <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                                          Fourteen: Compiling the Consultation Report
+                                                                                        </a>
+                                                                                        <p class="pins-govuk-result-list__item-description ">
+This advice note is aimed primarily at applicants and local authorities, however, it is also relevant to any consultee who may be interested to know how an applicant’s Pre-application consultation is reported. It seeks to provide advice about the format and content of the Consultation Report. </p>                                                                                        <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                                          <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                              <span class="govuk-!-font-weight-bold">Version:</span> 3
+
+                                                                                          </div>
+                                                                                          <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                             <span class="govuk-!-font-weight-bold">Last updated:</span> February 2021
+                                                                                          </div>
+
+                                                                                        </div>
+                                                                                      </li>
+                                                                                      <li class="pins-govuk-result-list__item">
+                                                                                              <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                                              Fifteen: Drafting Development Consent Orders
+                                                                                              </a>
+                                                                                              <p class="pins-govuk-result-list__item-description ">
+This advice note sets out advice from the planning inspectorate on the preparation of the draft Development Consent Order (DCO). It also reflects the views, on DCO drafting matters, of those government departments that are most involved in the consenting of DCOs. </p>                                                                                              <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                                                <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                                    <span class="govuk-!-font-weight-bold">Version:</span> 2
+
+                                                                                                </div>
+                                                                                                <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                                   <span class="govuk-!-font-weight-bold">Last updated:</span> July 2018
+                                                                                                </div>
+
+                                                                                              </div>
+                                                                                            </li>
+                                                                                            <li class="pins-govuk-result-list__item">
+                                                                                                    <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                                                      Sixteen: How to request a material change
+                                                                                                    </a>
+                                                                                                    <p class="pins-govuk-result-list__item-description ">
+The purpose of this advice note is to provide information to applicants about how to request a material change to an application after it has been accepted and before the close of the Examination. </p>                                                                                                    <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                                                      <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                                          <span class="govuk-!-font-weight-bold">Version:</span> 2
+
+                                                                                                      </div>
+                                                                                                      <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                                         <span class="govuk-!-font-weight-bold">Last updated:</span> March 2018
+                                                                                                      </div>
+
+                                                                                                    </div>
+                                                                                                  </li>
+                                                                                                  <li class="pins-govuk-result-list__item">
+                                                                                                          <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                                                            Seventeen: Cumulative effects assessment
+                                                                                                          </a>
+                                                                                                          <p class="pins-govuk-result-list__item-description ">
+This advice note sets out a staged approach to cumulative effects assessment (CEA) for Nationally Significant Infrastructure Projects and provides template formats for documenting the CEA within an applicant’s Environmental Statement. Please note, this advice note refers to <a href="#">Appendix 1</a> and <a href="#">Appendix 2</a> as separate documents. </p>                                                                                                           <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                                                            <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                                                <span class="govuk-!-font-weight-bold">Version:</span> 2
+
+                                                                                                            </div>
+                                                                                                            <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                                               <span class="govuk-!-font-weight-bold">Last updated:</span> August 2019
+                                                                                                            </div>
+
+                                                                                                          </div>
+                                                                                                        </li>
+
+                                                                                                        <li class="pins-govuk-result-list__item">
+                                                                                                                <a href="#" class="govuk-link pins-govuk-result-list__item-title">
+
+                                                                                                                  Eighteen: The Water Framework Directive
+                                                                                                                </a>
+                                                                                                                <p class="pins-govuk-result-list__item-description ">
+      This advice note explains the roles of applicants, the appropriate agencies and the Secretary of State in meeting the requirements of The Water Environment (Water Framework Directive) (England and Wales) Regulations 2017, as applicable to Nationally Significant Infrastructure Projects under the Planning Act 2008. The advice note also introduces and explains the use of Water Framework Directive overview matrices [<a href="#">see Appendix 1</a>] prepared by the planning inspectorate.</p>                                                                                                          <div class="govuk-grid-row  <div class="govuk-grid-row pins-govuk-result-list__item-description govuk-!-margin-top-2">
+                                                                                                                  <div class="govuk-grid-column-one-third" data-cy="author-category">
+                                                                                                                      <span class="govuk-!-font-weight-bold">Version:</span> 1
+
+                                                                                                                  </div>
+                                                                                                                  <div class="govuk-grid-column-two-thirds" data-cy="date-published">
+                                                                                                                     <span class="govuk-!-font-weight-bold">Last updated:</span> June 2017
+                                                                                                                  </div>
+
+                                                                                                                </div>
+                                                                                                              </li>
+
+</ul>
+  </div>
+</div>
+
+{% endblock %}
