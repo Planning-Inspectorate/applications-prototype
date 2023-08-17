@@ -979,9 +979,9 @@ font-size:16pt;
 {% if (data['filtersapplied']=="true") %}
 
   <div id="filter-tags" name="filter-tags">
-      {% if data['chk-location'] or data['chk-types']  or data['chk-stages'] %}
+
         <h3 class="govuk-heading-m" >Filtered results</h3>
-        {% endif %}
+
 
 
     <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-stage">
@@ -997,34 +997,12 @@ font-size:16pt;
       <span class="facet-tag" id="tag-Acceptance"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Acceptance</span>
       <button type="button" class="facet-tag__remove" name="mybutton" value="Acceptance" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
     </span>
-    <span class="facet-tags__preposition"> &nbsp; </span>
-    <span class="facet-tag" id="tag-Pre-examination"> &nbsp;<span class="facet-tag__text" style="font-family:arial,sans-serif;">Pre-examination</span>
-    <button type="button" class="facet-tag__remove" name="mybutton" value="Pre-examination" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
-</span>
-
-<span class="facet-tags__preposition"> &nbsp; </span>
-  <span class="facet-tag" id="tag-Examination"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Examination</span>
-  <button type="button" class="facet-tag__remove" name="mybutton" value="Examination" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
-</span>
-
-<span class="facet-tags__preposition"> &nbsp; </span>
-<span class="facet-tag" id="tag-Recommendation"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Recommendation</span>
-<button type="button" class="facet-tag__remove" name="mybutton" value="Recommendation" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
-</span>
-<span class="facet-tags__preposition"> &nbsp; </span>
-<span class="facet-tag" id="tag-Decision"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Decision</span>
-<button type="button" class="facet-tag__remove" name="mybutton" value="Decision"  aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
-</span>
-<span class="facet-tags__preposition"> &nbsp; </span>
-<span class="facet-tag" id="tag-Decided"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Post decision</span>
-<button type="button" class="facet-tag__remove" name="mybutton" value="Decided"  aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
-</span>
 
 
       </div>
     </div>
 
-  <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-type">
+  <!-- <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-type">
       <div class="facet-tags__wrapper" style="background-color:#f3f2f1;"> <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Type:</span>
 
         <span class="facet-tags__preposition"> &nbsp; </span>
@@ -1054,7 +1032,7 @@ font-size:16pt;
 </div>
 
 
-    </div>
+    </div> -->
 
 
 
@@ -1194,7 +1172,7 @@ font-size:16pt;
                   </div> -->
 
           {% if data['chk-location'] or data['chk-types']  or data['chk-stages']  %}
-    <p class="govuk-body govuk-!-margin-top-3"><a href="projects-load" class="govuk-link" id="clearfilter">Clear filters</a></p>
+    <!-- <p class="govuk-body govuk-!-margin-top-3"><a href="projects-load" class="govuk-link" id="clearfilter">Clear filters</a></p> -->
     </div>
     {% endif %}
 
@@ -1247,6 +1225,41 @@ font-size:16pt;
    </div>
 <p class="govuk-body govuk-!-margin-top-3"><a href="doc-library?filtersapplied=false" class="govuk-link">Clear filters</a></p> -->
 {% endif %}
+
+
+  <h3 class="govuk-heading-m" >Filtered results</h3>
+
+
+  <div class="facet-tags__group" style="font-family:arial,sans-serif;" id="fc-location">
+      <div class="facet-tags__wrapper" > <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Location:</span>
+
+
+
+
+  <!-- <li>{{ chk }} </li> -->
+  <span class="facet-tags__preposition"> &nbsp; </span>
+  <span class="facet-tag" id="tag{{chkNospace}}"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">North West</span>
+  <button type="button" class="facet-tag__remove" name="mybutton" value="{{chk}}" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+  </span>
+
+
+
+<!--
+    {% for locations  in data['location'] %}
+
+    {% set locationsNospace  = locations | replace(" ","") %}
+
+
+
+
+
+    {% endfor %} -->
+
+
+
+
+
+    </div>  </div>
 
 
 
