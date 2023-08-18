@@ -63,8 +63,8 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
-          {% set current = 'project-information' %}
-          {% include "../../includes/vertical_tabs_dynamic.html" %}
+          {% set current = '9' %}
+            {% include "../../includes/vertical_tabs_dynamic.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
@@ -81,7 +81,7 @@ govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
 
       </p>
 
-      <p>View <a href="index-dynamic-2">Previous</a> | <a href="index-dynamic-4">Next</a></p>
+      <p>View <a href="index-dynamic-8">Previous</a> | <a href="index-dynamic-10">Next</a></p>
     </div>
   </div>
 
@@ -104,11 +104,13 @@ class="
 />
 
 <h2 class="govuk-heading-m">Project stage</h2>
-<p>This project is at the <strong>pre-examination</strong> stage</p>
+<p>This project is at the <strong>recommendation</strong> stage</p>
 
-<p class="govuk-body">At this stage you can register to have your say about the proposed project. This page will be updated when the registration period opens. You can view the project application documents to find out more about the application.</p>
 
-<p class="govuk-body"><a href="/design-sprint-26/interested-party-guide/registering-to-have-your-say" class="govuk-link"> Find out more about registering to have your say.</a></p>
+
+<p class="govuk-body">The date set for this to be completed is [date].</p>
+
+
 
 <dl class="govuk-summary-list govuk-!-margin-top-3">
           <div class="govuk-summary-list__row">
@@ -157,7 +159,7 @@ class="
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details"  open>
+              <details class="govuk-details" data-module="govuk-details" >
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
     Pre-examination
@@ -173,7 +175,7 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -191,52 +193,30 @@ class="
   </details>
             </dd>
             <dd class="govuk-summary-list__actions">
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
             </dd>
           </div>
-
-
           <div class="govuk-summary-list__row">
 
             <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details"  >
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-      Recommendation
-      </span>
-      </summary>
-      <div class="govuk-details__text">
-      <p class="govuk-body">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.</p>
-      <p class="govuk-body"><a href="../../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
-      </details>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
-
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-
-            <dd class="govuk-summary-list__value">
-              <details class="govuk-details" data-module="govuk-details" >
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-      Decision
-      </span>
-      </summary>
-      <div class="govuk-details__text">
-      <p class="govuk-body">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision.</p>
-      <p class="govuk-body"><a href="../../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
-      </details>
+              <details class="govuk-details" data-module="govuk-details"   open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+  Recommendation and decision
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.</p>
+    <p class="govuk-body">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
+  </details>
             </dd>
             <dd class="govuk-summary-list__actions">
 
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
             </dd>
           </div>
-
-
           <div class="govuk-summary-list__row" style="border-bottom:none;">
 
             <dd class="govuk-summary-list__value">
