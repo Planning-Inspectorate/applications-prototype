@@ -1084,7 +1084,7 @@ req.session.data['stagesSecond'] = [
   req.session.data['newProjectList'] = [
 	{
 		"casereference" : "BC080001",
-		"projectname" : "The London Resort",
+		"projectname" : "The London Resort-old",
 		"proposal" : "BC08 - Leisure",
 		"projectlocation" : "Swanscombe Peninsula and land adjacent to Ebbsfleet Station",
 		"stage" : "Acceptance",

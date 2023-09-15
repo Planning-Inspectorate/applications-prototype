@@ -1316,7 +1316,15 @@ font-size:16pt;
 
     <tr class="govuk-table__row">
       <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
+
+  {% if (data['drax']=="true") %}
+
+
+   <td class="govuk-table__cell"><a class="view-case" href="/design-sprint-26/project-overview/index" >
+  {% else %}
    <td class="govuk-table__cell"><a class="view-case" href="#"  data-loop-position="{{loop.index - 1}}">
+  {% endif %}
+
 <span aria-hidden="true">{{ fileproject.projectname }}</span><span class="govuk-visually-hidden">Review data for {{fileproject.projectname}}</span></a></td>
       <td class="govuk-table__cell">{{ fileproject.promotername }}</td>
       <!--   <td class="govuk-table__cell"></td>

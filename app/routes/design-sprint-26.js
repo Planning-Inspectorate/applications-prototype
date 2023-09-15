@@ -956,6 +956,7 @@ router.post("/design-sprint-26/projects/view-case-form-answer", function(req, re
   if( req.session.data['view-case-position'] ){
 
   let choice = req.session.data['view-case-position']
+    console.log("Here")
   console.log(req.session.data['newProjectList'])
   req.session.data['case'] = req.session.data['newProjectList'][choice];
   //console.log(req.session.data['representation']);
@@ -1101,9 +1102,21 @@ req.session.data['stagesSecond'] = [
 ]
 
   req.session.data['newProjectList'] = [
+
+    {
+      "casereference" : "EN010120",
+      "projectname" : "Drax",
+      "proposal" : "BC08 - Leisure",
+      "projectlocation" : "Swanscombe Peninsula and land adjacent to Ebbsfleet Station",
+      "stage" : "Acceptance",
+      "promotername" : "London Resort Company Holdings",
+      "webaddress" : "",
+      "summary" : "Leisure and entertainment resort including a theme park, hotels, bars, restaurants, business space, training academy, monorail and associated infrastructure works. The application is anticipated to be submitted to the Planning Inspectorate in 2020.",
+      "projectemailaddress" : "LondonResort@planninginspectorate.gov.uk"
+    },
 	{
-		"casereference" : "BC080001",
-		"projectname" : "The London Resort",
+		"casereference" : "EN010120",
+		"projectname" : "The London Resorties",
 		"proposal" : "BC08 - Leisure",
 		"projectlocation" : "Swanscombe Peninsula and land adjacent to Ebbsfleet Station",
 		"stage" : "Acceptance",
