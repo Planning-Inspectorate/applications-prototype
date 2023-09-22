@@ -956,15 +956,19 @@ router.post("/design-sprint-26/projects/view-case-form-answer", function(req, re
   if( req.session.data['view-case-position'] ){
 
   let choice = req.session.data['view-case-position']
-    console.log("Here")
-  console.log(req.session.data['newProjectList'])
+  choice  = 0;
+    console.log("Here CB")
+    console.log(req.session.data['view-case-position'])
+  //console.log(req.session.data['newProjectList'])
+  console.log(req.session.data['newProjectList'][choice])
+  req.session.data['newProjectList'][choice];
   req.session.data['case'] = req.session.data['newProjectList'][choice];
   //console.log(req.session.data['representation']);
   }
 
 
-    res.redirect("/design-sprint-26/project-overview/index-dynamic-data");
-
+  //  res.redirect("/design-sprint-26/project-overview/index-dynamic-data");
+  res.redirect("/design-sprint-26/project-overview/index-dynamic-data-v2");
 
 });
 
@@ -1105,8 +1109,8 @@ req.session.data['stagesSecond'] = [
 
     {
       "casereference" : "EN010120",
-      "projectname" : "Drax",
-      "proposal" : "BC08 - Leisure",
+      "projectname" : "Drax Bioenergy with Carbon Capture and Storage Project",
+      "proposal" : "EN01 - Energy",
       "projectlocation" : "Swanscombe Peninsula and land adjacent to Ebbsfleet Station",
       "stage" : "Acceptance",
       "promotername" : "London Resort Company Holdings",
@@ -1166,7 +1170,7 @@ req.session.data['stagesSecond'] = [
       //req.session.data['newProjectList'] = ""
 
   //  let showlist = req.session.data['newProjectList'] ;
-  //    console.log(req.session.data['newProjectList']);
+  console.log("Yes here");
     res.redirect("index");
 
 }
@@ -1224,7 +1228,7 @@ router.post("/design-sprints-26/form-drax",
      req.session.data['filtersapplied'] = "false" ;
 
 
-      res.redirect("/design-sprint-26/projects/index");
+      res.redirect("/design-sprint-26/projects/index-2");
 
 
 });
