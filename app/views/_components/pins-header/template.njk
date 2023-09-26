@@ -242,6 +242,15 @@
         </a>
 
     {% endif %}
+
+    {% if params.serviceNameNoLink %}
+
+        <span style="font-size: 1.5rem;font-weight: 700;">  {{ params.serviceNameNoLink }}</span>
+
+
+    {% endif %}
+
+
       {% if params.saveAndExit %}
         <a role="button" class="ons-btn" href="/sprint-6/pre-examination/register/save-and-continue/confirmation">
           <span class="ons-btn__inner">Save and exit <svg class="ons-svg-icon" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
