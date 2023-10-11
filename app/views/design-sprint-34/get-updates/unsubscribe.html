@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How do you want to change your subscription?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceNameNoLink: "Get updates about this project",
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="/design-sprint-34/get-updates/unsubscribe-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "type-of-updates",
+            name: "type-of-updates",
+            fieldset: {
+              legend: {
+                text: "How do you want to change your subscription?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "unsubscribe",
+                text: "Unsubscribe"
+              },
+              {
+                value: "change-address",
+                text: "Change your email address"
+              },
+                        {
+              value: "change-frequency",
+              text: "Change how often you get emails about the project"
+            }
+          ]
+          }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

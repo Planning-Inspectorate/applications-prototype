@@ -34,6 +34,7 @@ require('./routes/design-sprint-9.js')(router);
 require('./routes/design-sprint-11.js')(router);
 require('./routes/design-sprint-21.js')(router);
 require('./routes/design-sprint-26.js')(router);
+require('./routes/design-sprint-34.js')(router);
 
 
 

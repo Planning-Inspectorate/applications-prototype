@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You have added x deadline items
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceNameNoLink: "Have your say on an application"   ,
+  serviceUrl: "/design-sprint-34/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Check your answers</h1>
+
+          <h2 class="govuk-heading-m"></h2>
+          <form method="post" action="/design-sprint-34/check-deadline-item-answer">
+  <div class="govuk-form-group">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Deadline item
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+        {{data['deadlineitem']['deadlinename']}}
+
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="deadline-items">
+            Change<span class="govuk-visually-hidden"> evidence type</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How you've submitted your representation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+        {{data['deadlineitem']['submissionmethod']}}
+
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="how-make-submission">
+            Change<span class="govuk-visually-hidden"> evidence type</span>
+          </a>
+        </dd>
+      </div>
+      {% if data['deadlineitem']['uploadedfilesavailable'] == true %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Documents uploaded
+        </dt>
+        <dd class="govuk-summary-list__value">
+            <ul class="govuk-list">
+            {% for file in data['deadlineitem']['uploadedfiles'] %}
+            <li>{{file}}</li>
+            {% endfor %}
+            </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="upload-files">
+            Change<span class="govuk-visually-hidden"> uploaded evidence</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+      {% if data['deadlineitem']['commentsavailable'] == true %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your comment
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {{data['deadlineitem']['comment']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <p><a class="govuk-link" href="make-comment">
+            Change<span class="govuk-visually-hidden"> comment</span>
+          </a><br/>
+          <a class="govuk-link" href="javascript:alert('Not in prototype')">
+            Delete<span class="govuk-visually-hidden"> comment</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Personal information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['deadlineitem']['sensitiveinformation']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sensitive-information">
+            Change<span class="govuk-visually-hidden"> sensitive information</span>
+          </a>
+        </dd>
+      </div>
+      {% if data['deadlineitem']['sensitiveinformation']=="Yes" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Documents or comments containing personal information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+          {% for file in data['deadlineitem']['sensitiveitems'] %}
+          <li>{{file}}</li>
+          {% endfor %}
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sensitive-items">
+            Change<span class="govuk-visually-hidden"> sensitive items</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+    </dl>
+
+  </div>
+
+
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

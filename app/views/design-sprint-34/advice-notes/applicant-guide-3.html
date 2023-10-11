@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Submitting an application - Application fees
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-34/home/index-new-v2",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% set primarynav = 'advicenotes' %}
+    {% set secondarynavprojects = 'Applicant guide' %}
+
+    {% include "../includes/primary-nav.html" %}
+          {% include "../includes/secondary-nav-advice.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Guide for applicants</h1>
+
+<h2 class="govuk-heading-s">
+  Contents
+</h2>
+
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a class="govuk-link" href="applicant-guide-1">Pre-application service</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="applicant-guide-2">Submitting an application</a>
+          </li>
+          <li>
+            Application fees
+          </li>
+          <li>
+            <a class="govuk-link" href="applicant-guide-4">Detailed guidance and resources</a>
+          </li>
+        </ul>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+        <h2 class="govuk-heading-m">Application charges from 1 April 2023</h2>
+        <p class="govuk-body">The table below shows the fees payable from 1 April 2023 for existing and new applications. The Infrastructure Planning (Fees) Regulations 2010 and subsequent amendments can be viewed at <a href="http://www.legislation.gov.uk/">legislation.gov.uk</a></p>
+        <p class="govuk-body">
+        <table >
+        <caption style="caption-side:bottom;text-align:left;border:none;background:none;margin:0;padding:0;"><a href="https://infrastructure.planninginspectorate.gov.uk/wp-admin/admin.php?page=tablepress&#038;action=edit&#038;table_id=81" rel="nofollow">Edit</a></caption>
+        <thead>
+        <tr class="row-1">
+        	<th class="column-1">Description</th><th class="column-2">Fee</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-2">
+        	<td colspan="2" class="column-1"><b>Fee in respect of applications for authorisation under sections 52 and 53</b></td>
+        </tr>
+        <tr class="row-3">
+        	<td class="column-1">A request for authorisation under section 52(2) (information about interests in land). </td><td class="column-2">£1,835</td>
+        </tr>
+        <tr class="row-4">
+        	<td class="column-1">A request for authorisation under section 53(1) (rights of entry).</td><td class="column-2">£1,835</td>
+        </tr>
+        <tr class="row-5">
+        	<td colspan="2" class="column-1"><b>Fee to accompany application</b></td>
+        </tr>
+        <tr class="row-6">
+        	<td class="column-1">The Planning Inspectorate must charge the Applicant a fee in respect of the decision by the Secretary of State under section 55 (Acceptance of applications) whether or not to accept the application. The fee must accompany the application.</td><td class="column-2">£8,244</td>
+        </tr>
+        <tr class="row-7">
+        	<td colspan="2" class="column-1"><b>Pre-examination fee</b><br>Following a decision under section 61 (Initial choice of Panel or single Inspector) the Planning Inspectorate must notify the Applicant in writing of the Pre-examination fee. The Pre-examination fee is:-</td>
+        </tr>
+        <tr class="row-8">
+        	<td class="column-1"><ul><li>Single Inspector<li>Panel of two Inspectors<li>Panel of three Inspectors<li>Panel of more than three Inspectors</ul></td><td class="column-2"><ul><li>£23,863<li>£39,464<li>£55,065<li>£78,926</ul></td>
+        </tr>
+        <tr class="row-9">
+        	<td colspan="2" class="column-1"><b>*Initial payment in respect of the handling of an application</td>
+        </tr>
+        <tr class="row-10">
+        	<td class="column-1"><ul><li>Where an examination is handled by a single Inspector<br><br><br><li>Where an examination is handled by a panel of two Inspectors<br><br><br><li>Where an examination is handled by a panel of three Inspectors<br><br><br><li>Where an examination is handled by a panel of more than three Inspectors</td><td class="column-2"><ul><li>£1,129 per estimated relevant day<li>£1,795 per estimated relevant day<li>£2,460 per estimated relevant day<li>£3,745 per estimated relevant day</ul></td>
+        </tr>
+        <tr class="row-11">
+        	<td colspan="2" class="column-1"><strong>Final payment in respect of the handling of an application</strong><br>Following notification of the completion of the Examination stage under section 99. <br>The final payment is dependent on the number of days actually required for the examination:-</td>
+        </tr>
+        <tr class="row-12">
+        	<td class="column-1"><ul><li>Where a single Inspector has examined the application <br><br><li>Where a panel of two Inspectors has examined the application<br><br><li>Where a panel of three Inspectors has examined the application<br><br><li>Where a panel of more than three Inspectors has examined the application</td><td class="column-2"><ul><li>£2,258 per relevant day*<li>£3,590 per relevant day*<li>£4,919 per relevant day*<li>£7,490 per relevant day*</ul>*Less the initial payment</td>
+        </tr>
+        </tbody>
+        </table></p>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<p class="govuk-body"><a class="govuk-link" href="applicant-guide-2">Previous</a> | <a class="govuk-link" href="applicant-guide-4">Next</a> </p>
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

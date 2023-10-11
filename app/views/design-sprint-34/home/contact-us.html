@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What's your email address?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceNameNoLink: "Have your say on an application"   ,
+  serviceUrl: "/design-sprint-34/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+  {% set primarynav = 'home' %}
+    {% include "../includes/primary-nav-home.html" %}
+
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="entry-title">Contact</h1>
+    	</header><!-- .entry-header -->
+
+    	<div class="entry-content">
+    		<p>We are located in Temple Quay House in Bristol</p>
+    <p>The Planning Inspectorate<br />
+    Temple Quay House<br />
+    Temple Quay<br />
+    Bristol<br />
+    BS1 6PN</p>
+    <p><iframe style="border: 1px; margin: 0px;" title="Map of office location" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Temple+Quay+House&amp;aq=&amp;sll=51.450908,-2.582871&amp;sspn=0.002554,0.004812&amp;ie=UTF8&amp;hq=&amp;hnear=Temple+Quay+House,+2+The+Square,+Temple+Quay,+Bristol+BS1+6PN,+United+Kingdom&amp;t=m&amp;ll=51.457002,-2.585135&amp;spn=0.018718,0.051498&amp;z=14&amp;iwloc=A&amp;output=embed" width="600" height="350"></iframe><br />
+    <small><a style="color: #0000ff; text-align: left;" href="http://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Temple+Quay+House&amp;aq=&amp;sll=51.450908,-2.582871&amp;sspn=0.002554,0.004812&amp;ie=UTF8&amp;hq=&amp;hnear=Temple+Quay+House,+2+The+Square,+Temple+Quay,+Bristol+BS1+6PN,+United+Kingdom&amp;t=m&amp;ll=51.457002,-2.585135&amp;spn=0.018718,0.051498&amp;z=14&amp;iwloc=A">View Larger Map</a></small></p>
+    <p>If contacting us regarding a Nationally Significant Infrastructure Project, please use the following details:</p>
+    <p>Tel: 0303 444 5000<br />
+    E-mail: <a href="/cdn-cgi/l/email-protection#5b15121e352a2e3229323e281b2b373a353532353c3235282b3e382f34293a2f3e753c342d752e30"><span class="__cf_email__" data-cfemail="8cc2c5c9e2fdf9e5fee5e9ffccfce0ede2e2e5e2ebe5e2fffce9eff8e3feedf8e9a2ebe3faa2f9e7">[email&#160;protected]</span></a><br />
+    Follow us on Twitter <a href="http://www.twitter.com/PINSgov">@PINSgov</a></p>
+    <p><strong>Note:</strong> As a result of the current Coronavirus COVID-19 pandemic and latest Government advice, we have advised our staff to avoid unnecessary travel. We have therefore found it necessary to reduce our Customer Service Helpline opening hours.</p>
+    <p>As from Monday 23 March 2020, the Planning Inspectorate’s Customer Service Helpline will be available between the hours of 9:00am and 12 noon.</p>
+    <p>Further information about contacting the Planning Inspectorate customer services can be viewed on <a href="http://www.planningportal.gov.uk/planning/appeals/customerservices">GOV.UK</a>. View the <a href="#structure"> National Infrastructure Planning Team Structure</a>.</p>
+    <p>You may wish to read our <a href='https://infrastructure.planninginspectorate.gov.uk/application-process/frequently-asked-questions/'>Frequently asked questions page</a> before you contact us as this may help answer your query.</p>
+    <p>The Planning Inspectorate gives advice about applying for an order granting development consent or making representations about an application (or a proposed application) although you should note that any advice given does not constitute legal advice upon which you can rely and you should obtain your own legal advice and professional advice as required.</p>
+    <p>We are required by law to publish on our website a record of the advice we provide about applying for an order granting development consent or making representations about an application or a proposed application and to record on our website the name of the person or organisation who asked for the advice. We will however protect the privacy of any other personal information which you choose to share with us and we will not hold the information any longer than is necessary. See our <a href="https://www.gov.uk/government/publications/planning-inspectorate-privacy-notices/customer-privacy-notice">Privacy statement on GOV.UK</a>.</p>
+    <p>You should note that we have a policy commitment to openness and transparency and you should not provide us with confidential or commercial information which you do not wish to be put in the public domain.</p>
+    <h2>Feedback and complaints</h2>
+    <p>The Planning Inspectorate aims to provide the best possible service for its customers. We try hard to ensure that everyone is satisfied with the service they receive. It is inevitable that there will sometimes be concerns about the Examination process or the Examining Authority’s final report. We will carefully consider and respond to any matters that you wish to raise: contact details are on <a href="https://www.gov.uk/government/organisations/planning-inspectorate/about/complaints-procedure#contact-details-for-feedback-and-complaints">GOV.UK</a>.</p>
+    <h2>Press and media</h2>
+    <p>If you are a journalist please contact our press office directly:</p>
+    <p>Telephone: 0303 444 5004 or 0303 444 5005<br />
+    Email: <a href="/cdn-cgi/l/email-protection#ccbcbea9bfbfe2a3aaaaa5afa98cbca0ada2a2a5a2aba5a2bfbca9afb8a3beadb8a9e2aba3bae2b9a7"><span class="__cf_email__" data-cfemail="7d0d0f180e0e53121b1b141e183d0d111c131314131a14130e0d181e09120f1c0918531a120b530816">[email&#160;protected]</span></a></p>
+    <p><a name="structure"></a></p>
+    <h2>National Infrastructure Planning – Team Structure</h2>
+    <p>Director of Operations – Graham Stallwood<br />
+    Director of Strategy – Sean Canavan</p>
+    <p>Head of Operations (Casework) – David Price</p>
+    <p>Professional Lead for Infrastructure – Pauleen Lane</p>
+    <p>Operations Lead, National Infrastructure and Transport – Kay Sully<br />
+    Operations Lead, National Infrastructure and Energy – Chris White<br />
+    Operations Lead, National Infrastructure and Environment – Gail Boyle<br />
+    Operations Lead, Environmental Services – Helen Lancaster<br />
+    Operations Lead, Environmental Services &#8211; Andrew Luke<br />
+    Operations Lead, NSIP Reform – Matthew Scriven<br />
+    Operations Lead, NSIP Reform &#8211; Kathryn Dunne</p>
+    <p>Inspector Managers (multiple posts)</p>
+    <p>Operations Manager, National Infrastructure and Transport – Martin Almond<br />
+    Operations Manager, National Infrastructure and Energy – Hefin Jones<br />
+    Operations Manager, National Infrastructure and Environment – Jolyon Wootton<br />
+    Operations Manager, NSIP Reform – Richard Price<br />
+    Operations Manager, NSIP Reform – Kate Mignano</p>
+    <p>Senior EIA Advisors and EIA Advisors (multiple posts)</p>
+    <p>Examining Inspectors (multiple posts)</p>
+    <p>Case Teams (multiple posts)</p>
+    <p><a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/uploads/2023/03/NI-Team-Structure-PS1engv3.pptx">Team structure diagram &#8211; non-accessible</a> (PowerPoint, 163KB)</p>
+    			</div><!-- .entry-content -->
+    	<footer class="entry-meta">
+    		<span class="edit-link"><a class="post-edit-link" href="https://infrastructure.planninginspectorate.gov.uk/wp-admin/post.php?post=57&#038;action=edit">Edit</a></span>	</footer><!-- .entry-meta -->
+    </article><!-- #post-57 -->
+                	<div id="comments">
+
+
+
+
+    </div><!-- #comments -->
+                </div>
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

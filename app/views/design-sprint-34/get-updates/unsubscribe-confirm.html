@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How often do you want to get emails about the project?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceNameNoLink: "Get updates about this project",
+    serviceUrl: "/sprint-6/get-updates/",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+    {% if (data['type-of-updates'] == "unsubscribe") %}
+  <a class="govuk-back-link" href="unsubscribe">Back</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="unsubscribed" method="post">
+
+        <h1 class="govuk-heading-l">Are you sure you want to unsubscribe?</h1>
+<p class="govuk-body"> You will no longer be sent updates about Drax Bioenergy with Carbon Capture and Storage overview</p>
+
+
+
+        <button class="govuk-button" data-module="govuk-button" id="type-of-updates" name="type-of-updates" value="unsubscribe">Unsubscribe</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

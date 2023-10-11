@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which deadline would you like to submit against?
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceNameNoLink: "Have your say on an application"   ,
+  serviceUrl: "/design-sprint-34/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back();"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/design-sprint-34/choose-deadline-answer" method="post" novalidate>
+        {% if (data['error']=="true")%}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+        <a href="#deadline-error">Select a deadline</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+      <div class="govuk-form-group     {% if (data['error']=="true")%} govuk-form-group--error{% endif %}">
+    <fieldset class="govuk-fieldset" aria-describedby="change-deadline-hint   {% if (data['error']=="true")%}deadline-error{% endif %}">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+        Which deadline would you like to submit against?
+        </h1>
+      </legend>
+        {% if (data['error']=="true")%}
+      <p id="deadline-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select a deadline
+    </p>
+    {% endif %}
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="choose-deadline-9" name="deadline[deadline]" type="radio" value="Deadline 9">
+          <label class="govuk-label govuk-radios__label" for="choose-deadline-9">
+          Deadline 9 closes 27 August 2022
+          </label>
+          <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  View deadline items
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
+                  <li>Comments on any submissions received by Deadline 8</li>
+                  <li>Any further information requested by the Examining Authority under Rule 17 of the Examination Rules</li>
+                  <li>Final Statements of Common Ground (SoCG) and Statement of Commonality of the Statements of Common Ground (SCSoCG)</li>
+                  <li>Final draft Development Consent Order in MS Word clean and tracked versions</li>
+                  <li>Final Schedule of changes to the draft Development Consent Order</li>
+                  <li>Final Compulsory Acquisition Schedule, in clean and tracked versions</li>
+                  <li>Final updated Guide to the Application</li>
+                <li>Other</li>
+                    </ul>              </div>
+            </details>
+
+       </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="choose-deadline-10" name="deadline[deadline]" type="radio" value="Deadline 10">
+          <label class="govuk-label govuk-radios__label" for="choose-deadline-10">
+           Deadline 10 closes 3 September 2022
+          </label>
+          <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+            <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View deadline items
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
+      <li>Comments on any submissions received by Deadline 9</li>
+      <li>Any further information requested by the ExA under Rule 17 of the Examination Rules</li>
+    <li>Other</li>
+        </ul>  </div>
+</details>
+
+       </div>
+        </div>
+      </div>
+
+
+    </fieldset>
+  </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

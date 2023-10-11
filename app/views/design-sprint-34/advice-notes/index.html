@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Detailed advice and guidance
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-34/home/index-new-v2",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% set primarynav = 'advicenotes' %}
+  {% set secondarynavprojects = 'menu' %}
+    {% include "../includes/primary-nav.html" %}
+    {% include "../includes/secondary-nav-advice.html" %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Advice and guidance</h1>
+
+
+<p>Find out more about the relevant legislation, guidance and advice.</p>
+<h2><a href='https://infrastructure.planninginspectorate.gov.uk/legislation-and-advice/legislation/'>Legislation</a></h2>
+<p>How to view the legislation that governs the Planning Act 2008 process.</p>
+<h2><a href='https://infrastructure.planninginspectorate.gov.uk/legislation-and-advice/guidance/'>Guidance</a></h2>
+<p>Government guidance on a range of matters relating to the Planning Act 2008 process.</p>
+<h2><a href='https://infrastructure.planninginspectorate.gov.uk/legislation-and-advice/advice-notes/'>Advice notes</a></h2>
+<p>The Planning Inspectorate has published its own series of advice notes about a range of process matters.</p>
+<h2><a href='https://infrastructure.planninginspectorate.gov.uk/legislation-and-advice/national-policy-statements/'>National Policy Statements</a></h2>
+<p>Find out what National Policy Statements (NPSs) are, what they include and how they fit into the Planning Act 2008 process.</p>
+<h2><a href='https://infrastructure.planninginspectorate.gov.uk/legislation-and-advice/register-of-advice/'>Register of advice</a></h2>
+<p>View the advice the Planning Inspectorate has provided in respect of the Planning Act 2008 process. Note that after a project page has been created for a particular application, any advice provided that relates to it will also be published under the ‘s51 advice’ tab on the relevant project page.</p>
+<h2><a href='applicant-guide-1'>Applicant guide</a></h2>
+<p>This guide provides an overview of the process, fees and additional resources for those looking to submit a planning proposal.</p>
+
+
+<!--<h3 class="gov-uk-heading-m">One: Local impact reports (version 2, last updated April 2012)</h3>
+<p class="govuk-body">
+<h3 class="gov-uk-heading-m">Two: The role of local authorities in the development consent process (version one, published February 2015)
+</h3>
+<h3 class="gov-uk-heading-m">Three: Environmental Impact Assessment (EIA) consultation and notification (version 7, republished August 2017)
+</h3>
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          One: Local impact reports (version 2, last updated April 2012)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <p class='govuk-body'>Advice on the creation of Local Impact Reports (LIR) and includes how it works, the timetable to operate by and what to include in the LIR. </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          Two: The role of local authorities in the development consent process (version one, published February 2015)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      <p class='govuk-body'>
+Advice on the role of local authorities at different stages of the Planning Act 2008 process.  This includes an overview of the process, the local authority’s role and how to get in touch at various stages.</p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+          Three: Environmental Impact Assessment (EIA) consultation and notification (version 7, republished August 2017)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+      <p class='govuk-body'>This advice explains how the planning inspectorate identifies consultation bodies to be notified under Regulation 11 of The Infrastructure Planning (Environmental Impact Assessment) Regulations 2017 (the ‘EIA Regulations’). </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+          How people read
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+      <p class='govuk-body'>This is the content for How people read.</p>
+    </div>
+  </div>
+</div>-->
+
+  </div>
+</div>
+
+{% endblock %}
