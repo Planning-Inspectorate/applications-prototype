@@ -4,6 +4,16 @@
   Service unavailable
 {% endblock %}
 
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceNameNoLink: "Have your say on an application"   ,
+  serviceUrl: "/design-sprint-34/start/"
+
+}) }}
+
+{% endblock %}
+
 {% block beforeContent %}
 
   {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -14,15 +24,21 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <!-- <a class="govuk-back-link" href="javascript:history.back()">Back</a> -->
 {% endblock %}
+
+<style>
+# govuk-main-wrapper govuk-main-wrapper--l  {
+    padding-top: 10px;
+  }
+</style>
 
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main" >
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds" >
         <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
         <p class="govuk-body">
           You will be able to use the service later
