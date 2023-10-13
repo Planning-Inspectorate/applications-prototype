@@ -35,28 +35,140 @@ Relevant representations  {% endblock %}
 
 {% block content %}
 
+{% set repTypes = ['Local authorities', 'Members of the public/businesses','Non-statutory organisations','Other statutory consultees','Parish councils']  %}
+
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <nav>
       {% set current = 'comments' %}
       {% include "../includes/vertical_tabs_no_guides.html" %}
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
 <h3 class="govuk-heading-m">Filter</h3>
 
+<!-- <p class="govuk-body"><a id="show-all" class="govuk-link">Show all sections</a></p> -->
+<p class="govuk-body"><a id="show-all" class="govuk-link">Show all sections</a></p>
+
+
+
+
+
+<!-- place1  -->
+
+
+<div class="app-c-option-select js-collapsible js-closed" data-module="option-select" data-closed-on-load="true" data-input-aria-controls="js-search-results-info" data-option-select-module-started="true">
+  <h2 class="app-c-option-select__heading js-container-heading">
+    <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button" aria-expanded="false" id="location-toggle" aria-controls="report_type">Type</button>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h2>
+  <div role="group" aria-labelledby="option-select-title-report-type" class="" id="report_type" tabindex="-1" >
+
+
+
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner" id="location-opener">
+
+<div id="checkboxes-66953b3d" class="gem-c-checkboxes govuk-form-group govuk-checkboxes--small" data-module="gem-checkboxes govuk-checkboxes" data-gem-checkboxes-module-started="true" data-govuk-checkboxes-module-started="true">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Type</legend>
+
+<!-- <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a id="check-all" class="govuk-link" href="javascript:alert('Not in prototype!')">Select all filters</a></p> -->
+<p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3"><a id="check-all" class="govuk-link">Select all filters</a></p>
+<!-- place1  -->
+
+
+
+
+{% for locations  in repTypes %}
+
+{% set locationsNospace  = locations | replace(" ","") %}
+
+{% set locationsNospace  = locationsNospace | replace("/","") %}
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="chk-{{locationsNospace}}" name="chk-location" type="checkbox" value="{{locations}}">
+  <label class="govuk-label govuk-checkboxes__label" for="developers-application">
+{{locations}} ({{ range(1, 6) | random }})
+</label>
+
+</div>
+
+
+
+{% endfor %}
+
+
+
+
+<!--cb here -->
+
+
+
+
+</ul>
+</fieldset>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+   <div id="keywords" role="search" aria-label="Air Accidents Investigation Branch reports">
+
+
+   </div>
+
+   <div data-module="gem-track-click" data-track-category="filterClicked" data-track-action="skip-Link" data-track-label="" data-gem-track-click-module-started="true">
+     <a class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" data-module="govuk-skip-link" href="#js-results" data-govuk-skip-link-module-started="true">Skip to results</a>
+
+   </div>
+
+   <div id="facet-wrapper" data-module="mobile-filters-modal" class="facets" role="search" aria-label="Search filters" data-mobile-filters-modal-module-started="true">
+     <div class="facets__box">
+       <div class="facets__header">
+         <div>
+           <h1 class="gem-c-heading govuk-heading-xl govuk-!-margin-bottom-2">Filter</h1>
+
+           <h2 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-0"><span class="js-result-count govuk-!-font-weight-regular">283 reports</span></h2>
+
+         </div>
+         <button class="app-c-button-as-link facets__return-link js-close-filters" type="button">
+           Return to results
+         </button>
+       </div>
 
 
 
 <form method="post" action="relevant-reps?filtersapplied=true">
 
-<div class="govuk-form-group">
+<!-- <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 
     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="local-authorities" name="relevant-reps" type="checkbox" value="local-authorities" {% if (data['filtersapplied']=="true") %}checked {% endif %}>
         <label class="govuk-label govuk-checkboxes__label" for="local-authorities">
-          Local authorities (2)
+          Local authorities (4)
         </label>
       </div>
       <div class="govuk-checkboxes__item">
@@ -87,7 +199,7 @@ Relevant representations  {% endblock %}
 
 
   </fieldset>
-</div>
+</div> -->
 <button class="govuk-button" id="toggleButton" data-module="govuk-button">
  Apply filters
 </button>
@@ -102,13 +214,13 @@ Relevant representations  {% endblock %}
 <ul class="govuk-list sidenav">
 <!--  <li class="govuk-body-s">
     <a href="../dco-process-guide/">
-    Find out more about the decision making process for national infrastructure projects
+    The process for Nationally Significant Infrastructure Projects (NSIPs)
     </a
     >
   </li>-->
   <li class="govuk-body-s">
       <a href="../dco-process-guide/">
-      Find out more about the decision making process for national infrastructure projects
+      The process for Nationally Significant Infrastructure Projects (NSIPs)
       </a
       >
     </li>
@@ -134,12 +246,26 @@ Relevant representations  {% endblock %}
 
 
 
+{% for chkstg in data['chk-location'] %}
+{% set chkstgNoSpace  = chkstg | replace(" ","") %}
+<!-- <li>{{ chk }} </li> -->
+<span class="facet-tags__preposition"> &nbsp; </span>
+<span class="facet-tag" id="tag{{chkstgNoSpace}}"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">{{chkstg}}</span>
+<button type="button" class="facet-tag__remove" name="mybutton" value="{{chkstg}}" aria-label="Remove filter 21 November 2014" data-module="remove-filter-link" data-track-label="21 November 2014" data-facet="date_of_occurrence" data-value="21/11/2014" data-name="date_of_occurrence[from]">✕</button>
+</span>
+{% else %}
 
+{% endfor %}
 
 
 
 {% if (data['filtersapplied']=="true") %}
 <h3 class="govuk-heading-m">Filtered results</h3>
+
+
+
+
+
    <div class="facet-tags__group"> <div class="facet-tags__wrapper"><span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Local authorities</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div> <div class="facet-tags__wrapper"><span class="facet-tag  govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Non-statutory organisations</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Bulletin - Correspondence investigation" data-module="remove-filter-link" data-track-label="Bulletin - Correspondence investigation" data-facet="report_type" data-value="correspondence-investigation" data-name="">✕</button> </span> </div></div>
 <p class="govuk-body govuk-!-margin-top-3"><a href="relevant-reps?filtersapplied=false" class="govuk-link">Clear filters</a></p>
    <p class="govuk-body govuk-!-margin-top-5">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">3</span> of <span class="govuk-!-font-weight-bold">3</span> representations, newest first.  </p>
@@ -570,6 +696,7 @@ Local authorities
     </div>-->
 
 
+
   </div>
 
 </form>
@@ -579,3 +706,42 @@ Local authorities
     {% block footer %}
       {{ pinsFooter() }}
     {% endblock %}
+        {% block pageScripts %}
+        <script>
+          $(document).ready(function(){
+              $("#location-opener").show();
+
+
+              $("#location-toggle").click(function(){
+              $("#location-toggle").attr("aria-expanded","true");//  alert("pre-app") ;
+              $("#location-opener").toggle();
+            });
+
+            $("#show-all").click(function(){
+              $("#location-opener").toggle();
+                });
+                $("#check-all").click(function(){
+                  // alert("here");
+                $( "#chk-Localauthorities" ).prop( "checked", true );
+                $( "#chk-Non-statutoryorganisations" ).prop( "checked", true );
+                  $( "#chk-Otherstatutoryconsultees" ).prop( "checked", true );
+                  $( "#chk-Parishcouncils" ).prop( "checked", true );
+                  $( "#chk-Membersofthepublicbusinesses" ).prop( "checked", true );
+                    });
+
+                    // $("#check-all").click(function(){
+                    //    alert("here");
+                    //     if(this.checked){
+                    //         $('.chk-location').each(function(){
+                    //             this.checked = true;
+                    //         });
+                    //     }else{
+                    //          $('.chk-location').each(function(){
+                    //             this.checked = false;
+                    //         });
+                    //     }
+                    // });
+
+            });
+    </script>
+        {% endblock %}
