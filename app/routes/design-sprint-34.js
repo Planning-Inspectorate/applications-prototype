@@ -1200,6 +1200,26 @@ router.post("/design-sprint-34/project-filter-answer",
 
 });
 
+router.post("/design-sprint-34/reps-filter-answer",
+  function (req, res) {
+    //var unsubscribeChange = req.session.data["type-of-updates"];
+    let  mylocation = req.session.data['chk-location'];
+    console.log(mylocation);
+    if (mylocation)
+    {
+      console.log(mylocation.length);
+      req.session.data['tag-location-show'] = "true" ;
+    }
+
+      req.session.data['filtersapplied'] = "true" ;
+      res.redirect("/design-sprint-34/wide-nav/relevant-reps");
+
+
+});
+
+
+
+
 
 router.post("/design-sprints-34/form-drax",
   function (req, res) {
