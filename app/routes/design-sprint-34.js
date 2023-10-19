@@ -1070,16 +1070,17 @@ location = new Array();
 // location[8] = "London";
 
 
-location[0] = "North East";
-location[1] = "North West";
+location[0] = "North West";
+location[1] = "North East";
 location[2] ="Yorkshire and the Humber";
-location[3] = "East Midlands";
-location[4] = "West Midlands";
+location[3] = "West Midlands";
+location[4] = "East Midlands";
 location[5] = "Eastern";
-location[6] = "London";
+location[6] = "South West";
 location[7] ="South East";
-location[8] = "South West";
+location[8] = "London";
 location[9] = "Wales";
+
 
 
 
