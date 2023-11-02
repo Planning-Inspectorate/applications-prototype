@@ -7,7 +7,7 @@
 {% block header %}
   <!-- Blank header with no service name for the start page -->
   {{ pinsHeader({
-  serviceNameNoLink: "Have your say on an application"   ,
+  serviceNameNoLink: "Register to have your say"   ,
   serviceUrl: "/design-sprint-34/start/"
 
 }) }}
@@ -36,18 +36,22 @@
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main" >
+  <main class="govuk-main-wrapper" id="main-content" role="main" >
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds" >
-        <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
-        <p class="govuk-body">
-          You will be able to use the service later
-          <br><br>
-          We have not your saved your answers. When the service is available, you will have to start again.
-        </p>
-        <p class="govuk-body">
-          <a class="govuk-link" href="#">Contact the planning inspectorate Customer Support</a> if the problem persists.
-        </p>
+        <h1 class="govuk-heading-l">There is a problem</h1>
+            <p class="govuk-body">
+
+              Your registration cannot be completed </p>
+            <p class="govuk-body">
+              <a href="{{ detailsLink }}" class="govuk-link">Re-enter your details</a>
+            </p>
+
+            <p class="govuk-body">
+              <a class="govuk-link" data-cy="Enquiries" href="mailto:enquiries@planninginspectorate.gov.uk">Contact the
+                Planning Inspectorate Customer Support</a> if you
+              need help.
+            </p>
       </div>
     </div>
   </main>

@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Section 51 advice
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+<style type="text/css">
+  .no-margin {
+    margin-top: 0px;
+  }
+  </style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav>
+      {% set current = 'section51' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+</nav>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-breadcrumbs no-margin">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="index">Section 51 advice</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+    Advice in detail
+      </li>
+
+    </ol>
+  </div>
+    <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-l">  Dear Sirs/Madams, In light of the current public health situation surrounding COVID-19 and the Planning Inspectorate’s recent decision to postpone all local plan, appeal and NSIP hearings and enquiries until further notice we write to ask whether any postponement or delay is envisaged in relation to the Southampton to London Pipeline Project. We note that the close of examination is to be the 9 April 2020 and our client, Thames Water Utilities Limited have issues and comments still outstanding. We may need to make final representations before the close of the examination if these are not satisfied by ongoing discussions with the We also wish to manage our clients expectations if there are likely to be delays in the examination and decision periods. Any information you may have in this regard would be welcomed. Kind regards Beth Youngs | Solicitor | Planning and Environmental Team | Birketts LLP
+</h1>
+
+    <a class="govuk-back-link no-margin" href="index" data-cy="back">Back to list</a>
+
+
+
+      <h3 class="govuk-heading-m">
+Enquiry      </h3>
+
+<dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Author
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Thames Water Utilities Limited
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date published
+            </dt>
+            <dd class="govuk-summary-list__value">
+              20 June 2022
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Enquiry type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Email
+            </dd>
+          </div>
+        </dl>
+
+      <p class="govuk-body">
+
+Advice following issue of decision to accept the application for examination.
+      </p>
+
+    <h3 class="govuk-heading-m">
+Advice given     </h3>
+<p class="govuk-body">Please see attached.</p>
+<h3 class="govuk-heading-m">
+Attachments     </h3>
+
+<p class="govuk-body"><a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010120/EN010120-Advice-00010-1-20220620_EN010120_Drax%20BECCS_s51%20advice%20following%20acceptance.pdf">View advice (PDF)</a></p>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

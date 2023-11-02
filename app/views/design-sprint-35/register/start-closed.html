@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceNameNoLink: "Register to have your say",
+    serviceUrl: "/mvp/pre-examination/register/start",
+    saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+
+{% set primarynav = 'projects' %}
+
+  {% include "design-sprint-11/includes/primary-nav.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <nav>
+        {% set current = 'submission' %}
+        {% include "design-sprint-35/includes/vertical_tabs.html" %}
+  <!--<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+  --></nav>
+  </div>
+
+
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
+      <h1 class="govuk-heading-l">
+        Register to have your say about a national infrastructure project
+      </h1>
+
+
+
+      <!--<h2 class="govuk-heading-m">Return to a saved registration</h2>
+
+      <p class="govuk-body">Once you have started your registration, you can save your progress and come back before the end of the registration period. If you save your partially completed registration, we will email a return link to you. Check your emails and click the link to return to your registration.</p>-->
+      <p class="govuk-body">The time period to register to have your say has closed.</p>
+      <!--<p class="govuk-body">To return to your saved registration, click the link in the email you were sent when you saved your registration.</p>-->
+
+
+
+      <!-- <p>You can also <a href="#">register by post</a>.</p> -->
+
+      <!--<p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>-->
+
+      <!-- <p>You can’t register for this service if you’re in the UK illegally.</p> -->
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

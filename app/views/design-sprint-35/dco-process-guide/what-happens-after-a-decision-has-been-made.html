@@ -1,0 +1,303 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What happens after the decision is made
+{% endblock %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% set primarynav = 'processguide' %}
+
+    {% include "design-sprint-35/includes/primary-nav.html" %}
+    {% include "../includes/secondary-nav-process-guide.html" %}
+
+{% endblock %}
+{% block content %}
+
+    <h1 class="govuk-heading-xl">
+      What happens after the decision is made
+    </h1>
+    <h2 class="pins-contents-list-title govuk-heading-s">Contents</h2>
+    <ol class="govuk-list pins-contents-list">
+      <li><a href="#after-the-decision-is-made">After the decision is made</a></li>
+    <!--  <li><a href="#about-the-judicial-review">About the judicial review</a></li>-->
+    </ol>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="pins-step-by-step-section-main">
+                <h2 class="govuk-heading-m" id="after-the-decision-is-made">After the decision is made</h2>
+                <p>After the Secretary of State has made their decision, there is a 6-week period where people can challenge the decision in the high court. This is called a judicial review.</p>
+              <!--  <h2 class="govuk-heading-m" id="about-the-judicial-review">About the Judicial Review</h2>
+                <p>If you or another organisation decide to appeal against the Secretary of State's decision, you can ask for a Judicial Review. A judge will be appointed to hear your case in the High Court. The judge's decision will be final.</p>
+                <p>you can <a href="#">find out more about the Judicial Review process and how it works</a>.</p>-->
+
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="pins-step-by-step-section-sidebar">
+
+        <div class="app-step-nav-related app-step-nav-related--singular">
+            <h2 class="app-step-nav-related__heading">
+                <span class="app-step-nav-related__pretitle">Part of</span>
+                <a href="./">The process for Nationally Significant Infrastructure Projects (NSIPs)</a>
+            </h2>
+
+        </div>
+        <div id="step-by-step-navigation-default-process-guide" class="pins-step-nav app-step-nav">
+          <ol class="app-step-nav__steps">
+            <li aria-current="step" data-show id="pre-application" class="app-step-nav__step
+
+
+
+              ">
+              <div class="app-step-nav__header " data-position="1">
+                  <h3 class="app-step-nav__title">
+                  <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                      <span class="app-step-nav__circle-background">
+                          <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 1
+                          <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                      </span>
+                      </span>
+                  </span>
+                  <span>
+                      Pre-application
+                  </span>
+                  </h3>
+              </div>
+              <div class="app-step-nav__panel js-panel" id="step-panel-pre-application-1">
+                <p class="app-step-nav__paragraph">This is where the developer starts to create their application. This is where the developer must run a consultation and engage with people and organisations in the area. They must also create detailed documents about the impact the project could have on the environment.  </p>
+                  <p class="app-step-nav__paragraph">It is important to get involved at this stage to influence the application before the developer sends it to the Planning Inspectorate. </p>
+                <p class="app-step-nav__paragraph"><a href="./pre-application">Find out what you can do at this stage and check our detailed guides</a></p>
+              </div>
+              </div>
+            </li>
+            <li aria-current="step" data-show id="review-of-the-application" class="app-step-nav__step
+
+              ">
+              <div class="app-step-nav__header " data-position="2">
+                  <h3 class="app-step-nav__title">
+                  <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                      <span class="app-step-nav__circle-background">
+                          <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 2
+                          <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                      </span>
+                      </span>
+                  </span>
+                  <span>
+                      Acceptance of the application
+                  </span>
+                  </h3>
+              </div>
+              <div class="app-step-nav__panel js-panel" id="step-panel-rreview-of-the-application-1">
+                <p class="app-step-nav__paragraph">This is when the developer sends us their application documents. We check if we can accept the application for examination. We have 28 days to make this decision. </p>
+                <p class="app-step-nav__paragraph"><a href="./review-of-the-application">How the acceptance stage works and what happens next </a></p>            </div>
+            </li>
+            <li aria-current="step" data-show id="pre-examination-of-the-project" class="app-step-nav__step
+
+              ">
+              <div class="app-step-nav__header " data-position="3">
+                  <h3 class="app-step-nav__title">
+                  <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                      <span class="app-step-nav__circle-background">
+                          <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 3
+                          <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                      </span>
+                      </span>
+                  </span>
+                  <span>
+                      Pre-examination
+                  </span>
+                  </h3>
+              </div>
+              <div class="app-step-nav__panel js-panel" id="step-panel-pre-examination-of-the-project-1">
+                <p class="app-step-nav__paragraph">The examining authority is appointed and is made up of one or more inspectors. Anyone who wants to have their say will be able to register at this stage.  </p>
+                <p class="app-step-nav__paragraph">The developer must publish that the application has been accepted by us. They include when and how parties can register to get involved. The time period for registering is set by the developer but must be no less than 28 days. </p>
+                <p class="app-step-nav__paragraph">The pre-examination stage usually takes about 3 months. </p>
+                <p class="app-step-nav__paragraph"><a href="./pre-examination">What happens during the pre-examination stage </a></p>
+              </div>
+            </li>
+            <li aria-current="step" data-show id="examination-of-the-project" class="app-step-nav__step
+
+              ">
+                <div class="app-step-nav__header " data-position="4">
+                    <h3 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                            <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 4
+                            <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                        </span>
+                        </span>
+                    </span>
+                    <span>
+                        Examination
+                    </span>
+                    </h3>
+                </div>
+                <div class="app-step-nav__panel js-panel" id="step-panel-examination-of-the-project-1">
+                  <p class="app-step-nav__paragraph">The examining authority will ask questions about the proposed development. The developer and anyone who has registered to have their say can get involved and submit comments at each deadline in the timetable. You can also attend hearings that may take place. This stage takes up to 6 months. </p>
+                  <p class="app-step-nav__paragraph"><a href="./examination">What happens at the examination stage</a></p>
+                </div>
+            </li>
+
+            <li aria-current="step" data-show id="recommendation-and-decision" class="app-step-nav__step
+
+              ">
+                <div class="app-step-nav__header " data-position="5">
+                    <h3 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                            <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 5
+                            <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                        </span>
+                        </span>
+                    </span>
+                    <span>
+                        Recommendation
+                    </span>
+                    </h3>
+                </div>
+                <div class="app-step-nav__panel js-panel" id="step-panel-recommendation-and-decision-1">
+                  <p class="app-step-nav__paragraph">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.  </p>
+                  <!-- <p class="app-step-nav__paragraph">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision. </p> -->
+                <p class="app-step-nav__paragraph"><a href="./recommendation">Making a recommendation</a></p>
+            </li>
+            <li aria-current="step" data-show id="recommendation-and-decision" class="app-step-nav__step
+
+              ">
+            <div class="app-step-nav__header " data-position="6">
+                <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                    <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                        <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 6
+                        <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                    </span>
+                </span>
+                <span>
+                    Decision
+                </span>
+                </h3>
+            </div>
+            <div class="app-step-nav__panel js-panel" id="step-panel-recommendation-and-decision-1">
+              <!-- <p class="app-step-nav__paragraph">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.  </p> -->
+              <p class="app-step-nav__paragraph">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision. </p>
+            <p class="app-step-nav__paragraph"><a href="./decision">Who makes the final decision</a></p>
+          </li>
+
+
+            <li aria-current="step" data-show id="what-happens-after-a-decision-is-made" class="app-step-nav__step app-step-nav__step--active
+
+              ">
+              <div class="app-step-nav__header " data-position="7">
+                  <h3 class="app-step-nav__title">
+                  <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                      <span class="app-step-nav__circle-background">
+                          <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 7
+                          <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                      </span>
+                      </span>
+                  </span>
+                  <span>
+                      What happens after a decision is made
+                  </span>
+                  </h3>
+              </div>
+              <div class="app-step-nav__panel js-panel" id="step-panel-what-happens-after-a-decision-is-made-1">
+                <p class="app-step-nav__paragraph">Once the Secretary of State has made a decision, there is a 6-week period where people can challenge the decision in the high court. This is called a judicial review. </p>
+              <p class="app-step-nav__paragraph"><a href="./what-happens-after-a-decision-has-been-made">What you can do after the decision has been made</a></p>
+              </div>
+            </li>
+            <!-- <li aria-current="step" data-show id="recommendation-and-decision" class="app-step-nav__step
+
+              ">
+                <div class="app-step-nav__header " data-position="5">
+                    <h3 class="app-step-nav__title">
+                    <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                        <span class="app-step-nav__circle-background">
+                            <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 5
+                            <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                        </span>
+                        </span>
+                    </span>
+                    <span>
+                        Recommendation and decision
+                    </span>
+                    </h3>
+                </div>
+                <div class="app-step-nav__panel js-panel" id="step-panel-recommendation-and-decision-1">
+                  <p class="app-step-nav__paragraph">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.  </p>
+                  <p class="app-step-nav__paragraph">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision. </p>
+                <p class="app-step-nav__paragraph"><a href="./recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
+            </li>
+            <li aria-current="step" data-show id="what-happens-after-a-decision-is-made" class="app-step-nav__step
+app-step-nav__step--active
+              ">
+              <div class="app-step-nav__header " data-position="6">
+                  <h3 class="app-step-nav__title">
+                  <span class="app-step-nav__circle app-step-nav__circle--number">
+                      <span class="app-step-nav__circle-inner">
+                      <span class="app-step-nav__circle-background">
+                          <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 6
+                          <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                      </span>
+                      </span>
+                  </span>
+                  <span>
+                      What happens after a decision is made
+                  </span>
+                  </h3>
+              </div>
+              <div class="app-step-nav__panel js-panel" id="step-panel-what-happens-after-a-decision-is-made-1">
+                <p class="app-step-nav__paragraph">Once the Secretary of State has made a decision, there is a 6-week period where people can challenge the decision in the high court. This is called a judicial review. </p>
+              <p class="app-step-nav__paragraph"><a href="./what-happens-after-a-decision-has-been-made">What you can do after the decision has been made</a></p>
+              </div>
+            </li> -->
+          </ol>
+        </div>
+
+    </div>
+            </div>
+
+
+        </div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ pinsFooter() }}
+{% endblock %}

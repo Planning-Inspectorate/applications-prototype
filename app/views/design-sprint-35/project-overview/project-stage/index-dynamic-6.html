@@ -1,0 +1,639 @@
+{% extends "layout.html" %}
+{% block pageTitle %}Drax Bioenergy with Carbon Capture and Storage Project
+{% endblock %}
+{% block headIcons %}
+  <link
+  rel="shortcut icon"
+  href="{{ asset_path }}images/unbranded.ico?0.18.3"
+  type="image/x-icon"
+/>
+
+{% endblock %}
+{% block head %}
+
+  <!--[if lte IE 8
+  ]><link
+    href="/public/stylesheets/unbranded-ie8.css"
+    rel="stylesheet"
+    type="text/css"
+/><![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link
+  href="/public/stylesheets/unbranded.css"
+  media="all"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.css" />
+<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css" />
+<style>
+    body { margin:0; padding:0; }
+    #map { width:100%;height:35em;position:relative;margin-bottom:20px; }
+    </style>
+
+  <!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css"/>
+  {% endfor %}
+
+  <!-- Mapbox resources -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+
+  <!-- end Mapbox -->
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+{% block beforeContent %}
+  {{
+govukPhaseBanner({ tag: { text: "beta" }, html: 'This is a new service – your
+<a class="govuk-link" href="#">feedback</a> will help us to improve it.' }) }}
+{% set primarynav = 'projects' %}
+
+  {% include "../../includes/primary-nav.html" %}
+{% endblock %}
+{% block content %}
+{% set current = 'project-information' %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% set current = '6' %}
+          {% include "../../includes/vertical_tabs_dynamic.html" %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
+          <h1 class="govuk-heading-xl">Project Information</h1>
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Navigation for project stage progression - prototype
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-body">
+
+      </p>
+
+      <p>View <a href="index-dynamic-5">Previous</a> | <a href="index-dynamic-7">Next</a></p>
+    </div>
+  </div>
+
+          <h2 class="govuk-heading-m">About the project</h2>
+                    <p>Type of application: <strong>Generating station</strong></p>
+<p>Name of applicant: <strong>Drax Power Limited</strong></p>
+  <p class="govuk-body">
+Drax Power Limited proposes to install post-combustion capture technology that would capture carbon dioxide emissions from up to two of the existing biomass units at Drax Power Station. </p>
+<p class="govuk-body">The proposal includes the construction and operation of carbon capture technology and associated equipment, and the integration of the units into the existing Common Services at Drax Power Station. The proposal includes associated development.
+</p>
+<p class="govuk-body"><a href="https://beccs-drax.com/"> View the developer's website</a></p>
+
+
+
+<hr
+class="
+  govuk-section-break
+  govuk-section-break--xl
+  govuk-section-break--visible
+"
+/>
+
+<h2 class="govuk-heading-m">Project stage</h2>
+  <p class="govuk-body">This project is at the <strong>pre-examination</strong> stage</p>
+
+
+  <p class="govuk-body">We have now published all registration comments. </p>
+
+<p class="govuk-body">You can <a href="/design-sprint-35/wide-nav/relevant-reps">view comments from other people who registered</a>.</p>
+
+<p class="govuk-body">If you have a legal interest in land affected by the proposed development and:
+<ul class="govuk-list govuk-list--bullet">
+<li>have not been contacted by the developer; and</li>
+
+<li>did not register to have your say to become an interested party</li></ul>
+
+<p class="govuk-body"> Email <a href="mailto:DraxBECCS@planninginspectorate.gov.uk">DraxBECCS@planninginspectorate.gov.uk</a> with your request to become an interested party.<p>
+
+
+    <!-- <p class="govuk-body"><a href="./register/start" class="govuk-button"
+  >Register to have your say</a></p>
+
+<p class="govuk-body"><a href="" class="govuk-link"> Find out more about registering to have your say.</a></p> -->
+
+
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-top-3">
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Pre-application
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">This is where the applicant starts to create their application. The applicant is required to run a consultation and engage with people and organisations in the area. They must also create detailed documents about the impact the project could have on the environment.</p>
+
+    <p class="govuk-body">You can get involved at this stage to influence the application before the applicant sends it to the Planning Inspectorate.  </p>
+    <p class="govuk-body"><a href="../../dco-process-guide/pre-application">Find out what you can do at this stage and check our detailed guides</a></p>
+  </div>
+</details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+
+              <details class="govuk-details" data-module="govuk-details"  >
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    Acceptance
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">This is when the applicant sends us their application documents. We check if we can accept the application for examination. We have 28 days to make this decision.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/review-of-the-application">How the acceptance stage works and what happens next </a></p>
+  </div>
+</details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details"  open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    Pre-examination
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The examining authority is appointed and is made up of one or more inspectors. Anyone who wants to have their say will be able to register at this stage.</p>
+
+  <p class="govuk-body">The applicant must publish that the application has been accepted by us. They include when and how parties can register to get involved. The time period for registering is set by the applicant but must be no less than 28 days.</p>
+
+  <p class="govuk-body">The pre-examination stage usually takes about 3 months.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/pre-examination">What happens during the pre-examination stage </a></p>
+  </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+  Examination
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">The examining authority will ask questions about the proposed development. The applicant and anyone who has registered to have their say can get involved and submit comments at each deadline in the timetable. You can also attend hearings that may take place. This stage takes up to 6 months.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/examination">What happens at the examination stage</a></p>
+  </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details"  >
+      <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+      Recommendation
+      </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p class="govuk-body">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.</p>
+      <p class="govuk-body"><a href="../../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
+      </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details" >
+      <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+      Decision
+      </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p class="govuk-body">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision.</p>
+      <p class="govuk-body"><a href="../../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
+      </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row" style="border-bottom:none;">
+
+            <dd class="govuk-summary-list__value">
+              <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+What happens after the decision is made
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Once the Secretary of State has made a decision, there is a 6-week period where people can challenge the decision in the high court. This is called a judicial review.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/what-happens-after-a-decision-has-been-made">What you can do after the decision has been made</a></p>
+  </details>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not started</strong>
+            </dd>
+            </div>
+          </dl>
+
+
+
+
+<!--
+  <div class="pins-timeline">
+
+    <ol>
+    <li><a href="" id="preapplication"> <span>Pre-application</span> <div class="pins-timeline-badge govuk-tag--green">&#10003;</div> </a> </li>
+      <li><a href="#acceptance"> <span>Acceptance  </span> <div class="pins-timeline-badge govuk-tag--green">&#10003;
+      </div></a></li>
+      <li><a href="../../dco-process-guide/pre-examination"><span>Pre-examination </span>  <div class="pins-timeline-badge govuk-tag--green">&#10003;</div></li>
+
+      <li><a href="/design-sprint-35/dco-process-guide/examination"><span>Examination </span><div class="pins-timeline-badge govuk-tag--blue"><svg class="svg-inline--fa fa-hourglass-half fa-w-12 stage-in-progress commons" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hourglass-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+        <path fill="currentColor" d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z">
+        </path>
+      </svg></div></a></li>
+      <li> <a href="../../dco-process-guide/recommendation-and-decision"><span>Recommendation & Decision</span><div class="pins-timeline-badge govuk-tag--grey"></div></a></li>
+      <li> <a href="../../dco-process-guide/recommendation-and-decision"><span>Post decision</span><div class="pins-timeline-badge govuk-tag--grey"></div></a></li>
+
+    </ol>
+    <!--<p class="govuk-!-margin-top-5 govuk-!-margin-bottom-0"><a href="dco-process-guide" class="govuk-body">Find out what you can do at the Examination stage of the project.</a></p>-->
+<!--  </div>-->
+
+
+  <!--  <div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Pre-application
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Acceptance
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Pre-examination
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-year">
+        Examination
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#recommendation">
+        Recommendation and decision
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="pre-application">
+    <h3 class="govuk-heading-m">Pre-application</h3>
+    <p class="govuk-body">This is where the applicant starts to create their application. The applicant is required to run a consultation and engage with people and organisations in the area. They must also create detailed documents about the impact the project could have on the environment.</p>
+
+    <p class="govuk-body">You can get involved at this stage to influence the application before the applicant sends it to the Planning Inspectorate.  </p>
+    <p class="govuk-body"><a href="../../dco-process-guide/pre-application">Find out what you can do at this stage and check our detailed guides</a></p>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="acceptance">
+    <h3 class="govuk-heading-m">Acceptance</h3>
+    <p class="govuk-body">This is when the applicant sends us their application documents. We check if we can accept the application for examination. We have 28 days to make this decision.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/review-of-the-application">How the acceptance stage works and what happens next </a></p>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h3 class="govuk-heading-m">Pre-examination</h3>
+    <p class="govuk-body">The examining authority is appointed and is made up of one or more inspectors. Anyone who wants to have their say will be able to register at this stage.</p>
+
+  <p class="govuk-body">The applicant must publish that the application has been accepted by us. They include when and how parties can register to get involved. The time period for registering is set by the applicant but must be no less than 28 days.</p>
+
+  <p class="govuk-body">The pre-examination stage usually takes about 3 months.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/pre-examination">What happens during the pre-examination stage </a></p>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h3 class="govuk-heading-m">Examination</h3>
+    <p class="govuk-body">The examining authority will ask questions about the proposed development. The applicant and anyone who has registered to have their say can get involved and submit comments at each deadline in the timetable. You can also attend hearings that may take place. This stage takes up to 6 months.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/examination">What happens at the examination stage</a></p>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="recommendation">
+    <h3 class="govuk-heading-m">Recommendation and decision</h3>
+    <p class="govuk-body">The examining authority writes its recommendation report. This must be completed and sent to the relevant Secretary of State within 3 months of the end of examination.</p>
+    <p class="govuk-body">The decision stage is when the relevant Secretary of State then reviews the report and makes the final decision. They have 3 months to make a decision.</p>
+    <p class="govuk-body"><a href="../../dco-process-guide/recommendation-and-decision">Making a recommendation and who makes the final decision</a></p>
+  </div>
+</div>-->
+    <!-- <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is the Examination stage?
+    </span>
+  </summary>
+  <div class="govuk-details__text"> -->
+
+      <!-- </p>  </div>
+</details> -->
+
+
+
+
+
+          <!--<p>
+            <strong>
+              <a href="../get-updates/">Get updates about this project</a
+            >.</strong
+          >
+          </p>-->
+
+
+
+          <!--<h2 class="govuk-heading-m">Project stage</h2>-->
+
+
+        <!--  <p>
+            <a href="../../../dco-process-guide/examination">Find out more about the Examination of the application stage</a>.
+        </p> -->
+
+
+
+
+          <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+<h2  class="govuk-heading-m">Project location</h2>
+
+<p class="govuk-body">At, and in the vicinity of, Drax Power Station, New Road, Drax, Selby, North Yorkshire YO8 8PH</P>
+
+<div id="map" aria-label="Map of Drax power station" aria-role="application" alt="Drax map" title="Drax Map"></div>
+
+<hr
+class="
+  govuk-section-break
+  govuk-section-break--xl
+  govuk-section-break--visible
+"
+/>
+
+<!--
+<h2 class="govuk-heading-m">Project Documents</h2>
+
+<ul class="govuk-list">
+  <p class="govuk-heading-s govuk-!-margin-bottom-1">
+    <a href="../document-library/index-filtered-intro?filtersapplied=true">Application forms</a>
+  </p>
+  <p class="govuk-body">
+  View descriptions of the proposed development. This is an overview of what could be granted consent through the application.
+</p>
+
+  <p class="govuk-heading-s govuk-!-margin-bottom-1">
+    <a href="../document-library/index-filtered-environmental?filtersapplied=true">Environmental statements</a>
+  </p>
+  <p class="govuk-body">
+  View descriptions of the land and what aspects of the environment may be affected.
+</p>
+  <p class="govuk-heading-s govuk-!-margin-bottom-1">
+    <a href="../document-library/index-filtered-plans?filtersapplied=true">Plans</a>
+  </p>
+  <p class="govuk-body">
+View the location of the application site or route, grid references and details of the design, such as layout of buildings.
+</p>
+</ul>
+<hr
+class="
+  govuk-section-break
+  govuk-section-break--xl
+  govuk-section-break--visible
+"
+/>
+-->
+
+       <h2 class="govuk-heading-m">
+        Get updates
+       </h2>
+       <p class="govuk-body">Enter your email address to receive:</p>
+       <ul class="govuk-list govuk-list--bullet">
+  <li>updates on project progress</li>
+
+<li>information on how to have your say</li>
+
+<li>notifications when key documents are published</li>
+</ul>
+<div class="govuk-inset-text">
+Read the <a href="https://www.gov.uk/government/publications/planning-inspectorate-privacy-notices/customer-privacy-notice">privacy notice</a> to see how we handle your information.
+</div>
+       {% from "govuk/components/button/macro.njk" import govukButton %}
+
+       {{ govukButton({
+         text: "Get updates",
+         href: "../get-updates/index",
+         isStartButton: false
+       }) }}
+
+       <hr
+       class="
+         govuk-section-break
+         govuk-section-break--xl
+         govuk-section-break--visible
+         govuk-!-margin-top-2
+       "
+       />
+
+     <h2 class="govuk-heading-m">Contact us</h2>
+
+       <h3 class="govuk-heading-s">
+           Telephone
+         </h3>
+           <p>If you have an interested party number, have it with you when you call.
+        <p class="govuk-body">
+          Telephone: 0303 444 5000<br/>
+          Monday to Friday, 9am to 12pm (except public holidays)
+
+       </p>
+ <h3 class="govuk-heading-s">
+     Email
+   </h3>
+
+<p class="govuk-body"><a href="mailto:DraxBECCS@planninginspectorate.gov.uk">DraxBECCS@planninginspectorate.gov.uk</a>.</p>
+
+
+
+
+<p class="govuk-body">When writing an email, quote the name of the project in the subject line.</p>
+
+ <p class="govuk-body">We aim to respond within 10 working days.</p>
+
+ <h3 class="govuk-heading-s">
+     Alternative formats
+   </h3>
+<p class="govuk-body">Call or email to ask for project documents in alternative formats such as PDF, large print, easy read, audio recording or braille.</p>
+
+
+   </section>
+
+
+          <!-- <h2 class="govuk-heading-m">Affected area</h2>
+
+          <p>
+          This proposed road will be a linear route between Amesbury and Berwick
+          Down, Wiltshire.
+        </p>
+          <p>You can:</p>
+          <ul class="govuk-list">
+            <li>
+              <a href="/wrong-turn"
+              >View a map of the area of the proposed project.</a
+            >
+            </li>
+            <li>
+              <a href="./check-for-impact/postcode"
+              >Check if your postcode is within the project area.
+            </a>
+            </li>
+          </ul> -->
+
+
+
+
+          <!-- <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "
+/>
+
+          <h2 class="govuk-heading-m">About the developer</h2>
+
+          <p>The Developer proposing this project is Acme Group Ltd.</p>
+
+          <img
+          src="/public/images/logos/acme-group-ltd-logo.png"
+          alt="Acme Group Ltd's logo"
+/>
+
+          <p class="govuk-body govuk-!-margin-top-6">
+            <a href="/wrong-turn"
+            >Visit the project website by Acme Group Ltd</a
+          >
+          for more information.
+        </p> -->
+      <!--    <hr
+          class="
+            govuk-section-break
+            govuk-section-break--xl
+            govuk-section-break--visible
+          "/>
+          <h2 class="govuk-heading-m">
+              Talk to an advisor
+          </h2>
+          <p>If you need to speak to someone access information on this website in a different format such as accessible PDFs, large print, easy read, audio recording or braille:</p>
+          <ul class="govuk-list">
+            <li>Email: <a href="mailto:A404Dewsbury@planninginspectorate.gov.uk">A404Dewsbury@planninginspectorate.gov.uk</a>
+            </li>
+            <li>Call: 0303 444 5000</li>
+            <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+          </ul>-->
+
+        </div>
+      </div>
+
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
+
+{% block pageScripts %}
+<script src="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.js"></script>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js"></script>
+<script>
+
+    var apiKey = 'qT0QWbtJjfNOhw0hAwDymAKtztxD4dwQ';
+
+    var serviceUrl = 'https://api.os.uk/maps/vector/v1/vts';
+
+    // Initialize the map object.
+    var map = new mapboxgl.Map({
+        container: 'map',
+        minZoom: 6,
+        maxZoom: 18,
+        style: serviceUrl + '/resources/styles?key=' + apiKey,
+        maxBounds: [
+            [ -10.76418, 49.528423 ],
+            [ 1.9134116, 61.331151 ]
+        ],
+        center: [ -0.99508176169251 , 53.742669336673  ],
+        zoom: 13,
+        transformRequest: url => {
+            return {
+                url: url + '&srs=3857'
+            }
+        }
+    });
+
+    map.dragRotate.disable(); // Disable map rotation using right click + drag.
+    map.touchZoomRotate.disableRotation(); // Disable map rotation using touch rotation gesture.
+
+    // Add navigation control (excluding compass button) to the map.
+    map.addControl(new mapboxgl.NavigationControl({
+        showCompass: false
+    }));
+
+    const marker = new mapboxgl.Marker()
+    .setLngLat([-0.99508176169251 , 53.742669336673])
+    .addTo(map); // add the marker to the map
+
+//     const popup = new mapboxgl.Popup({ closeOnClick: false, openOnClick: true})
+// .setLngLat([-0.99508176169251 , 53.742669336673])
+// .setHTML('<h1>Drax Energy</h1>')
+// .addTo(map);
+
+
+
+</script>
+{% endblock %}

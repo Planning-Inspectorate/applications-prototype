@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Relevant representations - Representation by
+North Testshire County Council and Testby District Council {% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% set primarynav = 'projects' %}
+
+  {% include "../includes/primary-nav.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+  .no-margin {
+    margin-top: 0px;
+  }
+  </style>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <nav>
+      {% set current = 'comments' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+
+</nav>
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+  <!--  <div class="govuk-breadcrumbs no-margin">
+   <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../wide-nav/relevant-reps">Relevant representations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+  Representation in detail
+    </li>
+
+  </ol>
+</div>-->
+    <a class="govuk-back-link no-margin" href="../wide-nav/relevant-reps" data-cy="back">Back to list</a>
+    <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span>
+    <h1 class="govuk-heading-l">Representation by North Testshire County Council and Tesby District Council</h1>
+<!-- <a class="govuk-back-link no-margin" href="../wide-nav/relevant-reps" data-cy="back">Back to list</a> -->
+
+
+<dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Date submitted
+      </dt>
+      <dd class="govuk-summary-list__value">
+        7 May 2022
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Submitted by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Local authorities
+      </dd>
+    </div>
+
+  </dl>
+
+<p class="govuk-body">
+
+  The proposals size, loss of food producing land, battery storage size and technology, joined up thinking between DCO applications
+
+</p>
+
+<h2 class="govuk-heading-m">
+Attachments     </h2>
+
+<p class="govuk-body"><a href="#">Document 1 (PDF)</a></p>
+
+        </div>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Service unavailable
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceNameNoLink: "National Infrastructure Projects"   ,
+  serviceUrl: "/design-sprint-35/start/"
+
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <!-- <a class="govuk-back-link" href="javascript:history.back()">Back</a> -->
+{% endblock %}
+
+<style>
+# govuk-main-wrapper govuk-main-wrapper--l  {
+    padding-top: 10px;
+  }
+</style>
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main" >
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds" >
+        <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+        <p class="govuk-body">
+          You will be able to use the service again later.
+        </p>
+        <p class="govuk-body">
+          We are working to restore the service as quickly as possible.
+        </p>
+        <p class="govuk-body">
+          If you have any questions, please contact:
+        </p>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" data-cy="Enquiries" href="mailto:NIEnquiries@planninginspectorate.gov.uk">NIEnquiries@planninginspectorate.gov.uk</a>
+          </li>
+          <li>Telephone: 0303 444 5000</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+</div> <br> <br><br> <br><br> <br><br> <br>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

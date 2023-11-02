@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Submission complete
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+  serviceNameNoLink: "Have your say on an application"   ,
+  serviceUrl: "/design-sprint-35/start/"
+
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+               <h1 class="govuk-panel__title">
+                 Submission complete
+               </h1>
+               <div class="govuk-panel__body">
+                 Your reference number<br><strong>HDJ2123F</strong>
+               </div>
+             </div>
+
+             <p class="govuk-body">We've sent a confirmation email to user@emailaddress.com to confirm we have received your submission.</p>
+            <!-- <p><a class="govuk-link" href="project-overview/index">Get updates about the project</a></p>-->
+
+            <!-- <h2 class="govuk-heading-m">What happens next</h2>-->
+            <h3 class="govuk-heading-m">
+              Contact us
+            </h3>
+            <h4 class="govuk-heading-s">
+                Telephone
+              </h4>
+                <p>If you have an interested party number, have it with you when you call.
+             <p class="govuk-body">
+               Telephone: 0303 444 5000<br/>
+               Monday to Friday, 9am to 12pm (except public holidays)
+
+            </p>
+           <h4 class="govuk-heading-s">
+           Email
+           </h4>
+
+           <p class="govuk-body"><a href="mailto:DraxBECCS@planninginspectorate.gov.uk">DraxBECCS@planninginspectorate.gov.uk</a></p>
+
+
+
+           <p class="govuk-body">When you're writing an email, quote the name of the project in the subject line.</p>
+
+           <p class="govuk-body">We aim to respond within 10 working days.</p>
+
+           <h4 class="govuk-heading-s">
+           Alternative formats
+           </h4>
+           <p class="govuk-body">Call or email to ask for project documents in alternative formats such as PDF, large print, easy read, audio recording or braille.</p>
+
+
+             <p class="govuk-body">
+               <a href="#" class="govuk-link">Tell us what you thought about this service</a> by completing a short survey.
+             </p>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

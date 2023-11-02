@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+    {{ pinsHeader({
+    serviceNameNoLink: "Register to have your say", 
+    serviceUrl: "/mvp/pre-examination/register/start",
+saveAndExit: false
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form autocomplete="off" class="form" action="representee-telephone" method="post">
+        {{ govukInput({
+          label: {
+            text: "What is their email address?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "representee-email",
+          hint: {
+            text: "We will not contact anyone using these contact details."
+          },
+          name: "representee-email"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}
