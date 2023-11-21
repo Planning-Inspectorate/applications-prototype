@@ -1,0 +1,266 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Applicant guide - pre-application service
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader({
+    serviceName: "National Infrastructure Projects",
+    serviceUrl: "/design-sprint-35/home/index-new-v2",
+    saveAndExit: false
+  }) }}
+<style type="text/css">
+  .govuk-accordion__section-heading .govuk-accordion__section-button,
+  .pins-filter-checkboxes .govuk-label,
+  h2.govuk-accordion__section-heading {
+    font-size: 19px;
+  }
+
+  .dwp-language-toggle {
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+  }
+
+  .dwp-language-toggle__list {
+    margin-top: 1em;
+    text-align: right;
+  }
+
+  .dwp-language-toggle__list-item {
+    display: inline-block;
+  }
+
+  .dwp-language-toggle__list-item:first-child:after {
+    content: "";
+    display: inline-block;
+    border-right: 1px solid #0b0c0c;
+    position: relative;
+    top: .1875em;
+    height: 1em;
+  }
+
+  </style>
+{% endblock %}
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% set primarynav = 'advicenotes' %}
+  {% set secondarynavprojects = 'Applicant guide' %}
+
+    {% include "../includes/primary-nav.html" %}
+
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Guide for applicants</h1>
+
+
+
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Pre-application service for applicants"
+      },
+      content: {
+        html: '<p class="govuk-body">The Planning Inspectorate offers a service for applicants at the pre-application stage of the process.</p>
+
+<p class="govuk-body">This service is free and designed to help applicants plan and carry out their pre-application duties. </p>
+
+<h3 class="govuk-heading-s">Prospectus for applicants</h3>
+<p class="govuk-body">For more information we’ve created <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/uploads/2014/05/NSIP-prospectus_May2014.pdf" class="govuk-link">this prospectus</a>. It sets out the Planning Inspectorate’s service for applicants at the pre-application stage.</p>
+
+<p class="govuk-body">If you are interested in finding out more about the service, <a href="../help/contact-us" class="govuk-link">contact us</a>.</p>'
+      }
+    },
+    {
+      heading: {
+        text: "How to submit an application for development consent"
+      },
+      content: {
+        html: '<p class="govuk-body">We advise Applicants to <a href="../help/contact-us" class="govuk-link">contact us</a> before completing the form to ensure that all documentation is provided correctly. </p>
+
+<p class="govuk-body">For more information we recommend visiting <a href="#" class="govuk-link">advice note six: Preparation and submission of application documents</a>.</p>
+
+<p class="govuk-body">The application form contains functionality not supported by all browsers. We suggest using Adobe Reader to complete the forms. Clicking on the form link allows you to save the file or open it in Adobe Reader.  </p>
+
+<p class="govuk-body">If you have problems downloading the form please email <a href="mailto:Corpcomms@planninginspectorate.gov.uk" class="govuk-link"> Corpcomms@planninginspectorate.gov.uk</a>. </p>
+
+  <p class="govuk-body">Adobe reader can be downloaded at PDF reader <a href="https://www.adobe.com/acrobat/pdf-reader.html" class="govuk-link">Adobe Acrobat Reader</a>.</p>
+
+<p class="govuk-body">Please note that guidance is also embedded in the application form itself.</p>
+<p class="govuk-body"><a href="#" class="govuk-link">Development Consent Application Form (PDF 1 MB)</a>.</p>
+
+<p class="govuk-body"><a href="#" class="govuk-link">Planning Act 2008 Application form guidance</a> (Published by the Department for Communities and Local Government June 2013)</p>'
+      }
+    },
+    {
+      heading: {
+        text: "Our application fees"
+      },
+      content: {
+        html: '<p class="govuk-body"><table class="govuk-table">
+<p class="govuk-body">The table below shows the fees payable from 1 April 2023 for existing and new applications. The Infrastructure Planning (Fees) Regulations 2010 and subsequent amendments can be viewed at <a href="#" class="govuk-link"> legislation.gov.uk</a></p>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Description</th>
+      <th scope="col" class="govuk-table__header">Fee</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" colspan="2">Fee in respect of applications for authorisation under <br>sections 52 and 53</th>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">A request for authorisation under section 52(2) (information about interests in land).</td>
+      <td class="govuk-table__cell">£1,835</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">A request for authorisation under section 53(1) (rights of entry).	</td>
+      <td class="govuk-table__cell">£1,835</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" colspan="2">Fee to accompany application</th>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">There is a fee payable for a decision from the Secretary of State. The fee must accompany the application.</td>
+      <td class="govuk-table__cell">£8,244</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__header" colspan="2">Pre-examination fee<br><br>
+
+        <p class="govuk-body"> There is a fee when a panel of inspectors is chosen during the pre-examination stage:</p></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Single Inspector</td>
+      <td class="govuk-table__cell">£23,863</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Two Inspector panel</td>
+      <td class="govuk-table__cell">£39,464</td>
+    </tr>
+     <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Three Inspector panel</td>
+          <td class="govuk-table__cell">£55,065</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Three or more Inspector panel</td>
+          <td class="govuk-table__cell">£78,926</td>
+        </tr>
+
+
+  </tbody>
+</table></p>'
+      }
+    },
+    {
+      heading: {
+        text: "Costs"
+      },
+      content: {
+        html: '<p class="govuk-body">Applicants may face large costs when applying for a Nationally Significant Infrastructure Project (NSIP). </p>
+
+        <p class="govuk-body">In planning decisions, each party should be prepared to pay their own costs. </p>
+
+        <p class="govuk-body">In the event the project is turned down, you do not have to pay another parties&#39 costs.</p>
+
+        <p class="govuk-body"><a href="https://www.gov.uk/government/publications/awards-of-costs-examinations-of-applications-for-development-consent-orders" class="govuk-link">Guidance issued by the Secretary of State</a> explains how an application for costs will be treated, and gives examples of unreasonable behaviour. </p>
+
+
+<p class="govuk-body">It also outlines good practices which helps avoid the risk of other parties obtaining an award.</p>'
+      }
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+<!--
+
+<h2 class="govuk-heading-s">
+  Contents
+</h2>
+
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Pre-application service
+          </li>
+          <li>
+            <a class="govuk-link" href="applicant-guide-2">Submitting an application</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="applicant-guide-3">Application fees</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="applicant-guide-4">Detailed guidance and resources</a>
+          </li>
+        </ul>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h2 class="govuk-heading-m">Pre-application service for applicants</h2>
+        <p class="govuk-body">The Planning Inspectorate offers a service for applicants at the Pre-application stage of the Planning Act 2008 process.</p>
+
+        <p class="govuk-body">The service is free and is designed to help applicants in planning and carrying out their Pre-application duties.</p>
+
+        <p class="govuk-body">See our <a class="govuk-link" href="#">short introduction on the service</a> from the Planning Inspectorate’s former Director of Major Casework, Mark Southgate.</p>
+
+
+
+        <p class="govuk-body"><a class="govuk-link" href="#">View a text only version of the Pre-application service for applicants video</a></p>
+
+        <h3 class="govuk-heading-m">Prospectus for applicants</h3>
+
+        <p class="govuk-body"><a class="govuk-link" href="#">The prospectus</a> sets out the Planning Inspectorate’s service for applicants at the Pre-application stage of the Planning Act 2008 process.</p>
+
+        <p class="govuk-body">If you are interested in finding out more about the service, contact us.</p>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body"><a class="govuk-link" href="applicant-guide-2">Next</a></p>
+ -->
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
+{% endblock %}

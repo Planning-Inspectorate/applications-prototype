@@ -26,6 +26,40 @@ font-size:16pt;
 }
 
 
+.homepage-services-and-info__list {
+
+grid-template-columns: 1fr 1fr;
+
+}
+
+.homepage-search-left {
+border-right:5px;
+
+}
+
+.dwp-language-toggle {
+  font-family: Arial,sans-serif;
+  font-size: 16px;
+}
+
+.dwp-language-toggle__list {
+  margin-top: 1em;
+  text-align: right;
+}
+
+.dwp-language-toggle__list-item {
+  display: inline-block;
+}
+
+.dwp-language-toggle__list-item:first-child:after {
+  content: "";
+  display: inline-block;
+  border-right: 1px solid #0b0c0c;
+  position: relative;
+  top: .1875em;
+  height: 1em;
+}
+
 </style>
 
 
@@ -39,9 +73,9 @@ font-size:16pt;
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 {% set primarynav = 'projects' %}
-{% set secondarynavprojects = 'register' %}
+{% set secondarynavprojects = 'index' %}
   {% include "../includes/primary-nav.html" %}
-    {% include "../includes/secondary-nav-projects.html" %}
+
 {% endblock %}
 
 {% block content %}

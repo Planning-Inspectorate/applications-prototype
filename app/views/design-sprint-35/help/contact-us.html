@@ -14,6 +14,32 @@
     serviceUrl: "/design-sprint-35/home/index-new-v2",
     saveAndExit: false
   }) }}
+
+
+  <style type ="text/css">
+    .dwp-language-toggle {
+      font-family: Arial,sans-serif;
+      font-size: 16px;
+    }
+
+    .dwp-language-toggle__list {
+      margin-top: 1em;
+      text-align: right;
+    }
+
+    .dwp-language-toggle__list-item {
+      display: inline-block;
+    }
+
+    .dwp-language-toggle__list-item:first-child:after {
+      content: "";
+      display: inline-block;
+      border-right: 1px solid #0b0c0c;
+      position: relative;
+      top: .1875em;
+      height: 1em;
+    }
+  </style>
 {% endblock %}
 {% block beforeContent %}
 
@@ -41,7 +67,60 @@
       Contact us
     </h1>
 
-    <p>We are located in Temple Quay House in Bristol</p>
+<!-- <h2 class="govuk-heading-m">Telephone</h2> -->
+    <p class="govuk-body">
+            Telephone: 0303 444 5000<br>
+            Monday to Friday, 9am to 12pm (except public holidays)
+
+         </p>
+<!-- <h2 class="govuk-heading-m">Email</h2> -->
+    <p class="govuk-body">E-mail: <a href="mailto:NIEnquiries@planninginspectorate.gov.uk" class="govuk-link">NIEnquiries@planninginspectorate.gov.uk</a></p>
+
+
+  <p class="govuk-body">If you are contacting us about a specific project, put the project name in the subject line.</p>
+
+      <!-- <h2 class="govuk-heading-m">Address</h2> -->
+    <p class="govuk-body">Address:<br>
+      The Planning Inspectorate<br>
+    Temple Quay House<br>
+    Temple Quay<br>
+    Bristol<br>
+    BS1 6PN<br></p>
+
+      <p class="govuk-body">Follow us on X: @PINSgov</p>
+
+
+
+    <p class="govuk-body">Further information about contacting the Planning Inpectorate customer services can be viewed on GOV.UK. <a href="#" class="govuk-link">View the National Infrastructure Planning Team Structure</a>.</p>
+
+    <h2 class="govuk-heading-m">Feedback and complaints</h2>
+    <p class="govuk-body">The Planning Inspectorate tries to provide the best possible service for its customers. We try hard to ensure everyone is satisfied with the service they receive. It is inevitable that there will sometimes be concerns about the Examination process or the Examining Authority’s final report. We will carefully consider and respond to any matters that you wish to raise: contact details are on GOV.UK.</p>
+
+    <h2 class="govuk-heading-m">Press and media</h2>
+    <p class="govuk-body">If you are a journalist please contact our press office directly:
+
+    Telephone: 0303 444 5004 or 0303 444 5005
+    Email: press.office@planninginspectorate.gov.uk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <p>We are located in Temple Quay House in Bristol</p>
 <p>The Planning Inspectorate<br />
 Temple Quay House<br />
 Temple Quay<br />
@@ -87,11 +166,14 @@ Operations Manager, NSIP Reform – Richard Price<br />
 Operations Manager, NSIP Reform – Kate Mignano</p>
 <p>Senior EIA Advisors and EIA Advisors (multiple posts)</p>
 <p>Examining Inspectors (multiple posts)</p>
-<p>Case Teams (multiple posts)</p>
+<p>Case Teams (multiple posts)</p> -->
 
 
 
   </div>
 </div>
 
+{% endblock %}
+{% block footer %}
+  {{ pinsFooter() }}
 {% endblock %}
