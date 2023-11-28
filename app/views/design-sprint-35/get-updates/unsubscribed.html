@@ -34,7 +34,7 @@
               {% if (data['type-of-updates'] == "unsubscribe") %}
               <!--  You have unsubscribed from updates about Drax Bioenergy with Carbon Capture and Storage -->
                 {% set heading = "Success" %}
-                {% set success = "You have unsubscribed from updates about this project" %}
+                {% set success = "You have unsubscribed from emails about this project" %}
               {% elif (data['type-of-updates'] == "change-address")  %}
                 {% set heading = "Confirm your new email address" %}
               {% elif (data['type-of-updates'] == "change-frequency")  %}
@@ -124,7 +124,7 @@
                 <p class="govuk-body"><a href="unsubscribe" class="govuk-link">Manage your email subscriptions</a></p>
             {% endif %}
                 {% if not (data['type-of-updates'] == "change-address")  %}
-                <p class="govuk-!-margin-top-8"><a href="../project-overview/index-dynamic" class="govuk-link">Go back to project information page</a></p>
+                <p class="govuk-!-margin-top-8"><a href="../project-overview/index-dynamic" class="govuk-link">View Test case project information</a></p>
               {% endif %}
 
         </div>
