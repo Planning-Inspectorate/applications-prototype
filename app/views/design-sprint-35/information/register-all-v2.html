@@ -1,0 +1,1005 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Register of advice
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ pinsHeader() }}
+
+
+  <style type="text/css">
+
+  .pins-govuk-result-list__item .govuk-body {
+
+   font-size:16px;
+
+    }
+
+
+
+
+.ui-results {
+    padding: 0;
+    margin: 0
+}
+
+.ui-results__result {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin: 0;
+    list-style: none;
+    border-top: 1px solid #b1b4b6
+}
+
+.ui-results__result-title {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.ui-results__result-description {
+    margin: 0;
+    font-size:16px;
+}
+
+@media(min-width: 641px) {
+    .ui-results__result-meta-data {
+        display:flex;
+        margin: 0 -15px
+    }
+}
+
+.ui-results__result-meta-data-item {
+
+  font-size: 14px;
+}
+
+@media(min-width: 641px) {
+    .ui-results__result-meta-data-item {
+        padding:0 15px
+    }
+}
+
+.ui-results__result-meta-data-item--fill-width {
+    flex-grow: 1
+}
+
+.govuk-table__cell {
+  font-size:16px;
+}
+
+.govuk-table__cell_meta {
+  font-size:14px;
+}
+
+    </style>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+
+  {% set primarynav = 'advicenotes' %}
+
+
+    {% include "../includes/primary-nav.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-one-third">
+    <nav>
+      {% set current = 'section51' %}
+      {% include "../includes/vertical_tabs.html" %}
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"/>
+</nav>
+
+  </div> -->
+
+  <div class="govuk-grid-column-full">
+    <!-- <div class="govuk-notification-banner" role="region"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Note for Devs etc
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      The first and third entries below reflect the redesign.  The second and fourth illustrate the issues the live data was causing.
+      <!-- <a class="govuk-notification-banner__link" href="#">View application</a>.
+    </p>
+  </div>
+</div> -->
+    <!-- <span class="govuk-caption-l">Drax Bioenergy with Carbon Capture and Storage Project</span> -->
+    <h1 class="govuk-heading-xl">Register of advice</h1>
+</div>
+<!--<h2 class="govuk-heading-l">Section 51 advice</h2>-->
+<div class="govuk-grid-column-two-thirds"><p class="govuk-body">The list below is a record of all advice the Planning Inspectorate has provided in respect of the Planning Act 2008 process.
+
+  <p class="govuk-body">Search by ... </p>
+</div>
+
+<div class="govuk-grid-column-full">
+<!-- There is a statutory duty under <a href="https://www.legislation.gov.uk/ukpga/2008/29/section/51">section 51 of the Planning Act 2008</a> to record the advice that is given in relation to an application or a potential application and to make this publicly available. Advice we have provided is recorded below together with the name of the person or organisation who asked for the advice and the project it relates to. The privacy of any other personal information will be protected in accordance with our Information Charter which you should view before sending information to the Planning Inspectorate. -->
+
+<!-- Note that after a project page has been created for a particular application, any advice provided that relates to it will also be published under the ‘s51 advice’ tab on the relevant project page..</p> -->
+<!-- <p class="govuk-body">There is a statutory duty, under <a href="https://www.legislation.gov.uk/ukpga/2008/29/section/51">section 51 of the Planning Act 2008</a>, to record the advice that is given in relation to an application or a potential application, including the name of the person who requested the advice, and to make this publicly available.</p> -->
+   <!--<p class="govuk-body">To blah blah blah, view <a href="">Examination Library</a></p>-->
+<!--
+   <div class="govuk-inset-text">
+     You can find examination documents with reference numbers in the <a href="https://infrastructure.planninginspectorate.gov.uk/wp-content/ipc/uploads/projects/EN010098/EN010098-000837-Hornsea%20Project%20Four%20Offshore%20Wind%20Farm%20Examination%20Library.pdf">examination library</a>.
+   </div>-->
+  <div>
+   <input class="govuk-input govuk-!-width-one-half" id="search" name="searchTerm" type="text" value="">
+   <button class="govuk-button" data-cy="search-button">Search</button>
+   </div>
+
+
+
+
+
+
+
+  <p class="govuk-body">Showing  <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">5,787</span> entries, newest first.  </p>
+  <p class="govuk-body"><span class="govuk-!-font-weight-bold govuk-!-margin-right-3">Results per page</span> 25 <span class="govuk-!-margin-left-1">|</span> <span class="govuk-!-margin-left-1"><a href="#">50</a></span> <span class="govuk-!-margin-left-1">|</span><span class="govuk-!-margin-left-1"> <a href="#">100</a></span>
+
+  <!--<div class="facet-tags__group">
+     <div class="facet-tags__wrapper">
+       <span class="facet-tags__preposition" style="font-family:arial,sans-serif; padding-right: 10px;">Document type:</span> <span class="facet-tag govuk-!-margin-right-3"> <span class="facet-tag__text" style="font-family:arial,sans-serif;">Deadline 4a</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Commercial - rotorcraft" data-module="remove-filter-link" data-track-label="Commercial - rotorcraft" data-facet="aircraft_category" data-value="commercial-rotorcraft" data-name="">✕</button> </span>
+      </div>
+   </div>-->
+
+
+
+
+  <table class="govuk-table" data-module="moj-sortable-table">
+         <thead class="govuk-table__head">
+     <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header" aria-sort="true">Enquiry</th>
+       <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Enquiry from</th> -->
+       <!--<th scope="col" class="govuk-table__header" aria-sort="none">Issues count</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Issues</th>-->
+        <th scope="col" class="govuk-table__header" aria-sort="none">Project</th>
+       <th scope="col" class="govuk-table__header" aria-sort="none">Date</th>
+     </tr>
+   </thead>
+   <tbody class="govuk-table__body">
+
+
+     <tr class="govuk-table__row">
+       <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
+
+
+
+    <td class="govuk-table__cell"><a class="view-case" href="/design-sprint-35/project-overview/index" >
+Handling of electronic signatures</a>
+
+<p class="ui-results__result-description govuk-!-margin-top-4">
+ I would be grateful if you could advise on whether PINS are ok with handling a covering letter to a Joint Authority AoC response which includes   ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="govuk-link" data-cy="read-more">Read more</a>
+
+<p class="govuk-table__cell_meta govuk-!-margin-top-4"><strong>Enquiry from:</strong> Rothtester parish council</p>
+
+</p>
+</td>
+       <td class="govuk-table__cell">Drax Bioenergy with Carbon Capture and Storage Project</td>
+       <!--   <td class="govuk-table__cell"></td>
+       <td class="govuk-table__cell"></td>-->
+       <!--<td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>-->
+
+
+
+             <td class="govuk-table__cell" style="white-space: nowrap">1 May 2022</td>
+
+     </tr>
+
+     <tr class="govuk-table__row">
+       <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
+
+
+
+    <td class="govuk-table__cell"><a class="view-case" href="/design-sprint-35/project-overview/index" >
+Advice to Protect Coastal Sussex</a>
+
+<p class="ui-results__result-description govuk-!-margin-top-4">
+Dear Emily Davies, We thank you for the clarity in the detailed response. PINS may appreciate our view, that the documented evidence of the many  ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="govuk-link" data-cy="read-more">Read more</a>
+
+<p class="govuk-table__cell_meta govuk-!-margin-top-4"><strong>Enquiry from:</strong> Protect Coastal Sussex</p>
+</p>
+</td>
+       <td class="govuk-table__cell">General</td>
+       <!--   <td class="govuk-table__cell"></td>
+       <td class="govuk-table__cell"></td>-->
+       <!--<td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>-->
+
+
+
+             <td class="govuk-table__cell" style="white-space: nowrap">1 April 2022</td>
+
+     </tr>
+
+     <tr class="govuk-table__row">
+       <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
+
+
+
+    <td class="govuk-table__cell"><a class="view-case" href="/design-sprint-35/project-overview/index" >
+Project update meeting with Drax Power Limited</a>
+
+<p class="ui-results__result-description govuk-!-margin-top-4">
+Project Update Meeting  ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="govuk-link" data-cy="read-more">Read more</a>
+
+<p class="govuk-table__cell_meta govuk-!-margin-top-4"><strong>Meeting with:</strong>  Drax Power Limited
+</p>
+</td>
+       <td class="govuk-table__cell">General</td>
+       <!--   <td class="govuk-table__cell"></td>
+       <td class="govuk-table__cell"></td>-->
+       <!--<td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>-->
+
+
+
+             <td class="govuk-table__cell" style="white-space: nowrap">1 April 2022</td>
+
+     </tr>
+
+     <tr class="govuk-table__row">
+       <!--   <td class="govuk-table__cell">{{ fileproject.projectname }}</td> -->
+
+
+
+    <td class="govuk-table__cell"><a class="view-case" href="/design-sprint-35/project-overview/index" >
+Project update meeting with Drax Power Limited</a>
+
+<p class="ui-results__result-description govuk-!-margin-top-4">
+Project Update Meeting ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="govuk-link" data-cy="read-more">Read more</a>
+
+<p class="govuk-table__cell_meta govuk-!-margin-top-4"><strong>Meeting with:</strong>  Drax Power Limited
+</p>
+</td>
+       <td class="govuk-table__cell">General</td>
+       <!--   <td class="govuk-table__cell"></td>
+       <td class="govuk-table__cell"></td>-->
+       <!--<td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey" id="list-convictions-status">{{  stageDescription }}</span></td>-->
+
+
+
+             <td class="govuk-table__cell" style="white-space: nowrap">1 April 2022</td>
+
+     </tr>
+
+   </tbody>
+   </table>
+
+
+
+
+
+
+
+
+ <!-- <ul class="pins-govuk-result-list">
+
+
+   <li class="ui-results__result" data-cy="representation">
+     <h2 class="ui-results__result-title">
+       <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="ui-results__result-title-link">
+         <strong>
+
+            Handling of electronic signatures
+
+         </strong>
+       </a>
+     </h2>
+
+     <p class="ui-results__result-description">
+      I would be grateful if you could advise on whether PINS are ok with handling a covering letter to a Joint Authority AoC response which includes   ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="govuk-link" data-cy="read-more">Read more</a>
+
+
+     </p>
+
+     <div class="ui-results__result-meta-data govuk-!-margin-top-3">
+       <div class="ui-results__result-meta-data-item ui-results__result-meta-data-item--fill-width" data-cy="published-stage">
+         <strong>Enquiry from:</strong> Rothtester parish council
+       </div>
+
+       <div class="ui-results__result-meta-data-item" data-cy="published-date">
+         <span class="-white-space--nowrap"><strong>Date advice given:</strong> 1 May 2022</span>
+       </div>
+     </div>
+
+     <div class="ui-results__result-meta-data govuk-!-margin-top-3">
+       <div class="ui-results__result-meta-data-item ui-results__result-meta-data-item--fill-width" data-cy="published-stage">
+         <strong>Project:</strong> Drax Bioenergy with Carbon Capture and Storage Project
+       </div>
+
+       <!-- <div class="ui-results__result-meta-data-item" data-cy="published-date">
+         <span class="-white-space--nowrap"><strong>Date advice given:</strong> 1 May 2022</span>
+       </div> -
+     </div>
+
+
+   </li>
+
+   <li class="ui-results__result" data-cy="representation">
+     <h2 class="ui-results__result-title">
+       <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00001" class="ui-results__result-title-link">
+         <strong>
+
+           Advice to Protect Coastal Sussex
+         </strong>
+       </a>
+     </h2>
+
+     <p class="ui-results__result-description">
+
+Dear Emily Davies, We thank you for the clarity in the detailed response. PINS may appreciate our view, that the documented evidence of the many  ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010117/s51advice/EN010117-Advice-00018" class="govuk-link" data-cy="read-more">Read more</a></P>
+
+     </p>
+
+     <div class="ui-results__result-meta-data govuk-!-margin-top-3">
+       <div class="ui-results__result-meta-data-item ui-results__result-meta-data-item--fill-width" data-cy="published-stage">
+         <strong>Enquiry from:</strong> Rothtester parish council
+       </div>
+
+       <div class="ui-results__result-meta-data-item" data-cy="published-date">
+         <span class="-white-space--nowrap"><strong>Date advice given:</strong> 1 May 2022</span>
+       </div>
+     </div>
+
+     <div class="ui-results__result-meta-data govuk-!-margin-top-3">
+       <div class="ui-results__result-meta-data-item ui-results__result-meta-data-item--fill-width" data-cy="published-stage">
+         <strong>Project:</strong> General
+       </div>
+
+
+   </li>
+
+ -->
+
+
+
+
+
+
+
+
+ <!-- <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007">
+Handling of electronic signatures
+
+   </a>
+
+
+<p class="govuk-body govuk-!-margin-top-4">I would be grateful if you could advise on whether PINS are ok with handling a covering letter to a Joint Authority AoC response which includes  ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00007" class="govuk-link" data-cy="read-more">Read more</a></P>
+
+   <!--<p class="pins-govuk-result-list__item-description ">
+
+          <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row govuk-!-margin-top-5">
+     <div class="govuk-grid-column-two-thirds pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Enquiry from:</span> Burbridge Parish Council
+     </div>
+
+     <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date advice given:</span> 20 June 2022
+     </div>
+     <!-- <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Email
+     </div>
+
+   </div>
+ </li> -->
+
+
+
+
+ <!-- <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00009">
+Project update meeting with Drax Power Limited
+
+   </a>
+
+
+<p class="govuk-body govuk-!-margin-top-4">Project Update Meeting ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00009" class="govuk-link" data-cy="read-more">Read more</a></P>
+
+   <!--<p class="pins-govuk-result-list__item-description ">
+
+          <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row govuk-!-margin-top-5">
+     <div class="govuk-grid-column-two-thirds pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Meeting with:</span> Drax Power Limited
+     </div>
+
+     <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date of meeting:</span> 20 June 2023
+     </div>
+     <!-- <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Email
+     </div>
+
+   </div>
+ </li> -->
+
+
+ <!-- <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010117/s51advice/EN010117-Advice-00018">
+ Advice to Protect Coastal Sussex
+
+   </a>
+
+
+<p class="govuk-body govuk-!-margin-top-4">Dear Emily Davies, We thank you for the clarity in the detailed response. PINS may appreciate our view, that the documented evidence of the many shortcomings of this Application ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010117/s51advice/EN010117-Advice-00018" class="govuk-link" data-cy="read-more">Read more</a></P>
+
+   <!--<p class="pins-govuk-result-list__item-description ">
+
+          <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>-
+   <div class="govuk-grid-row govuk-!-margin-top-5">
+     <div class="govuk-grid-column-two-thirds pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Enquiry from:</span> Drax Power Limited
+     </div>
+
+     <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date advice given:</span> 20 June 2022
+     </div>
+     <!-- <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Email
+     </div> -
+
+   </div>
+ </li>
+
+
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00001">
+Meeting with Drax Power Limited
+
+   </a>
+
+
+<p class="govuk-body govuk-!-margin-top-4">Project Inception Meeting ... <a href="https://national-infrastructure-consenting.planninginspectorate.gov.uk/projects/EN010120/s51advice/EN010120-Advice-00001" class="govuk-link" data-cy="read-more">Read more</a></P>
+
+   <!--<p class="pins-govuk-result-list__item-description ">
+
+          <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>-
+   <div class="govuk-grid-row govuk-!-margin-top-5">
+     <div class="govuk-grid-column-two-thirds pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Meeting with:</span> Drax Power Limited
+     </div>
+
+     <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-date">
+       <span class="-white-space--nowrap govuk-!-font-weight-bold">Date of meeting:</span> 20 June 2023
+     </div>
+     <!-- <div class="govuk-grid-column-one-third pins-govuk-result-list__item-description" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Email
+     </div> -
+
+   </div>
+ </li>
+
+ <li class="ui-results__result" data-cy="representation">
+   <h2 class="ui-results__result-title">
+     <a href="/projects/EN010120/representations/47" class="ui-results__result-title-link">
+       <strong>
+
+          Handling of electronic signatures
+
+       </strong>
+     </a>
+   </h2>
+
+   <p class="ui-results__result-description">
+    I would be grateful if you could advise on whether PINS are ok with handling a covering letter to a Joint Authority AoC response which includes  ...
+
+
+   </p>
+
+   <div class="ui-results__result-meta-data govuk-!-margin-top-3">
+     <div class="ui-results__result-meta-data-item ui-results__result-meta-data-item--fill-width" data-cy="published-stage">
+       <strong>Enquiry from:</strong> Rothtester parish council
+     </div>
+
+     <div class="ui-results__result-meta-data-item" data-cy="published-date">
+       <span class="-white-space--nowrap"><strong>Date advice given:</strong> 1 May 2022</span>
+     </div>
+   </div>
+
+
+ </li> -->
+
+
+
+
+ <!-- <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="item-old">
+
+Dear Sirs/Madams, In light of the current public health situation surrounding COVID-19 and the Planning Inspectorate’s recent decision to postpone all local plan, appeal and NSIP hearings and enquiries until further notice we write to ask whether any postponement or delay is envisaged in relation to the Southampton to London Pipeline Project. We note that the close of examination is to be the 9 April 2020 and our client, Thames Water Utilities Limited have issues and comments still outstanding. We may need to make final representations before the close of the examination if these are not satisfied by ongoing discussions with the We also wish to manage our clients expectations if there are likely to be delays in the examination and decision periods. Any information you may have in this regard would be welcomed. Kind regards Beth Youngs | Solicitor | Planning and Environmental Team | Birketts LLP
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Thames Water Utilities Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 30 June 2021
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Email
+     </div>
+
+   </div>
+ </li> -->
+
+ <!-- <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Draft document feedback
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 29 March 2022
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Email
+     </div>
+
+   </div>
+ </li> -->
+
+ <!-- <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="item-2" >
+
+ View meeting with Drax Power Limited
+   </a>
+   <!-- <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p> -->
+   <!-- <div class="govuk-grid-row pins-govuk-result-list__item-description  govuk-!-margin-top-5">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+      <span class="govuk-!-font-weight-bold">Date of meeting:</span> 12 April 2022
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> meeting
+     </div>
+ </li>
+
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="item-old"target="_blank">
+
+ Project update meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 23 September 2021
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="item-old"target="_blank">
+
+ Project update meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 30 June 2021
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project update meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 10 March 2021
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+       <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li>
+ <li class="pins-govuk-result-list__item">
+   <a class="govuk-link pins-govuk-result-list__item-title" href="#"target="_blank">
+
+ Project inception meeting
+   </a>
+   <p class="pins-govuk-result-list__item-description ">
+
+         <span class="govuk-!-font-weight-bold">Author:</span> Drax Power Limited
+
+   </p>
+   <div class="govuk-grid-row pins-govuk-result-list__item-description">
+     <div class="govuk-grid-column-two-thirds" data-cy="published-date">
+       <span class="govuk-!-font-weight-bold">Date published:</span> 1 December 2020
+     </div>
+     <div class="govuk-grid-column-one-third" data-cy="published-method">
+    <span class="govuk-!-font-weight-bold">Enquiry type:</span> Meeting
+     </div>
+
+   </div>
+ </li> -->
+
+
+</ul>
+
+
+<nav class="moj-pagination" id="pagination-label">
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+  <ul class="moj-pagination__list">
+
+
+        <li class="moj-pagination__item moj-pagination__item--active">1</li>
+
+
+
+        <li class="moj-pagination__item">
+          <a class="moj-pagination__link" href="?page=2">2</a>
+        </li>
+
+
+
+        <li class="moj-pagination__item">
+          <a class="moj-pagination__link" href="?page=3">3</a>
+        </li>
+
+
+
+        <li class="moj-pagination__item moj-pagination__item--active">...</li>
+
+
+
+        <li class="moj-pagination__item">
+          <a class="moj-pagination__link" href="?page=12">12</a>
+        </li>
+
+
+
+        <li class="moj-pagination__item  moj-pagination__item--next">
+          <a class="moj-pagination__link" href="?page=2">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+        </li>
+
+
+  </ul>
+  <p class="moj-pagination__results">Showing <b>1</b> to <b>25</b> of <b>5,787</b> results</p>
+</nav>
+
+
+
+ <!-- <nav class="moj-pagination" id="pagination-label">
+         <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+         <ul class="moj-pagination__list">
+
+
+               <li class="moj-pagination__item moj-pagination__item--active">1</li>
+
+
+
+               <li class="moj-pagination__item">
+                 <a class="moj-pagination__link" href="index-2">2</a>
+               </li>
+
+
+
+
+
+
+               <li class="moj-pagination__item  moj-pagination__item--next">
+                 <a class="moj-pagination__link" href="index-2">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+               </li>
+
+
+         </ul>
+<p class="moj-pagination__results">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">25</span> of <span class="govuk-!-font-weight-bold">693</span> results</p>
+</nav>-->
+
+</div>
+
+      </div>
+
+
+
+        </main>
+      </div>
+    {% endblock %}
+    {% block footer %}
+      {{ pinsFooter() }}
+    {% endblock %}
