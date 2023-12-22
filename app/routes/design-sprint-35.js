@@ -975,7 +975,7 @@ router.post("/design-sprint-35/projects/view-case-form-answer", function(req, re
 
 
 router.get("/design-sprint-35/projects/projects-load", function (req, res) {
-    console.log("The get is running new");
+    console.log(req.query.with);
       req.session.data['drax'] = "false" ;
 const  filelistcb = require('../data/project-list-play.json')
 
@@ -1052,6 +1052,14 @@ types[5] = "Waste water";
 
 req.session.data['types'] = types;
 
+outcome = new Array();
+outcome[0] = "Consent granted";
+outcome[1] ="Consent refused";
+outcome[2] = "withdrawn";
+outcome[3] = "Not decided";
+
+
+req.session.data['outcome'] = outcome;
 
 
 
@@ -1172,8 +1180,12 @@ req.session.data['stagesSecond'] = [
 
   //  let showlist = req.session.data['newProjectList'] ;
   console.log("Yes here");
+  if (req.query.with == "filter")  {
+      res.redirect("index-with-more-filters");
+      }
+      else {
     res.redirect("index");
-
+    }
 }
 );
 
@@ -1200,6 +1212,32 @@ router.post("/design-sprint-35/project-filter-answer",
 
 
 });
+
+
+router.post("/design-sprint-35/project-filterv2-answer",
+  function (req, res) {
+    //var unsubscribeChange = req.session.data["type-of-updates"];
+    let  mylocation = req.session.data['chk-location'];
+    console.log(mylocation);
+    if (mylocation)
+    {
+      console.log(mylocation.length);
+      req.session.data['tag-location-show']= "true" ;
+    }
+
+    //req.session.data["mvp-type-of-interested-party"];
+   //console.log(mylocation.length);
+    req.session.data['filtersapplied'] = "true" ;
+  req.session.data['drax'] = "false" ;
+  let filelistall = require('../data/project-list-play.json')
+  req.session.data['Mefilylist'] = filelistall ;
+
+      res.redirect("/design-sprint-35/projects/index-with-more-filters");
+
+
+});
+
+
 
 router.post("/design-sprint-35/reps-filter-answer",
   function (req, res) {
