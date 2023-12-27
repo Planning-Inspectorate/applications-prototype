@@ -1293,4 +1293,20 @@ router.post("/design-sprints-34/form-drax",
 });
 
 
+router.get("/design-sprint-35/home/index-new-v3",
+  function (req, res) {
+    var unsubscribeChange = req.session.data["type-of-updates"];
+    console.log("homepage");
+    if (req.query.lang == "cy")  {
+        res.redirect("index-new-v3-cy");
+        }
+        else {
+      res.render("design-sprint-35/home/index-new-v3");
+      }
+
+
+  }
+);
+
+
 };
