@@ -31,7 +31,6 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
-{% from "_components/pins-header/macro.njk"                      import pinsHeader %}
 {% from "_components/pins-footer/macro.njk"                      import pinsFooter %}
 {% from "_components/pins-step-by-step-navigation/macro.njk"     import pinsStepByStepNavigation %}
 {% from "_components/pins-contents-sidebar/macro.njk"            import pinsContentSidebar %}
@@ -46,13 +45,11 @@
 
 {% block header %}
   {# Set serviceName in config.js. #}
-  {% set locale = "en" %}
   {{ pinsHeader({
     homepageUrl: "/",
     serviceName: "",
     serviceUrl: "/",
-    containerClasses: "govuk-width-container",
-    locale: locale
+    containerClasses: "govuk-width-container"
   }) }}
 {% endblock %}
 
